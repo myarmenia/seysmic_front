@@ -1,0 +1,31 @@
+.header {
+  @apply w-full flex flex-col duration-300;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.top {
+  @apply h-[32px] bg-dark-blue text-white font-semibold text-[18px];
+}
+.top_box {
+  @apply flex justify-end gap-[30px];
+}
+.navbar {
+  @apply flex items-center justify-between gap-5 h-[83px];
+}
+.logo {
+  @apply text-[10px] underline text-dark-blue flex items-center gap-[7px] max-w-[200px];
+}
+.nav_items {
+  @apply flex items-center justify-between gap-5;
+}
+.nav_items > a {
+  @apply font-semibold text-[18px] text-dark-blue;
+}
+.tools {
+  @apply flex items-center gap-[18px];
+}
+.tools img {
+  @apply cursor-pointer;
+}
+.language_box {
+  @apply flex items-center gap-[6px] cursor-pointer;
+}

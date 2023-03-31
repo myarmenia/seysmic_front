@@ -1,0 +1,3 @@
+.my_container {
+  @apply py-[30px];
+}

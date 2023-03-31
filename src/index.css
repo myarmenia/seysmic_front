@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply m-0 p-0 box-border;
+  text-decoration-skip-ink: none;
+}
+.app {
+  @apply min-h-screen;
+}
+/* ================================================================ */
+.main_container {
+  @apply max-w-[1155px] mx-auto w-full;
+}
