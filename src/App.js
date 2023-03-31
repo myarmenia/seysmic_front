@@ -1,12 +1,19 @@
-import { Outlet } from "react-router";
-import { Container, Header } from "./components/main";
-
+import { Outlet, useNavigate } from "react-router";
+import { Footer, Header } from "./components/main";
+import { useEffect } from "react";
 
 function App() {
+  const navigate = useNavigate();
+  useEffect(() => {
+    navigate("/login");
+  }, []);
   return (
     <div className="app">
       <Header />
-      <Outlet />
+      <main className="h-full">
+        <Outlet />
+      </main>
+      <Footer />
     </div>
   );
 }

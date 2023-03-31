@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       maxWidth: {
-        container: "1155px",
+        container: "1250px",
       },
       backgroundColor: {
         "dark-blue": "#002687",

@@ -1,0 +1,9 @@
+.my_container {
+  @apply flex items-center justify-center w-full h-full min-h-[800px];
+}
+.box {
+  @apply flex flex-col gap-8;
+}
+.input_group {
+  @apply flex flex-col gap-6;
+}

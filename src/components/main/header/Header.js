@@ -1,28 +1,23 @@
 import React from "react";
 import styles from "./header.module.css";
 import logo from "../../../assets/main/logo.svg";
-import logo_rounded from "../../../assets/main/logo-rounded.svg";
 import search_icon from "../../../assets/icons/searchIcon.svg";
 import language from "../../../assets/icons/language.svg";
 import arrow_down from "../../../assets/icons/arrow_down.svg";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { Logo } from "../../reusable";
 
 export const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.top}>
-        <div className={styles.top_box + " main_container"}>
+        <Link className={styles.top_box + " main_container"}>
           <span>GMT 07:54 / 10:54</span>
           <img alt="" src={logo} />
-        </div>
+        </Link>
       </div>
       <div className={styles.navbar + " main_container"}>
-        <div className={styles.logo}>
-          <img alt="" src={logo_rounded} />
-          <span>
-            Международный Центр глобального мониторинга сейсмического риска
-          </span>
-        </div>
+        <Logo />
         <div className={styles.nav_items}>
           <NavLink>О нас</NavLink>
           <NavLink>Технология</NavLink>

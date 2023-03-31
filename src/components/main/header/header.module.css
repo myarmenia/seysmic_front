@@ -1,21 +1,18 @@
 .header {
-  @apply w-full flex flex-col duration-300;
+  @apply w-full flex flex-col duration-300 sticky top-0 bg-white z-[100];
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 .top {
   @apply h-[32px] bg-dark-blue text-white font-semibold text-[18px];
 }
 .top_box {
-  @apply flex justify-end gap-[30px];
+  @apply flex justify-end gap-[30px] cursor-pointer;
 }
 .navbar {
   @apply flex items-center justify-between gap-5 h-[83px];
 }
-.logo {
-  @apply text-[10px] underline text-dark-blue flex items-center gap-[7px] max-w-[200px];
-}
 .nav_items {
-  @apply flex items-center justify-between gap-5;
+  @apply flex items-center justify-between gap-5 w-[65%];
 }
 .nav_items > a {
   @apply font-semibold text-[18px] text-dark-blue;
