@@ -1,0 +1,31 @@
+.footer {
+}
+.blocking_div {
+}
+.content {
+  background: linear-gradient(
+    269.98deg,
+    #0026aa -1.43%,
+    #1267cb 51.39%,
+    #0026aa 99.98%
+  );
+}
+.content_div {
+  @apply py-[23px] flex justify-between gap-6;
+}
+.li_head {
+  @apply font-bold text-xl text-center;
+}
+.content ul {
+  @apply flex flex-col gap-5 text-lg text-white;
+}
+.social_icons {
+  @apply flex items-center gap-[10px];
+}
+
+.under_box {
+  @apply py-[15px] bg-dark-blue;
+}
+.under_items {
+  @apply flex justify-between gap-5 text-lg text-white;
+}

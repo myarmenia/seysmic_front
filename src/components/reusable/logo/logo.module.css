@@ -1,0 +1,6 @@
+.logo {
+  @apply font-normal text-[10px] underline text-dark-blue flex items-center gap-[7px] max-w-[205px];
+}
+.span {
+  @apply leading-3 text-start;
+}
