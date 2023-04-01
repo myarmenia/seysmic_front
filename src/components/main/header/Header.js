@@ -3,20 +3,18 @@ import styles from "./header.module.css";
 import logo from "../../../assets/main/logo.svg";
 import search_icon from "../../../assets/icons/searchIcon.svg";
 import language from "../../../assets/icons/language.svg";
-import arrow_down from "../../../assets/icons/arrow_down.svg";
+import arrow_down from "../../../assets/icons/arrow-down-blue.svg";
 import { Link, NavLink } from "react-router-dom";
-import { Logo } from "../../reusable";
+import { Container, Logo } from "../../reusable";
 
 export const Header = () => {
   return (
     <header className={styles.header}>
-      <div className={styles.top}>
-        <Link className={styles.top_box + " main_container"}>
-          <span>GMT 07:54 / 10:54</span>
-          <img alt="" src={logo} />
-        </Link>
-      </div>
-      <div className={styles.navbar + " main_container"}>
+      <Container bg={"h-[32px] bg-dark-blue"} className={styles.top_box}>
+        <span>GMT 07:54 / 10:54</span>
+        <img alt="" src={logo} />
+      </Container>
+      <Container className={styles.navbar}>
         <Logo />
         <div className={styles.nav_items}>
           <NavLink>О нас</NavLink>
@@ -32,7 +30,7 @@ export const Header = () => {
             <img src={arrow_down} alt="" />
           </div>
         </div>
-      </div>
+      </Container>
     </header>
   );
 };

@@ -4,7 +4,7 @@ import {
   createRoutesFromElements,
 } from "react-router-dom";
 import App from "../App";
-import { Login, Registration } from "../pages";
+import { Home, Login, Registration } from "../pages";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -15,6 +15,7 @@ export const router = createBrowserRouter(
         element={<Registration />}
         action={Registration.action}
       />
+      <Route path="home" element={<Home />} />
     </Route>
   )
 );

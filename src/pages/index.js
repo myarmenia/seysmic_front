@@ -1,2 +1,3 @@
-export * from "./auth/Login";
-export * from "./auth/Registration";
+export { Login } from "./auth/Login";
+export { Registration } from "./auth/Registration";
+export { Home } from "./home/Home";

@@ -1,0 +1,7 @@
+.my_container {
+  @apply w-full;
+}
+.content {
+  /* @apply py-[30px]; */
+  @apply max-w-[1250px] mx-auto w-full px-[32px];
+}
