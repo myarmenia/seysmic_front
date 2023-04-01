@@ -1,16 +1,19 @@
-import { Outlet, useNavigate } from "react-router";
+import { Outlet, useLocation, useNavigate } from "react-router";
 import { Footer, Header } from "./components/main";
 import { useEffect } from "react";
 
 function App() {
   const navigate = useNavigate();
+  const { pathname } = useLocation();
   useEffect(() => {
-    navigate("/login");
+    if (pathname === "/") {
+      navigate("/home");
+    }
   }, []);
   return (
     <div className="app">
       <Header />
-      <main className="h-full">
+      <main className="h-full max-w-[100vw]">
         <Outlet />
       </main>
       <Footer />

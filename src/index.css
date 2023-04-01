@@ -3,22 +3,42 @@
 @tailwind utilities;
 
 * {
-  @apply m-0 p-0 box-border font-normal outline-none;
+  @apply m-0 p-0 box-border font-normal h-auto;
   text-decoration-skip-ink: none;
   font-family: "Inter", sans-serif;
+  outline: none;
+}
+html,
+body {
+  position: relative;
+  height: 100%;
 }
 .app {
-  @apply min-h-screen grid grid-rows-[auto_1fr_auto];
+  @apply min-h-screen grid grid-rows-[auto_1fr_auto] max-w-[100vw] 
+  /* overflow-x-hidden; */;
 }
 /* ================================================================ */
-.main_container {
-  @apply max-w-[1250px] mx-auto w-full px-[32px];
-}
 .main-input {
-  @apply bg-white rounded-[30px] px-[25px] py-[14px] w-[408px];
+  @apply bg-white rounded-[30px] px-[25px] py-[14px] w-[408px] shadow-light;
   border: 1px solid #ffffff;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 .main-input::placeholder {
   @apply text-xl text-[#b2b2b2];
 }
+/* ================================================================ */
+
+/* --------------------------- Swiper ----------------------------- */
+.swiper-pagination-bullet {
+  @apply !bg-[#d9d9d9];
+}
+.swiper-button-next,
+.swiper-button-prev {
+  @apply !text-[#909090];
+}
+.swiper-button-next {
+  @apply !right-[-25px];
+}
+.swiper-button-prev {
+  @apply !left-[-25px];
+}
+/* ================================================================ */

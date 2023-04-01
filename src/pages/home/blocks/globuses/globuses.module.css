@@ -1,0 +1,32 @@
+.globus {
+  @apply relative flex flex-col gap-[25px] items-center cursor-pointer w-[150px];
+}
+.globus:hover .globus_desc {
+  @apply opacity-100;
+}
+.globus_desc {
+  @apply opacity-0 duration-500 absolute w-[225%] left-1/2 top-[5%] -translate-x-1/2 -translate-y-1/2 
+    text-dark-blue text-center leading-[19px] bg-white  
+    px-[45px] rounded-[20px] pt-[16px] pb-[23px] flex flex-col gap-2;
+  box-shadow: 0 5px 10px 0px #74747480;
+}
+.globus_desc::after {
+  content: "";
+  @apply absolute top-[99%] left-1/2 -translate-x-1/2 w-[5%] h-[15px] bg-white bg-transparent;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-top: 10px solid white;
+}
+.globus_desc > span {
+  background: linear-gradient(180deg, #0026aa 0%, #30cfff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.ad_box {
+  background: url("../../../../assets/main/home/ad1.svg") no-repeat center;
+  background-size: cover;
+  @apply py-[50px];
+}

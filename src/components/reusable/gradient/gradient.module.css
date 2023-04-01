@@ -1,0 +1,7 @@
+.p {
+  background: linear-gradient(180deg, #0026aa 0%, #30cfff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}

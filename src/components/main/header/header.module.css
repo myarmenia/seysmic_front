@@ -1,12 +1,8 @@
 .header {
-  @apply w-full flex flex-col duration-300 sticky top-0 bg-white z-[100];
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-.top {
-  @apply h-[32px] bg-dark-blue text-white font-semibold text-[18px];
+  @apply w-full flex flex-col duration-300 sticky top-0 bg-white z-[100] shadow-light;
 }
 .top_box {
-  @apply flex justify-end gap-[30px] cursor-pointer;
+  @apply flex justify-end gap-[30px] cursor-pointer font-semibold text-lg text-white !py-0;
 }
 .navbar {
   @apply flex items-center justify-between gap-5 h-[83px];
