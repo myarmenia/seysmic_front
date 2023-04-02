@@ -1,5 +1,12 @@
 import React from "react";
+import { Preface, Publications, Results } from "./blocks";
 
 export const About = () => {
-  return <div>About</div>;
+  return (
+    <>
+      <Preface />
+      <Publications />
+      <Results />
+    </>
+  );
 };

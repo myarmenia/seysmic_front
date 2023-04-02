@@ -1,0 +1,8 @@
+.ul {
+  list-style-image: url("../../../../assets/icons/file-pdf.svg");
+  @apply w-[90%] mx-auto;
+}
+
+.ul li{
+  @apply leading-5
+}

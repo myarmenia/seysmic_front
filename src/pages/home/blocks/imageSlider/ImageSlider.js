@@ -7,24 +7,13 @@ import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/pagination";
 import "swiper/css";
+import { generateArray } from "../../../../helper";
 
-const images = [
-  {
-    src,
-    description:
-      "Каждый человек имеет право получать информацию о готовящихся землетрясениях в том или ином регионе мира, знать об опасных временных интервалах для самостоятельного выбора места жительства, пребывания и отдыха. Такая возможность сегодня имеется!",
-  },
-  {
-    src,
-    description:
-      "Каждый человек имеет право получать информацию о готовящихся землетрясениях в том или ином регионе мира, знать об опасных временных интервалах для самостоятельного выбора места жительства, пребывания и отдыха. Такая возможность сегодня имеется!",
-  },
-  {
-    src,
-    description:
-      "Каждый человек имеет право получать информацию о готовящихся землетрясениях в том или ином регионе мира, знать об опасных временных интервалах для самостоятельного выбора места жительства, пребывания и отдыха. Такая возможность сегодня имеется!",
-  },
-];
+const images = generateArray(3, {
+  src,
+  description:
+    "Каждый человек имеет право получать информацию о готовящихся землетрясениях в том или ином регионе мира, знать об опасных временных интервалах для самостоятельного выбора места жительства, пребывания и отдыха. Такая возможность сегодня имеется!",
+});
 
 export const ImageSlider = () => {
   return (
@@ -48,7 +37,10 @@ export const ImageSlider = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <Container bg="bg-dark-blue relative" className={"w-full h-[44px] text-white"}>
+      <Container
+        bg="bg-dark-blue relative"
+        className={"w-full h-[44px] text-white"}
+      >
         <span className={styles.marquee}>Something</span>
       </Container>
     </Container>

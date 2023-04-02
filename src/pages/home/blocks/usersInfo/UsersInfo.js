@@ -68,9 +68,9 @@ export const UsersInfo = () => {
         Пользователь данного сайта должен знать:
       </Title>
       <div className="grid grid-cols-[auto_1px_auto] gap-[64px]">
-        <Ul data={data[0]} />
+        <Ul data={data[0]} className={styles.ul} />
         <div className="h-full w-[1px] bg-[#6998AB]" />
-        <Ul data={data[1]} />
+        <Ul data={data[1]} className={styles.ul} />
       </div>
     </Container>
   );
