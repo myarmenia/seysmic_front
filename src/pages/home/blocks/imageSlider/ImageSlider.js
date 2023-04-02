@@ -28,11 +28,12 @@ const images = [
 
 export const ImageSlider = () => {
   return (
-    <Container className="!w-[95vw] !max-w-max !p-0 overflow-x-hidden">
+    <Container className="!max-w-max !p-0 overflow-x-hidden">
       <Swiper
         pagination={true}
         modules={[Pagination]}
-        className="w-full h-[622px]"
+        className="w-full h-[60vh] max-h-[622px] min-h-[200px]"
+        // className="w-full h-[622px]"
       >
         {images.map(({ src, description }, i) => (
           <SwiperSlide key={i}>
@@ -47,8 +48,8 @@ export const ImageSlider = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <Container bg={"bg-dark-blue"} className={"w-full py-2 text-white"}>
-        Something
+      <Container bg="bg-dark-blue relative" className={"w-full h-[44px] text-white"}>
+        <span className={styles.marquee}>Something</span>
       </Container>
     </Container>
   );

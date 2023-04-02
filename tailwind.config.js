@@ -16,6 +16,10 @@ module.exports = {
       colors: {
         "dark-blue": "#002687",
       },
+      screens: {
+        "med-900": { max: "900px" },
+        "med-600": { max: "600px" },
+      },
     },
   },
   plugins: [],

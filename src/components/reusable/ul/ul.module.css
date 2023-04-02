@@ -1,0 +1,7 @@
+.ul {
+  list-style-image: url("../../../assets/icons/ul_img.svg");
+  @apply flex flex-col gap-5 justify-between;
+}
+.li {
+  @apply text-base leading-[112%] text-justify text-[#1A374D] ml-[40px] pl-[16px] italic;
+}

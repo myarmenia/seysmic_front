@@ -52,10 +52,10 @@ const data = [
 
 export const PressRelease = () => {
   return (
-    <Container className="flex flex-col gap-[44px] py-[42px]">
+    <Container bg="bg-[#F0F2F5]" className="flex flex-col gap-[44px] py-[42px]">
       <Title>Пресс-релиз</Title>
       <div>
-        <SwiperNavigation>
+        <SwiperNavigation className="!py-5">
           {data.map((el, i) => (
             <SwiperSlide key={i}>
               <Box {...el} />

@@ -5,3 +5,21 @@
   @apply text-[#F7F7F7] text-lg leading-[150%] text-justify py-[23px] px-[40px] bg-[#1a374d91] 
   w-[40%] absolute top-0 left-0;
 }
+.marquee {
+  @apply absolute -translate-y-1/2 top-1/2;
+  animation: marquee 5s cubic-bezier(0, 0, 0, 0) 0s infinite;
+  animation-play-state: running;
+}
+@keyframes marquee {
+  from {
+    left: 0;
+  }
+  to {
+    left: 100%;
+  }
+}
+@media (max-width: 900px) {
+  .slide p {
+    @apply w-full;
+  }
+}

@@ -4,3 +4,4 @@ export { Title } from "./titles/Title";
 export { Container } from "./container/Container";
 export { Gradient } from "./gradient/Gradient";
 export { SwiperNavigation } from "./SwiperNavigation";
+export { Ul } from "./ul/Ul";
