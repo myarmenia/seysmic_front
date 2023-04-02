@@ -1,6 +1,6 @@
 import React from "react";
 
-export const ErrorMessage = ({ children, className }) => {
+export const ErrorMessage = ({ children, className="" }) => {
   return (
     <p
       className={

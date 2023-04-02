@@ -1,0 +1,77 @@
+import React from "react";
+import { Container, Title } from "../../../../components/reusable";
+import styles from "./news.module.css";
+import logo from "../../../../assets/main/logo.svg";
+import img from "../../../../assets/main/book-img.svg";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper";
+
+const data = Array.from({ length: 5 }).map(() => ({
+  title: "Энтропия, Сейсмология и Взгляд в Космологию:",
+  subtitle: "Теория Возникновения и Эволюции",
+  author: "Автор: Акопян С.Ц.",
+  place: "Издательство Кембриджских ученых, Лондон. 332, 2023г",
+  describcion: `В книге показано, что для изучения происхождения Вселенной, нет
+    необходимости взглянуть на дальний космос или заглянуть вглубь
+    материи, а достаточно необычным образом взглянуть на то, что
+    скрывается у нас под ногами – на нашу Землю. Отмечается, что в
+    сейсмичности Земли скрыты закономерности, которые можно
+    «увидеть», оперируя новыми сейсмическими параметрами. Такой
+    подход позволяет построить теорию энтропийной сейсмологии,
+    которую можно применять при решении задачи прогноза
+    землетрясений, построения динамических карт сейсмической
+    опасности, контроля возникновения нежелательной сейсмичности в
+    результате деятельности человека. Эта теория позволяет
+    разработать сейсмический формализм в терминах, приемлемых для
+    космологии. позволяющий взглянуть на современные проблемы физики
+    и космологии с необычных позиций энтропийной сейсмологии.
+    Построена некоторая реалистическая картина образования первичной
+    ткани – темной энергии и темной материи из гравитонов и
+    антигравитонов, в которой при определенных условиях зарождаются
+    Вселенные. Показано, что диссипативная энтропийная сила –
+    антигравитация, это, по существу, новый тип взаимодействия в
+    Природе, пронизывающее все пространство. Книга предназначена для
+    специалистов в области сейсмологии, прогноза землетрясений,
+    физики, космологии, синергетики и др.`,
+}));
+
+export const News = () => {
+  return (
+    <div className="py-[40px]">
+      <div className="relative w-full mb-[65px]">
+        <div className={styles.logo}>
+          <img className="mx-auto" src={logo} alt="" />
+        </div>
+        <Title className="mx-auto w-fit">НОВОСТИ</Title>
+      </div>
+      <Container>
+        <Swiper pagination={true} modules={[Pagination]} className="w-full">
+          {data.map((el, i) => (
+            <SwiperSlide key={i}>
+              <Box {...el} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </Container>
+    </div>
+  );
+};
+
+const Box = ({ author, place, subtitle, title, describcion }) => {
+  return (
+    <div className="grid grid-cols-2 gap-[50px]">
+      <img src={img} alt="" />
+      <div className="flex flex-col gap-1 text-black text-justify">
+        <b className="flex flex-col">
+          <span className="font-semibold text-base">{title}</span>
+          <span className="font-semibold text-sm">{subtitle}</span>
+          <span className="text-xs font-normal my-2">{author}</span>
+        </b>
+        <div>
+          <span className="text-[10px] my-2">{place}</span>
+          <p className="leading-[170%] text-xs">{describcion}</p>
+        </div>
+      </div>
+    </div>
+  );
+};

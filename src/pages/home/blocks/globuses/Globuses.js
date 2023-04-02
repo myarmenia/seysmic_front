@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import styles from "./globuses.module.css";
-import { Container } from "../../../../components/reusable";
+import React from "react";
 import img1 from "../../../../assets/trash/home/globuses/globus1.svg";
+import { Container } from "../../../../components/reusable";
+import styles from "./globuses.module.css";
 
 const images = [
   {
@@ -33,7 +33,7 @@ const images = [
 export const Globuses = () => {
   return (
     <>
-      <Container className="flex justify-around gap-5 py-[80px]">
+      <Container className="overflow-hidden grid gap-y-10 grid-cols-[repeat(auto-fit,_minmax(280px,_1fr))] justify-items-center py-[80px]">
         {images.map(({ description, src, title }, i) => (
           <Globus key={i} {...{ description, src, title }} />
         ))}

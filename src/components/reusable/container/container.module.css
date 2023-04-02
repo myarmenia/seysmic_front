@@ -1,7 +1,8 @@
 .my_container {
-  @apply w-full;
+  @apply w-full overflow-x-hidden;
 }
 .content {
   /* @apply py-[30px]; */
-  @apply max-w-[1250px] mx-auto w-full px-[32px];
+  @apply max-w-[1250px] mx-auto w-full overflow-x-hidden
+  px-[32px];
 }

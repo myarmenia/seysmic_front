@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="app">
       <Header />
-      <main className="h-full max-w-[100vw]">
+      <main className="h-full max-w-[100vw] overflow-x-hidden">
         <Outlet />
       </main>
       <Footer />

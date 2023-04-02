@@ -39,7 +39,7 @@ const Component = () => {
             />
           </div>
           <div className="flex flex-col gap-[24px]">
-            <CustomBtn type="submit">Заригистрироваться</CustomBtn>
+            <CustomBtn type="submit" className="!w-full">Заригистрироваться</CustomBtn>
             <div className="flex items-center justify-around text-xl leading-5">
               <span>Еще не зарегистрированы?</span>
               <Link className="text-dark-blue font-bold" to={"/registration"}>

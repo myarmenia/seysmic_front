@@ -44,7 +44,7 @@ export const Footer = () => {
           </ul>
           <ul>
             <li className={styles.li_head}>Контактные данные</li>
-            <li>
+            <li className={styles.social_icons_li}>
               <div className={styles.social_icons}>
                 <Link>
                   <img src={fcbook} alt="" />

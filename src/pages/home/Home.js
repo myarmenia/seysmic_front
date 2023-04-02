@@ -4,7 +4,10 @@ import {
   EarthquakePlaces,
   Globuses,
   ImageSlider,
+  News,
+  Partners,
   PressRelease,
+  UsersInfo,
 } from "./blocks";
 
 export const Home = () => {
@@ -14,6 +17,9 @@ export const Home = () => {
       <Globuses />
       <EarthquakePlaces />
       <PressRelease />
+      <Partners />
+      <News />
+      <UsersInfo />
     </>
   );
 };

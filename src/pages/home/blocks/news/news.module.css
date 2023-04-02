@@ -1,0 +1,15 @@
+.logo {
+  @apply w-[20%] bg-dark-blue py-3 absolute;
+}
+.logo::before {
+  content: "";
+  @apply absolute left-full top-0 bottom-0;
+  border-top: 22px transparent solid;
+  border-bottom: 22px transparent solid;
+  border-left: 35px solid var(--dark-blue);
+}
+.logo::after {
+  content: "";
+  @apply absolute left-full -translate-y-1/2 top-1/2 w-[100%];
+  border: 1px dashed var(--dark-blue);
+}

@@ -8,6 +8,9 @@
   font-family: "Inter", sans-serif;
   outline: none;
 }
+:root {
+  --dark-blue: #002687;
+}
 html,
 body {
   position: relative;
