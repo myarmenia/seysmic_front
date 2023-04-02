@@ -9,44 +9,15 @@ import {
   SwiperNavigation,
 } from "../../../../components/reusable";
 import styles from "./earthquakePlaces.module.css";
+import { generateArray } from "../../../../helper";
 
-const data = [
-  {
-    src: quake_img,
-    title: "Землетрясение в Турции",
-    description:
-      "Our private company LLC SeiEn was established in October 2022 in Yerevan, Armenia",
-    date: "06.02.2023",
-  },
-  {
-    src: quake_img,
-    title: "Землетрясение в Турции",
-    description:
-      "Our private company LLC SeiEn was established in October 2022 in Yerevan, Armenia",
-    date: "06.02.2023",
-  },
-  {
-    src: quake_img,
-    title: "Землетрясение в Турции",
-    description:
-      "Our private company LLC SeiEn was established in October 2022 in Yerevan, Armenia",
-    date: "06.02.2023",
-  },
-  {
-    src: quake_img,
-    title: "Землетрясение в Турции",
-    description:
-      "Our private company LLC SeiEn was established in October 2022 in Yerevan, Armenia",
-    date: "06.02.2023",
-  },
-  {
-    src: quake_img,
-    title: "Землетрясение в Турции",
-    description:
-      "Our private company LLC SeiEn was established in October 2022 in Yerevan, Armenia",
-    date: "06.02.2023",
-  },
-];
+const data = generateArray(6, {
+  src: quake_img,
+  title: "Землетрясение в Турции",
+  description:
+    "Our private company LLC SeiEn was established in October 2022 in Yerevan, Armenia",
+  date: "06.02.2023",
+});
 
 export const EarthquakePlaces = () => {
   return (

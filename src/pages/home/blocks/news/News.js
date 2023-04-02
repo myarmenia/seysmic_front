@@ -5,8 +5,9 @@ import logo from "../../../../assets/main/logo.svg";
 import img from "../../../../assets/main/book-img.svg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
+import { generateArray } from "../../../../helper";
 
-const data = Array.from({ length: 5 }).map(() => ({
+const data = generateArray(3, {
   title: "Энтропия, Сейсмология и Взгляд в Космологию:",
   subtitle: "Теория Возникновения и Эволюции",
   author: "Автор: Акопян С.Ц.",
@@ -33,7 +34,7 @@ const data = Array.from({ length: 5 }).map(() => ({
     Природе, пронизывающее все пространство. Книга предназначена для
     специалистов в области сейсмологии, прогноза землетрясений,
     физики, космологии, синергетики и др.`,
-}));
+});
 
 export const News = () => {
   return (

@@ -10,45 +10,17 @@ import h1_icon from "../../../../assets/trash/home/h1.svg";
 import organization from "../../../../assets/trash/home/organization.svg";
 import link_to from "../../../../assets/icons/link-to.svg";
 import { SwiperSlide } from "swiper/react";
+import { generateArray } from "../../../../helper";
 
-const data = [
-  {
-    title: "Название организации",
-    describtion:
-      "Компания Терморобот занимается производством котельного оборудования с 2010 г.",
-    icon: h1_icon,
-    image: organization,
-    date: "24.02.2023",
-    time: "16:00",
-  },
-  {
-    title: "Название организации",
-    describtion:
-      "Компания Терморобот занимается производством котельного оборудования с 2010 г.",
-    icon: h1_icon,
-    image: organization,
-    date: "24.02.2023",
-    time: "16:00",
-  },
-  {
-    title: "Название организации",
-    describtion:
-      "Компания Терморобот занимается производством котельного оборудования с 2010 г.",
-    icon: h1_icon,
-    image: organization,
-    date: "24.02.2023",
-    time: "16:00",
-  },
-  {
-    title: "Название организации",
-    describtion:
-      "Компания Терморобот занимается производством котельного оборудования с 2010 г.",
-    icon: h1_icon,
-    image: organization,
-    date: "24.02.2023",
-    time: "16:00",
-  },
-];
+const data = generateArray(5, {
+  title: "Название организации",
+  describtion:
+    "Компания Терморобот занимается производством котельного оборудования с 2010 г.",
+  icon: h1_icon,
+  image: organization,
+  date: "24.02.2023",
+  time: "16:00",
+});
 
 export const PressRelease = () => {
   return (

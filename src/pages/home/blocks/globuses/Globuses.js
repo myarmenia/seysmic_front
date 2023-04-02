@@ -2,33 +2,14 @@ import React from "react";
 import img1 from "../../../../assets/trash/home/globuses/globus1.svg";
 import { Container } from "../../../../components/reusable";
 import styles from "./globuses.module.css";
+import { generateArray } from "../../../../helper";
 
-const images = [
-  {
-    title: "Глобальный мониторинг",
-    src: img1,
-    description:
-      "Our private company LLC SeiEn was established in October 2022 in Yerevan, Armenia",
-  },
-  {
-    title: "Глобальный мониторинг",
-    src: img1,
-    description:
-      "Our private company LLC SeiEn was established in October 2022 in Yerevan, Armenia",
-  },
-  {
-    title: "Глобальный мониторинг",
-    src: img1,
-    description:
-      "Our private company LLC SeiEn was established in October 2022 in Yerevan, Armenia",
-  },
-  {
-    title: "Глобальный мониторинг",
-    src: img1,
-    description:
-      "Our private company LLC SeiEn was established in October 2022 in Yerevan, Armenia",
-  },
-];
+const images = generateArray(4, {
+  title: "Глобальный мониторинг",
+  src: img1,
+  description:
+    "Our private company LLC SeiEn was established in October 2022 in Yerevan, Armenia",
+});
 
 export const Globuses = () => {
   return (
