@@ -1,0 +1,20 @@
+.list {
+  @apply list-image-[url("../../../assets/icons/list-style-round.svg")] mt-[40px];
+}
+.list li {
+  @apply text-xl text-justify text-[#000];
+}
+.background {
+  @apply absolute left-0 w-full min-h-[500px] -z-10;
+  background: linear-gradient(180deg, #0026aa 0%, #30cfff 100%);
+}
+.advantage_list {
+  @apply list-image-[url("../../../assets/icons/ul_img.svg")] flex flex-wrap justify-between items-center mt-[70px];
+}
+.advantage_list li {
+  @apply w-[40%] pl-3 text-lg text-black mt-2;
+}
+.accumulator {
+  @apply absolute left-0 w-full h-[500px] -z-10;
+  background: linear-gradient(180deg, #0026aa 0%, #30cfff 100%);
+}
