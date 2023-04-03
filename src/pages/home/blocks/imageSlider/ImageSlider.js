@@ -29,7 +29,7 @@ export const ImageSlider = () => {
             <div className={styles.slide}>
               <img
                 src={src}
-                className="absolute top-0 left-0 object-cover w-full"
+                className="absolute top-0 left-0 object-cover w-full h-full"
                 alt=""
               />
               <p>{description}</p>

@@ -1,20 +1,21 @@
-@tailwind components;
 .customSelect {
   @apply relative min-w-[143px] flex flex-col gap-1 w-full;
 }
-@layer components {
-  .options {
-    @apply z-[1001] backdrop-blur-md bg-[rgba(255,255,255,0.4)] w-full absolute top-11 rounded-2xl overflow-hidden;
-  }
+
+.options {
+  @apply z-[1001] bg-white border-[1px] border-[##80808033] shadow-light w-full absolute top-[calc(100%_+_5px)] rounded-2xl overflow-hidden;
 }
+
 .optionsContainer {
   @apply max-h-[200px] overflow-y-auto bg-[#ffffff69];
 }
 .defaultOption {
-  @apply relative w-full flex gap-1 items-center border-[1px] border-white text-ellipsis overflow-hidden py-3 px-[17px] bg-white rounded-2xl cursor-pointer;
+  @apply flex gap-1 items-center overflow-hidden relative bg-white rounded-[30px] px-[25px] py-[14px] w-[408px] shadow-light cursor-pointer text-ellipsis;
+  border: 1px solid #ffffff;
 }
 .title {
-  @apply cursor-pointer w-full border-none bg-inherit text-base placeholder:text-[#9C9C9C] placeholder:text-xs;
+  @apply cursor-pointer w-full border-none bg-inherit text-base text-[#b2b2b2] 
+  placeholder:text-[#b2b2b2] placeholder:text-base;
 }
 .optionBox {
   @apply flex justify-between items-center hover:bg-slate-200 
