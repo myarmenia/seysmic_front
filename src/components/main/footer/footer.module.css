@@ -24,12 +24,6 @@
 .social_icons_li {
   @apply hover:!translate-x-0 hover:!opacity-100;
 }
-.social_icons {
-  @apply flex items-center gap-[10px];
-}
-.social_icons a {
-  @apply hover:scale-110 duration-300 shrink-0;
-}
 
 .under_box {
   @apply py-[13px] bg-dark-blue;

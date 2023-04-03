@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Container, Logo } from "../../reusable";
+import { Container, Logo, SocIcons } from "../../reusable";
 import styles from "./footer.module.css";
 import fcbook from "../../../assets/icons/social_networks/fcbook.svg";
 import gmail from "../../../assets/icons/social_networks/gmail.svg";
@@ -45,23 +45,7 @@ export const Footer = () => {
           <ul>
             <li className={styles.li_head}>Контактные данные</li>
             <li className={styles.social_icons_li}>
-              <div className={styles.social_icons}>
-                <Link>
-                  <img src={fcbook} alt="" />
-                </Link>
-                <Link>
-                  <img src={gmail} alt="" />
-                </Link>
-                <Link>
-                  <img src={yt} alt="" />
-                </Link>
-                <Link>
-                  <img src={instagram} alt="" />
-                </Link>
-                <Link>
-                  <img src={telegram} alt="" />
-                </Link>
-              </div>
+              <SocIcons />
             </li>
           </ul>
         </Container>

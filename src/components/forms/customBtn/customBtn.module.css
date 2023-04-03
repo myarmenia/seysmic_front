@@ -1,4 +1,4 @@
 .button {
-  @apply px-6 py-2 rounded-[30px] text-white text-lg w-fit;
+  @apply px-6 py-2 rounded-[30px] text-white text-lg w-fit min-w-[207px];
   background: linear-gradient(180deg, #0026aa 0%, #30cfff 100%);
 }
