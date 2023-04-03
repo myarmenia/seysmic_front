@@ -15,6 +15,8 @@ module.exports = {
       },
       colors: {
         "dark-blue": "#002687",
+        "light-grey": "#938E97",
+        black: "#000",
       },
       screens: {
         "med-900": { max: "900px" },

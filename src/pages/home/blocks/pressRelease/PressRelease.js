@@ -30,7 +30,7 @@ export const PressRelease = () => {
         <SwiperNavigation className="!py-5">
           {data.map((el, i) => (
             <SwiperSlide key={i}>
-              <Box {...el} />
+              <PressReleaseBox {...el} />
             </SwiperSlide>
           ))}
         </SwiperNavigation>
@@ -40,11 +40,18 @@ export const PressRelease = () => {
   );
 };
 
-const Box = ({ title, describtion, icon, image, date, time }) => {
+export const PressReleaseBox = ({
+  title,
+  describtion,
+  icon,
+  image,
+  date,
+  time,
+}) => {
   return (
     <div className="bg-white flex flex-col gap-2 shadow-[0px_2px_11px_rgba(0,_0,_0,_0.15)] px-[23px] py-[22px] rounded-[6px]">
       <div className="flex justify-between gap-5">
-        <div className="flex gap-3 items-center">
+        <div className="flex items-center gap-3">
           <img src={icon} alt="" />
           <div className="flex flex-col gap-[6px]">
             <span className="font-bold text-dark-blue text-[11px]">
