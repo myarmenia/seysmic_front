@@ -9,27 +9,27 @@ export const globuses = [
     src: img1,
     description:
       "Our private company LLC SeiEn was established in October 2022 in Yerevan, Armenia",
-    to: "",
+    to: "/monitoring?index",
   },
   {
     title: "Региональный мониторинг в Армении",
     src: img2,
     description:
       "Our private company LLC SeiEn was established in October 2022 in Yerevan, Armenia",
-    to: "",
+    to: "/monitoring/regional",
   },
   {
     title: "Космический мониторинг",
     src: img3,
     description:
       "Our private company LLC SeiEn was established in October 2022 in Yerevan, Armenia",
-    to: "",
+    to: "a",
   },
   {
     title: "Наша Продукция",
     src: img4,
     description:
       "Our private company LLC SeiEn was established in October 2022 in Yerevan, Armenia",
-    to: "",
+    to: "b",
   },
 ];

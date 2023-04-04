@@ -51,7 +51,7 @@
 }
 
 .img {
-  animation: rot 5s infinite cubic-bezier(0, 0, 0, 0);
+  animation: rot 10s infinite cubic-bezier(0, 0, 0, 0);
 }
 @keyframes rot {
   from {

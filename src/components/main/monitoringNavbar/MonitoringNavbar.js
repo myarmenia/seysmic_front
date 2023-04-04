@@ -15,7 +15,13 @@ export const MonitoringNavbar = () => {
 
 const Box = ({ title, src, to }) => {
   return (
-    <NavLink to={to} className={styles.nav_item}>
+    <NavLink
+      to={to}
+      end
+      className={({ isActive }) =>
+        `${isActive ? styles.active : ""} ${styles.nav_item}`
+      }
+    >
       <img src={src} alt="" />
       <span>{title}</span>
     </NavLink>
