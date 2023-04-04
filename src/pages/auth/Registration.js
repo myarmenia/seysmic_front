@@ -50,7 +50,7 @@ const Component = () => {
             <CustomBtn className="!w-full" type="submit">Заригистрироваться</CustomBtn>
             <div className="flex items-center justify-around text-xl leading-5">
               <span>Уже заригистрированы?</span>
-              <Link className="text-dark-blue font-bold" to={"/login"}>
+              <Link className="font-bold text-dark-blue" to={"/login"}>
                 Логин
               </Link>
             </div>
