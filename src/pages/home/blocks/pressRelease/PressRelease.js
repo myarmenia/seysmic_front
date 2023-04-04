@@ -8,9 +8,9 @@ import {
 import { CustomBtn } from "../../../../components/forms";
 import h1_icon from "../../../../assets/trash/home/h1.svg";
 import organization from "../../../../assets/trash/home/organization.svg";
-import link_to from "../../../../assets/icons/link-to.svg";
 import { SwiperSlide } from "swiper/react";
 import { generateArray } from "../../../../helper";
+import { PressReleaseBox } from "../../../../components/main";
 
 const data = generateArray(5, {
   title: "Название организации",
@@ -37,35 +37,5 @@ export const PressRelease = () => {
       </div>
       <CustomBtn className="mx-auto">Узнать больше</CustomBtn>
     </Container>
-  );
-};
-
-export const PressReleaseBox = ({
-  title,
-  describtion,
-  icon,
-  image,
-  date,
-  time,
-}) => {
-  return (
-    <div className="bg-white flex flex-col gap-2 shadow-[0px_2px_11px_rgba(0,_0,_0,_0.15)] px-[23px] py-[22px] rounded-[6px]">
-      <div className="flex justify-between gap-5">
-        <div className="flex items-center gap-3">
-          <img src={icon} alt="" />
-          <div className="flex flex-col gap-[6px]">
-            <span className="font-bold text-dark-blue text-[11px]">
-              {title}
-            </span>
-            <span className="text-[#415455] text-[10px]">
-              {date} {time}
-            </span>
-          </div>
-        </div>
-        <img src={link_to} alt="" />
-      </div>
-      <p>{describtion}</p>
-      <img src={image} alt="" />
-    </div>
   );
 };

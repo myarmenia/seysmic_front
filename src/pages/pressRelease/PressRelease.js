@@ -1,5 +1,5 @@
 import React from "react";
-import { PressReleaseBox } from "../home/blocks";
+import { PressReleaseBox } from "../../components/main";
 import { Container, Title } from "../../components/reusable";
 import { generateArray } from "../../helper";
 import h1_icon from "../../assets/trash/home/h1.svg";

@@ -38,7 +38,7 @@ const data = generateArray(3, {
 
 export const News = () => {
   return (
-    <div className="py-[40px]">
+    <div className="py-[40px] max-w-[1440px] mx-auto">
       <div className="relative w-full mb-[65px]">
         <div className={styles.logo}>
           <img className="mx-auto" src={logo} alt="" />

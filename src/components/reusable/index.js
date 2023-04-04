@@ -6,3 +6,4 @@ export { Gradient } from "./gradient/Gradient";
 export { SwiperNavigation } from "./SwiperNavigation";
 export { Ul } from "./ul/Ul";
 export { SocIcons } from "./SocIcons";
+export { FilterBtn } from "./filterBtn/FilterBtn";
