@@ -6,3 +6,4 @@ export { Contacts } from "./contacts/Contacts";
 export { Monitoring } from "./monitoring/Monitoring";
 export { PressRelease } from "./pressRelease/PressRelease";
 export { Technologies } from "./technologies/Technologies";
+export { Regional } from "./monitoring/regional/Regional";
