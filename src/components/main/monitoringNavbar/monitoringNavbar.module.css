@@ -1,0 +1,9 @@
+.nav {
+  @apply flex flex-col p-1 bg-[#F7F7F7] rounded-[9px];
+  box-shadow: 0px 1.75494px 4.38734px rgba(0, 0, 0, 0.1);
+}
+.nav_item {
+  @apply bg-white rounded-[9px] text-dark-blue leading-[10px] text-[8px] text-center
+  flex flex-col;
+  box-shadow: 0px 1.75494px 4.38734px rgba(0, 0, 0, 0.1);
+}

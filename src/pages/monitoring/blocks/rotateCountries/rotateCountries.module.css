@@ -1,0 +1,10 @@
+.cont {
+  @apply relative;
+}
+.img_box {
+  @apply relative;
+}
+.nums {
+}
+.num {
+}

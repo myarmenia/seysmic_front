@@ -1,0 +1,7 @@
+.btn {
+  @apply px-[26px] py-[9.75px] text-[#818181] text-lg rounded-[20px] bg-white duration-300;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.btn:hover {
+  @apply bg-[#80B6EE] text-[#1A374D];
+}
