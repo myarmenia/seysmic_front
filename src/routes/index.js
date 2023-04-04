@@ -11,6 +11,7 @@ import {
   Login,
   Monitoring,
   PressRelease,
+  Regional,
   Registration,
   Technologies,
 } from "../pages";
@@ -27,7 +28,10 @@ export const router = createBrowserRouter(
       <Route path="home" element={<Home />} />
       <Route path="about" element={<About />} />
       <Route path="contacts" element={<Contacts />} />
-      <Route path="monitoring" element={<Monitoring />} />
+      <Route path="monitoring">
+        <Route index element={<Monitoring />} />
+        <Route path="regional" element={<Regional />} />
+      </Route>
       <Route path="press-release" element={<PressRelease />} />
       <Route path="technologies" element={<Technologies />} />
     </Route>
