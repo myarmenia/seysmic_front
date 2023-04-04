@@ -4,17 +4,38 @@
 .list li {
   @apply text-xl text-justify text-[#000];
 }
-.background {
-  @apply absolute left-0 w-full min-h-[500px] -z-10;
-  background: linear-gradient(180deg, #0026aa 0%, #30cfff 100%);
-}
+
 .advantage_list {
-  @apply list-image-[url("../../../assets/icons/ul_img.svg")] flex flex-wrap justify-between items-center mt-[70px];
+  @apply list-image-[url("../../../assets/icons/ul_img.svg")] flex flex-wrap justify-between items-center mt-[70px] flex-row;
 }
 .advantage_list li {
-  @apply w-[40%] pl-3 text-lg text-black mt-2;
+  @apply w-[40%] pl-3 text-lg text-black;
 }
-.accumulator {
-  @apply absolute left-0 w-full h-[500px] -z-10;
-  background: linear-gradient(180deg, #0026aa 0%, #30cfff 100%);
+.accumulated_experience {
+  @apply bg-[url("../../../assets/main/technologies/accumuliated.svg")];
+}
+
+.accumulated_bottom {
+  @apply flex justify-between pt-[103px] pb-[66px];
+}
+.accumulated_bottom div {
+  @apply w-[260px]  rounded-[20px] py-[20px] gap-[20px];
+}
+.accumulated_text {
+  @apply bg-[#30cfff87] px-[20px] text-dark-blue;
+}
+.accumulated_text2 {
+  @apply bg-[#4da3e584] px-[20px] text-dark-blue;
+}
+.accumulated_text3 {
+  @apply bg-[#0030dd8d] px-[20px] text-dark-blue;
+}
+.title div {
+  @apply py-[20px];
+}
+.title h2 {
+  @apply text-2xl font-semibold uppercase text-dark-blue;
+}
+.accumulated_bottom p {
+  @apply text-base text-[#818181] mt-[25px];
 }
