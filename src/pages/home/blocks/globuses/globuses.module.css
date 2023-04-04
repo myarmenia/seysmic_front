@@ -1,5 +1,5 @@
 .globus {
-  @apply relative flex flex-col gap-[25px] items-center cursor-pointer w-[150px];
+  @apply relative flex flex-col gap-[25px] items-center cursor-pointer w-[132px] h-[132px];
 }
 .globus:hover .globus_desc {
   @apply opacity-100;
