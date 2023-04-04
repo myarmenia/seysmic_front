@@ -1,30 +1,32 @@
 import React from "react";
-import styles from "./rotateCountries.module.css";
+import styles from "./countries.module.css";
 import img from "../../../../assets/main/monitoring/globus.svg";
+import { MonitoringNavbar } from "../../../../components/main";
 
-export const RotateCountries = () => {
+export const Countries = () => {
   return (
     <div className={styles.cont}>
       <div className={styles.img_box}>
-        <img src={img} alt="" />
+        <img src={img} alt="" className={styles.img} />
         <div className={styles.nums}>
           <div className={styles.num}>
-            <span>1</span>
+            <div>1</div>
           </div>
           <div className={styles.num}>
-            <span>2</span>
+            <div>2</div>
           </div>
           <div className={styles.num}>
-            <span>3</span>
+            <div>3</div>
           </div>
           <div className={styles.num}>
-            <span>4</span>
+            <div>4</div>
           </div>
           <div className={styles.num}>
-            <span>5</span>
+            <div>5</div>
           </div>
         </div>
       </div>
+      <MonitoringNavbar />
     </div>
   );
 };

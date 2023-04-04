@@ -1,2 +1,2 @@
 export { Map } from "./map/Map";
-export { RotateCountries } from "./rotateCountries/RotateCountries";
+export { Countries } from "./countries/Countries";
