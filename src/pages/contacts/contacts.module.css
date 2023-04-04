@@ -1,0 +1,23 @@
+.container {
+  @apply cursor-pointer absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-[12%] w-[15px] h-[15px];
+}
+.container input {
+  @apply appearance-none border-none outline-none absolute;
+}
+.checkmark {
+  @apply absolute w-[15px] h-[15px] top-0 left-0;
+}
+.checkmark:after {
+  content: "";
+  @apply absolute hidden;
+}
+.container input:checked ~ .checkmark:after {
+  @apply block;
+}
+.container .checkmark:after {
+  border-width: 0 2px 2px 0;
+  transform: translate(-50%, -50%) rotate(45deg);
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+  -ms-transform: translate(-50%, -50%) rotate(45deg);
+  @apply top-[35%] left-1/2 w-[5px] h-[10px] border-solid border-black;
+}

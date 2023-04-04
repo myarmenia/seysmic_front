@@ -17,16 +17,16 @@ body {
   height: 100%;
 }
 .app {
-  @apply min-h-screen grid grid-rows-[auto_1fr_auto] max-w-[100vw] max-w-[1250px] my-0 mx-auto px-4;
-  /* overflow-x-hidden; */
+  @apply min-h-screen grid grid-rows-[auto_1fr_auto] max-w-[100vw] my-0 mx-auto;
+  /* @apply max-w-[1250px] px-4; Delete */
 }
 /* ================================================================ */
 .main-input {
-  @apply bg-white rounded-[30px] px-[25px] py-[14px] w-[408px] shadow-light;
+  @apply bg-white rounded-[30px] px-[25px] py-[11px] w-[408px] shadow-light;
   border: 1px solid #ffffff;
 }
 .main-input::placeholder {
-  @apply text-xl text-[#b2b2b2];
+  @apply text-base text-[#b2b2b2];
 }
 /* ================================================================ */
 

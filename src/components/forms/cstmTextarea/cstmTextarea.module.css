@@ -1,0 +1,3 @@
+.textarea {
+  @apply overflow-y-auto resize-none h-[147px] whitespace-normal;
+}

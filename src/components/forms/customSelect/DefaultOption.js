@@ -24,7 +24,7 @@ export const DefaultOption = () => {
         <input
           type="text"
           {...{ placeholder }}
-          disabled
+          readOnly
           className={styles.title}
           value={value}
           {...register}
