@@ -1,5 +1,5 @@
 .cosmos_img_box {
-  @apply my-[60px];
+  @apply my-[60px] px-[30px];
 }
 .cosmos_img_box p {
   @apply text-xl text-justify text-black my-[30px];

@@ -1,10 +1,11 @@
 import React from "react";
 import { Container, Title } from "../../../../components/reusable";
 import styles from "../blocks/regionalBlock.module.css";
+import { MonitoringNavbar } from "../../../../components/main";
 
 export const CosmosImage = () => {
   return (
-    <Container className="mt-[60px]">
+    <Container bg="relative" className="mt-[60px]">
       <Title>МОНИТОРИНГ КОСМИЧЕСКИХ СНИМКОВ</Title>
       <div className={styles.cosmos_img_box}>
         <p>
@@ -37,6 +38,7 @@ export const CosmosImage = () => {
           динамику развития систем линеаментов до и после сильных землетрясений.
         </p>
       </div>
+      <MonitoringNavbar />
     </Container>
   );
 };

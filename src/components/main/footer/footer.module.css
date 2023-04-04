@@ -19,7 +19,7 @@
   @apply flex flex-col gap-5 text-lg text-white;
 }
 .content ul li:not(:first-child) {
-  @apply duration-300 hover:translate-x-2 hover:opacity-70;
+  @apply duration-300 w-fit hover:translate-x-2 hover:opacity-70;
 }
 .social_icons_li {
   @apply hover:!translate-x-0 hover:!opacity-100;
