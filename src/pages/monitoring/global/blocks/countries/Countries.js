@@ -46,7 +46,6 @@ export const Countries = () => {
           ))}
         </div>
       </div>
-n
       <MonitoringNavbar />
     </div>
   );
@@ -55,7 +54,13 @@ n
 const Box = ({ index, title, describtion }) => {
   return (
     <div className={styles.num}>
-      <span>{index}</span>
+      <span
+        onMouseEnter={(e) => {
+          e.target.nextElementSibling.classList.add("!opacity-100");
+        }}
+      >
+        {index}
+      </span>
       <div>
         <span>{title}</span>
         <p>{describtion}</p>
