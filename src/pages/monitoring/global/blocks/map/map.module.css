@@ -1,0 +1,20 @@
+.map_bg {
+  @apply bg-contain h-full relative shrink-0;
+}
+.img {
+  @apply object-contain w-full;
+}
+.blue_box {
+  border: 2px solid #3009ac;
+  outline: 2px solid #3009ac;
+  @apply absolute duration-100 cursor-pointer;
+}
+.blue_box:hover {
+  @apply opacity-50;
+}
+.blue_box_id {
+  @apply absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 text-dark-blue text-lg font-bold;
+}
+.input_box{
+  /* @apply   */
+}

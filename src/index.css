@@ -45,3 +45,18 @@ body {
   @apply !left-[-25px];
 }
 /* ================================================================ */
+
+/* ================================================================ */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #eeeeee;
+}
+::-webkit-scrollbar-thumb {
+  background: #938e97;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+/* ================================================================ */
