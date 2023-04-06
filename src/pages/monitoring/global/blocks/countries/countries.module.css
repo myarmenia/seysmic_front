@@ -1,0 +1,96 @@
+:root {
+  --calc: calc(100% + 12px);
+}
+
+.cont {
+  @apply relative mx-auto min-h-[600px] flex items-center justify-center px-[32px] mb-[150px] pr-[50px]
+  /* pr-[165px]; */;
+}
+.img_box {
+  @apply relative mx-auto flex items-center justify-center w-[370px] h-[340px];
+}
+.nums {
+  @apply absolute w-full h-full;
+}
+.num {
+  @apply absolute w-full h-full;
+}
+.num > span {
+  @apply absolute font-semibold rounded-full w-[38px] h-[38px] text-white text-center text-[24px] z-[1];
+  background: linear-gradient(180deg, #0026aa 0%, #30cfff 100%);
+}
+.num::after {
+  content: "";
+  @apply h-[1px] w-full bg-[#8DB1F3] absolute z-0;
+}
+.num > div {
+  @apply flex flex-col gap-2 text-black absolute w-[150%] font-semibold;
+}
+.num > div > span {
+  @apply text-[24px] leading-[97%] text-center;
+}
+.num > div > p {
+  @apply text-[#938E97] text-[14px] text-center leading-[97%];
+}
+
+/* ===================================================================== */
+.num:nth-child(1) > span {
+  @apply -translate-x-1/2 left-1/2 top-0;
+}
+.num:nth-child(2) > span {
+  @apply right-0 -translate-y-[35%] top-[35%];
+}
+.num:nth-child(5) > span {
+  @apply left-0 -translate-y-[35%] top-[35%];
+}
+.num:nth-child(4) > span {
+  @apply bottom-0 left-[20%];
+}
+.num:nth-child(3) > span {
+  @apply bottom-0 right-[20%];
+}
+/* ===================================================================== */
+.num:nth-child(1)::after {
+  @apply rotate-[34deg] top-[20%] right-0 left-[47%] w-[194px];
+}
+.num:nth-child(2)::after {
+  @apply rotate-[-33deg] top-[19%] right-0 left-[2%] w-[194px];
+}
+.num:nth-child(5)::after {
+  @apply rotate-[69deg] bottom-0 top-[65%] right-0 left-[-12%] w-[194px];
+}
+.num:nth-child(4)::after {
+  @apply bottom-[6%] right-[15%] left-[20%] w-[194px];
+}
+.num:nth-child(3)::after {
+  @apply rotate-[111deg] bottom-0 top-[65%] right-[-11.5%] w-[194px];
+}
+/* ===================================================================== */
+.num:nth-child(1) > div {
+  @apply bottom-[var(--calc)] -translate-x-1/2 left-1/2;
+}
+.num:nth-child(2) > div {
+  @apply left-[var(--calc)] -translate-y-1/2 top-1/2 max-w-[300px];
+}
+.num:nth-child(5) > div {
+  @apply right-[var(--calc)] -translate-y-1/2 top-1/2 max-w-[300px];
+}
+.num:nth-child(4) > div {
+  @apply top-[var(--calc)] right-[60%] max-w-[290px];
+}
+.num:nth-child(3) > div {
+  @apply top-[var(--calc)] left-[60%] max-w-[290px];
+}
+/* ===================================================================== */
+
+.img {
+  animation: rot 10s infinite cubic-bezier(0, 0, 0, 0);
+}
+@keyframes rot {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}

@@ -5,7 +5,7 @@ import { MonitoringNavbar } from "../../../../components/main";
 
 export const CosmosImage = () => {
   return (
-    <Container bg="relative" className="mt-[60px]">
+    <Container bg="relative max-w-[1440px] mx-auto" className="mt-[60px]">
       <Title>МОНИТОРИНГ КОСМИЧЕСКИХ СНИМКОВ</Title>
       <div className={styles.cosmos_img_box}>
         <p>
@@ -38,7 +38,7 @@ export const CosmosImage = () => {
           динамику развития систем линеаментов до и после сильных землетрясений.
         </p>
       </div>
-      <MonitoringNavbar />
+      <MonitoringNavbar className="!top-[50px]"/>
     </Container>
   );
 };
