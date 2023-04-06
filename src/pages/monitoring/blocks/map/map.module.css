@@ -1,4 +1,0 @@
-.map_bg {
-  background: url("../../../../assets/main/monitoring/main-map.png") no-repeat;
-  @apply bg-cover min-h-[610px] h-full px-[32px] py-5;
-}

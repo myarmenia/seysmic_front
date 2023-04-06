@@ -3,9 +3,9 @@ import styles from "./monitoringNavbar.module.css";
 import { globuses } from "../../../store/constats";
 import { NavLink } from "react-router-dom";
 
-export const MonitoringNavbar = () => {
+export const MonitoringNavbar = ({ className = "" }) => {
   return (
-    <div className={styles.nav}>
+    <div className={[styles.nav, className].join(" ")}>
       {globuses.map((el, i) => (
         <Box key={i} {...el} />
       ))}
