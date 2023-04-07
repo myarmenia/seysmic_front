@@ -46,7 +46,7 @@ export const CustomSelect = ({
         removeOption,
       }}
     >
-      <div className="flex justify-center h-[48.67px]">
+      <div className="flex justify-center h-[48.67px] med-600:w-full">
         <div className={[styles.customSelect, className].join(" ")}>
           <DefaultOption />
           {state && <Options />}

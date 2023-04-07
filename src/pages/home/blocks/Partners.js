@@ -7,7 +7,7 @@ export const Partners = () => {
   return (
     <Container className="flex flex-col items-center py-[65px]">
       <Title className="mb-[60px]">Стратегический партнер</Title>
-      <div className="grid grid-cols-2 gap-[50px] med-900:grid-cols-1">
+      <div className="grid grid-cols-2 gap-[50px] med-900:grid-cols-1 med-400:flex med-400:flex-col-reverse">
         <div className="flex flex-col gap-[25px] text-[#1A374D] font-bold text-lg text-justify leading-[150%]">
           <img className="w-[100px]" src={logo} alt="" />
           <b>

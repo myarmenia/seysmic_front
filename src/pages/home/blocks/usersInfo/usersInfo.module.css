@@ -7,3 +7,9 @@
 .ul li {
   @apply italic [&>p]:text-[#1A374D];
 }
+
+@media (max-width: 400px) {
+  .bg {
+    background: #e7e7e7;
+  }
+}

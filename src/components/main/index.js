@@ -3,3 +3,6 @@ export { Footer } from "./footer/Footer";
 export { PressReleaseBox } from "./PressReleaseBox";
 export { MonitoringNavbar } from "./monitoringNavbar/MonitoringNavbar";
 export { QuakeBox } from "./quakeBox/QuakeBox";
+export { Boxes } from "./Boxes";
+export { SingleBox } from "./SingleBox";
+export { Burger } from "./burger/Burger";

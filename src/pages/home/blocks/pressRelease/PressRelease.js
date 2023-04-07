@@ -14,7 +14,7 @@ import { PressReleaseBox } from "../../../../components/main";
 
 const data = generateArray(5, {
   title: "Название организации",
-  describtion:
+  description:
     "Компания Терморобот занимается производством котельного оборудования с 2010 г.",
   icon: h1_icon,
   image: organization,
@@ -26,15 +26,15 @@ export const PressRelease = () => {
   return (
     <Container bg="bg-[#F0F2F5]" className="flex flex-col gap-[44px] py-[42px]">
       <Title>Пресс-релиз</Title>
-      <div>
-        <SwiperNavigation className="!py-5">
-          {data.map((el, i) => (
-            <SwiperSlide key={i}>
-              <PressReleaseBox {...el} />
-            </SwiperSlide>
-          ))}
-        </SwiperNavigation>
-      </div>
+
+      <SwiperNavigation className="!py-5">
+        {data.map((el, i) => (
+          <SwiperSlide key={i}>
+            <PressReleaseBox {...el} />
+          </SwiperSlide>
+        ))}
+      </SwiperNavigation>
+          
       <CustomBtn className="mx-auto">Узнать больше</CustomBtn>
     </Container>
   );

@@ -21,11 +21,20 @@
   background: linear-gradient(180deg, #0026aa 0%, #30cfff 100%);
 }
 .tools {
-  @apply flex items-center gap-[18px];
+  @apply flex items-center gap-[18px] med-400:gap-3 shrink-0;
+}
+.tools * {
+  @apply shrink-0;
 }
 .tools img {
   @apply cursor-pointer;
 }
 .language_box {
   @apply flex items-center gap-[6px] cursor-pointer;
+}
+
+@media (max-width: 900px) {
+  .nav_items {
+    @apply hidden;
+  }
 }

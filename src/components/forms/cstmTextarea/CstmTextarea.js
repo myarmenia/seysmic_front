@@ -12,7 +12,7 @@ export const CstmTextarea = ({
   const errorMessage = useError(regName, error);
   const register = useFormRegister(regName);
   return (
-    <div className="flex flex-col relative w-fit">
+    <div className="flex flex-col relative w-fit med-600:w-full">
       <textarea
         {...props}
         wrap="off"
