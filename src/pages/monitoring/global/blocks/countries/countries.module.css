@@ -16,18 +16,27 @@
   @apply absolute w-full h-full;
 }
 .num > span {
-  @apply absolute font-semibold rounded-full w-[38px] h-[38px] text-white text-center text-[24px] z-[1];
+  @apply absolute font-semibold rounded-full w-[38px] h-[38px] text-white text-center text-[24px] z-[1] cursor-pointer duration-300;
   background: linear-gradient(180deg, #0026aa 0%, #30cfff 100%);
+}
+.num > span:hover {
+  @apply scale-125;
 }
 .num::after {
   content: "";
   @apply h-[1px] w-full bg-[#8DB1F3] absolute z-0;
 }
 .num > div {
-  @apply flex flex-col gap-2 text-black absolute w-[150%] font-semibold;
+  @apply flex flex-col gap-2 text-black absolute w-[150%] font-semibold duration-700 opacity-0;
 }
 .num > div > span {
   @apply text-[24px] leading-[97%] text-center;
+}
+/* .num > span:hover + div {
+  @apply opacity-100;
+} */
+.active_desc {
+  @apply opacity-100;
 }
 .num > div > p {
   @apply text-[#938E97] text-[14px] text-center leading-[97%];
