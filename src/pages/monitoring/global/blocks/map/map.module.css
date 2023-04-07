@@ -9,12 +9,19 @@
   outline: 2px solid #3009ac;
   @apply absolute duration-100 cursor-pointer;
 }
-.blue_box:hover {
-  @apply opacity-50;
-}
+
 .blue_box_id {
-  @apply absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 text-dark-blue text-lg font-bold;
+  @apply absolute bottom-[calc(100%_+_8px)] -translate-x-1/2 left-1/2 text-dark-blue text-base h-[28px]
+  font-bold opacity-0 duration-500 px-[10px] pt-2 pb-1 rounded-md shadow-light bg-white leading-[15px];
 }
-.input_box{
-  /* @apply   */
+.blue_box_id::after {
+  content: "";
+  @apply absolute top-[99%] left-1/2 -translate-x-1/2 w-[5%] h-[15px] bg-white bg-transparent;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 4px solid white;
+}
+
+.blue_box:hover .blue_box_id {
+  @apply opacity-100;
 }

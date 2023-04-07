@@ -2,6 +2,7 @@ import React from "react";
 import { Container } from "../../../../components/reusable";
 import styles from "./globuses.module.css";
 import { globuses } from "../../../../store/constats";
+import { Link } from "react-router-dom";
 
 export const Globuses = () => {
   return (
@@ -16,9 +17,9 @@ export const Globuses = () => {
   );
 };
 
-const Globus = ({ title, src, description }) => {
+const Globus = ({ title, src, description, to }) => {
   return (
-    <div className={styles.globus}>
+    <Link to={to} className={styles.globus}>
       <div className={styles.globus_desc}>
         <span>{title}</span>
         <p>{description}</p>
@@ -26,6 +27,6 @@ const Globus = ({ title, src, description }) => {
 
       <img className="bg-cover" src={src} alt="" />
       <p className="text-lg leading-5 text-center text-dark-blue">{title}</p>
-    </div>
+    </Link>
   );
 };
