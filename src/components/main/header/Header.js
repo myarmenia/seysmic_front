@@ -7,6 +7,7 @@ import logo from "../../../assets/main/logo.svg";
 import { Container, Logo } from "../../reusable";
 import styles from "./header.module.css";
 import { getHeaderTime } from "../../../helper";
+import { Burger } from "../burger/Burger";
 
 export const Header = () => {
   return (
@@ -20,7 +21,8 @@ export const Header = () => {
         <div className={styles.nav_items}>
           <HeaderLink to={"/about"}>О нас</HeaderLink>
           <HeaderLink to={"/technologies"}>Технология</HeaderLink>
-          <HeaderLink to={"/monitoring"}>Мониторинг и Прогноз</HeaderLink>
+          {/* <HeaderLink to={"/monitoring"}>Мониторинг и Прогноз</HeaderLink> */}
+          <HeaderLink to={"/earth-quakes"}>Мониторинг и Прогноз</HeaderLink>
           <HeaderLink to={"/press-release"}>Пресс релиз</HeaderLink>
           <HeaderLink to={"/contacts"}>Контакты</HeaderLink>
         </div>
@@ -30,6 +32,7 @@ export const Header = () => {
             <img src={language} alt="" />
             <img src={arrow_down} alt="" />
           </div>
+          <Burger />
         </div>
       </Container>
     </header>

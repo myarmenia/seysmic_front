@@ -2,6 +2,7 @@
   @apply flex items-center h-full justify-center pt-[72px];
 }
 .content {
-  @apply pt-[60px] px-[25px] pb-[38px] max-w-[310px]
-    flex flex-col items-center h-fit gap-3 bg-white shadow-normal rounded-[20px];
+  @apply pt-[60px] px-[25px] pb-[38px] max-w-[310px] flex flex-col 
+    items-center h-fit gap-3 bg-white shadow-normal rounded-[20px]
+    med-400:pt-[30px];
 }

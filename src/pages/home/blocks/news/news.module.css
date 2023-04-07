@@ -1,5 +1,5 @@
 .logo {
-  @apply w-[20%] bg-dark-blue py-3 absolute;
+  @apply w-[20%] bg-dark-blue py-3 absolute h-[44px] min-w-[165.75px];
 }
 .logo::before {
   content: "";
@@ -10,6 +10,14 @@
 }
 .logo::after {
   content: "";
-  @apply absolute left-full -translate-y-1/2 top-1/2 w-[100%];
+  @apply absolute left-full -translate-y-1/2 top-1/2 w-[100%] med-400:w-[40%];
   border: 1px dashed var(--dark-blue);
+}
+.title {
+  @apply mx-auto w-fit;
+}
+@media (max-width: 400px) {
+  .title {
+    @apply absolute top-1/2 -translate-y-1/2 right-[20px];
+  }
 }

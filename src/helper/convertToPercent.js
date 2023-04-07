@@ -1,5 +1,5 @@
-const img_width = 1374.61,
-  img_height = 609.45;
+const img_width = 1322.93,
+  img_height = 582.83;
 export const convertToPercent = ({ top, left, width, height }) => {
   return {
     top: ((top / img_height) * 100).toFixed(3) + "%",

@@ -1,5 +1,5 @@
 .globus {
-  @apply relative flex flex-col gap-[25px] items-center cursor-pointer w-[132px] h-[132px];
+  @apply h-auto relative flex flex-col gap-[25px] items-center cursor-pointer w-[132px] min-h-[132px];
 }
 .globus:hover .globus_desc {
   @apply opacity-100;
@@ -29,4 +29,11 @@
   background: url("../../../../assets/main/home/ad1.svg") no-repeat center;
   background-size: cover;
   @apply py-[50px];
+}
+
+@media (max-width: 400px) {
+  .globus {
+    @apply bg-white rounded-[20px] p-[22px] pb-[27px] w-full;
+    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);
+  }
 }

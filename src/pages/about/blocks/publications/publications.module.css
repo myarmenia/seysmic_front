@@ -1,8 +1,8 @@
 .ul {
   list-style-image: url("../../../../assets/icons/file-pdf.svg");
-  @apply w-[90%] mx-auto;
+  @apply w-[90%] mx-auto med-600:gap-1;
 }
 
-.ul li{
-  @apply leading-5
+.ul li {
+  @apply leading-5 med-600:text-[14px] med-600:leading-[180%];
 }

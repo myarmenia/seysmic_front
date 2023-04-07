@@ -15,6 +15,8 @@ import {
   Regional,
   Registration,
   Technologies,
+  EarthQuake,
+  EarthQuakes,
 } from "../pages";
 
 export const router = createBrowserRouter(
@@ -33,6 +35,7 @@ export const router = createBrowserRouter(
         <Route index element={<Monitoring />} loader={Monitoring.loader} />
         <Route path="regional" element={<Regional />} />
       </Route>
+      <Route path="technologies" element={<Technologies />} />
       <Route path="press-release">
         <Route
           index
@@ -41,7 +44,10 @@ export const router = createBrowserRouter(
         />
         <Route path=":id" element={<PressRel />} loader={PressRel.loader} />
       </Route>
-      <Route path="technologies" element={<Technologies />} />
+      <Route path="earth-quakes">
+        <Route index element={<EarthQuakes />} loader={EarthQuakes.loader} />
+        <Route path=":id" element={<EarthQuake />} loader={EarthQuake.loader} />
+      </Route>
     </Route>
   )
 );

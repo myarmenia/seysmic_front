@@ -15,7 +15,7 @@ export const Footer = () => {
         <Container bg={styles.content} className={styles.content_div}>
           <ul>
             <li className={styles.li_head}>
-              <Logo color="text-white underline" />
+              <Logo className={styles.logo} color="text-white underline" />
             </li>
             <li>
               <Link>О нас</Link>
