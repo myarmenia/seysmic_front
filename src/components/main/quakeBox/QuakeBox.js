@@ -2,7 +2,7 @@ import React from "react";
 import { Gradient } from "../../reusable";
 import { CustomBtn } from "../../forms";
 import styles from "./quakeBox.module.css";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const QuakeBox = ({ image, title, description, date, to }) => {
   const navigate = useNavigate();

@@ -1,6 +1,6 @@
 import React from "react";
 import { useLoaderData } from "react-router";
-import { instance } from "../../api";
+import instance from "../../api";
 import h1_icon from "../../assets/trash/home/h1.svg";
 import organization from "../../assets/trash/home/organization.svg";
 import { Boxes, PressReleaseBox } from "../../components/main";
@@ -13,7 +13,7 @@ const expl = {
   time: "16:00",
 };
 
-export const Component = () => {
+const Component = () => {
   const data = useLoaderData();
   const data1 = data.map((el) => ({
     description: el.body.split(" ").slice(0, 8).join(" ") + "...",

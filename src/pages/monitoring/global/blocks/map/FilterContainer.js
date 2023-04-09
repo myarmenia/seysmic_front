@@ -1,17 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useLoaderData } from "react-router";
 import { SearchInput } from "../../../../../components/forms";
 
 export const FilterContainer = () => {
   const data = useLoaderData();
   const [value, setValue] = useState("");
-  const [countries, setCountries] = useState([]);
+  const [countries, setCountries] = useState(data);
   const handleChange = (e) => {
     setValue(e.target.value);
   };
-  useEffect(() => {
-    setCountries(data);
-  }, []);
   const searchClick = () => {
     if (!value.trim()) setCountries(data);
     else {

@@ -1,23 +1,29 @@
-import { Outlet, useLocation, useNavigate } from "react-router";
-import { Footer, Header } from "./components/main";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
+import { router } from "./routes";
+import { createContext } from "react";
+import translation from "./translation.json";
+import { RouterProvider } from "react-router";
+import { useState } from "react";
+import { useContext } from "react";
+
+const Translation = createContext(null);
+export const useTranslation = () => useContext(Translation);
 
 function App() {
-  const navigate = useNavigate();
-  const { pathname } = useLocation();
+  const [language, setLanguage] = useState(translation.ru);
+  const changeLanguage = (lang) => {
+    setLanguage(translation[lang]);
+    sessionStorage.setItem("lanugage", lang);
+  };
   useEffect(() => {
-    if (pathname === "/") {
-      navigate("/home");
-    }
+    if (sessionStorage?.getItem("lanugage")) {
+      changeLanguage(sessionStorage?.getItem("lanugage"));
+    } else sessionStorage.setItem("lanugage", "ru");
   }, []);
   return (
-    <div className="app">
-      <Header />
-      <main className="h-full max-w-[100vw] overflow-x-hidden">
-        <Outlet />
-      </main>
-      <Footer />
-    </div>
+    <Translation.Provider value={{ language, changeLanguage }}>
+      <RouterProvider router={router} />
+    </Translation.Provider>
   );
 }
 

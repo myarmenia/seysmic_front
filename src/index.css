@@ -16,7 +16,7 @@ body {
   position: relative;
   height: 100%;
 }
-.app {
+.root {
   @apply min-h-screen grid grid-rows-[auto_1fr_auto] max-w-[100vw] my-0 mx-auto;
   /* @apply max-w-[1250px] px-4; */
 }
