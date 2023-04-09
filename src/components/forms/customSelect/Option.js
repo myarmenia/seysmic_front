@@ -12,13 +12,13 @@ export const Option = ({ option, optionId }) => {
       <div
         className={styles.option}
         onClick={() => {
-          setValue?.(option);
+          setValue?.(option.value);
           regName &&
-            formMethods?.setValue(regName, option, { shouldValidate: true });
+            formMethods?.setValue(regName, option.value, { shouldValidate: true });
           toggleOptions();
         }}
       >
-        {option}
+        {option.title}
       </div>
       {Boolean(setOptions) && (
         <img

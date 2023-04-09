@@ -1,6 +1,6 @@
 import React from "react";
 import { Map, Countries } from "./blocks";
-import { instance } from "../../../api";
+import instance from "../../../api";
 
 export const Component = () => {
   return (

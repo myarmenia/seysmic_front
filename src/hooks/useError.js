@@ -40,19 +40,7 @@ export const useError = (regName, error) => {
         return formMethods?.formState?.errors?.[regName]?.message;
       } else return;
     }
-  }, [
-    error,
-    regName && formMethods?.formState?.errors[regName],
-    Boolean(thisError) &&
-      Array.isArray(thisError) &&
-      Boolean(thisError[+splitedName[1]]) &&
-      thisError[+splitedName[1]][splitedName[2]],
-    regName &&
-      typeof formMethods.formState.errors[regName.split(".")[0]] === "object" &&
-      formMethods.formState.errors[regName.split(".")[0]][
-        regName.split(".")[1]
-      ],
-  ]);
+  }, [error, formMethods?.formState?.errors, regName, splitedName, thisError]);
 
   return errorMessage;
 };

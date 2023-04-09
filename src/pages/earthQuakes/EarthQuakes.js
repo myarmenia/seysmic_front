@@ -1,6 +1,6 @@
 import React from "react";
 import { useLoaderData } from "react-router";
-import { instance } from "../../api";
+import instance from "../../api";
 import h1_icon from "../../assets/trash/home/h1.svg";
 import organization from "../../assets/trash/home/organization.svg";
 import { Boxes, QuakeBox } from "../../components/main";

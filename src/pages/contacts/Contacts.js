@@ -12,6 +12,7 @@ import {
   CstmTextarea,
 } from "../../components/forms";
 import { useFormRegister } from "../../hooks";
+// import { ReCAPTCHA } from "react-google-recaptcha";
 
 export const Contacts = () => {
   const formMethods = useForm({
@@ -36,7 +37,12 @@ export const Contacts = () => {
               <CustomSelect
                 regName="feedback_letter"
                 placeholder="Выбрать тип обратоного письма"
-                options={["aaaaaaaaaa", "bbbbbbbbbb", "cccccccccc"]}
+                options={[
+                  { title: "", value: "" },
+                  { title: "aaaaaaaaaa", value: "aaaaaaaaaa" },
+                  { title: "bbbbbbbbbb", value: "bbbbbbbbbb" },
+                  { title: "cccccccccc", value: "cccccccccc" },
+                ]}
               />
               <CstmTextarea
                 regName="description"
@@ -44,6 +50,10 @@ export const Contacts = () => {
               />
             </div>
             <RobotCheckbox regName="isRobot" />
+            {/* <ReCAPTCHA
+              sitekey={process.env.REACT_APP_SECRET_KEY}
+              onChange={onChange}
+            /> */}
             <CustomBtn type="submit">Отправить</CustomBtn>
           </form>
         </FormProvider>
@@ -66,6 +76,7 @@ export const Contacts = () => {
               aria-hidden="false"
               tabIndex="0"
               className="w-full h-full"
+              title="map"
             />
           </div>
         </div>
@@ -74,8 +85,13 @@ export const Contacts = () => {
   );
 };
 
+// function onChange(value) {
+//   console.log("Captcha value:", value);
+// }
+
 const RobotCheckbox = ({ regName }) => {
   const register = useFormRegister(regName);
+
   return (
     <div className="relative">
       <img className="w-[177px]" src={robot_img} alt="" />

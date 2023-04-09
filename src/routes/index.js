@@ -3,25 +3,25 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
-import App from "../App";
+import { Root } from "../Root";
 import {
   About,
   Contacts,
+  EarthQuake,
+  EarthQuakes,
   Home,
   Login,
   Monitoring,
-  PressReleases,
   PressRel,
+  PressReleases,
   Regional,
   Registration,
   Technologies,
-  EarthQuake,
-  EarthQuakes,
 } from "../pages";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<App />}>
+    <Route path="/" element={<Root />}>
       <Route path="login" element={<Login />} action={Login.action} />
       <Route
         path="registration"

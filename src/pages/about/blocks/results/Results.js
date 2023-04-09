@@ -1,6 +1,6 @@
 import React from "react";
+import { Container, Title } from "../../../../components/reusable";
 import styles from "./results.module.css";
-import { Container, Gradient, Title } from "../../../../components/reusable";
 
 const results = [
   {

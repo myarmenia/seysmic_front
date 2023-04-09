@@ -12,6 +12,7 @@ export const SwiperNavigation = ({ children, className = "" }) => {
         onClick={() => swiperRef.current?.slidePrev()}
         src={swiper_arrow}
         className="rotate-180 cursor-pointer"
+        alt=""
       />
       <Swiper
         slidesPerView={1}
@@ -41,6 +42,7 @@ export const SwiperNavigation = ({ children, className = "" }) => {
         onClick={() => swiperRef.current?.slideNext()}
         src={swiper_arrow}
         className="cursor-pointer"
+        alt=""
       />
     </div>
   );

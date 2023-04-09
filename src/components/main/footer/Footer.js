@@ -2,13 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Logo, SocIcons } from "../../reusable";
 import styles from "./footer.module.css";
-import fcbook from "../../../assets/icons/social_networks/fcbook.svg";
-import gmail from "../../../assets/icons/social_networks/gmail.svg";
-import instagram from "../../../assets/icons/social_networks/instagram.svg";
-import telegram from "../../../assets/icons/social_networks/telegram.svg";
-import yt from "../../../assets/icons/social_networks/yt.svg";
+import { useTranslation } from "../../../App";
 
 export const Footer = () => {
+  const {
+    language: {
+      main: { footer: language },
+    },
+  } = useTranslation();
   return (
     <>
       <footer className={styles.footer}>
@@ -18,13 +19,13 @@ export const Footer = () => {
               <Logo className={styles.logo} color="text-white underline" />
             </li>
             <li>
-              <Link>О нас</Link>
+              <Link>{language.about}</Link>
             </li>
             <li>
               <Link>Стратегический портнер</Link>
             </li>
             <li>
-              <Link>Технологии</Link>
+              <Link>{language.technologies}</Link>
             </li>
             <li>
               <Link>Продукция</Link>

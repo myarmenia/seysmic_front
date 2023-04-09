@@ -20,6 +20,7 @@ export const CustomSelect = ({
   value,
   img,
   setValue,
+  boxClassName = "",
 }) => {
   const [state, setState] = useState(false);
   const errorMessage = useError(regName, error);
@@ -46,7 +47,11 @@ export const CustomSelect = ({
         removeOption,
       }}
     >
-      <div className="flex justify-center h-[48.67px] med-600:w-full">
+      <div
+        className={
+          "flex justify-center h-[48.67px] med-600:w-full " + boxClassName
+        }
+      >
         <div className={[styles.customSelect, className].join(" ")}>
           <DefaultOption />
           {state && <Options />}

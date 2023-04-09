@@ -1,0 +1,48 @@
+{
+  "ru": {
+    "main": {
+      "header": {
+        "nav_items": {
+          "about": "О нас",
+          "technologies": "Технология",
+          "monitoring": "Мониторинг и Прогноз",
+          "prease_release": "Пресс релиз",
+          "contacts": "Контакты"
+        }
+      },
+      "footer": {
+        "about": "О нас",
+        "technologies": "Технология"
+      }
+    },
+    "home": {},
+    "about": {},
+    "technology": {},
+    "monitoring": {},
+    "contacts": {},
+    "press_release": {}
+  },
+  "en": {
+    "main": {
+      "header": {
+        "nav_items": {
+          "about": "About",
+          "technologies": "Technology",
+          "monitoring": "Monitoring and Forecast",
+          "prease_release": "Press release",
+          "contacts": "Contacts"
+        }
+      },
+      "footer": {
+        "about": "About",
+        "technologies": "Technology"
+      }
+    },
+    "home": {},
+    "about": {},
+    "technology": {},
+    "monitoring": {},
+    "contacts": {},
+    "press_release": {}
+  }
+}

@@ -1,15 +1,23 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import arrow_down from "../../../assets/icons/arrow-down-blue.svg";
-import language from "../../../assets/icons/language.svg";
+import language_img from "../../../assets/icons/language.svg";
 import search_icon from "../../../assets/icons/searchIcon.svg";
 import logo from "../../../assets/main/logo.svg";
 import { Container, Logo } from "../../reusable";
 import styles from "./header.module.css";
 import { getHeaderTime } from "../../../helper";
 import { Burger } from "../burger/Burger";
+import { useTranslation } from "../../../App";
+import { useEffect } from "react";
 
 export const Header = () => {
+  const {
+    language: {
+      main: { header: language },
+    },
+  } = useTranslation();
+
   return (
     <header className={styles.header}>
       <Container bg="h-[32px] bg-dark-blue" className={styles.top_box}>
@@ -19,19 +27,29 @@ export const Header = () => {
       <Container className={styles.navbar}>
         <Logo />
         <div className={styles.nav_items}>
-          <HeaderLink to={"/about"}>О нас</HeaderLink>
-          <HeaderLink to={"/technologies"}>Технология</HeaderLink>
-          {/* <HeaderLink to={"/monitoring"}>Мониторинг и Прогноз</HeaderLink> */}
-          <HeaderLink to={"/earth-quakes"}>Мониторинг и Прогноз</HeaderLink>
-          <HeaderLink to={"/press-release"}>Пресс релиз</HeaderLink>
-          <HeaderLink to={"/contacts"}>Контакты</HeaderLink>
+          <HeaderLink to={"/about"}>{language.nav_items.about}</HeaderLink>
+          <HeaderLink to={"/technologies"}>
+            {language.nav_items.technologies}
+          </HeaderLink>
+          {/* <HeaderLink to={"/monitoring"}>{language.nav_items.monitoring}</HeaderLink> */}
+          <HeaderLink to={"/earth-quakes"}>
+            {language.nav_items.monitoring}
+          </HeaderLink>
+          <HeaderLink to={"/press-release"}>
+            {language.nav_items.prease_release}
+          </HeaderLink>
+          <HeaderLink to={"/contacts"}>
+            {language.nav_items.contacts}
+          </HeaderLink>
         </div>
         <div className={styles.tools}>
           <img src={search_icon} alt="" />
-          <div className={styles.language_box}>
-            <img src={language} alt="" />
-            <img src={arrow_down} alt="" />
-          </div>
+          <LanguageSelect
+            options={[
+              { title: "ru", value: "ru" },
+              { title: "en", value: "en" },
+            ]}
+          />
           <Burger />
         </div>
       </Container>
@@ -53,5 +71,36 @@ const HeaderLink = (props) => {
       className={({ isActive }) => (isActive ? styles.link_active : "")}
       {...props}
     />
+  );
+};
+
+const LanguageSelect = ({ options = [] }) => {
+  const { changeLanguage } = useTranslation();
+  const [value, setValue] = useState("");
+  const [open, setOpen] = useState(false);
+  useEffect(() => {
+    if (value) changeLanguage(value);
+  }, [value]);
+  const optoinClick = (value) => {
+    setValue(value);
+    setOpen(false);
+  };
+
+  return (
+    <div className={styles.language_box}>
+      <div className={styles.language_select}>
+        <img onClick={() => setOpen((p) => !p)} src={language_img} alt="" />
+        {open && (
+          <div className={styles.language_options}>
+            {options.map(({ title, value }, i) => (
+              <div key={i} onClick={() => optoinClick(value)}>
+                {title}
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+      <img src={arrow_down} alt="" />
+    </div>
   );
 };

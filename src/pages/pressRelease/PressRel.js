@@ -1,6 +1,6 @@
 import React from "react";
 import { useLoaderData } from "react-router";
-import { instance } from "../../api";
+import instance from "../../api";
 import h1_img from "../../assets/trash/home/h1.svg";
 import img from "../../assets/trash/press-release/press-rel.svg";
 import { PressReleaseBox, SingleBox } from "../../components/main";
