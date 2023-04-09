@@ -3,15 +3,17 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
-import App from "../App";
+import { Root } from "../Root";
 import {
   About,
   Contacts,
+  EarthQuake,
+  EarthQuakes,
   Home,
   Login,
   Monitoring,
-  PressReleases,
   PressRel,
+  PressReleases,
   Regional,
   Registration,
   Technologies,
@@ -19,7 +21,7 @@ import {
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<App />}>
+    <Route path="/" element={<Root />}>
       <Route path="login" element={<Login />} action={Login.action} />
       <Route
         path="registration"
@@ -33,6 +35,7 @@ export const router = createBrowserRouter(
         <Route index element={<Monitoring />} loader={Monitoring.loader} />
         <Route path="regional" element={<Regional />} />
       </Route>
+      <Route path="technologies" element={<Technologies />} />
       <Route path="press-release">
         <Route
           index
@@ -41,7 +44,10 @@ export const router = createBrowserRouter(
         />
         <Route path=":id" element={<PressRel />} loader={PressRel.loader} />
       </Route>
-      <Route path="technologies" element={<Technologies />} />
+      <Route path="earth-quakes">
+        <Route index element={<EarthQuakes />} loader={EarthQuakes.loader} />
+        <Route path=":id" element={<EarthQuake />} loader={EarthQuake.loader} />
+      </Route>
     </Route>
   )
 );

@@ -7,7 +7,7 @@ import { Container, SwiperNavigation } from "../../../components/reusable";
 import { generateArray } from "../../../helper";
 
 const data = generateArray(6, {
-  src: quake_img,
+  image: quake_img,
   title: "Землетрясение в Турции",
   description:
     "Our private company LLC SeiEn was established in October 2022 in Yerevan, Armenia",
@@ -17,7 +17,11 @@ const data = generateArray(6, {
 export const EarthquakePlaces = () => {
   return (
     <div>
-      <img className="w-full object-cover mb-[-17%]" src={img} alt="" />
+      <img
+        className="w-full object-cover mb-[-17%] min-h-[307px] med-400:mb-[-69%]"
+        src={img}
+        alt=""
+      />
       <Container>
         <SwiperNavigation className="h-[622px]">
           {data.map((elem, i) => (

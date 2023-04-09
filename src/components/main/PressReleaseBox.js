@@ -3,7 +3,7 @@ import link_to from "../../assets/icons/link-to.svg";
 
 export const PressReleaseBox = ({
   title,
-  describtion,
+  description,
   icon,
   image,
   date,
@@ -28,7 +28,7 @@ export const PressReleaseBox = ({
           <img src={link_to} alt="" />
         </Link>
       </div>
-      <p>{describtion}</p>
+      <p>{description}</p>
       <img src={image} alt="" />
     </div>
   );

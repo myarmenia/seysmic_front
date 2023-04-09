@@ -10,7 +10,10 @@
   @apply max-h-[200px] overflow-y-auto bg-[#ffffff69];
 }
 .defaultOption {
-  @apply flex gap-1 items-center overflow-hidden relative bg-white rounded-[30px] px-[25px] py-[14px] w-[408px] shadow-light cursor-pointer text-ellipsis;
+  @apply flex gap-1 items-center overflow-hidden relative bg-white 
+  rounded-[30px] px-[25px] py-[14px] w-[408px] shadow-light cursor-pointer 
+  text-ellipsis
+  med-600:w-full;
   border: 1px solid #ffffff;
 }
 .title {

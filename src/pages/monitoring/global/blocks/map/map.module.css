@@ -7,7 +7,7 @@
 .blue_box {
   border: 2px solid #3009ac;
   outline: 2px solid #3009ac;
-  @apply absolute duration-100 cursor-pointer;
+  @apply absolute duration-100 cursor-pointer med-600:border-[0.1px] med-600:outline-[0.1px];
 }
 
 .blue_box_id {

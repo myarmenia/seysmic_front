@@ -1,6 +1,6 @@
 .nav {
   @apply flex flex-col p-1 bg-[#F7F7F7] rounded-[9px] w-[105px] m-3
-  absolute top-0 right-[24px] gap-5;
+  absolute top-0 right-[24px] gap-5 z-[1000] med-600:right-2 med-600:gap-3;
   box-shadow: 0px 1.75494px 4.38734px rgba(0, 0, 0, 0.1);
 }
 .nav_item {

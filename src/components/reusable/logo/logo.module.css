@@ -1,6 +1,7 @@
 .logo {
-  @apply font-normal text-[10px] underline text-dark-blue flex items-center gap-[7px] max-w-[205px];
+  @apply font-normal text-[10px] underline text-dark-blue flex items-center gap-[7px] max-w-[205px]
+  med-400:[&_img]:w-[45px] med-400:[&_img]:h-[45px];
 }
 .span {
-  @apply leading-3 text-start;
+  @apply leading-3 text-start med-400:text-[10px] med-400:leading-3;
 }

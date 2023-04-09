@@ -16,14 +16,15 @@ body {
   position: relative;
   height: 100%;
 }
-.app {
+.root {
   @apply min-h-screen grid grid-rows-[auto_1fr_auto] max-w-[100vw] my-0 mx-auto;
   /* @apply max-w-[1250px] px-4; */
 }
 /* ================================================================ */
 .main-input {
-  @apply bg-white rounded-[30px] px-[25px] py-[11px] w-[408px] shadow-light;
   border: 1px solid #ffffff;
+  @apply bg-white rounded-[30px] px-[25px] py-[11px] w-[408px] shadow-light
+  med-600:w-full;
 }
 .main-input::placeholder {
   @apply text-base text-[#b2b2b2];

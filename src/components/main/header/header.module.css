@@ -21,11 +21,32 @@
   background: linear-gradient(180deg, #0026aa 0%, #30cfff 100%);
 }
 .tools {
-  @apply flex items-center gap-[18px];
+  @apply flex items-center gap-[18px] med-400:gap-3 shrink-0;
+}
+.tools * {
+  @apply shrink-0;
 }
 .tools img {
   @apply cursor-pointer;
 }
+
+/* ======================================================================= */
 .language_box {
-  @apply flex items-center gap-[6px] cursor-pointer;
+  @apply flex items-center gap-1 cursor-pointer relative;
+}
+.language_select {
+  @apply w-[27px] h-[27px] bg-transparent [&>div]:min-w-[27px];
+}
+.language_options {
+  @apply z-[999] left-0 flex flex-col rounded-md w-full absolute top-[calc(100%_+_5px)] overflow-hidden;
+}
+.language_options > div {
+  @apply py-2 px-4 bg-white hover:bg-slate-300 duration-300 text-base font-bold;
+}
+/* ======================================================================= */
+
+@media (max-width: 900px) {
+  .nav_items {
+    @apply hidden;
+  }
 }

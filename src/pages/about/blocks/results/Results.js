@@ -1,6 +1,6 @@
 import React from "react";
+import { Container, Title } from "../../../../components/reusable";
 import styles from "./results.module.css";
-import { Container, Gradient, Title } from "../../../../components/reusable";
 
 const results = [
   {
@@ -37,7 +37,7 @@ export const Results = () => {
   return (
     <Container
       bg="bg-[#F0F2F5]"
-      className="pt-[45px] pb-[80px] flex flex-col gap-[55px]"
+      className="pt-[45px] pb-[80px] flex flex-col gap-[55px] med-600:gap-[35px]"
     >
       <Title>Основные научные результаты</Title>
       <div className="grid grid-cols-2 gap-x-5 gap-y-[23px] justify-items-center med-900:grid-cols-1">

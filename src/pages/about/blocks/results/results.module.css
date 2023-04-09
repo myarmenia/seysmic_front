@@ -1,17 +1,18 @@
 .box {
-  @apply w-[80%] p-[14px] rounded-full flex items-center gap-2;
+  @apply w-[80%] p-[9px] rounded-full flex items-center gap-2 med-600:w-full;
   box-shadow: 4px 4px 10px rgba(197, 186, 235, 0.75);
 }
 .box_index {
-  @apply text-transparent px-[28px] shrink-0 w-[83px] h-[83px] py-[11px] rounded-full 
-  bg-white flex items-center justify-center;
+  @apply text-transparent px-[28px] shrink-0 w-[83px] h-[83px] py-[11px] 
+  rounded-full bg-white flex items-center justify-center
+  med-600:w-[42px] med-600:h-[42px] med-600:px-[14px];
   box-shadow: 4px 4px 10px rgba(139, 69, 28, 0.75);
 }
 .box > p {
-  @apply font-semibold leading-[180%] text-base text-white;
+  @apply font-semibold leading-[180%] text-base text-white med-600:text-[12px] med-600:leading-[180%];
 }
 .box_index p {
-  @apply font-bold text-[32px]  h-[48px];
+  @apply font-bold text-[32px] h-[48px] med-600:text-lg med-600:h-fit;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

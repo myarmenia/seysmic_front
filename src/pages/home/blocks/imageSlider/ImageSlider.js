@@ -21,7 +21,7 @@ export const ImageSlider = () => {
       <Swiper
         pagination={true}
         modules={[Pagination]}
-        className="w-full h-[60vh] max-h-[622px] min-h-[200px]"
+        className="w-full h-[60vh] max-h-[622px] min-h-[229px] med-400:h-[229px]"
         // className="w-full h-[622px]"
       >
         {images.map(({ src, description }, i) => (

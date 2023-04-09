@@ -14,7 +14,7 @@ export const CstmInput = ({
   const errorMessage = useError(regName, error);
   const register = useFormRegister(regName);
   return (
-    <div className={"flex w-fit relative " + boxClassName}>
+    <div className={"flex w-fit relative med-600:w-full " + boxClassName}>
       {img && (
         <img
           src={img}

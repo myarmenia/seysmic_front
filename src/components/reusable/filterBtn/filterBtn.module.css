@@ -1,5 +1,6 @@
 .btn {
-  @apply px-[26px] py-[9.75px] text-[#818181] text-lg rounded-[20px] bg-white duration-300;
+  @apply px-[26px] py-[9.75px] text-[#818181] text-lg rounded-[20px] 
+  bg-white duration-300 med-600:text-lg med-600:px-4 med-600:py-2;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 .btn:hover,

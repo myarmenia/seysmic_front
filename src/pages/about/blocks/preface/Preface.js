@@ -33,10 +33,12 @@ export const Preface = () => {
           background: `url('${img}') no-repeat`,
           backgroundSize: "cover",
         }}
-        className="h-[490px] bg-cover"
+        className="h-[490px] bg-cover med-600:h-[200px]"
       >
-        <p className="text-white h-full text-[36px] leading-[168%] flex flex-col items-center justify-center text-center">
-          <span className="text-[30px] font-bold">Международный Центр </span>
+        <p className="text-white h-full text-[36px] leading-[168%] flex flex-col items-center justify-center text-center med-600:text-[16px] max-w-[80%] mx-auto">
+          <span className="text-[30px] font-bold med-600:text-[14px]">
+            Международный Центр{" "}
+          </span>
           <span className="font-bold">
             Глобального Мониторинга Сейсмического Риска
           </span>
@@ -46,7 +48,7 @@ export const Preface = () => {
         </p>
       </div>
       <Container className="py-[38px]">
-        <p className="leading-[168.5%] text-xl">
+        <p className="leading-[168.5%] text-xl med-600:text-[14px] med-600:leading-[165%]">
           Наша компания ООО «СейЭн» была создана в октябре 2022 года в Ереване,
           Армения (учредители Акопян С.Ц. и Лалаян Г.Г.). Она является
           правопреемником компаний Центр прогнозирования землетрясений,
@@ -82,7 +84,11 @@ export const Preface = () => {
 const Box = ({ name, roles, description, image, className = "" }) => {
   return (
     <div className="border-b-[9px] border-[#DEDEDE] py-[57px] first:border-t-[9px]">
-      <Container className={"flex gap-[65px] items-start " + className}>
+      <Container
+        className={
+          "flex gap-[65px] items-start med-900:!flex-col-reverse " + className
+        }
+      >
         <div className="flex flex-col">
           <span className="text-dark-blue font-bold text-[24px] pb-[20px]">
             {name}
@@ -91,14 +97,14 @@ const Box = ({ name, roles, description, image, className = "" }) => {
             {roles.map((role, i) => (
               <p
                 key={i}
-                className="text-[20px] text-black font-bold leading-[180%]"
+                className="text-[20px] text-black font-bold leading-[180%] med-600:text-[14px]"
               >
                 {role}
               </p>
             ))}
           </div>
           {description && (
-            <p className="text-justify font-medium text-[15x] leading-[180%] mt-[26px] whitespace-pre-wrap">
+            <p className="text-justify font-medium text-[15x] leading-[180%] mt-[26px] whitespace-pre-wrap med-600:text-[14px] med-600:leading-[180%]">
               {description}
             </p>
           )}
