@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, Suspense } from "react";
 import { router } from "./routes";
 import { createContext } from "react";
 import translation from "./translation.json";
@@ -21,9 +21,11 @@ function App() {
     } else sessionStorage.setItem("lanugage", "ru");
   }, []);
   return (
-    <Translation.Provider value={{ language, changeLanguage }}>
-      <RouterProvider router={router} />
-    </Translation.Provider>
+    <Suspense fallback={<div>Loading...</div>}>
+      <Translation.Provider value={{ language, changeLanguage }}>
+        <RouterProvider router={router} />
+      </Translation.Provider>
+    </Suspense>
   );
 }
 
