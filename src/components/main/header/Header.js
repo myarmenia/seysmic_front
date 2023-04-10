@@ -10,6 +10,7 @@ import { getHeaderTime } from "../../../helper";
 import { Burger } from "../burger/Burger";
 import { useTranslation } from "../../../App";
 import { useEffect } from "react";
+import { CustomSelect } from "../../forms";
 
 export const Header = () => {
   const {
@@ -88,19 +89,23 @@ const LanguageSelect = ({ options = [] }) => {
 
   return (
     <div className={styles.language_box}>
-      <div className={styles.language_select}>
-        <img onClick={() => setOpen((p) => !p)} src={language_img} alt="" />
-        {open && (
-          <div className={styles.language_options}>
-            {options.map(({ title, value }, i) => (
-              <div key={i} onClick={() => optoinClick(value)}>
-                {title}
-              </div>
-            ))}
-          </div>
-        )}
+      <div className="flex items-center gap-1">
+        <div className={styles.language_select}>
+          <img onClick={() => setOpen((p) => !p)} src={language_img} alt="" />
+        </div>
+        <img src={arrow_down} alt="" />
       </div>
-      <img src={arrow_down} alt="" />
+      {/* {open && ( */}
+      <div className={styles.language_options}>
+        <div className="max-h-[200px] overflow-y-auto bg-[#ffffff69] flex flex-col">
+          {options.map(({ title, value }, i) => (
+            <span key={i} onClick={() => optoinClick(value)}>
+              {title}
+            </span>
+          ))}
+        </div>
+      </div>
+      {/* )} */}
     </div>
   );
 };
