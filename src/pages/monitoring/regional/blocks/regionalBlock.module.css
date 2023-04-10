@@ -1,5 +1,5 @@
 .cosmos_img_box {
-  @apply my-[60px] px-[30px] pr-[120px];
+  @apply my-[60px] pr-[120px];
 }
 .cosmos_img_box p {
   @apply text-xl text-justify text-black my-[30px];
@@ -13,4 +13,31 @@
 /* schema */
 .schema_processing {
   @apply flex flex-col gap-[20px] mt-[30px] text-justify text-black  text-sm leading-[42px];
+}
+.sputnik_box {
+  @apply flex items-center gap-[20px];
+}
+/* .sputnik_box:nth-child(1) {
+  @apply h-[110px];
+} */
+.sputnik_box_child {
+  @apply flex justify-between gap-2;
+}
+.sputnik_box_title {
+  @apply text-center text-black w-[200px] h-[200px] flex flex-col justify-end;
+}
+.sputnik_box:last-child .sputnik_box_title {
+  @apply h-[100px] justify-center;
+}
+.sputnik_box_title img {
+  @apply w-[70px] my-0 mx-auto mt-[20px];
+}
+.dot_line_box {
+  @apply w-[100px] flex justify-center;
+}
+.dot_line_box img {
+  @apply rotate-[223deg];
+}
+.sputnik_box_line_down {
+  @apply rotate-[313deg] left-[10%] top-[73%] w-[100px];
 }
