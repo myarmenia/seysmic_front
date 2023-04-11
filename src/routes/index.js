@@ -12,6 +12,7 @@ import {
   Home,
   Login,
   Monitoring,
+  OurProduct,
   PressRel,
   PressReleases,
   Regional,
@@ -35,6 +36,7 @@ export const router = createBrowserRouter(
         <Route index element={<Monitoring />} loader={Monitoring.loader} />
         <Route path="regional" element={<Regional />} />
       </Route>
+      <Route path="product" element={<OurProduct />} />
       <Route path="technologies" element={<Technologies />} />
       <Route path="press-release">
         <Route
