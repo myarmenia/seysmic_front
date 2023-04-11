@@ -8,7 +8,7 @@
   @apply italic [&>p]:text-[#1A374D];
 }
 
-@media (max-width: 400px) {
+@media (max-width: 600px) {
   .bg {
     background: #e7e7e7;
   }

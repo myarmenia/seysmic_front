@@ -38,7 +38,6 @@ export const CosmosImage = () => {
           динамику развития систем линеаментов до и после сильных землетрясений.
         </p>
       </div>
-      <MonitoringNavbar className="!top-[50px]"/>
     </Container>
   );
 };

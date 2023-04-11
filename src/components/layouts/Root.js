@@ -1,5 +1,5 @@
 import { Outlet, useLocation, useNavigate } from "react-router";
-import { Footer, Header } from "./components/main";
+import { Footer, Header } from "../main";
 import { useEffect } from "react";
 
 export const Root = () => {
