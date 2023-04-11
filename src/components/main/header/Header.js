@@ -1,16 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { useTranslation } from "../../../App";
 import arrow_down from "../../../assets/icons/arrow-down-blue.svg";
 import language_img from "../../../assets/icons/language.svg";
 import search_icon from "../../../assets/icons/searchIcon.svg";
 import logo from "../../../assets/main/logo.svg";
-import { Container, Logo } from "../../reusable";
-import styles from "./header.module.css";
 import { getHeaderTime } from "../../../helper";
+import { Container, Logo } from "../../reusable";
 import { Burger } from "../burger/Burger";
-import { useTranslation } from "../../../App";
-import { useEffect } from "react";
-import { CustomSelect } from "../../forms";
+import styles from "./header.module.css";
 
 export const Header = () => {
   const {
@@ -89,7 +87,7 @@ const LanguageSelect = ({ options = [] }) => {
   };
 
   return (
-    <div className="flex justify-center w-[27px] h-[27px]">
+    <div className="flex justify-center w-[39px] h-[27px]">
       <div className={styles.language_box}>
         <div className="flex items-center gap-1">
           <div className={styles.language_select}>

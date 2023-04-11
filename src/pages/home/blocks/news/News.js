@@ -39,7 +39,7 @@ const data = generateArray(3, {
 export const News = () => {
   return (
     <div className="py-[40px] max-w-[1440px] mx-auto">
-      <div className="med-400:h-[44px] relative w-full mb-[65px] med-400:justify-between med-400:flex">
+      <div className="med-600:h-[44px] relative w-full mb-[65px] med-600:justify-between med-600:flex">
         <div className={styles.logo}>
           <img className="mx-auto" src={logo} alt="" />
         </div>
@@ -60,7 +60,7 @@ export const News = () => {
 
 const Box = ({ author, place, subtitle, title, describcion }) => {
   return (
-    <div className="grid grid-cols-2 gap-[50px] med-400:grid-cols-1 med-400:gap-6">
+    <div className="grid grid-cols-2 gap-[50px] med-600:grid-cols-1 med-600:gap-6">
       <img src={img} alt="" />
       <div className="flex flex-col gap-1 text-black text-justify">
         <b className="flex flex-col">

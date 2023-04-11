@@ -46,7 +46,6 @@ export const Countries = () => {
           ))}
         </div>
       </div>
-      <MonitoringNavbar />
     </div>
   );
 };

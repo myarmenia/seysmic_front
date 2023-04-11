@@ -3,5 +3,5 @@
   @apply flex flex-col gap-5 justify-between;
 }
 .li {
-  @apply text-base leading-[112%] text-justify text-black ml-[40px] pl-[16px] med-400:pl-[5px] med-400:ml-[16px];
+  @apply text-base leading-[112%] text-justify text-black ml-[40px] pl-[16px] med-600:pl-[5px] med-600:ml-[16px];
 }
