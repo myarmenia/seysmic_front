@@ -12,7 +12,7 @@ export const Partners = () => {
           <img className="w-[100px]" src={logo} alt="" />
           <b>
             Официальный сайт партнера{" "}
-            <a className="font-bold" href="#">
+            <a className="font-bold" href="https://lgg.foundation/">
               https://lgg.foundation/
             </a>
           </b>

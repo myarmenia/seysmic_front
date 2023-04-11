@@ -4,9 +4,8 @@ export const useFileUploader = (onChange) => {
   const [file, setFile] = useState();
   const onFileUpload = (event) => {
     const { files } = event.target;
-    const selectedFiles = files;
-    if (!!selectedFiles?.[0]) {
-      setFile(selectedFiles?.[0]);
+    if (!!files?.[0]) {
+      setFile(files?.[0]);
       onChange?.(event);
     }
   };

@@ -6,3 +6,4 @@ export { QuakeBox } from "./quakeBox/QuakeBox";
 export { Boxes } from "./Boxes";
 export { SingleBox } from "./SingleBox";
 export { Burger } from "./burger/Burger";
+export { Spinner } from "./Spinner";
