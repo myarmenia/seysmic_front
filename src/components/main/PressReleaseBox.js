@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import link_to from "../../assets/icons/link-to.svg";
 
 export const PressReleaseBox = ({
@@ -10,12 +10,10 @@ export const PressReleaseBox = ({
   time,
   to,
 }) => {
-  const location = useLocation();
-  console.log(location);
   return (
-    <div className="bg-white flex flex-col gap-2 shadow-[0px_2px_11px_rgba(0,_0,_0,_0.15)] px-[23px] py-[22px] rounded-[6px]">
+    <div className="bg-white flex flex-col justify-between gap-2 shadow-[0px_2px_11px_rgba(0,_0,_0,_0.15)] px-[23px] py-[22px] rounded-[6px]">
       <div className="flex justify-between gap-5">
-        <div className="flex items-center gap-3">
+        <Link to={to} className="flex items-center gap-3">
           <img src={icon} alt="" />
           <div className="flex flex-col gap-[6px]">
             <span className="font-bold text-dark-blue text-[11px]">
@@ -25,14 +23,14 @@ export const PressReleaseBox = ({
               {date} {time}
             </span>
           </div>
-        </div>
+        </Link>
         {/* <Link to={to}> */}
         <img
           onClick={() => {
             navigator.share({
               title: "aaaa",
               text: "aaa",
-              url: `${process.env.SITE_URL}/${to}`,
+              url: window.location.origin + to,
             });
           }}
           src={link_to}
@@ -40,7 +38,7 @@ export const PressReleaseBox = ({
         />
         {/* </Link> */}
       </div>
-      <p>{description}</p>
+      <Link to={to}>{description}</Link>
       <img src={image} alt="" />
     </div>
   );

@@ -1,7 +1,6 @@
 import React from "react";
-import styles from "./countries.module.css";
 import img from "../../../../../assets/main/monitoring/globus.svg";
-import { MonitoringNavbar } from "../../../../../components/main";
+import styles from "./countries.module.css";
 
 const countries = [
   {

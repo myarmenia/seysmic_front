@@ -19,7 +19,7 @@ const Component = () => {
   } = useLoaderData();
 
   const data1 = data.map((el) => ({
-    description: el.body.split(" ").slice(0, 8).join(" ") + "...",
+    description: el.body.split("").slice(0, 68).join("") + "...",
     to: `/earth-quakes/${el.id}`,
     ...expl,
   }));

@@ -1,7 +1,6 @@
 import React from "react";
 import { Container, Title } from "../../../../components/reusable";
 import styles from "../blocks/regionalBlock.module.css";
-import { MonitoringNavbar } from "../../../../components/main";
 
 export const CosmosImage = () => {
   return (

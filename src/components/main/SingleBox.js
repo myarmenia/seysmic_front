@@ -28,7 +28,18 @@ export const SingleBox = ({
                 </span>
               </div>
             </div>
-            <img className="w-[33px]" src={link_to} alt="" />
+            <img
+              onClick={() => {
+                navigator.share({
+                  title: "aaaa",
+                  text: "aaa",
+                  url: window.location.href,
+                });
+              }}
+              className="w-[33px]"
+              src={link_to}
+              alt=""
+            />
           </div>
           <p>{description}</p>
           <div className="grid grid-cols-[repeat(auto-fill,_minmax(250px,_1fr))] gap-[17px]">

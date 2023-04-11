@@ -19,7 +19,7 @@ const Component = () => {
   } = useLoaderData();
 
   const data1 = data.map((el) => ({
-    description: el.body.split(" ").slice(0, 8).join(" ") + "...",
+    description: el.body.split("").slice(0, 68).join("") + "...",
     to: `/press-release/${el.id}`,
     ...expl,
   }));
@@ -34,7 +34,6 @@ const Component = () => {
 };
 
 const loader = async ({ params }) => {
-  console.log(params.id);
   const item = await instance.get(`posts/${params.id}?userId=1`);
   const data = await instance.get(`posts?userId=1`);
 
