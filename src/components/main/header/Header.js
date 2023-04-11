@@ -49,6 +49,7 @@ export const Header = () => {
             options={[
               { title: "ru", value: "ru" },
               { title: "en", value: "en" },
+              { title: "am", value: "am" },
             ]}
           />
           <Burger />
@@ -88,24 +89,26 @@ const LanguageSelect = ({ options = [] }) => {
   };
 
   return (
-    <div className={styles.language_box}>
-      <div className="flex items-center gap-1">
-        <div className={styles.language_select}>
-          <img onClick={() => setOpen((p) => !p)} src={language_img} alt="" />
+    <div className="flex justify-center w-[27px] h-[27px]">
+      <div className={styles.language_box}>
+        <div className="flex items-center gap-1">
+          <div className={styles.language_select}>
+            <img onClick={() => setOpen((p) => !p)} src={language_img} alt="" />
+          </div>
+          <img src={arrow_down} alt="" />
         </div>
-        <img src={arrow_down} alt="" />
+        {open && (
+          <div className={styles.language_options}>
+            <div className="max-h-[200px] overflow-y-auto bg-[#ffffff69] flex flex-col">
+              {options.map(({ title, value }, i) => (
+                <span key={i} onClick={() => optoinClick(value)}>
+                  {title}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
-      {/* {open && ( */}
-      <div className={styles.language_options}>
-        <div className="max-h-[200px] overflow-y-auto bg-[#ffffff69] flex flex-col">
-          {options.map(({ title, value }, i) => (
-            <span key={i} onClick={() => optoinClick(value)}>
-              {title}
-            </span>
-          ))}
-        </div>
-      </div>
-      {/* )} */}
     </div>
   );
 };

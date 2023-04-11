@@ -44,5 +44,28 @@
     "monitoring": {},
     "contacts": {},
     "press_release": {}
+  },
+  "am": {
+    "main": {
+      "header": {
+        "nav_items": {
+          "about": "Մեր մասին",
+          "technologies": "Տեխնոլոգիա",
+          "monitoring": "Մոնիտորինգ և կանխատեսում",
+          "prease_release": "մամլո հաղորդագրությունում",
+          "contacts": "Կոնտակտներ"
+        }
+      },
+      "footer": {
+        "about": "Մեր մասին",
+        "technologies": "Տեխնոլոգիա"
+      }
+    },
+    "home": {},
+    "about": {},
+    "technology": {},
+    "monitoring": {},
+    "contacts": {},
+    "press_release": {}
   }
 }
