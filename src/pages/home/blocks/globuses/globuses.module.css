@@ -1,5 +1,11 @@
+.globuses {
+  @apply overflow-hidden grid gap-y-10 grid-cols-[repeat(auto-fit,_minmax(280px,_1fr))] justify-items-center py-[80px] med-600:grid-cols-2 med-600:gap-5 med-600:py-[30px];
+}
 .globus {
   @apply h-auto relative flex flex-col gap-[25px] items-center cursor-pointer w-[132px] min-h-[132px];
+}
+.globus_title {
+  @apply text-lg leading-5 text-center text-dark-blue med-400:text-sm med-400:leading-4;
 }
 .globus:hover .globus_desc {
   @apply opacity-100;
@@ -25,13 +31,11 @@
   text-fill-color: transparent;
 }
 
-.ad_box {
-  background: url("../../../../assets/main/home/ad1.svg") no-repeat center;
-  background-size: cover;
-  @apply py-[50px];
+.ad_p {
+  @apply max-w-[90%] text-white w-max py-2 px-5 bg-[#00194A] font-bold text-[24px] text-center absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 med-400:text-base med-400:leading-5;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 600px) {
   .globus {
     @apply bg-white rounded-[20px] p-[22px] pb-[27px] w-full;
     box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);

@@ -7,7 +7,7 @@ import swiper_arrow from "../../assets/icons/arrow-right-swiper.svg";
 export const SwiperNavigation = ({ children, className = "" }) => {
   const swiperRef = useRef();
   return (
-    <div className="flex items-center justify-between gap-[30px] med-900:w-[80%] med-900:mx-auto med-600:w-[90%] med-400:gap-3 med-400:m-[0_auto] med-400:w-full">
+    <div className="flex items-center justify-between gap-[30px] med-900:w-[80%] med-900:mx-auto med-600:w-[90%] med-600:gap-3 med-600:m-[0_auto] med-400:w-full">
       <img
         onClick={() => swiperRef.current?.slidePrev()}
         src={swiper_arrow}

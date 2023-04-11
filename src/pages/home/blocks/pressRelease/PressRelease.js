@@ -20,6 +20,7 @@ const data = generateArray(5, {
   image: organization,
   date: "24.02.2023",
   time: "16:00",
+  to: "/press-release/1",
 });
 
 export const PressRelease = () => {
@@ -34,7 +35,7 @@ export const PressRelease = () => {
           </SwiperSlide>
         ))}
       </SwiperNavigation>
-          
+
       <CustomBtn className="mx-auto">Узнать больше</CustomBtn>
     </Container>
   );

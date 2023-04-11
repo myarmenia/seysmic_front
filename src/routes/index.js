@@ -3,7 +3,7 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
-import { Root } from "../Root";
+import { Root, MonitoringRoot } from "../components/layouts";
 import {
   About,
   Contacts,
@@ -32,7 +32,7 @@ export const router = createBrowserRouter(
       <Route path="home" element={<Home />} />
       <Route path="about" element={<About />} />
       <Route path="contacts" element={<Contacts />} />
-      <Route path="monitoring">
+      <Route path="monitoring" element={<MonitoringRoot />}>
         <Route index element={<Monitoring />} loader={Monitoring.loader} />
         <Route path="regional" element={<Regional />} />
       </Route>
