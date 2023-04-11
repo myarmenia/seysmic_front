@@ -1,0 +1,38 @@
+.line {
+  @apply w-[264px] h-[2px];
+  background: linear-gradient(180deg, #0026aa 0%, #30cfff 100%);
+}
+.product_card {
+  @apply mt-[50px];
+}
+.card_box {
+  @apply flex items-end flex-col  my-[60px];
+}
+/* .product_card:nth-child(2) .card_box {
+  @apply rounded-[20px] flex relative mt-[-20px];
+  background-color: lime;
+} */
+.card_box_child {
+  @apply rounded-[20px] flex relative;
+}
+
+.card_box_child div:nth-child(1) {
+  @apply w-[30%] pl-[30px] py-[10px] pt-[50px] mr-[-70px];
+  background: linear-gradient(180deg, #ffffff 1%, #e7e8ed 99.99%);
+  box-shadow: 1.79447px 1.79447px 5.38342px rgba(0, 0, 0, 0.35);
+}
+.card_box_child div:nth-child(1) h2 {
+  @apply text-3xl font-semibold text-[#ea3933];
+}
+.card_box_child div:nth-child(1) p {
+  @apply text-base  text-[#000];
+}
+.bg {
+  @apply relative w-[70%];
+}
+
+/* .card_box_child div:nth-child(2)::before {
+  @apply absolute w-[100px]  h-full right-[-40px] z-20;
+  background: linear-gradient(270deg, #ee4331 0%, #df173e 85%);
+  transform: skew(30deg) matrix(-1, 0, 0, 1, 0, 0);
+  content: ""; */
