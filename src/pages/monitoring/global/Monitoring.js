@@ -2,7 +2,7 @@ import React from "react";
 import { Map, Countries } from "./blocks";
 import instance from "../../../api";
 
-export const Component = () => {
+const Component = () => {
   return (
     <div className="py-5">
       <Map />
