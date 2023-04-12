@@ -7,3 +7,4 @@ export { SwiperNavigation } from "./SwiperNavigation";
 export { Ul } from "./ul/Ul";
 export { SocIcons } from "./SocIcons";
 export { FilterBtn } from "./filterBtn/FilterBtn";
+export { Modal } from "./modal/Modal";

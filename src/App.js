@@ -1,31 +1,23 @@
-import React, { useEffect, Suspense } from "react";
-import { router } from "./routes";
-import { createContext } from "react";
-import translation from "./translation.json";
+import React, { createContext, useContext, useState } from "react";
 import { RouterProvider } from "react-router";
-import { useState } from "react";
-import { useContext } from "react";
+import { router } from "./routes";
+import translation from "./translation.json";
 
 const Translation = createContext(null);
 export const useTranslation = () => useContext(Translation);
 
 function App() {
-  const [language, setLanguage] = useState(translation.ru);
+  const [language, setLanguage] = useState(
+    translation[localStorage.getItem("lanugage")] || translation.ru
+  );
   const changeLanguage = (lang) => {
     setLanguage(translation[lang]);
-    sessionStorage.setItem("lanugage", lang);
+    localStorage.setItem("lanugage", lang);
   };
-  useEffect(() => {
-    if (sessionStorage?.getItem("lanugage")) {
-      changeLanguage(sessionStorage?.getItem("lanugage"));
-    } else sessionStorage.setItem("lanugage", "ru");
-  }, []);
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <Translation.Provider value={{ language, changeLanguage }}>
-        <RouterProvider router={router} />
-      </Translation.Provider>
-    </Suspense>
+    <Translation.Provider value={{ language, changeLanguage }}>
+      <RouterProvider router={router} />
+    </Translation.Provider>
   );
 }
 
