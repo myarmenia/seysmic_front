@@ -4,6 +4,7 @@ import { useEffect } from "react";
 
 export const Root = () => {
   const navigate = useNavigate();
+  const navigation = useNavigation();
   const { pathname } = useLocation();
   useEffect(() => {
     if (pathname === "/") {
@@ -11,10 +12,6 @@ export const Root = () => {
     }
   }, []);
 
-  const navigation = useNavigation();
-  useEffect(() => {
-    console.log(navigation.state);
-  }, [navigation.state]);
   return (
     <div className="root">
       <Header />
@@ -26,3 +23,4 @@ export const Root = () => {
     </div>
   );
 };
+
