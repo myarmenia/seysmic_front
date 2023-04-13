@@ -1,3 +1,3 @@
 export function getLang(path) {
-  return `/${localStorage.getItem("lang")}${path}`;
+  return `/${localStorage.getItem("lang") || "ru"}${path}`;
 }

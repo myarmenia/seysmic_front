@@ -7,7 +7,7 @@
 }
 .marquee {
   @apply absolute -translate-y-1/2 top-1/2;
-  animation: marquee 5s cubic-bezier(0, 0, 0, 0) 0s infinite;
+  animation: marquee 3s cubic-bezier(0, 0, 0, 0) 0s infinite;
   animation-play-state: running;
 }
 @keyframes marquee {

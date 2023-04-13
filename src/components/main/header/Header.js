@@ -10,7 +10,6 @@ import styles from "./header.module.css";
 import { LanguageSelect } from "../languageSelect/LanguageSelect";
 
 export const Header = () => {
-  const { lang } = useParams();
   const {
     language: {
       main: { header: language },
@@ -45,13 +44,7 @@ export const Header = () => {
         </div>
         <div className={styles.tools}>
           <img src={search_icon} alt="" />
-          <LanguageSelect
-            options={[
-              { title: "ru", value: "ru" },
-              { title: "en", value: "en" },
-              { title: "am", value: "am" },
-            ]}
-          />
+          <LanguageSelect />
           <Burger />
         </div>
       </Container>

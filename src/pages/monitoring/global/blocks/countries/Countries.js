@@ -1,28 +1,23 @@
 import React, { useRef } from "react";
 import img from "../../../../../assets/main/monitoring/globus.svg";
+import { useAnimation } from "../../../../../hooks";
 import { monitoring_countries as countries } from "../../../../../store/constats";
 import styles from "./countries.module.css";
 
 export const Countries = () => {
   const ref = useRef(null);
-
-  const handleScroll = () => {
-    if (ref.current) {
-      const { scrollTop, scrollHeight, clientHeight } = ref.current;
-      if (scrollTop + clientHeight === scrollHeight) {
-        // TO SOMETHING HERE
-        console.log("Reached bottom");
-      }
-    }
-  };
-
+  const bool = useAnimation(ref);
   return (
-    <div ref={ref} onScroll={handleScroll} className={styles.cont}>
+    <div ref={ref} className={styles.cont}>
       <div className={styles.img_box}>
         <img src={img} alt="" className={styles.img} />
         <div className={styles.nums}>
-          {countries.map((el) => (
-            <Box key={el.index} {...el} />
+          {countries.map((el, i) => (
+            <Box
+              style={{ opacity: bool ? 1 : 0, transitionDelay: `${i / 2}s` }}
+              key={el.index}
+              {...el}
+            />
           ))}
         </div>
       </div>
@@ -30,17 +25,11 @@ export const Countries = () => {
   );
 };
 
-const Box = ({ index, title, description }) => {
+const Box = ({ index, title, description, style }) => {
   return (
     <div className={styles.num}>
-      <span
-        onMouseEnter={(e) => {
-          e.target.nextElementSibling.classList.add("!opacity-100");
-        }}
-      >
-        {index}
-      </span>
-      <div>
+      <span>{index}</span>
+      <div style={style}>
         <span>{title}</span>
         <p>{description}</p>
       </div>

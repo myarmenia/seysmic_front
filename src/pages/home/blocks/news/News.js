@@ -6,6 +6,7 @@ import img from "../../../../assets/main/book-img.svg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
 import { generateArray } from "../../../../helper";
+import { CustomBtn } from "../../../../components/forms";
 
 const data = generateArray(3, {
   title: "Энтропия, Сейсмология и Взгляд в Космологию:",
@@ -60,19 +61,22 @@ export const News = () => {
 
 const Box = ({ author, place, subtitle, title, describcion }) => {
   return (
-    <div className="grid grid-cols-2 gap-[50px] med-600:grid-cols-1 med-600:gap-6">
-      <img src={img} alt="" />
-      <div className="flex flex-col gap-1 text-black text-justify">
-        <b className="flex flex-col">
-          <span className="font-semibold text-base">{title}</span>
-          <span className="font-semibold text-sm">{subtitle}</span>
-          <span className="text-xs font-normal my-2">{author}</span>
-        </b>
-        <div>
-          <span className="text-[10px] my-2">{place}</span>
-          <p className="leading-[170%] text-xs">{describcion}</p>
+    <div className="flex flex-col gap-[35px] items-center mb-[50px]">
+      <div className="grid grid-cols-2 gap-[50px] med-600:grid-cols-1 med-600:gap-6">
+        <img src={img} alt="" />
+        <div className="flex flex-col gap-1 text-black text-justify">
+          <b className="flex flex-col">
+            <span className="font-semibold text-base">{title}</span>
+            <span className="font-semibold text-sm">{subtitle}</span>
+            <span className="text-xs font-normal my-2">{author}</span>
+          </b>
+          <div>
+            <span className="text-[10px] my-2">{place}</span>
+            <p className="leading-[170%] text-xs">{describcion}</p>
+          </div>
         </div>
       </div>
+      <CustomBtn>Купить книгу</CustomBtn>
     </div>
   );
 };
