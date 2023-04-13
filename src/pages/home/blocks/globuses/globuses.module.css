@@ -1,5 +1,7 @@
 .globuses {
-  @apply overflow-hidden grid gap-y-10 grid-cols-[repeat(auto-fit,_minmax(280px,_1fr))] justify-items-center py-[80px] med-600:grid-cols-2 med-600:gap-5 med-600:py-[30px];
+  @apply grid gap-y-10 grid-cols-[repeat(auto-fit,_minmax(280px,_1fr))] 
+  justify-items-center py-[80px] med-600:grid-cols-2 med-600:gap-5 med-600:py-[30px];
+  overflow: inherit;
 }
 .globus {
   @apply h-auto relative flex flex-col gap-[25px] items-center cursor-pointer w-[132px] min-h-[132px];
@@ -11,7 +13,8 @@
   @apply opacity-100;
 }
 .globus_desc {
-  @apply opacity-0 duration-500 absolute w-[225%] left-1/2 top-[5%] -translate-x-1/2 -translate-y-1/2 
+  @apply opacity-0 duration-500 absolute w-[225%] left-1/2 bottom-[calc(100%_+_5px)] 
+  -translate-x-1/2 z-[999999999]
     text-dark-blue text-center leading-[19px] bg-white  
     px-[45px] rounded-[20px] pt-[16px] pb-[23px] flex flex-col gap-2;
   box-shadow: 0 5px 10px 0px #74747480;

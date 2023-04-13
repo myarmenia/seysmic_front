@@ -3,6 +3,7 @@ import { Gradient } from "../../reusable";
 import { CustomBtn } from "../../forms";
 import styles from "./quakeBox.module.css";
 import { useNavigate } from "react-router-dom";
+import { getLang } from "../../../helper";
 
 export const QuakeBox = ({ image, title, description, date, to }) => {
   const navigate = useNavigate();
@@ -10,7 +11,7 @@ export const QuakeBox = ({ image, title, description, date, to }) => {
     <div className={styles.box}>
       <div className={styles.content}>
         <img
-          className="mt-[-50%] w-full max-w-[160px] h-[160px] object-cover rounded-[20px] border-[5px] border-[#fff] shadow-light"
+          className={styles.img}
           src={image}
           alt=""
         />
@@ -19,7 +20,9 @@ export const QuakeBox = ({ image, title, description, date, to }) => {
         </Gradient>
         <span className="text-[#909090]">{date}</span>
         <p className="text-[#3C3C3C] text-center">{description}</p>
-        <CustomBtn onClick={() => navigate(to)}>Узнать больше</CustomBtn>
+        <CustomBtn onClick={() => navigate(getLang(to))}>
+          Узнать больше
+        </CustomBtn>
       </div>
     </div>
   );

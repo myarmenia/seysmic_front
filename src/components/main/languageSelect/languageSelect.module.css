@@ -8,7 +8,7 @@
   @apply z-[1001] w-full rounded-2xl overflow-hidden;
 }
 .language_options span {
-  @apply flex justify-between items-center hover:bg-slate-200 
-    transition-all mx-auto h-11 w-full text-[#9C9C9C] cursor-pointer 
+  @apply flex justify-between items-center hover:bg-slate-200 bg-white
+    transition-all mx-auto h-11 w-full text-[#9C9C9C] cursor-pointer shadow-light
     overflow-y-hidden py-3 px-2 text-ellipsis overflow-hidden whitespace-nowrap;
 }

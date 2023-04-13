@@ -23,7 +23,9 @@ const Component = () => {
   return <Boxes data={data1} title="Текущие землетрясения" Item={QuakeBox} />;
 };
 
-const loader = async () => {
+const loader = async ({ params }) => {
+  const { lang } = params;
+  console.log(lang);
   const data = await instance.get(`posts?userId=1`);
   return data.data;
 };

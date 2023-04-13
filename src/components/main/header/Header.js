@@ -1,15 +1,16 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { useTranslation } from "../../../App";
 import search_icon from "../../../assets/icons/searchIcon.svg";
 import logo from "../../../assets/main/logo.svg";
-import { getHeaderTime } from "../../../helper";
+import { getHeaderTime, getLang } from "../../../helper";
 import { Container, Logo } from "../../reusable";
 import { Burger } from "../burger/Burger";
 import styles from "./header.module.css";
 import { LanguageSelect } from "../languageSelect/LanguageSelect";
 
 export const Header = () => {
+  const { lang } = useParams();
   const {
     language: {
       main: { header: language },
@@ -25,18 +26,20 @@ export const Header = () => {
       <Container className={styles.navbar}>
         <Logo />
         <div className={styles.nav_items}>
-          <HeaderLink to={"/about"}>{language.nav_items.about}</HeaderLink>
-          <HeaderLink to={"/technologies"}>
+          <HeaderLink to={getLang(`/about`)}>
+            {language.nav_items.about}
+          </HeaderLink>
+          <HeaderLink to={getLang(`/technologies`)}>
             {language.nav_items.technologies}
           </HeaderLink>
-          {/* <HeaderLink to={"/monitoring"}>{language.nav_items.monitoring}</HeaderLink> */}
-          <HeaderLink to={"/earth-quakes"}>
+          {/* <HeaderLink to={getLang(`/monitoring"}>{language.nav_items.monitoring}</HeaderLink> */}
+          <HeaderLink to={getLang(`/earth-quakes`)}>
             {language.nav_items.monitoring}
           </HeaderLink>
-          <HeaderLink to={"/press-release"}>
+          <HeaderLink to={getLang(`/press-release`)}>
             {language.nav_items.prease_release}
           </HeaderLink>
-          <HeaderLink to={"/contacts"}>
+          <HeaderLink to={getLang(`/contacts`)}>
             {language.nav_items.contacts}
           </HeaderLink>
         </div>

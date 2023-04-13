@@ -1,15 +1,21 @@
 .box {
-  @apply w-[80%] p-[9px] rounded-full flex items-center gap-2 med-600:w-full;
+  @apply w-[80%] h-[68px] p-[12px] flex items-center gap-2 bg-dark-blue relative pl-[40px]
+  ml-[38px] mt-[17px];
   box-shadow: 4px 4px 10px rgba(197, 186, 235, 0.75);
 }
 .box_index {
-  @apply text-transparent px-[28px] shrink-0 w-[83px] h-[83px] py-[11px] 
-  rounded-full bg-white flex items-center justify-center
-  med-600:w-[42px] med-600:h-[42px] med-600:px-[14px];
+  @apply absolute top-[-25%] left-[-37px] px-[28px] shrink-0 w-[68px] h-[68px] py-[11px] bg-white flex 
+  items-center justify-center med-600:px-[14px];
   box-shadow: 4px 4px 10px rgba(139, 69, 28, 0.75);
 }
+.box_index::before {
+  content: "";
+  @apply absolute top-full right-0;
+  border-left: 31.5px solid #056bc1;
+  border-bottom: 16.5px solid transparent;
+}
 .box > p {
-  @apply font-semibold leading-[180%] text-base text-white med-600:text-[12px] med-600:leading-[180%];
+  @apply font-semibold leading-[180%] text-sm text-white med-600:text-[12px] med-600:leading-[160%];
 }
 .box_index p {
   @apply font-bold text-[32px] h-[48px] med-600:text-lg med-600:h-fit;

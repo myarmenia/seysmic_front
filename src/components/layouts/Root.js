@@ -1,6 +1,7 @@
 import { Outlet, useLocation, useNavigate, useNavigation } from "react-router";
 import { Footer, Header, Spinner } from "../main";
 import { useEffect } from "react";
+import { getLang } from "../../helper";
 
 export const Root = () => {
   const navigate = useNavigate();
@@ -8,7 +9,7 @@ export const Root = () => {
   const { pathname } = useLocation();
   useEffect(() => {
     if (pathname === "/") {
-      navigate("/home");
+      navigate(getLang("/home"));
     }
   }, []);
 
@@ -17,10 +18,9 @@ export const Root = () => {
       <Header />
       <main className="h-full max-w-[100vw] overflow-x-hidden">
         <Outlet />
-        {navigation.state === "loading" && <Spinner />}
+        {navigation.state !== "idle" && <Spinner />}
       </main>
       <Footer />
     </div>
   );
 };
-

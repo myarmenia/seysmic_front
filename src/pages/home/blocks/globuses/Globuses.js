@@ -12,7 +12,7 @@ export const Globuses = () => {
   const handleOpen = () => setOpen(true);
   return (
     <>
-      <Container className={styles.globuses}>
+      <Container className={styles.globuses} bg_style={{ overflow: "unset" }}>
         {globuses.map((el, i) => (
           <Globus key={i} {...el} />
         ))}
