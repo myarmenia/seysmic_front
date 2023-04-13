@@ -1,6 +1,6 @@
 import React from "react";
-import styles from "./publications.module.css";
 import { Container, Title, Ul } from "../../../../components/reusable";
+import styles from "./publications.module.css";
 
 const data = [
   "Акопян С.Ц. 2007. Диссипативные сейсмические системы, энтропия и возможности создания системы прогноза «Сейсмической погоды». Альманах «Деловая Слава России», III выпуск, с.42-46.",

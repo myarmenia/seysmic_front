@@ -1,11 +1,11 @@
 .box {
   @apply w-[80%] h-[68px] p-[12px] flex items-center gap-2 bg-dark-blue relative pl-[40px]
-  ml-[38px] mt-[17px];
+  ml-[38px] mt-[17px] duration-300 opacity-0;
   box-shadow: 4px 4px 10px rgba(197, 186, 235, 0.75);
 }
 .box_index {
-  @apply absolute top-[-25%] left-[-37px] px-[28px] shrink-0 w-[68px] h-[68px] py-[11px] bg-white flex 
-  items-center justify-center med-600:px-[14px];
+  @apply absolute top-[-25%] left-[-37px] px-[28px] shrink-0 w-[68px] h-[68px] py-[11px] text-dark-blue 
+  bg-white flex items-center justify-center med-600:px-[14px];
   box-shadow: 4px 4px 10px rgba(139, 69, 28, 0.75);
 }
 .box_index::before {
@@ -19,9 +19,4 @@
 }
 .box_index p {
   @apply font-bold text-[32px] h-[48px] med-600:text-lg med-600:h-fit;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  -moz-background-clip: text;
-  -moz-text-fill-color: transparent;
 }

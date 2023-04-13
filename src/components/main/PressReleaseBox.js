@@ -25,19 +25,17 @@ export const PressReleaseBox = ({
             </span>
           </div>
         </Link>
-        {/* <Link to={to}> */}
         <img
           onClick={() => {
             navigator.share({
               title: "aaaa",
               text: "aaa",
-              url: window.location.origin + to,
+              url: window.location.origin + getLang(to),
             });
           }}
           src={link_to}
           alt=""
         />
-        {/* </Link> */}
       </div>
       <Link to={getLang(to)}>{description}</Link>
       <img src={image} alt="" />

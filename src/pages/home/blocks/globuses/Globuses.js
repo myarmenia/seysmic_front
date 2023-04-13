@@ -46,7 +46,7 @@ const Globus = ({ title, src, description, to }) => {
         <p>{description}</p>
       </div>
 
-      <img className="bg-cover" src={src} alt="" />
+      <img className="bg-cover shadow-normal rounded-full" src={src} alt="" />
       <p className={styles.globus_title}>{title}</p>
     </Link>
   );

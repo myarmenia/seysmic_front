@@ -3,7 +3,7 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
-import { Root, MonitoringRoot, LanguageRoot } from "../components/layouts";
+import { MonitoringRoot, Root } from "../components/layouts";
 import {
   About,
   Contacts,
@@ -23,14 +23,14 @@ import {
 export const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Root />}>
-      <Route path=":lang" element={<LanguageRoot />}>
+      <Route path=":lang">
         <Route path="login" element={<Login />} action={Login.action} />
         <Route
           path="registration"
           element={<Registration />}
           action={Registration.action}
         />
-        <Route path="home" element={<Home />} />
+        <Route path="home" element={<Home />} loader={Home.loader} />
         <Route path="about" element={<About />} />
         <Route path="contacts" element={<Contacts />} />
         <Route path="monitoring" element={<MonitoringRoot />}>
