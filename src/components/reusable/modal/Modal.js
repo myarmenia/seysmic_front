@@ -1,37 +1,31 @@
-import React from "react";
-import styles from "./modal.module.css";
+import React, { memo, useEffect } from "react";
 import { createPortal } from "react-dom";
-import { useEffect, useState, memo } from "react";
+import styles from "./modal.module.css";
 
 export const Modal = ({ children, open, handleClose, title }) => {
-  const [opacity, setOpacity] = useState(0);
   useEffect(() => {
-    if (open) {
-      document.body.className = "h-screen overflow-hidden";
-      setTimeout(() => {
-        setOpacity(1);
-      }, 1);
+    if (!open) {
+      document.body.className = "";
+      document.getElementById("modal-container")?.remove();
     } else {
-      setOpacity(0);
-      setTimeout(() => {
-        document.body.className = "";
-        document.getElementById("modal-container").remove();
-      }, 300);
+      document.body.className = "h-screen overflow-hidden";
     }
   }, [open]);
 
+  if (!open) return null;
+
   return (
     <ModalPortal>
-      <div style={{ opacity }} className="duration-300">
-        <div className={styles.bg} />
-        <div className={styles.content}>
+      <div className="duration-300">
+        <div className={styles.bg} onClick={handleClose} />
+        <div className={styles.modal}>
           <div className="w-full flex gap-5 justify-between items-center">
             <p>{title}</p>
             <span onClick={handleClose} className="cursor-pointer">
               &times;
             </span>
           </div>
-          {children}
+          <div className={styles.content}>{children}</div>
         </div>
       </div>
     </ModalPortal>
