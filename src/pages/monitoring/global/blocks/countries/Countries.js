@@ -1,42 +1,23 @@
-import React from "react";
+import React, { useRef } from "react";
 import img from "../../../../../assets/main/monitoring/globus.svg";
+import { monitoring_countries as countries } from "../../../../../store/constats";
 import styles from "./countries.module.css";
 
-const countries = [
-  {
-    index: 1,
-    title: "Европа (20 стран)",
-    description:
-      "Австрия, Азербайджан, Армения, Болгария, Греция, Грузия, Испания, Италия, Кипр, Молдова, Португалия, Россия, Румыния, Сан Марино, Словения, Турция, Украина, Франция, Хорватия, Швейцария.",
-  },
-  {
-    index: 2,
-    title: "Азия (31 страна)",
-    description:
-      "Афганистан, Бангладеш, Бутан, Израиль, Индия, Индонезия, Иордания, Ирак, Иран, Казахстан, Киргизия, Китай, КНДР, Южная Корея, Кувейт, Ливан, Монголия, Мьянма, Непал, Объединенные Арабские Эмираты, Пакистан, Саудовская Аравия, Россия, Сирия, Таджикистан, Тайвань, Тайланд, Туркменистан, Узбекистан, Япония.",
-  },
-  {
-    index: 3,
-    title: "Африка (10 стран)",
-    description:
-      "Алжир, Бурунди, ДР Конго, Египет, Замбия, Малави, Марокко, Мозамбик, Танзания, Тунис",
-  },
-  {
-    index: 4,
-    title: "Северная Америка(13 стран)",
-    description:
-      "Белиз, Вирджинские о-ва, Гаити, Гватемала, Гондурас, Доминиканская Республика, Кайманские о-ва, Канада, Куба, Мексика, Пуэрто-Рико, США, Ямайка.",
-  },
-  {
-    index: 5,
-    title: "Южная Америка (6 стран)",
-    description: "Аргентина, Боливия, Бразилия, Перу, Чили, Эквадор.",
-  },
-];
-
 export const Countries = () => {
+  const ref = useRef(null);
+
+  const handleScroll = () => {
+    if (ref.current) {
+      const { scrollTop, scrollHeight, clientHeight } = ref.current;
+      if (scrollTop + clientHeight === scrollHeight) {
+        // TO SOMETHING HERE
+        console.log("Reached bottom");
+      }
+    }
+  };
+
   return (
-    <div className={styles.cont}>
+    <div ref={ref} onScroll={handleScroll} className={styles.cont}>
       <div className={styles.img_box}>
         <img src={img} alt="" className={styles.img} />
         <div className={styles.nums}>

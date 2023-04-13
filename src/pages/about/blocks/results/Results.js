@@ -40,7 +40,7 @@ export const Results = () => {
       className="pt-[45px] pb-[80px] flex flex-col gap-[55px] med-600:gap-[35px]"
     >
       <Title>Основные научные результаты</Title>
-      <div className="grid grid-cols-2 gap-x-5 gap-y-[23px] justify-items-center med-900:grid-cols-1">
+      <div className="grid grid-cols-2 gap-x-5 gap-y-[26px] justify-items-center med-900:grid-cols-1">
         {results.map((el, i) => (
           <Box index={i + 1} {...el} key={i} />
         ))}
@@ -51,12 +51,7 @@ export const Results = () => {
 
 const Box = ({ bg, title, index }) => {
   return (
-    <div
-      style={{
-        background: bg,
-      }}
-      className={styles.box}
-    >
+    <div className={styles.box}>
       <div className={styles.box_index}>
         <p
           style={{

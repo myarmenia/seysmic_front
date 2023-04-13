@@ -1,6 +1,8 @@
 import { useRef } from "react";
 import { Navigation, A11y } from "swiper";
 import "swiper/css";
+import "swiper/css/a11y";
+import "swiper/css/navigation";
 import { Swiper } from "swiper/react";
 import swiper_arrow from "../../assets/icons/arrow-right-swiper.svg";
 
@@ -20,6 +22,7 @@ export const SwiperNavigation = ({ children, className = "" }) => {
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
         }}
+        allowTouchMove
         className={"w-auto !px-[20px] med-400:!p-0 " + className}
         modules={[Navigation, A11y]}
         onBeforeInit={(swiper) => {
