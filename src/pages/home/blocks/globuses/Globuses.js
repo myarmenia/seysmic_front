@@ -1,11 +1,15 @@
 import React from "react";
-import { Container } from "../../../../components/reusable";
+import { Container, Modal } from "../../../../components/reusable";
 import styles from "./globuses.module.css";
 import { globuses } from "../../../../store/constats";
 import { Link } from "react-router-dom";
 import ad_img from "../../../../assets/main/home/ad1.svg";
+import { useState } from "react";
 
 export const Globuses = () => {
+  const [open, setOpen] = useState(false);
+  const handleClose = () => setOpen(false);
+  const handleOpen = () => setOpen(true);
   return (
     <>
       <Container className={styles.globuses}>
@@ -13,7 +17,10 @@ export const Globuses = () => {
           <Globus key={i} {...el} />
         ))}
       </Container>
-      <div className="w-full relative py-[52px] med-400:py-[30px]">
+      <div
+        className="w-full relative py-[52px] med-400:py-[30px]"
+        onClick={handleOpen}
+      >
         <img
           className="w-full min-h-[136px] med-1200:object-cover"
           src={ad_img}
@@ -23,6 +30,10 @@ export const Globuses = () => {
           Землетрясения нельзя остановить, но можно предсказать!
         </p>
       </div>
+
+      <Modal {...{ open, handleClose, title: "Wow" }}>
+        <p>Hello</p>
+      </Modal>
     </>
   );
 };

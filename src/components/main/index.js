@@ -7,3 +7,4 @@ export { Boxes } from "./Boxes";
 export { SingleBox } from "./SingleBox";
 export { Burger } from "./burger/Burger";
 export { Spinner } from "./Spinner";
+export { LanguageSelect } from "./languageSelect/LanguageSelect";

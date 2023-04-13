@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useTranslation } from "../../../App";
-import arrow_down from "../../../assets/icons/arrow-down-blue.svg";
-import language_img from "../../../assets/icons/language.svg";
 import search_icon from "../../../assets/icons/searchIcon.svg";
 import logo from "../../../assets/main/logo.svg";
 import { getHeaderTime } from "../../../helper";
 import { Container, Logo } from "../../reusable";
 import { Burger } from "../burger/Burger";
 import styles from "./header.module.css";
+import { LanguageSelect } from "../languageSelect/LanguageSelect";
 
 export const Header = () => {
   const {
@@ -71,42 +70,5 @@ const HeaderLink = (props) => {
       className={({ isActive }) => (isActive ? styles.link_active : "")}
       {...props}
     />
-  );
-};
-
-const LanguageSelect = ({ options = [] }) => {
-  const { changeLanguage } = useTranslation();
-  const [value, setValue] = useState("");
-  const [open, setOpen] = useState(false);
-  useEffect(() => {
-    if (value) changeLanguage(value);
-  }, [value]);
-  const optoinClick = (value) => {
-    setValue(value);
-    setOpen(false);
-  };
-
-  return (
-    <div className="flex justify-center w-[39px] h-[27px]">
-      <div className={styles.language_box}>
-        <div className="flex items-center gap-1">
-          <div className={styles.language_select}>
-            <img onClick={() => setOpen((p) => !p)} src={language_img} alt="" />
-          </div>
-          <img src={arrow_down} alt="" />
-        </div>
-        {open && (
-          <div className={styles.language_options}>
-            <div className="max-h-[200px] overflow-y-auto bg-[#ffffff69] flex flex-col">
-              {options.map(({ title, value }, i) => (
-                <span key={i} onClick={() => optoinClick(value)}>
-                  {title}
-                </span>
-              ))}
-            </div>
-          </div>
-        )}
-      </div>
-    </div>
   );
 };

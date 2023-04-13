@@ -20,6 +20,9 @@ body {
   @apply min-h-screen grid grid-rows-[auto_1fr_auto] max-w-[100vw] my-0 mx-auto;
   /* @apply max-w-[1250px] px-4; */
 }
+#modal-container {
+  @apply z-[99999999] block fixed top-0 left-0 w-full h-full duration-300;
+}
 /* ================================================================ */
 .main-input {
   border: 1px solid #ffffff;
