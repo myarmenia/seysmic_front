@@ -18,7 +18,7 @@
 .nav_items > a:hover::after,
 .link_active::after {
   content: "";
-  @apply w-full h-full absolute opacity-20 z-[-1];
+  @apply w-full h-full absolute opacity-20 z-[-1] duration-300;
   background: linear-gradient(180deg, #0026aa 0%, #30cfff 100%);
 }
 .tools {
@@ -32,5 +32,16 @@
 @media (max-width: 900px) {
   .nav_items {
     @apply hidden;
+  }
+  .open {
+    @apply flex flex-col items-start bg-white w-full left-0 right-0 absolute top-full h-auto;
+    box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.15);
+  }
+  .open > a {
+    @apply py-[15px] px-[42px] first:pt-[25px] last:pb-[25px] text-lg w-full justify-center;
+  }
+  .nav_items > a:hover::after,
+  .link_active::after {
+    @apply left-0 top-0 bottom-0 w-full;
   }
 }

@@ -28,14 +28,29 @@ export const LanguageSelect = () => {
     }
   };
 
+  const allowFunc = (callback) => {
+    if (window.innerWidth > 600) {
+      callback();
+    }
+  };
+
+  const allowFunc1 = (callback) => {
+    if (window.innerWidth <= 600) {
+      callback();
+    }
+  };
+
   return (
     <div
       className="flex justify-center w-[39px] h-[27px]"
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
+      onMouseEnter={() => allowFunc(() => setOpen(true))}
+      // onMouseLeave={() => allowFunc(() => setOpen(false))}
     >
       <div className={styles.language_box}>
-        <div className="flex items-center gap-1">
+        <div
+          className="flex items-center gap-1"
+          onClick={() => allowFunc1(() => setOpen((p) => !p))}
+        >
           <div className={styles.language_select}>
             <img src={language_img} alt="" />
           </div>
@@ -43,9 +58,9 @@ export const LanguageSelect = () => {
         </div>
         {open && (
           <div className={styles.language_options}>
-            <div className="max-h-[200px] rounded-2xl overflow-y-auto bg-[#ffffff69] flex flex-col shadow-normal mt-[13px]">
+            <div className={styles.language_options_box}>
               {myOptions.map(({ title, value, active }, i) => (
-                <div className="bg-white hover:bg-slate-200" key={i}>
+                <div className={styles.language_option} key={i}>
                   <span
                     className={active ? styles.active : ""}
                     onClick={() => optoinClick(value)}

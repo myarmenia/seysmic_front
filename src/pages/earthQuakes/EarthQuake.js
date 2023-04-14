@@ -13,10 +13,7 @@ const expl = {
   time: "16:00",
 };
 const Component = () => {
-  const {
-    item: { body },
-    data,
-  } = useLoaderData();
+  const { item, data } = useLoaderData();
 
   const data1 = data.map((el) => ({
     description: el.body.split("").slice(0, 68).join("") + "...",
@@ -28,7 +25,12 @@ const Component = () => {
       {...expl}
       Item={QuakeBox}
       boxes_data={data1}
-      description={body}
+      description={item.body}
+      ul_data={[
+        { text: "bla bla bla", to: "#" },
+        { text: "bla bla bla", to: "#" },
+        { text: "bla bla bla", to: "#" },
+      ]}
     />
   );
 };
