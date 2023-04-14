@@ -15,3 +15,13 @@
   @apply bg-white;
   box-shadow: 0px 1.75494px 4.38734px rgba(0, 0, 0, 0.1);
 }
+
+@media (max-width: 600px) {
+  .nav {
+    @apply w-full rounded-none m-0 grid grid-cols-4 justify-items-center bottom-0 
+    left-0 right-0 top-[unset];
+  }
+  .nav_item {
+    @apply items-center;
+  }
+}

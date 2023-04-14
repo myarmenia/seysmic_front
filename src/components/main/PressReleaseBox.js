@@ -12,7 +12,7 @@ export const PressReleaseBox = ({
   to,
 }) => {
   return (
-    <div className="bg-white flex flex-col justify-between gap-2 shadow-[0px_2px_11px_rgba(0,_0,_0,_0.15)] px-[23px] py-[22px] rounded-[6px]">
+    <div className="bg-white flex flex-col justify-between gap-2 shadow-[0px_2px_11px_rgba(0,_0,_0,_0.15)] px-[23px] py-[22px] rounded-[6px] max-w-[430px]">
       <div className="flex justify-between gap-5">
         <Link to={getLang(to)} className="flex items-center gap-3">
           <img src={icon} alt="" />
@@ -33,6 +33,7 @@ export const PressReleaseBox = ({
               url: window.location.origin + getLang(to),
             });
           }}
+          className="cursor-pointer"
           src={link_to}
           alt=""
         />

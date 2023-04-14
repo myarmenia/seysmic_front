@@ -22,7 +22,7 @@ const Box = ({ title, src, to }) => {
         `${isActive ? styles.active : ""} ${styles.nav_item}`
       }
     >
-      <img src={src} alt="" />
+      <img src={src} className="med-600:w-[9vw]" alt="" />
       <span>{title}</span>
     </NavLink>
   );

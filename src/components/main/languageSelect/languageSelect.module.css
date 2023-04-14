@@ -7,8 +7,15 @@
 .language_options {
   @apply z-[1001] absolute w-auto right-0;
 }
-.language_options span {
-  @apply flex justify-between items-center font-semibold px-[33px] first:pt-[15px] 
+.language_options_box {
+  @apply max-h-[200px] rounded-2xl overflow-y-auto bg-[#ffffff69] flex flex-col shadow-normal 
+  mt-[13px] med-900:w-full med-900:m-0;
+}
+.language_option {
+  @apply bg-white hover:bg-slate-200 med-900:w-full;
+}
+.language_option span {
+  @apply flex justify-between items-center font-semibold px-[33px] first:pt-[15px] duration-300
     transition-all mx-auto h-11 w-full text-[#9C9C9C] text-[20px] cursor-pointer shadow-light
     overflow-y-hidden py-3 text-ellipsis overflow-hidden whitespace-nowrap last:pb-[15px];
 }
@@ -18,4 +25,39 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+}
+
+@media (max-width: 600px) {
+  .language_box {
+    position: unset;
+  }
+  .language_options {
+    @apply w-full rounded-none top-full py-7 bg-white;
+    box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.15);
+  }
+  .language_options_box {
+    @apply rounded-none shadow-inherit flex flex-col gap-5;
+  }
+  .language_option {
+    @apply flex items-center justify-center hover:bg-white;
+  }
+  .language_option span,
+  .active {
+    @apply w-[122px] py-[7.8px] first:py-[7.8px] last:py-[7.8px] rounded-[20px] 
+    shadow-inherit text-[#1A374D] text-[12px] text-center relative justify-center;
+    background: #73a6c8;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+  }
+
+  .active,
+  .language_option span:hover {
+    background: unset !important;
+  }
+  .active::after,
+  .language_option span:hover::after {
+    content: "";
+    @apply w-full h-full absolute top-0 left-0 opacity-20 duration-300;
+    background: linear-gradient(180deg, #0026aa 0%, #30cfff 100%);
+  }
 }

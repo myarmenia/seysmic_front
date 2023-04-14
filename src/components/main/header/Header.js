@@ -1,20 +1,27 @@
 import React, { useState } from "react";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useTranslation } from "../../../App";
 import search_icon from "../../../assets/icons/searchIcon.svg";
 import logo from "../../../assets/main/logo.svg";
 import { getHeaderTime, getLang } from "../../../helper";
 import { Container, Logo } from "../../reusable";
 import { Burger } from "../burger/Burger";
-import styles from "./header.module.css";
 import { LanguageSelect } from "../languageSelect/LanguageSelect";
+import styles from "./header.module.css";
 
 export const Header = () => {
+  const [open, setOpen] = useState(false);
   const {
     language: {
       main: { header: language },
     },
   } = useTranslation();
+
+  const openMenuHandler = () => {
+    setOpen((p) => !p);
+  };
+
+  const chooseOption = () => {};
 
   return (
     <header className={styles.header}>
@@ -24,28 +31,28 @@ export const Header = () => {
       </Container>
       <Container className={styles.navbar}>
         <Logo />
-        <div className={styles.nav_items}>
-          <HeaderLink to={getLang(`/about`)}>
+        <div className={[styles.nav_items, open ? styles.open : ""].join(" ")}>
+          <HeaderLink onClick={chooseOption} to={getLang(`/about`)}>
             {language.nav_items.about}
           </HeaderLink>
-          <HeaderLink to={getLang(`/technologies`)}>
+          <HeaderLink onClick={chooseOption} to={getLang(`/technologies`)}>
             {language.nav_items.technologies}
           </HeaderLink>
-          {/* <HeaderLink to={getLang(`/monitoring"}>{language.nav_items.monitoring}</HeaderLink> */}
-          <HeaderLink to={getLang(`/earth-quakes`)}>
+          {/* <HeaderLink onClick={chooseOption} to={getLang(`/monitoring"}>{language.nav_items.monitoring}</HeaderLink> */}
+          <HeaderLink onClick={chooseOption} to={getLang(`/earth-quakes`)}>
             {language.nav_items.monitoring}
           </HeaderLink>
-          <HeaderLink to={getLang(`/press-release`)}>
+          <HeaderLink onClick={chooseOption} to={getLang(`/press-release`)}>
             {language.nav_items.prease_release}
           </HeaderLink>
-          <HeaderLink to={getLang(`/contacts`)}>
+          <HeaderLink onClick={chooseOption} to={getLang(`/contacts`)}>
             {language.nav_items.contacts}
           </HeaderLink>
         </div>
         <div className={styles.tools}>
           <img src={search_icon} alt="" />
           <LanguageSelect />
-          <Burger />
+          <Burger onClick={openMenuHandler} />
         </div>
       </Container>
     </header>
