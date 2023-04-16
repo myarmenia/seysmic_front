@@ -72,13 +72,7 @@
 /* ============== animation*/
 /* ============== animation*/
 .main {
-  display: flex;
-
-  min-height: 680px;
-
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+  @apply flex min-h-[680px] justify-center items-center overflow-hidden;
 }
 #box_img {
   transform-origin: bottom center;
@@ -108,6 +102,7 @@
   color: white;
   animation: mymove 40s infinite;
   z-index: 0;
+  position: relative;
 }
 #box_img_second::after {
   content: "";
@@ -124,77 +119,65 @@
 }
 
 #box_img0 {
-  top: 20px;
-  right: 50px;
-  animation: mymove1 40s infinite;
+  @apply top-[60px] right-[-60px];
   background-image: url("../../../assets/main/products/animation/img.svg");
 }
 #box_img1 {
+  @apply top-[200px] right-[-55px];
   background-image: url("../../../assets/main/products/animation/img2.svg");
-
-  top: 150px;
-  right: -30px;
-  animation: mymove1 40s infinite;
 }
 #box_img2 {
+  @apply top-[0px] right-[400px];
   background-image: url("../../../assets/main/products/animation/img3.svg");
-
-  top: 150px;
-  right: 460px;
-  animation: mymove1 40s infinite;
 }
 #box_img3 {
+  @apply top-[-50px] right-[250px];
   background-image: url("../../../assets/main/products/animation/img4.svg");
-
-  top: 22px;
-  right: 370px;
-  animation: mymove1 40s infinite;
 }
 #box_img4 {
+  @apply w-[150px] h-[150px] top-[-40px] right-[58px];
   background-image: url("../../../assets/main/products/animation/img5.svg");
-
-  top: -40px;
-  right: 210px;
-  animation: mymove1 40s infinite;
 }
 /* ------------------- */
 #box_img_second0,
 #box_img_second1,
 #box_img_second2,
+#box_img_second3,
 #box_img0,
 #box_img1,
 #box_img2,
 #box_img3,
 #box_img4 {
+  @apply w-[130px] h-[150px] absolute;
   background-repeat: no-repeat;
   background-size: contain;
-  position: absolute;
-  width: 120px;
-  height: 120px;
   background-color: transparent;
   animation: mymove1 40s infinite;
 }
 #box_img_second0 {
+  @apply top-[100px] right-[0px];
   background-image: url("../../../assets/main/products/animation/img6.svg");
-
-  top: 20px;
-  right: -30px;
-  animation: mymove1 40s infinite;
+  /* top: 100px;
+  right: 0px; */
 }
 #box_img_second1 {
+  @apply top-[170px] right-[185px];
   background-image: url("../../../assets/main/products/animation/img7.svg");
-
-  top: 150px;
-  right: 90px;
-  animation: mymove1 40s infinite;
 }
 #box_img_second2 {
-  background-image: url("../../../assets/main/products/animation/img8.svg");
-  top: 150px;
-  right: 280px;
-  animation: mymove1 40s infinite;
-}
+  @apply top-[117px] right-[354px];
 
+  background-image: url("../../../assets/main/products/animation/img8.svg");
+  /* top: 117px;
+  right: 354px; */
+}
+#box_img_second3 {
+  @apply top-[-50px] right-[450px];
+  /* 
+  top: -50px;
+  right: 450px; */
+  background-image: url("../../../assets/main/products/animation/img9.svg");
+}
 @keyframes mymove {
   50% {
     transform: rotate(360deg);
