@@ -8,7 +8,7 @@ export const AccumulatedExperience = () => {
       <Container className="py-[100px]" bg={styles.accumulated_experience}>
         <div className="flex flex-col gap-[20px] justify-between">
           <Title>Накопленный опыт и апробация</Title>
-          <p className=" text-xl text-justify text-black mt-[92px]">
+          <p className=" text-xl text-justify text-black mt-[92px] med-1200:text-sm">
             В On-Line режиме на сайте www.geoq.ru с 2008 по 2012 гг. было
             прогнозировано 18 землетрясений. На основе новых разработок к 2023
             году выявлено более 300 сейсмических систем верхнего энергетического
@@ -34,12 +34,12 @@ export const AccumulatedExperience = () => {
           визуализации сейсмической обстановки на площадках действующих и
           проектируемых АЭС мира.
         </div>
-        <div className={styles.accumulated_text2}>
+        <div className={styles.accumulated_text}>
           для On-Line мониторинга, прогноза землетрясений и цунами, для
           визуализации сейсмической обстановки на площадках действующих и
           проектируемых АЭС мира.
         </div>
-        <div className={styles.accumulated_text3}>
+        <div className={styles.accumulated_text}>
           КТ позволяет создать динамические карты сейсмической опасности для
           площадок действующих и проектируемых АЭС дополнительно к существующим
           традиционным картам; внедрить динамический паспорт расчета

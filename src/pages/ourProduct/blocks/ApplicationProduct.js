@@ -1,7 +1,7 @@
 import React from "react";
 
-import styles from "../blocks/product.module.css";
 import { Container, Title } from "../../../components/reusable";
+import styles from "../blocks/product.module.css";
 
 export const ApplicationProduct = () => {
   return (
@@ -21,6 +21,7 @@ export const ApplicationProduct = () => {
             <div id={styles.box_img_second0}></div>
             <div id={styles.box_img_second1}></div>
             <div id={styles.box_img_second2}></div>
+            <div id={styles.box_img_second3}></div>
           </div>
         </div>
       </div>

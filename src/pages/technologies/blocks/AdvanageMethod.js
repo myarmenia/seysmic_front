@@ -18,7 +18,7 @@ export const AdvanageMethod = () => {
     <Container className="mt-[60px]">
       <Title>Преимущества метода</Title>
 
-      <div className="my-[10px]  text-2xl text-light-grey text-center">
+      <div className="my-[10px]  text-2xl text-light-grey text-center med-1200:text-lg">
         Метод и функционирование КТ
       </div>
       <Ul className={styles.advantage_list} data={data}></Ul>
