@@ -6,13 +6,14 @@ import translation from "./translation.json";
 const Translation = createContext(null);
 export const useTranslation = () => useContext(Translation);
 
+const key =
+  localStorage.getItem("lang") &&
+  localStorage.getItem("lang") !== "undefined" &&
+  localStorage.getItem("lang")?.trim() !== "null"
+    ? localStorage.getItem("lang")
+    : "ru";
+
 function App() {
-  const key =
-    localStorage.getItem("lang") &&
-    localStorage.getItem("lang") !== "undefined" &&
-    localStorage.getItem("lang")?.trim() !== "null"
-      ? localStorage.getItem("lang")
-      : "ru";
   const [language, setLanguage] = useState(translation[key]);
   const changeLanguage = (lang, navigate) => {
     if (localStorage.getItem("lang") !== lang) {

@@ -18,13 +18,22 @@ export const Root = () => {
   const { changeLanguage } = useTranslation();
   useEffect(() => {
     if (pathname === "/") {
-      navigate(getLang("/home"));
-      if (!localStorage.getItem("lang")) localStorage.setItem("lang", "ru");
+      if (!localStorage.getItem("lang")) {
+        localStorage.setItem("lang", "ru");
+        navigate("/ru/home");
+      } else {
+        navigate(getLang("/home"));
+      }
     }
   }, []);
   useEffect(() => {
-    if (pathname && lang && lang !== "undefined") {
+    if (pathname && lang && ["ru", "en", "am"].some((e) => lang === e)) {
       changeLanguage(lang, navigate);
+    } else {
+      changeLanguage("ru", navigate);
+    }
+    if (pathname.split("/").length < 3) {
+      navigate(getLang("/home"));
     }
   }, [lang]);
 
