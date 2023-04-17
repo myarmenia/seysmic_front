@@ -2,33 +2,36 @@
   @apply list-image-[url("../../../assets/icons/list-style-round.svg")] mt-[40px];
 }
 .list li {
-  @apply text-xl text-justify text-[#000];
+  @apply text-xl text-justify text-[#000] med-1200:text-sm;
 }
 
 .advantage_list {
-  @apply list-image-[url("../../../assets/icons/ul_img.svg")] flex flex-wrap justify-between items-center mt-[70px] flex-row;
+  @apply list-image-[url("../../../assets/icons/ul_img.svg")] flex flex-wrap justify-between items-center mt-[70px] flex-row med-900:flex-col med-900:items-start;
 }
 .advantage_list li {
-  @apply w-[40%] pl-3 text-lg text-black;
+  @apply w-[40%] pl-3 text-lg text-black  med-1200:text-sm text-left med-900:w-[90%];
 }
 .accumulated_experience {
   @apply bg-[url("../../../assets/main/technologies/accumuliated.svg")];
 }
 
 .accumulated_bottom {
-  @apply flex justify-between pt-[103px] pb-[66px];
+  @apply flex justify-between pt-[103px] pb-[66px] gap-3 med-900:flex-col med-900:pt-[60px];
+}
+.accumulated_bottom h2 {
+  @apply text-lg;
 }
 .accumulated_bottom div {
-  @apply w-[260px]  rounded-[20px] py-[20px] gap-[20px];
+  @apply w-[260px] text-lg rounded-[20px] py-[20px] gap-[20px]  px-[20px]  med-1200:text-sm med-900:w-full;
 }
 .accumulated_text {
-  @apply bg-[#30cfff87] px-[20px] text-dark-blue;
+  @apply bg-[#30cfff87]  text-dark-blue;
 }
-.accumulated_text2 {
-  @apply bg-[#4da3e584] px-[20px] text-dark-blue;
+.accumulated_text:nth-child(2) {
+  @apply bg-[#4da3e584]  text-dark-blue;
 }
-.accumulated_text3 {
-  @apply bg-[#0030dd8d] px-[20px] text-dark-blue;
+.accumulated_text:nth-child(3) {
+  @apply bg-[#0030dd8d]  text-dark-blue;
 }
 .title div {
   @apply py-[20px];

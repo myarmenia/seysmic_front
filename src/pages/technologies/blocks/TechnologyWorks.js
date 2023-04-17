@@ -14,7 +14,7 @@ export const TechnologyWorks = () => {
         <Title>Как работает технология</Title>
         <div className="flex flex-col items-center mt-[40px]">
           <div className="border-[#0026AA] border w-60"></div>
-          <p className="my-[40px]  text-2xl text-light-grey text-center">
+          <p className="my-[40px]  text-2xl text-light-grey text-center med-1200:text-lg ">
             Основа технологии – это введение новых параметров, закон
             производства сейсмической энтропии и специализированный комплекс
             программ LMTP-SPQ.
@@ -25,10 +25,10 @@ export const TechnologyWorks = () => {
       </Container>
       <Container
         bg="bg-[linear-gradient(180deg,_#0026AA_0%,_#30CFFF_100%)]"
-        className="flex flex-col pb-[42px] mt-[50px]"
+        className="flex flex-col pb-[42px] "
       >
-        <div className="flex gap-[20px] justify-between">
-          <p className="w-[50%] text-xl text-justify text-black mt-[92px]">
+        <div className="flex gap-[20px] justify-between med-1200:gap-[80px] med-900:flex-col-reverse med-900:gap-[40px] ">
+          <p className="w-[50%] text-xl text-justify text-black mt-[92px] med-1200:text-sm med-900:mt-0 med-900:w-full ">
             По результатам конкурсного отбора, проведенного госкорпорацией
             "Росатом" 13 декабря 2017 года," Компьютерная технология для
             прогнозирования ожидаемого сейсмического воздействия и построения
@@ -41,7 +41,7 @@ export const TechnologyWorks = () => {
           <img
             src={certificate}
             alt=""
-            className="max-w-md min-w-[300px] w-full h-[335px] object-cover mt-[92px]"
+            className="max-w-md min-w-[200px] w-full h-[335px] object-cover mt-[92px] med-900:h-full"
           />
         </div>
       </Container>

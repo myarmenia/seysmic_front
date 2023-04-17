@@ -1,7 +1,7 @@
 import React from "react";
 
-import styles from "../blocks/product.module.css";
 import { Container, Title } from "../../../components/reusable";
+import styles from "../blocks/product.module.css";
 
 export const ApplicationProduct = () => {
   return (
