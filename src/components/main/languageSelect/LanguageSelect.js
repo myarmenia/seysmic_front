@@ -33,7 +33,6 @@ export const LanguageSelect = () => {
       callback();
     }
   };
-
   const allowFunc1 = (callback) => {
     if (window.innerWidth <= 600) {
       callback();
@@ -44,7 +43,7 @@ export const LanguageSelect = () => {
     <div
       className="flex justify-center w-[39px] h-[27px]"
       onMouseEnter={() => allowFunc(() => setOpen(true))}
-      // onMouseLeave={() => allowFunc(() => setOpen(false))}
+      onMouseLeave={() => allowFunc(() => setOpen(false))}
     >
       <div className={styles.language_box}>
         <div
@@ -59,10 +58,10 @@ export const LanguageSelect = () => {
         {open && (
           <div className={styles.language_options}>
             <div className={styles.language_options_box}>
-              {myOptions.map(({ title, value, active }, i) => (
+              {myOptions.map(({ title, value }, i) => (
                 <div className={styles.language_option} key={i}>
                   <span
-                    className={active ? styles.active : ""}
+                    className={lang === value ? styles.active : ""}
                     onClick={() => optoinClick(value)}
                   >
                     {title}

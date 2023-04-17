@@ -26,12 +26,17 @@ export const EarthquakePlaces = () => {
 
   return (
     <div>
-      <img
-        className="w-full object-cover mb-[-17%] min-h-[307px] med-400:mb-[-69%]"
-        src={img}
-        alt=""
-      />
-      <Container>
+      <div
+        style={{ backgroundImage: `url('${img}')` }}
+        className="w-full bg-cover bg-center bg-fixed bg-no-repeat min-h-[307px] max-h-[500px] h-[33vw]"
+      >
+        {/* <img
+          className=""
+          src={img}
+          alt=""
+        /> */}
+      </div>
+      <Container bg="mt-[-20%] med-900:mt-[-40%] med-400:mt-[-50%]">
         <SwiperNavigation className="h-[622px]">
           {earth_quakes.map((elem, i) => (
             <SwiperSlide key={i}>

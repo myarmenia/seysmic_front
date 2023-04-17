@@ -21,7 +21,11 @@ export const Header = () => {
     setOpen((p) => !p);
   };
 
-  const chooseOption = () => {};
+  const chooseOption = () => {
+    if (window.innerWidth <= 600) {
+      setOpen(false);
+    }
+  };
 
   return (
     <header className={styles.header}>

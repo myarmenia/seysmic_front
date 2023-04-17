@@ -43,7 +43,7 @@ export const ImageSlider = () => {
         bg="bg-dark-blue relative"
         className={"w-full h-[44px] text-white"}
       >
-        <span className={styles.marquee}>Something</span>
+        <a href="#" className={styles.marquee}>Something</a>
       </Container>
     </Container>
   );
