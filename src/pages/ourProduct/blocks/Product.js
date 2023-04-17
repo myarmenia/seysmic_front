@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "../blocks/product.module.css";
 import { Container, Title, Ul } from "../../../components/reusable";
-import red from "../../../assets/main/products/red.svg";
-import yellow from "../../../assets/main/products/yellow.svg";
-import green from "../../../assets/main/products/green.svg";
-import blue from "../../../assets/main/products/blue.svg";
+import red from "../../../assets/main/products/red.png";
+import yellow from "../../../assets/main/products/yellow.png";
+import green from "../../../assets/main/products/green.png";
+import blue from "../../../assets/main/products/blue.png";
 
 const products = [
   {
@@ -83,7 +83,7 @@ export const Product = () => {
     <Container className="mt-[80px] text-light-grey">
       <div className="flex flex-col items-center">
         <div className={styles.line}></div>
-        <p className="text-2xl text-center my-[25px]">
+        <p className="text-2xl text-center my-[25px] med-1200:text-lg ">
           Метод сейсмической энтропии основан на концепции Сейсмической Системы,
           которые выявляются в сейсмоопасных регионах с позиций плитовой
           тектоники.
@@ -92,6 +92,7 @@ export const Product = () => {
       </div>
       <div className={styles.product_card}>
         <Title>Продукция</Title>
+
         {products.map((product, index) => {
           return <ProductCard {...product} key={index} />;
         })}
