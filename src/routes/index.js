@@ -3,6 +3,8 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
+
+import { ErrorBoundary } from "../components/main";
 import { MonitoringRoot, Root } from "../components/layouts";
 import {
   About,
@@ -22,7 +24,7 @@ import {
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Root />}>
+    <Route path="/" element={<Root />} errorElement={<ErrorBoundary />}>
       <Route path=":lang">
         <Route path="login" element={<Login />} action={Login.action} />
         <Route

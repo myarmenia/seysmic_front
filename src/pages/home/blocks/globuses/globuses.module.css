@@ -39,7 +39,8 @@
 
 .ad_p {
   @apply max-w-[90%] text-white w-max py-2 px-5 bg-[#00194A] font-bold text-[24px] text-center 
-  absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 med-400:text-base med-400:leading-5;
+  absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 med-400:text-base med-400:leading-5
+  overflow-hidden;
 }
 
 @media (max-width: 600px) {

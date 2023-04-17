@@ -11,6 +11,17 @@ const options = [
   { title: "Հայերեն", value: "am" },
 ];
 
+const allowFunc = (callback) => {
+  if (window.innerWidth > 600) {
+    callback();
+  }
+};
+const allowFunc1 = (callback) => {
+  if (window.innerWidth <= 600) {
+    callback();
+  }
+};
+
 export const LanguageSelect = () => {
   const { lang } = useParams();
   const [myOptions, setOptions] = useState(
@@ -25,17 +36,6 @@ export const LanguageSelect = () => {
       setOpen(false);
       changeLanguage(value, navigate);
       setOptions((p) => p.map((el) => ({ ...el, active: el.value === value })));
-    }
-  };
-
-  const allowFunc = (callback) => {
-    if (window.innerWidth > 600) {
-      callback();
-    }
-  };
-  const allowFunc1 = (callback) => {
-    if (window.innerWidth <= 600) {
-      callback();
     }
   };
 

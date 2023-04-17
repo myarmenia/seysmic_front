@@ -3,7 +3,7 @@ import src from "../../../../assets/trash/slider-img1.svg";
 import { Container } from "../../../../components/reusable";
 import styles from "./imageSlider.module.css";
 // Import Swiper
-import { Pagination } from "swiper";
+import { Pagination, Mousewheel } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/pagination";
 import "swiper/css";
@@ -20,7 +20,9 @@ export const ImageSlider = () => {
     <Container className="!max-w-max !p-0 overflow-x-hidden">
       <Swiper
         pagination={true}
-        modules={[Pagination]}
+        mousewheel={true}
+        cssMode={true}
+        modules={[Pagination, Mousewheel]}
         className="w-full h-[60vh] max-h-[622px] min-h-[229px] med-400:h-[229px]"
         // className="w-full h-[622px]"
       >
@@ -43,7 +45,9 @@ export const ImageSlider = () => {
         bg="bg-dark-blue relative"
         className={"w-full h-[44px] text-white"}
       >
-        <a href="#" className={styles.marquee}>Something</a>
+        <a href="#" className={styles.marquee}>
+          Something
+        </a>
       </Container>
     </Container>
   );
