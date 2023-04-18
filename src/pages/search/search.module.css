@@ -5,9 +5,12 @@
 .search_box {
   @apply py-4;
 }
-.results {
+.bg {
   background: url("../../assets/main/logo-light-gray.svg") center no-repeat;
-  @apply h-full py-[32px] flex flex-col gap-5;
+  @apply h-full py-[32px];
+}
+.results {
+  @apply flex flex-col gap-5;
 }
 .result {
   @apply flex flex-col gap-[6px];
