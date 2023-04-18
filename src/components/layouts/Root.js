@@ -40,7 +40,7 @@ export const Root = () => {
   return (
     <div className="root">
       <Header />
-      <main className="h-full max-w-[100vw] overflow-x-hidden">
+      <main className="h-full max-w-[100vw] overflow-hidden">
         <Outlet />
         {navigation.state !== "idle" && <Spinner />}
       </main>

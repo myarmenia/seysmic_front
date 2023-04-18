@@ -45,9 +45,9 @@ export const Share = ({
           {/* <TelegramShareButton url={url} className={styles.option}>
             <img src={telegram} alt="" />
           </TelegramShareButton> */}
-          <a className={styles.option} href="https://telegram.me/share/url">
+          {/* <a className={styles.option} href="https://telegram.me/share/url">
             <img src={telegram} alt="" />
-          </a>
+          </a> */}
         </div>
       )}
     </div>

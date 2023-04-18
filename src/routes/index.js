@@ -27,7 +27,12 @@ export const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Root />} errorElement={<ErrorBoundary />}>
       <Route path=":lang">
-        <Route path="search" element={<Search />} />
+        <Route
+          path="search"
+          element={<Search />}
+          action={Search.action}
+          loader={Search.loader}
+        />
         <Route path="login" element={<Login />} action={Login.action} />
         <Route
           path="registration"
