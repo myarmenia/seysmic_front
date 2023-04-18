@@ -20,12 +20,14 @@ import {
   Regional,
   Registration,
   Technologies,
+  Search,
 } from "../pages";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Root />} errorElement={<ErrorBoundary />}>
       <Route path=":lang">
+        <Route path="search" element={<Search />} />
         <Route path="login" element={<Login />} action={Login.action} />
         <Route
           path="registration"

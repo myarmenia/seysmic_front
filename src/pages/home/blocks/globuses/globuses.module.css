@@ -12,7 +12,7 @@
 .globus_title {
   @apply text-lg leading-5 text-center text-dark-blue med-400:text-sm med-400:leading-4;
 }
-.globus_box:hover .globus_desc {
+.globus:hover .globus_desc {
   @apply opacity-100;
 }
 .globus_desc {

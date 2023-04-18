@@ -1,5 +1,5 @@
 import React from "react";
-import link_to from "../../assets/icons/link-to.svg";
+import { Share } from "../reusable";
 
 export const SingleBox = ({
   title,
@@ -16,7 +16,7 @@ export const SingleBox = ({
     <div>
       <img src={image} className="w-full" alt="" />
       <div className="grid grid-cols-[5fr_2fr] med-1200:grid-cols-1">
-        <div className="flex flex-col gap-[34px] py-[41px] px-[68px]">
+        <div className="flex flex-col gap-[34px] py-[41px] px-[68px] med-900:px-[32px]">
           <div className="flex justify-between gap-5">
             <div className="flex gap-5">
               <img className="h-[95px]" src={icon} alt="" />
@@ -29,18 +29,7 @@ export const SingleBox = ({
                 </span>
               </div>
             </div>
-            <img
-              onClick={() => {
-                navigator.share({
-                  title: "aaaa",
-                  text: "aaa",
-                  url: window.location.href,
-                });
-              }}
-              className="w-[33px] cursor-pointer"
-              src={link_to}
-              alt=""
-            />
+            <Share url={window.location.href} />
           </div>
           <p>{description}</p>
           {ul_data?.length && (
