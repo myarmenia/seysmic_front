@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import link_to from "../../assets/icons/link-to.svg";
 import { getLang } from "../../helper";
+import { Share } from "../reusable";
 
 export const PressReleaseBox = ({
   title,
@@ -25,18 +26,7 @@ export const PressReleaseBox = ({
             </span>
           </div>
         </Link>
-        <img
-          onClick={() => {
-            navigator.share({
-              title: "aaaa",
-              text: "aaa",
-              url: window.location.origin + getLang(to),
-            });
-          }}
-          className="cursor-pointer"
-          src={link_to}
-          alt=""
-        />
+        <Share />
       </div>
       <Link to={getLang(to)}>{description}</Link>
       <img src={image} alt="" />

@@ -1,0 +1,14 @@
+.input {
+  @apply min-w-[107px] py-3 px-[17px] text-sm bg-white rounded-[30px] outline-none h-12
+placeholder:text-[#9C9C9C] placeholder:text-xs  relative shadow-light;
+}
+.input::-webkit-inner-spin-button,
+.input::-webkit-calendar-picker-indicator,
+.input::-webkit-datetime-edit,
+.input::-webkit-inner-spin-button,
+.input::-webkit-clear-button {
+  @apply absolute top-0 left-0 w-full h-full cursor-pointer opacity-0 z-[2];
+}
+.value {
+  @apply text-xs absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 text-[#cccccc] z-[1];
+}

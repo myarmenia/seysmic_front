@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useTranslation } from "../../../App";
 import search_icon from "../../../assets/icons/searchIcon.svg";
 import logo from "../../../assets/main/logo.svg";
@@ -54,7 +54,9 @@ export const Header = () => {
           </HeaderLink>
         </div>
         <div className={styles.tools}>
-          <img src={search_icon} alt="" />
+          <NavLink to={getLang("/search")}>
+            <img src={search_icon} alt="" />
+          </NavLink>
           <LanguageSelect />
           <Burger onClick={openMenuHandler} />
         </div>
