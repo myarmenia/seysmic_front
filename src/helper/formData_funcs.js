@@ -20,6 +20,7 @@ export const toFormData = (arg) => {
 export const toObject = (arg) => {
   const newObj = Object.fromEntries(arg);
 
+
   Object.entries(newObj).forEach(([key, value]) => {
     if (typeof value === "string") {
       if (
