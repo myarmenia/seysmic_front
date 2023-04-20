@@ -7,3 +7,6 @@
 .option:hover {
   @apply !bg-[#a2d7ff96];
 }
+.option img {
+  @apply h-full w-full;
+}

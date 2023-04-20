@@ -15,7 +15,7 @@ export const Result = ({ section, title, describtion, to, search }) => {
             return (
               <Fragment key={i}>
                 {text}
-                <span className="text-[#363636] font-bold text-[22px]">
+                <span className="text-[#363636] font-bold text-[19px]">
                   {search}
                 </span>
               </Fragment>

@@ -1,11 +1,18 @@
 import React from "react";
 import styles from "./monitoringNavbar.module.css";
 import { globuses } from "../../../store/constats";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 export const MonitoringNavbar = ({ className = "" }) => {
+  const { pathname } = useLocation();
   return (
-    <div className={[styles.nav, className].join(" ")}>
+    <div
+      className={[
+        styles.nav,
+        className,
+        pathname.split("/")[2] === "home" && styles.hidden_nav,
+      ].join(" ")}
+    >
       {globuses.map((el, i) => (
         <Box key={i} {...el} />
       ))}
