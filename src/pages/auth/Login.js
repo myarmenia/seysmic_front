@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./auth.module.css";
 import { CstmInput, CustomBtn } from "../../components/forms";
-import { Link, redirect } from "react-router-dom";
+import { Link, redirect, useFormAction } from "react-router-dom";
 import { Title } from "../../components/reusable";
 import { FormProvider, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -15,9 +15,10 @@ const Component = () => {
     resolver: yupResolver(login_schema),
   });
   const { handleSubmit } = formMethods;
+  const action = useFormAction();
   const onSubmit = (data) => {
     const formData = toFormData(data);
-    submit(formData, { method: "post", action: "/login" });
+    submit(formData, { method: "post", action });
   };
   return (
     <FormProvider {...formMethods}>

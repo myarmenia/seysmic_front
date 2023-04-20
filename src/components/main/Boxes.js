@@ -9,7 +9,7 @@ export const Boxes = ({ Item, data, title }) => {
   return (
     <Container bg="bg-[#F0F2F5]" className="flex flex-col gap-[44px] py-[42px]">
       <Title>{title}</Title>
-      <div className="flex items-center gap-[60px] ">
+      <div className="flex items-center gap-[60px] justify-center">
         <SearchInput
           inputProps={{
             placeholder: "Поиск",
@@ -18,7 +18,6 @@ export const Boxes = ({ Item, data, title }) => {
           }}
         />
         <div className="flex items-center gap-[16px]">
-          <span className="text-dark-blue text-base font-semibold">Период</span>
           <div className="flex items-center gap-2">
             <CstmDateInput
               onChange={(e) => setStartDate(e.target.value)}
