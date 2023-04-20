@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { useTranslation } from "../../../App";
 import search_icon from "../../../assets/icons/searchIcon.svg";
+import search_icon_active from "../../../assets/icons/search-active.svg";
 import logo from "../../../assets/main/logo.svg";
 import { getHeaderTime, getLang } from "../../../helper";
 import { Container, Logo } from "../../reusable";
@@ -11,6 +12,7 @@ import styles from "./header.module.css";
 
 export const Header = () => {
   const [open, setOpen] = useState(false);
+  const { pathname } = useLocation();
   const {
     language: {
       main: { header: language },
@@ -55,7 +57,14 @@ export const Header = () => {
         </div>
         <div className={styles.tools}>
           <NavLink to={getLang("/search")}>
-            <img src={search_icon} alt="" />
+            <img
+              src={
+                pathname === getLang("/search")
+                  ? search_icon_active
+                  : search_icon
+              }
+              alt=""
+            />
           </NavLink>
           <LanguageSelect />
           <Burger onClick={openMenuHandler} />

@@ -5,7 +5,7 @@ import {
 } from "react-router-dom";
 
 import { ErrorBoundary } from "../components/main";
-import { MonitoringRoot, Root } from "../components/layouts";
+import {  Root } from "../components/layouts";
 import {
   About,
   Contacts,
@@ -42,7 +42,7 @@ export const router = createBrowserRouter(
         <Route path="home" element={<Home />} loader={Home.loader} />
         <Route path="about" element={<About />} />
         <Route path="contacts" element={<Contacts />} />
-        <Route path="monitoring" element={<MonitoringRoot />}>
+        <Route path="monitoring">
           <Route index element={<Monitoring />} loader={Monitoring.loader} />
           <Route path="regional" element={<Regional />} />
         </Route>

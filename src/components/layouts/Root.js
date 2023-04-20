@@ -5,7 +5,7 @@ import {
   useNavigation,
   useParams,
 } from "react-router";
-import { Footer, Header, Spinner } from "../main";
+import { Footer, Header, MonitoringNavbar, Spinner } from "../main";
 import { useEffect } from "react";
 import { getLang } from "../../helper";
 import { useTranslation } from "../../App";
@@ -38,13 +38,16 @@ export const Root = () => {
   }, [lang]);
 
   return (
-    <div className="root">
-      <Header />
-      <main className="h-full max-w-[100vw] overflow-hidden">
-        <Outlet />
-        {navigation.state !== "idle" && <Spinner />}
-      </main>
-      <Footer />
-    </div>
+    <>
+      <div className="root">
+        <Header />
+        <main className="h-full max-w-[100vw] overflow-hidden">
+          <Outlet />
+          {navigation.state !== "idle" && <Spinner />}
+        </main>
+        <Footer />
+      </div>
+      <MonitoringNavbar />
+    </>
   );
 };

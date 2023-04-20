@@ -23,7 +23,7 @@ export const Map = () => {
         </FilterBtn>
       </div>
       <EarthMap />
-      <Container className="py-5  text-dark-blue text-[24px] text-center font-semibold flex flex-col gap-3 items-center med-600:text-[14px]">
+      <Container className="py-5 text-dark-blue text-[24px] text-center font-semibold flex flex-col gap-3 items-center med-600:text-[14px] med-600:p-0">
         <div className="w-[25%] bg-[linear-gradient(#0026AA,_#30CFFF)] h-[1px]" />
         Мониторинг на 2023 год включает и затрагивает территории 80 стран
         <span className="text-[18px] med-600:text-[12px]">

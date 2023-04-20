@@ -96,7 +96,42 @@
 }
 /* ===================================================================== */
 
-
+@media (max-width: 600px) {
+  .cont {
+    @apply min-h-fit mb-[50px] px-5;
+  }
+  .img_box {
+    @apply w-auto h-auto;
+  }
+  .img {
+    @apply hidden;
+  }
+  .nums {
+    position: initial;
+    @apply w-auto h-auto grid grid-cols-2 gap-[14px];
+  }
+  .num {
+    position: initial;
+    @apply flex gap-2;
+  }
+  .num::after {
+    @apply hidden;
+  }
+  .num > div {
+    position: initial;
+    @apply w-auto !translate-x-0 !translate-y-0 items-start gap-0;
+  }
+  .num > span {
+    position: initial;
+    @apply block w-[22px] h-[22px] text-[14px] shrink-0 !translate-x-0 !translate-y-0;
+  }
+  .num > div > p {
+    @apply text-[10px] text-start;
+  }
+  .num > div > span {
+    @apply text-xs text-start;
+  }
+}
 
 @media (max-width: 400px) {
   :root {

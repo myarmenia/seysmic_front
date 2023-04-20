@@ -10,20 +10,25 @@ import { Result } from "./Result";
 import styles from "./search.module.css";
 
 export const Component = () => {
-  const { filteredData: loaderData, search } = useLoaderData();
+  const loaderData = useLoaderData();
+  const search = new URL(window.location.href).searchParams.get("search");
   const [value, setValue] = useState(search || "");
   const submit = useAppSubmit();
   const action = useFormAction();
   const onSubmit = () => {
-    submit(toFormData({ search: value }), { action, method: "post" });
+    if (value) {
+      submit(toFormData({ search: value }), { action, method: "post" });
+    }
   };
 
   return (
     <>
       <Container bg={styles.myContainer} className={styles.search_box}>
-        <form>
+        <form
+        // onSubmit={(e) => !value && e.preventDefault()}
+        >
           <SearchInput
-            className="w-[60%] mx-auto"
+            className="w-[60%] mx-auto med-600:w-full"
             inputProps={{
               value: value,
               onChange: (e) => setValue(e.target.value),
@@ -75,10 +80,13 @@ const loader = async ({ request }) => {
   const url = new URL(request.url);
   const search = url.searchParams.get("search");
 
-  const data = await instance.get(`posts?userId=1`);
-  const filteredData = data.data.filter((e) => e.body.includes(search));
-
-  return { filteredData, search: search };
+  try {
+    const data = await instance.get(`posts?userId=1`);
+    const filteredData = data.data.filter((e) => e.body.includes(search));
+    return filteredData;
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 export const Search = Object.assign(Component, { action, loader });

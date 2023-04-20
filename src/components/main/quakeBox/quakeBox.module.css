@@ -1,5 +1,5 @@
 .box {
-  @apply flex items-center h-full justify-center pt-[72px] hover:scale-[1.1] duration-300;
+  @apply flex items-center h-full justify-center pt-[72px] hover:scale-[1.1] duration-300 med-600:hover:scale-[1.05];
 }
 .content {
   @apply pt-[60px] px-[25px] pb-[38px] max-w-[310px] flex flex-col justify-between
