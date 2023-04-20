@@ -2,6 +2,28 @@ import React, { useState } from "react";
 import { Carousel, Share } from "../reusable";
 import { SwiperSlide } from "swiper/react";
 import img_11 from "../../assets/trash/press-release/press-rel.svg";
+import icon1 from "../../assets/main/logo-rounded.svg";
+
+const videos = [
+  {
+    icon: icon1,
+    title: "Название ролика",
+    description: "Компания Терморобот занимается производством котельного",
+    date: "24.02.2023",
+  },
+  {
+    icon: icon1,
+    title: "Название ролика",
+    description: "Компания Терморобот занимается производством котельного",
+    date: "24.02.2023",
+  },
+  {
+    icon: icon1,
+    title: "Название ролика",
+    description: "Компания Терморобот занимается производством котельного",
+    date: "24.02.2023",
+  },
+];
 
 export const SingleBox = ({
   title,
@@ -13,6 +35,7 @@ export const SingleBox = ({
   Item,
   description,
   ul_data,
+  // videos,
 }) => {
   const [open, setOpen] = useState(false);
   return (
@@ -63,9 +86,12 @@ export const SingleBox = ({
             </div>
           </div>
           <div className="py-[41px] px-[42px] bg-[#F9F9F9] grid grid-cols-[repeat(auto-fit,_minmax(310px,_1fr))] justify-items-center gap-[28px] med-600:p-[25px_20px]">
-            {boxes_data.map((el, i) => (
-              <Item {...el} key={i} />
+            {videos.map((el, i) => (
+              <VideoBox {...el} key={i} />
             ))}
+            {/* {boxes_data.map((el, i) => (
+              <Item {...el} key={i} />
+            ))} */}
           </div>
         </div>
       </div>
@@ -77,5 +103,26 @@ export const SingleBox = ({
         ))}
       </Carousel>
     </>
+  );
+};
+
+const VideoBox = ({ src, title, description, date, icon }) => {
+  return (
+    <div className="p-[18px] bg-white rounded-[5px] shadow-light flex flex-col gap-2">
+      <iframe
+        src="https://www.youtube.com/embed/DtvfnOtO1Wk"
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowFullScreen
+      ></iframe>
+      <div className="flex gap-[6px]">
+        <img className="w-[32px] h-[32px] rounded-full" src={icon} alt="" />
+        <div className="flex flex-col gap-1">
+          <span className="text-dark-blue font-bold text-xs">{title}</span>
+          <p className="text-[#434343] text-xs leading-[150%]">{description}</p>
+          <span className="text-[#415455] text-[10px]">{date}</span>
+        </div>
+      </div>
+    </div>
   );
 };
