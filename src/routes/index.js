@@ -3,7 +3,9 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
-import { MonitoringRoot, Root } from "../components/layouts";
+
+import { ErrorBoundary } from "../components/main";
+import {  Root } from "../components/layouts";
 import {
   About,
   Contacts,
@@ -18,12 +20,19 @@ import {
   Regional,
   Registration,
   Technologies,
+  Search,
 } from "../pages";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Root />}>
+    <Route path="/" element={<Root />} errorElement={<ErrorBoundary />}>
       <Route path=":lang">
+        <Route
+          path="search"
+          element={<Search />}
+          action={Search.action}
+          loader={Search.loader}
+        />
         <Route path="login" element={<Login />} action={Login.action} />
         <Route
           path="registration"
@@ -33,7 +42,7 @@ export const router = createBrowserRouter(
         <Route path="home" element={<Home />} loader={Home.loader} />
         <Route path="about" element={<About />} />
         <Route path="contacts" element={<Contacts />} />
-        <Route path="monitoring" element={<MonitoringRoot />}>
+        <Route path="monitoring">
           <Route index element={<Monitoring />} loader={Monitoring.loader} />
           <Route path="regional" element={<Regional />} />
         </Route>

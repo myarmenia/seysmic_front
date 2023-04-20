@@ -1,10 +1,14 @@
 .globuses {
   @apply grid gap-y-10 grid-cols-[repeat(auto-fit,_minmax(280px,_1fr))] 
-  justify-items-center py-[80px] med-600:grid-cols-2 med-600:gap-5 med-600:py-[30px];
+  justify-items-center py-[80px] med-600:grid-cols-2 med-600:gap-5 med-600:py-[30px]
+  med-600:hidden;
   overflow: inherit;
 }
 .globus {
-  @apply h-auto relative flex flex-col gap-[25px] items-center cursor-pointer w-[132px] min-h-[132px];
+  @apply h-auto relative cursor-pointer w-[132px] min-h-[132px];
+}
+.globus_box {
+  @apply flex flex-col gap-[25px] items-center;
 }
 .globus_title {
   @apply text-lg leading-5 text-center text-dark-blue med-400:text-sm med-400:leading-4;
@@ -36,7 +40,8 @@
 
 .ad_p {
   @apply max-w-[90%] text-white w-max py-2 px-5 bg-[#00194A] font-bold text-[24px] text-center 
-  absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 med-400:text-base med-400:leading-5;
+  absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 med-400:text-base med-400:leading-5
+  overflow-hidden;
 }
 
 @media (max-width: 600px) {

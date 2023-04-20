@@ -8,3 +8,5 @@ export { Ul } from "./ul/Ul";
 export { SocIcons } from "./SocIcons";
 export { FilterBtn } from "./filterBtn/FilterBtn";
 export { Modal } from "./modal/Modal";
+export { Share } from "./share/Share";
+export { Carousel } from "./Carousel";

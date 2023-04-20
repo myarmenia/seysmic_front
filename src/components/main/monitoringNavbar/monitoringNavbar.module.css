@@ -1,6 +1,6 @@
 .nav {
   @apply flex flex-col p-1 bg-[#F7F7F7] rounded-[9px] w-[105px] m-3 fixed 
-  top-[330px] right-[24px] gap-5 z-[1000] med-600:right-2 med-600:gap-3;
+  top-[330px] right-[24px] gap-5 z-[1000];
   box-shadow: 0px 1.75494px 4.38734px rgba(0, 0, 0, 0.1);
 }
 .nav_item {
@@ -15,10 +15,13 @@
   @apply bg-white;
   box-shadow: 0px 1.75494px 4.38734px rgba(0, 0, 0, 0.1);
 }
+.hidden_nav {
+  @apply hidden;
+}
 
 @media (max-width: 600px) {
   .nav {
-    @apply w-full rounded-none m-0 grid grid-cols-4 justify-items-center bottom-0 
+    @apply w-full rounded-none m-0 !grid grid-cols-4 justify-items-center bottom-0 
     left-0 right-0 top-[unset];
   }
   .nav_item {
