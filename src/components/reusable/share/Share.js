@@ -11,9 +11,17 @@ export const Share = ({
 }) => {
   const [state, setState] = useState(false);
   return (
-    <div className="relative h-fit shrink-0">
+    <div
+      className="relative h-fit shrink-0"
+      onMouseEnter={() => setState(true)}
+      onMouseLeave={() => setState(false)}
+    >
       <img
-        onClick={() => setState((p) => !p)}
+        onClick={() => {
+          if (window.innerWidth < 600) {
+            setState((p) => !p);
+          }
+        }}
         className={
           "w-[33px] box-content p-2 cursor-pointer med-600:w-[22px] " +
           className

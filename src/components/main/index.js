@@ -1,8 +1,8 @@
 export { Header } from "./header/Header";
 export { Footer } from "./footer/Footer";
-export { PressReleaseBox } from "./PressReleaseBox";
+export { PressReleaseBox } from "../cards/PressReleaseBox";
 export { MonitoringNavbar } from "./monitoringNavbar/MonitoringNavbar";
-export { QuakeBox } from "./quakeBox/QuakeBox";
+export { QuakeBox } from "../cards/quakeBox/QuakeBox";
 export { Boxes } from "./Boxes";
 export { SingleBox } from "./SingleBox";
 export { Burger } from "./burger/Burger";

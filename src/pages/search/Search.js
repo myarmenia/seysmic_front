@@ -25,7 +25,11 @@ export const Component = () => {
     <>
       <Container bg={styles.myContainer} className={styles.search_box}>
         <form
-        // onSubmit={(e) => !value && e.preventDefault()}
+          onSubmit={(e) => {
+            if (!value) {
+              e.preventDefault();
+            }
+          }}
         >
           <SearchInput
             className="w-[60%] mx-auto med-600:w-full"
@@ -38,6 +42,7 @@ export const Component = () => {
               name: "search",
             }}
             onButtonClick={onSubmit}
+            clearValue={() => setValue("")}
           />
         </form>
       </Container>

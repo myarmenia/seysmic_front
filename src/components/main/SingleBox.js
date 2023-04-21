@@ -3,6 +3,7 @@ import { Carousel, Share } from "../reusable";
 import { SwiperSlide } from "swiper/react";
 import img_11 from "../../assets/trash/press-release/press-rel.svg";
 import icon1 from "../../assets/main/logo-rounded.svg";
+import { Link } from "react-router-dom";
 
 const videos = [
   {
@@ -31,8 +32,8 @@ export const SingleBox = ({
   icon,
   image,
   time,
-  boxes_data,
-  Item,
+  // boxes_data,
+  // Item,
   description,
   ul_data,
   // videos,
@@ -74,15 +75,13 @@ export const SingleBox = ({
               </ol>
             )}
             <div className="grid grid-cols-[repeat(auto-fill,_minmax(250px,_1fr))] gap-[17px]">
-              <div
-                onClick={() => setOpen(true)}
-                className="bg-[#D9D9D9] h-[184px]"
-              ></div>
-              <div className="bg-[#D9D9D9] h-[184px]"></div>
-              <div className="bg-[#D9D9D9] h-[184px]"></div>
-              <div className="bg-[#D9D9D9] h-[184px]"></div>
-              <div className="bg-[#D9D9D9] h-[184px]"></div>
-              <div className="bg-[#D9D9D9] h-[184px]"></div>
+              {Array.from({ length: 5 }).map((_, i) => (
+                <div
+                  key={i}
+                  onClick={() => setOpen(true)}
+                  className="bg-[#D9D9D9] h-[184px]"
+                ></div>
+              ))}
             </div>
           </div>
           <div className="py-[41px] px-[42px] bg-[#F9F9F9] grid grid-cols-[repeat(auto-fit,_minmax(310px,_1fr))] justify-items-center gap-[28px] med-600:p-[25px_20px]">
@@ -106,7 +105,7 @@ export const SingleBox = ({
   );
 };
 
-const VideoBox = ({ src, title, description, date, icon }) => {
+const VideoBox = ({ src, title, description, date, icon, to }) => {
   return (
     <div className="p-[18px] bg-white rounded-[5px] shadow-light flex flex-col gap-2">
       <iframe
@@ -118,7 +117,9 @@ const VideoBox = ({ src, title, description, date, icon }) => {
       <div className="flex gap-[6px]">
         <img className="w-[32px] h-[32px] rounded-full" src={icon} alt="" />
         <div className="flex flex-col gap-1">
-          <span className="text-dark-blue font-bold text-xs">{title}</span>
+          <Link to={to} className="text-dark-blue font-bold text-xs">
+            {title}
+          </Link>
           <p className="text-[#434343] text-xs leading-[150%]">{description}</p>
           <span className="text-[#415455] text-[10px]">{date}</span>
         </div>

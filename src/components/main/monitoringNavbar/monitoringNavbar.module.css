@@ -15,8 +15,8 @@
   @apply bg-white;
   box-shadow: 0px 1.75494px 4.38734px rgba(0, 0, 0, 0.1);
 }
-.hidden_nav {
-  @apply hidden;
+div.hidden_nav {
+  @apply !hidden;
 }
 
 @media (max-width: 600px) {

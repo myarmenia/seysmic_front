@@ -12,7 +12,8 @@
 
 .blue_box_id {
   @apply absolute bottom-[calc(100%_+_8px)] -translate-x-1/2 left-1/2 text-dark-blue text-base h-[28px]
-  font-bold opacity-0 duration-500 px-[10px] pt-2 pb-1 rounded-md shadow-light bg-white leading-[15px];
+  font-bold opacity-0 duration-500 px-[10px] pt-2 pb-1 rounded-md shadow-light bg-white leading-[15px]
+  pointer-events-none z-[2];
 }
 .blue_box_id::after {
   content: "";

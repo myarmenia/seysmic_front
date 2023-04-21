@@ -7,25 +7,24 @@ import styles from "./cstmDateInput.module.css";
 export const CstmDateInput = ({
   className = "",
   boxClassName = "",
-  defaultValue = "ДД.ММ.ГГГГ",
   regName,
   error,
   errorClassName,
   onChange,
+  value,
+  name,
+
   ...props
 }) => {
   const formMethods = useFormContext();
   const errorMessage = useError(regName, error);
   const register = useFormRegister(regName);
 
-  const [date, setDate] = useState({ value: "", curentValue: "" });
+  const [date, setDate] = useState(value || "");
   const changeHandler = (e) => {
     onChange?.(e);
     regName && formMethods.setValue(regName, e.target.value);
-    setDate({
-      value: e.target.value,
-      curentValue: e.target.value.split("-").reverse().join("."),
-    });
+    setDate(e.target.value);
   };
   useEffect(() => {
     if (regName && date.value !== "" && formMethods.formState.isSubmitted) {
@@ -39,10 +38,12 @@ export const CstmDateInput = ({
         className={`${className} ${styles.input}`}
         type="date"
         onChange={changeHandler}
-        value={date.value}
-        name={register?.name}
+        value={date}
+        name={register?.name || name}
       />
-      <span className={styles.value}>{date.curentValue || defaultValue}</span>
+      <span className={styles.value}>
+        {date.split("-").reverse().join(".") || "ДД.ММ.ГГГГ"}
+      </span>
       <ErrorMessage className={errorClassName}>{errorMessage}</ErrorMessage>
     </div>
   );

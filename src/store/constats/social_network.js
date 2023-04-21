@@ -15,7 +15,9 @@ export const social_networks = (url, text, title) => [
     img: instagram,
   },
   {
-    href: `?????????${encodeURIComponent(url)}`,
+    href: `https://mail.google.com/mail/u/0/?view=cm&to&su=${title}&body=${encodeURIComponent(
+      url
+    )}`,
     img: gmail,
   },
   {
