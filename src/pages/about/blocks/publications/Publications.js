@@ -32,7 +32,7 @@ export const Publications = () => {
         <Title>Научные публикации</Title>
         <span>За последние 15 лет</span>
       </div>
-      <Ul className={styles.ul} data={data}></Ul>
+      <Ul className={styles.ul} data={data} />
     </Container>
   );
 };
