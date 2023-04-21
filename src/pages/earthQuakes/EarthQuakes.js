@@ -7,6 +7,7 @@ import organization from "../../assets/trash/home/organization.svg";
 import { Boxes, QuakeBox } from "../../components/main";
 import { toFormData, toObject } from "../../helper";
 import { useAppSubmit } from "../../hooks";
+import { CstmDateInput, CstmInput, SearchInput } from "../../components/forms";
 
 // ------- Delete -----------
 const expl = {
@@ -55,7 +56,53 @@ const Component = () => {
       title="Текущие землетрясения"
       Item={QuakeBox}
       isMagnitude
-    />
+    >
+      <form
+        onSubmit={onSubmit}
+        className="flex items-center gap-[32px] justify-center"
+      >
+        <SearchInput
+          inputProps={{
+            placeholder: "Поиск",
+            value: values.search,
+            onChange: (e) =>
+              setValues((p) => ({ ...p, search: e.target.value })),
+            name: "search",
+          }}
+          clearValue={() => setValues((p) => ({ ...p, search: "" }))}
+        />
+        <CstmInput
+          placeholder="Магнитуда"
+          value={values?.magnitude}
+          onChange={(e) =>
+            setValues((p) => ({ ...p, magnitude: e.target.value }))
+          }
+          name="magnitude"
+          className="max-w-[132px] !px-4"
+        />
+        <div className="flex items-center gap-2">
+          <CstmDateInput
+            onChange={(e) =>
+              setValues((p) => ({ ...p, start_date: e.target.value }))
+            }
+            className="max-w-[130px] text-sm"
+            placeholder="ДД.ММ.ГГГГ"
+            name="start-date"
+            value={values.start_date}
+          />
+          <div className="bg-dark-blue w-[6px] h-[1px]" />
+          <CstmDateInput
+            onChange={(e) =>
+              setValues((p) => ({ ...p, end_date: e.target.value }))
+            }
+            className="max-w-[130px] text-sm"
+            placeholder="ДД.ММ.ГГГГ"
+            name="end-date"
+            value={values.end_date}
+          />
+        </div>
+      </form>
+    </Boxes>
   );
 };
 

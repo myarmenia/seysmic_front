@@ -7,6 +7,7 @@ import organization from "../../assets/trash/home/organization.svg";
 import { Boxes, PressReleaseBox } from "../../components/main";
 import { toFormData, toObject } from "../../helper";
 import { useAppSubmit } from "../../hooks";
+import { CstmDateInput, SearchInput } from "../../components/forms";
 
 // ------- Delete -----------
 const expl = {
@@ -42,16 +43,44 @@ const Component = () => {
   };
 
   return (
-    <Boxes
-      {...{
-        onSubmit,
-        values,
-        setValues,
-      }}
-      data={data1}
-      title="Пресс-релиз"
-      Item={PressReleaseBox}
-    />
+    <Boxes data={data1} title="Пресс-релиз" Item={PressReleaseBox}>
+      <form
+        onSubmit={onSubmit}
+        className="flex items-center gap-[32px] justify-center"
+      >
+        <SearchInput
+          inputProps={{
+            placeholder: "Поиск",
+            value: values.search,
+            onChange: (e) =>
+              setValues((p) => ({ ...p, search: e.target.value })),
+            name: "search",
+          }}
+          clearValue={() => setValues((p) => ({ ...p, search: "" }))}
+        />
+        <div className="flex items-center gap-2">
+          <CstmDateInput
+            onChange={(e) =>
+              setValues((p) => ({ ...p, start_date: e.target.value }))
+            }
+            className="max-w-[130px] text-sm"
+            placeholder="ДД.ММ.ГГГГ"
+            name="start-date"
+            value={values.start_date}
+          />
+          <div className="bg-dark-blue w-[6px] h-[1px]" />
+          <CstmDateInput
+            onChange={(e) =>
+              setValues((p) => ({ ...p, end_date: e.target.value }))
+            }
+            className="max-w-[130px] text-sm"
+            placeholder="ДД.ММ.ГГГГ"
+            name="end-date"
+            value={values.end_date}
+          />
+        </div>
+      </form>
+    </Boxes>
   );
 };
 
