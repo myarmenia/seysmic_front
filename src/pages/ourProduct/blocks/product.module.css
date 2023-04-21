@@ -80,7 +80,7 @@
   background-size: 784px 314px;
   background-repeat: no-repeat;
   /* background-image: url("img/Mask_group.png"); */
-  animation: mymove 40s infinite;
+  animation: mymove 40s infinite cubic-bezier(0, 0, 0, 0);
 }
 
 #box_img_second {
@@ -94,7 +94,7 @@
   background-size: 779px 302px;
   background-repeat: no-repeat;
   color: white;
-  animation: mymove 40s infinite;
+  animation: mymove 40s infinite cubic-bezier(0, 0, 0, 0);
   z-index: 0;
   position: relative;
 }
@@ -109,7 +109,7 @@
   top: -80px;
   left: 180px;
   z-index: 10000000000000000;
-  animation: mymovell 40s infinite;
+  animation: mymovell 40s infinite cubic-bezier(0, 0, 0, 0);
 }
 
 #box_img0 {
@@ -146,7 +146,7 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-color: transparent;
-  animation: mymove1 40s infinite;
+  animation: mymove1 40s infinite cubic-bezier(0, 0, 0, 0);
 }
 #box_img_second0 {
   @apply top-[100px] right-[0px];
