@@ -53,7 +53,7 @@ export const Results = () => {
   );
 };
 
-const Box = ({ bg, title, index, style }) => {
+const Box = ({ title, index, style }) => {
   return (
     <div className={styles.box} style={style}>
       <div className={styles.box_index}>
