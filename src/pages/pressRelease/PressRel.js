@@ -13,22 +13,23 @@ const expl = {
   time: "16:00",
 };
 const Component = () => {
-  const {
-    item: { body },
-    data,
-  } = useLoaderData();
+  // const {
+  //   item: { body },
+  //   data,
+  // } = useLoaderData();
+  const item = useLoaderData();
 
-  const data1 = data.map((el) => ({
-    description: el.body.split("").slice(0, 68).join("") + "...",
-    to: `/press-release/${el.id}`,
-    ...expl,
-  }));
+  // const data1 = data.map((el) => ({
+  //   description: el.body.split("").slice(0, 68).join("") + "...",
+  //   to: `/press-release/${el.id}`,
+  //   ...expl,
+  // }));
   return (
     <SingleBox
       {...expl}
-      Item={PressReleaseBox}
-      boxes_data={data1}
-      description={body}
+      // Item={PressReleaseBox}
+      // boxes_data={data1}
+      description={item.body}
     />
   );
 };
@@ -37,7 +38,8 @@ const loader = async ({ params }) => {
   const item = await instance.get(`posts/${params.id}?userId=1`);
   const data = await instance.get(`posts?userId=1`);
 
-  return { item: item.data, data: data.data.slice(0, 3) };
+  // return { item: item.data, data: data.data.slice(0, 3) };
+  return item.data;
 };
 
 export const PressRel = Object.assign(Component, { loader });

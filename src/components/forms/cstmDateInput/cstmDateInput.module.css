@@ -10,5 +10,6 @@ placeholder:text-[#9C9C9C] placeholder:text-xs  relative shadow-light;
   @apply absolute top-0 left-0 w-full h-full cursor-pointer opacity-0 z-[2];
 }
 .value {
-  @apply text-xs absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 text-[#cccccc] z-[1];
+  @apply text-xs absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 text-[#cccccc] z-[1]
+  whitespace-nowrap;
 }

@@ -13,7 +13,7 @@ export const SwiperNavigation = ({ children, className = "" }) => {
       <img
         onClick={() => ref?.slidePrev()}
         src={swiper_arrow}
-        className="rotate-180 cursor-pointer"
+        className="rotate-180 cursor-pointer med-600:w-[15px] med-600:h-[30px]"
         alt=""
       />
       <Swiper
@@ -21,7 +21,7 @@ export const SwiperNavigation = ({ children, className = "" }) => {
         spaceBetween={100}
         onSwiper={(swiper) => setRef(swiper)}
         allowTouchMove
-        className={"w-auto !px-[20px] med-400:!p-0 " + className}
+        className={"w-auto !px-[20px] med-400:!p-[7px] " + className}
         modules={[Navigation, A11y]}
         breakpoints={{
           1200: {
@@ -39,7 +39,7 @@ export const SwiperNavigation = ({ children, className = "" }) => {
       <img
         onClick={() => ref?.slideNext()}
         src={swiper_arrow}
-        className="cursor-pointer"
+        className="cursor-pointer med-600:w-[15px] med-600:h-[30px]"
         alt=""
       />
     </div>

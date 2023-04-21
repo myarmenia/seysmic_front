@@ -29,6 +29,7 @@ export const FilterContainer = () => {
             value,
             onChange: handleChange,
           }}
+          clearValue={() => setValue("")}
         />
       </div>
       <div className="flex flex-col gap-3 px-5">
