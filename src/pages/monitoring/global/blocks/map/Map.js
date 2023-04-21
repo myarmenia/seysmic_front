@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import map_img from "../../../../../assets/main/monitoring/main-map.svg";
+import map_img from "../../../../../assets/main/monitoring/main-map.png";
 import {
   Container,
   FilterBtn,

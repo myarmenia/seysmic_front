@@ -10,3 +10,4 @@ export { FilterBtn } from "./filterBtn/FilterBtn";
 export { Modal } from "./modal/Modal";
 export { Share } from "./share/Share";
 export { Carousel } from "./Carousel";
+export { Pagination } from "./pagination/Pagination";

@@ -5,7 +5,7 @@ import {
 } from "react-router-dom";
 
 import { ErrorBoundary } from "../components/main";
-import {  Root } from "../components/layouts";
+import { Root } from "../components/layouts";
 import {
   About,
   Contacts,
@@ -53,11 +53,17 @@ export const router = createBrowserRouter(
             index
             element={<PressReleases />}
             loader={PressReleases.loader}
+            action={PressReleases.action}
           />
           <Route path=":id" element={<PressRel />} loader={PressRel.loader} />
         </Route>
         <Route path="earth-quakes">
-          <Route index element={<EarthQuakes />} loader={EarthQuakes.loader} />
+          <Route
+            index
+            element={<EarthQuakes />}
+            loader={EarthQuakes.loader}
+            action={EarthQuakes.action}
+          />
           <Route
             path=":id"
             element={<EarthQuake />}

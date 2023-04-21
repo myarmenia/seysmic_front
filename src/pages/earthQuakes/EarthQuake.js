@@ -13,18 +13,19 @@ const expl = {
   time: "16:00",
 };
 const Component = () => {
-  const { item, data } = useLoaderData();
+  // const { item, data } = useLoaderData();
+  const item = useLoaderData();
 
-  const data1 = data.map((el) => ({
-    description: el.body.split("").slice(0, 68).join("") + "...",
-    to: `/earth-quakes/${el.id}`,
-    ...expl,
-  }));
+  // const data1 = data.map((el) => ({
+  //   description: el.body.split("").slice(0, 68).join("") + "...",
+  //   to: `/earth-quakes/${el.id}`,
+  //   ...expl,
+  // }));
   return (
     <SingleBox
       {...expl}
-      Item={QuakeBox}
-      boxes_data={data1}
+      // Item={QuakeBox}
+      // boxes_data={data1}
       description={item.body}
       ul_data={[
         { text: "bla bla bla", to: "#" },
@@ -38,9 +39,10 @@ const Component = () => {
 const loader = async ({ params }) => {
   console.log(params.id);
   const item = await instance.get(`posts/${params.id}?userId=1`);
-  const data = await instance.get(`posts?userId=1`);
+  // const data = await instance.get(`posts?userId=1`);
 
-  return { item: item.data, data: data.data.slice(0, 3) };
+  // return { item: item.data, data: data.data.slice(0, 3) };
+  return item.data;
 };
 
 export const EarthQuake = Object.assign(Component, { loader });
