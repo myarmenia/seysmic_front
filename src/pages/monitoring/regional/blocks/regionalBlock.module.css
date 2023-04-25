@@ -58,9 +58,9 @@
   @apply flex justify-between gap-1;
 }
 .img {
-  @apply w-[160px] h-[160px] border mt-[10px];  
+  @apply w-[160px] h-[160px] border mt-[10px];
 }
-.img_text{
-  @apply text-gray-500 mt-[15px]
+.img_text {
+  @apply text-gray-500 mt-[15px];
 }
 /* monitoring example */

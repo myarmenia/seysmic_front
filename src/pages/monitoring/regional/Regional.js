@@ -4,6 +4,7 @@ import { SchemaProcessing } from "./blocks/SchemaProcessing";
 import { MonitoringExample } from "./blocks/MonitoringExample";
 
 export const Regional = () => {
+  
   return (
     <>
       <CosmosImage />
