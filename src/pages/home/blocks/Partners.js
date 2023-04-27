@@ -2,10 +2,14 @@ import React from "react";
 import { Container, Title } from "../../../components/reusable";
 import img from "../../../assets/main/home/partners_img.svg";
 import logo from "../../../assets/main/LGG_logo.svg";
+import { useRef } from "react";
+import { useAnimation } from "../../../hooks";
 
 export const Partners = () => {
+  const ref = useRef(null),
+    bool = useAnimation(ref);
   return (
-    <Container className="flex flex-col items-center py-[65px]">
+    <Container myRef={ref} className="flex flex-col items-center py-[65px]">
       <Title className="mb-[60px]">Стратегический партнер</Title>
       <div className="grid grid-cols-2 gap-[50px] med-900:grid-cols-1 med-400:flex med-400:flex-col-reverse">
         <div className="flex flex-col gap-[25px] text-[#1A374D] font-bold text-lg text-justify leading-[150%]">
@@ -29,7 +33,14 @@ export const Partners = () => {
             </p>
           </div>
         </div>
-        <img className="w-full object-contain" src={img} alt="" />
+        <img
+          style={{
+            transform: bool ? "translateX(0)" : "translateX(500px)",
+          }}
+          className="w-full object-contain duration-700"
+          src={img}
+          alt=""
+        />
       </div>
     </Container>
   );

@@ -2,6 +2,8 @@ import React from "react";
 import { Container, Title, Ul } from "../../../../components/reusable";
 import styles from "./publications.module.css";
 
+const { Li } = Ul;
+
 const data = [
   "Акопян С.Ц. 2007. Диссипативные сейсмические системы, энтропия и возможности создания системы прогноза «Сейсмической погоды». Альманах «Деловая Слава России», III выпуск, с.42-46.",
   "Akopian, S.Ts., Popov E.A., 2010. Monitoring induced seismicity based on seismic entropy method. Abstracts, Induced seismicity ECGS – FKPE workshop, 15–17 November, Luxembourg, 3–4.",

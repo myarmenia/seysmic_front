@@ -1,8 +1,6 @@
 export { Header } from "./header/Header";
 export { Footer } from "./footer/Footer";
-export { PressReleaseBox } from "../cards/PressReleaseBox";
 export { MonitoringNavbar } from "./monitoringNavbar/MonitoringNavbar";
-export { QuakeBox } from "../cards/quakeBox/QuakeBox";
 export { Boxes } from "./Boxes";
 export { SingleBox } from "./SingleBox";
 export { Burger } from "./burger/Burger";

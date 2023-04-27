@@ -74,6 +74,7 @@ const action = async ({ request }) => {
   try {
     const formData = await request.formData();
     const formObj = toObject(formData);
+    console.log(formObj);
     // console.log(formObj);
     return { some: "hello" };
   } catch (err) {

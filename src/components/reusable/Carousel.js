@@ -19,11 +19,11 @@ export const Carousel = ({ children, handleClose, open }) => {
         className="absolute w-full h-full top-0 left-0 bg-black/30"
         onClick={handleClose}
       />
-      <div className="max-w-[1200px] w-full absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 flex items-center justify-between gap-[30px] med-900:w-[80%] med-900:mx-auto med-600:w-[90%] med-600:gap-3 med-600:m-[0_auto] med-400:w-full">
+      <div className="max-w-[1200px] w-full absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 flex items-center justify-between gap-[30px] med-900:w-[80%] med-900:mx-auto med-600:w-[90%] med-600:gap-3 med-600:m-[0_auto]">
         <img
           onClick={() => ref?.slidePrev()}
           src={swiper_arrow}
-          className="rotate-180 cursor-pointer bg-white/40 px-4 py-2 rounded-full"
+          className="med-600:hidden rotate-180 cursor-pointer bg-white/40 px-4 py-2 rounded-full"
           alt=""
         />
         <Swiper
@@ -38,7 +38,7 @@ export const Carousel = ({ children, handleClose, open }) => {
         <img
           onClick={() => ref?.slideNext()}
           src={swiper_arrow}
-          className="cursor-pointer bg-white/40 px-4 py-2 rounded-full"
+          className="med-600:hidden cursor-pointer bg-white/40 px-4 py-2 rounded-full"
           alt=""
         />
       </div>

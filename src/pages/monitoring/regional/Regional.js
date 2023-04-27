@@ -1,14 +1,14 @@
 import React from "react";
 import { CosmosImage } from "./blocks/CosmosImage";
 import { SchemaProcessing } from "./blocks/SchemaProcessing";
-import { MonitoringExample } from "./blocks/MonitoringExample";
+import { Outlet } from "react-router";
 
 export const Regional = () => {
   return (
     <>
       <CosmosImage />
       <SchemaProcessing />
-      <MonitoringExample />
+      <Outlet />
     </>
   );
 };

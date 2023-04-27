@@ -18,10 +18,10 @@
 }
 .globus_desc {
   @apply opacity-0 duration-500 absolute w-[225%] left-1/2 bottom-[calc(100%_+_5px)] 
-  -translate-x-1/2 z-[999999999]
-    text-dark-blue text-center leading-[19px] bg-white  
-    px-[45px] rounded-[20px] pt-[16px] pb-[23px] flex flex-col gap-2;
+  -translate-x-1/2 z-[99] text-dark-blue text-center leading-[19px] bg-white  
+  px-[45px] rounded-[20px] pt-[16px] pb-[23px] flex flex-col gap-2;
   box-shadow: 0 5px 10px 0px #74747480;
+  pointer-events: none;
 }
 .globus_desc::after {
   content: "";
@@ -39,9 +39,31 @@
 }
 
 .ad_p {
-  @apply max-w-[90%] text-white w-max py-2 px-5 bg-[#00194A] font-bold text-[24px] text-center 
-  absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 med-400:text-base med-400:leading-5
-  overflow-hidden;
+  @apply max-w-[90%] flex w-max py-2 px-5 bg-[#00194A]  text-center absolute -translate-x-1/2 
+  -translate-y-1/2 top-1/2 left-1/2 overflow-hidden;
+}
+.ad_p span {
+  animation-name: animate;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+  animation-duration: 7s;
+  @apply opacity-0 block min-w-[14px] text-white font-bold text-[24px] med-400:text-base med-400:leading-5;
+  transform-origin: 0 100%;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(1.1em) translateX(0.55em) translateZ(0px)
+      rotateZ(180deg);
+    opacity: 0;
+  }
+  10% {
+    transform: none;
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
 }
 
 @media (max-width: 600px) {

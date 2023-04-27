@@ -3,7 +3,10 @@ import { useLoaderData } from "react-router";
 import instance from "../../api";
 import h1_img from "../../assets/trash/home/h1.svg";
 import img from "../../assets/trash/press-release/press-rel.svg";
-import { SingleBox, QuakeBox } from "../../components/main";
+import {
+  SingleBox,
+  // QuakeBox
+} from "../../components/main";
 
 const expl = {
   title: "Название организации",

@@ -7,15 +7,15 @@
 }
 .marquee {
   @apply absolute -translate-y-1/2 top-1/2;
-  animation: marquee 3s cubic-bezier(0, 0, 0, 0) 0s infinite;
+  animation: marquee 10s cubic-bezier(0, 0, 0, 0) 0s infinite;
   animation-play-state: running;
 }
 @keyframes marquee {
   from {
-    left: 0;
+    right: -100px;
   }
   to {
-    left: 100%;
+    right: 100%;
   }
 }
 @media (max-width: 900px) {

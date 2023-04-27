@@ -13,16 +13,7 @@ export const Globuses = () => {
           <Globus key={i} {...el} />
         ))}
       </Container>
-      <div className="w-full relative py-[52px] med-400:py-[30px]">
-        <img
-          className="w-full min-h-[136px] med-1200:object-cover"
-          src={ad_img}
-          alt=""
-        />
-        <p className={styles.ad_p}>
-          Землетрясения нельзя остановить, но можно предсказать!
-        </p>
-      </div>
+      <Text title="Землетрясения нельзя остановить, но можно предсказать!" />
     </>
   );
 };
@@ -40,5 +31,29 @@ const Globus = ({ title, src, description, to }) => {
         <p className={styles.globus_title}>{title}</p>
       </div>
     </Link>
+  );
+};
+
+const Text = ({ title }) => {
+  return (
+    <div className="w-full relative py-[52px] med-400:py-[30px]">
+      <img
+        className="w-full min-h-[136px] med-1200:object-cover"
+        src={ad_img}
+        alt=""
+      />
+      <p className={styles.ad_p}>
+        {title.split("").map((el, i) => (
+          <span
+            style={{
+              animationDelay: i * title.split("").length + "ms",
+            }}
+            key={i}
+          >
+            {el}
+          </span>
+        ))}
+      </p>
+    </div>
   );
 };
