@@ -8,7 +8,7 @@ import { Pagination } from "swiper";
 import { generateArray } from "../../../../helper";
 import { CustomBtn } from "../../../../components/forms";
 
-const data = generateArray(3, {
+const data = generateArray(1, {
   title: "Энтропия, Сейсмология и Взгляд в Космологию:",
   subtitle: "Теория Возникновения и Эволюции",
   author: "Автор: Акопян С.Ц.",

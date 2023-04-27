@@ -41,26 +41,3 @@
 .sputnik_box_line_down {
   @apply rotate-[313deg] left-[10%] top-[73%] w-[100px];
 }
-/* monitoring example */
-.monitoring_box {
-  @apply max-w-[444px]  py-[30px] px-[48px] shadow-light;
-}
-.title {
-  @apply text-xl font-black text-dark-blue;
-}
-.date {
-  @apply text-sm text-right text-gray-700;
-}
-.tag {
-  @apply text-sm text-blue-500 mt-[10px];
-}
-.img_box {
-  @apply flex justify-between gap-1;
-}
-.img {
-  @apply w-[160px] h-[160px] border mt-[10px];
-}
-.img_text {
-  @apply text-gray-500 mt-[15px];
-}
-/* monitoring example */

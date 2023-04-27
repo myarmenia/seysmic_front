@@ -4,10 +4,11 @@ import { useFormAction } from "react-router-dom";
 import instance from "../../api";
 import h1_icon from "../../assets/trash/home/h1.svg";
 import organization from "../../assets/trash/home/organization.svg";
-import { Boxes, QuakeBox } from "../../components/main";
+import { Boxes } from "../../components/main";
 import { toFormData, toObject } from "../../helper";
 import { useAppSubmit } from "../../hooks";
 import { CstmDateInput, CstmInput, SearchInput } from "../../components/forms";
+import { QuakeBox } from "../../components/cards";
 
 // ------- Delete -----------
 const expl = {

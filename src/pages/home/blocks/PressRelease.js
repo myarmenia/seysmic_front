@@ -5,12 +5,14 @@ import { SwiperSlide } from "swiper/react";
 import h1_icon from "../../../assets/trash/home/h1.svg";
 import organization from "../../../assets/trash/home/organization.svg";
 import { CustomBtn } from "../../../components/forms";
-import { PressReleaseBox } from "../../../components/main";
+import { PressReleaseBox } from "../../../components/cards";
 import {
   Container,
   SwiperNavigation,
   Title,
 } from "../../../components/reusable";
+import { Link } from "react-router-dom";
+import { getLang } from "../../../helper";
 
 const data = {
   title: "Название организации",
@@ -42,8 +44,9 @@ export const PressRelease = () => {
           </SwiperSlide>
         ))}
       </SwiperNavigation>
-
-      <CustomBtn className="mx-auto">Узнать больше</CustomBtn>
+      <Link className="mx-auto" to={getLang("/press-release")}>
+        <CustomBtn>Узнать больше</CustomBtn>
+      </Link>
     </Container>
   );
 };

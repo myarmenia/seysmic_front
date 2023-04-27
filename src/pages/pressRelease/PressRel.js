@@ -3,7 +3,10 @@ import { useLoaderData } from "react-router";
 import instance from "../../api";
 import h1_img from "../../assets/trash/home/h1.svg";
 import img from "../../assets/trash/press-release/press-rel.svg";
-import { PressReleaseBox, SingleBox } from "../../components/main";
+import {
+  // PressReleaseBox,
+  SingleBox,
+} from "../../components/main";
 
 const expl = {
   title: "Название организации",
@@ -36,7 +39,7 @@ const Component = () => {
 
 const loader = async ({ params }) => {
   const item = await instance.get(`posts/${params.id}?userId=1`);
-  const data = await instance.get(`posts?userId=1`);
+  // const data = await instance.get(`posts?userId=1`);
 
   // return { item: item.data, data: data.data.slice(0, 3) };
   return item.data;

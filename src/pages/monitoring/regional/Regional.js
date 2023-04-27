@@ -1,7 +1,7 @@
 import React from "react";
 import { CosmosImage } from "./blocks/CosmosImage";
 import { SchemaProcessing } from "./blocks/SchemaProcessing";
-import { MonitoringExample } from "./blocks/MonitoringExample";
+import { Outlet } from "react-router";
 
 export const Regional = () => {
   
@@ -9,7 +9,7 @@ export const Regional = () => {
     <>
       <CosmosImage />
       <SchemaProcessing />
-      <MonitoringExample />
+      <Outlet />
     </>
   );
 };

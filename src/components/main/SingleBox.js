@@ -97,7 +97,11 @@ export const SingleBox = ({
       <Carousel {...{ open }} handleClose={() => setOpen(false)}>
         {Array.from({ length: 5 }).map((_, i) => (
           <SwiperSlide key={i}>
-            <img src={img_11} className="w-full" alt="" />
+            <img
+              src={img_11}
+              className="w-full h-full min-h-[500px] object-cover object-center"
+              alt=""
+            />
           </SwiperSlide>
         ))}
       </Carousel>

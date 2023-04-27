@@ -9,6 +9,8 @@ export const useAnimation = (ref) => {
 
       if (top < window_height - 200 && bottom > 200) {
         setBool(true);
+      } else {
+        setBool(false);
       }
     }
   }
