@@ -22,6 +22,7 @@ import {
   Technologies,
   Search,
 } from "../pages";
+import { MonitoringExamples } from "../pages/monitoring/regional/blocks/MonitoringExamples";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -44,7 +45,14 @@ export const router = createBrowserRouter(
         <Route path="contacts" element={<Contacts />} />
         <Route path="monitoring">
           <Route index element={<Monitoring />} loader={Monitoring.loader} />
-          <Route path="regional" element={<Regional />} />
+          <Route path="regional" element={<Regional />}>
+            <Route
+              index
+              element={<MonitoringExamples />}
+              action={MonitoringExamples.action}
+              loader={MonitoringExamples.loader}
+            />
+          </Route>
         </Route>
         <Route path="product" element={<OurProduct />} />
         <Route path="technologies" element={<Technologies />} />

@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Container, Title } from "../../../../components/reusable";
-import styles from "./results.module.css";
-import { useRef } from "react";
 import { useAnimation } from "../../../../hooks";
+import styles from "./results.module.css";
 
 const results = [
   {
@@ -42,10 +41,14 @@ export const Results = () => {
       <div className="grid grid-cols-2 gap-x-5 gap-y-[26px] justify-items-center med-900:grid-cols-1">
         {results.map((el, i) => (
           <Box
-            style={{ opacity: bool ? 1 : 0, transitionDelay: `${i / 8}s` }}
+            key={i}
             index={i + 1}
             {...el}
-            key={i}
+            style={{
+              opacity: bool ? 1 : 0,
+              transform: bool ? "translateY(0)" : "translateY(50px)",
+              transitionDelay: `${i / 10}s`,
+            }}
           />
         ))}
       </div>

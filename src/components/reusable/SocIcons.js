@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 export const SocIcons = ({ className = "" }) => {
   return (
-    <div className="flex items-center gap-[10px] [&_a]:duration-300 [&_a]:shrink-0 [&_a:hover]:scale-110">
+    <div className="flex items-center gap-[10px] [&_a]:duration-300 [&_a]:shrink-0 [&_a:hover]:scale-125">
       <Link>
         <img src={fcbook} alt="" />
       </Link>

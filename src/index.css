@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 * {
-  @apply box-border h-auto p-0 m-0 font-normal;
+  @apply box-border p-0 m-0 font-normal;
   text-decoration-skip-ink: none;
   font-family: "Inter", sans-serif;
   outline: none;

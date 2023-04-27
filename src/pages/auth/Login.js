@@ -59,9 +59,7 @@ const Component = () => {
 const action = async ({ request }) => {
   const formData = await request.formData();
   const formObj = toObject(formData);
-  const k = Object.fromEntries(Object.entries(formData));
-  console.log(k, "kkk");
-  // console.log(formObj);
+  console.log(formObj);
   return redirect("");
 };
 

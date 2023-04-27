@@ -21,7 +21,7 @@ export const ImageSlider = () => {
       <Swiper
         pagination={true}
         mousewheel={true}
-        cssMode={true}
+        allowTouchMove={true}
         modules={[Pagination, Mousewheel]}
         className="w-full h-[60vh] max-h-[622px] min-h-[229px] med-400:h-[229px]"
         // className="w-full h-[622px]"
@@ -45,9 +45,9 @@ export const ImageSlider = () => {
         bg="bg-dark-blue relative"
         className={"w-full h-[44px] text-white"}
       >
-        <a href="#" className={styles.marquee}>
+        <p className={styles.marquee}>
           Something
-        </a>
+        </p>
       </Container>
     </Container>
   );
