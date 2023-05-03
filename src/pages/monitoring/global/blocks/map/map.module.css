@@ -1,28 +1,20 @@
-.map_bg {
-  @apply bg-contain h-full relative shrink-0;
-}
-.img {
-  @apply object-contain w-full;
-}
-.blue_box {
-  border: 2px solid #3009ac;
-  outline: 2px solid #3009ac;
-  @apply absolute duration-100 cursor-pointer med-600:border-[0.1px] med-600:outline-[0.1px];
+.country {
+  @apply text-[20px] leading-[28px] text-[#606060] duration-300 cursor-pointer
+  hover:opacity-75 hover:translate-x-2;
 }
 
-.blue_box_id {
-  @apply absolute bottom-[calc(100%_+_8px)] -translate-x-1/2 left-1/2 text-dark-blue text-base h-[28px]
-  font-bold opacity-0 duration-500 px-[10px] pt-2 pb-1 rounded-md shadow-light bg-white leading-[15px]
-  pointer-events-none z-[2];
+@media (max-width: 1440px) {
+  .country {
+    @apply text-[18px] leading-[20px];
+  }
 }
-.blue_box_id::after {
-  content: "";
-  @apply absolute top-[99%] left-1/2 -translate-x-1/2 w-[5%] h-[15px] bg-white bg-transparent;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-top: 4px solid white;
+@media (max-width: 1200px) {
+  .country {
+    @apply text-[14px] leading-[16px];
+  }
 }
-
-.blue_box:hover .blue_box_id {
-  @apply opacity-100;
+@media (max-width: 600px) {
+  .country {
+    @apply text-[10px] leading-[12px];
+  }
 }

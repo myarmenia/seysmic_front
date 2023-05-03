@@ -32,7 +32,7 @@ export const CstmDateInput = ({
     }
   }, [date]);
   return (
-    <div className={"flex relative w-fit " + boxClassName}>
+    <div className={"flex relative w-fit med-600:w-full " + boxClassName}>
       <input
         {...props}
         className={`${className} ${styles.input}`}

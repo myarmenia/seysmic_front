@@ -7,7 +7,9 @@ import telegram from "../../assets/icons/social_networks/telegram.svg";
 
 export const social_networks = (url, text, title) => [
   {
-    href: `https://www.facebook.com/share.php?u=${encodeURIComponent(url)}`,
+    href: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+      url
+    )}`,
     img: fcbook,
   },
   {

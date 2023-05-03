@@ -5,5 +5,5 @@
 }
 .btn:hover,
 .active {
-  @apply bg-[#80B6EE] text-[#1A374D];
+  @apply !bg-[#80B6EE] text-[#1A374D];
 }

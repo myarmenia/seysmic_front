@@ -61,7 +61,7 @@ export const Contacts = () => {
       <Container className="py-[50px] flex flex-col gap-6">
         <Title>Контактные данные</Title>
         <div className="grid grid-cols-[2fr_3fr] gap-[46px] med-600:grid-cols-1">
-          <div className="flex flex-col justify-between">
+          <div className="flex flex-col justify-between gap-5">
             <Ul
               className="list-none !list-image-none mt-[25px] [&_li]:m-0 [&_li]:text-lg"
               data={["Номер телефона:", "Адрес:", "Email"]}

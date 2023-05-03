@@ -4,4 +4,4 @@ export { EarthquakePlaces } from "./EarthquakePlaces";
 export { PressRelease } from "./PressRelease";
 export { Partners } from "./Partners";
 export { News } from "./news/News";
-export { UsersInfo } from "./usersInfo/UsersInfo";
+export { UsersInfo } from "./UsersInfo";

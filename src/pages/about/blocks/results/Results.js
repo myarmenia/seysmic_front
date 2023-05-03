@@ -1,6 +1,9 @@
-import React, { useRef } from "react";
-import { Container, Title } from "../../../../components/reusable";
-import { useAnimation } from "../../../../hooks";
+import React from "react";
+import {
+  Container,
+  Title,
+  ViewPosition,
+} from "../../../../components/reusable";
 import styles from "./results.module.css";
 
 const results = [
@@ -29,30 +32,31 @@ const results = [
 ];
 
 export const Results = () => {
-  const ref = useRef(null);
-  const bool = useAnimation(ref);
   return (
-    <Container
-      myRef={ref}
-      bg="bg-[#F0F2F5]"
-      className="pt-[45px] pb-[80px] flex flex-col gap-[55px] med-600:gap-[35px]"
-    >
-      <Title>Основные научные результаты</Title>
-      <div className="grid grid-cols-2 gap-x-5 gap-y-[26px] justify-items-center med-900:grid-cols-1">
-        {results.map((el, i) => (
-          <Box
-            key={i}
-            index={i + 1}
-            {...el}
-            style={{
-              opacity: bool ? 1 : 0,
-              transform: bool ? "translateY(0)" : "translateY(50px)",
-              transitionDelay: `${i / 10}s`,
-            }}
-          />
-        ))}
-      </div>
-    </Container>
+    <ViewPosition>
+      {(bool) => (
+        <Container
+          bg="bg-[#F0F2F5]"
+          className="pt-[45px] pb-[80px] flex flex-col gap-[55px] med-600:gap-[35px]"
+        >
+          <Title>Основные научные результаты</Title>
+          <div className="grid grid-cols-2 gap-x-5 gap-y-[26px] justify-items-center med-900:grid-cols-1">
+            {results.map((el, i) => (
+              <Box
+                key={i}
+                index={i + 1}
+                {...el}
+                style={{
+                  opacity: bool ? 1 : 0,
+                  transform: bool ? "translateY(0)" : "translateY(50px)",
+                  transitionDelay: `${i / 10}s`,
+                }}
+              />
+            ))}
+          </div>
+        </Container>
+      )}
+    </ViewPosition>
   );
 };
 

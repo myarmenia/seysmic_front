@@ -1,28 +1,29 @@
 import React from "react";
 import classes from "./ul.module.css";
-import { useRef } from "react";
-import { useAnimation } from "../../../hooks";
+import { ViewPosition } from "../ViewPosition";
 
 const Component = ({ children, data, className = "" }) => {
-  const ref = useRef(null);
-  const bool = useAnimation(ref);
   return (
-    <ul ref={ref} className={[className, classes.ul].join(" ")}>
-      {data && data.length
-        ? data?.map((text, i) => (
-            <Li
-              key={i}
-              style={{
-                opacity: bool ? 1 : 0,
-                transform: bool ? "translateY(0)" : "translateY(50px)",
-                transitionDelay: `${i / 10}s`,
-              }}
-            >
-              {text}
-            </Li>
-          ))
-        : children}
-    </ul>
+    <ViewPosition>
+      {(bool) => (
+        <ul className={[className, classes.ul].join(" ")}>
+          {data && data.length
+            ? data?.map((text, i) => (
+                <Li
+                  key={i}
+                  style={{
+                    opacity: bool ? 1 : 0,
+                    transform: bool ? "translateY(0)" : "translateY(50px)",
+                    transitionDelay: `${i / 10}s`,
+                  }}
+                >
+                  {text}
+                </Li>
+              ))
+            : children}
+        </ul>
+      )}
+    </ViewPosition>
   );
 };
 

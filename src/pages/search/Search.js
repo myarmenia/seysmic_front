@@ -8,6 +8,7 @@ import { toFormData, toObject } from "../../helper";
 import { useAppSubmit } from "../../hooks";
 import { Result } from "./Result";
 import styles from "./search.module.css";
+import img from "../../assets/main/logo-light-gray.svg";
 
 export const Component = () => {
   const loaderData = useLoaderData();
@@ -46,7 +47,12 @@ export const Component = () => {
           />
         </form>
       </Container>
-      <div className={styles.bg}>
+      <div
+        style={{
+          background: !loaderData.length && `url("${img}") center no-repeat`,
+        }}
+        className={styles.bg}
+      >
         <Container className={styles.results}>
           {loaderData.length ? (
             loaderData.map(({ title, body, id }) => (
@@ -83,8 +89,8 @@ const action = async ({ request }) => {
 };
 
 const loader = async ({ request }) => {
-  const url = new URL(request.url);
-  const search = url.searchParams.get("search");
+  const url = Object.fromEntries(new URL(request.url).searchParams);
+  const search = url.search;
 
   try {
     const data = await instance.get(`posts?userId=1`);

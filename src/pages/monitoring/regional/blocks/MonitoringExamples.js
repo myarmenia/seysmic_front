@@ -44,6 +44,12 @@ const Component = () => {
         />
         <div className="flex items-center gap-5">
           <FilterBtn
+            active={values.filter === "d"}
+            onClick={() => setValues((p) => ({ ...p, filter: "d" }))}
+          >
+            См. еще примеры
+          </FilterBtn>
+          <FilterBtn
             active={values.filter === "a"}
             onClick={() => setValues((p) => ({ ...p, filter: "a" }))}
           >

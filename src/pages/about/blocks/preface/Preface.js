@@ -86,14 +86,14 @@ const Box = ({ name, roles, description, image, className = "" }) => {
     <div className="border-b-[9px] border-[#DEDEDE] py-[57px] first:border-t-[9px]">
       <Container
         className={
-          "flex gap-[65px] items-start med-900:!flex-col-reverse " + className
+          "flex gap-[65px] items-start med-900:!flex-col-reverse med-600:gap-[28px] " + className
         }
       >
         <div className="flex flex-col">
-          <span className="text-dark-blue font-bold text-[24px] pb-[20px]">
+          <span className="text-dark-blue font-bold text-[24px] pb-[20px] med-600:pb-[10px]">
             {name}
           </span>
-          <div className="flex flex-col justify-between gap-3">
+          <div className="flex flex-col justify-between gap-3 med-600:gap-1">
             {roles.map((role, i) => (
               <p
                 key={i}
@@ -104,12 +104,12 @@ const Box = ({ name, roles, description, image, className = "" }) => {
             ))}
           </div>
           {description && (
-            <p className="text-justify font-medium text-[15x] leading-[180%] mt-[26px] whitespace-pre-wrap med-600:text-[14px] med-600:leading-[180%]">
+            <p className="text-justify font-medium text-[15px] leading-[180%] mt-[26px] whitespace-pre-wrap med-600:mt-[10px] med-600:text-[14px] med-600:leading-[180%]">
               {description}
             </p>
           )}
         </div>
-        <img src={image} alt="" />
+        <img className="med-400:mx-auto" src={image} alt="" />
       </Container>
     </div>
   );

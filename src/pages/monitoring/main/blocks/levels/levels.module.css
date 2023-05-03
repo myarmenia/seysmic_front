@@ -1,0 +1,16 @@
+.bg {
+  background: url("../../../../../assets/main/monitoring/main/national-bg-img.svg");
+}
+.my_container {
+  background: url("../../../../../assets/main/monitoring/main/earth-map-transparent.png")
+    center no-repeat;
+  @apply py-[60px] flex flex-col gap-[70px] med-900:gap-[50px] 
+  med-600:gap-[30px];
+}
+.describtion {
+  @apply text-[24px] med-600:text-[18px] text-center leading-[142.69%] 
+  mx-auto w-[70%] uppercase med-1200:w-full;
+}
+.text {
+  @apply z-[4] text-white text-[42px] font-semibold whitespace-nowrap;
+}
