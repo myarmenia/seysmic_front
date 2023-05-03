@@ -1,0 +1,28 @@
+.map_bg {
+    @apply bg-contain h-full relative shrink-0;
+  }
+  .img {
+    @apply object-contain w-full;
+  }
+  .blue_box {
+    border: 2px solid #3009ac;
+    outline: 2px solid #3009ac;
+    @apply absolute duration-100 cursor-pointer med-600:border-[0.1px] med-600:outline-[0.1px];
+  }
+  
+  .blue_box_id {
+    @apply bg-[#FFF72F] absolute bottom-[calc(100%_+_8px)] -translate-x-1/2 left-1/2 text-dark-blue
+    font-bold opacity-0 duration-500 px-2 py-1 rounded-[0.74px] shadow-light leading-[10px]
+    pointer-events-none z-[2] text-[10px];
+  }
+  .blue_box_id::after {
+    content: "";
+    @apply absolute top-[99%] left-1/2 -translate-x-1/2 w-[5%] h-[15px] bg-white bg-transparent;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 4px solid white;
+  }
+  
+  .blue_box:hover .blue_box_id {
+    @apply opacity-100;
+  }

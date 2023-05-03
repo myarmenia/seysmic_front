@@ -3,7 +3,7 @@ import { CosmosImage } from "./blocks/CosmosImage";
 import { SchemaProcessing } from "./blocks/SchemaProcessing";
 import { Outlet } from "react-router";
 
-export const Regional = () => {
+export const RegionalMonitoring = () => {
   return (
     <>
       <CosmosImage />

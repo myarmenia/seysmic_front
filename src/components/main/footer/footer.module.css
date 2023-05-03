@@ -39,9 +39,6 @@
   .content ul {
     @apply w-full items-center;
   }
-  .content ul li {
-    @apply w-full;
-  }
   .logo {
     @apply mx-auto items-center justify-center;
   }

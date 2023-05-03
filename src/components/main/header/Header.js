@@ -45,7 +45,7 @@ export const Header = () => {
             {language.nav_items.technologies}
           </HeaderLink>
           {/* <HeaderLink onClick={chooseOption} to={getLang(`/monitoring"}>{language.nav_items.monitoring}</HeaderLink> */}
-          <HeaderLink onClick={chooseOption} to={getLang(`/earth-quakes`)}>
+          <HeaderLink onClick={chooseOption} to={getLang(`/monitoring`)}>
             {language.nav_items.monitoring}
           </HeaderLink>
           <HeaderLink onClick={chooseOption} to={getLang(`/press-release`)}>

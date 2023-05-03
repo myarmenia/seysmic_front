@@ -1,0 +1,10 @@
+.bg {
+  background: #f5f5f5;
+}
+.ul {
+  list-style: url("../../../assets/icons/ul_img.svg");
+  @apply grid grid-cols-2 gap-[18px_144px] med-600:grid-cols-1;
+}
+.ul li {
+  @apply italic [&>p]:text-[#1A374D];
+}

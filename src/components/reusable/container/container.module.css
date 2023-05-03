@@ -6,3 +6,9 @@
   @apply max-w-[1250px] mx-auto w-full overflow-x-hidden
   px-[32px] med-600:px-6 med-400:px-[18px];
 }
+
+@media (min-width: 1440px) {
+  .content {
+    @apply max-w-[1528px];
+  }
+}

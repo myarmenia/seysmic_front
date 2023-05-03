@@ -1,0 +1,18 @@
+.list {
+  list-style-image: url("../../../../../assets/icons/list-style-round.svg");
+  @apply gap-2;
+}
+.list li {
+  @apply text-[24px] med-1200:text-[20px] med-600:text-[14px];
+}
+.my_container {
+  @apply py-[70px] med-1200:py-12 med-600:py-8 flex flex-col gap-20 
+  med-1200:gap-16 med-600:gap-10 med-400:gap-7;
+}
+.content {
+  @apply flex flex-col gap-10 text-[24px] med-1200:text-[20px] 
+  med-600:text-[14px];
+}
+.content p {
+  @apply text-justify;
+}

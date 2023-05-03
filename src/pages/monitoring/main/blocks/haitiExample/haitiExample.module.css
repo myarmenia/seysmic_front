@@ -1,0 +1,12 @@
+.list {
+  list-style-image: url("../../../../../assets/icons/list-style-round.svg");
+  @apply inline;
+}
+.list-item > span {
+  @apply relative pl-2 flex text-[21px] leading-[168.5%] text-justify;
+}
+.list-item > span::before {
+  content: "";
+  @apply bg-[url("../../../../../assets/icons/list-style-round.svg")] bg-cover
+   block w-2 h-2 absolute left-auto right-full top-[7px];
+}

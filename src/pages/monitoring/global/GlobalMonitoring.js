@@ -1,5 +1,6 @@
 import React from "react";
-import { Map, Countries } from "./blocks";
+import { Map } from "./blocks";
+import { Countries } from "../../../components/static";
 import instance from "../../../api";
 
 const Component = () => {
@@ -16,4 +17,4 @@ const loader = async () => {
   return data.data;
 };
 
-export const Monitoring = Object.assign(Component, { loader });
+export const GlobalMonitoring = Object.assign(Component, { loader });

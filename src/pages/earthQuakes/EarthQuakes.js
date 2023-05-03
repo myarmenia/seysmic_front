@@ -40,27 +40,17 @@ const Component = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (Object.values(values).every((e) => !!e)) {
-      const data = toFormData(values);
-      submit(data, { action, method: "post" });
-    }
+    // if (Object.values(values).every((e) => !!e)) {
+    const data = toFormData(values);
+    submit(data, { action, method: "post" });
+    // }
   };
 
   return (
-    <Boxes
-      {...{
-        onSubmit,
-        values,
-        setValues,
-      }}
-      data={data1}
-      title="Текущие землетрясения"
-      Item={QuakeBox}
-      isMagnitude
-    >
+    <Boxes data={data1} title="Текущие землетрясения" Item={QuakeBox}>
       <form
         onSubmit={onSubmit}
-        className="flex items-center gap-[32px] justify-center"
+        className="flex items-center gap-[32px] justify-center med-600:flex-col med-600:gap-[16px]"
       >
         <SearchInput
           inputProps={{
@@ -79,24 +69,24 @@ const Component = () => {
             setValues((p) => ({ ...p, magnitude: e.target.value }))
           }
           name="magnitude"
-          className="max-w-[132px] !px-4"
+          className="max-w-[132px] !px-4 med-600:max-w-none"
         />
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 med-600:w-full">
           <CstmDateInput
             onChange={(e) =>
               setValues((p) => ({ ...p, start_date: e.target.value }))
             }
-            className="max-w-[130px] text-sm"
+            className="max-w-[130px] text-sm med-600:max-w-none"
             placeholder="ДД.ММ.ГГГГ"
             name="start-date"
             value={values.start_date}
           />
-          <div className="bg-dark-blue w-[6px] h-[1px]" />
+          <div className="bg-dark-blue w-[6px] h-[1px] shrink-0" />
           <CstmDateInput
             onChange={(e) =>
               setValues((p) => ({ ...p, end_date: e.target.value }))
             }
-            className="max-w-[130px] text-sm"
+            className="max-w-[130px] text-sm med-600:max-w-none"
             placeholder="ДД.ММ.ГГГГ"
             name="end-date"
             value={values.end_date}

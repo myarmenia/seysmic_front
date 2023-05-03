@@ -4,5 +4,5 @@
 }
 .li {
   @apply duration-300 opacity-0 text-base leading-[112%] text-justify text-black ml-[29px] pl-[10px] 
-  overflow-hidden med-600:pl-[5px] med-600:ml-[16px];
+  med-600:pl-[5px];
 }

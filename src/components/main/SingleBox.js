@@ -3,7 +3,7 @@ import { Carousel, Share } from "../reusable";
 import { SwiperSlide } from "swiper/react";
 import img_11 from "../../assets/trash/press-release/press-rel.svg";
 import icon1 from "../../assets/main/logo-rounded.svg";
-import { Link } from "react-router-dom";
+import { VideoBox } from "../cards";
 
 const videos = [
   {
@@ -32,8 +32,6 @@ export const SingleBox = ({
   icon,
   image,
   time,
-  // boxes_data,
-  // Item,
   description,
   ul_data,
   // videos,
@@ -88,9 +86,6 @@ export const SingleBox = ({
             {videos.map((el, i) => (
               <VideoBox {...el} key={i} />
             ))}
-            {/* {boxes_data.map((el, i) => (
-              <Item {...el} key={i} />
-            ))} */}
           </div>
         </div>
       </div>
@@ -106,28 +101,5 @@ export const SingleBox = ({
         ))}
       </Carousel>
     </>
-  );
-};
-
-const VideoBox = ({ src, title, description, date, icon, to }) => {
-  return (
-    <div className="p-[18px] bg-white rounded-[5px] shadow-light flex flex-col gap-2">
-      <iframe
-        src="https://www.youtube.com/embed/DtvfnOtO1Wk"
-        title="YouTube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowFullScreen
-      ></iframe>
-      <div className="flex gap-[6px]">
-        <img className="w-[32px] h-[32px] rounded-full" src={icon} alt="" />
-        <div className="flex flex-col gap-1">
-          <Link to={to} className="text-dark-blue font-bold text-xs">
-            {title}
-          </Link>
-          <p className="text-[#434343] text-xs leading-[150%]">{description}</p>
-          <span className="text-[#415455] text-[10px]">{date}</span>
-        </div>
-      </div>
-    </div>
   );
 };

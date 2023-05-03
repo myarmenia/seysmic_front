@@ -13,11 +13,12 @@ import {
   EarthQuakes,
   Home,
   Login,
-  Monitoring,
+  GlobalMonitoring,
+  MainMonitoring,
   OurProduct,
   PressRel,
   PressReleases,
-  Regional,
+  RegionalMonitoring,
   Registration,
   Technologies,
   Search,
@@ -44,8 +45,13 @@ export const router = createBrowserRouter(
         <Route path="about" element={<About />} />
         <Route path="contacts" element={<Contacts />} />
         <Route path="monitoring">
-          <Route index element={<Monitoring />} loader={Monitoring.loader} />
-          <Route path="regional" element={<Regional />}>
+          <Route index element={<MainMonitoring />} />
+          <Route
+            path="global"
+            element={<GlobalMonitoring />}
+            loader={GlobalMonitoring.loader}
+          />
+          <Route path="regional" element={<RegionalMonitoring />}>
             <Route
               index
               element={<MonitoringExamples />}

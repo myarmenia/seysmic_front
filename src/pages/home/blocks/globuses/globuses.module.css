@@ -40,7 +40,7 @@
 
 .ad_p {
   @apply max-w-[90%] flex w-max py-2 px-5 bg-[#00194A]  text-center absolute -translate-x-1/2 
-  -translate-y-1/2 top-1/2 left-1/2 overflow-hidden;
+  -translate-y-1/2 top-1/2 left-1/2 overflow-hidden flex-wrap justify-center;
 }
 .ad_p span {
   animation-name: animate;

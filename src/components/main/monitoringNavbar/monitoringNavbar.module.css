@@ -21,7 +21,7 @@ div.hidden_nav {
 
 @media (max-width: 600px) {
   .nav {
-    @apply w-full rounded-none m-0 !grid grid-cols-4 justify-items-center bottom-0 
+    @apply sticky w-full rounded-none m-0 !grid grid-cols-4 justify-items-center bottom-0 
     left-0 right-0 top-[unset];
   }
   .nav_item {
