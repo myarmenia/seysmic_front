@@ -62,9 +62,9 @@ export const News = () => {
 const Box = ({ author, place, subtitle, title, describcion }) => {
   return (
     <div className="flex flex-col gap-[35px] items-center mb-[50px]">
-      <div className="grid grid-cols-2 gap-[50px] med-600:grid-cols-1 med-600:gap-6">
-        <img src={img} alt="" />
-        <div className="flex flex-col gap-1 text-black text-justify">
+      <div className="grid grid-cols-2 gap-[50px] med-1200:inline med-600:grid med-600:grid-cols-1 med-600:gap-6">
+        <img className="med-1200:float-left med-1200:w-[40%] med-600:w-full" src={img} alt="" />
+        <div className="flex flex-col gap-1 text-black text-justify med-1200:inline">
           <b className="flex flex-col">
             <span className="font-semibold text-base">{title}</span>
             <span className="font-semibold text-sm">{subtitle}</span>

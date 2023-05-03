@@ -1,7 +1,6 @@
 .globuses {
-  @apply grid gap-y-10 grid-cols-[repeat(auto-fit,_minmax(280px,_1fr))] 
-  justify-items-center py-[80px] med-600:grid-cols-2 med-600:gap-5 med-600:py-[30px]
-  med-600:hidden;
+  @apply grid gap-y-10 grid-cols-4 justify-items-center py-[80px] 
+  med-1200:py-[30px] med-900:hidden;
   overflow: inherit;
 }
 .globus {

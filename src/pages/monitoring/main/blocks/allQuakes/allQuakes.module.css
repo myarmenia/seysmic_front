@@ -1,0 +1,50 @@
+:root {
+  /* --bg-color: linear-gradient(
+    180deg,
+    #f6f0f0 3.46%,
+    #ffffff 54.69%,
+    #f6f0f0 100%
+  ); */
+  --bg-color: #f6f0f0;
+}
+
+.item {
+  box-shadow: 0px 5px 26px rgba(0, 0, 0, 0.15);
+  @apply bg-white w-full text-[26px] text-[#938E97] flex justify-between gap-5
+  duration-700 med-900:text-[20px];
+}
+
+.item > * {
+  @apply py-[14px] relative;
+}
+.item > *::before {
+  content: "";
+  @apply absolute left-[-16%] border-dashed border-[1px] border-[#CDC9CE] 
+  h-[60%] top-1/2 -translate-y-1/2;
+}
+
+.magnitude {
+  @apply w-[16%] min-w-[120px] before:hidden;
+}
+.magnitude,
+.date {
+  background: var(--bg-color);
+  @apply py-[14px] pl-[63px] pr-5 relative w-fit text-[#FF0003] font-extrabold
+  text-center;
+}
+.magnitude::after,
+.date::after {
+  content: "";
+  border-bottom: 35px solid transparent;
+  border-top: 35px solid transparent;
+  border-left: 40px solid #f6f0f0;
+  @apply absolute left-[99%] top-0 bottom-0 h-full;
+}
+
+.country {
+  @apply text-black;
+}
+
+.date {
+  @apply pr-10 pl-7 text-[#654E65] font-normal after:hidden;
+}

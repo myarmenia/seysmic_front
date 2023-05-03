@@ -11,15 +11,16 @@ export const ViewPosition = ({ children, ...props }) => {
 
       if (top < window_height - 200 && bottom > 200) {
         setBool(true);
-      } else {
-        setBool(false);
       }
+      // else {
+      //   setBool(false);
+      // }
     }
   }
   useEffect(() => {
     document.addEventListener("scroll", handleScroll);
     return () => document.removeEventListener("scroll", handleScroll);
-  }, [ref.current]);
+  }, []);
 
   return (
     <div {...props} ref={ref}>

@@ -4,7 +4,13 @@ import { Container } from "../container/Container";
 import { Title } from "../titles/Title";
 import { Ul } from "../ul/Ul";
 
+const splitToArrays = (data) => {
+  const half = Math.ceil(data.length / 2);
+  return [data.slice(0, half), data.slice(half, data.length)];
+};
+
 export const CustomUl = ({ title, subtitle, data }) => {
+  const [data1, data2] = splitToArrays(data);
   return (
     <Container
       bg={styles.bg}
@@ -14,9 +20,10 @@ export const CustomUl = ({ title, subtitle, data }) => {
         <Title>{title}</Title>
         {subtitle && <p className="text-[32px] text-center">{subtitle}</p>}
       </div>
-      <div className="relative">
-        <div className="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 h-full w-[1px] bg-[#6998AB] med-600:hidden" />
-        <Ul data={data} className={styles.ul} />
+      <div className="grid grid-cols-[auto_1px_auto] gap-[65px] med-900:grid-cols-1">
+        <Ul data={data1} className={styles.ul} />
+        <div className={styles.hr} />
+        <Ul data={data2} className={styles.ul} />
       </div>
     </Container>
   );

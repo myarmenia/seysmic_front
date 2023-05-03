@@ -8,13 +8,18 @@
 }
 .item {
   translate: 10px 0;
-  @apply flex gap-[60px] w-1/2 [&_*]:text-end items-center flex-row-reverse
-   duration-1000 transition-all 
-  med-1200:gap-[40px] med-900:gap-[25px] med-600:gap-[15px] med-400:gap-[8px];
+  @apply w-1/2 [&_*]:text-end ;
 }
 .item:nth-child(even) {
   translate: -10px 0;
-  @apply self-end [&_*]:text-start flex-row;
+  @apply [&_*]:text-start self-end;
+}
+.item > div {
+  @apply flex gap-[60px] items-center flex-row-reverse duration-1000 transition-all
+  med-1200:gap-[40px] med-900:gap-[25px] med-600:gap-[15px] med-400:gap-[8px];
+}
+.item:nth-child(even) > div {
+  @apply flex-row;
 }
 .line-through {
   @apply absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 h-[90%] 
