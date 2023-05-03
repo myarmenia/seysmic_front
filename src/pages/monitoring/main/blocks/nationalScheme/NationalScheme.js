@@ -52,7 +52,7 @@ export const NationalScheme = () => {
 
 const Box = ({ title, describtion, delay }) => {
   return (
-    <ViewPosition>
+    <ViewPosition className={styles.item}>
       {(bool) => (
         <div
           style={{
@@ -60,7 +60,7 @@ const Box = ({ title, describtion, delay }) => {
             transform: bool ? "translateY(0)" : "translateY(50px)",
             transitionDelay: delay + "ms",
           }}
-          className={styles.item}
+          // className={styles.item}
         >
           <div className="shrink-0 w-5 h-5 rounded-full bg-[linear-gradient(180deg,_#0026AA_0%,_#30CFFF_100%)]" />
           <div className="flex flex-col gap-1 ">

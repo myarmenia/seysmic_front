@@ -3,8 +3,12 @@
 }
 .ul {
   list-style: url("../../../assets/icons/ul_img.svg");
-  @apply grid grid-cols-2 gap-[18px_144px] med-600:grid-cols-1;
+  @apply flex flex-col gap-[18px];
+}
+.hr {
+  @apply h-full w-[1px] bg-[#6998AB] med-900:hidden;
 }
 .ul li {
   @apply italic [&>p]:text-[#1A374D];
 }
+/* absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 */

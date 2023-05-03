@@ -33,7 +33,7 @@ export const SwiperNavigation = ({ children, className = "" }) => {
             slidesPerView: 3,
             spaceBetween: 40,
           },
-          950: {
+          900: {
             slidesPerView: 2,
             spaceBetween: 30,
           },

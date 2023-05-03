@@ -14,6 +14,7 @@ import {
   Levels,
   Describtion,
   HaitiExample,
+  AllQuakes,
 } from "./blocks";
 
 // Images
@@ -130,6 +131,7 @@ export const MainMonitoring = () => {
       <Levels />
       <Describtion />
       <HaitiExample />
+      <AllQuakes />
     </>
   );
 };
