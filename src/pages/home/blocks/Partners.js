@@ -37,7 +37,7 @@ export const Partners = () => {
           style={{
             transform: bool ? "translateX(0)" : "translateX(500px)",
           }}
-          className="w-full object-contain duration-700"
+          className="object-contain w-full duration-700 med-900:duration-800"
           src={img}
           alt=""
         />

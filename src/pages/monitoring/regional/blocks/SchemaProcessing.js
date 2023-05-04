@@ -25,7 +25,7 @@ export const SchemaProcessing = () => {
       </Container>
       <Container
         bg="bg-[#F9F9F9]"
-        className="flex pb-[32px] mt-[20px] gap-[80px]"
+        className="flex pb-[32px] mt-[20px] gap-[80px] med-1200:flex-col gap-0"
       >
         <div className="flex gap-[20px] justify-between  max-w-[400px]  ">
           <div className="flex flex-col justify-between w-full gap-8 ">
@@ -47,12 +47,12 @@ export const SchemaProcessing = () => {
                   <img
                     src={curelyLine}
                     alt="curelyLine"
-                    className="absolute top-[-40%] right-[-40%] "
+                    className="absolute top-[-40%] right-[-40%] med-1200:rotate(90) "
                   />
                 </div>
               </div>
             </div>
-            <div className="bg-[#bbbbbb]   py-[15px] px-[20px] text-dark-blue">
+            <div className="bg-[#bbbbbb]  py-[15px] px-[20px] text-dark-blue med-1200:hidden">
               Поэтапная обработка космического изображения для выбранного
               спутника, даты, региона и локальной зоны
             </div>
@@ -121,6 +121,10 @@ export const SchemaProcessing = () => {
               <img src={removeImg} alt="removeImg" />
             </div>
           </div>
+        </div>
+        <div className=" py-[15px] px-[20px] text-dark-blue hidden med-1200:block">
+          Поэтапная обработка космического изображения для выбранного спутника,
+          даты, региона и локальной зоны
         </div>
       </Container>
     </>

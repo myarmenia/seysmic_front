@@ -27,7 +27,6 @@ const Component = () => {
 const loader = async () => {
   const res = await instance.get(`posts?userId=1`);
   const res1 = await instance.get(`posts?userId=1`);
-
   return { earth_quakes: res.data, press_release: res1.data };
 };
 
