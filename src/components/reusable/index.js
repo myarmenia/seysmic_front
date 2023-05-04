@@ -1,6 +1,7 @@
 export { Logo } from "./logo/Logo";
 export { ErrorMessage } from "./ErrorMessage";
 export { Title } from "./titles/Title";
+export { TitleBorder } from "./titles/TitleBorder";
 export { Container } from "./container/Container";
 export { Gradient } from "./gradient/Gradient";
 export { SwiperNavigation } from "./SwiperNavigation";
@@ -11,3 +12,6 @@ export { Modal } from "./modal/Modal";
 export { Share } from "./share/Share";
 export { Carousel } from "./Carousel";
 export { Pagination } from "./pagination/Pagination";
+export { CustomUl } from "./customUl/CustomUl";
+export { RoundNum } from "./roundNum/RoundNum";
+export { ViewPosition } from "./ViewPosition";

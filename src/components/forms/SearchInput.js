@@ -10,7 +10,7 @@ export const SearchInput = ({
   buttonType = "submit",
 }) => {
   return (
-    <div className={["relative", className].join(" ")}>
+    <div className={["relative med-600:w-full", className].join(" ")}>
       <CstmInput
         {...inputProps}
         onKeyDown={(e) => e.key === "Enter" && onButtonClick?.()}

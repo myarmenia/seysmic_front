@@ -12,7 +12,7 @@ export const PressReleaseBox = ({
   to,
 }) => {
   return (
-    <div className="bg-white flex flex-col justify-between gap-2 shadow-[0px_2px_11px_rgba(0,_0,_0,_0.15)] px-[23px] py-[22px] rounded-[6px] max-w-[430px] hover:scale-[1.1] duration-300 med-600:hover:scale-[1.05]">
+    <div className="bg-white flex flex-col justify-between gap-2 shadow-[0px_2px_11px_rgba(0,_0,_0,_0.15)] px-[23px] py-[22px] rounded-[6px] max-w-[430px] hover:scale-[1.1] duration-300 med-900:max-w-none med-900:w-full med-600:hover:scale-[1.05]">
       <div className="flex justify-between gap-5">
         <Link to={getLang(to)} className="flex items-center gap-3">
           <img src={icon} alt="" />

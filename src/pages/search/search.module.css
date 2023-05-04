@@ -6,21 +6,21 @@
   @apply py-4;
 }
 .bg {
-  background: url("../../assets/main/logo-light-gray.svg") center no-repeat;
+  /* background: url("../../assets/main/logo-light-gray.svg") center no-repeat; */
   @apply h-full py-[32px];
 }
 .results {
   @apply flex flex-col gap-5;
 }
 .result {
-  @apply flex flex-col gap-[6px];
+  @apply flex flex-col gap-[6px] med-600:gap-0.5;
 }
 .result a {
-  @apply text-dark-blue text-[20px] font-semibold;
+  @apply text-dark-blue text-[20px] font-semibold med-600:text-[14.5px];
 }
 .result_title {
-  @apply text-[#434343] text-base;
+  @apply text-[#434343] text-base med-600:text-xs;
 }
 .result_describtion {
-  @apply text-base leading-[150%] text-[#434343];
+  @apply text-base leading-[150%] text-[#434343] med-600:text-xs;
 }

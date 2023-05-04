@@ -1,2 +1,3 @@
-export { Monitoring } from "./global/Monitoring";
-export { Regional } from "./regional/Regional";
+export { GlobalMonitoring } from "./global/GlobalMonitoring";
+export { RegionalMonitoring } from "./regional/Regional";
+export { MainMonitoring } from "./main/MainMonitoring";

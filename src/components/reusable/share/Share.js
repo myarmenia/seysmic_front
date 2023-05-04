@@ -42,7 +42,7 @@ export const Share = ({
 
 const SocialLink = ({ href, img }) => {
   return (
-    <a href={href} className={styles.option}>
+    <a href={href} target="_blank" className={styles.option}>
       <img src={img} alt="" />
     </a>
   );

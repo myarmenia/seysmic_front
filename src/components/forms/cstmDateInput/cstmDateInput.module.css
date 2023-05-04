@@ -1,6 +1,6 @@
 .input {
   @apply min-w-[107px] py-3 px-[17px] text-sm bg-white rounded-[30px] outline-none h-12
-placeholder:text-[#9C9C9C] placeholder:text-xs  relative shadow-light;
+placeholder:text-[#9C9C9C] placeholder:text-xs relative shadow-light;
 }
 .input::-webkit-inner-spin-button,
 .input::-webkit-calendar-picker-indicator,
@@ -13,3 +13,9 @@ placeholder:text-[#9C9C9C] placeholder:text-xs  relative shadow-light;
   @apply text-xs absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 text-[#cccccc] z-[1]
   whitespace-nowrap;
 }
+@media (max-width: 600px) {
+  .input {
+    @apply w-full;
+  }
+}
+

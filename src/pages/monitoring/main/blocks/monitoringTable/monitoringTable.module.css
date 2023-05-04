@@ -1,0 +1,23 @@
+.table-item {
+  @apply flex;
+}
+.table-item:first-child > div,
+.table-item:first-child > p {
+  @apply border-t-[0];
+}
+.table-item > div,
+.table-item > p {
+  @apply border-r-0 p-[12px_22px] border-b-[0] border-[rgba(0,_38,_135,_0.4)] border-[1.06608px];
+}
+.table-item > div {
+  @apply border-l-0 w-[max(50px,_10%)];
+}
+.table-item > p {
+  @apply w-full;
+}
+.table-item > div {
+  @apply flex items-center justify-center;
+}
+.table-item > p {
+  @apply text-[20px] med-600:text-[14px];
+}

@@ -9,7 +9,7 @@ export const Boxes = ({
   children,
 }) => {
   return (
-    <Container bg="bg-[#F0F2F5]" className="flex flex-col gap-[44px] py-[42px]">
+    <Container bg="bg-[#F0F2F5]" className="flex flex-col gap-[44px] py-[42px] med-600:gap-[28px]">
       <Title>{title}</Title>
       {children}
       <div>

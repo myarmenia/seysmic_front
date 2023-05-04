@@ -4,6 +4,7 @@ import styles from "./container.module.css";
 export const Container = ({
   children,
   className = "",
+  style,
   bg = "",
   bg_style,
   myRef,
@@ -14,7 +15,9 @@ export const Container = ({
       className={[styles.my_container, bg].join(" ")}
       ref={myRef}
     >
-      <div className={[styles.content, className].join(" ")}>{children}</div>
+      <div {...{ style }} className={[styles.content, className].join(" ")}>
+        {children}
+      </div>
     </div>
   );
 };

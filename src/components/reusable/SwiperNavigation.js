@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { A11y, Navigation } from "swiper";
+import { A11y, Navigation, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/a11y";
 import "swiper/css/navigation";
@@ -21,14 +21,19 @@ export const SwiperNavigation = ({ children, className = "" }) => {
         spaceBetween={100}
         onSwiper={(swiper) => setRef(swiper)}
         allowTouchMove
-        className={"w-auto !px-[20px] med-400:!p-[7px] " + className}
-        modules={[Navigation, A11y]}
+        loop={true}
+        autoplay={{
+          delay: 4000,
+          disableOnInteraction: false,
+        }}
+        className={"w-auto !px-[20px] " + className}
+        modules={[Navigation, Autoplay, A11y]}
         breakpoints={{
           1200: {
             slidesPerView: 3,
             spaceBetween: 40,
           },
-          950: {
+          900: {
             slidesPerView: 2,
             spaceBetween: 30,
           },

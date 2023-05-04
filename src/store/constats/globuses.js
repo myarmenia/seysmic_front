@@ -10,7 +10,7 @@ export const globuses = [
     src: img1,
     description:
       "Our private company LLC SeiEn was established in October 2022 in Yerevan, Armenia",
-    to: getLang("/monitoring?index"),
+    to: getLang("/monitoring/global"),
   },
   {
     title: "Региональный мониторинг в Армении",
