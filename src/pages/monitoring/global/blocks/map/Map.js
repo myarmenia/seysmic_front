@@ -1,12 +1,13 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { EarthMap } from "../../../../../components/main";
 import {
   Container,
   FilterBtn,
   Title,
 } from "../../../../../components/reusable";
-import styles from "./map.module.css";
 import countries_names from "../../../../../store/constats";
-import { EarthMap } from "../../../../../components/main";
+import styles from "./map.module.css";
 
 export const Map = () => {
   const [state, setState] = useState(false);
@@ -47,20 +48,24 @@ const Countries = () => {
 const Country = ({ name, children }) => {
   return (
     <div className="w-fit">
-      <p className={styles.country}>{name}</p>
-      {children && children?.length && (
-        <ul
-          style={{ listStyle: "initial" }}
-          className="flex flex-col gap-[6px] ml-[30px]"
-        >
-          {children.map((el, i) => {
-            return (
-              <li className={styles.country} key={i}>
-                {el.name}
-              </li>
-            );
-          })}
-        </ul>
+      {children && children?.length ? (
+        <div>
+          <p className={styles.country}>{name}</p>
+          <ul
+            style={{ listStyle: "initial" }}
+            className="flex flex-col gap-[6px] ml-[30px]"
+          >
+            {children.map((el, i) => {
+              return (
+                <li className={styles.country} key={i}>
+                  <Link to={`${i}`}>{el.name}</Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      ) : (
+        <Link className={styles.country}>{name}</Link>
       )}
     </div>
   );
