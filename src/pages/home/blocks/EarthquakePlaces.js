@@ -44,7 +44,7 @@ export const EarthquakePlaces = () => {
           ))}
         </SwiperNavigation>
         <Link className="mx-auto" to={getLang("/earth-quakes")}>
-          <CustomBtn>Узнать больше</CustomBtn>
+          <CustomBtn transparent>Узнать больше</CustomBtn>
         </Link>
       </Container>
     </div>
