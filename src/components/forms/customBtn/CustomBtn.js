@@ -4,6 +4,7 @@ export const CustomBtn = ({
   children,
   type = "button",
   className = "",
+  transparent,
   ...props
 }) => {
   return (
@@ -13,6 +14,7 @@ export const CustomBtn = ({
         styles.button,
         className,
         className === "gray" ? styles.grayBtn : "",
+        transparent && styles.transparent,
       ].join(" ")}
       {...{ type }}
     >
