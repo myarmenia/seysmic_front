@@ -48,3 +48,29 @@
 .date {
   @apply pr-10 pl-7 text-[#654E65] font-normal after:hidden;
 }
+
+@media (max-width: 1200px) {
+  .item {
+    @apply text-[16px];
+  }
+  .magnitude::after,
+  .date::after {
+    content: "";
+    border-bottom: 25px solid transparent;
+    border-top: 25px solid transparent;
+    border-left: 20px solid #f6f0f0;
+  }
+}
+
+@media (max-width: 900px) {
+  .item {
+    @apply med-1200:text-[16px];
+  }
+  .magnitude::after,
+  .date::after {
+    content: "";
+    border-bottom: 25px solid transparent;
+    border-top: 25px solid transparent;
+    border-left: 20px solid #f6f0f0;
+  }
+}

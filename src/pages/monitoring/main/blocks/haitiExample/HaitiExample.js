@@ -65,11 +65,13 @@ const data = [
 
 export const HaitiExample = () => {
   return (
-    <div className="flex flex-col gap-16 med-1200:gap-12 med-600:gap-8">
-      {data.map((el, i) => (
-        <Box {...el} key={i} />
-      ))}
-    </div>
+    <>
+      <div className="flex flex-col gap-16 med-1200:gap-12 med-600:gap-8">
+        {data.map((el, i) => (
+          <Box {...el} key={i} />
+        ))}
+      </div>
+    </>
   );
 };
 const Box = ({ title, subtitle, numbers, list_data, images, quake_desc }) => {
@@ -82,13 +84,13 @@ const Box = ({ title, subtitle, numbers, list_data, images, quake_desc }) => {
         <Title>
           Визуализация процесса подготовки катастрофического землетрясения
         </Title>
-        <div>
+        <div className="med-900:flex med-900:flex-col gap-4">
           <iframe
             src="https://www.youtube.com/embed/DtvfnOtO1Wk"
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
-            className="h-[277px] w-[390px] float-left pr-[25px] pb-[25px] med-900:pr-[15px] med-900:pb-[15px]"
+            className="h-[277px] w-[390px] float-left pr-[25px] pb-[25px] med-900:pr-[15px] med-900:pb-[15px] med-900:w-full"
           ></iframe>
           {list_data.map((text, i) => (
             <p className={styles["list-item"]} key={i}>
@@ -96,20 +98,15 @@ const Box = ({ title, subtitle, numbers, list_data, images, quake_desc }) => {
             </p>
           ))}
         </div>
-        <div className="flex flex-wrap gap-5 justify-between items-center">
-          <div className="flex flex-wrap gap-[34px] med-1200:gap-5 med-900:gap-3">
+        <div className="flex gap-5 justify-between items-center med-1200:flex-wrap">
+          <div className="flex gap-[34px] med-1200:gap-5 med-900:gap-3 med-900:grid med-900:grid-cols-2">
             {images.map((el, i) => (
               <ImageBox {...el} key={i} />
             ))}
           </div>
           <div className="flex flex-col gap-2 text-[26px] leading-[168.5%] text-justify">
-            <p>
-              {quake_desc.text} * Землетрясение Порт О’Пренс, Гаити, USGS-EMSC
-            </p>
-            <p className="text-[#F05328]">
-              {quake_desc.red_text}
-              2010.01.12 21:53:10 18.46N 72.53W H = 13 км М = 7.2
-            </p>
+            <p>{quake_desc.text}</p>
+            <p className="text-[#F05328]">{quake_desc.red_text}</p>
           </div>
         </div>
       </div>
@@ -123,7 +120,7 @@ const ImageBox = ({ title, img }) => {
   return (
     <div className="flex flex-col items-center gap-3">
       <span>{title}</span>
-      <img src={img} alt="" />
+      <img className="max-w-[280px] med-900:w-full" src={img} alt="" />
     </div>
   );
 };
