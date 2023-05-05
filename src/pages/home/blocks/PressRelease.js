@@ -34,7 +34,10 @@ export const PressRelease = () => {
     title: el.title.split("").slice(0, 20).join("") + "...",
   }));
   return (
-    <Container bg="bg-[#F0F2F5]" className="flex flex-col gap-[44px] py-[42px] med-600:gap-[10px]">
+    <Container
+      bg="bg-[#F0F2F5]"
+      className="flex flex-col gap-[44px] py-[42px] med-600:gap-[10px]"
+    >
       <Title>Пресс-релиз</Title>
 
       <SwiperNavigation className="!py-5 med-600:!px-0">
