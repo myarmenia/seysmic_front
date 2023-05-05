@@ -1,7 +1,7 @@
 import React from "react";
-import { Map } from "./blocks";
-import { Countries } from "../../../components/static";
 import instance from "../../../api";
+import { Countries } from "../../../components/static";
+import { Map } from "./blocks";
 
 const Component = () => {
   return (

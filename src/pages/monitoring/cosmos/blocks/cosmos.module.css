@@ -2,7 +2,7 @@
   @apply my-[60px] pr-[120px];
 }
 .cosmos_img_box p {
-  @apply text-xl text-justify text-black my-[30px];
+  @apply text-xl text-justify text-black my-[30px] med-1200:text-sm med-600:text-sm;
 }
 .line {
   @apply bg-[#002687] max-w-[638px] mb-[28px] h-[1px];
@@ -15,7 +15,7 @@
   @apply flex flex-col gap-[20px] mt-[30px] text-justify text-black  text-sm leading-[42px];
 }
 .sputnik_box {
-  @apply flex items-center gap-[20px];
+  @apply flex items-center gap-[20px] med-600:gap-2;
 }
 /* .sputnik_box:nth-child(1) {
   @apply h-[110px];
@@ -23,18 +23,22 @@
 .sputnik_box_child {
   @apply flex justify-between gap-2;
 }
+.sputnik_box_child img {
+  @apply med-600:w-[90px] med-600:h-[80px];
+}
 .sputnik_box_title {
-  @apply text-center text-black w-[200px] h-[200px] flex flex-col justify-end;
+  @apply text-center text-black w-[200px] h-[200px] flex flex-col justify-end med-1200:w-[170px] med-600:w-[100px] med-600:text-xs med-600:h-[150px];
 }
 .sputnik_box:last-child .sputnik_box_title {
   @apply h-[100px] justify-center;
 }
 .sputnik_box_title img {
-  @apply w-[70px] my-0 mx-auto mt-[20px];
+  @apply w-[70px] my-0 mx-auto mt-[20px] med-1200:w-[50px];
 }
 .dot_line_box {
-  @apply w-[100px] flex justify-center;
+  @apply w-[100px] flex justify-center med-600:w-[50px];
 }
+
 .dot_line_box img {
   @apply rotate-[223deg];
 }

@@ -8,8 +8,11 @@ export { Technologies } from "./technologies/Technologies";
 export {
   GlobalMonitoring,
   MainMonitoring,
-  RegionalMonitoring,
+  Cosmos,
+  Regional,
+  MonitoringExamples,
 } from "./monitoring";
 export { EarthQuake, EarthQuakes } from "./earthQuakes";
 export { OurProduct } from "../pages/ourProduct/OurProduct";
 export { Search } from "./search/Search";
+export { CountriesItem } from "../pages/monitoring/global/blocks";

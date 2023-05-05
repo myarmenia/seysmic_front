@@ -24,7 +24,7 @@ export const globuses = [
     src: img3,
     description:
       "Our private company LLC SeiEn was established in October 2022 in Yerevan, Armenia",
-    to: "a",
+    to: getLang("/monitoring/cosmos"),
   },
   {
     title: "Наша Продукция",

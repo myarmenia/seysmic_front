@@ -18,12 +18,14 @@ import {
   OurProduct,
   PressRel,
   PressReleases,
-  RegionalMonitoring,
   Registration,
   Technologies,
   Search,
+  Cosmos,
+  CountriesItem,
+  MonitoringExamples,
+  Regional,
 } from "../pages";
-import { MonitoringExamples } from "../pages/monitoring/regional/blocks/MonitoringExamples";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -46,12 +48,15 @@ export const router = createBrowserRouter(
         <Route path="contacts" element={<Contacts />} />
         <Route path="monitoring">
           <Route index element={<MainMonitoring />} />
-          <Route
-            path="global"
-            element={<GlobalMonitoring />}
-            loader={GlobalMonitoring.loader}
-          />
-          <Route path="regional" element={<RegionalMonitoring />}>
+          <Route path="global">
+            <Route
+              index
+              element={<GlobalMonitoring />}
+              loader={GlobalMonitoring.loader}
+            />
+            <Route path=":id" element={<CountriesItem />} />
+          </Route>
+          <Route path="cosmos" element={<Cosmos />}>
             <Route
               index
               element={<MonitoringExamples />}
@@ -59,6 +64,7 @@ export const router = createBrowserRouter(
               loader={MonitoringExamples.loader}
             />
           </Route>
+          <Route path="regional" element={<Regional />} />
         </Route>
         <Route path="product" element={<OurProduct />} />
         <Route path="technologies" element={<Technologies />} />

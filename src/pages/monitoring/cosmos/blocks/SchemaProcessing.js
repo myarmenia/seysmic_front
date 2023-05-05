@@ -1,11 +1,12 @@
 import React from "react";
 import { Container, Title } from "../../../../components/reusable";
-import styles from "../blocks/regionalBlock.module.css";
+import styles from "../blocks/cosmos.module.css";
 import stputnik from "../../../../assets/main/monitoring/regional/sputnik.svg";
 import notebook from "../../../../assets/main/monitoring/regional/notebook.svg";
 import sputniktwo from "../../../../assets/main/monitoring/regional/sputniktwo.svg";
 import dotLine from "../../../../assets/main/monitoring/regional/dotLine.svg";
 import curelyLine from "../../../../assets/main/monitoring/regional/curelyLine.svg";
+import curelyLine2 from "../../../../assets/main/monitoring/regional/curelyLine2.svg";
 import removeImg from "../../../../assets/main/monitoring/regional/removeImg.svg";
 export const SchemaProcessing = () => {
   return (
@@ -25,29 +26,46 @@ export const SchemaProcessing = () => {
       </Container>
       <Container
         bg="bg-[#F9F9F9]"
-        className="flex pb-[32px] mt-[20px] gap-[80px] med-1200:flex-col gap-0"
+        className="flex pb-[32px] mt-[20px] gap-[80px] med-1200:flex-col med-1200:gap-0 med-1200:pb-0"
       >
         <div className="flex gap-[20px] justify-between  max-w-[400px]  ">
           <div className="flex flex-col justify-between w-full gap-8 ">
-            <div className="h-[400px]">
+            <div className="h-[400px] med-600:h-[300px] ">
               <div className="flex gap-[20px]  relative  justify-center">
-                <img src={stputnik} alt="sputnik" />
+                <img
+                  src={stputnik}
+                  alt="sputnik"
+                  className="med-600:w-[120px]"
+                />
                 <img
                   src={dotLine}
                   alt="dotLine"
                   className="absolute top-[80%] left-[26%]"
                 />
               </div>
-              <div className="flex gap-[20px] justify-between">
-                <img src={sputniktwo} alt="sputniktwo" />
+              <div className="flex gap-[20px] justify-between med-600:gap-2">
+                <img
+                  src={sputniktwo}
+                  alt="sputniktwo"
+                  className="med-600:w-[70px]"
+                />
                 <img src={dotLine} alt="dotLine" className="rotate-[223deg]" />
                 <div className="relative">
                   <p className="text-black">Выбор спутника</p>
-                  <img src={notebook} alt="notebook" />
+                  <img
+                    src={notebook}
+                    alt="notebook"
+                    className="med-600:w-[150px]"
+                  />
                   <img
                     src={curelyLine}
                     alt="curelyLine"
-                    className="absolute top-[-40%] right-[-40%] med-1200:rotate(90) "
+                    className="absolute top-[-40%] right-[-40%] med-1200:hidden "
+                  />
+                  <img
+                    src={curelyLine2}
+                    alt="curelyLine2"
+                    className="absolute top-[50%] right-[-40%] hidden med-1200:block "
                   />
                 </div>
               </div>
@@ -58,7 +76,7 @@ export const SchemaProcessing = () => {
             </div>
           </div>
         </div>
-        <div className="flex gap-[20px]  flex-col max-w-[700px] min-w-[500px]">
+        <div className="flex gap-[20px]  flex-col max-w-[700px] min-w-[500px] med-1200:min-w-[300px] med-600:min-w-[200px]">
           <div className={styles.sputnik_box}>
             <div className={styles.sputnik_box_title}>
               Первичное изображение
@@ -71,7 +89,7 @@ export const SchemaProcessing = () => {
             <div className={styles.dot_line_box}>
               <img src={dotLine} alt="dotLine" />
             </div>
-            <div className="flex justify-between gap-2">
+            <div className={styles.sputnik_box_child}>
               <img src={removeImg} alt="removeImg" />
               <img src={removeImg} alt="removeImg" />
             </div>

@@ -1,3 +1,5 @@
 export { GlobalMonitoring } from "./global/GlobalMonitoring";
-export { RegionalMonitoring } from "./regional/Regional";
+export { Cosmos } from "./cosmos/Cosmos";
 export { MainMonitoring } from "./main/MainMonitoring";
+export { MonitoringExamples } from "./cosmos/blocks/MonitoringExamples";
+export {Regional} from "./regional/Regional";
