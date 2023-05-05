@@ -34,7 +34,7 @@ export const QuakeSources = () => {
   return (
     <div className="flex flex-col gap-7 py-20">
       <Title>Характерные Движения на границах плит</Title>
-      <div className="flex gap-4 justify-around">
+      <div className="flex gap-4 justify-around med-600:grid med-600:grid-cols-2 justify-items-center">
         {data?.length && data.map((el, i) => <Box key={i} {...el} />)}
       </div>
       <p className="text-[26px] text-center leading-[165%]">
@@ -47,7 +47,7 @@ export const QuakeSources = () => {
 
 const Box = ({ title, number, img1, img2 }) => {
   return (
-    <div className="flex gap-1">
+    <div className="flex gap-1 med-600:w-[75%]">
       <Gradient className="text-[26px]">{number}</Gradient>
       <div className="flex flex-col gap-1 items-center">
         <div className="flex flex-col gap-2">

@@ -10,18 +10,22 @@ const items = [
   {
     flag: flag1,
     text: "надежный — число завершившихся сейсмических циклов ≥ 15;",
+    imgClassName: "med-900:w-[20%]",
   },
   {
     flag: flag2,
     text: "хороший — число завершившихся сейсмических циклов ≥ 10;",
+    imgClassName: "med-900:w-[27%]",
   },
   {
     flag: flag3,
     text: "посредственный— число завершившихся сейсмических циклов ≥ 5;",
+    imgClassName: "med-900:w-[34%]",
   },
   {
     flag: flag4,
     text: "плохой — число завершившихся сейсмических циклов от 2 до 5 ",
+    imgClassName: "med-900:w-[41%]",
   },
 ];
 export const Levels = () => {
@@ -45,11 +49,15 @@ export const Levels = () => {
   );
 };
 
-const Box = ({ text, flag }) => {
+const Box = ({ text, flag, imgClassName }) => {
   return (
     <div className="flex gap-6 items-center">
-      <img className="h-[135px] shrink-[1]" src={flag} alt="asdfas" />
-      <p className="font-extrabold text-[26px] mt-5 shrink-[2]">{text}</p>
+      <img
+        className={"h-[135px] shrink-[1] med-900:h-fit " + imgClassName}
+        src={flag}
+        alt="asdfas"
+      />
+      <p className="font-extrabold text-[26px] mt-5 shrink-[2] med-900:text-[12px]">{text}</p>
     </div>
   );
 };

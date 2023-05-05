@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import Chart from "react-apexcharts";
 import styles from "./allQuakes.module.css";
 import {
   Container,
@@ -29,7 +30,69 @@ export const AllQuakes = () => {
           <Item {...el} delay={i / 3} key={i} />
         ))}
       </div>
+      <p className="text-[24px] text-[#938E97] text-center mx-auto w-[80%] med-1200:w-full">
+        Еще 6 спрогнозированы ретроспективно, поскольку произошли в новых СС
+        (100%). Не прогнозированы 2 двойных землетрясения, 4 тревоги пропуска
+        цели.
+      </p>
+      <MyChart />
     </Container>
+  );
+};
+
+const MyChart = () => {
+  return (
+    <div id="my-chart" className="mx-auto">
+      <Chart
+        options={{
+          colors: ["#0F6FE4", "#7FEBFF", "#41CF77"],
+          chart: {
+            width: 380,
+            type: "donut",
+          },
+          dataLabels: {
+            enabled: false,
+          },
+          responsive: [
+            {
+              breakpoint: 480,
+              options: {
+                chart: {
+                  width: 200,
+                },
+                legend: {
+                  show: false,
+                },
+              },
+            },
+          ],
+          legend: {
+            position: "right",
+            offsetY: 0,
+            height: 230,
+          },
+          labels: [
+            "30 – предсказаны (94%)",
+            "(19%) – предсказаны ретроспективно 6",
+            "(6%) – не прогнозировано 2",
+          ],
+          title: {
+            text: "34",
+            align: "center",
+            offsetY: 200,
+            offsetX: -135,
+            style: {
+              fontSize: "65px",
+              fontWeight: 700,
+              color: "#0A1577",
+            },
+          },
+        }}
+        series={[94, 19, 6]}
+        type="donut"
+        width={700}
+      />
+    </div>
   );
 };
 
