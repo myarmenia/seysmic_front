@@ -107,12 +107,16 @@ export const MainMonitoring = () => {
         <QuakeSources />
       </Container>
       <div className="relative">
-        <img className="w-full" src={bg_img} alt="" />
+        <img
+          className="w-full med-600:h-[247.88px] med-600:object-cover"
+          src={bg_img}
+          alt=""
+        />
         <Container
           bg="absolute top-0 left-0 w-full h-full"
           className="h-full flex justify-center items-center "
         >
-          <p className="font-semibold text-[26px] text-white leading-[168.5%] py-3 text-center">
+          <p className="font-semibold text-[26px] text-white leading-[168.5%] py-3 text-center med-1200:text-[14px]">
             96% землетрясений на Земле происходят в условиях сжатия в зонах
             взаимодействия литосферных плит (90% приходятся на Тихоокеанскую
             плиту и 6% на Средиземноморско-Альпийско-Гималайский пояс). В
