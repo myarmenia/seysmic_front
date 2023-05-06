@@ -1,12 +1,98 @@
-import React, { useEffect } from "react";
-import Chart from "react-apexcharts";
-import styles from "./allQuakes.module.css";
+import React from "react";
+import ReactApexCharts from "react-apexcharts";
 import {
   Container,
   Title,
   ViewPosition,
 } from "../../../../../components/reusable";
 import { generateArray } from "../../../../../helper";
+import styles from "./allQuakes.module.css";
+
+const ChartOptions = {
+  chart: {
+    animations: {
+      enabled: true,
+      easing: "easeinout",
+      speed: 1000,
+      animateGradually: {
+        enabled: true,
+        delay: 200,
+      },
+      dynamicAnimation: {
+        enabled: true,
+        speed: 1000,
+      },
+    },
+    type: "donut",
+    height: 350,
+    width: 300,
+  },
+  dataLabels: {
+    enabled: false,
+  },
+  plotOptions: {
+    pie: {
+      expandOnClick: false,
+      dataLabels: {
+        show: false,
+      },
+      donut: {
+        size: "80%",
+        background: "transparent",
+        labels: {
+          show: true,
+          value: {
+            fontSize: "65px",
+            fontWeight: 700,
+            color: "#0A1577",
+            offsetY: 25,
+          },
+          name: {
+            show: false,
+          },
+          total: {
+            show: true,
+            showAlways: true,
+          },
+        },
+      },
+    },
+  },
+  series: [30, 6, 2],
+  labels: [
+    "(94%) – предсказаны",
+    "(19%) – предсказаны ретроспективно",
+    "(6%) – не прогнозировано",
+  ],
+  fill: {
+    type: ["gradient", "pattern", "solid"],
+    opacity: 1,
+    pattern: {
+      strokeWidth: 7,
+      enabled: true,
+      style: "verticalLines",
+    },
+    gradient: {
+      shadeIntensity: 0.5,
+      opacityFrom: 1,
+      opacityTo: 1,
+      shade: "dark",
+      type: "horizontal",
+      inverseColors: true,
+      gradientToColors: ["#0026AA", "#0F6FE4", "#0026AA"],
+      stops: [100, 100, 100],
+    },
+  },
+  legend: {
+    position: "right",
+    offsetY: 5,
+    fontSize: "24px",
+    labels: {
+      useSeriesColors: true,
+    },
+  },
+  colors: ["#0F6FE4", "#0026AA", "#41CF77"],
+};
 
 const data = generateArray(25, {
   magnitude: "M=6.2",
@@ -42,57 +128,21 @@ export const AllQuakes = () => {
 
 const MyChart = () => {
   return (
-    <div id="my-chart" className="mx-auto">
-      <Chart
-        options={{
-          colors: ["#0F6FE4", "#7FEBFF", "#41CF77"],
-          chart: {
-            width: 380,
-            type: "donut",
-          },
-          dataLabels: {
-            enabled: false,
-          },
-          responsive: [
-            {
-              breakpoint: 480,
-              options: {
-                chart: {
-                  width: 200,
-                },
-                legend: {
-                  show: false,
-                },
-              },
-            },
-          ],
-          legend: {
-            position: "right",
-            offsetY: 0,
-            height: 230,
-          },
-          labels: [
-            "30 – предсказаны (94%)",
-            "(19%) – предсказаны ретроспективно 6",
-            "(6%) – не прогнозировано 2",
-          ],
-          title: {
-            text: "34",
-            align: "center",
-            offsetY: 200,
-            offsetX: -135,
-            style: {
-              fontSize: "65px",
-              fontWeight: 700,
-              color: "#0A1577",
-            },
-          },
-        }}
-        series={[94, 19, 6]}
-        type="donut"
-        width={700}
-      />
-    </div>
+    <ViewPosition className="w-fit mx-auto min-h-[300px] med-900:min-h-[250px]">
+      {(bool) => (
+        <>
+          {bool && (
+            <ReactApexCharts
+              options={ChartOptions}
+              series={ChartOptions.series}
+              type={ChartOptions.chart.type}
+              width={800}
+              height={300}
+            />
+          )}
+        </>
+      )}
+    </ViewPosition>
   );
 };
 
