@@ -33,7 +33,7 @@ const ChartOptions = {
       options: {
         chart: {
           height: "400px",
-          width: "100%"
+          width: "100%",
         },
         legend: {
           position: "bottom",
@@ -104,7 +104,7 @@ const ChartOptions = {
       type: "horizontal",
       inverseColors: true,
       gradientToColors: ["#0026AA", "#0F6FE4", "#0026AA"],
-      stops: [100, 100, 100],
+      stops: [0, 100, 100],
     },
   },
   legend: {
@@ -152,7 +152,7 @@ export const AllQuakes = () => {
 
 const MyChart = () => {
   return (
-    <ViewPosition className="w-fit mx-auto min-h-[300px] med-900:min-h-[250px] med-900:w-full">
+    <ViewPosition className="w-[75%] mx-auto min-h-[300px] med-900:min-h-[250px] med-900:w-full">
       {(bool) => (
         <>
           {bool && (

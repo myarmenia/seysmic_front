@@ -7,20 +7,20 @@ import {
   TitleBorder,
 } from "../../../components/reusable";
 import {
-  MonitoringTable,
-  QuakeSources,
-  NationalScheme,
-  Map,
-  Levels,
+  AllQuakes,
   Describtion,
   HaitiExample,
-  AllQuakes,
+  Levels,
+  Map,
+  MonitoringTable,
+  NationalScheme,
+  QuakeSources,
 } from "./blocks";
 
 // Images
+import bg_img from "../../../assets/main/monitoring/main/bg-img.svg";
 import img1 from "../../../assets/main/monitoring/main/monitoring-img1.png";
 import tableImg1 from "../../../assets/main/monitoring/main/table-imgs/table-img1.svg";
-import bg_img from "../../../assets/main/monitoring/main/bg-img.svg";
 
 const data = [
   {
@@ -99,7 +99,7 @@ const ul_data = [
 export const MainMonitoring = () => {
   return (
     <>
-      <Container className="pt-[75px] pb-[50px]">
+      <Container className="pb-[50px] py-[var(--py)]">
         <Title className="mb-4">Мониторинг и Прогноз</Title>
         <TitleBorder title="Производится на основе: метода сейсмической энтропии (МСЭ), на концепции Сейсмической Системы, которые выявляются в сейсмоопасных регионах с позиций плитовой тектоники" />
         <img className="py-5" src={img1} alt="" />

@@ -10,7 +10,7 @@ const data = [
 export const TechnologyWorks = () => {
   return (
     <>
-      <Container className="my-[60px]">
+      <Container className="mb-[60px]">
         <Title>Как работает технология</Title>
         <div className="flex flex-col items-center mt-[40px]">
           <div className="border-[#0026AA] border w-60"></div>

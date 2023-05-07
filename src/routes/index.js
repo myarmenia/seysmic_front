@@ -29,7 +29,7 @@ import {
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Root />} errorElement={<ErrorBoundary />}>
+    <Route  path="/" element={<Root />} errorElement={<ErrorBoundary />}>
       <Route path=":lang">
         <Route
           path="search"

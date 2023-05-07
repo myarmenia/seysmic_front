@@ -9,7 +9,7 @@ export const ViewPosition = ({ children, ...props }) => {
     if (window.innerWidth < 900) {
       view_bearer = 100;
     } else if (window.innerWidth < 600) {
-      view_bearer = 25;
+      view_bearer = 75;
     }
     if (ref.current) {
       const { top, bottom } = ref.current.getBoundingClientRect(),

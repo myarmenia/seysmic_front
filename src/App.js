@@ -27,7 +27,7 @@ function App() {
   };
   return (
     <Translation.Provider value={{ language, changeLanguage }}>
-      <RouterProvider router={router} />
+      <RouterProvider router={router}  />
     </Translation.Provider>
   );
 }

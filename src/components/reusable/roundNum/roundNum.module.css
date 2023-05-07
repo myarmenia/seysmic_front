@@ -1,16 +1,6 @@
 :root {
   --width: 26px;
 }
-
-.box {
-  border: 10px solid transparent;
-  background: linear-gradient(69deg, #0a1577 0%, #92d3ff 100%) border-box
-    border-box;
-  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-  mask-composite: destination-out;
-  @apply w-[140px] h-[140px] rounded-full relative 
-  med-600:w-[100px] med-600:h-[100px];
-}
 .letter {
   @apply ease-in-out max-w-[var(--width)] inline-block align-middle overflow-hidden 
   m-[0_0] text-[var(--width)] font-bold leading-[var(--width)] text-black relative;
