@@ -14,10 +14,19 @@
   duration-700 med-900:text-[20px];
 }
 
-.item > * {
+.wrapper {
+  @apply flex w-[95%] items-center justify-evenly;
+}
+
+.title,
+.date,
+.country,
+.magnitude {
   @apply py-[14px] relative;
 }
-.item > *::before {
+.title::before,
+.date::before,
+.country::before {
   content: "";
   @apply absolute left-[-16%] border-dashed border-[1px] border-[#CDC9CE] 
   h-[60%] top-1/2 -translate-y-1/2;
@@ -72,5 +81,47 @@
     border-bottom: 25px solid transparent;
     border-top: 25px solid transparent;
     border-left: 20px solid #f6f0f0;
+  }
+}
+@media (max-width: 600px) {
+  .title::before,
+  .date::before,
+  .country::before {
+    @apply hidden;
+  }
+  .title,
+  .date,
+  .country,
+  .magnitude {
+    @apply text-xs;
+  }
+  .wrapper {
+    @apply flex-col [&>*]:py-0 items-start mx-auto w-fit relative;
+  }
+  .wrapper::before {
+    content: "";
+    @apply absolute left-[-8%] border-dashed border-[1px] border-[#CDC9CE] 
+    h-[60%] top-1/2 -translate-y-1/2;
+  }
+  .wrapper::after {
+    content: "";
+    @apply absolute right-[-8%] border-dashed border-[1px] border-[#CDC9CE] 
+    h-[60%] top-1/2 -translate-y-1/2;
+  }
+  .magnitude,
+  .date {
+    @apply py-3 pl-3 pr-2;
+  }
+  .date {
+    @apply pl-2 pr-3;
+  }
+  .magnitude {
+    @apply min-w-[60px];
+  }
+  .magnitude::after,
+  .date::after {
+    border-bottom: 20px solid transparent;
+    border-top: 20px solid transparent;
+    border-left: 14px solid #f6f0f0;
   }
 }

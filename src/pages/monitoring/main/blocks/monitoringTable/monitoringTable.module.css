@@ -1,21 +1,22 @@
 .table-item {
   @apply flex;
 }
-.table-item:first-child > div,
+.table-item:first-child > img,
 .table-item:first-child > p {
   @apply border-t-[0];
 }
-.table-item > div,
+.table-item > img,
 .table-item > p {
-  @apply border-r-0 p-[12px_22px] border-b-[0] border-[rgba(0,_38,_135,_0.4)] border-[1.06608px];
+  @apply border-r-0 p-[12px_22px] border-b-[0] border-[rgba(0,_38,_135,_0.4)] 
+  border-[1.06608px] med-600:p-[4px_8px] med-600:text-xs med-600:leading-4;
 }
-.table-item > div {
+.table-item > img {
   @apply border-l-0 w-[max(50px,_10%)];
 }
 .table-item > p {
   @apply w-full;
 }
-.table-item > div {
+.table-item > img {
   @apply flex items-center justify-center;
 }
 .table-item > p {

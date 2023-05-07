@@ -4,9 +4,9 @@ import { monitoring_countries as countries } from "../../../store/constats";
 import { ViewPosition } from "../../reusable";
 import styles from "./countries.module.css";
 
-export const Countries = () => {
+export const Countries = ({ className = "" }) => {
   return (
-    <ViewPosition className={styles.cont}>
+    <ViewPosition className={[styles.cont, className].join(" ")}>
       {(bool) => (
         <div className={styles.img_box}>
           <img src={img} alt="" className={styles.img} />

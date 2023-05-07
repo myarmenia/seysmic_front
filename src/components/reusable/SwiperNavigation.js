@@ -13,7 +13,7 @@ export const SwiperNavigation = ({ children, className = "" }) => {
       <img
         onClick={() => ref?.slidePrev()}
         src={swiper_arrow}
-        className="rotate-180 cursor-pointer med-600:w-[15px] med-600:h-[30px]"
+        className="rotate-180 cursor-pointer med-600:w-[15px] med-600:h-[30px] med-400:hidden"
         alt=""
       />
       <Swiper
@@ -44,7 +44,7 @@ export const SwiperNavigation = ({ children, className = "" }) => {
       <img
         onClick={() => ref?.slideNext()}
         src={swiper_arrow}
-        className="cursor-pointer med-600:w-[15px] med-600:h-[30px]"
+        className="cursor-pointer med-600:w-[15px] med-600:h-[30px] med-400:hidden"
         alt=""
       />
     </div>

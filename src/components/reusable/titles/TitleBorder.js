@@ -3,7 +3,7 @@ import React from "react";
 export const TitleBorder = ({ title, children, className = "" }) => {
   return (
     <div className="flex flex-col items-center py-5 gap-[25px] med-900:gap-[24px] med-600:gap-[16px]">
-      <div className="w-[25%] bg-[linear-gradient(#0026AA_100%,_#30CFFF_100%)] h-[1px]" />
+      <div className="w-[25%] min-w-[175px] bg-[linear-gradient(#0026AA_100%,_#30CFFF_100%)] h-[1px]" />
       {children || (
         <p
           className={
@@ -14,7 +14,7 @@ export const TitleBorder = ({ title, children, className = "" }) => {
           {title}
         </p>
       )}
-      <div className="w-[25%] bg-[linear-gradient(#0026AA_100%,_#30CFFF_100%)] h-[1px] mt-3" />
+      <div className="w-[25%] min-w-[175px] bg-[linear-gradient(#0026AA_100%,_#30CFFF_100%)] h-[1px] mt-3" />
     </div>
   );
 };

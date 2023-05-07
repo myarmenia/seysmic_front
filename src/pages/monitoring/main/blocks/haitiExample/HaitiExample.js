@@ -2,6 +2,7 @@ import React from "react";
 import { Container, RoundNum, Title } from "../../../../../components/reusable";
 import exmpl_img1 from "../../../../../assets/main/monitoring/main/example-images/expl-img1.svg";
 import styles from "./haitiExample.module.css";
+import { CircularProgress } from "../../../../../components/reusable/roundNum/RoundNum";
 
 const list_data = [
   "Сейсмичность в Гаити обусловлена взаимодействием Карибской плиты с Северо-Американской.",
@@ -66,7 +67,13 @@ const data = [
 export const HaitiExample = () => {
   return (
     <>
-      <div className="flex flex-col gap-16 med-1200:gap-12 med-600:gap-8">
+      {/* <CircularProgress
+        size={250}
+        strokeWidth={20}
+        percentage={100}
+        color="green"
+      /> */}
+      <div className="flex flex-col py-10 gap-16 med-1200:gap-12 med-600:gap-8 med-600:py-5">
         {data.map((el, i) => (
           <Box {...el} key={i} />
         ))}
@@ -78,19 +85,21 @@ const Box = ({ title, subtitle, numbers, list_data, images, quake_desc }) => {
   return (
     <Container className="flex flex-col gap-8 med-900:gap-6">
       <Title>{title}</Title>
-      <p className="text-[21px] med-1200:text-[16px]">{subtitle}</p>
+      <p className="text-[21px] med-1200:text-[16px] med-1200:text-center">
+        {subtitle}
+      </p>
       <Datas {...{ numbers }} />
       <div className="flex flex-col gap-[35px] med-1200:gap-[30px] med-900:gap-7 med-600:gap-5 py-5">
         <Title>
           Визуализация процесса подготовки катастрофического землетрясения
         </Title>
-        <div className="med-900:flex med-900:flex-col gap-4">
+        <div className="med-900:flex med-900:flex-col gap-4 med-600:gap-2">
           <iframe
             src="https://www.youtube.com/embed/DtvfnOtO1Wk"
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
-            className="h-[277px] w-[390px] float-left pr-[25px] pb-[25px] med-900:pr-[15px] med-900:pb-[15px] med-900:w-full"
+            className="h-[277px] w-[390px] float-left pr-[25px] pb-[25px] med-900:pb-[15px] med-900:w-full med-900:p-0"
           ></iframe>
           {list_data.map((text, i) => (
             <p className={styles["list-item"]} key={i}>
@@ -99,12 +108,12 @@ const Box = ({ title, subtitle, numbers, list_data, images, quake_desc }) => {
           ))}
         </div>
         <div className="flex gap-5 justify-between items-center med-1200:flex-wrap">
-          <div className="flex gap-[34px] med-1200:gap-5 med-900:gap-3 med-900:grid med-900:grid-cols-2">
+          <div className="flex gap-[34px] med-1200:gap-5 med-900:gap-3 med-600:grid grid-cols-[repeat(auto-fit,_minmax(100px,_1fr))] med-600:w-full">
             {images.map((el, i) => (
               <ImageBox {...el} key={i} />
             ))}
           </div>
-          <div className="flex flex-col gap-2 text-[26px] leading-[168.5%] text-justify">
+          <div className="flex flex-col gap-2 text-[26px] leading-[168.5%] text-justify med-600:text-sm">
             <p>{quake_desc.text}</p>
             <p className="text-[#F05328]">{quake_desc.red_text}</p>
           </div>
@@ -127,8 +136,10 @@ const ImageBox = ({ title, img }) => {
 const Datas = ({ numbers }) => {
   return (
     <div className="flex flex-col items-center gap-12 med-1200:gap-10 med-900:gap-8 med-600:gap-5">
-      <p className="text-[26px] w-fit">По официальным данным</p>
-      <div className="w-[90%] grid justify-items-center grid-cols-[repeat(auto-fit,_minmax(150px,_1fr))] gap-5">
+      <p className="text-[26px] w-fit med-600:text-sm med-600:text-center">
+        По официальным данным
+      </p>
+      <div className="w-[90%] grid justify-items-center grid-cols-[repeat(auto-fit,_minmax(150px,_1fr))] gap-5 med-600:grid-cols-2">
         {numbers.map((el, i) => (
           <RoundNum {...el} key={i} />
         ))}

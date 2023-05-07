@@ -27,6 +27,30 @@ const ChartOptions = {
     height: 350,
     width: 300,
   },
+  responsive: [
+    {
+      breakpoint: 600,
+      options: {
+        chart: {
+          height: "400px",
+          width: "100%"
+        },
+        legend: {
+          position: "bottom",
+          horizontalAlign: "left",
+        },
+        plotOptions: {
+          pie: {
+            donut: {
+              labels: {
+                value: { fontSize: "36px", offsetY: 13 },
+              },
+            },
+          },
+        },
+      },
+    },
+  ],
   dataLabels: {
     enabled: false,
   },
@@ -103,11 +127,11 @@ const data = generateArray(25, {
 
 export const AllQuakes = () => {
   return (
-    <Container className="py-16 flex flex-col gap-6">
+    <Container className="py-16 flex flex-col gap-6 med-600:pt-5">
       <Title>
         Мониторинг и прогноз землетрясений в ONLine режиме в 2009–2023 гг.
       </Title>
-      <p className="text-[32px] text-[#938E97] text-center leading-[150%] med-1200:text-[28px] med-900:text-[24px]">
+      <p className="text-[32px] text-[#938E97] text-center leading-[150%] med-1200:text-[28px] med-900:text-[18px]">
         26 землетрясения были успешно спрогнозированы (из них 4 – краткосрочно,
         4* – неточно по одному параметру, 2 прогноза отрицательные)
       </p>
@@ -128,7 +152,7 @@ export const AllQuakes = () => {
 
 const MyChart = () => {
   return (
-    <ViewPosition className="w-fit mx-auto min-h-[300px] med-900:min-h-[250px]">
+    <ViewPosition className="w-fit mx-auto min-h-[300px] med-900:min-h-[250px] med-900:w-full">
       {(bool) => (
         <>
           {bool && (
@@ -136,7 +160,7 @@ const MyChart = () => {
               options={ChartOptions}
               series={ChartOptions.series}
               type={ChartOptions.chart.type}
-              width={800}
+              width="100%"
               height={300}
             />
           )}
@@ -159,8 +183,10 @@ const Item = ({ magnitude, title, country, date, delay }) => {
           className={styles.item}
         >
           <div className={styles.magnitude}>{magnitude}</div>
-          <div className={styles.title}>{title}</div>
-          <div className={styles.country}>{country}</div>
+          <div className={styles.wrapper}>
+            <div className={styles.title}>{title}</div>
+            <div className={styles.country}>{country}</div>
+          </div>
           <div className={styles.date}>{date}</div>
         </div>
       )}
