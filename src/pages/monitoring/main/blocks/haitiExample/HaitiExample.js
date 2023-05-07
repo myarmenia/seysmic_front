@@ -2,7 +2,7 @@ import React from "react";
 import { Container, RoundNum, Title } from "../../../../../components/reusable";
 import exmpl_img1 from "../../../../../assets/main/monitoring/main/example-images/expl-img1.svg";
 import styles from "./haitiExample.module.css";
-import { CircularProgress } from "../../../../../components/reusable/roundNum/RoundNum";
+// import { CircularProgress } from "../../../../../components/reusable/roundNum/RoundNum";
 
 const list_data = [
   "Сейсмичность в Гаити обусловлена взаимодействием Карибской плиты с Северо-Американской.",
@@ -30,7 +30,10 @@ const data = [
       { numbers: 222570, title: "число погибших составило" },
       { numbers: 311000, title: "число получивших ранения" },
       { numbers: 869, title: "пропавших без вести  человек." },
-      { numbers: "5.6млрд", title: "Материальный ущерб оценивается в  евро." },
+      {
+        numbers: 5600_000_000,
+        title: "Материальный ущерб оценивается в  евро.",
+      },
     ],
     list_data: list_data,
     images: [
@@ -67,12 +70,6 @@ const data = [
 export const HaitiExample = () => {
   return (
     <>
-      {/* <CircularProgress
-        size={250}
-        strokeWidth={20}
-        percentage={100}
-        color="green"
-      /> */}
       <div className="flex flex-col py-10 gap-16 med-1200:gap-12 med-600:gap-8 med-600:py-5">
         {data.map((el, i) => (
           <Box {...el} key={i} />
@@ -123,8 +120,7 @@ const Box = ({ title, subtitle, numbers, list_data, images, quake_desc }) => {
   );
 };
 
-// Current page's components
-
+// Current page's componentsn -------------------
 const ImageBox = ({ title, img }) => {
   return (
     <div className="flex flex-col items-center gap-3">

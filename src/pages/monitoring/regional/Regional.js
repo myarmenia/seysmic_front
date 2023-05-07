@@ -1,5 +1,5 @@
 import React from "react";
 
 export const Regional = () => {
-  return <div>Regional</div>;
+  return <div className="py-[var(--py)]">Regional</div>;
 };

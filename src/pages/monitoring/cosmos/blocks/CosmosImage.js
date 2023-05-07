@@ -4,7 +4,7 @@ import styles from "../blocks/cosmos.module.css";
 
 export const CosmosImage = () => {
   return (
-    <Container bg="relative max-w-[1440px] mx-auto" className="mt-[60px]">
+    <Container bg="relative max-w-[1440px] mx-auto">
       <Title>МОНИТОРИНГ КОСМИЧЕСКИХ СНИМКОВ</Title>
       <div className={styles.cosmos_img_box}>
         <p>
