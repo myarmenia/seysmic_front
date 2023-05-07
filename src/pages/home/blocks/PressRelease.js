@@ -48,7 +48,7 @@ export const PressRelease = () => {
         ))}
       </SwiperNavigation>
       <Link className="mx-auto" to={getLang("/press-release")}>
-        <CustomBtn>Узнать больше</CustomBtn>
+        <CustomBtn transparent>Узнать больше</CustomBtn>
       </Link>
     </Container>
   );

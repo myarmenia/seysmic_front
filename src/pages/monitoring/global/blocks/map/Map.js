@@ -8,6 +8,7 @@ import {
 } from "../../../../../components/reusable";
 import countries_names from "../../../../../store/constats";
 import styles from "./map.module.css";
+import chevDown from "../../../../../assets/icons/arrow-down-gray.svg";
 
 export const Map = () => {
   const [state, setState] = useState(false);
@@ -49,24 +50,46 @@ const Country = ({ name, children }) => {
   return (
     <div className="w-fit">
       {children && children?.length ? (
-        <div>
-          <p className={styles.country}>{name}</p>
-          <ul
-            style={{ listStyle: "initial" }}
-            className="flex flex-col gap-[6px] ml-[30px]"
-          >
-            {children.map((el, i) => {
-              return (
-                <li className={styles.country} key={i}>
-                  <Link to={`${i}`}>{el.name}</Link>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
+        <DropDown name={name} items={children} />
       ) : (
-        <Link className={styles.country}>{name}</Link>
+        <Link to={2} className={styles.country}>
+          {name}
+        </Link>
       )}
+    </div>
+  );
+};
+
+const DropDown = ({ items, name }) => {
+  const [show, setShow] = useState(false);
+  return (
+    <div className="overflow-hidden">
+      <div
+        onClick={() => setShow((p) => !p)}
+        className={"flex items-center " + styles.country}
+      >
+        <p>{name}</p>
+        <img
+          className="brightness-50 scale-50 shrink-0"
+          src={chevDown}
+          alt=""
+        />
+      </div>
+      <ul
+        style={{
+          listStyle: "initial",
+          height: show ? items.length * 26 - 6 + "px" : 0,
+        }}
+        className="flex flex-col gap-[6px] ml-[30px] duration-300"
+      >
+        {items.map((el, i) => {
+          return (
+            <li className={styles.country} key={i}>
+              <Link to={`${i}`}>{el.name}</Link>
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 };

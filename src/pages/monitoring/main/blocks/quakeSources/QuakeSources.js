@@ -32,12 +32,12 @@ const data = [
 
 export const QuakeSources = () => {
   return (
-    <div className="flex flex-col gap-7 py-20">
+    <div className="flex flex-col gap-7 py-20 med-900:py-10">
       <Title>Характерные Движения на границах плит</Title>
       <div className="flex gap-4 justify-around med-600:grid med-600:grid-cols-2 justify-items-center">
         {data?.length && data.map((el, i) => <Box key={i} {...el} />)}
       </div>
-      <p className="text-[26px] text-center leading-[165%]">
+      <p className="text-[26px] text-center leading-[165%] med-900:text-sm">
         Основные типы А, В, С, D границ плит и характерные фокальные механизмы
         очагов землетрясений
       </p>
@@ -54,7 +54,7 @@ const Box = ({ title, number, img1, img2 }) => {
           <img src={img1} alt="" />
           <img src={img2} alt="" />
         </div>
-        <Gradient className="text-[26px] text-center w-full">{title}</Gradient>
+        <Gradient className="text-[26px] text-center w-full med-600:text-sm">{title}</Gradient>
       </div>
     </div>
   );

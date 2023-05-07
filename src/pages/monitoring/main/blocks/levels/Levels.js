@@ -10,32 +10,32 @@ const items = [
   {
     flag: flag1,
     text: "надежный — число завершившихся сейсмических циклов ≥ 15;",
-    imgClassName: "med-900:w-[20%]",
+    imgClassName: "med-900:w-[24%]",
   },
   {
     flag: flag2,
     text: "хороший — число завершившихся сейсмических циклов ≥ 10;",
-    imgClassName: "med-900:w-[27%]",
+    imgClassName: "med-900:w-[31%]",
   },
   {
     flag: flag3,
     text: "посредственный— число завершившихся сейсмических циклов ≥ 5;",
-    imgClassName: "med-900:w-[34%]",
+    imgClassName: "med-900:w-[38%]",
   },
   {
     flag: flag4,
     text: "плохой — число завершившихся сейсмических циклов от 2 до 5 ",
-    imgClassName: "med-900:w-[41%]",
+    imgClassName: "med-900:w-[45%]",
   },
 ];
 export const Levels = () => {
   return (
-    <div className="py-8">
+    <div className="py-8 med-600:py-5">
       <Title className="py-5">
         СС ПО НАДЕЖНОСТИ ПРОГНОЗОВ ПОДРАЗДЕЛЯЮТСЯ НА ЧЕТЫРЕ УРОВНЯ
       </Title>
       <Container bg={styles.bg} className={styles.my_container}>
-        <div className="flex flex-col gap-[24px] justify-center relative">
+        <div className="flex flex-col gap-[24px] justify-center relative med-600:gap-[3px]">
           {items.map((el, i) => (
             <Box {...el} key={i} />
           ))}
@@ -51,13 +51,15 @@ export const Levels = () => {
 
 const Box = ({ text, flag, imgClassName }) => {
   return (
-    <div className="flex gap-6 items-center">
+    <div className="flex gap-6 items-center med-600:gap-[14px]">
       <img
         className={"h-[135px] shrink-[1] med-900:h-fit " + imgClassName}
         src={flag}
         alt="asdfas"
       />
-      <p className="font-extrabold text-[26px] mt-5 shrink-[2] med-900:text-[12px]">{text}</p>
+      <p className="font-extrabold text-[26px] mt-5 shrink-[2] med-900:text-[12px] med-600:text-[9px] med-600:leading-[11px]">
+        {text}
+      </p>
     </div>
   );
 };

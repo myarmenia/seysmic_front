@@ -64,7 +64,7 @@ const Box = ({ title, describtion, delay }) => {
         >
           <div className="shrink-0 w-5 h-5 rounded-full bg-[linear-gradient(180deg,_#0026AA_0%,_#30CFFF_100%)]" />
           <div className="flex flex-col gap-1 ">
-            <Gradient className="text-[32px] med-1200:text-[16px]">
+            <Gradient className="text-[32px] med-1200:text-[16px] med-600:text-sm font-bold">
               {title}
             </Gradient>
             <span className="text-[24px] med-1200:text-[12px]">
