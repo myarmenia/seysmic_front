@@ -84,7 +84,7 @@ const Box = ({ title, subtitle, numbers, list_data, images, quake_desc }) => {
         <Title>
           Визуализация процесса подготовки катастрофического землетрясения
         </Title>
-        <div className="med-900:flex med-900:flex-col gap-4">
+        <div className="gap-4 med-900:flex med-900:flex-col">
           <iframe
             src="https://www.youtube.com/embed/DtvfnOtO1Wk"
             title="YouTube video player"
@@ -98,7 +98,7 @@ const Box = ({ title, subtitle, numbers, list_data, images, quake_desc }) => {
             </p>
           ))}
         </div>
-        <div className="flex gap-5 justify-between items-center med-1200:flex-wrap">
+        <div className="flex items-center justify-between gap-5 med-1200:flex-wrap">
           <div className="flex gap-[34px] med-1200:gap-5 med-900:gap-3 med-900:grid med-900:grid-cols-2">
             {images.map((el, i) => (
               <ImageBox {...el} key={i} />
