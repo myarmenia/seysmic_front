@@ -1,14 +1,13 @@
 import React from "react";
 import { useLoaderData } from "react-router";
+import { Link } from "react-router-dom";
 import { SwiperSlide } from "swiper/react";
 import quake_img from "../../../assets/main/home/quake.svg";
 import img from "../../../assets/main/home/world_map_blue.svg";
 import { QuakeBox as Box } from "../../../components/cards";
-import { Container, SwiperNavigation } from "../../../components/reusable";
 import { CustomBtn } from "../../../components/forms";
-import { Link } from "react-router-dom";
+import { Container, SwiperNavigation } from "../../../components/reusable";
 import { getLang } from "../../../helper";
-import { useTranslation } from "../../../App";
 
 const data = {
   image: quake_img,
@@ -19,7 +18,6 @@ const data = {
 };
 
 export const EarthquakePlaces = () => {
-  
   const earth_quakes = useLoaderData().earth_quakes.map((el) => ({
     ...data,
     ...el,
