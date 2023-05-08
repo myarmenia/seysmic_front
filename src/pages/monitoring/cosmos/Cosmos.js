@@ -5,10 +5,10 @@ import { Outlet } from "react-router";
 
 export const Cosmos = () => {
   return (
-    <>
+    <div className="py-[var(--py)]">
       <CosmosImage />
       <SchemaProcessing />
       <Outlet />
-    </>
+    </div>
   );
 };

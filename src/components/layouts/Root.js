@@ -9,6 +9,7 @@ import { Footer, Header, MonitoringNavbar, Spinner } from "../main";
 import { useEffect } from "react";
 import { getLang } from "../../helper";
 import { useTranslation } from "../../App";
+import { ScrollRestoration } from "react-router-dom";
 
 export const Root = () => {
   const navigate = useNavigate();
@@ -46,6 +47,9 @@ export const Root = () => {
           {navigation.state !== "idle" && <Spinner />}
         </main>
         <Footer />
+        {/* ------------- For scrolling to top -------------- */}
+        <ScrollRestoration />
+        {/* ================================================= */}
       </div>
       <MonitoringNavbar />
     </>

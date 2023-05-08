@@ -5,7 +5,7 @@ import { Map } from "./blocks";
 
 const Component = () => {
   return (
-    <div className="py-5">
+    <div className="py-[var(--py)]">
       <Map />
       <Countries />
     </div>

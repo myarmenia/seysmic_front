@@ -40,17 +40,17 @@ export const SingleBox = ({
   return (
     <>
       <div>
-        <img src={image} className="w-full" alt="" />
+        <img src={image} className="w-full min-h-[185px] object-cover" alt="" />
         <div className="grid grid-cols-[5fr_2fr] med-1200:grid-cols-1">
-          <div className="flex flex-col gap-[34px] py-[41px] px-[68px] med-900:px-[32px]">
+          <div className="flex flex-col gap-[34px] py-[41px] px-[68px] med-900:px-[32px] med-600:px-5 med-600:py-6">
             <div className="flex justify-between gap-5">
-              <div className="flex gap-5 med-600:flex-col med-600:items-start">
-                <img className="h-[95px] med-600:h-[60px]" src={icon} alt="" />
+              <div className="flex gap-5 med-600:gap-2">
+                <img className="h-[95px] med-600:h-[50px]" src={icon} alt="" />
                 <div className="flex flex-col gap-[14px]">
-                  <h4 className="text-dark-blue text-[32px] font-bold">
+                  <h4 className="text-dark-blue text-[32px] font-bold med-600:text-[20px]">
                     {title}
                   </h4>
-                  <span className="text-[#415455] text-base">
+                  <span className="text-[#415455] text-base med-600:text-sm">
                     {date} {time}
                   </span>
                 </div>
@@ -82,7 +82,7 @@ export const SingleBox = ({
               ))}
             </div>
           </div>
-          <div className="py-[41px] px-[42px] bg-[#F9F9F9] grid grid-cols-[repeat(auto-fit,_minmax(310px,_1fr))] justify-items-center gap-[28px] med-600:p-[25px_20px]">
+          <div className="py-[41px] px-[42px] bg-[#F9F9F9] grid grid-cols-[repeat(auto-fit,_minmax(310px,_1fr))] justify-items-center gap-[28px] med-900:px-[32px] med-600:p-[25px_20px]">
             {videos.map((el, i) => (
               <VideoBox {...el} key={i} />
             ))}

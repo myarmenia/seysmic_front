@@ -25,17 +25,13 @@ export const EarthquakePlaces = () => {
     description: el.body.split("").slice(0, 68).join("") + "...",
     title: el.title.split("").slice(0, 20).join("") + "...",
   }));
-  // min-h-[307px] max-h-[500px]
   return (
     <div className="relative">
       <div
         style={{ backgroundImage: `url('${img}')` }}
         className="absolute top-0 left-0 w-full h-[55%] bg-cover bg-center bg-fixed bg-no-repeat med-600:h-[48%]"
       />
-      <Container
-        // bg="mt-[-20%] med-900:mt-[-40%] med-400:mt-[-50%]"
-        className="flex flex-col pb-10 pt-[17%] med-1200:pt-[23%] med-900:pt-[40%]"
-      >
+      <Container className="flex flex-col pb-10 pt-[17%] gap-[44px] med-1200:pt-[23%] med-900:pt-[40%] med-600:gap-[10px]">
         <SwiperNavigation className="py-[50px] mt-[-50px] med-1200:mt-[-100px] med-900:mt-[-150px] med-600:py-[18px]">
           {earth_quakes.map((elem, i) => (
             <SwiperSlide key={i}>

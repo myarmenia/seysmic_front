@@ -21,3 +21,11 @@
     @apply absolute top-1/2 -translate-y-1/2 right-[20px];
   }
 }
+@media (max-width: 400px) {
+  .logo {
+    @apply min-w-[100px];
+  }
+  .logo::after {
+    @apply w-[90%];
+  }
+}

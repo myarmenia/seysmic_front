@@ -23,8 +23,8 @@ export const Contacts = () => {
     console.log(data);
   };
   return (
-    <div>
-      <Container bg="bg-[#F0F2F5]" className="py-[60px]">
+    <>
+      <Container className="py-[var(--py)]" bg="bg-[#F0F2F5]">
         <FormProvider {...formMethods}>
           <form
             onSubmit={handleSubmit(onSubmit)}
@@ -38,7 +38,6 @@ export const Contacts = () => {
                 regName="feedback_letter"
                 placeholder="Выбрать тип обратоного письма"
                 options={[
-                  { title: "", value: "" },
                   { title: "aaaaaaaaaa", value: "aaaaaaaaaa" },
                   { title: "bbbbbbbbbb", value: "bbbbbbbbbb" },
                   { title: "cccccccccc", value: "cccccccccc" },
@@ -58,7 +57,7 @@ export const Contacts = () => {
           </form>
         </FormProvider>
       </Container>
-      <Container className="py-[50px] flex flex-col gap-6">
+      <Container className="flex flex-col gap-6 py-[var(--py)]">
         <Title>Контактные данные</Title>
         <div className="grid grid-cols-[2fr_3fr] gap-[46px] med-600:grid-cols-1">
           <div className="flex flex-col justify-between gap-5">
@@ -81,7 +80,7 @@ export const Contacts = () => {
           </div>
         </div>
       </Container>
-    </div>
+    </>
   );
 };
 
