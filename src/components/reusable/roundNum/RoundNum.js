@@ -127,10 +127,10 @@ export const CircularProgress = ({
       />
       <foreignObject
         fill="black"
-        x="50%"
-        y="50%"
+        // x="50%"
+        // y="50%"
         textAnchor="middle"
-        className={`min-w-[${size}px] h-full w-full -translate-x-1/2 -translate-y-1/2`}
+        className={`min-w-[${size}px] h-full w-full relative`}
       >
         {children}
       </foreignObject>

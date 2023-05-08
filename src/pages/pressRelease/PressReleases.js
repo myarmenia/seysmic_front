@@ -87,10 +87,10 @@ const Component = () => {
   );
 };
 
-const loader = async ({ params }) => {
+const loader = async ({ }) => {
   console.log("boz");
   try {
-    const data = await instance.get(`posts?userId=1`);
+    const data = await instance.get(`press-releases`);
     return data.data;
   } catch (err) {
     console.log(err);

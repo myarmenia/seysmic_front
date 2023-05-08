@@ -8,6 +8,7 @@ import { Container, SwiperNavigation } from "../../../components/reusable";
 import { CustomBtn } from "../../../components/forms";
 import { Link } from "react-router-dom";
 import { getLang } from "../../../helper";
+import { useTranslation } from "../../../App";
 
 const data = {
   image: quake_img,
@@ -18,6 +19,7 @@ const data = {
 };
 
 export const EarthquakePlaces = () => {
+  
   const earth_quakes = useLoaderData().earth_quakes.map((el) => ({
     ...data,
     ...el,
