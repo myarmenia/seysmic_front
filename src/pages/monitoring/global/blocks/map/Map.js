@@ -49,7 +49,7 @@ const Countries = () => {
 
 const Country = ({ name, children }) => {
   return (
-    <div className="w-fit">
+    <>
       {children && children?.length ? (
         <DropDown name={name} items={children} />
       ) : (
@@ -57,14 +57,19 @@ const Country = ({ name, children }) => {
           {name}
         </Link>
       )}
-    </div>
+    </>
   );
 };
 
 const DropDown = ({ items, name }) => {
   const [show, setShow] = useState(false);
+
+  let hg = items.length * 32;
+  if (window.innerWidth < 1201) {
+    hg = items.length * 22 - 3;
+  }
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden w-fit">
       <div
         onClick={() => setShow((p) => !p)}
         className={"flex items-center " + styles.country}
@@ -79,14 +84,14 @@ const DropDown = ({ items, name }) => {
       <ul
         style={{
           listStyle: "initial",
-          height: show ? items.length * 26 - 6 + "px" : 0,
+          height: show ? hg + "px" : 0,
         }}
         className="flex flex-col gap-[6px] ml-[30px] duration-300 med-600:ml-4"
       >
         {items.map((el, i) => {
           return (
             <li className={styles.country} key={i}>
-              <Link to={`${i}`}>{el.name}</Link>
+              <Link to={2}>{el.name}</Link>
             </li>
           );
         })}
