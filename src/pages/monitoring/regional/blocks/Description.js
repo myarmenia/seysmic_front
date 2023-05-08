@@ -1,7 +1,6 @@
 import React from "react";
-import { Container, Title } from "../../../../components/reusable";
-// import styles from "./regional.module.css";
 import { CustomBtn } from "../../../../components/forms";
+import { Container, Title } from "../../../../components/reusable";
 const arr = [
   "Армянское нагорье",
   "Армения",
@@ -20,7 +19,7 @@ const Description = () => {
         В КАЖДОЙ СЕЙСМИЧЕСКОЙ СИСТЕМЕ ПРОИЗВОДИТСЯ МОНИТОРИНГ И ПРОГНОЗ
         РЕЗУЛЬТАТЫ ОБНОВЛЯЮТСЯ КАК МИНИМУМ РАЗ В КВАРТАЛ
       </Title>
-      <p>
+      <p className="text-xl med-1200:text-base">
         Ниже приводятся анимационные ролики мониторинга миграции сейсмической
         неустойчивости и прогноза затухания интенсивности сейсмического
         воздействия внутри иерархии сейсмических систем по данным на начало
@@ -40,7 +39,7 @@ const Description = () => {
         })}
       </div>
       <Title>Иерархия сейсмических систем в регионе</Title>
-      <p className="text-center my-[30px]">
+      <p className="text-center my-[30px] text-xl med-1200:text-base">
         Армения <span className="text-[#EE3221]">({`5.0<M<6.6`}),</span>
         Армянское Нагорье
         <span className="text-[#EE3221]">({`M>6.7`}),</span>
