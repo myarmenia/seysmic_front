@@ -24,10 +24,12 @@ const Component = () => {
   );
 };
 
-const loader = async () => {
-  const res = await instance.get(`posts?userId=1`);
-  const res1 = await instance.get(`posts?userId=1`);
-  return { earth_quakes: res.data, press_release: res1.data };
+const loader = async ({ lang }) => {
+  // const leng = 
+  const res = await instance.get(`news`);
+  const res1 = await instance.get(`press-releases`);
+  console.log(res1);
+  return { earth_quakes: res.data, press_release: res1.data.data };
 };
 
 export const Home = Object.assign(Component, { loader });

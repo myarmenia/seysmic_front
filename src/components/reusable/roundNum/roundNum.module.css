@@ -3,16 +3,18 @@
 }
 .letter {
   @apply ease-in-out max-w-[var(--width)] inline-block align-middle overflow-hidden 
-  m-[0_0] text-[var(--width)] font-bold leading-[var(--width)] text-black relative;
+  m-[0_0] font-bold leading-[var(--width)] text-black relative;
+  font-size: var(--width);
 }
 .fake-letters {
   @apply z-[2] max-w-[var(--width)] w-full top-0 left-0 absolute bg-white
-  m-[0_0] text-[var(--width)] font-bold leading-[var(--width)] text-black;
+  m-[0_0] font-bold leading-[var(--width)] text-black;
   word-break: break-all;
+  font-size: var(--width);
 }
 
 @media (max-width: 600px) {
   :root {
-    --width: 14px;
+    --width: 18px;
   }
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Title } from "../../../../components/reusable";
-import styles from "./regional.module.css";
+// import styles from "./regional.module.css";
 import { CustomBtn } from "../../../../components/forms";
 const arr = [
   "Армянское нагорье",
