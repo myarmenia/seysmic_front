@@ -5,6 +5,7 @@ export const CustomBtn = ({
   type = "button",
   className = "",
   transparent,
+  gradient,
   ...props
 }) => {
   return (
@@ -15,6 +16,7 @@ export const CustomBtn = ({
         className,
         className === "gray" ? styles.grayBtn : "",
         transparent && styles.transparent,
+        gradient && styles.gradient,
       ].join(" ")}
       {...{ type }}
     >

@@ -1,13 +1,13 @@
 import React from "react";
 import { Container, Title } from "../../../../components/reusable";
 import styles from "../blocks/cosmos.module.css";
-import stputnik from "../../../../assets/main/monitoring/regional/sputnik.svg";
-import notebook from "../../../../assets/main/monitoring/regional/notebook.svg";
-import sputniktwo from "../../../../assets/main/monitoring/regional/sputniktwo.svg";
-import dotLine from "../../../../assets/main/monitoring/regional/dotLine.svg";
-import curelyLine from "../../../../assets/main/monitoring/regional/curelyLine.svg";
-import curelyLine2 from "../../../../assets/main/monitoring/regional/curelyLine2.svg";
-import removeImg from "../../../../assets/main/monitoring/regional/removeImg.svg";
+import stputnik from "../../../../assets/main/monitoring/cosmos/sputnik.svg";
+import notebook from "../../../../assets/main/monitoring/cosmos/notebook.svg";
+import sputniktwo from "../../../../assets/main/monitoring/cosmos/sputniktwo.svg";
+import dotLine from "../../../../assets/main/monitoring/cosmos/dotLine.svg";
+import curelyLine from "../../../../assets/main/monitoring/cosmos/curelyLine.svg";
+import curelyLine2 from "../../../../assets/main/monitoring/cosmos/curelyLine2.svg";
+import removeImg from "../../../../assets/main/monitoring/cosmos/removeImg.svg";
 export const SchemaProcessing = () => {
   return (
     <>
