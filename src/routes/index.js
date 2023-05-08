@@ -27,9 +27,10 @@ import {
   Regional,
 } from "../pages";
 
+
 export const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route  path="/" element={<Root />} errorElement={<ErrorBoundary />}>
+    <Route path="/" element={<Root />} errorElement={<ErrorBoundary />}>
       <Route path=":lang">
         <Route
           path="search"
@@ -65,8 +66,8 @@ export const router = createBrowserRouter(
             />
           </Route>
           <Route path="regional" element={<Regional />} />
+          <Route path="product" element={<OurProduct />} />
         </Route>
-        <Route path="product" element={<OurProduct />} />
         <Route path="technologies" element={<Technologies />} />
         <Route path="press-release">
           <Route
