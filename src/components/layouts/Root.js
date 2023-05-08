@@ -12,6 +12,7 @@ import { useTranslation } from "../../App";
 import { ScrollRestoration } from "react-router-dom";
 
 export const Root = () => {
+  
   const navigate = useNavigate();
   const navigation = useNavigation();
   const { pathname } = useLocation();

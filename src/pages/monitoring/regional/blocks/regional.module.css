@@ -1,0 +1,3 @@
+.regional_bg {
+  @apply bg-[url("../../../../assets/main/monitoring/regional/regionalMap.svg")] bg-cover bg-no-repeat h-[812px];
+}

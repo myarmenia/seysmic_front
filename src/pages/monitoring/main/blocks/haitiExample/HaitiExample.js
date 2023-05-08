@@ -70,7 +70,7 @@ const data = [
 export const HaitiExample = () => {
   return (
     <>
-      <div className="flex flex-col py-10 gap-16 med-1200:gap-12 med-600:gap-8 med-600:py-5">
+      <div className="flex flex-col gap-16 py-10 med-1200:gap-12 med-600:gap-8 med-600:py-5">
         {data.map((el, i) => (
           <Box {...el} key={i} />
         ))}
@@ -90,7 +90,7 @@ const Box = ({ title, subtitle, numbers, list_data, images, quake_desc }) => {
         <Title>
           Визуализация процесса подготовки катастрофического землетрясения
         </Title>
-        <div className="med-900:flex med-900:flex-col gap-4 med-600:gap-2">
+        <div className="gap-4 med-900:flex med-900:flex-col med-600:gap-2">
           <iframe
             src="https://www.youtube.com/embed/DtvfnOtO1Wk"
             title="YouTube video player"
@@ -104,7 +104,7 @@ const Box = ({ title, subtitle, numbers, list_data, images, quake_desc }) => {
             </p>
           ))}
         </div>
-        <div className="flex gap-5 justify-between items-center med-1200:flex-wrap">
+        <div className="flex items-center justify-between gap-5 med-1200:flex-wrap">
           <div className="flex gap-[34px] med-1200:gap-5 med-900:gap-3 med-600:grid grid-cols-[repeat(auto-fit,_minmax(100px,_1fr))] med-600:w-full">
             {images.map((el, i) => (
               <ImageBox {...el} key={i} />
