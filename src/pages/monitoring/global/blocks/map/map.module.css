@@ -1,6 +1,6 @@
 .country {
-  @apply text-[20px] leading-[28px] text-[#606060] duration-300 cursor-pointer
-  hover:opacity-75 hover:translate-x-2;
+  @apply text-[20px] leading-[26px] text-[#606060] duration-300 cursor-pointer
+  hover:opacity-75 hover:translate-x-[8px] w-fit;
 }
 
 @media (max-width: 1440px) {

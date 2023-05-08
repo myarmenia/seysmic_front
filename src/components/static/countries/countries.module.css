@@ -11,6 +11,9 @@
   @apply relative mx-auto flex items-center justify-center w-[370px] h-[340px]
   med-400:h-[250px] med-400:w-[250px];
 }
+.img {
+  animation: rotate 15s cubic-bezier(0, 0, 0, 0) 0s infinite;
+}
 .nums {
   @apply absolute w-full h-full;
 }
@@ -21,9 +24,6 @@
   @apply absolute font-semibold rounded-full w-[38px] h-[38px] text-white 
   text-center text-[24px] z-[1] cursor-pointer duration-300;
   background: linear-gradient(180deg, #0026aa 0%, #30cfff 100%);
-}
-.num > span:hover {
-  @apply scale-125;
 }
 .num::after {
   content: "";
@@ -96,6 +96,14 @@
 }
 /* ===================================================================== */
 
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 @media (max-width: 600px) {
   .cont {
     @apply min-h-fit mb-[50px] px-5;
