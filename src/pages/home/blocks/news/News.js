@@ -13,7 +13,7 @@ const data = generateArray(1, {
   subtitle: "Теория Возникновения и Эволюции",
   author: "Автор: Акопян С.Ц.",
   place: "Издательство Кембриджских ученых, Лондон. 332, 2023г",
-  describcion: `В книге показано, что для изучения происхождения Вселенной, нет
+  description: `В книге показано, что для изучения происхождения Вселенной, нет
     необходимости взглянуть на дальний космос или заглянуть вглубь
     материи, а достаточно необычным образом взглянуть на то, что
     скрывается у нас под ногами – на нашу Землю. Отмечается, что в
@@ -59,11 +59,24 @@ export const News = () => {
   );
 };
 
-const Box = ({ author, place, subtitle, title, describcion }) => {
+// const news_keys = {
+//   id,
+//   title,
+//   description,
+//   image,
+//   button_text,
+//   status,
+// };
+
+const Box = ({ author, place, subtitle, title, description, image }) => {
   return (
     <div className="flex flex-col gap-[35px] items-center mb-[50px]">
       <div className="grid grid-cols-2 gap-[50px] med-1200:inline med-600:grid med-600:grid-cols-1 med-600:gap-6">
-        <img className="med-1200:float-left med-1200:w-[40%] med-600:w-full" src={img} alt="" />
+        <img
+          className="med-1200:float-left med-1200:w-[40%] med-600:w-full"
+          src={img}
+          alt=""
+        />
         <div className="flex flex-col gap-1 text-black text-justify med-1200:inline">
           <b className="flex flex-col">
             <span className="font-semibold text-base">{title}</span>
@@ -72,7 +85,7 @@ const Box = ({ author, place, subtitle, title, describcion }) => {
           </b>
           <div>
             <span className="text-[10px] my-2">{place}</span>
-            <p className="leading-[170%] text-xs">{describcion}</p>
+            <p className="leading-[170%] text-xs">{description}</p>
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import React from "react";
-import globalMap from "../../../../assets/main/monitoring/globalMap.svg";
-import { Container, Title } from "../../../../components/reusable";
+import globalMap from "../../../assets/main/monitoring/globalMap.svg";
+import { Container, Title } from "../../../components/reusable";
+
 export const CountriesItem = () => {
   return (
     <Container className="py-5">

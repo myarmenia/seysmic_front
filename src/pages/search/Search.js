@@ -9,6 +9,7 @@ import { useAppSubmit } from "../../hooks";
 import { Result } from "./Result";
 import styles from "./search.module.css";
 import img from "../../assets/main/logo-light-gray.svg";
+import axios from "axios";
 
 export const Component = () => {
   const loaderData = useLoaderData();
@@ -93,7 +94,10 @@ const loader = async ({ request }) => {
   const search = url.search;
 
   try {
-    const data = await instance.get(`posts?userId=1`);
+    // const data = await instance.get(`posts?userId=1`);
+    const data = await axios.get(
+      `https://jsonplaceholder.typicode.com/posts?userId=1`
+    );
     const filteredData = data.data.filter((e) => e.body.includes(search));
     return filteredData;
   } catch (err) {

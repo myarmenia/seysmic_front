@@ -80,7 +80,7 @@ const data = [
 
 export const Product = () => {
   return (
-    <Container className="mt-[80px] text-light-grey">
+    <Container className="text-light-grey">
       <div className="flex flex-col items-center">
         <div className={styles.line}></div>
         <p className="text-2xl text-center my-[25px] med-1200:text-lg ">

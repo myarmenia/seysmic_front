@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { isRouteErrorResponse, useNavigate, useRouteError } from "react-router";
-import { useTranslation } from "../../App";
+import { getLang } from "../../helper";
 
 export function ErrorBoundary() {
   const error = useRouteError();
   const navigate = useNavigate();
-  const { changeLanguage } = useTranslation();
   const [text, setText] = useState("Something went wrong");
 
   if (isRouteErrorResponse(error)) {
@@ -20,7 +19,7 @@ export function ErrorBoundary() {
   }
 
   setTimeout(() => {
-    changeLanguage(localStorage.getItem("lang") || "ru", navigate);
+    navigate(getLang("/home"));
   }, 5000);
 
   return (

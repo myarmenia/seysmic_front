@@ -9,6 +9,7 @@ import { toFormData, toObject } from "../../helper";
 import { useAppSubmit } from "../../hooks";
 import { CstmDateInput, CstmInput, SearchInput } from "../../components/forms";
 import { QuakeBox } from "../../components/cards";
+import axios from "axios";
 
 // ------- Delete -----------
 const expl = {
@@ -40,17 +41,17 @@ const Component = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    // if (Object.values(values).every((e) => !!e)) {
-    const data = toFormData(values);
-    submit(data, { action, method: "post" });
-    // }
+    if (!Object.values(values).every((e) => !e)) {
+      const data = toFormData(values);
+      submit(data, { action, method: "post" });
+    }
   };
 
   return (
     <Boxes data={data1} title="Текущие землетрясения" Item={QuakeBox}>
       <form
         onSubmit={onSubmit}
-        className="flex items-center gap-[32px] justify-center med-600:flex-col med-600:gap-[16px]"
+        className="flex items-center gap-[32px] justify-center med-900:flex-wrap med-600:flex-col med-600:gap-[16px]"
       >
         <SearchInput
           inputProps={{
@@ -100,7 +101,10 @@ const Component = () => {
 const loader = async () => {
   console.log("World");
   try {
-    const data = await instance.get(`posts?userId=1`);
+    // const data = await instance.get(`posts?userId=1`);
+    const data = await axios.get(
+      `https://jsonplaceholder.typicode.com/posts?userId=1`
+    );
     return data.data;
   } catch (err) {
     console.log(err);

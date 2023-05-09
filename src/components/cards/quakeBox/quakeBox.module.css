@@ -1,12 +1,13 @@
 .box {
-  @apply flex items-center h-full justify-center pt-[72px] hover:scale-[1.1] duration-300 med-600:hover:scale-[1.05] med-600:pt-[90px];
+  @apply flex flex-col items-center gap-3 h-full justify-center 
+  hover:scale-[1.1] duration-300 med-600:hover:scale-[1.05];
 }
 .content {
-  @apply pt-[60px] px-[25px] pb-[38px] max-w-[310px] flex flex-col justify-between
-    items-center h-fit gap-3 bg-white shadow-normal rounded-[20px]
-    min-h-[340px] med-400:pt-[50px];
+  @apply pt-[25%] mt-[25%] px-[25px] pb-[38px] max-w-[310px] flex flex-col 
+  justify-between items-center h-fit gap-3 bg-white shadow-normal 
+  rounded-[20px] min-h-[340px];
 }
 .img {
-  @apply mt-[-50%] w-full max-w-[160px] h-[160px] object-cover rounded-[20px] 
-    border-[5px] border-[#fff] shadow-light;
+  @apply mb-[-50%] w-full max-w-[160px] h-[160px] object-cover 
+  rounded-[20px] border-[5px] border-[#fff] shadow-light z-[2];
 }

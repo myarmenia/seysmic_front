@@ -2,8 +2,8 @@
   @apply relative w-full h-full;
 }
 .slide p {
-  @apply text-[#F7F7F7] text-lg leading-[150%] text-justify py-[23px] px-[40px] bg-[#1a374d91] 
-  w-[40%] absolute top-0 left-0 med-400:hidden;
+  @apply text-[#F7F7F7] text-lg leading-[150%] text-justify py-[23px] px-[40px] 
+  bg-[#1a374d91] w-[40%] absolute top-0 left-0 med-600:hidden;
 }
 .marquee {
   @apply absolute -translate-y-1/2 top-1/2;

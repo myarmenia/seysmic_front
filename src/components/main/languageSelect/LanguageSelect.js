@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { useTranslation } from "../../../App";
+import { useParams } from "react-router";
 import arrow_down from "../../../assets/icons/arrow-down-blue.svg";
 import language_img from "../../../assets/icons/language.svg";
+import { useTranslation } from "../../../hooks";
 import styles from "./languageSelect.module.css";
-import { useNavigate, useParams } from "react-router";
 
 const options = [
   { title: "Русский", value: "ru" },
@@ -22,19 +22,17 @@ const allowFunc1 = (callback) => {
   }
 };
 
-export const LanguageSelect = () => {
+export const LanguageSelect = ({ show, setShow }) => {
   const { lang } = useParams();
   const [myOptions, setOptions] = useState(
     options.map((e) => ({ ...e, active: lang === e.value }))
   );
   const { changeLanguage } = useTranslation();
-  const [open, setOpen] = useState(false);
-  const navigate = useNavigate();
 
   const optoinClick = (value) => {
     if (value) {
-      setOpen(false);
-      changeLanguage(value, navigate);
+      setShow("");
+      changeLanguage(value);
       setOptions((p) => p.map((el) => ({ ...el, active: el.value === value })));
     }
   };
@@ -42,20 +40,22 @@ export const LanguageSelect = () => {
   return (
     <div
       className="flex justify-center w-[39px] h-[27px]"
-      onMouseEnter={() => allowFunc(() => setOpen(true))}
-      onMouseLeave={() => allowFunc(() => setOpen(false))}
+      onMouseEnter={() => allowFunc(() => setShow("lang"))}
+      onMouseLeave={() => allowFunc(() => setShow(""))}
     >
       <div className={styles.language_box}>
         <div
-          className="flex items-center gap-1"
-          onClick={() => allowFunc1(() => setOpen((p) => !p))}
+          className="flex items-center gap-1 med-600:gap-[2px]"
+          onClick={() =>
+            allowFunc1(() => setShow((p) => (p !== "lang" ? "lang" : "")))
+          }
         >
           <div className={styles.language_select}>
             <img src={language_img} alt="" />
           </div>
           <img src={arrow_down} alt="" />
         </div>
-        {open && (
+        {show && (
           <div className={styles.language_options}>
             <div className={styles.language_options_box}>
               {myOptions.map(({ title, value }, i) => (

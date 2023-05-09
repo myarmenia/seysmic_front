@@ -1,6 +1,11 @@
 import React from "react";
 import certificate from "../../../assets/main/technologies/certificate.svg";
-import { Container, Title, Ul } from "../../../components/reusable";
+import {
+  Container,
+  Title,
+  TitleBorder,
+  Ul,
+} from "../../../components/reusable";
 import styles from "./technologiesBlock.module.css";
 const data = [
   "Метод, лежащий в основе КТ, основан: на введении новых физических параметров, рассчитываемых на основе сейсмостатистики; на концепции сейсмической системы (СС), в рамках которых сформулирован новый закон – закон производства сейсмической энтропии (Акопян С. Ц., 1995-2015 гг.). ",
@@ -13,13 +18,7 @@ export const TechnologyWorks = () => {
       <Container className="mb-[60px]">
         <Title>Как работает технология</Title>
         <div className="flex flex-col items-center mt-[40px]">
-          <div className="border-[#0026AA] border w-60"></div>
-          <p className="my-[40px]  text-2xl text-light-grey text-center med-1200:text-lg ">
-            Основа технологии – это введение новых параметров, закон
-            производства сейсмической энтропии и специализированный комплекс
-            программ LMTP-SPQ.
-          </p>
-          <div className="border-[#0026AA] border w-60"></div>
+          <TitleBorder title="Основа технологии – это введение новых параметров, закон производства сейсмической энтропии и специализированный комплекс программ LMTP-SPQ." />
           <Ul data={data} className={styles.list}></Ul>
         </div>
       </Container>

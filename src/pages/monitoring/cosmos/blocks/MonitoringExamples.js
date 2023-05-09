@@ -7,6 +7,7 @@ import { useFormAction, useLoaderData } from "react-router-dom";
 import { FilterBtn } from "../../../../components/reusable";
 import { toFormData, toObject } from "../../../../helper";
 import instance from "../../../../api";
+import axios from "axios";
 
 const Component = () => {
   const submit = useAppSubmit(),
@@ -27,7 +28,12 @@ const Component = () => {
   };
 
   return (
-    <Boxes title="ПРИМЕР МОНИТОРИНГА" data={data} Item={MonitoringBox}>
+    <Boxes
+      boxes_className="grid-cols-[repeat(auto-fit,_minmax(340px,_1fr))]"
+      title="ПРИМЕР МОНИТОРИНГА"
+      data={data}
+      Item={MonitoringBox}
+    >
       <form
         onSubmit={onSubmit}
         className="flex items-center gap-[32px] justify-between w-full"
@@ -76,7 +82,10 @@ const Component = () => {
 const loader = async () => {
   console.log("monitoring boxes");
   try {
-    const data = await instance.get(`posts?userId=1`);
+    // const data = await instance.get(`posts?userId=1`);
+    const data = await axios.get(
+      `https://jsonplaceholder.typicode.com/posts?userId=1`
+    );
     return data.data;
   } catch (err) {
     console.log(err);

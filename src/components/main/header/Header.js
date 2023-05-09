@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { useTranslation } from "../../../App";
 import search_icon from "../../../assets/icons/searchIcon.svg";
 import search_icon_active from "../../../assets/icons/search-active.svg";
 import logo from "../../../assets/main/logo.svg";
@@ -9,9 +8,10 @@ import { Container, Logo } from "../../reusable";
 import { Burger } from "../burger/Burger";
 import { LanguageSelect } from "../languageSelect/LanguageSelect";
 import styles from "./header.module.css";
+import { useTranslation } from "../../../hooks";
 
 export const Header = () => {
-  const [open, setOpen] = useState(false);
+  const [langAndMenu, setLangAndMenu] = useState("");
   const { pathname } = useLocation();
   const {
     language: {
@@ -19,13 +19,9 @@ export const Header = () => {
     },
   } = useTranslation();
 
-  const openMenuHandler = () => {
-    setOpen((p) => !p);
-  };
-
   const chooseOption = () => {
     if (window.innerWidth <= 600) {
-      setOpen(false);
+      setLangAndMenu("");
     }
   };
 
@@ -37,7 +33,12 @@ export const Header = () => {
       </Container>
       <Container className={styles.navbar}>
         <Logo />
-        <div className={[styles.nav_items, open ? styles.open : ""].join(" ")}>
+        <div
+          className={[
+            styles.nav_items,
+            langAndMenu === "menu" ? styles.open : "",
+          ].join(" ")}
+        >
           <HeaderLink onClick={chooseOption} to={getLang(`/about`)}>
             {language.nav_items.about}
           </HeaderLink>
@@ -66,8 +67,13 @@ export const Header = () => {
               alt=""
             />
           </NavLink>
-          <LanguageSelect />
-          <Burger onClick={openMenuHandler} />
+          <LanguageSelect
+            setShow={setLangAndMenu}
+            show={langAndMenu === "lang"}
+          />
+          <Burger
+            onClick={() => setLangAndMenu((p) => (p !== "menu" ? "menu" : ""))}
+          />
         </div>
       </Container>
     </header>

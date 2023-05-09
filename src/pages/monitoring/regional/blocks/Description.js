@@ -11,7 +11,7 @@ const arr = [
   "Армения",
   "Армянское нагорье",
 ];
-const Description = () => {
+const Description = ({ children }) => {
   return (
     <Container>
       <div className="h-[1px] bg-dark-blue w-[328px] my-0 mx-auto"></div>
@@ -51,15 +51,7 @@ const Description = () => {
         и Восточный Кавказ
         <span className="text-[#EE3221]"> ({`M>5.4`})</span>
       </p>
-      <div className="grid grid-cols-[repeat(auto-fill,_minmax(300px,_1fr))] gap-[17px] mt-[120px] mb-[60px]">
-        <div className="bg-gray-400  h-[200px]"></div>
-        <div className="bg-gray-400  h-[200px]"></div>
-        <div className="bg-gray-400  h-[200px]"></div>
-        <div className="bg-gray-400  h-[200px]"></div>
-        <div className="bg-gray-400  h-[200px]"></div>
-        <div className="bg-gray-400  h-[200px]"></div>
-        <div className="bg-gray-400  h-[200px]"></div>
-      </div>
+      {children}
     </Container>
   );
 };

@@ -7,6 +7,7 @@ import {
   SingleBox,
   // QuakeBox
 } from "../../components/main";
+import axios from "axios";
 
 const expl = {
   title: "Название организации",
@@ -41,10 +42,11 @@ const Component = () => {
 
 const loader = async ({ params }) => {
   console.log(params.id);
-  const item = await instance.get(`posts/${params.id}?userId=1`);
-  // const data = await instance.get(`posts?userId=1`);
+  // const item = await instance.get(`posts/${params.id}?userId=1`);
+  const item = await axios.get(
+    `https://jsonplaceholder.typicode.com/posts/${params.id}?userId=1`
+  );
 
-  // return { item: item.data, data: data.data.slice(0, 3) };
   return item.data;
 };
 

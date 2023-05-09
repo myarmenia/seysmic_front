@@ -3,7 +3,7 @@ import regionalMap from "../../../../assets/main/monitoring/regional/regionalMap
 import { Title } from "../../../../components/reusable";
 export const PreFace = () => {
   return (
-    <div className="py-[var(--py)]">
+    <div>
       <Title>региональный мониторинг</Title>
       <img src={regionalMap} alt="regionalMap" className="mx-auto my-[57px]" />
     </div>

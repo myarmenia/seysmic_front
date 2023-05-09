@@ -12,11 +12,12 @@
   @apply w-[40%] pl-3 text-lg text-black  med-1200:text-sm text-left med-900:w-[90%];
 }
 .accumulated_experience {
-  @apply bg-[url("../../../assets/main/technologies/accumuliated.svg")];
+  @apply bg-[url("../../../assets/main/technologies/accumuliated.svg")] med-900:bg-cover;
 }
 
 .accumulated_bottom {
-  @apply flex justify-between pt-[103px] pb-[66px] gap-3 med-900:flex-col med-900:pt-[60px];
+  @apply flex justify-between pt-[103px]  gap-3 med-900:flex-col 
+  med-900:pt-[45px];
 }
 .accumulated_bottom h2 {
   @apply text-lg;
