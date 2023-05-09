@@ -172,7 +172,6 @@
     transform: rotate(0deg);
   }
 }
-
 @keyframes mymove1 {
   from {
     transform: rotate(360deg);
