@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import {
   Outlet,
   useLocation,
@@ -5,19 +6,15 @@ import {
   useNavigation,
   useParams,
 } from "react-router";
-import { Footer, Header, MonitoringNavbar, Spinner } from "../main";
-import { useEffect } from "react";
-import { getLang } from "../../helper";
-import { useTranslation } from "../../App";
 import { ScrollRestoration } from "react-router-dom";
+import { getLang } from "../../helper";
+import { Footer, Header, MonitoringNavbar, Spinner } from "../main";
 
 export const Root = () => {
-  
   const navigate = useNavigate();
   const navigation = useNavigation();
   const { pathname } = useLocation();
   const { lang } = useParams();
-  const { changeLanguage } = useTranslation();
   useEffect(() => {
     if (pathname === "/") {
       if (!localStorage.getItem("lang")) {
@@ -29,11 +26,6 @@ export const Root = () => {
     }
   }, []);
   useEffect(() => {
-    if (pathname && lang && ["ru", "en", "am"].some((e) => lang === e)) {
-      changeLanguage(lang, navigate);
-    } else {
-      changeLanguage("ru", navigate);
-    }
     if (pathname.split("/").length < 3) {
       navigate(getLang("/home"));
     }

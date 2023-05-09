@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Logo, SocIcons } from "../../reusable";
 import styles from "./footer.module.css";
-import { useTranslation } from "../../../App";
+import { useTranslation } from "../../../hooks";
 
 export const Footer = () => {
   const {

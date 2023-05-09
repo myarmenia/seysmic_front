@@ -19,6 +19,7 @@ module.exports = {
         black: "#000",
       },
       screens: {
+        "med-1440": { max: "1440px" },
         "med-1200": { max: "1200px" },
         "med-900": { max: "900px" },
         "med-600": { max: "600px" },

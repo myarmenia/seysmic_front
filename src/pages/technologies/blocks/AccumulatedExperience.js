@@ -5,10 +5,10 @@ import { Container, Title } from "../../../components/reusable";
 export const AccumulatedExperience = () => {
   return (
     <>
-      <Container className="py-[100px]" bg={styles.accumulated_experience}>
-        <div className="flex flex-col gap-[20px] justify-between">
+      <Container className="min-h-[425px] flex items-center py-[100px] med-900:py-12" bg={styles.accumulated_experience}>
+        <div className="flex flex-col gap-[70px] justify-between med-900:gap-12 med-600:gap-5">
           <Title>Накопленный опыт и апробация</Title>
-          <p className=" text-xl text-justify text-black mt-[92px] med-1200:text-sm">
+          <p className=" text-xl text-justify text-black med-1200:text-sm">
             В On-Line режиме на сайте www.geoq.ru с 2008 по 2012 гг. было
             прогнозировано 18 землетрясений. На основе новых разработок к 2023
             году выявлено более 300 сейсмических систем верхнего энергетического

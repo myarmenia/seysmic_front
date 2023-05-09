@@ -12,10 +12,10 @@
   @apply text-sm text-blue-500;
 }
 .img_box {
-  @apply flex justify-between gap-1;
+  @apply grid grid-cols-2 gap-1;
 }
 .img {
-  @apply w-[160px] h-[160px] border bg-slate-400;
+  @apply h-[160px] border bg-slate-400;
 }
 .img_text {
   @apply text-gray-500;

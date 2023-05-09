@@ -19,8 +19,6 @@ export const RoundNum = ({ numbers, title }) => {
     <ViewPosition className="flex flex-col gap-5 w-fit max-w-[200px] px-2 py-3 items-center med-600:gap-2">
       {(bool) => (
         <>
-          {/* <div className="relative w-fit"> */}
-          {/* <div className={styles.box} /> */}
           <CircularProgress {...{ bool }}>
             <div className="flex w-fit z-[10]">
               {splited.map((letter, i) => (
@@ -30,7 +28,6 @@ export const RoundNum = ({ numbers, title }) => {
               ))}
             </div>
           </CircularProgress>
-          {/* </div> */}
           <p className="text-center med-600:text-xs">{title}</p>
         </>
       )}
@@ -108,13 +105,6 @@ export const CircularProgress = ({
             ></stop>
           </linearGradient>
         </defs>
-        <circle
-          fill="none"
-          cx={size / 2}
-          cy={size / 2}
-          r={radius}
-          strokeWidth={`${strokeWidth}px`}
-        />
         <circle
           fill="none"
           stroke="url(#gradient-def-circle)"

@@ -10,6 +10,7 @@ import {
 } from "./blocks";
 import instance from "../../api";
 import { filterByLang } from "../../helper";
+import axios from "axios";
 
 const Component = () => {
   return (
@@ -70,13 +71,14 @@ const data = {
 const loader = async ({ params: { lang } }) => {
   // const res = await instance.get(`news`);
   // const res1 = await instance.get(`press-releases`);
-  const res = await instance.get("posts?userId=1");
-  const res1 = await instance.get("posts?userId=1");
+  const res = await axios.get(
+    "https://jsonplaceholder.typicode.com/posts?userId=1"
+  );
 
   const translatedData = filterByLang(data.data, lang);
   console.log(translatedData);
 
-  return { earth_quakes: res.data, press_release: res1.data };
+  return { earth_quakes: res.data, press_release: res.data };
 };
 
 export const Home = Object.assign(Component, { loader });

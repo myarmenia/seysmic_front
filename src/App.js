@@ -1,10 +1,9 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useState } from "react";
 import { RouterProvider } from "react-router";
 import { router } from "./routes";
 import translation from "./translation.json";
 
-const Translation = createContext(null);
-export const useTranslation = () => useContext(Translation);
+export const Translation = createContext(null);
 
 const key =
   localStorage.getItem("lang") &&
@@ -27,7 +26,7 @@ function App() {
   };
   return (
     <Translation.Provider value={{ language, changeLanguage }}>
-      <RouterProvider router={router}  />
+      <RouterProvider router={router} />
     </Translation.Provider>
   );
 }

@@ -23,7 +23,8 @@
   background: linear-gradient(180deg, #0026aa 0%, #30cfff 100%);
 }
 .tools {
-  @apply flex items-center gap-[18px] med-400:gap-3 shrink-0;
+  @apply flex items-center gap-[18px] med-400:gap-3 shrink-0
+  med-1200:gap-3 med-600:gap-2;
 }
 .tools img {
   @apply cursor-pointer;

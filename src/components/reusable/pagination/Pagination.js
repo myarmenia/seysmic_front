@@ -8,18 +8,22 @@ export const Pagination = ({}) => {
       <Link to={""} className={[styles.item, styles.prev].join(" ")}>
         ‹‹
       </Link>
-      <Link to={""} className={styles.item}>
-        ...
-      </Link>
+      <Dots />
       <Link to={""} className={styles.item}>
         1
       </Link>
-      <Link to={""} className={styles.item}>
-        ...
-      </Link>
+      <Dots />
       <Link to={""} className={[styles.item, styles.next].join(" ")}>
         ››
       </Link>
     </div>
+  );
+};
+
+const Dots = ({ ...props }) => {
+  return (
+    <Link to={""} className={styles.item} {...props}>
+      ...
+    </Link>
   );
 };
