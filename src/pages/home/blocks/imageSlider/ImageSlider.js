@@ -17,7 +17,7 @@ const images = generateArray(3, {
 
 export const ImageSlider = () => {
   return (
-    <Container className="!max-w-max !p-0 overflow-x-hidden">
+    <div className="overflow-x-hidden">
       <Swiper
         pagination={{
           clickable: true,
@@ -28,7 +28,7 @@ export const ImageSlider = () => {
           disableOnInteraction: false,
         }}
         modules={[Pagination, Autoplay]}
-        className="w-full h-[60vh] max-h-[622px] min-h-[229px] med-400:h-[229px]"
+        className="w-full h-[60vh] max-h-[622px] min-h-[229px] med-600:h-[229px] med-600:min-w-full"
       >
         {images.map(({ src, description }, i) => (
           <SwiperSlide key={i}>
@@ -51,6 +51,6 @@ export const ImageSlider = () => {
       >
         <p className={styles.marquee}>Something</p>
       </Container>
-    </Container>
+    </div>
   );
 };

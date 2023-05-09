@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import chevDown from "../../../../../assets/icons/arrow-down-gray.svg";
 import { EarthMap } from "../../../../../components/main";
 import {
   Container,
@@ -9,7 +10,9 @@ import {
 } from "../../../../../components/reusable";
 import countries_names from "../../../../../store/constats";
 import styles from "./map.module.css";
-import chevDown from "../../../../../assets/icons/arrow-down-gray.svg";
+import { Fragment } from "react";
+import { useRef } from "react";
+import { useEffect } from "react";
 
 export const Map = () => {
   const [state, setState] = useState(false);
@@ -38,64 +41,66 @@ export const Map = () => {
 };
 
 const Countries = () => {
+  const [showNum, setShowNum] = useState(0);
   return (
     <Container className="flex flex-col h-[871px] flex-wrap gap-[10px_34px] pb-[60px] pt-3 med-600:gap-[3px_12px] med-600:px-0 med-600:pb-[32px]">
-      {countries_names.map((el, i) => (
-        <Country {...el} key={i} />
+      {countries_names.map(({ name, children }, i) => (
+        <Fragment key={i}>
+          {children && children?.length ? (
+            <DropDown
+              onClick={() => setShowNum((p) => (p === i ? -1 : i))}
+              {...{ show: i === showNum, name }}
+              items={children}
+            />
+          ) : (
+            <Link to={2} className={styles.country}>
+              {name}
+            </Link>
+          )}
+        </Fragment>
       ))}
     </Container>
   );
 };
 
-const Country = ({ name, children }) => {
-  return (
-    <>
-      {children && children?.length ? (
-        <DropDown name={name} items={children} />
-      ) : (
-        <Link to={2} className={styles.country}>
-          {name}
-        </Link>
-      )}
-    </>
-  );
-};
+const DropDown = ({ show, items, name, ...props }) => {
+  const ref = useRef(null);
 
-const DropDown = ({ items, name }) => {
-  const [show, setShow] = useState(false);
-
-  let hg = items.length * 32;
-  if (window.innerWidth < 1201) {
-    hg = items.length * 22 - 3;
-  }
   return (
-    <div className="overflow-hidden w-fit">
-      <div
-        onClick={() => setShow((p) => !p)}
-        className={"flex items-center " + styles.country}
-      >
+    <div className="w-fit relative">
+      <div {...props} className={"flex items-center " + styles.country}>
         <p>{name}</p>
         <img
-          className="brightness-50 scale-50 shrink-0"
+          style={{ rotate: show ? "180deg" : "none" }}
+          className="brightness-50 scale-50 shrink-0 duration-300"
           src={chevDown}
           alt=""
         />
       </div>
-      <ul
-        style={{
-          listStyle: "initial",
-          height: show ? hg + "px" : 0,
-        }}
-        className="flex flex-col gap-[6px] ml-[30px] duration-300 med-600:ml-4"
+      <div
+        style={{ height: show ? ref.current?.offsetHeight + "px" : 0 }}
+        className="shadow-light overflow-hidden z-[10] absolute left-0 top-[calc(100%_+_5px)] duration-300"
       >
-        {items.map((el, i) => {
-          return (
-            <li className={styles.country} key={i}>
-              <Link to={2}>{el.name}</Link>
-            </li>
-          );
-        })}
-      </ul>
+        <ul
+          ref={ref}
+          style={{ listStyle: "initial" }}
+          className="px-5 py-3 bg-white flex flex-col gap-[6px]"
+        >
+          {items.map((el, i) => {
+            return (
+              <li
+                className={[
+                  styles.country,
+                  "ml-[15px] med-600:ml-4 whitespace-nowrap",
+                ].join(" ")}
+                key={i}
+              >
+                <Link to={2}>{el.name}</Link>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </div>
   );
 };

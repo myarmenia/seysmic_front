@@ -39,10 +39,10 @@ const Component = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    // if (Object.values(values).every((e) => !!e)) {
-    const data = toFormData(values);
-    submit(data, { action, method: "post" });
-    // }
+    if (!Object.values(values).every((e) => !e)) {
+      const data = toFormData(values);
+      submit(data, { action, method: "post" });
+    }
   };
 
   return (
@@ -87,10 +87,9 @@ const Component = () => {
   );
 };
 
-const loader = async ({ }) => {
-  console.log("boz");
+const loader = async () => {
   try {
-    const data = await instance.get(`press-releases`);
+    const data = await instance.get("posts");
     return data.data;
   } catch (err) {
     console.log(err);

@@ -2,6 +2,17 @@ import { Link } from "react-router-dom";
 import { getLang } from "../../helper";
 import { Share } from "../reusable";
 
+// const reseases_keys = {
+//   id,
+//   title,
+//   description,
+//   date,
+//   time,
+//   logo,
+//   files: [{ type, path }], // avelord a
+//   links: ["string", "string"], // avelord a
+// };
+
 export const PressReleaseBox = ({
   title,
   description,

@@ -40,10 +40,10 @@ const Component = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    // if (Object.values(values).every((e) => !!e)) {
-    const data = toFormData(values);
-    submit(data, { action, method: "post" });
-    // }
+    if (!Object.values(values).every((e) => !e)) {
+      const data = toFormData(values);
+      submit(data, { action, method: "post" });
+    }
   };
 
   return (

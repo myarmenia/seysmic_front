@@ -36,7 +36,7 @@ const Globus = ({ title, src, description, to }) => {
 
 const Text = ({ title }) => {
   return (
-    <div className="w-full relative py-[52px] med-400:py-[30px]">
+    <div className="w-full relative py-[52px] med-600:py-[30px]">
       <img
         className="w-full min-h-[136px] med-1200:object-cover"
         src={ad_img}

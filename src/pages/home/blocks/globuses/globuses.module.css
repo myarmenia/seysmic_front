@@ -10,7 +10,7 @@
   @apply flex flex-col gap-[25px] items-center;
 }
 .globus_title {
-  @apply text-lg leading-5 text-center text-dark-blue med-400:text-sm med-400:leading-4;
+  @apply text-lg leading-5 text-center text-dark-blue;
 }
 .globus:hover .globus_desc {
   @apply opacity-100;
@@ -46,7 +46,8 @@
   animation-timing-function: ease-in;
   animation-iteration-count: infinite;
   animation-duration: 7s;
-  @apply opacity-0 block min-w-[14px] text-white font-bold text-[24px] med-400:text-base med-400:leading-5;
+  @apply opacity-0 block min-w-[14px] text-white font-bold text-[24px] 
+  med-600:text-base med-600:leading-5;
   transform-origin: 0 100%;
 }
 

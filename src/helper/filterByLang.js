@@ -1,8 +1,7 @@
 const lang_keys = ["_am", "_ru", "_en"];
 
 export function filterByLang(arr, lang) {
-  let arr1 = JSON.parse(JSON.stringify(arr));
-  arr1 = arr1.map((el) => {
+  const arr1 = JSON.parse(JSON.stringify(arr)).map((el) => {
     const myObj = {};
     Object.entries(el).forEach(([key, value]) => {
       if (lang_keys.includes(key.slice(-3))) {
