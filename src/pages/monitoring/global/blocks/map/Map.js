@@ -27,7 +27,7 @@ export const Map = () => {
           по списку стран
         </FilterBtn>
       </div>
-      {state ? <Countries /> : <EarthMap />}
+      {state ? <Countries /> : <EarthMap visible />}
       <TitleBorder className="py-5 items-center med-600:p-0">
         <span className="text-dark-blue text-[24px] text-center font-semibold med-600:text-[14px]">
           Мониторинг на 2023 год включает и затрагивает территории 80 стран
@@ -43,7 +43,7 @@ export const Map = () => {
 const Countries = () => {
   const [showNum, setShowNum] = useState(0);
   return (
-    <Container className="flex flex-col h-[871px] flex-wrap gap-[10px_34px] pb-[60px] pt-3 med-600:gap-[3px_12px] med-600:px-0 med-600:pb-[32px]">
+    <Container className="flex flex-col h-[610px] flex-wrap gap-[10px_34px] pb-[60px] pt-3 med-600:h-[990px] med-600:gap-[10px_12px] med-600:px-0 med-600:pb-[32px]">
       {countries_names.map(({ name, children }, i) => (
         <Fragment key={i}>
           {children && children?.length ? (

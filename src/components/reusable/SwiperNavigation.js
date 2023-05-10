@@ -26,7 +26,7 @@ export const SwiperNavigation = ({ children, className = "" }) => {
           delay: 4000,
           disableOnInteraction: false,
         }}
-        className={"w-auto !px-[20px] " + className}
+        className={"w-full !px-[20px] " + className}
         modules={[Navigation, Autoplay, A11y]}
         breakpoints={{
           1200: {
