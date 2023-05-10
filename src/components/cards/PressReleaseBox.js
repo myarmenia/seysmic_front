@@ -14,6 +14,7 @@ import { Share } from "../reusable";
 // };
 
 export const PressReleaseBox = ({
+  id,
   title,
   description,
   logo,
@@ -23,9 +24,12 @@ export const PressReleaseBox = ({
   to,
 }) => {
   return (
-    <div className="bg-white flex flex-col justify-between gap-2 shadow-[0px_2px_11px_rgba(0,_0,_0,_0.15)] px-[23px] py-[22px] rounded-[6px] max-w-[430px] hover:scale-[1.1] duration-300 med-900:max-w-none med-900:w-full med-600:hover:scale-[1.05]">
+    <div className="bg-white w-full flex flex-col justify-between gap-2 shadow-[0px_2px_11px_rgba(0,_0,_0,_0.15)] px-[23px] py-[22px] rounded-[6px] max-w-[430px] hover:scale-[1.1] duration-300 med-900:max-w-none med-900:w-full med-600:hover:scale-[1.05]">
       <div className="flex justify-between gap-5">
-        <Link to={getLang(to)} className="flex items-center gap-3">
+        <Link
+          to={getLang(`/press-release/${id}/`)}
+          className="flex items-center gap-3"
+        >
           <img src={logo} alt="" />
           <div className="flex flex-col gap-[6px]">
             <span className="font-bold text-dark-blue text-[11px]">
@@ -36,9 +40,12 @@ export const PressReleaseBox = ({
             </span>
           </div>
         </Link>
-        <Share url={window.location.origin + getLang(to)} />
+        <Share url={window.location.origin + getLang(`/press-release/${id}/`)} />
       </div>
-      <Link to={getLang(to)}>{description}</Link>
+      <Link
+        to={getLang(`/press-release/${id}/`)}
+        dangerouslySetInnerHTML={{ __html: description }}
+      ></Link>
       <img src={image} alt="" />
     </div>
   );

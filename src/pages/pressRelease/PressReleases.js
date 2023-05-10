@@ -35,7 +35,7 @@ const Component = () => {
   const data1 = data.map((el) => ({
     ...expl,
     description: el.body.split(" ").slice(0, 8).join(" ") + "...",
-    to: `/press-release/${el.id}`,
+    // to: `/press-release/${el.id}`,
   }));
 
   const onSubmit = (e) => {

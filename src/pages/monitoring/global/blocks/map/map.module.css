@@ -15,6 +15,6 @@
 }
 @media (max-width: 600px) {
   .country {
-    @apply text-[10px] leading-[12px] hover:translate-x-0;
+    @apply text-[18px] hover:translate-x-0;
   }
 }

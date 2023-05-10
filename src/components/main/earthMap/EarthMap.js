@@ -3,7 +3,7 @@ import styles from "./earthMap.module.css";
 import { earth_map } from "../../../store/constats";
 import map_img from "../../../assets/main/monitoring/main-map.png";
 
-export const EarthMap = ({ className = "" }) => {
+export const EarthMap = ({ className = "", visible }) => {
   const handleClick = ({ id }) => {
     console.log(id);
   };
@@ -17,7 +17,13 @@ export const EarthMap = ({ className = "" }) => {
           className={styles.blue_box}
           onClick={() => handleClick(el)}
         >
-          <span className={styles.blue_box_id}>{el.id}</span>
+          <span
+            className={[styles.blue_box_id, styles.blue_box_id_visible].join(
+              " "
+            )}
+          >
+            {el.id}
+          </span>
         </div>
       ))}
     </div>
