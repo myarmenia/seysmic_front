@@ -25,6 +25,7 @@ export const SwiperNavigation = ({ children, className = "" }) => {
         autoplay={{
           delay: 4000,
           disableOnInteraction: false,
+          pauseOnMouseEnter: true,
         }}
         className={"w-full !px-[20px] " + className}
         modules={[Navigation, Autoplay, A11y]}

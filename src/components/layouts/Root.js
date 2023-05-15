@@ -10,6 +10,10 @@ import { ScrollRestoration } from "react-router-dom";
 import { getLang } from "../../helper";
 import { Footer, Header, MonitoringNavbar, Spinner } from "../main";
 
+console.log('====================================');
+console.log(process.env.REACT_APP_DEFAULT_LANG);
+console.log('====================================');
+
 export const Root = () => {
   const navigate = useNavigate();
   const navigation = useNavigation();
@@ -18,7 +22,7 @@ export const Root = () => {
   useEffect(() => {
     if (pathname === "/") {
       if (!localStorage.getItem("lang")) {
-        localStorage.setItem("lang", "ru");
+        localStorage.setItem("lang", process.env.REACT_APP_DEFAULT_LANG);
         navigate("/ru/home");
       } else {
         navigate(getLang("/home"));

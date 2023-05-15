@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router";
-import { Translation } from "../App";
 import { useContext } from "react";
+import { Translation } from "../components/main";
 
 export const useTranslation = () => {
   const navigate = useNavigate();

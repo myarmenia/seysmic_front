@@ -11,10 +11,11 @@ import {
   CustomSelect,
   CstmTextarea,
 } from "../../components/forms";
-import { useFormRegister } from "../../hooks";
+import { useFormRegister, useTranslation } from "../../hooks";
 // import { ReCAPTCHA } from "react-google-recaptcha";
 
 export const Contacts = () => {
+  const { contacts: language } = useTranslation().language;
   const formMethods = useForm({
     resolver: yupResolver(contacts_shema),
   });
@@ -30,7 +31,7 @@ export const Contacts = () => {
             onSubmit={handleSubmit(onSubmit)}
             className="flex flex-col gap-[36px] items-center"
           >
-            <Title>Обратная связь</Title>
+            <Title>{language.title}</Title>
             <div className="flex flex-col gap-[24px] items-center med-400:w-full">
               <CstmInput regName="name" placeholder="ФИО" />
               <CstmInput regName="email" placeholder="ФИО" />
@@ -58,12 +59,16 @@ export const Contacts = () => {
         </FormProvider>
       </Container>
       <Container className="flex flex-col gap-6 py-[var(--py)]">
-        <Title>Контактные данные</Title>
+        <Title>{language.map_info.title}</Title>
         <div className="grid grid-cols-[2fr_3fr] gap-[46px] med-600:grid-cols-1">
           <div className="flex flex-col justify-between gap-5">
             <Ul
               className="list-none !list-image-none mt-[25px] [&_li]:m-0 [&_li]:text-lg"
-              data={["Номер телефона:", "Адрес:", "Email"]}
+              data={[
+                `${language.map_info.ul.tel}:`,
+                `${language.map_info.ul.address}:`,
+                "Email",
+              ]}
             />
             <SocIcons />
           </div>

@@ -6,10 +6,8 @@ import { useTranslation } from "../../../hooks";
 
 export const Footer = () => {
   const {
-    language: {
-      main: { footer: language },
-    },
-  } = useTranslation();
+    main: { footer: language },
+  } = useTranslation().language;
   return (
     <>
       <footer className={styles.footer}>
@@ -32,7 +30,7 @@ export const Footer = () => {
             </li>
           </ul>
           <ul>
-            <li className={styles.li_head}>Текущие землетрясения</li>
+            <li className={styles.li_head}>{language.current_earthquakes}</li>
             <li>
               <Link>Пресс релиз</Link>
             </li>
@@ -44,7 +42,7 @@ export const Footer = () => {
             </li>
           </ul>
           <ul>
-            <li className={styles.li_head}>Контактные данные</li>
+            <li className={styles.li_head}>{language.contacts}</li>
             <li className={styles.social_icons_li}>
               <SocIcons />
             </li>

@@ -1,8 +1,7 @@
 import React from "react";
 import { Container, Title, Ul } from "../../../../components/reusable";
 import styles from "./publications.module.css";
-
-const { Li } = Ul;
+import { useTranslation } from "../../../../hooks";
 
 const data = [
   "Акопян С.Ц. 2007. Диссипативные сейсмические системы, энтропия и возможности создания системы прогноза «Сейсмической погоды». Альманах «Деловая Слава России», III выпуск, с.42-46.",
@@ -28,13 +27,14 @@ const data = [
 ];
 
 export const Publications = () => {
+  const { about: language } = useTranslation().language;
   return (
     <Container className="pt-[88px] pb-[40px] flex flex-col gap-5">
       <div className="flex flex-col gap-2 items-center">
-        <Title>Научные публикации</Title>
-        <span>За последние 15 лет</span>
+        <Title>{language.title}</Title>
+        <span>{language.sub_title}</span>
       </div>
-      <Ul className={styles.ul} data={data} />
+      <Ul className={styles.ul} data={language.publications.data} />
     </Container>
   );
 };
