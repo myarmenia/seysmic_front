@@ -227,7 +227,20 @@
     "about": {},
     "technology": {},
     "monitoring": {},
-    "contacts": {},
+    "contacts": {
+      "title":"Հետադարձ կապ",
+      "name": "ԱԱՀ",
+      "email": "Էլեկտրոնային հասցե",
+      "feedback_letter": "Ընտրեք վերադարձի նամակի տեսակը",
+      "description": "Լրացնելու համար անվճար դաշտ",
+      "button": "Ուղարկել",
+      "contactDetails":{
+        "title":"ԿՈՆՏԱԿՏԱՅԻՆ ՏՎՅԱԼՆԵՐ",
+        "tell":"Հեռախոսահամար",
+        "address":"Հասցե",
+        "email":"Էլեկտրոնային հասցե"
+      }
+    },
     "press_release": {}
   }
 }

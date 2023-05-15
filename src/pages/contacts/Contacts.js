@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./contacts.module.css";
 import { Container, SocIcons, Title, Ul } from "../../components/reusable";
 import { FormProvider, useForm } from "react-hook-form";
@@ -23,6 +23,7 @@ export const Contacts = () => {
   const onSubmit = (data) => {
     console.log(data);
   };
+
   return (
     <>
       <Container className="py-[var(--py)]" bg="bg-[#F0F2F5]">
@@ -33,11 +34,11 @@ export const Contacts = () => {
           >
             <Title>{language.title}</Title>
             <div className="flex flex-col gap-[24px] items-center med-400:w-full">
-              <CstmInput regName="name" placeholder="ФИО" />
-              <CstmInput regName="email" placeholder="ФИО" />
+              <CstmInput regName="name" placeholder={contacts.name} />
+              <CstmInput regName="email" placeholder={contacts.email} />
               <CustomSelect
                 regName="feedback_letter"
-                placeholder="Выбрать тип обратоного письма"
+                placeholder={contacts.feedback_letter}
                 options={[
                   { title: "aaaaaaaaaa", value: "aaaaaaaaaa" },
                   { title: "bbbbbbbbbb", value: "bbbbbbbbbb" },
@@ -46,7 +47,7 @@ export const Contacts = () => {
               />
               <CstmTextarea
                 regName="description"
-                placeholder="Свободное поле для заполнения"
+                placeholder={contacts.description}
               />
             </div>
             <RobotCheckbox regName="isRobot" />
@@ -54,7 +55,7 @@ export const Contacts = () => {
               sitekey={process.env.REACT_APP_SECRET_KEY}
               onChange={onChange}
             /> */}
-            <CustomBtn type="submit">Отправить</CustomBtn>
+            <CustomBtn type="submit">{contacts.button}</CustomBtn>
           </form>
         </FormProvider>
       </Container>
