@@ -1,6 +1,8 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef, useMemo } from "react";
 import { useError, useFormRegister } from "../../hooks";
 import { ErrorMessage } from "../reusable";
+import { useLocation } from "react-router";
+import { errorInputContact } from "../../helper/error";
 
 export const CstmInput = ({
   className = "",
@@ -9,9 +11,18 @@ export const CstmInput = ({
   regName,
   error,
   errorClassName,
+
   ...props
 }) => {
   const errorMessage = useError(regName, error);
+  const { pathname } = useLocation();
+  const errMessage = useMemo(() => {
+    const leng = pathname.split("/")[1];
+    if (errorInputContact[leng][errorMessage]) {
+      return errorInputContact[leng][errorMessage];
+    }
+    return errorMessage;
+  }, [pathname, errorMessage]);
   const register = useFormRegister(regName);
   return (
     <div className={"flex w-fit relative med-600:w-full " + boxClassName}>
@@ -27,7 +38,8 @@ export const CstmInput = ({
         className={`main-input ${className} ${img ? "!pl-[40px]" : ""}`}
         {...register}
       />
-      <ErrorMessage className={errorClassName}>{errorMessage}</ErrorMessage>
+
+      <ErrorMessage className={errorClassName}>{errMessage}</ErrorMessage>
     </div>
   );
 };

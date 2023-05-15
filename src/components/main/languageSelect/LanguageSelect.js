@@ -41,15 +41,13 @@ export const LanguageSelect = ({ show, setShow }) => {
     <div
       className="flex justify-center w-[39px] h-[27px]"
       onMouseEnter={() => allowFunc(() => setShow("lang"))}
-      onMouseLeave={() => allowFunc(() => setShow(""))}
-    >
+      onMouseLeave={() => allowFunc(() => setShow(""))}>
       <div className={styles.language_box}>
         <div
           className="flex items-center gap-1 med-600:gap-[2px]"
           onClick={() =>
             allowFunc1(() => setShow((p) => (p !== "lang" ? "lang" : "")))
-          }
-        >
+          }>
           <div className={styles.language_select}>
             <img src={language_img} alt="" />
           </div>
@@ -62,8 +60,7 @@ export const LanguageSelect = ({ show, setShow }) => {
                 <div className={styles.language_option} key={i}>
                   <span
                     className={lang === value ? styles.active : ""}
-                    onClick={() => optoinClick(value)}
-                  >
+                    onClick={() => optoinClick(value)}>
                     {title}
                   </span>
                 </div>

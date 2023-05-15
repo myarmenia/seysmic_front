@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./contacts.module.css";
 import { Container, SocIcons, Title, Ul } from "../../components/reusable";
 import { FormProvider, useForm } from "react-hook-form";
@@ -11,10 +11,15 @@ import {
   CustomSelect,
   CstmTextarea,
 } from "../../components/forms";
-import { useFormRegister } from "../../hooks";
+import { useFormRegister, useTranslation } from "../../hooks";
+import { Translation } from "../../App";
 // import { ReCAPTCHA } from "react-google-recaptcha";
 
 export const Contacts = () => {
+  const {
+    language: { contacts },
+  } = useTranslation();
+  console.log(contacts);
   const formMethods = useForm({
     resolver: yupResolver(contacts_shema),
   });
@@ -22,21 +27,21 @@ export const Contacts = () => {
   const onSubmit = (data) => {
     console.log(data);
   };
+
   return (
     <>
       <Container className="py-[var(--py)]" bg="bg-[#F0F2F5]">
         <FormProvider {...formMethods}>
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="flex flex-col gap-[36px] items-center"
-          >
-            <Title>Обратная связь</Title>
+            className="flex flex-col gap-[36px] items-center">
+            <Title>{contacts.title}</Title>
             <div className="flex flex-col gap-[24px] items-center med-400:w-full">
-              <CstmInput regName="name" placeholder="ФИО" />
-              <CstmInput regName="email" placeholder="ФИО" />
+              <CstmInput regName="name" placeholder={contacts.name} />
+              <CstmInput regName="email" placeholder={contacts.email} />
               <CustomSelect
                 regName="feedback_letter"
-                placeholder="Выбрать тип обратоного письма"
+                placeholder={contacts.feedback_letter}
                 options={[
                   { title: "aaaaaaaaaa", value: "aaaaaaaaaa" },
                   { title: "bbbbbbbbbb", value: "bbbbbbbbbb" },
@@ -45,7 +50,7 @@ export const Contacts = () => {
               />
               <CstmTextarea
                 regName="description"
-                placeholder="Свободное поле для заполнения"
+                placeholder={contacts.description}
               />
             </div>
             <RobotCheckbox regName="isRobot" />
@@ -53,17 +58,21 @@ export const Contacts = () => {
               sitekey={process.env.REACT_APP_SECRET_KEY}
               onChange={onChange}
             /> */}
-            <CustomBtn type="submit">Отправить</CustomBtn>
+            <CustomBtn type="submit">{contacts.button}</CustomBtn>
           </form>
         </FormProvider>
       </Container>
       <Container className="flex flex-col gap-6 py-[var(--py)]">
-        <Title>Контактные данные</Title>
+        <Title>{contacts.contactDetails.title}</Title>
         <div className="grid grid-cols-[2fr_3fr] gap-[46px] med-600:grid-cols-1">
           <div className="flex flex-col justify-between gap-5">
             <Ul
               className="list-none !list-image-none mt-[25px] [&_li]:m-0 [&_li]:text-lg"
-              data={["Номер телефона:", "Адрес:", "Email"]}
+              data={[
+                contacts.contactDetails.tell,
+                contacts.contactDetails.address,
+                contacts.contactDetails.email,
+              ]}
             />
             <SocIcons />
           </div>
