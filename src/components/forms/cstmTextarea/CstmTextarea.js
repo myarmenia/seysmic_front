@@ -1,6 +1,9 @@
+import { useLocation } from "react-router";
 import { useError, useFormRegister } from "../../../hooks";
 import { ErrorMessage } from "../../reusable";
 import styles from "./cstmTextarea.module.css";
+import { useMemo } from "react";
+import { errorInputContact } from "../../../helper/error";
 
 export const CstmTextarea = ({
   regName,
@@ -10,6 +13,14 @@ export const CstmTextarea = ({
   ...props
 }) => {
   const errorMessage = useError(regName, error);
+  const { pathname } = useLocation();
+  const errMessage = useMemo(() => {
+    const leng = pathname.split("/")[1];
+    if (errorInputContact[leng][errorMessage]) {
+      return errorInputContact[leng][errorMessage];
+    }
+    return errorMessage;
+  }, [pathname, errorMessage]);
   const register = useFormRegister(regName);
   return (
     <div className="flex flex-col relative w-fit med-600:w-full">
@@ -19,7 +30,7 @@ export const CstmTextarea = ({
         className={`${className} scrollbar_hidden ${styles.textarea} main-input`}
         {...register}
       />
-      <ErrorMessage className={errorClassName}>{errorMessage}</ErrorMessage>
+      <ErrorMessage className={errorClassName}>{errMessage}</ErrorMessage>
     </div>
   );
 };

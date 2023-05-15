@@ -1,9 +1,11 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useMemo, useState } from "react";
 import { useError } from "../../../hooks";
 import { ErrorMessage } from "../../reusable";
 import styles from "./customSelect.module.css";
 import { DefaultOption } from "./DefaultOption";
 import { Options } from "./Options";
+import { useLocation } from "react-router";
+import { errorInputContact } from "../../../helper/error";
 
 export const CustomSelectContext = createContext(null);
 
@@ -24,6 +26,14 @@ export const CustomSelect = ({
 }) => {
   const [state, setState] = useState(false);
   const errorMessage = useError(regName, error);
+  const { pathname } = useLocation();
+  const errMessage = useMemo(() => {
+    const leng = pathname.split("/")[1];
+    if (errorInputContact[leng][errorMessage]) {
+      return errorInputContact[leng][errorMessage];
+    }
+    return errorMessage;
+  }, [pathname, errorMessage]);
   const toggleOptions = () => {
     setState((prev) => !prev);
   };
@@ -45,17 +55,15 @@ export const CustomSelect = ({
         setValue,
         toggleOptions,
         removeOption,
-      }}
-    >
+      }}>
       <div
         className={
           "flex justify-center h-[48.67px] med-600:w-full " + boxClassName
-        }
-      >
+        }>
         <div className={[styles.customSelect, className].join(" ")}>
           <DefaultOption />
           {state && <Options />}
-          <ErrorMessage className={errorClassName}>{errorMessage}</ErrorMessage>
+          <ErrorMessage className={errorClassName}>{errMessage}</ErrorMessage>
         </div>
       </div>
     </CustomSelectContext.Provider>

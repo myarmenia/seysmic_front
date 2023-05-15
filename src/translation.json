@@ -19,7 +19,20 @@
     "about": {},
     "technology": {},
     "monitoring": {},
-    "contacts": {},
+    "contacts": {
+      "title":"ОБРАТНАЯ СВЯЗЬ",
+      "name": "ФИО",
+      "email": "Электронная почта",
+      "feedback_letter": "Выбрать тип обратоного письма",
+      "description": "Свободное поле для заполнения",
+      "button": "Отправить",
+      "contactDetails":{
+        "title":"КОНТАКТНЫЕ ДАННЫЕ",
+        "tell":"Номер телефона",
+        "address":"Адрес",
+        "email":"Электронная почта"
+      }
+    },
     "press_release": {}
   },
   "en": {
@@ -42,7 +55,20 @@
     "about": {},
     "technology": {},
     "monitoring": {},
-    "contacts": {},
+    "contacts": {
+      "title":"FEEDBACK",
+      "name": "Full name",
+      "email": "Email",
+      "feedback_letter": "Select type of return letter",
+      "description": "Free field to fill",
+      "button": "Send",
+      "contactDetails":{
+        "title":"CONTACT DETAILS",
+        "tell":"Phone number",
+        "address":"Address",
+        "email":"Email"
+      }
+    },
     "press_release": {}
   },
   "am": {
@@ -65,7 +91,20 @@
     "about": {},
     "technology": {},
     "monitoring": {},
-    "contacts": {},
+    "contacts": {
+      "title":"Հետադարձ կապ",
+      "name": "ԱԱՀ",
+      "email": "Էլեկտրոնային հասցե",
+      "feedback_letter": "Ընտրեք վերադարձի նամակի տեսակը",
+      "description": "Լրացնելու համար անվճար դաշտ",
+      "button": "Ուղարկել",
+      "contactDetails":{
+        "title":"ԿՈՆՏԱԿՏԱՅԻՆ ՏՎՅԱԼՆԵՐ",
+        "tell":"Հեռախոսահամար",
+        "address":"Հասցե",
+        "email":"Էլեկտրոնային հասցե"
+      }
+    },
     "press_release": {}
   }
 }
