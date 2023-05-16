@@ -51,7 +51,7 @@ export const useError = (regName, error) => {
     if (formMethods.formState.errors[regName]?.message) {
       formMethods.trigger(regName);
     }
-  }, [lang, formMethods, regName, formMethods.formState.errors]);
+  }, [lang, formMethods.formState.errors]);
 
   return errorMessage;
 };
