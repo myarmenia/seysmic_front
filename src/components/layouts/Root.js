@@ -18,8 +18,8 @@ export const Root = () => {
   useEffect(() => {
     if (pathname === "/") {
       if (!localStorage.getItem("lang")) {
-        localStorage.setItem("lang", "ru");
-        navigate("/ru/home");
+        localStorage.setItem("lang", process.env.REACT_APP_DEFAULT_LANG);
+        navigate(`/${process.env.REACT_APP_DEFAULT_LANG}/home`);
       } else {
         navigate(getLang("/home"));
       }

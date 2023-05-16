@@ -10,6 +10,8 @@ import {
 } from "./blocks";
 import instance from "../../api";
 import { filterByLang } from "../../helper";
+import h1_icon from "../../assets/trash/home/h1.svg";
+import organization from "../../assets/trash/home/organization.svg";
 import axios from "axios";
 
 const Component = () => {
@@ -70,15 +72,25 @@ const Component = () => {
 // url:http://37.157.220.107:8880/api/news
 const loader = async ({ params: { lang } }) => {
   // const res = await instance.get(`news`);
-  const res1 = await instance.get(`press-releases`);
+  // const res1 = await instance.get(`press-releases`);
   const res = await axios.get(
     "https://jsonplaceholder.typicode.com/posts?userId=1"
   );
 
-  const translatedData = filterByLang(res1.data.data, lang);
+  const data1 = res.data.map((el) => ({
+    title: "Название организации",
+    icon: h1_icon,
+    image: organization,
+    date: "24.02.2023",
+    time: "16:00",
+    description: el.body.split(" ").slice(0, 8).join(" ") + "...",
+    // to: `/press-release/${el.id}`,
+  }));
+
+  // const translatedData = filterByLang(res1.data.data, lang);
   // console.log(res1);
 
-  return { earth_quakes: res.data, press_release: translatedData };
+  return { earth_quakes: res.data, press_release: data1 };
 };
 
 export const Home = Object.assign(Component, { loader });

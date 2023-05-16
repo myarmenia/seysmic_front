@@ -1,6 +1,9 @@
 {
   "ru": {
     "main": {
+      "reusable": {
+        "learn_more": "Узнать больше"
+      },
       "header": {
         "nav_items": {
           "about": "О нас",
@@ -11,65 +14,224 @@
         }
       },
       "footer": {
+        "current_earthquakes": "Текущие землeтрясения ",
+        "contacts": "Контактные данные ",
         "about": "О нас",
         "technologies": "Технология"
       }
     },
     "home": {},
-    "about": {},
-    "technology": {},
-    "monitoring": {},
-    "contacts": {
-      "title":"ОБРАТНАЯ СВЯЗЬ",
-      "name": "ФИО",
-      "email": "Электронная почта",
-      "feedback_letter": "Выбрать тип обратоного письма",
-      "description": "Свободное поле для заполнения",
-      "button": "Отправить",
-      "contactDetails":{
-        "title":"КОНТАКТНЫЕ ДАННЫЕ",
-        "tell":"Номер телефона",
-        "address":"Адрес",
-        "email":"Электронная почта"
+    "about": {
+      "title": "Международный Центр",
+      "sub_title": "Глобального Мониторинга Сейсмического Риска",
+      "preface": {
+        "part1": "Наша компания ООО «СейЭн» была создана в октябре 2022 года в Ереване, Армения (учредители Акопян С.Ц. и Лалаян Г.Г.). Она является правопреемником компаний Центр прогнозирования землетрясений, «ГеоКвейк» (ООО «ЦПЗ Геоквейк», г. Москва, 2007-2012 гг.) и Международного центра глобального мониторинга и прогноза сейсмической погоды (О ОО «СейЭн», г. Москва, 2018-2022 гг.), учредителем и генеральным директором которых был Акопян С.Ц.",
+        "part2": "Основная деятельность ООО «СейЭн», направлена на мониторинг и прогнозирование землетрясений, на оценку сейсмического риска от ожидаемых землетрясений, на глобальное снижение ущерба от ожидаемых землетрясений и цунами посредством внедрения инновационных технологий в области энтропийной сейсмологии, способствующих повышению устойчивости общества к бедствиям в области землетрясений и цунами. Она соответствует стратегии и хартии United Nations Office for Disaster Risk Reduction (UNDRR, www.undrr.org) и вписывается в рамки Сендайской рамочной программы для уменьшения риска бедствий на 2015–2030 гг. (принятой на 3-й Всемирной конференции ООН в Сендаи, Япония, 18 марта 2015)"
+      },
+      "persons": [
+        {
+          "name": "Лалаян Герман Григорьевич",
+          "roles": ["Учредитель", "Президент Фонда LGG"],
+          "description": "Фонд является новой некоммерческой организацией, которая поможет юридически оформить деятельность по поддержке технологических социально-значимых проектов, которая ведется уже не первый год. Мы не можем рассказать о длинной истории и больших достижениях, но все проекты, которые мы поддерживаем сейчас и поддержим в будущем, нацелены на спасение жизней.\nМы не будем привлекать средства на лечение больных – для этого есть сотни и тысячи других фондов, которые занимаются этой важной работой."
+        },
+        {
+          "name": "Акопян Самвел Цолакович",
+          "roles": [
+            "Учредитель и генеральный директор",
+            "Член Российского Экспертного Совета по прогнозу землетрясений, сейсмической опасности и риска (РЭС).",
+            "Доктор физико-математических наук.",
+            "Академик Международной академии по геоэкологии (МАГ).",
+            "Имеет свыше 90 публикаций, две монографии и 5 компьютерных разработок."
+          ]
+        }
+      ],
+      "publications": {
+        "title": "Научные публикации",
+        "sub_title": "За последние 15 лет",
+        "data": [
+          "1. Акопян С.Ц. 2007. Диссипативные сейсмические системы, энтропия и возможности создания системы прогноза «Сейсмической погоды». Альманах «Деловая Слава России», III выпуск, с.42-46.",
+          "2. Akopian, S.Ts., Popov E.A., 2010. Monitoring induced seismicity based on seismic entropy method. Abstracts, Induced seismicity ECGS – FKPE workshop, 15–17 November, Luxembourg, 3–4.",
+          "3. Акопян С.Ц., Рогожин Е.А. 2013. Моделирование кинематики Тавро-Кавказского региона и динамика подготовки сильных землетрясений с М≥7.1. Вопросы инженерной сейсмологии, 40, №2. С. 5–24.",
+          "4. Акопян С.Ц. 2013. Сейсмические системы Японии: энтропия и мониторинг мегаземлетрясения Тохоку 11.03.2011 г. Вопросы инженерной сейсмологии, 40, №4. С. 67–90.",
+          "5. Akopian S.Ts. 2013. Quantitative description of seismic processes in real medium and the algorithm of long-term prediction of large earthquakes: By examples of Armenian Upland, North-Western Iran, Italy, and Central California. Moscow, Triumph, 92.",
+          "6. Akopian S.Ts. & Kocharian A.N. 2013. Critical behavior of seismic systems and dynamics in ensemble of strong earthquakes. Geophys. J. Int.; doi: 10.1093/gji/ggt398 (January 2014) 196 (1): 580-599.",
+          "7. Акопян С.Ц. 2014. Применение метода сейсмической энтропии для решения технологических задач в нефтегазовой отрасли. ROGTEC, 38, 56–63.",
+          "8. Акопян С.Ц. 2015. Энтропийная сейсмология и ее применение при разработке сланцевого газа. Экспозиция Нефть Газ. 6, 45. С. 40–43.",
+          "9. Akopian, S.Ts. 2015. Open dissipative seismic systems and ensembles of strong earthquakes: Energy balance and entropy funnels. Geophys. J. Int. 201, pp. 1618–1641. doi: 10.1093/gji/ggv096/",
+          "10. Акопян С.Ц. 2016. Сейсмические системы, закон производства энтропии и ансамбли сильных землетрясений. Изв. РАН, Физика Земли, 6, С. 1–22.",
+          "11. Акопян С.Ц., Цидилина М.Н., Митюшина Е.С., Гапонова М.В., Гапонова Е.В., Мурынин А.Б., Воронова О.С., Гордо К.А., Смирнов В.М., Тарасова М.А. 2016. Разработка единой системы комплексного мониторинга катастрофических явлений для уменьшения их последствий на основе космических и наземных данных. Отчет о НИР № 16-17-00139 от 14.01.2016 (Российский научный фонд).",
+          "12. Акопян С.Ц., Бондур В.Г., Рогожин Е.А. 2017. Технология мониторинга и прогнозирования сильных землетрясений на территории России с использованием метода сейсмической энтропии. Изв. РАН, Физика Земли, 1. C. 1–20.",
+          "13. Акопян С.Ц. 2017. Энтропия, мониторинг сейсмичности на Армянском нагорье и динамика заполнения Ахурянского водохранилища. Вопросы инженерной сейсмологии. 44, №2. С. 5–14.",
+          "14. Акопян С.Ц. 2017. Энтропийная сейсмология: Нефть и сланец северо-восточного Китая. Neftegaz. RU, 10. C. 20–24.",
+          "15. Akopian S.Ts. 2017. Entropy seismology and the view of cosmology: Seismic formalism and alphabet of evolution. Nat. Ac. of Sci. of RA Electronic Journal of Natural sciences 2017, 1 (28). P.53-73.",
+          "16. Akopian, S.Ts. 2017. Entropic seismology and the view of cosmology: Dark energy, dark matter, and gravitation. Nat. Ac. of Sci. of RA Electronic Journal of Natural sciences, 1(28). P. 74–94.",
+          "17. Акопян С.Ц. 2018. Двойные землетрясения, их природа и прогноз методом сейсмической энтропии. Вопросы инженерной сейсмологии. 45. №2. С. 43–56.",
+          "18. Акопян С.Ц. 2018. Анализ уральского землетрясения 4 сентября 2018 на основе метода сейсмической энтропии. Вопросы инженерной сейсмологии. 55. №4. С. 37-46.",
+          "19. Акопян С.Ц. 2020. Выявление особенностей сильного землетрясения на востоке от Курильских островов от 25 марта 2020 на основе метода сейсмической энтропии. Вопросы инженерной сейсмологии. 47. №2. С. 5–18.",
+          "20. Akopian S.Ts. 2023. “Entropy, Seismology, and the View of Cosmology: Origin and Evolutionary Theory. Cambridge Scholars Publishing, London. 432."
+        ]
+      },
+      "results": {
+        "title": "Основные научные результаты",
+        "data": [
+          "В области изучения Земли методом ее собственных колебаний (1971–1994)",
+          "В области прогноза землетрясений (1983–2023)",
+          "В области сейсмотектоники, дистанционного зондирования и преподавания (1980–1987)",
+          "В области добычи нефти и газа, индуцированной сейсмичности (2013-2019)",
+          "В области оценки сейсмического воздействия на здания и сооружения (1988–1994)",
+          "В области энтропийной сейсмологии и космологии (2013–2023)"
+        ]
       }
     },
-    "press_release": {}
+    "technology": {},
+    "monitoring": {
+      "global": {
+        "title": "ГЛОБАЛЬНЫЙ МОНИТОРИНГ"
+      }
+    },
+    "contacts": {
+      "title": "Обратная связь",
+      "map_info": {
+        "title": "Контактные данные",
+        "ul": {
+          "tel": "Номер телефона",
+          "address": "Адрес"
+        }
+      },
+      "placeholders": {
+        "name": "ФИО",
+        "email": "Электронная почта",
+        "feedback_letter": "Выбрать тип обратоного письма",
+        "description": "Свободное поле для заполнения"
+      },
+      "errors": {
+        "Required": "Обязательное поле",
+        "Wrongtext": "Пожалуйста, введите только буквы",
+        "WrongEmail": "Неверный адрес электронной почты",
+        "WrongMinimalText": "Поле должно быть не менее 10 символов",
+        "WrongMaximalText": "Поле должно быть не более 90 символов"
+      }
+    },
+    "press_release": {
+      "title": "Пресс-релиз"
+    }
   },
   "en": {
     "main": {
+      "reusable": {
+        "learn_more": "Learn more"
+      },
       "header": {
         "nav_items": {
           "about": "About",
           "technologies": "Technology",
-          "monitoring": "Monitoring and Forecast",
+          "monitoring": "Monitoring and prediction",
           "prease_release": "Press release",
           "contacts": "Contacts"
         }
       },
       "footer": {
+        "current_earthquakes": "Current earthquakes",
+        "contacts": "Contact details",
         "about": "About",
         "technologies": "Technology"
       }
     },
     "home": {},
-    "about": {},
-    "technology": {},
-    "monitoring": {},
-    "contacts": {
-      "title":"FEEDBACK",
-      "name": "Full name",
-      "email": "Email",
-      "feedback_letter": "Select type of return letter",
-      "description": "Free field to fill",
-      "button": "Send",
-      "contactDetails":{
-        "title":"CONTACT DETAILS",
-        "tell":"Phone number",
-        "address":"Address",
-        "email":"Email"
+    "about": {
+      "title": "International Center",
+      "sub_title": "of the Seismic Risk Global Monitoring ",
+      "preface": {
+        "part1": "Our company “SeiEn” LLC was established in October 2022 in Yerevan, Armenia (founders Akopian S.Ts. and Lalayan G.G.). It is the assignee of the companies Earthquake Prediction Center, GeoQuake (EPC GeoQuake, Moscow, 2007-2012), and the International Center for the Global Monitoring and Forecast of Seismic Weather (“SeiEn” LLC, Moscow, 2018-2022), the founder and CEO of which was Akopian S.Ts.",
+        "part2": "The main activity of “SeiEn” LLC is aimed at monitoring and prediction of earthquakes, expected earthquakes seismic risk assessment, global reduction of damage from expected earthquakes and tsunamis through the introduction of innovative technologies in the field of entropy seismology, which help to increase society's resilience to disasters in the field of earthquakes and tsunami. It is in line with the strategy and charter of the United Nations Office on Disaster Risk Reduction (UNDRR, www.undrr.org) and is in line with the Sendai Framework for Disaster Risk Reduction 2015-2030 (adopted at the 3rd UN World Conference in Sendai, Japan, March 18, 2015)."
+      },
+      "persons": [
+        {
+          "name": "Lalayan German G.",
+          "roles": ["Founder", "President of LGG Foundation"]
+        },
+        {
+          "name": "Akopian Samvel Ts.",
+          "roles": [
+            "Founder and CEO",
+            "Doctor of Physical and Mathematical Sciences.",
+            "Member of the Russian Expert Council on earthquake prediction, seismic hazard, and risk (RES).",
+            "Academician of the International Academy of Geoecology (IAG).",
+            "He has over 90 publications, two monographs and 5 computer developments."
+          ],
+          "description": ""
+        }
+      ],
+      "publications": {
+        "title": "Scientific publications",
+        "sub_title": "over the past 15 years",
+        "data": [
+          "1. Akopian S.Ts. 2007. Dissipative seismic systems, entropy and the possibility of creating a \"Seismic weather\" forecast system. Almanac \"Business Glory of Russia\", III edition, pp.42-46.",
+          "2. Akopian, S.Ts., Popov E.A. 2010. Monitoring induced seismicity based on seismic entropy method. Abstracts, Induced seismicity ECGS – FKPE workshop, 15–17 November, Luxembourg, 3–4.",
+          "3. Akopian S.Ts., Rogozhin E.A. 2013. Modeling the kinematics of the Taurus-Caucasus region and the dynamics of the preparation of stong earthquakes with М≥7.1. Issues of engineering seismology, 40 №2, pp. 5–24.",
+          "4. Akopian S.Ts. 2013. Seismic systems of Japan: entropy and monitoring of the Tohoku mega-earthquake on March 11, 2011. Issues of engineering seismology, 40, no. 4. pp. 67–90.",
+          "5. Akopian S.Ts. 2013. Quantitative description of seismic processes in real medium and the algorithm of long-term prediction of large earthquakes: By examples of Armenian Upland, North-Western Iran, Italy, and Central California. Moscow, Triumph, 92.",
+          "6. Akopian S.Ts. & Kocharian A.N. 2013. Critical behavior of seismic systems and dynamics in ensemble of strong earthquakes. Geophys. J. Int.; doi: 10.1093/gji/ggt398 (January 2014) 196(1): 580-599.",
+          "7. Akopian S.Ts. 2014. Application of the seismic entropy method to solve technological problems in the oil and gas industry. ROGTEC, 38, 56–63.",
+          "8. Akopian S.Ts. 2015. Entropy seismology and its application in the development of shale gas. Exposition Oil Gas. 6, 45, pp. 40–43.",
+          "9. Akopian, S.Ts. 2015. Open dissipative seismic systems and ensembles of strong earthquakes: Energy balance and entropy funnels. Geophys. J. Int. 201, pp. 1618–1641 doi:10.1093/gji/ggv096/",
+          "10. Akopian S.Ts. 2016. Seismic systems, entropy production law and ensembles of strong earthquakes. Izv. Russian Academy of Sciences, Physics of the Earth, 6, pp. 1–22.",
+          "11. Akopian S.Ts., Tsidilina M.N., Mityushina E.S., Gaponova M.V., Gaponova E.V., Murynin A.B., Voronova O.S., Gordo K.A., Smirnov V.M., Tarasova M.A. 2016. Development of a unified system for comprehensive monitoring of catastrophic events to reduce their consequences based on space and ground data. Research report No. 16-17-00139 dated January 14, 2016 (Russian Science Foundation).",
+          "12. Akopian S.Ts., Bondur V.G., Rogozhin E.A. 2017. Technology for monitoring and forecasting strong earthquakes in Russia using the seismic entropy method. Izv. Russian Academy of Sciences, Physics of the Earth, 1. C. 1–20.",
+          "13. Akopian S.Ts. 2017. Entropy, Seismicity Monitoring in the Armenian Highlands and Akhuryan Reservoir Filling Dynamics. Issues of engineering seismology. 44, no. 2. pp. 5–14.",
+          "14. Akopian S.Ts. 2017. Entropy Seismology: Oil and Shale of Northeast China. Neftegaz. RU, 10. C. 20–24.",
+          "15. Akopian S.Ts. 2017. Entropy seismology and the view of cosmology: Seismic formalism and alphabet of evolution. Nat. Ac. of Sci. of RA Electronic Journal of Natural Sciences 2017, 1 (28). P.53-73.",
+          "16. Akopian, S.Ts. 2017. Entropic seismology and the view of cosmology: Dark energy, dark matter, and gravitation. Nat. Ac. of Sci. of RA Electronic Journal of Natural Sciences, 1(28). P. 74–94.",
+          "17. Akopian S.Ts. 2018. Double earthquakes, their nature and prediction by the seismic entropy method. Questions of engineering seismology. 45. No. 2. pp. 43–56.",
+          "18. Akopian S.Ts. 2018. Analysis of the Ural earthquake on September 4, 2018 based on the seismic entropy method. Issues of engineering seismology. 55. No. 4. pp. 37-46.",
+          "19. Akopian S.Ts. 2020. Identification of features of a strong earthquake in the east of the Kuril Islands from March 25, 2020 based on the seismic entropy method. Issues of engineering seismology. 47. No. 2. pp. 5–18.",
+          "20. Akopian S.Ts. 2023. “Entropy, Seismology, and the View of Cosmology: Origin and Evolutionary Theory. Cambridge Scholars Publishing, London. 350."
+        ]
+      },
+      "results": {
+        "title": "The main scientific results",
+        "data": [
+          "In the field of the study Free oscillations of the Earth (1971–1994)",
+          "In the field of seismotectonic, remote sensing and teaching (1980–1987)",
+          "In the field of seismic impact assessment for buildings and construction (1988–1994)",
+          "In the area of earthquake prediction (1983–2023)",
+          "In the field of oil and gas production, induced seismicity (2013-2018) ",
+          "In the field of entropy seismology and cosmology (2013–2023)"
+        ]
       }
     },
-    "press_release": {}
+    "technology": {},
+    "monitoring": {
+      "global": {
+        "title": "GLOBAL MONITORING"
+      }
+    },
+    "contacts": {
+      "title": "Contact us",
+      "map_info": {
+        "title": "Contact details",
+        "ul": {
+          "tel": "Phone number",
+          "address": "Address"
+        }
+      },
+      "placeholders": {
+        "name": "Full name",
+        "email": "Email",
+        "feedback_letter": "Select type of return letter",
+        "description": "Free field to fill"
+      },
+      "errors": {
+        "Required": "Required field",
+        "Wrongtext": "Please enter only letters",
+        "WrongEmail": "Invalid email address",
+        "WrongMinimalText": "The field must be at least 10 characters long",
+        "WrongMaximalText": "The field should be a maximum of 90 characters"
+      }
+    },
+    "press_release": {
+      "title": "Press-release"
+    }
   },
   "am": {
     "main": {
@@ -92,17 +254,17 @@
     "technology": {},
     "monitoring": {},
     "contacts": {
-      "title":"Հետադարձ կապ",
+      "title": "Հետադարձ կապ",
       "name": "ԱԱՀ",
       "email": "Էլեկտրոնային հասցե",
       "feedback_letter": "Ընտրեք վերադարձի նամակի տեսակը",
       "description": "Լրացնելու համար անվճար դաշտ",
       "button": "Ուղարկել",
-      "contactDetails":{
-        "title":"ԿՈՆՏԱԿՏԱՅԻՆ ՏՎՅԱԼՆԵՐ",
-        "tell":"Հեռախոսահամար",
-        "address":"Հասցե",
-        "email":"Էլեկտրոնային հասցե"
+      "contactDetails": {
+        "title": "ԿՈՆՏԱԿՏԱՅԻՆ ՏՎՅԱԼՆԵՐ",
+        "tell": "Հեռախոսահամար",
+        "address": "Հասցե",
+        "email": "Էլեկտրոնային հասցե"
       }
     },
     "press_release": {}

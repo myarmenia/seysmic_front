@@ -9,6 +9,6 @@ export const registration_schema = yup.object().shape({
 });
 
 export const login_schema = yup.object().shape({
-  name: yup.string(),
-  password: yup.string(),
+  name: yup.string().required("Required"),
+  password: yup.string().required("Required"),
 });

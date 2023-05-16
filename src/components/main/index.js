@@ -8,3 +8,4 @@ export { Spinner } from "./Spinner";
 export { LanguageSelect } from "./languageSelect/LanguageSelect";
 export { ErrorBoundary } from "./ErrorBoundary";
 export { EarthMap } from "./earthMap/EarthMap";
+export { LanguageProvider, Translation } from "./LanguageProvider";

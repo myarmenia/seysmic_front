@@ -13,12 +13,14 @@ import styles from "./map.module.css";
 import { Fragment } from "react";
 import { useRef } from "react";
 import { useEffect } from "react";
+import { useTranslation } from "../../../../../hooks";
 
 export const Map = () => {
+  const { global: language } = useTranslation().language.monitoring;
   const [state, setState] = useState(false);
   return (
     <div className="pb-[54px] flex flex-col gap-[30px] px-[32px] relative med-600:px-[20px]">
-      <Title>Глобальный мониторинг</Title>
+      <Title>{language.title}</Title>
       <div className="flex items-center justify-end gap-[17px] med-600:justify-center">
         <FilterBtn active={!state} onClick={() => setState(false)}>
           по карте

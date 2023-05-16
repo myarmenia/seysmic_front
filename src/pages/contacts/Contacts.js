@@ -1,28 +1,49 @@
-import React, { useContext } from "react";
-import styles from "./contacts.module.css";
-import { Container, SocIcons, Title, Ul } from "../../components/reusable";
-import { FormProvider, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { contacts_shema } from "../../validation";
+import React from "react";
+import { FormProvider, useForm } from "react-hook-form";
 import robot_img from "../../assets/main/contacts/robot.svg";
 import {
   CstmInput,
+  CstmTextarea,
   CustomBtn,
   CustomSelect,
-  CstmTextarea,
 } from "../../components/forms";
+import { Container, SocIcons, Title, Ul } from "../../components/reusable";
 import { useFormRegister, useTranslation } from "../../hooks";
-import { Translation } from "../../App";
+import { contacts_shema } from "../../validation";
+import styles from "./contacts.module.css";
 // import { ReCAPTCHA } from "react-google-recaptcha";
 
+// const errLanguage = {
+//   am: {
+//     Required: "Պարտադիր դաշտ",
+//     Wrongtext: "Մուտքագրերք միայն տառեր",
+//     WrongEmail: "Սխալ էլեկտրոնային հասցե",
+//     WrongMinimalText: "Դաշտը պետքե պաուրնակի մինիմալ 10 նիշհ",
+//     WrongMaximalText: "Դաշտը պետքե պաուրնակի մաքսիմալ 90 նիշհ",
+//   },
+//   ru: {
+//     Required: "Обязательное поле",
+//     Wrongtext: "Пожалуйста, введите только буквы",
+//     WrongEmail: "Неверный адрес электронной почты",
+//     WrongMinimalText: "Поле должно быть не менее 10 символов",
+//     WrongMaximalText: "Поле должно быть не более 90 символов",
+//   },
+//   en: {
+//     Required: "Required field",
+//     Wrongtext: "Please enter only letters",
+//     WrongEmail: "Invalid email address",
+//     WrongMinimalText: "The field must be at least 10 characters long",
+//     WrongMaximalText: "The field should be a maximum of 90 characters",
+//   },
+// };
+
 export const Contacts = () => {
-  const {
-    language: { contacts },
-  } = useTranslation();
-  console.log(contacts);
+  const { contacts: language } = useTranslation().language;
   const formMethods = useForm({
-    resolver: yupResolver(contacts_shema),
+    resolver: yupResolver(contacts_shema(language.errors)),
   });
+
   const { handleSubmit } = formMethods;
   const onSubmit = (data) => {
     console.log(data);
@@ -34,14 +55,21 @@ export const Contacts = () => {
         <FormProvider {...formMethods}>
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="flex flex-col gap-[36px] items-center">
-            <Title>{contacts.title}</Title>
+            className="flex flex-col gap-[36px] items-center"
+          >
+            <Title>{language.title}</Title>
             <div className="flex flex-col gap-[24px] items-center med-400:w-full">
-              <CstmInput regName="name" placeholder={contacts.name} />
-              <CstmInput regName="email" placeholder={contacts.email} />
+              <CstmInput
+                regName="name"
+                placeholder={language.placeholders.name}
+              />
+              <CstmInput
+                regName="email"
+                placeholder={language.placeholders.email}
+              />
               <CustomSelect
                 regName="feedback_letter"
-                placeholder={contacts.feedback_letter}
+                placeholder={language.placeholders.feedback_letter}
                 options={[
                   { title: "aaaaaaaaaa", value: "aaaaaaaaaa" },
                   { title: "bbbbbbbbbb", value: "bbbbbbbbbb" },
@@ -50,7 +78,7 @@ export const Contacts = () => {
               />
               <CstmTextarea
                 regName="description"
-                placeholder={contacts.description}
+                placeholder={language.placeholders.description}
               />
             </div>
             <RobotCheckbox regName="isRobot" />
@@ -58,20 +86,20 @@ export const Contacts = () => {
               sitekey={process.env.REACT_APP_SECRET_KEY}
               onChange={onChange}
             /> */}
-            <CustomBtn type="submit">{contacts.button}</CustomBtn>
+            <CustomBtn type="submit">Отправить</CustomBtn>
           </form>
         </FormProvider>
       </Container>
       <Container className="flex flex-col gap-6 py-[var(--py)]">
-        <Title>{contacts.contactDetails.title}</Title>
+        <Title>{language.map_info.title}</Title>
         <div className="grid grid-cols-[2fr_3fr] gap-[46px] med-600:grid-cols-1">
           <div className="flex flex-col justify-between gap-5">
             <Ul
               className="list-none !list-image-none mt-[25px] [&_li]:m-0 [&_li]:text-lg"
               data={[
-                contacts.contactDetails.tell,
-                contacts.contactDetails.address,
-                contacts.contactDetails.email,
+                `${language.map_info.ul.tel}:`,
+                `${language.map_info.ul.address}:`,
+                "Email",
               ]}
             />
             <SocIcons />
