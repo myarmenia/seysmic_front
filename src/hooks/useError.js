@@ -48,10 +48,10 @@ export const useError = (regName, error) => {
   }, [error, formMethods?.formState?.errors, regName, splitedName, thisError]);
 
   useEffect(() => {
-    if (formMethods.formState.errors[regName]?.message) {
+    if (formMethods?.formState?.errors?.[regName]?.message) {
       formMethods.trigger(regName);
     }
-  }, [lang, formMethods.formState.errors]);
+  }, [lang, formMethods?.formState?.errors]);
 
   return errorMessage;
 };
