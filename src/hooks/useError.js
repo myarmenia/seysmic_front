@@ -1,7 +1,10 @@
+import { useEffect } from "react";
 import { useMemo } from "react";
 import { useFormContext } from "react-hook-form";
+import { useParams } from "react-router";
 
 export const useError = (regName, error) => {
+  const { lang } = useParams();
   const formMethods = useFormContext();
   const splitedName = regName?.split(".");
   const thisError =
@@ -11,6 +14,7 @@ export const useError = (regName, error) => {
       return error;
     } else if (regName) {
       if (regName.includes(".")) {
+        // formMethods.trigger(splitedName[0]);
         if (regName.split(".").length === 2) {
           if (formMethods.formState.errors[regName.split(".")[0]]) {
             const err =
@@ -37,10 +41,17 @@ export const useError = (regName, error) => {
           } else return;
         }
       } else if (Boolean(formMethods?.formState?.errors?.[regName]?.message)) {
+        // formMethods.trigger(regName);
         return formMethods?.formState?.errors?.[regName]?.message;
       } else return;
     }
   }, [error, formMethods?.formState?.errors, regName, splitedName, thisError]);
+
+  useEffect(() => {
+    if (formMethods.formState.errors[regName]?.message) {
+      formMethods.trigger(regName);
+    }
+  }, [lang, formMethods, regName, formMethods.formState.errors]);
 
   return errorMessage;
 };

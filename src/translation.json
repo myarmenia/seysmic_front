@@ -97,6 +97,19 @@
           "tel": "Номер телефона",
           "address": "Адрес"
         }
+      },
+      "placeholders": {
+        "name": "ФИО",
+        "email": "Электронная почта",
+        "feedback_letter": "Выбрать тип обратоного письма",
+        "description": "Свободное поле для заполнения"
+      },
+      "errors": {
+        "Required": "Обязательное поле",
+        "Wrongtext": "Пожалуйста, введите только буквы",
+        "WrongEmail": "Неверный адрес электронной почты",
+        "WrongMinimalText": "Поле должно быть не менее 10 символов",
+        "WrongMaximalText": "Поле должно быть не более 90 символов"
       }
     },
     "press_release": {
@@ -201,6 +214,19 @@
           "tel": "Phone number",
           "address": "Address"
         }
+      },
+      "placeholders": {
+        "name": "Full name",
+        "email": "Email",
+        "feedback_letter": "Select type of return letter",
+        "description": "Free field to fill"
+      },
+      "errors": {
+        "Required": "Required field",
+        "Wrongtext": "Please enter only letters",
+        "WrongEmail": "Invalid email address",
+        "WrongMinimalText": "The field must be at least 10 characters long",
+        "WrongMaximalText": "The field should be a maximum of 90 characters"
       }
     },
     "press_release": {
@@ -228,17 +254,17 @@
     "technology": {},
     "monitoring": {},
     "contacts": {
-      "title":"Հետադարձ կապ",
+      "title": "Հետադարձ կապ",
       "name": "ԱԱՀ",
       "email": "Էլեկտրոնային հասցե",
       "feedback_letter": "Ընտրեք վերադարձի նամակի տեսակը",
       "description": "Լրացնելու համար անվճար դաշտ",
       "button": "Ուղարկել",
-      "contactDetails":{
-        "title":"ԿՈՆՏԱԿՏԱՅԻՆ ՏՎՅԱԼՆԵՐ",
-        "tell":"Հեռախոսահամար",
-        "address":"Հասցե",
-        "email":"Էլեկտրոնային հասցե"
+      "contactDetails": {
+        "title": "ԿՈՆՏԱԿՏԱՅԻՆ ՏՎՅԱԼՆԵՐ",
+        "tell": "Հեռախոսահամար",
+        "address": "Հասցե",
+        "email": "Էլեկտրոնային հասցե"
       }
     },
     "press_release": {}
