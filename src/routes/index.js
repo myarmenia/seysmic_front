@@ -75,7 +75,7 @@ export const router = createBrowserRouter(
         <Route path="technologies" element={<Technologies />} />
         <Route path="press-release">
           <Route
-            index
+            path=":page"
             element={<PressReleases />}
             loader={PressReleases.loader}
             action={PressReleases.action}

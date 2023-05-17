@@ -40,11 +40,13 @@ export const PressReleaseBox = ({
             </span>
           </div>
         </Link>
-        <Share url={window.location.origin + getLang(`/press-release/${id}/`)} />
+        <Share
+          url={window.location.origin + getLang(`/press-release/${id}/`)}
+        />
       </div>
       <Link
         to={getLang(`/press-release/${id}/`)}
-        dangerouslySetInnerHTML={{ __html: description }}
+        dangerouslySetInnerHTML={{ __html: description.slice(0, 70) }}
       ></Link>
       <img src={image} alt="" />
     </div>

@@ -9,7 +9,7 @@ export const Pagination = ({}) => {
         ‹‹
       </Link>
       <Dots />
-      <Link to={""} className={styles.item}>
+      <Link to={"../2"} className={styles.item}>
         1
       </Link>
       <Dots />

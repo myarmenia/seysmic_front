@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { useLoaderData } from "react-router";
+import { redirect, useLoaderData } from "react-router";
 import { useFormAction } from "react-router-dom";
 import instance from "../../api";
 import h1_icon from "../../assets/trash/home/h1.svg";
 import organization from "../../assets/trash/home/organization.svg";
 import { Boxes } from "../../components/main";
-import { toFormData, toObject } from "../../helper";
+import { getLang, toFormData, toObject } from "../../helper";
 import { useAppSubmit, useTranslation } from "../../hooks";
 import { CstmDateInput, SearchInput } from "../../components/forms";
 import { PressReleaseBox } from "../../components/cards";
@@ -46,7 +46,8 @@ const Component = () => {
     <Boxes data={data} title={language.title} Item={PressReleaseBox}>
       <form
         onSubmit={onSubmit}
-        className="flex items-center gap-[32px] justify-center med-900:flex-wrap med-600:flex-col med-600:gap-[16px]">
+        className="flex items-center gap-[32px] justify-center med-900:flex-wrap med-600:flex-col med-600:gap-[16px]"
+      >
         <SearchInput
           inputProps={{
             placeholder: "Поиск",
@@ -83,9 +84,11 @@ const Component = () => {
   );
 };
 
-const loader = async ({ params: { lang } }) => {
+const loader = async ({ params: { lang, page = 1 }, request }) => {
+  const obj = Object.fromEntries(new URL(request.url).searchParams);
+  console.log(obj);
   try {
-    const data = await instance.get(`press-releases?lng=${lang}`);
+    const data = await instance.get(`press-releases?lng=${lang}&page=${page}`);
     if (data.status === 200) {
       return data.data.data;
     } else {
@@ -96,15 +99,31 @@ const loader = async ({ params: { lang } }) => {
   }
 };
 
-const action = async ({ request }) => {
+const action = async ({ request, params: { lang } }) => {
+  console.log(1111);
   try {
     const formData = await request.formData();
     const formObj = toObject(formData);
     console.log(formObj, "formObj");
-    return { some: "hello" };
+    return redirect(`/${lang}/press-release/1`);
   } catch (err) {
     console.log(err);
   }
 };
 
 export const PressReleases = Object.assign(Component, { loader, action });
+
+
+// const data = [1, 22, 34, 4, 5, 77, 1, 34, 4, 77, 1];
+
+// const gen = (data) => {
+//   const arr = [...new Set(data)];
+//   return arr.map((el) => {
+//     return {
+//       key: el,
+//       count: data.filter((e) => e === el).length,
+//     };
+//   });
+// };
+
+// console.log(gen(data));
