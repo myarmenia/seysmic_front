@@ -26,19 +26,21 @@ import { getLang } from "../../../helper";
 // };
 
 export const PressRelease = () => {
-  const { press_release } = useLoaderData();
+  const { press_releases } = useLoaderData();
+  if (Array.isArray(press_releases) && !press_releases) {
+    return null;
+  }
   return (
     <Container
       bg="bg-[#F0F2F5]"
-      className="flex flex-col gap-[44px] py-[42px] med-600:gap-[10px]"
-    >
+      className="flex flex-col gap-[44px] py-[42px] med-600:gap-[10px]">
       <Title>Пресс-релиз</Title>
       <SwiperNavigation className="!py-5 med-600:!px-0">
-        {press_release.map((el, i) => (
+        {/* {press_release.map((el, i) => (
           <SwiperSlide key={i}>
             <PressReleaseBox {...el} />
           </SwiperSlide>
-        ))}
+        ))} */}
       </SwiperNavigation>
       <Link className="mx-auto" to={getLang("/press-release")}>
         <CustomBtn transparent>Узнать больше</CustomBtn>

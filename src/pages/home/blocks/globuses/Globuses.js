@@ -1,15 +1,16 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useMemo } from "react";
+import { Link, useParams } from "react-router-dom";
 import ad_img from "../../../../assets/main/home/ad1.svg";
 import { Container } from "../../../../components/reusable";
 import { globuses } from "../../../../store/constats";
 import styles from "./globuses.module.css";
 
 export const Globuses = () => {
+  const { lang } = useParams();
   return (
     <>
       <Container className={styles.globuses} bg_style={{ overflow: "unset" }}>
-        {globuses.map((el, i) => (
+        {globuses[lang].map((el, i) => (
           <Globus key={i} {...el} />
         ))}
       </Container>
@@ -48,8 +49,7 @@ const Text = ({ title }) => {
             style={{
               animationDelay: i * title.split("").length + "ms",
             }}
-            key={i}
-          >
+            key={i}>
             {el}
           </span>
         ))}

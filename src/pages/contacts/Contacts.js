@@ -32,8 +32,7 @@ export const Contacts = () => {
         <FormProvider {...formMethods}>
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="flex flex-col gap-[36px] items-center"
-          >
+            className="flex flex-col gap-[36px] items-center">
             <Title>{language.title}</Title>
             <div className="flex flex-col gap-[24px] items-center med-400:w-full">
               <CstmInput
