@@ -46,8 +46,7 @@ const Component = () => {
     <Boxes data={data} title={language.title} Item={PressReleaseBox}>
       <form
         onSubmit={onSubmit}
-        className="flex items-center gap-[32px] justify-center med-900:flex-wrap med-600:flex-col med-600:gap-[16px]"
-      >
+        className="flex items-center gap-[32px] justify-center med-900:flex-wrap med-600:flex-col med-600:gap-[16px]">
         <SearchInput
           inputProps={{
             placeholder: "Поиск",
@@ -84,21 +83,16 @@ const Component = () => {
   );
 };
 
-const loader = async () => {
+const loader = async ({ params: { lang } }) => {
   try {
-    // const data = await instance.get("posts");
-    const data = await axios.get(
-      "https://jsonplaceholder.typicode.com/posts?userId=1"
-    );
-    const data1 = data.data.map((el) => ({
-      ...expl,
-      description: el.body.split(" ").slice(0, 8).join(" ") + "...",
-      // to: `/press-release/${el.id}`,
-    }));
-
-    return data1;
+    const data = await instance.get(`press-releases?lng=${lang}`);
+    if (data.status === 200) {
+      return data.data.data;
+    } else {
+      return new Error("Somting when wrong");
+    }
   } catch (err) {
-    console.log(err);
+    alert(err);
   }
 };
 
