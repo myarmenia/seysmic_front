@@ -1,18 +1,20 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import styles from "./monitoringNavbar.module.css";
 import { NavLink, useLocation, useParams } from "react-router-dom";
 import useMedia from "../../../hooks/useMedia";
-import { globuses as globus1 } from "../../../store/constats";
+import { globuses } from "../../../store/constats";
+import chev_down from "../../../assets/icons/chev-down-gray-big.svg";
 
 export const MonitoringNavbar = ({ className = "" }) => {
-  const media = useMedia(1000);
-  const [open, setOpen] = useState(false);
-  console.log(media);
+  const [open, setOpen] = useState(true);
+  const media = useMedia(900);
+  const ref = useRef(null);
   const { pathname } = useLocation();
   const { lang } = useParams();
-  const globuses = useMemo(() => {
-    return globus1[lang];
-  }, [lang]);
+  const openHandler = () => {
+    setOpen((p) => !p);
+  };
+
   return (
     <nav
       className={[
@@ -21,11 +23,30 @@ export const MonitoringNavbar = ({ className = "" }) => {
         ["login", "registration"].some((e) => e === pathname.split("/")[2]) &&
           styles.hidden_nav,
         "home" === pathname.split("/")[2] && "hidden",
-      ].join(" ")}>
-      <div>aaaaaaaaaa</div>
-      {globuses?.map((el, i) => (
-        <Box key={i} {...el} />
-      ))}
+      ].join(" ")}
+    >
+      <div
+        ref={ref}
+        className="flex flex-col p-1 gap-5 duration-300 overflow-hidden"
+        style={{
+          height: open ? 113 + "px" : 500 + "px",
+        }}
+      >
+        {globuses[lang]?.map((el, i) => (
+          <Box key={i} {...el} />
+        ))}
+      </div>
+      {!media && (
+        <div
+          className="z-[10] p-1 py-2 bg-[#F7F7F7] flex justify-center"
+          onClick={openHandler}
+          style={{
+            rotate: open ? "0deg" : "180deg",
+          }}
+        >
+          <img className="cursor-pointer" src={chev_down} alt="" />
+        </div>
+      )}
     </nav>
   );
 };
@@ -37,7 +58,8 @@ const Box = ({ title, src, to }) => {
       end
       className={({ isActive }) =>
         `${isActive ? styles.active : ""} ${styles.nav_item}`
-      }>
+      }
+    >
       <img src={src} className="med-600:w-[9vw]" alt="" />
       <span>{title}</span>
     </NavLink>
