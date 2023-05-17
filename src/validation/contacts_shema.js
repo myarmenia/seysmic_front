@@ -1,7 +1,7 @@
 import * as yup from "yup";
 
-export const contacts_shema = (errorMessages) => {
-  return yup.object().shape({
+export const contacts_shema = (errorMessages) =>
+  yup.object().shape({
     name: yup
       .string()
       .required(errorMessages.Required)
@@ -18,4 +18,3 @@ export const contacts_shema = (errorMessages) => {
       .max(90, errorMessages.WrongMaximalText),
     isRobot: yup.bool().required(errorMessages.Required),
   });
-};
