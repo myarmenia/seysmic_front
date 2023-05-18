@@ -27,7 +27,6 @@ const Component = () => {
   const submit = useAppSubmit(),
     action = useFormAction(),
     { data, count } = useLoaderData();
-  console.log(count);
 
   const [values, setValues] = useState({
     search: "",
@@ -44,14 +43,11 @@ const Component = () => {
   };
 
   return (
-    <Boxes
-      data={data}
-      count={count}
-      title={language.title}
-      Item={PressReleaseBox}>
+    <Boxes {...{ count, data }} title={language.title} Item={PressReleaseBox}>
       <form
         onSubmit={onSubmit}
-        className="flex items-center gap-[32px] justify-center med-900:flex-wrap med-600:flex-col med-600:gap-[16px]">
+        className="flex items-center gap-[32px] justify-center med-900:flex-wrap med-600:flex-col med-600:gap-[16px]"
+      >
         <SearchInput
           inputProps={{
             placeholder: "Поиск",
@@ -93,13 +89,9 @@ const loader = async ({ params: { lang, page = 1 }, request }) => {
   try {
     const res = await instance.get(`press-releases?lng=${lang}&page=${page}`);
     if (res.status === 200) {
-      console.log({
-        data: res.data.data,
-        count: res.data.cont_page,
-      });
       return {
         data: res.data.data,
-        count: 10,
+        count: res.data.cont_page,
       };
     } else {
       return new Error("Somting when wrong");
@@ -121,20 +113,3 @@ const action = async ({ request, params: { lang } }) => {
 };
 
 export const PressReleases = Object.assign(Component, { loader, action });
-
-// const data = [1, 22, 34, 4, 5, 77, 1, 34, 4, 77, 1];
-// let arr = data.reduce((agr, el) => {
-//   if (agr.some((elem) => elem.key === el)) {
-//   }
-// }, []);
-// const gen = (data) => {
-//   const arr = [...new Set(data)];
-//   return arr.map((el) => {
-//     return {
-//       key: el,
-//       count: data.filter((e) => e === el).length,
-//     };
-//   });
-// };
-
-// console.log(gen(data));

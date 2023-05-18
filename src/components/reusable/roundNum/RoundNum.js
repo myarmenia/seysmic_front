@@ -47,7 +47,7 @@ const Number = ({ children, bool, splited }) => {
     <div className={styles.letter}>
       <span
         style={{
-          transform: bool ? "translateY(25px)" : `translateY(${offset}px)`,
+          transform: bool ? "translateY(28px)" : `translateY(${offset}px)`,
           transitionDuration: realDur + 1500 + "ms",
           transitionDelay: delay + "ms",
         }}

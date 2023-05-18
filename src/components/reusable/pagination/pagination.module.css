@@ -12,6 +12,9 @@
 .active {
   @apply bg-[#575757] text-white;
 }
+.active {
+  @apply pointer-events-none;
+}
 
 .prev {
   border-radius: 3px 0px 0px 3px;

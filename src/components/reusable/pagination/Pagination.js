@@ -1,61 +1,92 @@
-import React from "react";
-import { Link, useParams } from "react-router-dom";
+import React, { useMemo } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import styles from "./pagination.module.css";
 
-export const Pagination = ({ count }) => {
+export const Pagination = ({ count, maxPaginationItems = 7 }) => {
   const { page } = useParams();
-  console.log(+page + 1);
+  const pageNum = +page;
+  const my_items = useMemo(
+    () =>
+      Array.from({ length: count }).map((_, i) => {
+        const max = pageNum < 4 ? maxPaginationItems : pageNum + 4;
+        const min =
+          pageNum > count - 4 ? count - maxPaginationItems : pageNum - 3;
+        return {
+          num: i + 1,
+          show: i >= min && i < max,
+        };
+      }),
+    [page]
+  );
+
   return (
     <div className={styles.pagination}>
-      {page === "1" ? (
-        <div
-          className={[
-            styles.item,
-            styles.prev,
-            "cursor-default",
-            styles.active,
-          ].join(" ")}>
-          ‹‹
-        </div>
-      ) : (
-        <Link to={+page - 1} className={[styles.item, styles.prev].join(" ")}>
-          ‹‹
-        </Link>
-      )}
-      <Link to={null} className={[styles.item, styles.prev].join(" ")}>
-        ""
-      </Link>
-      {/* <Dots /> */}
-      {Array.from({ length: count }).map((el, index) => {})}
-      <Link to={"../2"} className={styles.item}>
-        1
-      </Link>
-      {/* <Dots /> */}
-      {+page === count ? (
-        <div
-          className={[
-            styles.item,
-            styles.prev,
-            "cursor-default",
-            styles.active,
-          ].join(" ")}>
-          ››
-        </div>
-      ) : (
-        <Link
-          to={`../${+page + 1}`}
-          className={[styles.item, styles.next].join(" ")}>
-          ››
-        </Link>
-      )}
+      <Prev />
+      {my_items.map(({ num, show }, i) => (
+        <Item {...{ show }} active={pageNum === num} key={i} to={`../${num}`}>
+          {num}
+        </Item>
+      ))}
+      <Next {...{ count }} />
     </div>
   );
 };
 
-const Dots = ({ ...props }) => {
+const Item = ({ to, show, children, active, ...props }) => {
+  if (!show) {
+    return null;
+  }
   return (
-    <Link to={""} className={styles.item} {...props}>
-      ...
+    <Link
+      {...props}
+      to={to}
+      className={[styles.item, active ? styles.active : ""].join(" ")}
+    >
+      {children}
     </Link>
+  );
+};
+
+const Prev = () => {
+  const { page } = useParams();
+  const navigate = useNavigate();
+  const prev = () => {
+    if (page !== "1") {
+      navigate(`../${+page - 1}`);
+    }
+  };
+  return (
+    <div
+      className={[
+        styles.item,
+        styles.prev,
+        page === "1" ? "pointer-events-none" : "",
+      ].join(" ")}
+      onClick={prev}
+    >
+      ‹‹
+    </div>
+  );
+};
+const Next = ({ count }) => {
+  const { page } = useParams();
+  const navigate = useNavigate();
+
+  const next = () => {
+    if (+page !== count) {
+      navigate(`../${+page + 1}`);
+    }
+  };
+  return (
+    <div
+      className={[
+        styles.item,
+        styles.next,
+        +page === count ? "pointer-events-none" : "",
+      ].join(" ")}
+      onClick={next}
+    >
+      ››
+    </div>
   );
 };
