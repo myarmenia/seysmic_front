@@ -2,17 +2,6 @@ import { Link } from "react-router-dom";
 import { getLang } from "../../helper";
 import { Share } from "../reusable";
 
-// const reseases_keys = {
-//   id,
-//   title,
-//   description,
-//   date,
-//   time,
-//   logo,
-//   files: [{ type, path }], // avelord a
-//   links: ["string", "string"], // avelord a
-// };
-
 export const PressReleaseBox = ({
   id,
   title,
@@ -21,16 +10,17 @@ export const PressReleaseBox = ({
   image,
   date,
   time,
+  files,
   to,
 }) => {
   return (
     <div className="bg-white w-full flex flex-col justify-between gap-2 shadow-[0px_2px_11px_rgba(0,_0,_0,_0.15)] px-[23px] py-[22px] rounded-[6px] max-w-[430px] hover:scale-[1.1] duration-300 med-900:max-w-none med-900:w-full med-600:hover:scale-[1.05]">
       <div className="flex justify-between gap-5">
         <Link
-          to={getLang(`/press-release/${id}/`)}
+          to={getLang(`/press-release/release-page/${id}`)}
           className="flex items-center gap-3"
         >
-          <img src={logo} alt="" />
+          <img className="max-w-[64px]" src={logo} alt="" />
           <div className="flex flex-col gap-[6px]">
             <span className="font-bold text-dark-blue text-[11px]">
               {title}
@@ -41,14 +31,21 @@ export const PressReleaseBox = ({
           </div>
         </Link>
         <Share
-          url={window.location.origin + getLang(`/press-release/${id}/`)}
+          url={
+            window.location.origin +
+            getLang(`/press-release/release-page/${id}`)
+          }
         />
       </div>
       <Link
-        to={getLang(`/press-release/${id}/`)}
+        to={getLang(`/press-release/release-page/${id}`)}
         dangerouslySetInnerHTML={{ __html: description.slice(0, 70) }}
       ></Link>
-      <img src={image} alt="" />
+      <img
+        className="max-h-[231.18px] w-full h-full"
+        src={files[0].path}
+        alt=""
+      />
     </div>
   );
 };

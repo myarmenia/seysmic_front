@@ -38,10 +38,11 @@ const Component = () => {
   );
 };
 
-const loader = async ({ params }) => {
+const loader = async ({ params: { id } }) => {
+  console.log(id);
   // const item = await instance.get(`posts/${params.id}?userId=1`);
   const item = await axios.get(
-    `https://jsonplaceholder.typicode.com/postsposts/${params.id}?userId=1`
+    `https://jsonplaceholder.typicode.com/posts/${id}?userId=1`
   );
   return item.data;
 };

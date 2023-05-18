@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 function useMedia(media) {
-  const [isResize, setIsResize] = useState(false);
+  const [isResize, setIsResize] = useState(window.innerWidth <= media);
 
   useEffect(() => {
     const handleResize = () => {

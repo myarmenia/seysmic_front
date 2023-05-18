@@ -15,6 +15,8 @@ export const MonitoringNavbar = ({ className = "" }) => {
     setOpen((p) => !p);
   };
 
+  console.log(media);
+
   return (
     <nav
       className={[
@@ -27,7 +29,7 @@ export const MonitoringNavbar = ({ className = "" }) => {
     >
       <div
         ref={ref}
-        className="flex flex-col p-1 gap-5 duration-300 overflow-hidden"
+        className={styles.boxes}
         style={{
           height: open ? 113 + "px" : 500 + "px",
         }}

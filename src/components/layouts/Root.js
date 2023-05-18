@@ -12,7 +12,6 @@ import { Footer, Header, MonitoringNavbar, Spinner } from "../main";
 import { useLengPoint } from "../../hooks/useLengPoint";
 
 export const Root = () => {
-  useLengPoint();
   const navigate = useNavigate();
   const navigation = useNavigation();
   const { pathname } = useLocation();
@@ -32,7 +31,6 @@ export const Root = () => {
       navigate(getLang("/home"));
     }
   }, [lang]);
-
   return (
     <>
       <div className="root">

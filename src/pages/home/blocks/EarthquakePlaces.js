@@ -19,8 +19,7 @@ const data = {
 
 export const EarthquakePlaces = () => {
   const earth_quakes = useLoaderData().current_earthquake;
-  console.log(earth_quakes);
-  if (Array.isArray(earth_quakes) && !earth_quakes.length) {
+  if (!earth_quakes?.length) {
     return null;
   }
   return (
@@ -31,11 +30,11 @@ export const EarthquakePlaces = () => {
       />
       <Container className="flex flex-col pb-10 pt-[17%] gap-[44px] med-1200:pt-[23%] med-900:pt-[40%] med-600:gap-[10px]">
         <SwiperNavigation className="py-[50px] mt-[-50px] med-1200:mt-[-100px] med-900:mt-[-150px] med-600:py-[18px]">
-          {/* {earth_quakes.map((elem, i) => (
+          {earth_quakes.map((elem, i) => (
             <SwiperSlide key={i}>
               <Box {...elem} />
             </SwiperSlide>
-          ))} */}
+          ))}
         </SwiperNavigation>
         <Link className="mx-auto" to={getLang("/earth-quakes")}>
           <CustomBtn transparent>Узнать больше</CustomBtn>
