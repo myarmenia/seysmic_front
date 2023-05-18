@@ -86,7 +86,7 @@ const Component = () => {
 
 const loader = async ({ params: { lang, page = 1 }, request }) => {
   const obj = Object.fromEntries(new URL(request.url).searchParams);
-  console.log(obj);
+  // console.log(obj);
   try {
     const data = await instance.get(`press-releases?lng=${lang}&page=${page}`);
     if (data.status === 200) {
@@ -112,18 +112,3 @@ const action = async ({ request, params: { lang } }) => {
 };
 
 export const PressReleases = Object.assign(Component, { loader, action });
-
-
-// const data = [1, 22, 34, 4, 5, 77, 1, 34, 4, 77, 1];
-
-// const gen = (data) => {
-//   const arr = [...new Set(data)];
-//   return arr.map((el) => {
-//     return {
-//       key: el,
-//       count: data.filter((e) => e === el).length,
-//     };
-//   });
-// };
-
-// console.log(gen(data));
