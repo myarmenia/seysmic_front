@@ -8,6 +8,7 @@ import {
   SingleBox,
 } from "../../components/main";
 import axios from "axios";
+import { PressReleaseBox } from "../../components/cards";
 
 const expl = {
   title: "Название организации",
@@ -17,10 +18,6 @@ const expl = {
   time: "16:00",
 };
 const Component = () => {
-  // const {
-  //   item: { body },
-  //   data,
-  // } = useLoaderData();
   const item = useLoaderData();
 
   // const data1 = data.map((el) => ({
@@ -31,20 +28,26 @@ const Component = () => {
   return (
     <SingleBox
       {...expl}
-      // Item={PressReleaseBox}
-      // boxes_data={data1}
+      Item={PressReleaseBox}
+      boxes_data={item}
       description={item.body}
+      {...item}
     />
   );
 };
 
-const loader = async ({ params: { id } }) => {
-  console.log(id);
-  // const item = await instance.get(`posts/${params.id}?userId=1`);
-  const item = await axios.get(
-    `https://jsonplaceholder.typicode.com/posts/${id}?userId=1`
-  );
-  return item.data;
+const loader = async ({ params: { id, lang } }) => {
+  try {
+    const res = await instance.get(`press-releases/${id}?lng=${lang}`);
+    console.log(res.data);
+    if (res.status === 200) {
+      return res.data.data;
+    } else {
+      return new Error("Somting when wrong");
+    }
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export const PressRel = Object.assign(Component, { loader });
