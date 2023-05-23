@@ -28,11 +28,11 @@ export const globuses = {
       to: getLang("/monitoring/cosmos"),
     },
     {
-      title: "Մեր արտադրությունը",
+      title: "Տեխնոլոգիա",
       src: img4,
       description:
         "Our private company LLC SeiEn was established in October 2022 in Yerevan, Armenia",
-      to: getLang("/monitoring/product"),
+      to: getLang("/technologies"),
     },
   ],
   ru: [
@@ -58,11 +58,11 @@ export const globuses = {
       to: getLang("/monitoring/cosmos"),
     },
     {
-      title: "Наша Продукция",
+      title: "Технология",
       src: img4,
       description:
         "Our private company LLC SeiEn was established in October 2022 in Yerevan, Armenia",
-      to: getLang("/monitoring/product"),
+      to: getLang("/technologies"),
     },
   ],
   en: [
@@ -88,11 +88,11 @@ export const globuses = {
       to: getLang("/monitoring/cosmos"),
     },
     {
-      title: "Our production",
+      title: "Technology",
       src: img4,
       description:
         "Our private company LLC SeiEn was established in October 2022 in Yerevan, Armenia",
-      to: getLang("/monitoring/product"),
+      to: getLang("/technologies"),
     },
   ],
 };

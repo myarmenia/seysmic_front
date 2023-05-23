@@ -1,5 +1,4 @@
 import React from "react";
-import certificate from "../../../assets/main/technologies/certificate.svg";
 import {
   Container,
   Title,
@@ -20,28 +19,6 @@ export const TechnologyWorks = () => {
         <div className="flex flex-col items-center mt-[40px]">
           <TitleBorder title="Основа технологии – это введение новых параметров, закон производства сейсмической энтропии и специализированный комплекс программ LMTP-SPQ." />
           <Ul data={data} className={styles.list}></Ul>
-        </div>
-      </Container>
-      <Container
-        bg="bg-[linear-gradient(180deg,_#0026AA_0%,_#30CFFF_100%)]"
-        className="flex flex-col pb-[42px] "
-      >
-        <div className="flex gap-[20px] justify-between med-1200:gap-[80px] med-900:flex-col-reverse med-900:gap-[40px] ">
-          <p className="w-[50%] text-xl text-justify text-black mt-[92px] med-1200:text-sm med-900:mt-0 med-900:w-full ">
-            По результатам конкурсного отбора, проведенного госкорпорацией
-            "Росатом" 13 декабря 2017 года," Компьютерная технология для
-            прогнозирования ожидаемого сейсмического воздействия и построения
-            динамических карт сейсмической опасности для районов проектирования
-            и размещения АЭС" была включена в Реестр инновационных решений,
-            технологий, продукции, высокотехнологичных услуг в сфере
-            капитального строительства объектов с использованием атомной энергии
-            (см. сертификат Росатома № 002 2017).
-          </p>
-          <img
-            src={certificate}
-            alt=""
-            className="max-w-md min-w-[200px] w-full h-[335px] object-cover mt-[92px] med-900:h-full"
-          />
         </div>
       </Container>
     </>

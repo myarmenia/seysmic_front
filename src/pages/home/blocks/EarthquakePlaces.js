@@ -19,9 +19,7 @@ const data = {
 
 export const EarthquakePlaces = () => {
   const earth_quakes = useLoaderData().current_earthquake;
-  if (!earth_quakes?.length) {
-    return null;
-  }
+  console.log(earth_quakes);
   return (
     <div className="relative">
       <div
@@ -36,7 +34,7 @@ export const EarthquakePlaces = () => {
             </SwiperSlide>
           ))}
         </SwiperNavigation>
-        <Link className="mx-auto" to={getLang("/earth-quakes")}>
+        <Link className="mx-auto" to={getLang(`/earth-quakes/1`)}>
           <CustomBtn transparent>Узнать больше</CustomBtn>
         </Link>
       </Container>

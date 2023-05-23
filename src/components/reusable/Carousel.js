@@ -19,7 +19,7 @@ export const Carousel = ({ children, handleClose, open }) => {
         className="absolute w-full h-full top-0 left-0 bg-black/30"
         onClick={handleClose}
       />
-      <div className="max-w-[1200px] w-full absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 flex items-center justify-between gap-[30px] med-900:w-[80%] med-900:mx-auto med-600:w-[90%] med-600:gap-3 med-600:m-[0_auto]">
+      <div className="max-w-[1200px] w-full absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 flex items-center justify-between gap-[30px] med-900:w-[80%] med-900:mx-auto med-600:w-[90%] med-600:gap-3 med-600:m-[0_auto] bg-white">
         <img
           onClick={() => ref?.slidePrev()}
           src={swiper_arrow}
@@ -31,8 +31,7 @@ export const Carousel = ({ children, handleClose, open }) => {
           onSwiper={(swiper) => setRef(swiper)}
           allowTouchMove
           className="w-auto"
-          modules={[Navigation, A11y]}
-        >
+          modules={[Navigation, A11y]}>
           {children}
         </Swiper>
         <img

@@ -24,7 +24,7 @@ const expl = {
 const Component = () => {
   const submit = useAppSubmit(),
     action = useFormAction(),
-    data = useLoaderData();
+    { data, count } = useLoaderData();
 
   const [values, setValues] = useState({
     search: "",
@@ -33,11 +33,11 @@ const Component = () => {
     end_date: "",
   });
 
-  const data1 = data.map((el) => ({
-    ...expl,
-    description: el.body.split("").slice(0, 68).join("") + "...",
-    to: `/earth-quakes/${el.id}`,
-  }));
+  // const data1 = data.map((el) => ({
+  //   ...expl,
+  //   description: el.body.split("").slice(0, 68).join("") + "...",
+  //   to: `/earth-quakes/${el.id}`,
+  // }));
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -46,13 +46,15 @@ const Component = () => {
       submit(data, { action, method: "post" });
     }
   };
-
   return (
-    <Boxes data={data1} title="Текущие землетрясения" Item={QuakeBox}>
+    <Boxes
+      data={data}
+      count={count}
+      title="Текущие землетрясения"
+      Item={QuakeBox}>
       <form
         onSubmit={onSubmit}
-        className="flex items-center gap-[32px] justify-center med-900:flex-wrap med-600:flex-col med-600:gap-[16px]"
-      >
+        className="flex items-center gap-[32px] justify-center med-900:flex-wrap med-600:flex-col med-600:gap-[16px]">
         <SearchInput
           inputProps={{
             placeholder: "Поиск",
@@ -98,14 +100,19 @@ const Component = () => {
   );
 };
 
-const loader = async () => {
-  console.log("World");
+const loader = async ({ params: { lang, page = 1 } }) => {
   try {
-    // const data = await instance.get(`posts?userId=1`);
-    const data = await axios.get(
-      `https://jsonplaceholder.typicode.com/posts?userId=1`
-    );
-    return data.data;
+    try {
+      const res = await instance.get(
+        `current-earthquake?lng=${lang}&page=${page}`
+      );
+      console.log(res);
+      if (res.status === 200) {
+        return { data: res.data.data, count: res.data.count };
+      }
+    } catch (error) {
+      return new Error("Somting when wrong");
+    }
   } catch (err) {
     console.log(err);
   }

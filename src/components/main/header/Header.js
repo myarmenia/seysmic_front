@@ -37,8 +37,7 @@ export const Header = () => {
           className={[
             styles.nav_items,
             langAndMenu === "menu" ? styles.open : "",
-          ].join(" ")}
-        >
+          ].join(" ")}>
           <HeaderLink onClick={chooseOption} to={getLang(`/about`)}>
             {language.nav_items.about}
           </HeaderLink>

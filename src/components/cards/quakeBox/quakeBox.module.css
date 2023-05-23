@@ -1,11 +1,11 @@
 .box {
-  @apply flex flex-col items-center gap-3 h-full justify-center 
+  @apply !h-[400px] flex flex-col items-center gap-3 h-full justify-center 
   hover:scale-[1.1] duration-300 med-600:hover:scale-[1.05];
 }
 .content {
-  @apply pt-[25%] mt-[25%] px-[25px] pb-[38px] max-w-[310px] flex flex-col 
+  @apply pt-[25%] mt-[25%] px-[25px] pb-[38px]  max-w-[310px] flex flex-col 
   justify-between items-center h-fit gap-3 bg-white shadow-normal 
-  rounded-[20px] min-h-[340px];
+  rounded-[20px] min-h-[340px] ;
 }
 .img {
   @apply mb-[-50%] w-full max-w-[160px] h-[160px] object-cover 
