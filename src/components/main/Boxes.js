@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Pagination, Title } from "../reusable";
+import { useTranslation } from "../../hooks";
 
 export const Boxes = ({
   Item,

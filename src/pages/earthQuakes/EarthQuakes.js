@@ -6,7 +6,7 @@ import h1_icon from "../../assets/trash/home/h1.svg";
 import organization from "../../assets/trash/home/organization.svg";
 import { Boxes } from "../../components/main";
 import { toFormData, toObject } from "../../helper";
-import { useAppSubmit } from "../../hooks";
+import { useAppSubmit, useTranslation } from "../../hooks";
 import { CstmDateInput, CstmInput, SearchInput } from "../../components/forms";
 import { QuakeBox } from "../../components/cards";
 import axios from "axios";
@@ -22,6 +22,9 @@ const expl = {
 // ==========================
 
 const Component = () => {
+  const {
+    earth_quakes: { end_date, magnitude, search, start_date, title },
+  } = useTranslation().language;
   const submit = useAppSubmit(),
     action = useFormAction(),
     { data, count } = useLoaderData();
@@ -47,17 +50,13 @@ const Component = () => {
     }
   };
   return (
-    <Boxes
-      data={data}
-      count={count}
-      title="Текущие землетрясения"
-      Item={QuakeBox}>
+    <Boxes data={data} count={count} title={title} Item={QuakeBox}>
       <form
         onSubmit={onSubmit}
         className="flex items-center gap-[32px] justify-center med-900:flex-wrap med-600:flex-col med-600:gap-[16px]">
         <SearchInput
           inputProps={{
-            placeholder: "Поиск",
+            placeholder: search,
             value: values.search,
             onChange: (e) =>
               setValues((p) => ({ ...p, search: e.target.value })),
@@ -66,7 +65,7 @@ const Component = () => {
           clearValue={() => setValues((p) => ({ ...p, search: "" }))}
         />
         <CstmInput
-          placeholder="Магнитуда"
+          placeholder={magnitude}
           value={values?.magnitude}
           onChange={(e) =>
             setValues((p) => ({ ...p, magnitude: e.target.value }))
@@ -80,7 +79,7 @@ const Component = () => {
               setValues((p) => ({ ...p, start_date: e.target.value }))
             }
             className="max-w-[130px] text-sm med-600:max-w-none"
-            placeholder="ДД.ММ.ГГГГ"
+            placeholder={start_date}
             name="start-date"
             value={values.start_date}
           />
@@ -90,7 +89,7 @@ const Component = () => {
               setValues((p) => ({ ...p, end_date: e.target.value }))
             }
             className="max-w-[130px] text-sm med-600:max-w-none"
-            placeholder="ДД.ММ.ГГГГ"
+            placeholder={end_date}
             name="end-date"
             value={values.end_date}
           />

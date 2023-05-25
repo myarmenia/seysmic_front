@@ -4,8 +4,12 @@ import { CustomBtn } from "../../forms";
 import styles from "./quakeBox.module.css";
 import { useNavigate } from "react-router-dom";
 import { getLang } from "../../../helper";
+import { useTranslation } from "../../../hooks";
 
 export const QuakeBox = ({ image, title, description, date, to, id }) => {
+  const {
+    earth_quakes: { button },
+  } = useTranslation().language;
   const navigate = useNavigate();
   return (
     <div className={`${styles.box}`}>
@@ -20,7 +24,7 @@ export const QuakeBox = ({ image, title, description, date, to, id }) => {
           dangerouslySetInnerHTML={{ __html: description.slice(0, 30) }}></p>
         <CustomBtn
           onClick={() => navigate(getLang(`/earth-quakes/earth-quake/${id}`))}>
-          Узнать больше
+          {button || "Узнать больше"}
         </CustomBtn>
       </div>
     </div>

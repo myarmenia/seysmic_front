@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import { Link, useParams } from "react-router-dom";
-import ad_img from "../../../../assets/main/home/ad1.svg";
+import ad_img from "../../../../assets/gif.gif";
 import { Container } from "../../../../components/reusable";
 import { globuses } from "../../../../store/constats";
 import styles from "./globuses.module.css";
@@ -18,7 +18,7 @@ export const Globuses = () => {
     </>
   );
 };
-
+// #060615
 const Globus = ({ title, src, description, to }) => {
   return (
     <Link to={to} className={styles.globus}>
