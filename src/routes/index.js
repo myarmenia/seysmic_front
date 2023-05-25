@@ -27,6 +27,7 @@ import {
   Regional,
   RegionalIndex,
   RegionalDynamic,
+  FAQ,
 } from "../pages";
 
 export const router = createBrowserRouter(
@@ -99,6 +100,7 @@ export const router = createBrowserRouter(
             loader={EarthQuake.loader}
           />
         </Route>
+        <Route path="faq" element={<FAQ />} />
       </Route>
     </Route>
   )

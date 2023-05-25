@@ -22,7 +22,9 @@ const expl = {
 // ==========================
 
 const Component = () => {
-  const { press_release: language } = useTranslation().language;
+  const {
+    press_release: { title, search, start_date, end_date },
+  } = useTranslation().language;
 
   const submit = useAppSubmit(),
     action = useFormAction(),
@@ -43,14 +45,13 @@ const Component = () => {
   };
 
   return (
-    <Boxes {...{ count, data }} title={language.title} Item={PressReleaseBox}>
+    <Boxes {...{ count, data }} title={title} Item={PressReleaseBox}>
       <form
         onSubmit={onSubmit}
-        className="flex items-center gap-[32px] justify-center med-900:flex-wrap med-600:flex-col med-600:gap-[16px]"
-      >
+        className="flex items-center gap-[32px] justify-center med-900:flex-wrap med-600:flex-col med-600:gap-[16px]">
         <SearchInput
           inputProps={{
-            placeholder: "Поиск",
+            placeholder: search,
             value: values.search,
             onChange: (e) =>
               setValues((p) => ({ ...p, search: e.target.value })),
@@ -64,7 +65,7 @@ const Component = () => {
               setValues((p) => ({ ...p, start_date: e.target.value }))
             }
             className="max-w-[130px] text-sm med-600:max-w-none"
-            placeholder="ДД.ММ.ГГГГ"
+            placeholder={start_date}
             name="start-date"
             value={values.start_date}
           />
@@ -74,7 +75,7 @@ const Component = () => {
               setValues((p) => ({ ...p, end_date: e.target.value }))
             }
             className="max-w-[130px] text-sm med-600:max-w-none"
-            placeholder="ДД.ММ.ГГГГ"
+            placeholder={end_date}
             name="end-date"
             value={values.end_date}
           />
