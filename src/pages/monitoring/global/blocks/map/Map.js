@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import chevDown from "../../../../../assets/icons/arrow-down-gray.svg";
 import { EarthMap } from "../../../../../components/main";
 import {
@@ -17,10 +17,13 @@ import { useTranslation } from "../../../../../hooks";
 
 export const Map = () => {
   const { global: language } = useTranslation().language.monitoring;
+  const data = useLoaderData();
+  console.log(data);
+
   const [state, setState] = useState(false);
   return (
     <div className="pb-[54px] flex flex-col gap-[30px] px-[32px] relative med-600:px-[20px]">
-      <Title>{language.title}</Title>
+      <Title>{language?.title}</Title>
       <div className="flex items-center justify-end gap-[17px] med-600:justify-center">
         <FilterBtn active={!state} onClick={() => setState(false)}>
           по карте
@@ -44,19 +47,22 @@ export const Map = () => {
 
 const Countries = () => {
   const [showNum, setShowNum] = useState(0);
+  const data = useLoaderData();
+  const dropDowenRef = useRef();
+  console.log(showNum);
   return (
     <Container className="flex flex-col h-[610px] flex-wrap gap-[10px_34px] pb-[60px] pt-3 med-600:h-[990px] med-600:gap-[10px_12px] med-600:px-0 med-600:pb-[32px]">
-      {countries_names.map(({ name, children }, i) => (
+      {data.map(({ parent_region_name, children, id }, i) => (
         <Fragment key={i}>
           {children && children?.length ? (
             <DropDown
               onClick={() => setShowNum((p) => (p === i ? -1 : i))}
-              {...{ show: i === showNum, name }}
+              {...{ show: i === showNum, parent_region_name }}
               items={children}
             />
           ) : (
             <Link to={2} className={styles.country}>
-              {name}
+              {parent_region_name}
             </Link>
           )}
         </Fragment>
@@ -65,13 +71,13 @@ const Countries = () => {
   );
 };
 
-const DropDown = ({ show, items, name, ...props }) => {
+const DropDown = ({ show, items, parent_region_name, ...props }) => {
   const ref = useRef(null);
 
   return (
     <div className="w-fit relative">
       <div {...props} className={"flex items-center " + styles.country}>
-        <p>{name}</p>
+        <p>{parent_region_name}</p>
         <img
           style={{ rotate: show ? "180deg" : "none" }}
           className="brightness-50 scale-50 shrink-0 duration-300"
@@ -81,13 +87,11 @@ const DropDown = ({ show, items, name, ...props }) => {
       </div>
       <div
         style={{ height: show ? ref.current?.offsetHeight + "px" : 0 }}
-        className="shadow-light overflow-hidden z-[10] absolute left-0 top-[calc(100%_+_5px)] duration-300"
-      >
+        className="shadow-light overflow-hidden z-[10] absolute left-0 top-[calc(100%_+_5px)] duration-300">
         <ul
           ref={ref}
           style={{ listStyle: "initial" }}
-          className="px-5 py-3 bg-white flex flex-col gap-[6px]"
-        >
+          className="px-5 py-3 bg-white flex flex-col gap-[6px]">
           {items.map((el, i) => {
             return (
               <li
@@ -95,8 +99,7 @@ const DropDown = ({ show, items, name, ...props }) => {
                   styles.country,
                   "ml-[15px] med-600:ml-4 whitespace-nowrap",
                 ].join(" ")}
-                key={i}
-              >
+                key={i}>
                 <Link to={2}>{el.name}</Link>
               </li>
             );

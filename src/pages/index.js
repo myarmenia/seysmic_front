@@ -5,6 +5,7 @@ export { About } from "./about/About";
 export { Contacts } from "./contacts/Contacts";
 export { PressReleases, PressRel } from "./pressRelease";
 export { Technologies } from "./technologies/Technologies";
+export { FAQ } from "./faq/FAQ";
 export {
   GlobalMonitoring,
   MainMonitoring,
@@ -13,7 +14,7 @@ export {
   MonitoringExamples,
   CountriesItem,
   RegionalIndex,
-  RegionalDynamic
+  RegionalDynamic,
 } from "./monitoring";
 export { EarthQuake, EarthQuakes } from "./earthQuakes";
 export { OurProduct } from "../pages/ourProduct/OurProduct";

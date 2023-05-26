@@ -19,6 +19,7 @@ const expl = {
 const Component = () => {
   // const { item, data } = useLoaderData();
   const item = useLoaderData();
+  console.log(item);
 
   // const data1 = data.map((el) => ({
   //   description: el.body.split("").slice(0, 68).join("") + "...",
@@ -27,27 +28,22 @@ const Component = () => {
   // }));
   return (
     <SingleBox
-      {...expl}
+      {...item}
       // Item={QuakeBox}
       // boxes_data={data1}
       description={item.body}
-      ul_data={[
-        { text: "bla bla bla", to: "#" },
-        { text: "bla bla bla", to: "#" },
-        { text: "bla bla bla", to: "#" },
-      ]}
     />
   );
 };
 
-const loader = async ({ params }) => {
-  console.log(params.id);
+const loader = async ({ params: { lang, id } }) => {
+  try {
+    const res = await instance.get(`current-earthquake/${id}?lng=${lang}`);
+    return res.data.data;
+  } catch (error) {
+    console.log(error);
+  }
   // const item = await instance.get(`posts/${params.id}?userId=1`);
-  const item = await axios.get(
-    `https://jsonplaceholder.typicode.com/posts/${params.id}?userId=1`
-  );
-
-  return item.data;
 };
 
 export const EarthQuake = Object.assign(Component, { loader });

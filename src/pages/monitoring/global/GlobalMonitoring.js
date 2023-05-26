@@ -13,10 +13,18 @@ const Component = () => {
   );
 };
 
-const loader = async () => {
+const loader = async ({ params: { lang } }) => {
   // const data = await instance.get("/users");
-  const data = await axios.get(`https://jsonplaceholder.typicode.com/users`);
-  return data.data;
+  try {
+    const res = await instance.get(`regions?lng=${lang}`);
+    if (res.status === 200) {
+      return res.data.data;
+    } else {
+      return new Error("Somting when wrong");
+    }
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export const GlobalMonitoring = Object.assign(Component, { loader });

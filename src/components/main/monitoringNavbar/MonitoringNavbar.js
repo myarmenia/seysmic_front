@@ -23,15 +23,13 @@ export const MonitoringNavbar = ({ className = "" }) => {
         ["login", "registration"].some((e) => e === pathname.split("/")[2]) &&
           styles.hidden_nav,
         "home" === pathname.split("/")[2] && "hidden",
-      ].join(" ")}
-    >
+      ].join(" ")}>
       <div
         ref={ref}
         className={styles.boxes}
         style={{
-          height: open ? 113 + "px" : 500 + "px",
-        }}
-      >
+          height: open ? 113 + "px" : 637 + "px",
+        }}>
         {globuses[lang]?.map((el, i) => (
           <Box key={i} {...el} />
         ))}
@@ -42,8 +40,7 @@ export const MonitoringNavbar = ({ className = "" }) => {
           onClick={openHandler}
           style={{
             rotate: open ? "0deg" : "180deg",
-          }}
-        >
+          }}>
           <img className="cursor-pointer" src={chev_down} alt="" />
         </div>
       )}
@@ -58,8 +55,7 @@ const Box = ({ title, src, to }) => {
       end
       className={({ isActive }) =>
         `${isActive ? styles.active : ""} ${styles.nav_item}`
-      }
-    >
+      }>
       <img src={src} className="med-600:w-[9vw]" alt="" />
       <span>{title}</span>
     </NavLink>

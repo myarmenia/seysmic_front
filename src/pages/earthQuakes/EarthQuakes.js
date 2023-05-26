@@ -6,7 +6,7 @@ import h1_icon from "../../assets/trash/home/h1.svg";
 import organization from "../../assets/trash/home/organization.svg";
 import { Boxes } from "../../components/main";
 import { toFormData, toObject } from "../../helper";
-import { useAppSubmit } from "../../hooks";
+import { useAppSubmit, useTranslation } from "../../hooks";
 import { CstmDateInput, CstmInput, SearchInput } from "../../components/forms";
 import { QuakeBox } from "../../components/cards";
 import axios from "axios";
@@ -22,9 +22,12 @@ const expl = {
 // ==========================
 
 const Component = () => {
+  const {
+    earth_quakes: { end_date, magnitude, search, start_date, title },
+  } = useTranslation().language;
   const submit = useAppSubmit(),
     action = useFormAction(),
-    data = useLoaderData();
+    { data, count } = useLoaderData();
 
   const [values, setValues] = useState({
     search: "",
@@ -33,11 +36,11 @@ const Component = () => {
     end_date: "",
   });
 
-  const data1 = data.map((el) => ({
-    ...expl,
-    description: el.body.split("").slice(0, 68).join("") + "...",
-    to: `/earth-quakes/${el.id}`,
-  }));
+  // const data1 = data.map((el) => ({
+  //   ...expl,
+  //   description: el.body.split("").slice(0, 68).join("") + "...",
+  //   to: `/earth-quakes/${el.id}`,
+  // }));
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -46,16 +49,14 @@ const Component = () => {
       submit(data, { action, method: "post" });
     }
   };
-
   return (
-    <Boxes data={data1} title="Текущие землетрясения" Item={QuakeBox}>
+    <Boxes data={data} count={count} title={title} Item={QuakeBox}>
       <form
         onSubmit={onSubmit}
-        className="flex items-center gap-[32px] justify-center med-900:flex-wrap med-600:flex-col med-600:gap-[16px]"
-      >
+        className="flex items-center gap-[32px] justify-center med-900:flex-wrap med-600:flex-col med-600:gap-[16px]">
         <SearchInput
           inputProps={{
-            placeholder: "Поиск",
+            placeholder: search,
             value: values.search,
             onChange: (e) =>
               setValues((p) => ({ ...p, search: e.target.value })),
@@ -64,7 +65,7 @@ const Component = () => {
           clearValue={() => setValues((p) => ({ ...p, search: "" }))}
         />
         <CstmInput
-          placeholder="Магнитуда"
+          placeholder={magnitude}
           value={values?.magnitude}
           onChange={(e) =>
             setValues((p) => ({ ...p, magnitude: e.target.value }))
@@ -78,7 +79,7 @@ const Component = () => {
               setValues((p) => ({ ...p, start_date: e.target.value }))
             }
             className="max-w-[130px] text-sm med-600:max-w-none"
-            placeholder="ДД.ММ.ГГГГ"
+            placeholder={start_date}
             name="start-date"
             value={values.start_date}
           />
@@ -88,7 +89,7 @@ const Component = () => {
               setValues((p) => ({ ...p, end_date: e.target.value }))
             }
             className="max-w-[130px] text-sm med-600:max-w-none"
-            placeholder="ДД.ММ.ГГГГ"
+            placeholder={end_date}
             name="end-date"
             value={values.end_date}
           />
@@ -98,14 +99,19 @@ const Component = () => {
   );
 };
 
-const loader = async () => {
-  console.log("World");
+const loader = async ({ params: { lang, page = 1 } }) => {
   try {
-    // const data = await instance.get(`posts?userId=1`);
-    const data = await axios.get(
-      `https://jsonplaceholder.typicode.com/posts?userId=1`
-    );
-    return data.data;
+    try {
+      const res = await instance.get(
+        `current-earthquake?lng=${lang}&page=${page}`
+      );
+      console.log(res);
+      if (res.status === 200) {
+        return { data: res.data.data, count: res.data.count };
+      }
+    } catch (error) {
+      return new Error("Somting when wrong");
+    }
   } catch (err) {
     console.log(err);
   }

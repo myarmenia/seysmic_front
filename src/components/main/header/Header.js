@@ -37,8 +37,7 @@ export const Header = () => {
           className={[
             styles.nav_items,
             langAndMenu === "menu" ? styles.open : "",
-          ].join(" ")}
-        >
+          ].join(" ")}>
           <HeaderLink onClick={chooseOption} to={getLang(`/about`)}>
             {language.nav_items.about}
           </HeaderLink>
@@ -51,6 +50,9 @@ export const Header = () => {
           </HeaderLink>
           <HeaderLink onClick={chooseOption} to={getLang(`/press-release/1`)}>
             {language.nav_items.prease_release}
+          </HeaderLink>
+          <HeaderLink onClick={chooseOption} to={getLang(`/faq`)}>
+            FAQ
           </HeaderLink>
           <HeaderLink onClick={chooseOption} to={getLang(`/contacts`)}>
             {language.nav_items.contacts}

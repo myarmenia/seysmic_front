@@ -27,6 +27,7 @@ import {
   Regional,
   RegionalIndex,
   RegionalDynamic,
+  FAQ,
 } from "../pages";
 
 export const router = createBrowserRouter(
@@ -88,17 +89,18 @@ export const router = createBrowserRouter(
         </Route>
         <Route path="earth-quakes">
           <Route
-            index
+            path=":page"
             element={<EarthQuakes />}
             loader={EarthQuakes.loader}
             action={EarthQuakes.action}
           />
           <Route
-            path=":id"
+            path="earth-quake/:id"
             element={<EarthQuake />}
             loader={EarthQuake.loader}
           />
         </Route>
+        <Route path="faq" element={<FAQ />} />
       </Route>
     </Route>
   )
