@@ -48,7 +48,12 @@ export const router = createBrowserRouter(
         />
         <Route path="home" element={<Home />} loader={Home.loader} />
         <Route path="about" element={<About />} />
-        <Route path="contacts" element={<Contacts />} />
+        {/* loader={loaderContacts} */}
+        <Route
+          path="contacts"
+          element={<Contacts />}
+          action={Contacts.action}
+        />
         <Route path="monitoring">
           <Route index element={<MainMonitoring />} />
           <Route path="global">
