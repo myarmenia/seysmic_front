@@ -21,13 +21,11 @@ import { toFormData } from "../../helper";
 const Component = () => {
   const { contacts: language } = useTranslation().language;
   const actionData = useActionData();
-  const formRef = useRef();
   const submit = useAppSubmit(),
     action = useFormAction();
   const formMethods = useForm({
     resolver: yupResolver(contacts_shema(language.errors)),
   });
-  console.log(actionData, "data");
 
   const { handleSubmit } = formMethods;
   const onSubmit = async (data) => {
@@ -38,15 +36,14 @@ const Component = () => {
     });
     submit(formData, { method: "POST", action });
   };
-
   return (
     <>
       <Container className="py-[var(--py)]" bg="bg-[#F0F2F5]">
         <FormProvider {...formMethods}>
           <form
-            ref={formRef}
             onSubmit={handleSubmit(onSubmit)}
-            className="flex flex-col gap-[36px] items-center">
+            className="flex flex-col gap-[36px] items-center"
+          >
             <Title>{language.title}</Title>
             <div className="flex flex-col gap-[24px] items-center med-400:w-full">
               <CstmInput
@@ -77,8 +74,8 @@ const Component = () => {
             /> */}
             <CustomBtn type="submit">Отправить</CustomBtn>
             {actionData && (
-              <h3>
-                {console.log(actionData, "boz")} {actionData?.message}
+              <h3 className={actionData.err ? "text-[red]" : "text-[green]"}>
+                {actionData?.message}
               </h3>
             )}
           </form>
@@ -118,7 +115,6 @@ const Component = () => {
 const loader = async ({ params: { lang } }) => {
   try {
     const res = await instance.get(`contact-info?lng=${lang}`);
-    console.log(res.data);
     return res.data.data;
   } catch (err) {
     console.log(err);
@@ -127,9 +123,9 @@ const loader = async ({ params: { lang } }) => {
 const action = async ({ request, params: { lang } }) => {
   try {
     const formData = await request.formData();
-    console.log(Object.fromEntries(formData));
-    const res = await instance.post(`feedback/create`, formData);
-    return { massage: translation[lang].contacts.message, err: false };
+    await instance.post(`feedback/create`, formData);
+
+    return { message: translation[lang].contacts.message, err: false };
   } catch (error) {
     console.log(error);
     return {
