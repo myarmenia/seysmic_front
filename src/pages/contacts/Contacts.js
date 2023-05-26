@@ -2,6 +2,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import React, { useRef } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import robot_img from "../../assets/main/contacts/robot.svg";
+import translation from "../../translation.json";
 import {
   CstmInput,
   CstmTextarea,
@@ -13,18 +14,20 @@ import { useAppSubmit, useFormRegister, useTranslation } from "../../hooks";
 import { contacts_shema } from "../../validation";
 import styles from "./contacts.module.css";
 import instance from "../../api";
-import { useFormAction } from "react-router-dom";
+import { useActionData, useFormAction } from "react-router-dom";
 import { toFormData } from "../../helper";
 // import { ReCAPTCHA } from "react-google-recaptcha";
 
 const Component = () => {
   const { contacts: language } = useTranslation().language;
+  const actionData = useActionData();
   const formRef = useRef();
   const submit = useAppSubmit(),
     action = useFormAction();
   const formMethods = useForm({
     resolver: yupResolver(contacts_shema(language.errors)),
   });
+  console.log(actionData, "data");
 
   const { handleSubmit } = formMethods;
   const onSubmit = async (data) => {
@@ -57,11 +60,10 @@ const Component = () => {
               <CustomSelect
                 regName="type"
                 placeholder={language.placeholders.feedback_letter}
-                options={[
-                  { title: "aaaaaaaaaa", value: "aaaaaaaaaa" },
-                  { title: "bbbbbbbbbb", value: "bbbbbbbbbb" },
-                  { title: "cccccccccc", value: "cccccccccc" },
-                ]}
+                options={language?.data?.map((el) => ({
+                  title: el,
+                  value: el,
+                }))}
               />
               <CstmTextarea
                 regName="content"
@@ -74,6 +76,11 @@ const Component = () => {
               onChange={onChange}
             /> */}
             <CustomBtn type="submit">Отправить</CustomBtn>
+            {actionData && (
+              <h3>
+                {console.log(actionData, "boz")} {actionData?.message}
+              </h3>
+            )}
           </form>
         </FormProvider>
       </Container>
@@ -117,15 +124,18 @@ const loader = async ({ params: { lang } }) => {
     console.log(err);
   }
 };
-const action = async ({ request }) => {
+const action = async ({ request, params: { lang } }) => {
   try {
     const formData = await request.formData();
     console.log(Object.fromEntries(formData));
     const res = await instance.post(`feedback/create`, formData);
-    return res.status;
+    return { massage: translation[lang].contacts.message, err: false };
   } catch (error) {
     console.log(error);
-    return "err";
+    return {
+      message: translation[lang].contacts.formErr,
+      err: true,
+    };
   }
 };
 
