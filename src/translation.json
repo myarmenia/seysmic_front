@@ -146,7 +146,10 @@
         "WrongEmail": "Неверный адрес электронной почты",
         "WrongMinimalText": "Поле должно быть не менее 20 символов",
         "WrongMaximalText": "Поле должно быть не более 90 символов"
-      }
+      },
+      "message": "Ваше письмо успешно отправлено",
+      "formErr": "Попробуйте еще раз",
+      "data": ["Технология", "Продукция", "Сотрудничество", "Другое"]
     },
     "press_release": {
       "title": "Пресс-релиз",
@@ -334,7 +337,10 @@
         "WrongEmail": "Invalid email address",
         "WrongMinimalText": "The field must be at least 10 characters long",
         "WrongMaximalText": "The field should be a maximum of 90 characters"
-      }
+      },
+      "message": "Your email has been successfully sent",
+      "formErr": "Try again",
+      "data": ["Technology", "Products", "Cooperation", "Other"]
     },
     "press_release": {
       "title": "Press-release",
@@ -498,17 +504,29 @@
     },
     "contacts": {
       "title": "Հետադարձ կապ",
-      "name": "ԱԱՀ",
-      "email": "Էլեկտրոնային հասցե",
-      "feedback_letter": "Ընտրեք վերադարձի նամակի տեսակը",
-      "description": "Լրացնելու համար անվճար դաշտ",
-      "button": "Ուղարկել",
-      "contactDetails": {
-        "title": "ԿՈՆՏԱԿՏԱՅԻՆ ՏՎՅԱԼՆԵՐ",
-        "tell": "Հեռախոսահամար",
-        "address": "Հասցե",
-        "email": "Էլեկտրոնային հասցե"
-      }
+      "map_info": {
+        "title": "Կոնտակտային տվյալներ",
+        "ul": {
+          "tel": "Հեռախոսահամար",
+          "address": "Հասցե"
+        }
+      },
+      "placeholders": {
+        "name": "ԱԱՀ",
+        "email": "Էլ հասցե",
+        "feedback_letter": "Ընտրեք վերադարձի նամակի տեսակը",
+        "description": "Նամակ"
+      },
+      "errors": {
+        "Required": "Պարտադիր դաշտ",
+        "Wrongtext": "Մուտքագրել միայն տառեր",
+        "WrongEmail": "Սխալ էլ. փոստի հասցե",
+        "WrongMinimalText": "Դաշտը պետք է լինի առնվազն 20 նիշ",
+        "WrongMaximalText": "Դաշտը պետք է լինի ոչ ավելի, քան 90 նիշ"
+      },
+      "message": "Ձեր նամակը հաջողությամբ ուղարկվել է",
+      "formErr": "Փորձեք նորից",
+      "data": ["Տեխնոլոգիա", "Ապրանքներ", "Համագործակցություն", "Այլ"]
     },
     "press_release": {
       "title": "Մամլո հաղորդագրություն",
