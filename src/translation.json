@@ -1,9 +1,9 @@
 {
   "ru": {
+    "reusable": {
+      "learn_more": "Узнать больше"
+    },
     "main": {
-      "reusable": {
-        "learn_more": "Узнать больше"
-      },
       "header": {
         "nav_items": {
           "about": "О нас",
@@ -192,10 +192,10 @@
     }
   },
   "en": {
+    "reusable": {
+      "learn_more": "Learn more"
+    },
     "main": {
-      "reusable": {
-        "learn_more": "Learn more"
-      },
       "header": {
         "nav_items": {
           "about": "About",

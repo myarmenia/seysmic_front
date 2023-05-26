@@ -19,7 +19,7 @@ export const LanguageProvider = ({ children }) => {
       setLanguage(translation[lang]);
       let my_path = window.location.pathname.split("/");
       my_path[1] = lang;
-      my_path = my_path.join("/");
+      my_path = my_path.join("/") + window.location.search;
       localStorage.setItem("lang", lang);
       navigate(my_path);
     }
