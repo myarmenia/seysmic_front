@@ -13,8 +13,10 @@ import { filterByLang } from "../../helper";
 import h1_icon from "../../assets/trash/home/h1.svg";
 import organization from "../../assets/trash/home/organization.svg";
 import axios from "axios";
+import { useLoaderData } from "react-router";
 
 const Component = () => {
+  const data = useLoaderData();
   return (
     <>
       <ImageSlider />
@@ -68,16 +70,12 @@ const Component = () => {
 //   message: "success",
 // };
 
-const loader = async ({ params: { lang } }) => {
+export const loader = async ({ params: { lang } }) => {
   try {
     let res = await instance.get(`home?lng=${lang}`);
-    if (res.status === 200) {
-      return res.data.data;
-    } else {
-      return new Error("Somting when wrong");
-    }
+    return res.data.data;
   } catch (error) {
-    console.log(error);
+    return error;
   }
 };
 

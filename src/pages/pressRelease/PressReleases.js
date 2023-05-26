@@ -4,12 +4,11 @@ import { useFormAction } from "react-router-dom";
 import instance from "../../api";
 import h1_icon from "../../assets/trash/home/h1.svg";
 import organization from "../../assets/trash/home/organization.svg";
-import { Boxes } from "../../components/main";
-import { getLang, toFormData, toObject } from "../../helper";
-import { useAppSubmit, useTranslation } from "../../hooks";
-import { CstmDateInput, SearchInput } from "../../components/forms";
 import { PressReleaseBox } from "../../components/cards";
-import axios from "axios";
+import { CstmDateInput, SearchInput } from "../../components/forms";
+import { Boxes } from "../../components/main";
+import { toFormData, toObject } from "../../helper";
+import { useAppSubmit, useTranslation } from "../../hooks";
 
 // ------- Delete -----------
 const expl = {
@@ -48,7 +47,8 @@ const Component = () => {
     <Boxes {...{ count, data }} title={title} Item={PressReleaseBox}>
       <form
         onSubmit={onSubmit}
-        className="flex items-center gap-[32px] justify-center med-900:flex-wrap med-600:flex-col med-600:gap-[16px]">
+        className="flex items-center gap-[32px] justify-center med-900:flex-wrap med-600:flex-col med-600:gap-[16px]"
+      >
         <SearchInput
           inputProps={{
             placeholder: search,
@@ -89,16 +89,14 @@ const loader = async ({ params: { lang, page = 1 }, request }) => {
   const obj = Object.fromEntries(new URL(request.url).searchParams);
   try {
     const res = await instance.get(`press-releases?lng=${lang}&page=${page}`);
-    if (res.status === 200) {
-      return {
-        data: res.data.data,
-        count: res.data.cont_page,
-      };
-    } else {
-      return new Error("Somting when wrong");
-    }
+    return {
+      data: res.data.data,
+      count: res.data.cont_page,
+    };
   } catch (err) {
     alert(err);
+
+    return err;
   }
 };
 
