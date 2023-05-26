@@ -31,7 +31,6 @@ export const CstmDateInput = ({
       formMethods.trigger(regName);
     }
   }, [date]);
-  console.log(props);
   return (
     <div className={"flex relative w-fit med-600:w-full " + boxClassName}>
       <input

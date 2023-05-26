@@ -1,14 +1,13 @@
 import React, { useState } from "react";
-import { redirect, useLoaderData } from "react-router";
-import { useFormAction } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router";
 import instance from "../../api";
 import h1_icon from "../../assets/trash/home/h1.svg";
 import organization from "../../assets/trash/home/organization.svg";
 import { PressReleaseBox } from "../../components/cards";
 import { CstmDateInput, SearchInput } from "../../components/forms";
 import { Boxes } from "../../components/main";
-import { toFormData, toObject } from "../../helper";
-import { useAppSubmit, useTranslation } from "../../hooks";
+import { convertSearchParamsStr } from "../../helper";
+import { useTranslation } from "../../hooks";
 
 // ------- Delete -----------
 const expl = {
@@ -21,40 +20,41 @@ const expl = {
 // ==========================
 
 const Component = () => {
-  const {
-    press_release: { title, search, start_date, end_date },
-  } = useTranslation().language;
+  const searchValues = Object.fromEntries(
+    new URL(window.location.href).searchParams
+  );
+  const { press_release: language } = useTranslation().language;
 
-  const submit = useAppSubmit(),
-    action = useFormAction(),
-    { data, count } = useLoaderData();
+  const { data, count } = useLoaderData(),
+    navigate = useNavigate();
 
   const [values, setValues] = useState({
-    search: "",
-    start_date: "",
-    end_date: "",
+    search: searchValues?.search || "",
+    date_from: searchValues?.date_from || "",
+    date_to: searchValues?.date_to || "",
   });
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (!Object.values(values).every((e) => !e)) {
-      const data = toFormData(values);
-      submit(data, { action, method: "post" });
-    }
+    const search = convertSearchParamsStr({ ...values });
+    navigate({ pathname: "", search: "?" + search });
   };
 
   return (
-    <Boxes {...{ count, data }} title={title} Item={PressReleaseBox}>
+    <Boxes {...{ count, data }} title={language?.title} Item={PressReleaseBox}>
       <form
         onSubmit={onSubmit}
         className="flex items-center gap-[32px] justify-center med-900:flex-wrap med-600:flex-col med-600:gap-[16px]"
       >
         <SearchInput
           inputProps={{
-            placeholder: search,
+            placeholder: language?.search,
             value: values.search,
             onChange: (e) =>
-              setValues((p) => ({ ...p, search: e.target.value })),
+              setValues((p) => ({
+                ...p,
+                search: e.target.value,
+              })),
             name: "search",
           }}
           clearValue={() => setValues((p) => ({ ...p, search: "" }))}
@@ -62,22 +62,28 @@ const Component = () => {
         <div className="flex items-center gap-2 med-600:w-full">
           <CstmDateInput
             onChange={(e) =>
-              setValues((p) => ({ ...p, start_date: e.target.value }))
+              setValues((p) => ({
+                ...p,
+                date_from: e.target.value,
+              }))
             }
             className="max-w-[130px] text-sm med-600:max-w-none"
-            placeholder={start_date}
+            placeholder={language?.start_date}
             name="start-date"
-            value={values.start_date}
+            value={values.date_from}
           />
           <div className="bg-dark-blue w-[6px] h-[1px] shrink-0" />
           <CstmDateInput
             onChange={(e) =>
-              setValues((p) => ({ ...p, end_date: e.target.value }))
+              setValues((p) => ({
+                ...p,
+                date_to: e.target.value,
+              }))
             }
             className="max-w-[130px] text-sm med-600:max-w-none"
-            placeholder={end_date}
+            placeholder={language?.end_date}
             name="end-date"
-            value={values.end_date}
+            value={values.date_to}
           />
         </div>
       </form>
@@ -87,28 +93,25 @@ const Component = () => {
 
 const loader = async ({ params: { lang, page = 1 }, request }) => {
   const obj = Object.fromEntries(new URL(request.url).searchParams);
+  const search = convertSearchParamsStr(obj);
   try {
+    if (Object.keys(obj).length) {
+      const filter = await instance.get(
+        `press-releases-filter?lng=${lang}&page=${page}&${search}`
+      );
+      return {
+        data: filter.data.data,
+        count: filter.data.cont_page,
+      };
+    }
     const res = await instance.get(`press-releases?lng=${lang}&page=${page}`);
     return {
       data: res.data.data,
       count: res.data.cont_page,
     };
   } catch (err) {
-    alert(err);
-
     return err;
   }
 };
 
-const action = async ({ request, params: { lang } }) => {
-  try {
-    const formData = await request.formData();
-    const formObj = toObject(formData);
-    console.log(formObj, "formObj");
-    return redirect(`/${lang}/press-release/1`);
-  } catch (err) {
-    console.log(err);
-  }
-};
-
-export const PressReleases = Object.assign(Component, { loader, action });
+export const PressReleases = Object.assign(Component, { loader });

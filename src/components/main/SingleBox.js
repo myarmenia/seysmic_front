@@ -63,8 +63,8 @@ export const SingleBox = ({
                     {title}
                   </h4>
                   <span className="text-[#415455] text-base med-600:text-sm">
-                    {date} {time}{" "}
-                    {magnitude ? `${magnitude} ${leng[lang]}` : null}
+                    {date} {time}
+                    {magnitude && `${magnitude} ${leng[lang]}`}
                   </span>
                 </div>
               </div>
@@ -77,7 +77,8 @@ export const SingleBox = ({
                 {links.map((el, i) => (
                   <li
                     key={i}
-                    className="text-[#1267CB] text-justify text-[20px]">
+                    className="text-[#1267CB] text-justify text-[20px]"
+                  >
                     <a className="underline" href={el} target="_blank">
                       {el}
                     </a>
@@ -90,7 +91,8 @@ export const SingleBox = ({
                 <div
                   key={i}
                   onClick={() => setOpen(true)}
-                  className="h-[184px] ">
+                  className="h-[184px] "
+                >
                   {type === "image" ? (
                     <img src={path} className="h-full cursor-pointer" />
                   ) : (
@@ -109,7 +111,7 @@ export const SingleBox = ({
           </div>
         </div>
       </div>
-      <Carousel {...{ open }} handleClose={() => setOpen(false)}>
+      {/* <Carousel {...{ open }} handleClose={() => setOpen(false)}>
         {files.map(({ type, path }, i) => {
           if (type === "image") {
             return (
@@ -135,7 +137,7 @@ export const SingleBox = ({
             </SwiperSlide>
           );
         })}
-      </Carousel>
+      </Carousel> */}
     </>
   );
 };

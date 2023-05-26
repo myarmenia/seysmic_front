@@ -14,17 +14,6 @@ import {
 import { Link } from "react-router-dom";
 import { getLang } from "../../../helper";
 
-// const data = {
-//   title: "Название организации",
-//   description:
-//     "Компания Терморобот занимается производством котельного оборудования с 2010 г.",
-//   icon: h1_icon,
-//   image: organization,
-//   date: "24.02.2023",
-//   time: "16:00",
-//   to: "/press-release/1",
-// };
-
 export const PressRelease = () => {
   const { press_releases } = useLoaderData();
   return (

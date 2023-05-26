@@ -1,4 +1,5 @@
 import React from "react";
+import instance from "../../api";
 import {
   EarthquakePlaces,
   Globuses,
@@ -8,15 +9,8 @@ import {
   PressRelease,
   UsersInfo,
 } from "./blocks";
-import instance from "../../api";
-import { filterByLang } from "../../helper";
-import h1_icon from "../../assets/trash/home/h1.svg";
-import organization from "../../assets/trash/home/organization.svg";
-import axios from "axios";
-import { useLoaderData } from "react-router";
 
 const Component = () => {
-  const data = useLoaderData();
   return (
     <>
       <ImageSlider />
