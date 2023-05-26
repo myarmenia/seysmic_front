@@ -2,7 +2,7 @@ import * as yup from "yup";
 
 export const contacts_shema = (errorMessages) =>
   yup.object().shape({
-    name: yup
+    full_name: yup
       .string()
       .required(errorMessages.Required)
       .matches(/\D+$/, errorMessages.Wrongtext),
@@ -10,11 +10,11 @@ export const contacts_shema = (errorMessages) =>
       .string()
       .required(errorMessages.Required)
       .matches(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g, errorMessages.WrongEmail),
-    feedback_letter: yup.string().required(errorMessages.Required),
-    description: yup
+    type: yup.string().required(errorMessages.Required),
+    content: yup
       .string()
       .required(errorMessages.Required)
-      .min(10, errorMessages.WrongMinimalText)
+      .min(20, errorMessages.WrongMinimalText)
       .max(90, errorMessages.WrongMaximalText),
     isRobot: yup.bool().required(errorMessages.Required),
   });
