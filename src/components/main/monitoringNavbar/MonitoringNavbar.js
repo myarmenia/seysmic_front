@@ -15,8 +15,6 @@ export const MonitoringNavbar = ({ className = "" }) => {
     setOpen((p) => !p);
   };
 
-  console.log(media);
-
   return (
     <nav
       className={[
