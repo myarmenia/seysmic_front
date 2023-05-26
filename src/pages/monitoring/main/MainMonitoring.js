@@ -1,5 +1,4 @@
 import React from "react";
-
 import {
   Container,
   CustomUl,
@@ -21,6 +20,8 @@ import {
 import bg_img from "../../../assets/main/monitoring/main/bg-img.svg";
 import img1 from "../../../assets/main/monitoring/main/monitoring-img1.png";
 import tableImg1 from "../../../assets/main/monitoring/main/table-imgs/table-img1.svg";
+import { useEffect } from "react";
+import axios from "axios";
 
 const data = [
   {
@@ -97,6 +98,37 @@ const ul_data = [
 ];
 
 export const MainMonitoring = () => {
+  useEffect(() => {
+    const fetchContacts = async () => {
+      try {
+        const res = await axios.get("http://localhost:3000/api/contacts", {
+          headers: {
+            "Content-Type":
+              "multipart/form-data; application/x-www-form-urlencoded; charset=UTF-8;application/json",
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoibmFtZSIsImVtYWlsIjoibmFtZSIsImlkIjoiNjQ2NjcyMjA1MmQ1MzFhNWFlOWIzMzRhIn0sImlhdCI6MTY4NDQzNjU3MSwiZXhwIjoxNjg0NDM3NDcxfQ.4cSTanQWU7W-jNDu3zNuj6SfEhGDM5GpmaEdP_KZGAI",
+            "Access-Control-Allow-Origin": "http://localhost:3001/",
+          },
+        });
+
+        console.log(res.data);
+        return res.data;
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    fetchContacts()
+      .then((e) => {
+        console.log(e);
+      })
+      .catch((e) => {
+        console.log(e);
+      })
+      .finally((e) => {
+        console.log("Finally");
+      });
+  }, []);
   return (
     <>
       <Container className="pb-[50px] py-[var(--py)]">

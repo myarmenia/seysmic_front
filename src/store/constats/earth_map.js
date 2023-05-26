@@ -266,20 +266,3 @@ export const earth_map = earth_map_default.map((el, i) => ({
   id: el.id || i + 1,
   ...convertToPercent(el),
 }));
-
-const converter = (...args) => {
-  return args.map((el) => ({
-    name: el,
-  }));
-};
-
-console.log(
-  converter(
-    "Azerbaijan",
-    "Algeria",
-    "Argentina",
-    "Armenia",
-    "Afghanistan",
-    "Balkan Countries"
-  )
-);
