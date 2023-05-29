@@ -44,6 +44,8 @@ export const SingleBox = ({
   title,
   magnitude,
   current_earthquake,
+  boxes_data,
+  Item,
 }) => {
   const { lang } = useParams();
   const [open, setOpen] = useState(false);
@@ -79,7 +81,8 @@ export const SingleBox = ({
                 {links.map((el, i) => (
                   <li
                     key={i}
-                    className="text-[#1267CB] text-justify text-[20px]">
+                    className="text-[#1267CB] text-justify text-[20px]"
+                  >
                     <a className="underline" href={el} target="_blank">
                       {el}
                     </a>
@@ -92,7 +95,8 @@ export const SingleBox = ({
                 <div
                   key={i}
                   onClick={() => setOpen(true)}
-                  className="h-[184px] ">
+                  className="h-[184px] "
+                >
                   {type === "image" ? (
                     <img src={path} className="h-full cursor-pointer" />
                   ) : (
@@ -105,12 +109,15 @@ export const SingleBox = ({
             </div>
           </div>
           <div className="py-[41px] px-[42px] bg-[#F9F9F9] grid grid-cols-[repeat(auto-fit,_minmax(310px,_1fr))] justify-items-center gap-[28px] med-900:px-[32px] med-600:p-[25px_20px]">
-            {Array.isArray(current_earthquake) &&
+            {/* {Array.isArray(current_earthquake) &&
               current_earthquake.map((el) => (
                 <EarthQuakeBox key={el.id} {...el} />
-              ))}
+              ))} */}
             {/* {videos.map((el, i) => (
               <VideoBox {...el} key={i} />
+            ))} */}
+            {/* {boxes_data.map((el, i) => (
+              <Item {...el} key={i} />
             ))} */}
           </div>
         </div>
@@ -134,7 +141,8 @@ export const SingleBox = ({
                 <video
                   controls
                   className="w-full h-full min-h-[500px] object-cover object-center"
-                  alt="">
+                  alt=""
+                >
                   <source src={path} type="video/mp4" />
                 </video>
               </center>

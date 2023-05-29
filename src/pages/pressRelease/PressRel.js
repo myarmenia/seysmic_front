@@ -18,11 +18,12 @@ const expl = {
 };
 const Component = () => {
   const item = useLoaderData();
+  console.log(item);
   return (
     <SingleBox
       {...expl}
       Item={PressReleaseBox}
-      boxes_data={item}
+      // boxes_data={item.video_boxes}
       description={item.body}
       {...item}
     />
