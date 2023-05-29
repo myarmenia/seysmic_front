@@ -19,7 +19,6 @@ const data = {
 
 export const EarthquakePlaces = () => {
   const earth_quakes = useLoaderData().current_earthquake;
-  console.log(earth_quakes);
   return (
     <div className="relative">
       <div

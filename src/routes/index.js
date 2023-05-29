@@ -27,6 +27,7 @@ import {
   Regional,
   RegionalIndex,
   RegionalDynamic,
+  FAQ,
 } from "../pages";
 
 export const router = createBrowserRouter(
@@ -47,7 +48,12 @@ export const router = createBrowserRouter(
         />
         <Route path="home" element={<Home />} loader={Home.loader} />
         <Route path="about" element={<About />} />
-        <Route path="contacts" element={<Contacts />} />
+        {/* loader={loaderContacts} */}
+        <Route
+          path="contacts"
+          element={<Contacts />}
+          action={Contacts.action}
+        />
         <Route path="monitoring">
           <Route index element={<MainMonitoring />} />
           <Route path="global">
@@ -78,7 +84,7 @@ export const router = createBrowserRouter(
             path=":page"
             element={<PressReleases />}
             loader={PressReleases.loader}
-            action={PressReleases.action}
+            // action={PressReleases.action}
           />
           <Route
             path="release-page/:id"
@@ -99,6 +105,7 @@ export const router = createBrowserRouter(
             loader={EarthQuake.loader}
           />
         </Route>
+        <Route path="faq" element={<FAQ />} />
       </Route>
     </Route>
   )

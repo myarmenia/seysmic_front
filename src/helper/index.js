@@ -5,3 +5,4 @@ export { convertToPercent } from "./convertToPercent";
 export { getLang } from "./getLang";
 export { formatToCompactNum } from "./formatToCompactNum";
 export { filterByLang } from "./filterByLang";
+export { convertSearchParamsStr } from "./convertSearchParamsStr";

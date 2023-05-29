@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { useLoaderData } from "react-router";
+import { useLoaderData, useNavigate } from "react-router";
 import { useFormAction } from "react-router-dom";
 import instance from "../../api";
 import h1_icon from "../../assets/trash/home/h1.svg";
 import organization from "../../assets/trash/home/organization.svg";
 import { Boxes } from "../../components/main";
-import { toFormData, toObject } from "../../helper";
-import { useAppSubmit } from "../../hooks";
+import { convertSearchParamsStr, toFormData, toObject } from "../../helper";
+import { useAppSubmit, useTranslation } from "../../hooks";
 import { CstmDateInput, CstmInput, SearchInput } from "../../components/forms";
 import { QuakeBox } from "../../components/cards";
 import axios from "axios";
@@ -22,42 +22,36 @@ const expl = {
 // ==========================
 
 const Component = () => {
-  const submit = useAppSubmit(),
-    action = useFormAction(),
-    { data, count } = useLoaderData();
+  const searchValues = Object.fromEntries(
+    new URL(window.location.href).searchParams
+  );
+  const {
+    earth_quakes: { end_date, magnitude, search, start_date, title },
+  } = useTranslation().language;
+  const { data, count } = useLoaderData(),
+    navigate = useNavigate();
 
   const [values, setValues] = useState({
-    search: "",
-    magnitude: "",
-    start_date: "",
-    end_date: "",
+    search: searchValues?.search || "",
+    date_from: searchValues?.date_from || "",
+    date_to: searchValues?.date_to || "",
+    magnitude: searchValues?.magnitude || "",
   });
-
-  // const data1 = data.map((el) => ({
-  //   ...expl,
-  //   description: el.body.split("").slice(0, 68).join("") + "...",
-  //   to: `/earth-quakes/${el.id}`,
-  // }));
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (!Object.values(values).every((e) => !e)) {
-      const data = toFormData(values);
-      submit(data, { action, method: "post" });
-    }
+    const search = convertSearchParamsStr({ ...values });
+    navigate({ pathname: "", search: "?" + search });
   };
   return (
-    <Boxes
-      data={data}
-      count={count}
-      title="Текущие землетрясения"
-      Item={QuakeBox}>
+    <Boxes data={data} count={count} title={title} Item={QuakeBox}>
       <form
         onSubmit={onSubmit}
-        className="flex items-center gap-[32px] justify-center med-900:flex-wrap med-600:flex-col med-600:gap-[16px]">
+        className="flex items-center gap-[32px] justify-center med-900:flex-wrap med-600:flex-col med-600:gap-[16px]"
+      >
         <SearchInput
           inputProps={{
-            placeholder: "Поиск",
+            placeholder: search,
             value: values.search,
             onChange: (e) =>
               setValues((p) => ({ ...p, search: e.target.value })),
@@ -66,7 +60,7 @@ const Component = () => {
           clearValue={() => setValues((p) => ({ ...p, search: "" }))}
         />
         <CstmInput
-          placeholder="Магнитуда"
+          placeholder={magnitude}
           value={values?.magnitude}
           onChange={(e) =>
             setValues((p) => ({ ...p, magnitude: e.target.value }))
@@ -80,7 +74,7 @@ const Component = () => {
               setValues((p) => ({ ...p, start_date: e.target.value }))
             }
             className="max-w-[130px] text-sm med-600:max-w-none"
-            placeholder="ДД.ММ.ГГГГ"
+            placeholder={start_date}
             name="start-date"
             value={values.start_date}
           />
@@ -90,7 +84,7 @@ const Component = () => {
               setValues((p) => ({ ...p, end_date: e.target.value }))
             }
             className="max-w-[130px] text-sm med-600:max-w-none"
-            placeholder="ДД.ММ.ГГГГ"
+            placeholder={end_date}
             name="end-date"
             value={values.end_date}
           />
@@ -100,33 +94,29 @@ const Component = () => {
   );
 };
 
-const loader = async ({ params: { lang, page = 1 } }) => {
+const loader = async ({ params: { lang, page = 1 }, request }) => {
+  const obj = Object.fromEntries(new URL(request.url).searchParams);
+  const search = convertSearchParamsStr(obj);
   try {
-    try {
-      const res = await instance.get(
-        `current-earthquake?lng=${lang}&page=${page}`
+    if (Object.keys(obj).length) {
+      const filter = await instance.get(
+        `current-earthquakes-filter?lng=${lang}&page=${page}&${search}`
       );
-      console.log(res);
-      if (res.status === 200) {
-        return { data: res.data.data, count: res.data.count };
-      }
-    } catch (error) {
-      return new Error("Somting when wrong");
+      return {
+        data: filter.data.data,
+        count: filter.data.cont_page,
+      };
     }
+    const res = await instance.get(
+      `current-earthquake?lng=${lang}&page=${page}`
+    );
+    return {
+      data: res.data.data,
+      count: res.data.cont_page,
+    };
   } catch (err) {
-    console.log(err);
+    return err;
   }
 };
 
-const action = async ({ request }) => {
-  try {
-    const formData = await request.formData();
-    const formObj = toObject(formData);
-    console.log(formObj, "formObj");
-    return { some: "hello" };
-  } catch (err) {
-    console.log(err);
-  }
-};
-
-export const EarthQuakes = Object.assign(Component, { loader, action });
+export const EarthQuakes = Object.assign(Component, { loader });

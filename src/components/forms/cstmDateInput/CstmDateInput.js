@@ -13,7 +13,7 @@ export const CstmDateInput = ({
   onChange,
   value,
   name,
-
+  placeholder,
   ...props
 }) => {
   const formMethods = useFormContext();
@@ -35,6 +35,7 @@ export const CstmDateInput = ({
     <div className={"flex relative w-fit med-600:w-full " + boxClassName}>
       <input
         {...props}
+        placeholder={placeholder}
         className={`${className} ${styles.input}`}
         type="date"
         onChange={changeHandler}
@@ -42,7 +43,7 @@ export const CstmDateInput = ({
         name={register?.name || name}
       />
       <span className={styles.value}>
-        {date.split("-").reverse().join(".") || "ДД.ММ.ГГГГ"}
+        {date.split("-").reverse().join(".") || placeholder || "ДД.ММ.ГГГГ"}
       </span>
       <ErrorMessage className={errorClassName}>{errorMessage}</ErrorMessage>
     </div>

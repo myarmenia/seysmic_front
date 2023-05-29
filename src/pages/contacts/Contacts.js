@@ -1,7 +1,8 @@
 import { yupResolver } from "@hookform/resolvers/yup";
-import React from "react";
+import React, { useRef } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import robot_img from "../../assets/main/contacts/robot.svg";
+import translation from "../../translation.json";
 import {
   CstmInput,
   CstmTextarea,
@@ -9,34 +10,44 @@ import {
   CustomSelect,
 } from "../../components/forms";
 import { Container, SocIcons, Title, Ul } from "../../components/reusable";
-import { useFormRegister, useTranslation } from "../../hooks";
+import { useAppSubmit, useFormRegister, useTranslation } from "../../hooks";
 import { contacts_shema } from "../../validation";
 import styles from "./contacts.module.css";
+import instance from "../../api";
+import { useActionData, useFormAction } from "react-router-dom";
+import { toFormData } from "../../helper";
 // import { ReCAPTCHA } from "react-google-recaptcha";
 
-
-export const Contacts = () => {
+const Component = () => {
   const { contacts: language } = useTranslation().language;
+  const actionData = useActionData();
+  const submit = useAppSubmit(),
+    action = useFormAction();
   const formMethods = useForm({
     resolver: yupResolver(contacts_shema(language.errors)),
   });
 
   const { handleSubmit } = formMethods;
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (data) => {
+    const formData = new FormData();
+    delete data.isRobot;
+    Object.entries(data).forEach(([key, value]) => {
+      formData.append(key, value);
+    });
+    submit(formData, { method: "POST", action });
   };
-
   return (
     <>
       <Container className="py-[var(--py)]" bg="bg-[#F0F2F5]">
         <FormProvider {...formMethods}>
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="flex flex-col gap-[36px] items-center">
+            className="flex flex-col gap-[36px] items-center"
+          >
             <Title>{language.title}</Title>
             <div className="flex flex-col gap-[24px] items-center med-400:w-full">
               <CstmInput
-                regName="name"
+                regName="full_name"
                 placeholder={language.placeholders.name}
               />
               <CstmInput
@@ -44,16 +55,15 @@ export const Contacts = () => {
                 placeholder={language.placeholders.email}
               />
               <CustomSelect
-                regName="feedback_letter"
+                regName="type"
                 placeholder={language.placeholders.feedback_letter}
-                options={[
-                  { title: "aaaaaaaaaa", value: "aaaaaaaaaa" },
-                  { title: "bbbbbbbbbb", value: "bbbbbbbbbb" },
-                  { title: "cccccccccc", value: "cccccccccc" },
-                ]}
+                options={language?.data?.map((el) => ({
+                  title: el,
+                  value: el,
+                }))}
               />
               <CstmTextarea
-                regName="description"
+                regName="content"
                 placeholder={language.placeholders.description}
               />
             </div>
@@ -63,6 +73,11 @@ export const Contacts = () => {
               onChange={onChange}
             /> */}
             <CustomBtn type="submit">Отправить</CustomBtn>
+            {actionData && (
+              <h3 className={actionData.err ? "text-[red]" : "text-[green]"}>
+                {actionData?.message}
+              </h3>
+            )}
           </form>
         </FormProvider>
       </Container>
@@ -97,6 +112,29 @@ export const Contacts = () => {
   );
 };
 
+const loader = async ({ params: { lang } }) => {
+  try {
+    const res = await instance.get(`contact-info?lng=${lang}`);
+    return res.data.data;
+  } catch (err) {
+    console.log(err);
+  }
+};
+const action = async ({ request, params: { lang } }) => {
+  try {
+    const formData = await request.formData();
+    await instance.post(`feedback/create`, formData);
+
+    return { message: translation[lang].contacts.message, err: false };
+  } catch (error) {
+    console.log(error);
+    return {
+      message: translation[lang].contacts.formErr,
+      err: true,
+    };
+  }
+};
+
 // function onChange(value) {
 //   console.log("Captcha value:", value);
 // }
@@ -114,3 +152,4 @@ const RobotCheckbox = ({ regName }) => {
     </div>
   );
 };
+export const Contacts = Object.assign(Component, { loader, action });

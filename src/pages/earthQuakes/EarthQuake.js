@@ -3,11 +3,7 @@ import { useLoaderData } from "react-router";
 import instance from "../../api";
 import h1_img from "../../assets/trash/home/h1.svg";
 import img from "../../assets/trash/press-release/press-rel.svg";
-import {
-  SingleBox,
-  // QuakeBox
-} from "../../components/main";
-import axios from "axios";
+import { SingleBox } from "../../components/main";
 
 const expl = {
   title: "Название организации",
@@ -17,15 +13,9 @@ const expl = {
   time: "16:00",
 };
 const Component = () => {
-  // const { item, data } = useLoaderData();
   const item = useLoaderData();
-  console.log(item);
+  console.log(item < "item");
 
-  // const data1 = data.map((el) => ({
-  //   description: el.body.split("").slice(0, 68).join("") + "...",
-  //   to: `/earth-quakes/${el.id}`,
-  //   ...expl,
-  // }));
   return (
     <SingleBox
       {...item}
@@ -43,7 +33,6 @@ const loader = async ({ params: { lang, id } }) => {
   } catch (error) {
     console.log(error);
   }
-  // const item = await instance.get(`posts/${params.id}?userId=1`);
 };
 
 export const EarthQuake = Object.assign(Component, { loader });
