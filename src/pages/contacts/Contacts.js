@@ -1,5 +1,5 @@
 import { yupResolver } from "@hookform/resolvers/yup";
-import React, { useRef } from "react";
+import React, { useMemo, useRef } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import robot_img from "../../assets/main/contacts/robot.svg";
 import translation from "../../translation.json";
@@ -14,13 +14,15 @@ import { useAppSubmit, useFormRegister, useTranslation } from "../../hooks";
 import { contacts_shema } from "../../validation";
 import styles from "./contacts.module.css";
 import instance from "../../api";
-import { useActionData, useFormAction } from "react-router-dom";
+import { useActionData, useFormAction, useLoaderData } from "react-router-dom";
 import { toFormData } from "../../helper";
 // import { ReCAPTCHA } from "react-google-recaptcha";
 
 const Component = () => {
   const { contacts: language } = useTranslation().language;
   const actionData = useActionData();
+  const { address, email, links, map_iframe, map_image, phone } =
+    useLoaderData();
   const submit = useAppSubmit(),
     action = useFormAction();
   const formMethods = useForm({
@@ -42,8 +44,7 @@ const Component = () => {
         <FormProvider {...formMethods}>
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="flex flex-col gap-[36px] items-center"
-          >
+            className="flex flex-col gap-[36px] items-center">
             <Title>{language.title}</Title>
             <div className="flex flex-col gap-[24px] items-center med-400:w-full">
               <CstmInput
@@ -88,15 +89,18 @@ const Component = () => {
             <Ul
               className="list-none !list-image-none mt-[25px] [&_li]:m-0 [&_li]:text-lg"
               data={[
-                `${language.map_info.ul.tel}:`,
-                `${language.map_info.ul.address}:`,
-                "Email",
+                [`${language.map_info.ul.tel}:`, phone],
+                [`${language.map_info.ul.address}:`, address],
+                [`Email:`, email],
               ]}
             />
             <SocIcons />
           </div>
-          <div className="rounded-2xl h-[265px] overflow-hidden">
-            <iframe
+
+          <div
+            className="rounded-2xl h-[265px] overflow-hidden [&>iframe]:w-full  [&>iframe]:h-full"
+            dangerouslySetInnerHTML={{ __html: map_iframe }}>
+            {/* <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322283!2d106.8195613507864!3d-6.194741395493371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5390917b759%3A0x6b45e67356080477!2sPT%20Kulkul%20Teknologi%20Internasional!5e0!3m2!1sen!2sid!4v1601138221085!5m2!1sen!2sid"
               style={{ border: 0 }}
               allowFullScreen=""
@@ -104,7 +108,7 @@ const Component = () => {
               tabIndex="0"
               className="w-full h-full"
               title="map"
-            />
+            /> */}
           </div>
         </div>
       </Container>
@@ -115,6 +119,7 @@ const Component = () => {
 const loader = async ({ params: { lang } }) => {
   try {
     const res = await instance.get(`contact-info?lng=${lang}`);
+    console.log(res.data.data);
     return res.data.data;
   } catch (err) {
     console.log(err);

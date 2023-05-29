@@ -72,11 +72,11 @@ const earth_map_default = [
     top: "134.95px",
   },
   {
-    id: 37,
-    width: "25.33px",
-    height: "35.32px",
-    left: "827.04px",
-    top: "82.2px",
+    id: 36,
+    width: "40px",
+    height: "58px",
+    left: "1088.7px",
+    top: "254.78px",
   },
   {
     id: 6,
@@ -114,11 +114,11 @@ const earth_map_default = [
     top: "105.86px",
   },
   {
-    id: 36,
-    width: "24.31px",
-    height: "15.5px",
-    left: "1060.77px",
-    top: "66.95px",
+    id: 37,
+    width: "76px",
+    height: "60px",
+    left: "1200.7px",
+    top: "475.78px",
   },
   {
     id: 19,

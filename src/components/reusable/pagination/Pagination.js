@@ -1,9 +1,11 @@
 import React, { useMemo } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import styles from "./pagination.module.css";
 
 export const Pagination = ({ count, maxPaginationItems = 7 }) => {
   const { page } = useParams();
+  const { search } = useLocation();
+  console.log(useLocation());
   const pageNum = +page;
   const my_items = useMemo(
     () =>
@@ -23,7 +25,11 @@ export const Pagination = ({ count, maxPaginationItems = 7 }) => {
     <div className={styles.pagination}>
       <Prev />
       {my_items.map(({ num, show }, i) => (
-        <Item {...{ show }} active={pageNum === num} key={i} to={`../${num}`}>
+        <Item
+          {...{ show }}
+          active={pageNum === num}
+          key={i}
+          to={`../${num}${search}`}>
           {num}
         </Item>
       ))}
@@ -40,8 +46,7 @@ const Item = ({ to, show, children, active, ...props }) => {
     <Link
       {...props}
       to={to}
-      className={[styles.item, active ? styles.active : ""].join(" ")}
-    >
+      className={[styles.item, active ? styles.active : ""].join(" ")}>
       {children}
     </Link>
   );
@@ -49,10 +54,11 @@ const Item = ({ to, show, children, active, ...props }) => {
 
 const Prev = () => {
   const { page } = useParams();
+  const { search } = useLocation();
   const navigate = useNavigate();
   const prev = () => {
     if (page !== "1") {
-      navigate(`../${+page - 1}`);
+      navigate(`../${+page - 1}${search}`);
     }
   };
   return (
@@ -62,8 +68,7 @@ const Prev = () => {
         styles.prev,
         page === "1" ? "pointer-events-none" : "",
       ].join(" ")}
-      onClick={prev}
-    >
+      onClick={prev}>
       ‹‹
     </div>
   );
@@ -71,10 +76,11 @@ const Prev = () => {
 const Next = ({ count }) => {
   const { page } = useParams();
   const navigate = useNavigate();
+  const { search } = useLocation();
 
   const next = () => {
     if (+page !== count) {
-      navigate(`../${+page + 1}`);
+      navigate(`../${+page + 1}${search}`);
     }
   };
   return (
@@ -84,8 +90,7 @@ const Next = ({ count }) => {
         styles.next,
         +page === count ? "pointer-events-none" : "",
       ].join(" ")}
-      onClick={next}
-    >
+      onClick={next}>
       ››
     </div>
   );

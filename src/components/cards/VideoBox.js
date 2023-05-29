@@ -8,8 +8,7 @@ export const VideoBox = ({ src, title, description, date, icon, to }) => {
         src="https://www.youtube.com/embed/DtvfnOtO1Wk"
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowFullScreen
-      ></iframe>
+        allowFullScreen></iframe>
       <div className="flex gap-[6px]">
         <img className="w-[32px] h-[32px] rounded-full" src={icon} alt="" />
         <div className="flex flex-col gap-1">

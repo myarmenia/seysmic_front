@@ -53,6 +53,7 @@ export const router = createBrowserRouter(
           path="contacts"
           element={<Contacts />}
           action={Contacts.action}
+          loader={Contacts.loader}
         />
         <Route path="monitoring">
           <Route index element={<MainMonitoring />} />

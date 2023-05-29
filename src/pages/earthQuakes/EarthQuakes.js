@@ -5,7 +5,12 @@ import instance from "../../api";
 import h1_icon from "../../assets/trash/home/h1.svg";
 import organization from "../../assets/trash/home/organization.svg";
 import { Boxes } from "../../components/main";
-import { convertSearchParamsStr, toFormData, toObject } from "../../helper";
+import {
+  convertSearchParamsStr,
+  getLang,
+  toFormData,
+  toObject,
+} from "../../helper";
 import { useAppSubmit, useTranslation } from "../../hooks";
 import { CstmDateInput, CstmInput, SearchInput } from "../../components/forms";
 import { QuakeBox } from "../../components/cards";
@@ -47,8 +52,7 @@ const Component = () => {
     <Boxes data={data} count={count} title={title} Item={QuakeBox}>
       <form
         onSubmit={onSubmit}
-        className="flex items-center gap-[32px] justify-center med-900:flex-wrap med-600:flex-col med-600:gap-[16px]"
-      >
+        className="flex items-center gap-[32px] justify-center med-900:flex-wrap med-600:flex-col med-600:gap-[16px]">
         <SearchInput
           inputProps={{
             placeholder: search,
@@ -57,7 +61,15 @@ const Component = () => {
               setValues((p) => ({ ...p, search: e.target.value })),
             name: "search",
           }}
-          clearValue={() => setValues((p) => ({ ...p, search: "" }))}
+          clearValue={() => {
+            setValues((p) => ({
+              search: "",
+              date_from: "",
+              date_to: "",
+              magnitude: "",
+            }));
+            navigate(getLang("/earth-quakes/1"));
+          }}
         />
         <CstmInput
           placeholder={magnitude}
