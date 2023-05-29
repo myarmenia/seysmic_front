@@ -5,7 +5,7 @@
 }
 .nav_item {
   @apply rounded-[9px] text-dark-blue leading-[10px] text-[8px] duration-300
-  text-center flex flex-col gap-[13px] px-[20px] pt-[9.5px] pb-[6px];
+  text-center flex flex-col gap-[13px] px-[20px] pt-[9.5px] pb-[6px] items-center;
 }
 .nav_item:hover {
   @apply bg-white;

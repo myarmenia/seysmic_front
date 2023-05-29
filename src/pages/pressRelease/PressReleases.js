@@ -1,23 +1,11 @@
 import React, { useState } from "react";
 import { useLoaderData, useNavigate } from "react-router";
 import instance from "../../api";
-import h1_icon from "../../assets/trash/home/h1.svg";
-import organization from "../../assets/trash/home/organization.svg";
 import { PressReleaseBox } from "../../components/cards";
 import { CstmDateInput, SearchInput } from "../../components/forms";
 import { Boxes } from "../../components/main";
 import { convertSearchParamsStr } from "../../helper";
 import { useTranslation } from "../../hooks";
-
-// ------- Delete -----------
-const expl = {
-  title: "Название организации",
-  icon: h1_icon,
-  image: organization,
-  date: "24.02.2023",
-  time: "16:00",
-};
-// ==========================
 
 const Component = () => {
   const searchValues = Object.fromEntries(

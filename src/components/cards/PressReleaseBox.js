@@ -13,13 +13,13 @@ export const PressReleaseBox = ({
   files,
   to,
 }) => {
-  console.log(files);
   return (
     <div className="bg-white w-full flex flex-col justify-between gap-2 shadow-[0px_2px_11px_rgba(0,_0,_0,_0.15)] px-[23px] py-[22px] rounded-[6px] max-w-[430px] hover:scale-[1.1] duration-300 med-900:max-w-none med-900:w-full med-600:hover:scale-[1.05] h-[400px]">
       <div className="flex justify-between gap-5">
         <Link
           to={getLang(`/press-release/release-page/${id}`)}
-          className="flex items-center gap-3">
+          className="flex items-center gap-3"
+        >
           <img className="max-w-[64px]" src={logo} alt="" />
           <div className="flex flex-col gap-[6px]">
             <span className="font-bold text-dark-blue text-[11px]">
@@ -39,7 +39,8 @@ export const PressReleaseBox = ({
       </div>
       <Link
         to={getLang(`/press-release/release-page/${id}`)}
-        dangerouslySetInnerHTML={{ __html: description.slice(0, 70) }}></Link>
+        dangerouslySetInnerHTML={{ __html: description.slice(0, 70) }}
+      ></Link>
       <img className="max-h-[231.18px] w-full h-full" src={image} alt="" />
     </div>
   );
