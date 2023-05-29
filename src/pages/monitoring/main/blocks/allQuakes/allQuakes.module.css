@@ -27,7 +27,7 @@
 .title::before,
 .date::before,
 .country::before {
-  content: "";
+  content: '';
   @apply absolute left-[-16%] border-dashed border-[1px] border-[#CDC9CE] 
   h-[60%] top-1/2 -translate-y-1/2;
 }
@@ -43,7 +43,7 @@
 }
 .magnitude::after,
 .date::after {
-  content: "";
+  content: '';
   border-bottom: 35px solid transparent;
   border-top: 35px solid transparent;
   border-left: 40px solid #f6f0f0;
@@ -64,20 +64,20 @@
   }
   .magnitude::after,
   .date::after {
-    content: "";
+    content: '';
     border-bottom: 25px solid transparent;
     border-top: 25px solid transparent;
     border-left: 20px solid #f6f0f0;
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .item {
     @apply med-1200:text-[16px];
   }
   .magnitude::after,
   .date::after {
-    content: "";
+    content: '';
     border-bottom: 25px solid transparent;
     border-top: 25px solid transparent;
     border-left: 20px solid #f6f0f0;
@@ -99,12 +99,12 @@
     @apply flex-col [&>*]:py-0 items-start mx-auto w-fit relative;
   }
   .wrapper::before {
-    content: "";
+    content: '';
     @apply absolute left-[-8%] border-dashed border-[1px] border-[#CDC9CE] 
     h-[60%] top-1/2 -translate-y-1/2;
   }
   .wrapper::after {
-    content: "";
+    content: '';
     @apply absolute right-[-8%] border-dashed border-[1px] border-[#CDC9CE] 
     h-[60%] top-1/2 -translate-y-1/2;
   }

@@ -14,11 +14,11 @@
 .nav_items > a {
   @apply font-semibold text-[18px] text-dark-blue duration-300 
   h-full flex items-center justify-center px-5 relative z-[1] 
-  hover:text-dark-blue ;
+  hover:text-dark-blue;
 }
 .nav_items > a:hover::after,
 .link_active::after {
-  content: "";
+  content: '';
   @apply w-full h-full absolute opacity-20 z-[-1] duration-300;
   background: linear-gradient(180deg, #0026aa 0%, #30cfff 100%);
 }
@@ -32,10 +32,10 @@
 /* ======================================================================= */
 @media (max-width: 1200px) {
   .nav_items > a {
-@apply text-sm
+    @apply text-sm;
   }
 }
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .nav_items {
     @apply hidden;
   }
