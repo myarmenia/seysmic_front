@@ -17,11 +17,8 @@ const loader = async ({ params: { lang } }) => {
   // const data = await instance.get("/users");
   try {
     const res = await instance.get(`regions?lng=${lang}`);
-    if (res.status === 200) {
-      return res.data.data;
-    } else {
-      return new Error("Somting when wrong");
-    }
+    console.log(res);
+    return res.data.data;
   } catch (error) {
     console.log(error);
   }

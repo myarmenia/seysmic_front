@@ -4,6 +4,7 @@ import instance from "../../api";
 import h1_img from "../../assets/trash/home/h1.svg";
 import img from "../../assets/trash/press-release/press-rel.svg";
 import { SingleBox } from "../../components/main";
+import { QuakeBox } from "../../components/cards";
 
 const expl = {
   title: "Название организации",
@@ -19,9 +20,9 @@ const Component = () => {
   return (
     <SingleBox
       {...single_current_earthquakes}
-      current_earthquake={lastes_current_earthquake}
-      // Item={QuakeBox}
-      // boxes_data={data1}
+      // current_earthquake={lastes_current_earthquake}
+      Item={QuakeBox}
+      boxes_data={lastes_current_earthquake}
       description={single_current_earthquakes.body}
     />
   );

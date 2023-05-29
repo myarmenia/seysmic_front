@@ -3,12 +3,11 @@ import { useLoaderData } from "react-router";
 import instance from "../../api";
 import h1_img from "../../assets/trash/home/h1.svg";
 import img from "../../assets/trash/press-release/press-rel.svg";
+import { PressReleaseBox } from "../../components/cards";
 import {
   // PressReleaseBox,
   SingleBox,
 } from "../../components/main";
-import axios from "axios";
-import { PressReleaseBox } from "../../components/cards";
 
 const expl = {
   title: "Название организации",
@@ -19,17 +18,12 @@ const expl = {
 };
 const Component = () => {
   const item = useLoaderData();
-
-  // const data1 = data.map((el) => ({
-  //   description: el.body.split("").slice(0, 68).join("") + "...",
-  //   to: `/press-release/${el.id}`,
-  //   ...expl,
-  // }));
+  console.log(item);
   return (
     <SingleBox
       {...expl}
       Item={PressReleaseBox}
-      boxes_data={item}
+      // boxes_data={item.video_boxes}
       description={item.body}
       {...item}
     />

@@ -37,7 +37,8 @@ export const Header = () => {
           className={[
             styles.nav_items,
             langAndMenu === "menu" ? styles.open : "",
-          ].join(" ")}>
+          ].join(" ")}
+        >
           <HeaderLink onClick={chooseOption} to={getLang(`/about`)}>
             {language.nav_items.about}
           </HeaderLink>
@@ -90,11 +91,13 @@ const CurrentTime = () => {
   return <span>{time}</span>;
 };
 
-const HeaderLink = (props) => {
+const HeaderLink = ({ className, ...props }) => {
   return (
     <NavLink
       end={true}
-      className={({ isActive }) => (isActive ? styles.link_active : "")}
+      className={({ isActive }) =>
+        `${isActive ? styles.link_active : ""} ${className}`
+      }
       {...props}
     />
   );
