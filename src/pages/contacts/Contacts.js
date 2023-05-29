@@ -89,13 +89,14 @@ const Component = () => {
             <Ul
               className="list-none !list-image-none mt-[25px] [&_li]:m-0 [&_li]:text-lg"
               data={[
-                `${language.map_info.ul.tel}:`,
-                `${language.map_info.ul.address}:`,
-                "Email",
+                [`${language.map_info.ul.tel}:`, phone],
+                [`${language.map_info.ul.address}:`, address],
+                [`Email:`, email],
               ]}
             />
             <SocIcons />
           </div>
+
           <div
             className="rounded-2xl h-[265px] overflow-hidden [&>iframe]:w-full  [&>iframe]:h-full"
             dangerouslySetInnerHTML={{ __html: map_iframe }}>
@@ -118,6 +119,7 @@ const Component = () => {
 const loader = async ({ params: { lang } }) => {
   try {
     const res = await instance.get(`contact-info?lng=${lang}`);
+    console.log(res.data.data);
     return res.data.data;
   } catch (err) {
     console.log(err);

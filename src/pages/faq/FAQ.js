@@ -4,6 +4,7 @@ import postter from "../../assets/faq/poster_faq.jpg";
 import faq from "../../assets/faq/faq.png";
 import arrow from "../../assets/faq/arrow.svg";
 import { useTranslation } from "../../hooks";
+import globus from "../../assets/gif.gif";
 
 export function FAQ({}) {
   const { title, data } = useTranslation().language.FAQ;
@@ -11,7 +12,7 @@ export function FAQ({}) {
   return (
     <div>
       <img
-        src={postter}
+        src={globus}
         className="w-full min-h-[185px] object-cover max-h-[512px]"
         alt=""
       />
