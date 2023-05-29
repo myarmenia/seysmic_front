@@ -37,6 +37,12 @@ export const Preface = () => {
           <br />
           <br />
           {language.preface.part2}
+          <br />
+          <br />
+          {language.preface.part3}
+          <br />
+          <br />
+          {language.preface.part4}
         </p>
       </Container>
       <div className="bg-[#F0F2F5] border-collapse">

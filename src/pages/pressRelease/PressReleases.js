@@ -4,7 +4,7 @@ import instance from "../../api";
 import { PressReleaseBox } from "../../components/cards";
 import { CstmDateInput, SearchInput } from "../../components/forms";
 import { Boxes } from "../../components/main";
-import { convertSearchParamsStr } from "../../helper";
+import { convertSearchParamsStr, getLang } from "../../helper";
 import { useTranslation } from "../../hooks";
 
 const Component = () => {
@@ -32,8 +32,7 @@ const Component = () => {
     <Boxes {...{ count, data }} title={language?.title} Item={PressReleaseBox}>
       <form
         onSubmit={onSubmit}
-        className="flex items-center gap-[32px] justify-center med-900:flex-wrap med-600:flex-col med-600:gap-[16px]"
-      >
+        className="flex items-center gap-[32px] justify-center med-900:flex-wrap med-600:flex-col med-600:gap-[16px]">
         <SearchInput
           inputProps={{
             placeholder: language?.search,
@@ -45,7 +44,10 @@ const Component = () => {
               })),
             name: "search",
           }}
-          clearValue={() => setValues((p) => ({ ...p, search: "" }))}
+          clearValue={() => {
+            setValues((p) => ({ search: "", date_from: "", date_to: "" }));
+            navigate(getLang("/press-release/1"));
+          }}
         />
         <div className="flex items-center gap-2 med-600:w-full">
           <CstmDateInput

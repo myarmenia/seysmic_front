@@ -1,6 +1,7 @@
 import React from "react";
 import classes from "./ul.module.css";
 import { ViewPosition } from "../ViewPosition";
+import { Link } from "react-router-dom";
 
 const Component = ({ children, data, className = "" }) => {
   return (
@@ -15,9 +16,14 @@ const Component = ({ children, data, className = "" }) => {
                     opacity: bool ? 1 : 0,
                     transform: bool ? "translateY(0)" : "translateY(50px)",
                     transitionDelay: `${i / 10}s`,
-                  }}
-                >
-                  {text}
+                  }}>
+                  {!Array.isArray(text) ? (
+                    text
+                  ) : (
+                    <>
+                      {text[0]} <Link>{text[1]}</Link>
+                    </>
+                  )}
                 </Li>
               ))
             : children}

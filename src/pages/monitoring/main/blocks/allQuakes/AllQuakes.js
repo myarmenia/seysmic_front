@@ -127,7 +127,7 @@ const data = generateArray(25, {
 
 export const AllQuakes = () => {
   return (
-    <Container className="py-16 flex flex-col gap-6 med-600:pt-5">
+    <Container className="py-16 flex flex-col gap-6">
       <Title>
         Мониторинг и прогноз землетрясений в ONLine режиме в 2009–2023 гг.
       </Title>
@@ -135,7 +135,7 @@ export const AllQuakes = () => {
         26 землетрясения были успешно спрогнозированы (из них 4 – краткосрочно,
         4* – неточно по одному параметру, 2 прогноза отрицательные)
       </p>
-      <div className="flex flex-col gap-[24px] med-900:gap-4">
+      <div className="flex flex-col gap-[24px] med-900:gap-4 med-600:hidden">
         {data.map((el, i) => (
           <Item {...el} delay={i / 3} key={i} />
         ))}
@@ -180,8 +180,7 @@ const Item = ({ magnitude, title, country, date, delay }) => {
             transform: bool ? "translateY(0)" : "translateY(50px)",
             transitionDelay: delay + "ms",
           }}
-          className={styles.item}
-        >
+          className={styles.item}>
           <div className={styles.magnitude}>{magnitude}</div>
           <div className={styles.wrapper}>
             <div className={styles.title}>{title}</div>

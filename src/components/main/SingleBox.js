@@ -5,6 +5,7 @@ import img_11 from "../../assets/trash/press-release/press-rel.svg";
 import icon1 from "../../assets/main/logo-rounded.svg";
 import { VideoBox } from "../cards";
 import { useParams } from "react-router";
+import { EarthQuakeBox } from "../cards/EarthQuakeBox";
 
 const videos = [
   {
@@ -42,6 +43,7 @@ export const SingleBox = ({
   time,
   title,
   magnitude,
+  current_earthquake,
 }) => {
   const { lang } = useParams();
   const [open, setOpen] = useState(false);
@@ -77,8 +79,7 @@ export const SingleBox = ({
                 {links.map((el, i) => (
                   <li
                     key={i}
-                    className="text-[#1267CB] text-justify text-[20px]"
-                  >
+                    className="text-[#1267CB] text-justify text-[20px]">
                     <a className="underline" href={el} target="_blank">
                       {el}
                     </a>
@@ -91,8 +92,7 @@ export const SingleBox = ({
                 <div
                   key={i}
                   onClick={() => setOpen(true)}
-                  className="h-[184px] "
-                >
+                  className="h-[184px] ">
                   {type === "image" ? (
                     <img src={path} className="h-full cursor-pointer" />
                   ) : (
@@ -105,13 +105,17 @@ export const SingleBox = ({
             </div>
           </div>
           <div className="py-[41px] px-[42px] bg-[#F9F9F9] grid grid-cols-[repeat(auto-fit,_minmax(310px,_1fr))] justify-items-center gap-[28px] med-900:px-[32px] med-600:p-[25px_20px]">
-            {videos.map((el, i) => (
+            {Array.isArray(current_earthquake) &&
+              current_earthquake.map((el) => (
+                <EarthQuakeBox key={el.id} {...el} />
+              ))}
+            {/* {videos.map((el, i) => (
               <VideoBox {...el} key={i} />
-            ))}
+            ))} */}
           </div>
         </div>
       </div>
-      {/* <Carousel {...{ open }} handleClose={() => setOpen(false)}>
+      <Carousel {...{ open }} handleClose={() => setOpen(false)}>
         {files.map(({ type, path }, i) => {
           if (type === "image") {
             return (
@@ -137,7 +141,7 @@ export const SingleBox = ({
             </SwiperSlide>
           );
         })}
-      </Carousel> */}
+      </Carousel>
     </>
   );
 };

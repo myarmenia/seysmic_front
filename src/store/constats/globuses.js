@@ -7,14 +7,14 @@ import { getLang } from "../../helper";
 export const globuses = {
   am: [
     {
-      title: "Համաշխարհային մոնիտորինգ",
+      title: "Գլոբալ մոնիտորինգ",
       src: img1,
       description:
         "Our private company LLC SeiEn was established in October 2022 in Yerevan, Armenia",
       to: getLang("/monitoring/global"),
     },
     {
-      title: "Տարածաշրջանային մոնիտորինգ Հայաստանում",
+      title: "Ռեգիոնալ մոնիտորինգ Հայաստանում",
       src: img2,
       description:
         "Our private company LLC SeiEn was established in October 2022 in Yerevan, Armenia",
@@ -67,21 +67,21 @@ export const globuses = {
   ],
   en: [
     {
-      title: "Global monitoring",
+      title: "Global Monitoring",
       src: img1,
       description:
         "Our private company LLC SeiEn was established in October 2022 in Yerevan, Armenia",
       to: getLang("/monitoring/global"),
     },
     {
-      title: "Regional monitoring in Armenia",
+      title: "Regional Monitoring in Armenia",
       src: img2,
       description:
         "Our private company LLC SeiEn was established in October 2022 in Yerevan, Armenia",
       to: getLang("/monitoring/regional"),
     },
     {
-      title: "Space monitoring",
+      title: "Space Monitoring",
       src: img3,
       description:
         "Our private company LLC SeiEn was established in October 2022 in Yerevan, Armenia",
