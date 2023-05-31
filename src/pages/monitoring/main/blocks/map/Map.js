@@ -14,9 +14,9 @@ export const Map = () => {
         </p>
       </Container>
       <EarthMap className="pointer-events-none" />
-      <Container className="med-600:p-0">
+      {/* <Container className="med-600:p-0">
         <Countries className="med-600:p-0" />
-      </Container>
+      </Container> */}
     </div>
   );
 };

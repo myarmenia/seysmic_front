@@ -14,7 +14,12 @@ import { useAppSubmit, useFormRegister, useTranslation } from "../../hooks";
 import { contacts_shema } from "../../validation";
 import styles from "./contacts.module.css";
 import instance from "../../api";
-import { useActionData, useFormAction, useLoaderData } from "react-router-dom";
+import {
+  Link,
+  useActionData,
+  useFormAction,
+  useLoaderData,
+} from "react-router-dom";
 import { toFormData } from "../../helper";
 // import { ReCAPTCHA } from "react-google-recaptcha";
 
@@ -94,22 +99,27 @@ const Component = () => {
                 [`Email:`, email],
               ]}
             />
-            <SocIcons />
+            {Array.isArray &&
+              links.map(({ link, logo }) => (
+                <div className="flex items-center gap-[10px] [&_a]:duration-300 [&_a]:shrink-0 [&_a:hover]:scale-125">
+                  <Link to={link} target="_blank">
+                    <img alt="link" src={logo} />
+                  </Link>
+                </div>
+              ))}
           </div>
-
-          <div
-            className="rounded-2xl h-[265px] overflow-hidden [&>iframe]:w-full  [&>iframe]:h-full"
-            dangerouslySetInnerHTML={{ __html: map_iframe }}>
-            {/* <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322283!2d106.8195613507864!3d-6.194741395493371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5390917b759%3A0x6b45e67356080477!2sPT%20Kulkul%20Teknologi%20Internasional!5e0!3m2!1sen!2sid!4v1601138221085!5m2!1sen!2sid"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              aria-hidden="false"
-              tabIndex="0"
-              className="w-full h-full"
-              title="map"
-            /> */}
-          </div>
+          {!map_iframe && map_image && (
+            <div className="rounded-2xl h-[265px] overflow-hidden [&>iframe]:w-full  [&>iframe]:h-full">
+              <img alt=" " className="object-fill" src={map_image} />
+            </div>
+          )}
+          {map_iframe && !map_image && (
+            <div
+              className="rounded-2xl h-[265px] overflow-hidden [&>iframe]:w-full  [&>iframe]:h-full"
+              dangerouslySetInnerHTML={{ __html: map_iframe }}>
+              {!map_iframe && map_image && <img alt=" " src="map_image" />}
+            </div>
+          )}
         </div>
       </Container>
     </>
