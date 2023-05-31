@@ -120,7 +120,8 @@ const ChartOptions = {
 
 const data = generateArray(25, {
   magnitude: "M=6.2",
-  title: "42.40 N 13.32 E H=10 км",
+  title: "42.40 N 13.32",
+  subtitle: "E H=10 км",
   country: "Италия (L'Aquila)",
   date: "2009.04.06",
 });
@@ -170,7 +171,7 @@ const MyChart = () => {
   );
 };
 
-const Item = ({ magnitude, title, country, date, delay }) => {
+const Item = ({ magnitude, title, country, date, delay, subtitle }) => {
   return (
     <ViewPosition>
       {(bool) => (
@@ -184,6 +185,7 @@ const Item = ({ magnitude, title, country, date, delay }) => {
           <div className={styles.magnitude}>{magnitude}</div>
           <div className={styles.wrapper}>
             <div className={styles.title}>{title}</div>
+            {subtitle && <div className={styles.title}>{subtitle}</div>}
             <div className={styles.country}>{country}</div>
           </div>
           <div className={styles.date}>{date}</div>

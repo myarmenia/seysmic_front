@@ -9,8 +9,7 @@ export const TitleBorder = ({ title, children, className = "" }) => {
           className={
             "text-[#938E97] leading-[150%] text-[30px] med-600:text-[20px] text-center mx-auto w-fit med-600:leading-[112%] " +
             className
-          }
-        >
+          }>
           {title}
         </p>
       )}
