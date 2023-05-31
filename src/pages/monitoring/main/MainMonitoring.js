@@ -22,6 +22,7 @@ import img1 from "../../../assets/main/monitoring/main/monitoring-img1.png";
 import tableImg1 from "../../../assets/main/monitoring/main/table-imgs/table-img1.svg";
 import { useEffect } from "react";
 import axios from "axios";
+import { useTranslation } from "../../../hooks";
 
 const data = [
   {
@@ -97,44 +98,15 @@ const ul_data = [
 ];
 
 export const MainMonitoring = () => {
-  useEffect(() => {
-    const fetchContacts = async () => {
-      try {
-        const res = await axios.get("http://localhost:3000/api/contacts", {
-          headers: {
-            "Content-Type":
-              "multipart/form-data; application/x-www-form-urlencoded; charset=UTF-8;application/json",
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoibmFtZSIsImVtYWlsIjoibmFtZSIsImlkIjoiNjQ2NjcyMjA1MmQ1MzFhNWFlOWIzMzRhIn0sImlhdCI6MTY4NDQzNjU3MSwiZXhwIjoxNjg0NDM3NDcxfQ.4cSTanQWU7W-jNDu3zNuj6SfEhGDM5GpmaEdP_KZGAI",
-            "Access-Control-Allow-Origin": "http://localhost:3001/",
-          },
-        });
-
-        console.log(res.data);
-        return res.data;
-      } catch (err) {
-        console.log(err);
-      }
-    };
-
-    fetchContacts()
-      .then((e) => {
-        console.log(e);
-      })
-      .catch((e) => {
-        console.log(e);
-      })
-      .finally((e) => {
-        console.log("Finally");
-      });
-  }, []);
+  const { monitoring_and_prediction: language } = useTranslation().language;
+  console.log(language);
   return (
     <>
       <Container className="pb-[50px] py-[var(--py)]">
-        <Title className="mb-4">Мониторинг и Прогноз</Title>
-        <TitleBorder title="Производится на основе: метода сейсмической энтропии (МСЭ), на концепции Сейсмической Системы, которые выявляются в сейсмоопасных регионах с позиций плитовой тектоники" />
+        <Title className="mb-4">{language?.title}</Title>
+        <TitleBorder title={language?.subTitle} />
         <img className="py-5" src={img1} alt="" />
-        <MonitoringTable {...{ data }} />
+        {/* <MonitoringTable {...{ data }} /> */}
         <QuakeSources />
       </Container>
       <div className="relative">
@@ -145,24 +117,20 @@ export const MainMonitoring = () => {
         />
         <Container
           bg="absolute top-0 left-0 w-full h-full"
-          className="h-full flex justify-center items-center"
-        >
+          className="h-full flex justify-center items-center">
           <p className="font-semibold text-[26px] text-white leading-[168.5%] py-3 text-center med-1200:text-[14px]">
-            96% землетрясений на Земле происходят в условиях сжатия в зонах
-            взаимодействия литосферных плит (90% приходятся на Тихоокеанскую
-            плиту и 6% на Средиземноморско-Альпийско-Гималайский пояс). В
-            рифтовых зонах в обстановке растяжения выделяется менее 1%
-            сейсмической энергии Земли.
+            {language?.text}
           </p>
         </Container>
       </div>
-      <NationalScheme />
+
       <Map />
       <CustomUl
-        title="ТОЧНОСТЬ ПРОГНОЗОВ"
-        subtitle="Прогноз по МСЭ производится в рамках заранее оговоренных условий:"
-        data={ul_data}
+        title={language?.forecast_accuracy?.title}
+        subtitle={language?.forecast_accuracy?.subtitlt}
+        data={language?.forecast_accuracy?.data}
       />
+      {/* <NationalScheme /> */}
       <Levels />
       <Describtion />
       <HaitiExample />
