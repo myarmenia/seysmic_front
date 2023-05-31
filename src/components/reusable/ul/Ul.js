@@ -4,6 +4,7 @@ import { ViewPosition } from "../ViewPosition";
 import { Link } from "react-router-dom";
 
 const Component = ({ children, data, className = "" }) => {
+  console.log(data);
   return (
     <ViewPosition>
       {(bool) => (
@@ -18,7 +19,10 @@ const Component = ({ children, data, className = "" }) => {
                     transitionDelay: `${i / 10}s`,
                   }}>
                   {!Array.isArray(text) ? (
-                    <span dangerouslySetInnerHTML={{ __html: text }}></span>
+                    <span
+                      dangerouslySetInnerHTML={{
+                        __html: text,
+                      }}></span>
                   ) : (
                     <>
                       {text[0]} <Link>{text[1]}</Link>
