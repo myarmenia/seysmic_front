@@ -18,9 +18,9 @@ export function ErrorBoundary() {
     }
   }
 
-  setTimeout(() => {
-    navigate(getLang("/home"));
-  }, 5000);
+  // setTimeout(() => {
+  //   navigate(getLang("/home"));
+  // }, 5000);
 
   return (
     <div className="absolute w-full h-full top-0 left-0 bg-black/20 ">

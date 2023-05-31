@@ -1,18 +1,18 @@
 .nav {
-  @apply bg-[#F7F7F7] rounded-[9px] overflow-hidden w-[105px] flex flex-col fixed 
+  @apply bg-[#F7F7F7] rounded-[9px] overflow-hidden w-[99px] flex flex-col fixed 
   top-[20%] right-[24px] z-[1000];
   box-shadow: 0px 1.75494px 4.38734px rgba(0, 0, 0, 0.1);
 }
 .nav_item {
   @apply rounded-[9px] text-dark-blue leading-[10px] text-[8px] duration-300
-  text-center flex flex-col gap-[13px] px-[20px] pt-[9.5px] pb-[6px];
+  text-center flex flex-col items-center justify-center  gap-[8px] px-[20px] pt-[9.5px] pb-[6px];
 }
 .nav_item:hover {
   @apply bg-white;
   box-shadow: 0px 1.75494px 4.38734px rgba(0, 0, 0, 0.1);
 }
 .nav_item span {
-  @apply text-base;
+  @apply text-base text-[12px];
 }
 
 .active {
@@ -23,7 +23,7 @@ div.hidden_nav {
   @apply !hidden;
 }
 .boxes {
-  @apply flex flex-col p-1 gap-5 duration-300 overflow-hidden;
+  @apply flex flex-col p-1  duration-300 overflow-hidden;
 }
 
 @media (max-width: 1000px) {

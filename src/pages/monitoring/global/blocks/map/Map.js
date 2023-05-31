@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Fragment, useRef, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import chevDown from "../../../../../assets/icons/arrow-down-gray.svg";
 import { EarthMap } from "../../../../../components/main";
@@ -8,17 +8,12 @@ import {
   Title,
   TitleBorder,
 } from "../../../../../components/reusable";
-import countries_names from "../../../../../store/constats";
-import styles from "./map.module.css";
-import { Fragment } from "react";
-import { useRef } from "react";
-import { useEffect } from "react";
 import { useTranslation } from "../../../../../hooks";
+import styles from "./map.module.css";
 
 export const Map = () => {
   const { global: language } = useTranslation().language.monitoring;
   const data = useLoaderData();
-  console.log(data);
 
   const [state, setState] = useState(false);
   return (
@@ -48,8 +43,6 @@ export const Map = () => {
 const Countries = () => {
   const [showNum, setShowNum] = useState(0);
   const data = useLoaderData();
-  const dropDowenRef = useRef();
-  console.log(showNum);
   return (
     <Container className="flex flex-col h-[610px] flex-wrap gap-[10px_34px] pb-[60px] pt-3 med-600:h-[990px] med-600:gap-[10px_12px] med-600:px-0 med-600:pb-[32px]">
       {data.map(({ parent_region_name, children, id }, i) => (
@@ -87,11 +80,13 @@ const DropDown = ({ show, items, parent_region_name, ...props }) => {
       </div>
       <div
         style={{ height: show ? ref.current?.offsetHeight + "px" : 0 }}
-        className="shadow-light overflow-hidden z-[10] absolute left-0 top-[calc(100%_+_5px)] duration-300">
+        className="shadow-light overflow-hidden z-[10] absolute left-0 top-[calc(100%_+_5px)] duration-300"
+      >
         <ul
           ref={ref}
           style={{ listStyle: "initial" }}
-          className="px-5 py-3 bg-white flex flex-col gap-[6px]">
+          className="px-5 py-3 bg-white flex flex-col gap-[6px]"
+        >
           {items.map((el, i) => {
             return (
               <li
@@ -99,8 +94,9 @@ const DropDown = ({ show, items, parent_region_name, ...props }) => {
                   styles.country,
                   "ml-[15px] med-600:ml-4 whitespace-nowrap",
                 ].join(" ")}
-                key={i}>
-                <Link to={2}>{el.name}</Link>
+                key={i}
+              >
+                <Link to={"2"}>{el.name}</Link>
               </li>
             );
           })}

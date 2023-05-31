@@ -6,14 +6,17 @@
   @apply flex justify-end gap-[30px] font-semibold text-lg text-white !py-0;
 }
 .navbar {
-  @apply flex items-center justify-between gap-5 h-[83px];
+  @apply flex items-center justify-between gap-5  h-[83px];
 }
+/* .navbar > a {
+  @apply w-[inherit] px-5;
+} */
 .nav_items {
-  @apply flex items-center justify-between w-[65%] h-full;
+  @apply flex items-center justify-between w-[65%]   h-full;
 }
 .nav_items > a {
-  @apply font-semibold text-[18px] text-dark-blue duration-300 
-  h-full flex items-center justify-center px-5 relative z-[1] 
+  @apply font-semibold !text-[15px] text-dark-blue duration-300 text-center  px-5
+  h-full flex items-center justify-center relative z-[1] 
   hover:text-dark-blue;
 }
 .nav_items > a:hover::after,
@@ -27,7 +30,7 @@
   med-1200:gap-3 med-600:gap-2;
 }
 .tools img {
-  @apply cursor-pointer;
+  @apply cursor-pointer w-[21px] h-[25px];
 }
 /* ======================================================================= */
 @media (max-width: 1200px) {
@@ -35,7 +38,7 @@
     @apply text-sm;
   }
 }
-@media (max-width: 1000px) {
+@media (max-width: 1065px) {
   .nav_items {
     @apply hidden;
   }
