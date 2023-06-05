@@ -112,27 +112,27 @@
   animation: mymovell 40s infinite cubic-bezier(0, 0, 0, 0);
 }
 
-#box_img0{
+#box_img0 {
   @apply top-[60px] right-[-60px];
-  background-image: url("../../../assets/main/products/animation/img.svg");
+  background-image: url("../../../assets/main/products/animation/en/dinamic_seismic.svg");
 }
 
 
 #box_img1 {
   @apply top-[200px] right-[-55px];
-  background-image: url("../../../assets/main/products/animation/img2.svg");
+  background-image: url("../../../assets/main/products/animation/en/gaz&oil.svg");
 }
 #box_img2 {
   @apply top-[0px] right-[400px];
-  background-image: url("../../../assets/main/products/animation/img3.svg");
+  background-image: url("../../../assets/main/products/animation/en/insurance.svg");
 }
 #box_img3 {
   @apply top-[-50px] right-[250px];
-  background-image: url("../../../assets/main/products/animation/img4.svg");
+  background-image: url("../../../assets/main/products/animation/en/internet.svg");
 }
 #box_img4 {
   @apply w-[150px] h-[150px] top-[-40px] right-[58px];
-  background-image: url("../../../assets/main/products/animation/img5.svg");
+  background-image: url("../../../assets/main/products/animation/en/mobile.svg");
 }
 /* ------------------- */
 #box_img_second0,
@@ -152,19 +152,19 @@
 }
 #box_img_second0 {
   @apply top-[100px] right-[0px];
-  background-image: url("../../../assets/main/products/animation/img6.svg");
+  background-image: url("../../../assets/main/products/animation/en/dams.svg");
 }
 #box_img_second1 {
   @apply top-[170px] right-[185px];
-  background-image: url("../../../assets/main/products/animation/img7.svg");
+  background-image: url("../../../assets/main/products/animation/en/npp.svg");
 }
 #box_img_second2 {
   @apply top-[117px] right-[354px];
-  background-image: url("../../../assets/main/products/animation/img8.svg");
+  background-image: url("../../../assets/main/products/animation/en/buildings.svg");
 }
 #box_img_second3 {
   @apply top-[-50px] right-[450px];
-  background-image: url("../../../assets/main/products/animation/img9.svg");
+  background-image: url("../../../assets/main/products/animation/en/tsunami.svg");
 }
 @keyframes mymove {
   from {

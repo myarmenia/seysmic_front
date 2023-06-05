@@ -1,25 +1,21 @@
-import React from "react";
-import styles from "./technologiesBlock.module.css";
-import { Container, Title } from "../../../components/reusable";
-import certificate from "../../../assets/main/technologies/certificate.svg";
+import React from 'react';
+import styles from './technologiesBlock.module.css';
+import { Container, Title } from '../../../components/reusable';
+import certificate from '../../../assets/main/technologies/certificate.svg';
+import { useTranslation } from '../../../hooks';
 
 export const AccumulatedExperience = () => {
+  const { technology: language } = useTranslation().language;
+  console.log(language.renewable_energy.title);
   return (
     <>
       <Container
         className="min-h-[425px] flex items-center py-[100px] med-900:py-12"
         bg={styles.accumulated_experience}>
         <div className="flex flex-col gap-[70px] justify-between med-900:gap-12 med-600:gap-5">
-          <Title>Накопленный опыт и апробация</Title>
+          <Title>{language.title_approbation.title}</Title>
           <p className=" text-xl text-justify text-black med-1200:text-sm">
-            В On-Line режиме на сайте www.geoq.ru с 2008 по 2012 гг. было
-            прогнозировано 18 землетрясений. На основе новых разработок к 2023
-            году выявлено более 300 сейсмических систем верхнего энергетического
-            уровня, расположенных на территории более 80 стран мира. КТ
-            разрабатывалась и апробировалась на протяжении 30 лет. С 1988 года
-            были сделаны многочисленные прогнозы землетрясений по всему миру в
-            том числе в Калифорнии, в Италии, в Китае, в Иране, в Турции и
-            Японии.
+            {language.title_approbation.text}
           </p>
         </div>
       </Container>
@@ -28,14 +24,7 @@ export const AccumulatedExperience = () => {
         className="flex flex-col pb-[42px] ">
         <div className="flex gap-[20px] justify-between med-1200:gap-[80px] med-900:flex-col-reverse med-900:gap-[40px] ">
           <p className="w-[50%] text-xl text-justify text-black mt-[92px] med-1200:text-sm med-900:mt-0 med-900:w-full ">
-            По результатам конкурсного отбора, проведенного госкорпорацией
-            "Росатом" 13 декабря 2017 года," Компьютерная технология для
-            прогнозирования ожидаемого сейсмического воздействия и построения
-            динамических карт сейсмической опасности для районов проектирования
-            и размещения АЭС" была включена в Реестр инновационных решений,
-            технологий, продукции, высокотехнологичных услуг в сфере
-            капитального строительства объектов с использованием атомной энергии
-            (см. сертификат Росатома № 002 2017).
+           {language.title_approbation.certeficate}
           </p>
           <img
             src={certificate}
@@ -46,30 +35,30 @@ export const AccumulatedExperience = () => {
       </Container>
       <Container className={styles.accumulated_bottom}>
         <div className={styles.title}>
-          <h2>В области атомной и возобновляемой энергетики</h2>
+          <h2>{language.renewable_energy.title}</h2>
           <p>
-            КТ универсальна и ее можно использовать для прогнозирования
-            сейсмической опасности АЭС и мест расположения основных
-            энергетических объектов и коммуникаций
+          {language.renewable_energy.subTitle}
           </p>
         </div>
-        <div className={styles.accumulated_text}>
-          для On-Line мониторинга, прогноза землетрясений и цунами, для
-          визуализации сейсмической обстановки на площадках действующих и
-          проектируемых АЭС мира.
+        {language.renewable_energy.texts.map((el,i)=>(
+          <div key={i} className={styles.accumulated_text}>
+            {el}
+          </div>
+        ))}
+        {/* <div className={styles.accumulated_text}>
+          для On-Line мониторинга, прогноза землетрясений и цунами, для визуализации сейсмической
+          обстановки на площадках действующих и проектируемых АЭС мира.
         </div>
         <div className={styles.accumulated_text}>
-          для On-Line мониторинга, прогноза землетрясений и цунами, для
-          визуализации сейсмической обстановки на площадках действующих и
-          проектируемых АЭС мира.
+          для On-Line мониторинга, прогноза землетрясений и цунами, для визуализации сейсмической
+          обстановки на площадках действующих и проектируемых АЭС мира.
         </div>
         <div className={styles.accumulated_text}>
-          КТ позволяет создать динамические карты сейсмической опасности для
-          площадок действующих и проектируемых АЭС дополнительно к существующим
-          традиционным картам; внедрить динамический паспорт расчета
-          сейсмических нагрузок на АЭС, на топливно-энергетические сооружения и
+          КТ позволяет создать динамические карты сейсмической опасности для площадок действующих и
+          проектируемых АЭС дополнительно к существующим традиционным картам; внедрить динамический
+          паспорт расчета сейсмических нагрузок на АЭС, на топливно-энергетические сооружения и
           коммуникации.
-        </div>
+        </div> */}
       </Container>
     </>
   );

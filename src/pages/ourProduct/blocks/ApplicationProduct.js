@@ -1,12 +1,29 @@
-import React from "react";
+import React, { useMemo } from 'react';
 
-import { Container, Title } from "../../../components/reusable";
-import styles from "../blocks/product.module.css";
+import { Container, Title } from '../../../components/reusable';
+import stylesru from '../blocks/product.module.css';
+import stylesen from '../blocks/producten.module.css';
+import stylesam from '../blocks/productam.module.css';
+import { useTranslation } from '../../../hooks';
+import { useParams } from 'react-router';
 
 export const ApplicationProduct = () => {
+  const { technology: language } = useTranslation().language;
+  console.log(language.areas_of_application.title);
+  const { lang } = useParams();
+  const styles = useMemo(() => {
+    if (lang === 'ru') {
+      return stylesru;
+    } else if (lang === 'en') {
+      return stylesen;
+    } else if (lang === 'am') {
+      return stylesam;
+    }
+  }, [lang]);
+
   return (
     <Container className="mt-[60px]">
-      <Title>Области применения продукции </Title>
+      <Title>{language.areas_of_application.title}</Title>
       <div className={styles.main}>
         <div>
           <div id={styles.box_img}>
