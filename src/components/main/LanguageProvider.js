@@ -1,12 +1,12 @@
 import React from "react";
-import translation from "../../translation.json";
-// import ru from "../../translation/ru.json";
-// import en from "../../translation/en.json";
-// import am from "../../translation/am.json";
+// import translation from "../../translation.json";
+import ru from "../../translation/ru.json";
+import en from "../../translation/en.json";
+import am from "../../translation/am.json";
 import { useState } from "react";
 import { createContext } from "react";
 
-// const translation = { ru, en, am };
+export const translation = { ru, en, am };
 
 export const Translation = createContext(null);
 
