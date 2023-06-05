@@ -3,30 +3,25 @@ import { useLoaderData, useNavigate } from "react-router";
 import { useFormAction } from "react-router-dom";
 import instance from "../../api";
 import { SearchInput } from "../../components/forms";
-import { Container } from "../../components/reusable";
-import {
-  convertSearchParamsStr,
-  getLang,
-  toFormData,
-  toObject,
-} from "../../helper";
+import { Container, Pagination } from "../../components/reusable";
+import { convertSearchParamsStr, getLang } from "../../helper";
 import { useAppSubmit } from "../../hooks";
 import { Result } from "./Result";
 import styles from "./search.module.css";
 import img from "../../assets/main/logo-light-gray.svg";
-import axios from "axios";
 
 const Id = () => Math.random().toString();
 const linkTo = (type, id) => {
-  if (type === "current_earthquake") {
-    return getLang(`/press-release/release-page/${id}`);
+  if (type === "press_release") {
+    return `/press-release/release-page/${id}`;
   }
   if (type === "current_earthquake") {
-    return getLang(`/press-release/release-page/${id}`);
+    return `/earth-quakes/earth-quake/${id}`;
   }
-  if (type === "current_earthquake") {
-    return getLang(`/press-release/release-page/${id}`);
+  if (type === "map_region_info") {
+    return `/monitoring/global/${id}`;
   }
+  return "/home";
 };
 
 export const Component = () => {
@@ -64,8 +59,8 @@ export const Component = () => {
             onButtonClick={onSubmit}
             clearValue={() => {
               setValue("");
-              const search = convertSearchParamsStr({ search: value });
-              navigate({ pathname: "", search: "?" + search });
+              const search = convertSearchParamsStr({ search: "" });
+              navigate(`../search/1`);
             }}
           />
         </form>
@@ -83,7 +78,7 @@ export const Component = () => {
                 title={title}
                 describtion={description}
                 section="Землетрясения"
-                to="/home"
+                to={linkTo(type, id)}
                 {...{ search }}
               />
             ))
@@ -93,6 +88,11 @@ export const Component = () => {
             </span>
           )}
         </Container>
+        {!!data.length && (
+          <div>
+            <Pagination count={page} linkto={true} />
+          </div>
+        )}
       </div>
     </>
   );
@@ -116,12 +116,12 @@ const loader = async ({ params: { lang, page = 1 }, request }) => {
       const res = await instance.get(
         `smart-search?lng=${lang}&search=&page=${page}`
       );
-      return { data: res.data.data, page: 10 };
+      return { data: res.data.data, page: res.data.cont_page };
     } else {
       const res = await instance.get(
         `smart-search?lng=${lang}&${search}&page=${page}`
       );
-      return { data: res.data.data, page: 10 };
+      return { data: res.data.data, page: res.data.cont_page };
     }
   } catch (err) {
     console.log(err);

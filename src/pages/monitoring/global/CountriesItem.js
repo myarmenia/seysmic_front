@@ -6,7 +6,6 @@ import { useLoaderData } from "react-router";
 
 const Component = () => {
   const data = useLoaderData();
-  console.log(data, 1221);
   return (
     <Container className="py-[var(--py)]">
       <Title>Глобальный мониторинг</Title>
@@ -24,7 +23,6 @@ const Component = () => {
             ></p>
           </div>
         </div>
-        <div></div>
         <img
           src={data?.schema_path}
           alt=""

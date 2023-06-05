@@ -1,8 +1,9 @@
 import React, { useMemo } from "react";
 import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import styles from "./pagination.module.css";
+import { getLang } from "../../../helper";
 
-export const Pagination = ({ count, maxPaginationItems = 7 }) => {
+export const Pagination = ({ count, maxPaginationItems = 7, linkto }) => {
   const { page } = useParams();
   const { search } = useLocation();
   const pageNum = +page;
@@ -22,17 +23,19 @@ export const Pagination = ({ count, maxPaginationItems = 7 }) => {
 
   return (
     <div className={styles.pagination}>
-      <Prev />
+      <Prev linkto={linkto} />
       {my_items.map(({ num, show }, i) => (
         <Item
           {...{ show }}
           active={pageNum === num}
           key={i}
-          to={`../${num}${search}`}>
+          to={
+            linkto ? getLang(`/search/${num}${search}`) : `../${num}${search}`
+          }>
           {num}
         </Item>
       ))}
-      <Next {...{ count }} />
+      <Next {...{ count }} linkto={linkto} />
     </div>
   );
 };
@@ -51,12 +54,16 @@ const Item = ({ to, show, children, active, ...props }) => {
   );
 };
 
-const Prev = () => {
+const Prev = ({ linkto }) => {
   const { page } = useParams();
   const { search } = useLocation();
   const navigate = useNavigate();
+  console.log(linkto, page);
   const prev = () => {
-    if (page !== "1") {
+    if (linkto && page !== "1") {
+      navigate(getLang(`/search/${+page - 1}${search}`));
+    }
+    if (page !== "1" && !linkto) {
       navigate(`../${+page - 1}${search}`);
     }
   };
@@ -72,13 +79,15 @@ const Prev = () => {
     </div>
   );
 };
-const Next = ({ count }) => {
+const Next = ({ count, linkto }) => {
   const { page } = useParams();
   const navigate = useNavigate();
   const { search } = useLocation();
 
   const next = () => {
-    if (+page !== count) {
+    if (linkto && +page !== count) {
+      navigate(getLang(`/search/${+page + 1}${search}`));
+    } else if (+page !== count) {
       navigate(`../${+page + 1}${search}`);
     }
   };
