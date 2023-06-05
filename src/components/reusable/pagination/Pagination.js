@@ -5,7 +5,6 @@ import styles from "./pagination.module.css";
 export const Pagination = ({ count, maxPaginationItems = 7 }) => {
   const { page } = useParams();
   const { search } = useLocation();
-  console.log(useLocation());
   const pageNum = +page;
   const my_items = useMemo(
     () =>

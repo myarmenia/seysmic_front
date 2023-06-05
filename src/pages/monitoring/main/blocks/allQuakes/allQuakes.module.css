@@ -10,7 +10,8 @@
 
 .item {
   box-shadow: 0px 5px 26px rgba(0, 0, 0, 0.15);
-  @apply bg-white w-full text-[26px] text-[#938E97] flex justify-between gap-5 duration-700 med-900:text-[20px];
+  @apply bg-white w-full text-[26px] text-[#938E97] flex gap-5
+  duration-700 med-900:text-[20px];
 }
 .item2 {
   box-shadow: 0px 5px 26px rgba(0, 0, 0, 0.15);
@@ -33,7 +34,7 @@
 .title::before,
 .date::before,
 .country::before {
-  content: '';
+  content: "";
   @apply absolute left-[-16%] border-dashed border-[1px] border-[#CDC9CE] 
   h-[60%] top-1/2 -translate-y-1/2;
 }
@@ -102,7 +103,7 @@
   }
   .magnitude::after,
   .date::after {
-    content: '';
+    content: "";
     border-bottom: 25px solid transparent;
     border-top: 25px solid transparent;
     border-left: 20px solid #f6f0f0;
@@ -118,7 +119,7 @@
   }
   .magnitude::after,
   .date::after {
-    content: '';
+    content: "";
     border-bottom: 25px solid transparent;
     border-top: 25px solid transparent;
     border-left: 20px solid #f6f0f0;
@@ -184,13 +185,13 @@
   .wrapper {
     @apply flex-col [&>*]:py-0 items-start mx-auto w-fit relative;
   }
-  /* .wrapper::before {
-    content: '';
+  .wrapper::before {
+    content: "";
     @apply absolute left-[-8%] border-dashed border-[1px] border-[#CDC9CE] 
     h-[60%] top-1/2 -translate-y-1/2;
-  } */
-  /* .wrapper::after {
-    content: '';
+  }
+  .wrapper::after {
+    content: "";
     @apply absolute right-[-8%] border-dashed border-[1px] border-[#CDC9CE] 
     h-[60%] top-1/2 -translate-y-1/2;
   } */

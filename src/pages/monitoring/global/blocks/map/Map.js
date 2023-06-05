@@ -43,6 +43,7 @@ export const Map = () => {
 const Countries = () => {
   const [showNum, setShowNum] = useState(0);
   const data = useLoaderData();
+  console.log(data);
   return (
     <Container className="flex flex-col h-[610px] flex-wrap gap-[10px_34px] pb-[60px] pt-3 med-600:h-[990px] med-600:gap-[10px_12px] med-600:px-0 med-600:pb-[32px]">
       {data.map(({ parent_region_name, children, id }, i) => (
@@ -54,7 +55,7 @@ const Countries = () => {
               items={children}
             />
           ) : (
-            <Link to={2} className={styles.country}>
+            <Link to={`${id}`} className={styles.country}>
               {parent_region_name}
             </Link>
           )}
@@ -80,13 +81,11 @@ const DropDown = ({ show, items, parent_region_name, ...props }) => {
       </div>
       <div
         style={{ height: show ? ref.current?.offsetHeight + "px" : 0 }}
-        className="shadow-light overflow-hidden z-[10] absolute left-0 top-[calc(100%_+_5px)] duration-300"
-      >
+        className="shadow-light overflow-hidden z-[10] absolute left-0 top-[calc(100%_+_5px)] duration-300">
         <ul
           ref={ref}
           style={{ listStyle: "initial" }}
-          className="px-5 py-3 bg-white flex flex-col gap-[6px]"
-        >
+          className="px-5 py-3 bg-white flex flex-col gap-[6px]">
           {items.map((el, i) => {
             return (
               <li
@@ -94,8 +93,7 @@ const DropDown = ({ show, items, parent_region_name, ...props }) => {
                   styles.country,
                   "ml-[15px] med-600:ml-4 whitespace-nowrap",
                 ].join(" ")}
-                key={i}
-              >
+                key={i}>
                 <Link to={"2"}>{el.name}</Link>
               </li>
             );

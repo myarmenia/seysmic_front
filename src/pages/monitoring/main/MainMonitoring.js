@@ -23,6 +23,7 @@ import tableImg1 from "../../../assets/main/monitoring/main/table-imgs/table-img
 import { useEffect } from "react";
 import axios from "axios";
 import { useTranslation } from "../../../hooks";
+import { AboutCoputerTechologies } from "./blocks/aboutCoputerTechologies/AboutCoputerTechologies";
 
 const data = [
   {
@@ -57,49 +58,8 @@ const data = [
   },
 ];
 
-const ul_data = [
-  <p className="text-[#1A374D]">
-    точность прогноза землетрясений по времени от{" "}
-    <span className="text-[#022FAE] font-bold">6 месяцев до 1 недели</span>, в
-    зависимости от конкретной ситуации;
-  </p>,
-  <p>
-    точность прогноза по магнитуде ± 0.1; большие отклонения по магнитуде
-    оговариваются отдельно;
-  </p>,
-  <p>
-    точность прогноза землетрясения по месту на поверхности Земли и по глубине
-    очага ограничена размерами СС и может достигать размеров очага
-    прогнозируемого землетрясения;
-  </p>,
-  <p>
-    если внутри СС указывается зона ожидания сильного землетрясения, то
-    автоматически в других местах внутри СС сильное землетрясение исключается,
-    т.е. контролируется весь объем СС
-  </p>,
-  <p>
-    элементы СС в ограниченном временном интервале (от 1 до 6 месяцев) могут
-    находиться в неустойчивом состоянии, и если за это время сильное
-    землетрясение не произойдет, то система вновь перейдет в устойчивое
-    состояние
-  </p>,
-  <p>
-    в зависимости от развития сейсмической ситуации результаты прогноза со
-    временем могут изменяться и уточняться. Неустойчивость (прогнозируемое место
-    землетрясения) может мигрировать внутри СС от одной разломной зоны к другой,
-    прогнозируемое время ожидания землетрясения может удаляться или приближаться
-    и соответственно магнитуда ожидаемого землетрясения может изменяться (все
-    это заложено в методе)
-  </p>,
-  <p>
-    точность прогноза по магнитуде ± 0.1; большие отклонения по магнитуде
-    оговариваются отдельно;
-  </p>,
-];
-
 export const MainMonitoring = () => {
   const { monitoring_and_prediction: language } = useTranslation().language;
-  console.log(language);
   return (
     <>
       <Container className="pb-[50px] py-[var(--py)]">
@@ -109,12 +69,17 @@ export const MainMonitoring = () => {
         {/* <MonitoringTable {...{ data }} /> */}
         <QuakeSources />
       </Container>
-      <div className="relative">
-        <img
+      <div
+        className="relative w-full min-h-[247.88px] med-600:object-cover"
+        style={{
+          background:
+            "linear-gradient(269.98deg, #0026AA -1.43%, #1267CB 51.39%, #0026AA 99.98%)",
+        }}>
+        {/* <img
           className="w-full min-h-[247.88px] med-600:object-cover"
           src={bg_img}
           alt=""
-        />
+        /> */}
         <Container
           bg="absolute top-0 left-0 w-full h-full"
           className="h-full flex justify-center items-center">
@@ -125,6 +90,7 @@ export const MainMonitoring = () => {
       </div>
 
       <Map />
+      <AboutCoputerTechologies />
       <CustomUl
         title={language?.forecast_accuracy?.title}
         subtitle={language?.forecast_accuracy?.subtitlt}
@@ -132,7 +98,7 @@ export const MainMonitoring = () => {
       />
       {/* <NationalScheme /> */}
       <Levels />
-      <Describtion />
+      {/* <Describtion /> */}
       <HaitiExample />
       <AllQuakes />
     </>

@@ -10,8 +10,9 @@ import { ScrollRestoration } from "react-router-dom";
 import { getLang } from "../../helper";
 import { Footer, Header, MonitoringNavbar, Spinner } from "../main";
 import { useLengPoint } from "../../hooks/useLengPoint";
+import instance from "../../api";
 
-export const Root = () => {
+const Component = () => {
   const navigate = useNavigate();
   const navigation = useNavigation();
   const { pathname } = useLocation();
@@ -48,3 +49,12 @@ export const Root = () => {
     </>
   );
 };
+const loader = async () => {
+  try {
+    const res = await instance.get(`footer/social-links`);
+    return res.data.data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+export const Root = Object.assign(Component, { loader });

@@ -18,8 +18,7 @@ export const PressReleaseBox = ({
       <div className="flex justify-between gap-5">
         <Link
           to={getLang(`/press-release/release-page/${id}`)}
-          className="flex items-center gap-3"
-        >
+          className="flex items-center gap-3">
           <img className="max-w-[64px]" src={logo} alt="" />
           <div className="flex flex-col gap-[6px]">
             <span className="font-bold text-dark-blue text-[11px]">
@@ -39,8 +38,7 @@ export const PressReleaseBox = ({
       </div>
       <Link
         to={getLang(`/press-release/release-page/${id}`)}
-        dangerouslySetInnerHTML={{ __html: description.slice(0, 70) }}
-      ></Link>
+        dangerouslySetInnerHTML={{ __html: description.slice(0, 70) }}></Link>
       <img className="max-h-[231.18px] w-full h-full" src={image} alt="" />
     </div>
   );

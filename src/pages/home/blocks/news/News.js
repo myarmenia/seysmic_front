@@ -58,8 +58,7 @@ export const News = () => {
             clickable: true,
           }}
           modules={[Pagination, Autoplay]}
-          className="w-full"
-        >
+          className="w-full">
           {news.map((el, i) => (
             <SwiperSlide key={i}>
               <Box {...el} />
@@ -99,8 +98,7 @@ const Box = ({ id, title, description, image, button_text, button_link }) => {
             {/* <span className="text-[10px] my-2">{place}</span> */}
             <p
               className="leading-[170%] text-xs"
-              dangerouslySetInnerHTML={{ __html: description }}
-            ></p>
+              dangerouslySetInnerHTML={{ __html: description }}></p>
           </div>
         </div>
       </div>

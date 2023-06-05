@@ -188,9 +188,9 @@
           "позволяют со временем повышать точность прогнозов, создать компьютерный интеллект."
         ],
         "text2": "Преимущества метода. Метод и функционирование КТ:",
+        "seismic_entropy_method": "Метод сейсмической энтропии позволяет строить математический портрет объема геологической среды - Сейсмической Системы, и, впервые в мировой практике, дает возможность визуализировать весь процесс подготовки сильных землетрясений.",
         "text3": "<b>Накопленный опыт и апробация.</b>В On-Line режиме на сайте www.geoq.ru с 2008 по 2012 гг. было прогнозировано 18 землетрясений. На основе новых разработок к 2023 году выявлено более 350 сейсмических систем верхнего энергетического уровня, расположенных на территории более 80 стран мира. КТ разрабатывалась и апробировалась на протяжении 33 лет. С 1988 года были сделаны многочисленные прогнозы землетрясений по всему миру в том числе в Калифорнии, в Италии, в Китае, в Иране, в Турции и Японии."
       },
-      "seismic_entropy_method": "Метод сейсмической энтропии позволяет строить математический портрет объема геологической среды - Сейсмической Системы, и, впервые в мировой практике, дает возможность визуализировать весь процесс подготовки сильных землетрясений.",
       "forecast_online_mode": {
         "title": "МОНИТОРИНГ И ПРОГНОЗ ЗЕМЛЕТРЯСЕНИЙ В ONLINE РЕЖИМЕ В 2009–2023 ГГ.",
         "subtitle": "26 землетрясения были успешно спрогнозированы (из них 4 – краткосрочно, 4* – неточно по одному параметру, 2 прогноза отрицательные)",
@@ -208,13 +208,6 @@
             "subtitle": "H=26 км ",
             "country": "Япония",
             "date": "2009.08.10"
-          },
-          {
-            "magnitude": "M=6.2",
-            "title": "42.40 N 13.32 E H=10 км",
-            "subtitle": "",
-            "country": "Италия (L'Aquila)",
-            "date": "2009.04.06"
           },
           {
             "magnitude": "М=6.0",
@@ -461,11 +454,120 @@
               }
             }
           },
-          "series": [30, 6, 2],
+          "series": [22, 8, 2],
           "labels": [
             "(94%) – предсказаны",
             "(19%) – предсказаны ретроспективно",
             "(6%) – не прогнозировано"
+          ],
+          "fill": {
+            "type": ["gradient", "pattern", "solid"],
+            "opacity": 1,
+            "pattern": {
+              "strokeWidth": 7,
+              "enabled": true,
+              "style": "verticalLines"
+            },
+            "gradient": {
+              "shadeIntensity": 0.5,
+              "opacityFrom": 1,
+              "opacityTo": 1,
+              "shade": "dark",
+              "type": "horizontal",
+              "inverseColors": true,
+              "gradientToColors": ["#0026AA", "#0F6FE4", "#0026AA"],
+              "stops": [0, 100, 100]
+            }
+          },
+          "legend": {
+            "position": "right",
+            "offsetY": 5,
+            "fontSize": "24px",
+            "labels": {
+              "useSeriesColors": true
+            }
+          },
+          "colors": ["#0F6FE4", "#0026AA", "#41CF77"]
+        },
+        "ChartOptions2": {
+          "chart": {
+            "animations": {
+              "enabled": true,
+              "easing": "easeinout",
+              "speed": 1000,
+              "animateGradually": {
+                "enabled": true,
+                "delay": 200
+              },
+              "dynamicAnimation": {
+                "enabled": true,
+                "speed": 1000
+              }
+            },
+            "type": "donut",
+            "height": 350,
+            "width": 300
+          },
+          "responsive": [
+            {
+              "breakpoint": 600,
+              "options": {
+                "chart": {
+                  "height": "400px",
+                  "width": "100%"
+                },
+                "legend": {
+                  "position": "bottom",
+                  "horizontalAlign": "left"
+                },
+                "plotOptions": {
+                  "pie": {
+                    "donut": {
+                      "labels": {
+                        "value": { "fontSize": "36px", "offsetY": 13 }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "dataLabels": {
+            "enabled": false
+          },
+          "plotOptions": {
+            "pie": {
+              "expandOnClick": false,
+              "dataLabels": {
+                "show": false
+              },
+              "donut": {
+                "size": "80%",
+                "background": "transparent",
+                "labels": {
+                  "show": true,
+                  "value": {
+                    "fontSize": "65px",
+                    "fontWeight": 700,
+                    "color": "#0A1577",
+                    "offsetY": 25
+                  },
+                  "name": {
+                    "show": false
+                  },
+                  "total": {
+                    "show": true,
+                    "showAlways": true
+                  }
+                }
+              }
+            }
+          },
+          "series": [9.12, 2.16, 0.72],
+          "labels": [
+            "(94%) – 26 - предсказаны",
+            "(19%) – 6 - предсказаныz ретроспективно",
+            "(6%) – 2 - не предсказано"
           ],
           "fill": {
             "type": ["gradient", "pattern", "solid"],
@@ -502,6 +604,33 @@
       "title": "НА ГЛОБАЛЬНОЙ КАРТЕ СЕЙСМИЧЕСКОЙ ОПАСНОСТИ",
       "subtitle": "В хронологическом порядке показаны сейсмоопасные регионы, в которых ведется мониторинг и прогноз землетрясений."
     },
+    "monitoring_countries": [
+      {
+        "index": 20,
+        "title": "Европа (20 стран)",
+        "description": "Австрия, Азербайджан, Армения, Болгария, Греция, Грузия, Испания, Италия, Кипр, Молдова, Португалия, Россия, Румыния, Сан Марино, Словения, Турция, Украина, Франция, Хорватия, Швейцария."
+      },
+      {
+        "index": 31,
+        "title": "Азия (31 страна)",
+        "description": "Афганистан, Бангладеш, Бутан, Израиль, Индия, Индонезия, Иордания, Ирак, Иран, Казахстан, Киргизия, Китай, КНДР, Южная Корея, Кувейт, Ливан, Монголия, Мьянма, Непал, Объединенные Арабские Эмираты, Пакистан, Саудовская Аравия, Россия, Сирия, Таджикистан, Тайвань, Тайланд, Туркменистан, Узбекистан, Япония."
+      },
+      {
+        "index": 10,
+        "title": "Африка (10 стран)",
+        "description": "Алжир, Бурунди, ДР Конго, Египет, Замбия, Малави, Марокко, Мозамбик, Танзания, Тунис"
+      },
+      {
+        "index": 13,
+        "title": "Северная Америка(13 стран)",
+        "description": "Белиз, Вирджинские о-ва, Гаити, Гватемала, Гондурас, Доминиканская Республика, Кайманские о-ва, Канада, Куба, Мексика, Пуэрто-Рико, США, Ямайка."
+      },
+      {
+        "index": 6,
+        "title": "Южная Америка (6 стран)",
+        "description": "Аргентина, Боливия, Бразилия, Перу, Чили, Эквадор."
+      }
+    ],
     "about": {
       "title": "Международный Центр",
       "sub_title": "Глобального Мониторинга Сейсмического Риска",
@@ -529,30 +658,7 @@
         }
       ],
       "publications": {
-        "title": "Научные публикации",
-        "sub_title": "За последние 15 лет",
-        "data": [
-          "1. Акопян С.Ц. 2007. Диссипативные сейсмические системы, энтропия и возможности создания системы прогноза «Сейсмической погоды». Альманах «Деловая Слава России», III выпуск, с.42-46.",
-          "2. Akopian, S.Ts., Popov E.A., 2010. Monitoring induced seismicity based on seismic entropy method. Abstracts, Induced seismicity ECGS – FKPE workshop, 15–17 November, Luxembourg, 3–4.",
-          "3. Акопян С.Ц., Рогожин Е.А. 2013. Моделирование кинематики Тавро-Кавказского региона и динамика подготовки сильных землетрясений с М≥7.1. Вопросы инженерной сейсмологии, 40, №2. С. 5–24.",
-          "4. Акопян С.Ц. 2013. Сейсмические системы Японии: энтропия и мониторинг мегаземлетрясения Тохоку 11.03.2011 г. Вопросы инженерной сейсмологии, 40, №4. С. 67–90.",
-          "5. Akopian S.Ts. 2013. Quantitative description of seismic processes in real medium and the algorithm of long-term prediction of large earthquakes: By examples of Armenian Upland, North-Western Iran, Italy, and Central California. Moscow, Triumph, 92.",
-          "6. Akopian S.Ts. & Kocharian A.N. 2013. Critical behavior of seismic systems and dynamics in ensemble of strong earthquakes. Geophys. J. Int.; doi: 10.1093/gji/ggt398 (January 2014) 196 (1): 580-599.",
-          "7. Акопян С.Ц. 2014. Применение метода сейсмической энтропии для решения технологических задач в нефтегазовой отрасли. ROGTEC, 38, 56–63.",
-          "8. Акопян С.Ц. 2015. Энтропийная сейсмология и ее применение при разработке сланцевого газа. Экспозиция Нефть Газ. 6, 45. С. 40–43.",
-          "9. Akopian, S.Ts. 2015. Open dissipative seismic systems and ensembles of strong earthquakes: Energy balance and entropy funnels. Geophys. J. Int. 201, pp. 1618–1641. doi: 10.1093/gji/ggv096/",
-          "10. Акопян С.Ц. 2016. Сейсмические системы, закон производства энтропии и ансамбли сильных землетрясений. Изв. РАН, Физика Земли, 6, С. 1–22.",
-          "11. Акопян С.Ц., Цидилина М.Н., Митюшина Е.С., Гапонова М.В., Гапонова Е.В., Мурынин А.Б., Воронова О.С., Гордо К.А., Смирнов В.М., Тарасова М.А. 2016. Разработка единой системы комплексного мониторинга катастрофических явлений для уменьшения их последствий на основе космических и наземных данных. Отчет о НИР № 16-17-00139 от 14.01.2016 (Российский научный фонд).",
-          "12. Акопян С.Ц., Бондур В.Г., Рогожин Е.А. 2017. Технология мониторинга и прогнозирования сильных землетрясений на территории России с использованием метода сейсмической энтропии. Изв. РАН, Физика Земли, 1. C. 1–20.",
-          "13. Акопян С.Ц. 2017. Энтропия, мониторинг сейсмичности на Армянском нагорье и динамика заполнения Ахурянского водохранилища. Вопросы инженерной сейсмологии. 44, №2. С. 5–14.",
-          "14. Акопян С.Ц. 2017. Энтропийная сейсмология: Нефть и сланец северо-восточного Китая. Neftegaz. RU, 10. C. 20–24.",
-          "15. Akopian S.Ts. 2017. Entropy seismology and the view of cosmology: Seismic formalism and alphabet of evolution. Nat. Ac. of Sci. of RA Electronic Journal of Natural sciences 2017, 1 (28). P.53-73.",
-          "16. Akopian, S.Ts. 2017. Entropic seismology and the view of cosmology: Dark energy, dark matter, and gravitation. Nat. Ac. of Sci. of RA Electronic Journal of Natural sciences, 1(28). P. 74–94.",
-          "17. Акопян С.Ц. 2018. Двойные землетрясения, их природа и прогноз методом сейсмической энтропии. Вопросы инженерной сейсмологии. 45. №2. С. 43–56.",
-          "18. Акопян С.Ц. 2018. Анализ уральского землетрясения 4 сентября 2018 на основе метода сейсмической энтропии. Вопросы инженерной сейсмологии. 55. №4. С. 37-46.",
-          "19. Акопян С.Ц. 2020. Выявление особенностей сильного землетрясения на востоке от Курильских островов от 25 марта 2020 на основе метода сейсмической энтропии. Вопросы инженерной сейсмологии. 47. №2. С. 5–18.",
-          "20. Akopian S.Ts. 2023. “Entropy, Seismology, and the View of Cosmology: Origin and Evolutionary Theory. Cambridge Scholars Publishing, London. 432."
-        ]
+        "title": "Научные публикации"
       },
       "results": {
         "title": "Основные научные результаты",
@@ -563,6 +669,35 @@
           "В области добычи нефти и газа, индуцированной сейсмичности (2013-2019)",
           "В области оценки сейсмического воздействия на здания и сооружения (1988–1994)",
           "В области энтропийной сейсмологии и космологии (2013–2023)"
+        ]
+      },
+      "national_shema": {
+        "title": "ПЛАН ОТКРЫТИЯ ГЛОБАЛЬНЫХ И РЕГИОНАЛЬНЫХ ЦЕНТРОВ",
+        "data": [
+          {
+            "title": "Глобальный и Ближневосточный",
+            "describtion": "С Центром в Армении (Ереван) функционирует"
+          },
+          {
+            "title": "Азиатский",
+            "describtion": "С центром в Китае (Пекин) ведутся переговоры"
+          },
+          {
+            "title": "Евроазиатский (РФ)",
+            "describtion": "Центр мониторинга в России (Москва) функционирует"
+          },
+          {
+            "title": "Страны BRICS",
+            "describtion": "Центр мониторинга в России (Москва) функционирует"
+          },
+          {
+            "title": "Средиземноморский",
+            "describtion": "С Центром на Мальте открыт"
+          },
+          {
+            "title": "Американский",
+            "describtion": "С центром в Коста-Рика планируется"
+          }
         ]
       }
     },
@@ -797,262 +932,212 @@
       }
     },
     "monitoring_and_prediction": {
-      "title": "МОНИТОРИНГ И ПРОГНОЗ",
-      "subTitle": "Производится на основе: метода сейсмической энтропии (МСЭ), на концепции Сейсмической Системы, которые выявляются в сейсмоопасных регионах с позиций плитовой тектоники",
+      "title": "Monitoring and Prediction",
+      "subTitle": "Produced on the basis of the method of seismic entropy (MSE), on the concept of the Seismic System, which are identified in seismic regions from the positions of plate tectonics.",
       "movements_at_the_borders": {
-        "title": "ХАРАКТЕРНЫЕ ДВИЖЕНИЯ НА ГРАНИЦАХ ПЛИТ",
-        "data": [
-          {
-            "index": "A",
-            "title": "Сброс"
-          },
-          {
-            "index": "B",
-            "title": "Надвиг-Подвиг"
-          },
-          {
-            "index": "c",
-            "title": "Сдвиг"
-          },
-          {
-            "index": "D",
-            "title": "Сбросо-сдвиг"
-          }
-        ],
-        "subtitle": "Основные типы А, В, С, D границ плит и характерные фокальные механизмы очагов землетрясений"
+        "title": "World map of lithospheric plates (USGS)",
+        "subtitle": "Basic types of plate boundaries A, B, C, D, and the characteristic focal mechanisms of earthquake sources."
       },
-      "text": "96% землетрясений на Земле происходят в условиях сжатия в зонах взаимодействия литосферных плит (90% приходятся на Тихоокеанскую плиту и 6% на Средиземноморско-Альпийско-Гималайский пояс). В рифтовых зонах в обстановке растяжения выделяется менее 1% сейсмической энергии Земли.",
+      "text": "96% of earthquakes on Earth occur under conditions of compression in the zones of interaction of lithospheric plates (90% occur on the Pacific plate and 6% on the Mediterranean-Alpine-Himalayan belt). In rift zones, less than 1% of the Earth's seismic energy is released in an extensional setting.",
       "forecast_accuracy": {
-        "title": "ТОЧНОСТЬ ПРОГНОЗОВ",
-        "subtitlt": "Прогноз по МСЭ производится в рамках заранее оговоренных условий:",
+        "title": "FORECAST ACCURACY",
+        "subtitlt": "The forecast by the MSE is made within the framework of predetermined conditions:",
         "data": [
-          "<p class='text-[#1A374D]'>точность прогноза землетрясений по времени от <span class='text-[#022FAE] font-bold'>6 месяцев до 1 недели</span>, в зависимости от конкретной ситуации;</p>",
-          "<p class='text-[#1A374D]'>точность прогноза <span class='text-[#022FAE] font-bold'>по магнитуде ± 0.1M</span>; большие отклонения по магнитуде оговариваются отдельно;</p>",
-          "<p class='text-[#1A374D]'>точность прогноза землетрясения <span class='text-[#022FAE] font-bold'>по месту</span> на поверхности Земли и по глубине очага ограничена размерами сейсмической системы <span className='text-[#022FAE] font-bold'>(контуром на поверхности и глубиной)</span>, а внутри сейсмической системы может достигать размеров очага прогнозируемого землетрясения в зависимости от ее магнитуды;</p>",
-          "<p class='text-[#1A374D]'>если внутри сейсмической системы указывается зона ожидания сильного землетрясения, то автоматически в других местах внутри сейсмической системы сильное землетрясение исключается, т.е. <span class='text-[#022FAE] font-bold'>контролируется весь объем сейсмической системы</span>;</p>",
-          "<p class='text-[#1A374D]'>в зависимости от развития сейсмической ситуации (от будущих землетрясений-индикаторов), <span class='text-[#022FAE] font-bold'>результаты прогноза со временем могут изменяться и уточняться</span>. Неустойчивость (прогнозируемое место землетрясения) может мигрировать внутри сейсмической системы от одной разломной зоны к другой, прогнозируемое время ожидания землетрясения может удаляться или приближаться и соответственно магнитуда ожидаемого землетрясения может изменяться (все это заложено в методе);</p>",
-          "<p class='text-[#1A374D]'>в зависимости от изученности региона и данных о землетрясениях, сейсмические системы подразделяются на <span class='text-[#022FAE] font-bold'>четыре уровня - надежные, хорошо определенные, посредственные и плохо определенные</span>, соответственно и подразделяется качество прогноза в них.</p>",
-          "<p class='text-[#1A374D]'>точность прогноза по магнитуде <span class='text-[#022FAE] font-bold'>± 0.1M</span>; большие отклонения по магнитуде оговариваются отдельно;</p>"
+          "<p class='text-[#1A374D]'>The accuracy of earthquake prediction in time from <span class='text-[#022FAE] font-bold'>6 months to 1 week</span> depending on the specific situation.</p>",
+          "<p class='text-[#1A374D]'>The accuracy of the forecast <span class='text-[#022FAE] font-bold'>in magnitude of ± 0.1</span>; large deviations are specified separately.</p>",
+          "<p class='text-[#1A374D]'>The accuracy of <span class='text-[#022FAE] font-bold'> earthquake prediction</span> at <span class='text-[#022FAE] font-bold'>the place on the surface</span> and at the depth of sources is limited by the size of the SS and can reach the size of the predicted earthquake.</p>",
+          "<p class='text-[#1A374D]'>If a strong earthquake waiting area is indicated within the SS, then a strong earthquake is automatically excluded in other places within the SS, i.e.,  <span class='text-[#022FAE] font-bold'>the entire volume of the SS is controlled</span>.</p>",
+          "<p class='text-[#1A374D]'>Depending on the development of the seismic situation, the <span class='text-[#022FAE] font-bold'>forecast results may change and be refined over time</span>.</p>",
+          "<p class='text-[#1A374D]'>Instability area (predicted earthquake location) can migrate within the SS from one fault zone to another, the predicted earthquake time can move away or approach and, accordingly, the magnitude of the expected earthquake can change <span class='text-[#022FAE] font-bold'>(all this is placed in the method)</span>.</p>",
+          "<p class='text-[#1A374D]'> Elements of the SS in a limited time interval <span class='text-[#022FAE] font-bold'>(from 1 to 6 months)</span> can be in an unstable state, and if during this time a strong earthquake does not occur, the system will again return to a steady state.</p>"
         ]
       },
       "forecast_are_divided": {
-        "title": "СС ПО НАДЕЖНОСТИ ПРОГНОЗОВ ПОДРАЗДЕЛЯЮТСЯ НА ЧЕТЫРЕ УРОВНЯ",
-        "text": "ПОСЛЕ КАЖДОГО СИЛЬНОГО ЗЕМЛЕТРЯСЕНИЯ КАЧЕСТВО ПРОГНОЗА УЛУЧШАЕТСЯ И СО ВРЕМЕНЕМ ВСЕ СС ПЕРЕЙДУТ НА ПЕРВЫЙ УРОВЕНЬ НАДЕЖНОСТИ."
+        "title": "FORECAST ACCURACY",
+        "text": "The forecast by the MSE is made within the framework of predetermined conditions:"
       },
       "ITU": {
-        "title": "КОМПЬЮТЕРНАЯ ТЕХНОЛОГИЯ (КТ) ДЛЯ ГЛОБАЛЬНОГО МОНИТОРИНГА СЕЙСМИЧНОСТИ, ПРОГНОЗИРОВАНИЯ ИНТЕНСИВНОСТИ ОЖИДАЕМОГО СЕЙСМИЧЕСКОГО ВОЗДЕЙСТВИЯ И ПОСТРОЕНИЯ ДИНАМИЧЕСКИХ КАРТ СЕЙСМИЧЕСКОЙ ОПАСНОСТИ ОСНОВАНА НА МСЭ",
-        "text": "<b> Метод, лежащий в основе КТ, основан:</b> на введении новых физических параметров, рассчитываемых на основе сейсмостатистики; на концепции сейсмической системы (СС), в рамках которых сформулирован новый закон – закон производства сейсмической энтропии. Ретроспективный анализ показывает, что из 750 исторических сильных землетрясений 96% подчиняются новому закону. Новые закономерности позволяют: устойчиво следить за развитием сейсмической неустойчивости во времени и пространстве; прогнозировать место, время и силу; исключать землетрясения на 97% от всего времени подготовки; делать мониторинг и оценить возможный сценарий развития сейсмичности; контролировать триггерную и техногенную сейсмичность; рассчитывать динамические карты сейсмической опасности; информировать о подготовке сильных землетрясений, цунами и возможных последствиях.",
+        "title": "Computer technology (CT) for global monitoring of seismicity, forecasting the intensity of the expected earthquake and the construction dynamic maps of seismic hazard based on the MSE",
+        "text": "<b>The method underlying CT </b>is based on the introduction of new physical parameters calculated on the basis of seismic statistics; on the concept of a seismic system (SS), within which a new law – the law of seismic entropy production is formulated. A retrospective analysis shows that out of 750 historical strong earthquakes, 96% are subject to the new law. The new regularities make it possible to: steadily monitor the development of seismic instability in time and space; predict place, time, and force; eliminate earthquakes by 97% of the total preparation time; to monitor and evaluate a possible scenario for the development of seismicity; control trigger and technogenic seismicity; calculate dynamic seismic hazard maps; inform about the preparation of strong earthquakes, tsunamis and possible consequences.",
         "data": [
-          "не требуют создания новых сетей наблюдений;",
-          "позволяют контролировать как сушу, так и морское дно на всех этапах подготовки землетрясений;",
-          "позволяют поднять эффективность уже существующих методов прогноза землетрясений;",
-          "позволяют контролировать техногенную сейсмичность;",
-          "позволяют строить динамические карты сейсмической опасности и усовершенствовать строительные нормы и правила;",
-          "параметры мониторинга устойчивы, надежны, для их расчета накоплена большая информация по всему миру;",
-          "параметры мониторинга рассчитываются (On-Line) на основе данных глобальных и локальных сейсмологических сетей;",
-          "позволяют визуализировать процесс подготовки сильных землетрясений;",
-          "позволяют со временем повышать точность прогнозов, создать компьютерный интеллект."
+          "do not require the creation of new observation networks;",
+          "allow to control both the land and the seabed at all stages of earthquake preparation;",
+          "allow to increase the efficiency of existing methods of earthquake prediction;",
+          "allow to control technogenic seismicity;",
+          "allow to build dynamic maps of seismic hazard and improve the construction standards;",
+          "monitoring parameters are stable, reliable, for their calculation a lot of information has been accumulated around the world;",
+          "monitoring parameters are calculated (On-Line) based on data from global and local seismological networks;",
+          "allow to visualize the process of preparation of strong earthquakes;",
+          "allow over time to improve the accuracy of forecasts, to create computer “intelligence”."
         ],
-        "text2": "Преимущества метода. Метод и функционирование КТ:",
-        "text3": "<b>Накопленный опыт и апробация.</b>В On-Line режиме на сайте www.geoq.ru с 2008 по 2012 гг. было прогнозировано 18 землетрясений. На основе новых разработок к 2023 году выявлено более 350 сейсмических систем верхнего энергетического уровня, расположенных на территории более 80 стран мира. КТ разрабатывалась и апробировалась на протяжении 33 лет. С 1988 года были сделаны многочисленные прогнозы землетрясений по всему миру в том числе в Калифорнии, в Италии, в Китае, в Иране, в Турции и Японии."
+        "text2": "Advantages of the method:",
+        "text3": "<b>Accumulated experience and approbation.</b> In On-Line mode on the site www.geoq.ru from 2008 to 2012, 18 earthquakes were predicted. Based on new developments, by 2023 more than 345 seismic systems of the upper energy level have been identified, located on the territory of more than 80 countries of the world. CT has been developed and tested for 35 years. Since 1988, numerous earthquake predictions have been made around the world including California, Italy, China, Iran, Turkey, and Japan.",
+        "seismic_entropy_method": "In the field of nuclear and renewable energy. CT is universal and can be used to predict the seismic hazard of NPPs and the locations of the main energy facilities and communications for On-Line monitoring, earthquake and tsunami forecasting, for visualization of the seismic situation at the sites of existing and planned NPPs in the world. for On-Line monitoring and forecasting the occurrence of dangerous changes of a natural and man-made nature for fuel and energy facilities and communications. CT makes it possible to create dynamic maps of seismic hazard for the sites of existing and planned NPPs in addition to existing traditional maps; introduce a dynamic passport for calculating seismic loads at NPPs, fuel and energy facilities and communications."
       },
-      "seismic_entropy_method": "Метод сейсмической энтропии позволяет строить математический портрет объема геологической среды - Сейсмической Системы, и, впервые в мировой практике, дает возможность визуализировать весь процесс подготовки сильных землетрясений.",
       "forecast_online_mode": {
-        "title": "МОНИТОРИНГ И ПРОГНОЗ ЗЕМЛЕТРЯСЕНИЙ В ONLINE РЕЖИМЕ В 2009–2023 ГГ.",
-        "subtitle": "26 землетрясения были успешно спрогнозированы (из них 4 – краткосрочно, 4* – неточно по одному параметру, 2 прогноза отрицательные)",
+        "title": "Monitoring and prediction of earthquakes in ON Line mode in 2009–2023",
+        "subtitle": "26 earthquakes were successfully predicted (of which 4 are short-term, 4* are inaccurate in one parameter, 2 forecasts are negative)",
         "data": [
           {
             "magnitude": "M=6.2",
-            "title": "42.40 N 13.32 E ",
-            "subtitle": "H=10 км",
-            "country": "Италия (L'Aquila)",
+            "title": "42.40 N 13.32 E H=10 km",
+            "country": "Italy (L'Aquila)",
             "date": "2009.04.06"
           },
           {
             "magnitude": "М=6.6",
-            "title": "34.74 N 138.22 E",
-            "subtitle": "H=26 км ",
-            "country": "Япония",
+            "title": "34.74 N 138.22 E H=26 km",
+            "country": "Japan",
             "date": "2009.08.10"
           },
           {
-            "magnitude": "M=6.2",
-            "title": "42.40 N 13.32 E H=10 км",
-            "subtitle": "",
-            "country": "Италия (L'Aquila)",
-            "date": "2009.04.06"
-          },
-          {
             "magnitude": "М=6.0",
-            "title": "438.88 N 39.97 E ",
-            "subtitle": "H=10 км",
-            "country": "Восточная Турция",
+            "title": "438.88 N 39.97 E H=10 km",
+            "country": "*Eastern Turkey",
             "date": "2010.03.08"
           },
           {
             "magnitude": "M=6.6",
-            "title": "13.61 N 92.88 W  ",
-            "subtitle": "H=42 км",
-            "country": "Андаманские о-ва, Индия",
+            "title": "13.61 N 92.88 W  H=42 km",
+            "country": "Andaman Islands, India",
             "date": "2010.03.30"
           },
           {
             "magnitude": "М=7.3",
-            "title": "03.77 N 96.05 W",
-            "subtitle": "H=60 км",
-            "country": "Суматра",
+            "title": "03.77 N 96.05 W H=60 km",
+            "country": "Sumatra",
             "date": "2010.05.09"
           },
           {
             "magnitude": "M=5.9",
-            "title": "55.92 N 162.14 E",
-            "subtitle": "H=10 км",
-            "country": "Камчатка (РФ)",
+            "title": "55.92 N 162.14 E H=10 km",
+            "country": "*Kamchatka (RF)",
             "date": "2011.02.20"
           },
           {
             "magnitude": "M=7.5",
-            "title": "38.42 N 142.84 E",
-            "subtitle": "H=32 км",
-            "country": "Япония",
+            "title": "38.42 N 142.84 E H=32 km",
+            "country": "Japan",
             "date": "2011.03.09"
           },
           {
             "magnitude": "M=9.0",
-            "title": "38.32 N 142.37 E",
-            "subtitle": "H=32 км",
-            "country": "Япония! (Tohoku)",
+            "title": "38.32 N 142.37 E H=32 km",
+            "country": "Japan! (Tohoku)",
             "date": "2011.03.11"
           },
           {
             "magnitude": "M=7.2",
-            "title": "20.71 N 99.95 E",
-            "subtitle": "H=10 км",
-            "country": "Мьянма",
+            "title": "20.71 N 99.95 E H=10 km",
+            "country": "Myanmar",
             "date": "2011.03.24"
           },
           {
             "magnitude": "M=7.3",
-            "title": "38.63 N 43.49 E",
-            "subtitle": "H=20 км",
-            "country": "Восточная Турция",
+            "title": "38.63 N 43.49 E H=20 km",
+            "country": "Eastern Turkey",
             "date": "2011.10.23"
           },
           {
             "magnitude": "M=6.9",
-            "title": "14.46 S 75.99 W",
-            "subtitle": "H=35 км",
-            "country": "Перу",
+            "title": "14.46 S 75.99 W H=35 km",
+            "country": "Peru",
             "date": "2011.10.28"
           },
           {
             "magnitude": "M=6.7",
-            "title": "51.84 N 95.85 E",
-            "subtitle": "H=06 км *",
-            "country": "Тува (РФ)",
+            "title": "51.84 N 95.85 E H=06 km *",
+            "country": "* Tuva (RF)",
             "date": "2011.12.27"
           },
           {
             "magnitude": "M=6.6",
-            "title": "49.30 N 155.49 E",
-            "subtitle": "H=70 км",
-            "country": "Камчатка",
+            "title": "49.30 N 155.49 E H=70 km",
+            "country": "Kamchatka",
             "date": "2012.11.16"
           },
           {
             "magnitude": "M=4.9",
-            "title": "44.97 N 37.58 E",
-            "subtitle": "H=10 км",
-            "country": "Анапа!",
+            "title": "44.97 N 37.58 E H=10 km",
+            "country": "Anapa!",
             "date": "2012.12.10"
           },
           {
             "magnitude": "M=6.9",
-            "title": "50.93 N 57.34 E",
-            "subtitle": "H=52 км",
-            "country": "Курильские о-ва",
+            "title": "50.93 N 57.34 E H=52 km",
+            "country": "Kuril Islands",
             "date": "2013.02.28"
           },
           {
             "magnitude": "M=6.2",
-            "title": "28.50 N 51.59 E",
-            "subtitle": "H=10 км",
-            "country": "Иран",
+            "title": "28.50 N 51.59 E H=10 km",
+            "country": "Iran",
             "date": "2013.04.09"
           },
           {
             "magnitude": "M=6.0",
-            "title": "52.28 N 160.09 E",
-            "subtitle": "H=15 км",
-            "country": "В. Камчатка",
+            "title": "52.28 N 160.09 E H=15 km",
+            "country": "E of Kamchatka",
             "date": "2013.05.19"
           },
           {
             "magnitude": "M=8.2",
-            "title": "54.92 N 153.30 E",
-            "subtitle": "H=598 км",
-            "country": "З. Камчатка ",
+            "title": "54.92 N 153.30 E H=598 km",
+            "country": "W of Kamchatka!",
             "date": "2013.05.24"
           },
           {
             "magnitude": "M=7.7",
-            "title": "27.00 N 65.51 E",
-            "subtitle": "H=20 км",
-            "country": "Пакистан, Белуджистан",
+            "title": "27.00 N 65.51 E H=20 km",
+            "subtitle": "",
+            "country": "Pakistan, Balochistan",
             "date": "2013.09.24"
           },
           {
             "magnitude": "M=5.0",
             "title": "(-) прогноз - Не опасно Район",
-            "subtitle": "",
-            "country": "Большого Сочи (Олимпиада)",
+            "country": "Great Sochi area (Olympic Games)",
             "date": "2014.02.03"
           },
           {
             "magnitude": "M=6.4",
-            "title": "38.22 N 122.31 W",
-            "subtitle": "H=12 км",
-            "country": "Ц. Калифорния (SW Napa)",
+            "title": "38.22 N 122.31 W H=12 km",
+            "country": "C. California (SW Napa)",
             "date": "2014.08.24"
           },
           {
             "magnitude": "M=7.0",
-            "title": "32.78 N 130.73 E",
-            "subtitle": "H=10 км",
-            "country": "Япония, Кюсю!",
+            "title": "32.78 N 130.73 E H=10 km",
+            "country": "Japan, Kyushu!",
             "date": "2016.04.15"
           },
 
           {
             "magnitude": "M=6.5",
-            "title": "42.85 N 13.09 E",
-            "subtitle": "H=10 км",
-            "country": "Ц. Италия!",
+            "title": "42.85 N 13.09 E H=10 km",
+            "country": "C. Italy!",
             "date": "2016.10.30"
           },
           {
             "magnitude": "M=7.3",
-            "title": "34.89 N 45.94 E",
-            "subtitle": "H=23 км *",
-            "country": "Иран-Ирак гр.",
+            "title": "34.89 N 45.94 E H=23 km",
+            "country": "*  Iran-Iraq border",
             "date": "2017.11.12"
           },
           {
             "magnitude": "M=7.5",
-            "title": "34.58 N 98.36 E",
-            "subtitle": "H=10 км",
-            "country": "Тибет (Китай)",
+            "title": "34.58 N 98.36 E H=10 km",
+            "country": "Tibet (China)",
             "date": "2021.05.21"
           },
           {
             "magnitude": "M=7.3",
-            "title": "23.16 N 121.32 E",
-            "subtitle": "H=10 км",
-            "country": "Тайвань",
+            "title": "23.16 N 121.32 E H=10 km",
+            "country": "Taiwan",
             "date": "2022.09.18"
           }
         ],
-        "text": "Еще 6 спрогнозированы ретроспективно, поскольку произошли в новых СС (100%). Не прогнозированы 2 двойных землетрясения, 4 тревоги пропуска цели.",
+        "text": "Another 6 were predicted retrospectively because they occurred in the new SS (100%). 2 double earthquakes, 4 target miss alarms are not predicted.",
         "ChartOptions": {
           "chart": {
             "animations": {
@@ -1127,11 +1212,120 @@
               }
             }
           },
-          "series": [30, 6, 2],
+          "series": [22, 8, 2],
           "labels": [
-            "(94%) – предсказаны",
-            "(19%) – предсказаны ретроспективно",
-            "(6%) – не прогнозировано"
+            "(94%) – out of 32 strong earthquakes: 30 were predicted ",
+            "(19%) – ncluding 6  were predicted retrospectively",
+            "(6%) – were not predicted."
+          ],
+          "fill": {
+            "type": ["gradient", "pattern", "solid"],
+            "opacity": 1,
+            "pattern": {
+              "strokeWidth": 7,
+              "enabled": true,
+              "style": "verticalLines"
+            },
+            "gradient": {
+              "shadeIntensity": 0.5,
+              "opacityFrom": 1,
+              "opacityTo": 1,
+              "shade": "dark",
+              "type": "horizontal",
+              "inverseColors": true,
+              "gradientToColors": ["#0026AA", "#0F6FE4", "#0026AA"],
+              "stops": [0, 100, 100]
+            }
+          },
+          "legend": {
+            "position": "right",
+            "offsetY": 5,
+            "fontSize": "24px",
+            "labels": {
+              "useSeriesColors": true
+            }
+          },
+          "colors": ["#0F6FE4", "#0026AA", "#41CF77"]
+        },
+        "ChartOptions2": {
+          "chart": {
+            "animations": {
+              "enabled": true,
+              "easing": "easeinout",
+              "speed": 1000,
+              "animateGradually": {
+                "enabled": true,
+                "delay": 200
+              },
+              "dynamicAnimation": {
+                "enabled": true,
+                "speed": 1000
+              }
+            },
+            "type": "donut",
+            "height": 350,
+            "width": 300
+          },
+          "responsive": [
+            {
+              "breakpoint": 600,
+              "options": {
+                "chart": {
+                  "height": "400px",
+                  "width": "100%"
+                },
+                "legend": {
+                  "position": "bottom",
+                  "horizontalAlign": "left"
+                },
+                "plotOptions": {
+                  "pie": {
+                    "donut": {
+                      "labels": {
+                        "value": { "fontSize": "36px", "offsetY": 13 }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "dataLabels": {
+            "enabled": false
+          },
+          "plotOptions": {
+            "pie": {
+              "expandOnClick": false,
+              "dataLabels": {
+                "show": false
+              },
+              "donut": {
+                "size": "80%",
+                "background": "transparent",
+                "labels": {
+                  "show": true,
+                  "value": {
+                    "fontSize": "65px",
+                    "fontWeight": 700,
+                    "color": "#0A1577",
+                    "offsetY": 25
+                  },
+                  "name": {
+                    "show": false
+                  },
+                  "total": {
+                    "show": true,
+                    "showAlways": true
+                  }
+                }
+              }
+            }
+          },
+          "series": [9.12, 2.16, 0.72],
+          "labels": [
+            "(94%) – 26 - предсказаны",
+            "(19%) – 6 - предсказаныz ретроспективно",
+            "(6%) – 2 - не предсказано"
           ],
           "fill": {
             "type": ["gradient", "pattern", "solid"],
@@ -1164,6 +1358,37 @@
         }
       }
     },
+    "map": {
+      "title": "THE GLOBAL SEISMIC HAZARD MAP",
+      "subtitle": "In chronological order seismically hazardous regions are shown in which earthquake monitoring and forecasting is carried out."
+    },
+    "monitoring_countries": [
+      {
+        "index": 20,
+        "title": "Europe (20 countries)",
+        "description": "Austria, Azerbaijan, Armenia, Bulgaria, Greece, Georgia, Spain, Italy, Cyprus, Moldova, Portugal, Russia, Romania, San Marino, Slovenia, Turkey, Ukraine, France, Croatia, Switzerland"
+      },
+      {
+        "index": 31,
+        "title": "Asia (31 countries)",
+        "description": "Afghanistan, Bangladesh, Bhutan, Israel, India, Indonesia, Jordan, Iraq, Iran, Kazakhstan, Kyrgyzstan, China, North Korea, South Korea, Kuwait, Lebanon, Mongolia, Myanmar, Nepal, United Arab Emirates, Pakistan, Saudi Arabia, Russia, Syria, Tajikistan, Taiwan, Thailand, Turkmenistan, Uzbekistan, Japan"
+      },
+      {
+        "index": 10,
+        "title": "Africa (10 countries)",
+        "description": "Algeria, Burundi, DR Congo, Egypt, Zambia, Malawi, Morocco, Mozambique, Tanzania, Tunisia"
+      },
+      {
+        "index": 13,
+        "title": "North America(13 countries)",
+        "description": "Belize, Virgin Islands, Haiti, Guatemala, Honduras, Dominican Republic, Cayman Islands, Canada, Cuba, Mexico, Puerto Rico, USA, Jamaica."
+      },
+      {
+        "index": 6,
+        "title": "South America (6 countries)",
+        "description": "Argentina, Bolivia, Brazil, Peru, Chile, Ecuador."
+      }
+    ],
     "about": {
       "title": "International Center",
       "sub_title": "of the Seismic Risk Global Monitoring ",
@@ -1192,29 +1417,7 @@
       ],
       "publications": {
         "title": "Scientific publications",
-        "sub_title": "over the past 15 years",
-        "data": [
-          "1. Akopian S.Ts. 2007. Dissipative seismic systems, entropy and the possibility of creating a \"Seismic weather\" forecast system. Almanac \"Business Glory of Russia\", III edition, pp.42-46.",
-          "2. Akopian, S.Ts., Popov E.A. 2010. Monitoring induced seismicity based on seismic entropy method. Abstracts, Induced seismicity ECGS – FKPE workshop, 15–17 November, Luxembourg, 3–4.",
-          "3. Akopian S.Ts., Rogozhin E.A. 2013. Modeling the kinematics of the Taurus-Caucasus region and the dynamics of the preparation of stong earthquakes with М≥7.1. Issues of engineering seismology, 40 №2, pp. 5–24.",
-          "4. Akopian S.Ts. 2013. Seismic systems of Japan: entropy and monitoring of the Tohoku mega-earthquake on March 11, 2011. Issues of engineering seismology, 40, no. 4. pp. 67–90.",
-          "5. Akopian S.Ts. 2013. Quantitative description of seismic processes in real medium and the algorithm of long-term prediction of large earthquakes: By examples of Armenian Upland, North-Western Iran, Italy, and Central California. Moscow, Triumph, 92.",
-          "6. Akopian S.Ts. & Kocharian A.N. 2013. Critical behavior of seismic systems and dynamics in ensemble of strong earthquakes. Geophys. J. Int.; doi: 10.1093/gji/ggt398 (January 2014) 196(1): 580-599.",
-          "7. Akopian S.Ts. 2014. Application of the seismic entropy method to solve technological problems in the oil and gas industry. ROGTEC, 38, 56–63.",
-          "8. Akopian S.Ts. 2015. Entropy seismology and its application in the development of shale gas. Exposition Oil Gas. 6, 45, pp. 40–43.",
-          "9. Akopian, S.Ts. 2015. Open dissipative seismic systems and ensembles of strong earthquakes: Energy balance and entropy funnels. Geophys. J. Int. 201, pp. 1618–1641 doi:10.1093/gji/ggv096/",
-          "10. Akopian S.Ts. 2016. Seismic systems, entropy production law and ensembles of strong earthquakes. Izv. Russian Academy of Sciences, Physics of the Earth, 6, pp. 1–22.",
-          "11. Akopian S.Ts., Tsidilina M.N., Mityushina E.S., Gaponova M.V., Gaponova E.V., Murynin A.B., Voronova O.S., Gordo K.A., Smirnov V.M., Tarasova M.A. 2016. Development of a unified system for comprehensive monitoring of catastrophic events to reduce their consequences based on space and ground data. Research report No. 16-17-00139 dated January 14, 2016 (Russian Science Foundation).",
-          "12. Akopian S.Ts., Bondur V.G., Rogozhin E.A. 2017. Technology for monitoring and forecasting strong earthquakes in Russia using the seismic entropy method. Izv. Russian Academy of Sciences, Physics of the Earth, 1. C. 1–20.",
-          "13. Akopian S.Ts. 2017. Entropy, Seismicity Monitoring in the Armenian Highlands and Akhuryan Reservoir Filling Dynamics. Issues of engineering seismology. 44, no. 2. pp. 5–14.",
-          "14. Akopian S.Ts. 2017. Entropy Seismology: Oil and Shale of Northeast China. Neftegaz. RU, 10. C. 20–24.",
-          "15. Akopian S.Ts. 2017. Entropy seismology and the view of cosmology: Seismic formalism and alphabet of evolution. Nat. Ac. of Sci. of RA Electronic Journal of Natural Sciences 2017, 1 (28). P.53-73.",
-          "16. Akopian, S.Ts. 2017. Entropic seismology and the view of cosmology: Dark energy, dark matter, and gravitation. Nat. Ac. of Sci. of RA Electronic Journal of Natural Sciences, 1(28). P. 74–94.",
-          "17. Akopian S.Ts. 2018. Double earthquakes, their nature and prediction by the seismic entropy method. Questions of engineering seismology. 45. No. 2. pp. 43–56.",
-          "18. Akopian S.Ts. 2018. Analysis of the Ural earthquake on September 4, 2018 based on the seismic entropy method. Issues of engineering seismology. 55. No. 4. pp. 37-46.",
-          "19. Akopian S.Ts. 2020. Identification of features of a strong earthquake in the east of the Kuril Islands from March 25, 2020 based on the seismic entropy method. Issues of engineering seismology. 47. No. 2. pp. 5–18.",
-          "20. Akopian S.Ts. 2023. “Entropy, Seismology, and the View of Cosmology: Origin and Evolutionary Theory. Cambridge Scholars Publishing, London. 350."
-        ]
+        "sub_title": "over the past 15 years"
       },
       "results": {
         "title": "The main scientific results",
@@ -1225,6 +1428,35 @@
           "In the area of earthquake prediction (1983–2023)",
           "In the field of oil and gas production, induced seismicity (2013-2018) ",
           "In the field of entropy seismology and cosmology (2013–2023)"
+        ]
+      },
+      "national_shema": {
+        "title": "PLAN TO OPEN GLOBAL AND REGIONAL CENTERS",
+        "data": [
+          {
+            "title": "Global and Middle Eastern",
+            "describtion": "With the Center in Armenia (Yerevan) operates"
+          },
+          {
+            "title": "Asian",
+            "describtion": "Negotiations are underway with the center in China (Beijing)"
+          },
+          {
+            "title": "Eurasian (RF)",
+            "describtion": "Monitoring Center in Russia (Moscow) operates"
+          },
+          {
+            "title": "BRICS countries",
+            "describtion": "Monitoring Center in Russia (Moscow) operates"
+          },
+          {
+            "title": "Mediterranean",
+            "describtion": "Opened with Center in Malta"
+          },
+          {
+            "title": "American",
+            "describtion": "Planned to be centered in Costa Rica"
+          }
         ]
       }
     },
@@ -1458,24 +1690,6 @@
       "subTitle": "Производится на основе: метода сейсмической энтропии (МСЭ), на концепции Сейсмической Системы, которые выявляются в сейсмоопасных регионах с позиций плитовой тектоники",
       "movements_at_the_borders": {
         "title": "ХАРАКТЕРНЫЕ ДВИЖЕНИЯ НА ГРАНИЦАХ ПЛИТ",
-        "data": [
-          {
-            "index": "A",
-            "title": "Сброс"
-          },
-          {
-            "index": "B",
-            "title": "Надвиг-Подвиг"
-          },
-          {
-            "index": "c",
-            "title": "Сдвиг"
-          },
-          {
-            "index": "D",
-            "title": "Сбросо-сдвиг"
-          }
-        ],
         "subtitle": "Основные типы А, В, С, D границ плит и характерные фокальные механизмы очагов землетрясений"
       },
       "text": "96% землетрясений на Земле происходят в условиях сжатия в зонах взаимодействия литосферных плит (90% приходятся на Тихоокеанскую плиту и 6% на Средиземноморско-Альпийско-Гималайский пояс). В рифтовых зонах в обстановке растяжения выделяется менее 1% сейсмической энергии Земли.",
@@ -1511,9 +1725,9 @@
           "позволяют со временем повышать точность прогнозов, создать компьютерный интеллект."
         ],
         "text2": "Преимущества метода. Метод и функционирование КТ:",
+        "seismic_entropy_method": "Метод сейсмической энтропии позволяет строить математический портрет объема геологической среды - Сейсмической Системы, и, впервые в мировой практике, дает возможность визуализировать весь процесс подготовки сильных землетрясений.",
         "text3": "<b>Накопленный опыт и апробация.</b>В On-Line режиме на сайте www.geoq.ru с 2008 по 2012 гг. было прогнозировано 18 землетрясений. На основе новых разработок к 2023 году выявлено более 350 сейсмических систем верхнего энергетического уровня, расположенных на территории более 80 стран мира. КТ разрабатывалась и апробировалась на протяжении 33 лет. С 1988 года были сделаны многочисленные прогнозы землетрясений по всему миру в том числе в Калифорнии, в Италии, в Китае, в Иране, в Турции и Японии."
       },
-      "seismic_entropy_method": "Метод сейсмической энтропии позволяет строить математический портрет объема геологической среды - Сейсмической Системы, и, впервые в мировой практике, дает возможность визуализировать весь процесс подготовки сильных землетрясений.",
       "forecast_online_mode": {
         "title": "МОНИТОРИНГ И ПРОГНОЗ ЗЕМЛЕТРЯСЕНИЙ В ONLINE РЕЖИМЕ В 2009–2023 ГГ.",
         "subtitle": "26 землетрясения были успешно спрогнозированы (из них 4 – краткосрочно, 4* – неточно по одному параметру, 2 прогноза отрицательные)",
@@ -1784,7 +1998,7 @@
               }
             }
           },
-          "series": [30, 6, 2],
+          "series": [22, 8, 2],
           "labels": [
             "(94%) – предсказаны",
             "(19%) – предсказаны ретроспективно",
@@ -1818,9 +2032,149 @@
             }
           },
           "colors": ["#0F6FE4", "#0026AA", "#41CF77"]
+        },
+        "ChartOptions2": {
+          "chart": {
+            "animations": {
+              "enabled": true,
+              "easing": "easeinout",
+              "speed": 1000,
+              "animateGradually": {
+                "enabled": true,
+                "delay": 200
+              },
+              "dynamicAnimation": {
+                "enabled": true,
+                "speed": 1000
+              }
+            },
+            "type": "donut",
+            "height": 350,
+            "width": 300
+          },
+          "responsive": [
+            {
+              "breakpoint": 600,
+              "options": {
+                "chart": {
+                  "height": "400px",
+                  "width": "100%"
+                },
+                "legend": {
+                  "position": "bottom",
+                  "horizontalAlign": "left"
+                },
+                "plotOptions": {
+                  "pie": {
+                    "donut": {
+                      "labels": {
+                        "value": { "fontSize": "36px", "offsetY": 13 }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "dataLabels": {
+            "enabled": false
+          },
+          "plotOptions": {
+            "pie": {
+              "expandOnClick": false,
+              "dataLabels": {
+                "show": false
+              },
+              "donut": {
+                "size": "80%",
+                "background": "transparent",
+                "labels": {
+                  "show": true,
+                  "value": {
+                    "fontSize": "65px",
+                    "fontWeight": 700,
+                    "color": "#0A1577",
+                    "offsetY": 25
+                  },
+                  "name": {
+                    "show": false
+                  },
+                  "total": {
+                    "show": true,
+                    "showAlways": true
+                  }
+                }
+              }
+            }
+          },
+          "series": [9.12, 2.16, 0.72],
+          "labels": [
+            "(94%) – 26 - предсказаны",
+            "(19%) – 6 - предсказаныz ретроспективно",
+            "(6%) – 2 - не предсказано"
+          ],
+          "fill": {
+            "type": ["gradient", "pattern", "solid"],
+            "opacity": 1,
+            "pattern": {
+              "strokeWidth": 7,
+              "enabled": true,
+              "style": "verticalLines"
+            },
+            "gradient": {
+              "shadeIntensity": 0.5,
+              "opacityFrom": 1,
+              "opacityTo": 1,
+              "shade": "dark",
+              "type": "horizontal",
+              "inverseColors": true,
+              "gradientToColors": ["#0026AA", "#0F6FE4", "#0026AA"],
+              "stops": [0, 100, 100]
+            }
+          },
+          "legend": {
+            "position": "right",
+            "offsetY": 5,
+            "fontSize": "24px",
+            "labels": {
+              "useSeriesColors": true
+            }
+          },
+          "colors": ["#0F6FE4", "#0026AA", "#41CF77"]
         }
       }
     },
+    "map": {
+      "title": "НА ГЛОБАЛЬНОЙ КАРТЕ СЕЙСМИЧЕСКОЙ ОПАСНОСТИ",
+      "subtitle": "В хронологическом порядке показаны сейсмоопасные регионы, в которых ведется мониторинг и прогноз землетрясений."
+    },
+    "monitoring_countries": [
+      {
+        "index": 20,
+        "title": "Եվրոպա (20 երկիր)",
+        "description": "Ավստրիա, Ադրբեջան, Հայաստան, Բուլղարիա, Հունաստան, Վրաստան, Իսպանիա, Իտալիա, Կիպրոս, Մոլդովա, Պորտուգալիա, Ռուսաստան, Ռումինիա, Սան Մարինո, Սլովենիա, Թուրքիա, Ուկրաինա, Ֆրանսիա, Խորվաթիա, Շվեյցարիա"
+      },
+      {
+        "index": 31,
+        "title": "Ասիա (31 երկիր)",
+        "description": "Աֆղանստան, Բանգլադեշ, Բութան, Իսրայել, Հնդկաստան, Ինդոնեզիա, Հորդանան, Իրաք, Իրան, Ղազախստան, Ղրղզստան, Չինաստան, Հյուսիսային Կորեա, Հարավային Կորեա, Քուվեյթ, Լիբանան, Մոնղոլիա, Մյանմար, Նեպալ, Արաբական Միացյալ Էմիրություններ, Պակիստան, Սաուդյան Արաբիա, Ռուսաստան , Սիրիա, Տաջիկստան, Թայվան, Թաիլանդ, Թուրքմենստան, Ուզբեկստան, Ճապոնիա"
+      },
+      {
+        "index": 10,
+        "title": "Աֆրիկա (10 երկիր)",
+        "description": "Ալժիր, Բուրունդի, Կոնգո, Եգիպտոս, Զամբիա, Մալավի, Մարոկկո, Մոզամբիկ, Տանզանիա, Թունիս"
+      },
+      {
+        "index": 13,
+        "title": "Հյուսիսային Ամերիկա (13 երկիր)",
+        "description": "Բելիզ, Վիրջինյան կղզիներ, Հաիթի, Գվատեմալա, Հոնդուրաս, Դոմինիկյան Հանրապետություն, Կայման կղզիներ, Կանադա, Կուբա, Մեքսիկա, Պուերտո Ռիկո, ԱՄՆ, Ջամայկա"
+      },
+      {
+        "index": 6,
+        "title": "Հարավային Ամերիկա (6 երկիր)",
+        "description": "Արգենտինա, Բոլիվիա, Բրազիլիա, Պերու, Չիլի, Էկվադոր"
+      }
+    ],
     "about": {
       "title": "Միջազգային կենտրոն",
       "sub_title": "Սեյսմիկ ռիսկի գլոբալ մոնիտորինգ",
@@ -1882,6 +2236,35 @@
           "Նավթի և գազի արդյունահանում, հարուցված սեյսմիկություն (2013-2018թթ․)",
           "Երկրաշարժերի կանխատեսում (1983թ․– մինչ օրս)",
           "Էնտրոպիկ սեյսմոլոգիա և տիեզերագիտություն (2013թ․–մինչ օրս)"
+        ]
+      },
+      "national_shema": {
+        "title": "ՊԼԱՆԱՎՈՐՈՒՄԵՔ ԲԱՑԵԼ ԳԼՈԲԱԼ ԵՎ ՏԱՐԱԾԱՇՐՋԱՆԱՅԻՆ ԿԵՆՏՐՈՆՆԵՐ",
+        "data": [
+          {
+            "title": "Համաշխարհային և Մերձավոր Արևելք",
+            "describtion": "Կենտրոնի հետ գործում է Հայաստանում (Երևան):"
+          },
+          {
+            "title": "Ասիական",
+            "describtion": "Բանակցություններ են ընթանում Չինաստանի կենտրոնի հետ (Պեկին)"
+          },
+          {
+            "title": "Եվրասիական (ՌԴ)",
+            "describtion": "Ռուսաստանում (Մոսկվա) գործում է մոնիտորինգի կենտրոն"
+          },
+          {
+            "title": "BRICS երկրներ",
+            "describtion": "Ռուսաստանում (Մոսկվա) գործում է մոնիտորինգի կենտրոն"
+          },
+          {
+            "title": "Միջերկրական",
+            "describtion": "Բացվել է կենտրոնի հետ Մալթայում"
+          },
+          {
+            "title": "Ամերիկյան",
+            "describtion": "Նախատեսվում է կենտրոնանալ Կոստա Ռիկայում"
+          }
         ]
       }
     },

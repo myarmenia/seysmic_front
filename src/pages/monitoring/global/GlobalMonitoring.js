@@ -17,7 +17,6 @@ const loader = async ({ params: { lang } }) => {
   // const data = await instance.get("/users");
   try {
     const res = await instance.get(`regions?lng=${lang}`);
-    console.log(res);
     return res.data.data;
   } catch (error) {
     console.log(error);

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { Container, Logo, SocIcons } from "../../reusable";
 import styles from "./footer.module.css";
 import { useTranslation } from "../../../hooks";
@@ -9,6 +9,7 @@ export const Footer = () => {
   const {
     main: { footer: language },
   } = useTranslation().language;
+  const links = useLoaderData();
   return (
     <>
       <footer className={styles.footer}>
@@ -45,7 +46,7 @@ export const Footer = () => {
           <ul>
             <li className={styles.li_head}>{language.contacts}</li>
             <li className={styles.social_icons_li}>
-              <SocIcons />
+              <SocIcons links={links} />
             </li>
           </ul>
         </Container>
