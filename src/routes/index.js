@@ -32,12 +32,15 @@ import {
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Root />} errorElement={<ErrorBoundary />}>
+    <Route
+      path="/"
+      element={<Root />}
+      loader={Root.loader}
+      errorElement={<ErrorBoundary />}>
       <Route path=":lang">
         <Route
-          path="search"
+          path="search/:page"
           element={<Search />}
-          action={Search.action}
           loader={Search.loader}
         />
         <Route path="login" element={<Login />} action={Login.action} />
@@ -63,13 +66,21 @@ export const router = createBrowserRouter(
               element={<GlobalMonitoring />}
               loader={GlobalMonitoring.loader}
             />
-            <Route path=":id" element={<CountriesItem />} />
+            <Route
+              path=":id"
+              element={<CountriesItem />}
+              loader={CountriesItem.loader1}
+            />
+            <Route
+              path="earth-map/:id"
+              element={<CountriesItem />}
+              loader={CountriesItem.loader2}
+            />
           </Route>
           <Route path="cosmos" element={<Cosmos />}>
             <Route
               index
               element={<MonitoringExamples />}
-              action={MonitoringExamples.action}
               loader={MonitoringExamples.loader}
             />
           </Route>

@@ -18,7 +18,10 @@ const Component = ({ children, data, className = "" }) => {
                     transitionDelay: `${i / 10}s`,
                   }}>
                   {!Array.isArray(text) ? (
-                    text
+                    <span
+                      dangerouslySetInnerHTML={{
+                        __html: text,
+                      }}></span>
                   ) : (
                     <>
                       {text[0]} <Link>{text[1]}</Link>
@@ -30,6 +33,7 @@ const Component = ({ children, data, className = "" }) => {
         </ul>
       )}
     </ViewPosition>
+    
   );
 };
 

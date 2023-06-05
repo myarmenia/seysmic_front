@@ -112,10 +112,12 @@
   animation: mymovell 40s infinite cubic-bezier(0, 0, 0, 0);
 }
 
-#box_img0 {
+#box_img0{
   @apply top-[60px] right-[-60px];
   background-image: url("../../../assets/main/products/animation/img.svg");
 }
+
+
 #box_img1 {
   @apply top-[200px] right-[-55px];
   background-image: url("../../../assets/main/products/animation/img2.svg");

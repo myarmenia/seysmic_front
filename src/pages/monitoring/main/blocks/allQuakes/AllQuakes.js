@@ -7,6 +7,7 @@ import {
 } from "../../../../../components/reusable";
 import { generateArray } from "../../../../../helper";
 import styles from "./allQuakes.module.css";
+import { useTranslation } from "../../../../../hooks";
 
 const ChartOptions = {
   chart: {
@@ -120,37 +121,72 @@ const ChartOptions = {
 
 const data = generateArray(25, {
   magnitude: "M=6.2",
-  title: "42.40 N 13.32 E H=10 км",
+  title: "42.40 N 13.32",
+  subtitle: "E H=10 км",
   country: "Италия (L'Aquila)",
   date: "2009.04.06",
 });
 
 export const AllQuakes = () => {
+  const {
+    monitoring_and_prediction: {
+      forecast_online_mode: { title, subtitle, data, text },
+    },
+  } = useTranslation().language;
+
   return (
     <Container className="py-16 flex flex-col gap-6">
-      <Title>
-        Мониторинг и прогноз землетрясений в ONLine режиме в 2009–2023 гг.
-      </Title>
-      <p className="text-[32px] text-[#938E97] text-center leading-[150%] med-1200:text-[28px] med-900:text-[18px]">
-        26 землетрясения были успешно спрогнозированы (из них 4 – краткосрочно,
-        4* – неточно по одному параметру, 2 прогноза отрицательные)
+      <Title>Мониторинг и прогноз землетрясений в 1988–2008 гг.</Title>
+      {/* <p className="text-[32px] text-[#938E97] text-center leading-[150%] med-1200:text-[28px] med-900:text-[18px]">
+        {subtitle}
       </p>
       <div className="flex flex-col gap-[24px] med-900:gap-4 med-600:hidden">
         {data.map((el, i) => (
           <Item {...el} delay={i / 3} key={i} />
         ))}
-      </div>
-      <p className="text-[24px] text-[#938E97] text-center mx-auto w-[80%] med-1200:w-full">
-        Еще 6 спрогнозированы ретроспективно, поскольку произошли в новых СС
-        (100%). Не прогнозированы 2 двойных землетрясения, 4 тревоги пропуска
-        цели.
-      </p>
+      </div> */}
+      {/* <p className="text-[24px] text-[#938E97] text-center mx-auto w-[80%] med-1200:w-full">
+        {text}
+      </p> */}
       <MyChart />
+      <Title>
+        Мониторинг и прогноз землетрясений в ONLine режиме в 2009–2023 гг.
+      </Title>
+      <MyChart2 />
     </Container>
+  );
+};
+const MyChart2 = () => {
+  const {
+    monitoring_and_prediction: {
+      forecast_online_mode: { ChartOptions2 },
+    },
+  } = useTranslation().language;
+  return (
+    <ViewPosition className="w-[75%] mx-auto min-h-[300px] med-900:min-h-[250px] med-900:w-full">
+      {(bool) => (
+        <>
+          {bool && (
+            <ReactApexCharts
+              options={ChartOptions2}
+              series={ChartOptions2.series}
+              type={ChartOptions2.chart.type}
+              width="100%"
+              height={300}
+            />
+          )}
+        </>
+      )}
+    </ViewPosition>
   );
 };
 
 const MyChart = () => {
+  const {
+    monitoring_and_prediction: {
+      forecast_online_mode: { ChartOptions },
+    },
+  } = useTranslation().language;
   return (
     <ViewPosition className="w-[75%] mx-auto min-h-[300px] med-900:min-h-[250px] med-900:w-full">
       {(bool) => (

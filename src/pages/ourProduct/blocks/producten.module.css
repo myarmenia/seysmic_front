@@ -1,0 +1,217 @@
+.line {
+  @apply w-[264px] h-[2px];
+  background: linear-gradient(180deg, #0026aa 0%, #30cfff 100%);
+}
+.product_card {
+  @apply mt-[50px]  mb-[70px];
+}
+.product_card > p {
+  @apply mb-[50px];
+}
+.card_box {
+  @apply flex flex-col items-end;
+}
+
+.card_box_child {
+  @apply rounded-[20px] flex  mb-[-35px] med-900:w-full;
+}
+.card_box:nth-child(3) .card_box_child {
+  @apply w-[95%] med-900:w-[98%];
+}
+.card_box:nth-child(4) .card_box_child {
+  @apply w-[90%] med-900:w-[97%];
+}
+.card_box:nth-child(5) .card_box_child {
+  @apply w-[85%] med-900:w-[96%];
+}
+
+.left_box {
+  @apply w-[50%] pl-[30px] pr-[70px] pt-[25px] pb-[60px]  mr-[-90px]  mt-[2%] med-900:w-[50%];
+  background: linear-gradient(180deg, #ffffff 1%, #e7e8ed 99.99%);
+  box-shadow: 1.79447px 1.79447px 5.38342px rgba(0, 0, 0, 0.35);
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.left_box h2 {
+  @apply text-3xl font-semibold med-1200:text-sm;
+}
+.left_box p {
+  @apply text-base  text-[#000] med-1200:text-xs;
+}
+
+.right_box {
+  @apply w-[100%] bg-cover flex  justify-center flex-col bg-no-repeat py-[40px] med-900:pt-[20px];
+}
+
+.right_box p {
+  @apply pl-[70px] font-medium text-sm text-[#fff] med-1200:text-xs;
+}
+@media only screen and (max-width: 600px) {
+  .left_box h2 {
+    @apply text-[12px];
+  }
+  .left_box p {
+    @apply text-[8px];
+  }
+  .right_box p {
+    @apply text-[8px] pl-[65px];
+  }
+}
+.list {
+  @apply list-image-[url("../../../assets/icons/list-style-round.svg")] mt-[40px] w-[90%];
+}
+.list li {
+  @apply text-lg text-justify text-black med-1200:text-sm;
+}
+
+/* ============== animation*/
+/* ============== animation*/
+/* ============== animation*/
+/* ============== animation*/
+.main {
+  @apply flex min-h-[680px] justify-center items-center overflow-hidden;
+}
+#box_img {
+  @apply w-[500px] h-[250px] relative;
+  transform-origin: bottom center;
+  border-top-left-radius: 250px;
+  border-top-right-radius: 250px;
+  background-position: 53% 100%;
+  background-size: 784px 314px;
+  background-repeat: no-repeat;
+  /* background-image: url("img/Mask_group.png"); */
+  animation: mymove 40s infinite cubic-bezier(0, 0, 0, 0);
+}
+
+#box_img_second {
+  transform-origin: top center;
+  width: 500px;
+  height: 250px;
+  border-bottom-left-radius: 250px;
+  border-bottom-right-radius: 250px;
+  /* background-image: url("img/Mask_group-1.png"); */
+  background-position: 53% 0%;
+  background-size: 779px 302px;
+  background-repeat: no-repeat;
+  color: white;
+  animation: mymove 40s infinite cubic-bezier(0, 0, 0, 0);
+  z-index: 0;
+  position: relative;
+}
+#box_img_second::after {
+  content: "";
+  position: absolute;
+  background-image: url("../../../assets/main/products/animation/globus.svg");
+  width: 130px;
+  height: 150px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: -80px;
+  left: 180px;
+  z-index: 10000000000000000;
+  animation: mymovell 40s infinite cubic-bezier(0, 0, 0, 0);
+}
+
+#box_img0 {
+  @apply top-[60px] right-[-60px];
+  background-image: url("../../../assets/main/products/animation/en/dinamic_seismic.svg");
+}
+
+
+#box_img1 {
+  @apply top-[200px] right-[-55px];
+  background-image: url("../../../assets/main/products/animation/en/gaz&oil.svg");
+}
+#box_img2 {
+  @apply top-[0px] right-[400px];
+  background-image: url("../../../assets/main/products/animation/en/insurance.svg");
+}
+#box_img3 {
+  @apply top-[-50px] right-[250px];
+  background-image: url("../../../assets/main/products/animation/en/internet.svg");
+}
+#box_img4 {
+  @apply w-[150px] h-[150px] top-[-40px] right-[58px];
+  background-image: url("../../../assets/main/products/animation/en/mobile.svg");
+}
+/* ------------------- */
+#box_img_second0,
+#box_img_second1,
+#box_img_second2,
+#box_img_second3,
+#box_img0,
+#box_img1,
+#box_img2,
+#box_img3,
+#box_img4 {
+  @apply w-[130px] h-[150px] absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
+  animation: mymove1 40s infinite cubic-bezier(0, 0, 0, 0);
+}
+#box_img_second0 {
+  @apply top-[100px] right-[0px];
+  background-image: url("../../../assets/main/products/animation/en/dams.svg");
+}
+#box_img_second1 {
+  @apply top-[170px] right-[185px];
+  background-image: url("../../../assets/main/products/animation/en/npp.svg");
+}
+#box_img_second2 {
+  @apply top-[117px] right-[354px];
+  background-image: url("../../../assets/main/products/animation/en/buildings.svg");
+}
+#box_img_second3 {
+  @apply top-[-50px] right-[450px];
+  background-image: url("../../../assets/main/products/animation/en/tsunami.svg");
+}
+@keyframes mymove {
+  from {
+    transform: rotate(-360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+@keyframes mymove1 {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes mymovell {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+/* ============== */
+/* MarketingResearch */
+.marketing_research {
+  @apply w-full my-[70px] flex flex-col gap-5;
+}
+.marketing_research_child {
+  @apply flex mt-[30px];
+}
+.marketing_research_child > div {
+  @apply flex gap-5;
+}
+.marketing_research_child p {
+  @apply text-lg text-justify text-black med-1200:text-sm;
+}
+.marketing_research_child > div:nth-child(even) {
+  @apply w-[40%] med-900:w-full;
+}
+.marketing_research_child > div:nth-child(odd) {
+  @apply w-[60%] med-900:w-full;
+}
+.marketing_research_child:nth-child(even) {
+  @apply justify-end med-900:justify-start;
+}
+/* MarketingResearch */

@@ -1,13 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { Container, Logo, SocIcons } from "../../reusable";
 import styles from "./footer.module.css";
 import { useTranslation } from "../../../hooks";
+import WebEx_Logo from "../../../assets/1.png"
 
 export const Footer = () => {
   const {
     main: { footer: language },
   } = useTranslation().language;
+  const links = useLoaderData();
   return (
     <>
       <footer className={styles.footer}>
@@ -44,7 +46,7 @@ export const Footer = () => {
           <ul>
             <li className={styles.li_head}>{language.contacts}</li>
             <li className={styles.social_icons_li}>
-              <SocIcons />
+              <SocIcons links={links} />
             </li>
           </ul>
         </Container>
@@ -52,7 +54,10 @@ export const Footer = () => {
         <Container bg={styles.under_box} className={styles.under_items}>
           <span>Контактные данные</span>
           <span>Контактные данные</span>
-          <span>Соц. сети</span>
+         <div className="flex justify-center items-center gap-3">
+         <span className="text-[12px]">Created by WebEx</span>
+          <img src={WebEx_Logo} className="w-[35px] "/>
+         </div>
         </Container>
       </footer>
     </>

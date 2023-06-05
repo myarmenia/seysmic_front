@@ -37,8 +37,7 @@ export const Header = () => {
           className={[
             styles.nav_items,
             langAndMenu === "menu" ? styles.open : "",
-          ].join(" ")}
-        >
+          ].join(" ")}>
           <HeaderLink onClick={chooseOption} to={getLang(`/about`)}>
             {language.nav_items.about}
           </HeaderLink>
@@ -60,7 +59,7 @@ export const Header = () => {
           </HeaderLink>
         </div>
         <div className={styles.tools}>
-          <NavLink to={getLang("/search")}>
+          <NavLink to={getLang("/search/1")}>
             <img
               src={
                 pathname === getLang("/search")

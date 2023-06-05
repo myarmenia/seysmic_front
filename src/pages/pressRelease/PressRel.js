@@ -3,7 +3,7 @@ import { useLoaderData } from "react-router";
 import instance from "../../api";
 import h1_img from "../../assets/trash/home/h1.svg";
 import img from "../../assets/trash/press-release/press-rel.svg";
-import { PressReleaseBox } from "../../components/cards";
+import { PressReleaseBox, VideoBox } from "../../components/cards";
 import {
   // PressReleaseBox,
   SingleBox,
@@ -22,8 +22,8 @@ const Component = () => {
   return (
     <SingleBox
       {...expl}
-      Item={PressReleaseBox}
-      // boxes_data={item.video_boxes}
+      Item={VideoBox}
+      boxes_data={item.videos}
       description={item.body}
       {...item}
     />
@@ -33,7 +33,6 @@ const Component = () => {
 const loader = async ({ params: { id, lang } }) => {
   try {
     const res = await instance.get(`press-releases/${id}?lng=${lang}`);
-    console.log(res.data);
     if (res.status === 200) {
       return res.data.data;
     } else {

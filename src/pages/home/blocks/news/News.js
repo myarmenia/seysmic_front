@@ -39,7 +39,7 @@ const data = generateArray(15, {
 });
 
 export const News = () => {
-  const { news } = useLoaderData();
+  const { data:{news} } = useLoaderData();
   return (
     <div className="py-[40px] max-w-[1440px] mx-auto">
       <div className="med-600:h-[44px] relative w-full mb-[65px] med-600:justify-between med-600:flex">
@@ -58,8 +58,7 @@ export const News = () => {
             clickable: true,
           }}
           modules={[Pagination, Autoplay]}
-          className="w-full"
-        >
+          className="w-full">
           {news.map((el, i) => (
             <SwiperSlide key={i}>
               <Box {...el} />
@@ -99,8 +98,7 @@ const Box = ({ id, title, description, image, button_text, button_link }) => {
             {/* <span className="text-[10px] my-2">{place}</span> */}
             <p
               className="leading-[170%] text-xs"
-              dangerouslySetInnerHTML={{ __html: description }}
-            ></p>
+              dangerouslySetInnerHTML={{ __html: description }}></p>
           </div>
         </div>
       </div>

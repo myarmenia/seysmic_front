@@ -1,16 +1,16 @@
-import React, { useMemo } from "react";
-import { Link, useParams } from "react-router-dom";
-import ad_img from "../../../../assets/gif.gif";
-import { Container } from "../../../../components/reusable";
-import { globuses } from "../../../../store/constats";
-import styles from "./globuses.module.css";
+import React, { useMemo } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import ad_img from '../../../../assets/gif.gif';
+import { Container } from '../../../../components/reusable';
+import { globuses } from '../../../../store/constats';
+import styles from './globuses.module.css';
 
 export const Globuses = () => {
   const { lang } = useParams();
   return (
     <>
-      <Container className={styles.globuses} bg_style={{ overflow: "unset" }}>
-        {globuses[lang].map((el, i) => (
+      <Container className={styles.globuses} bg_style={{ overflow: 'unset' }}>
+        {globuses[lang]?.map((el, i) => (
           <Globus key={i} {...el} />
         ))}
       </Container>
@@ -38,16 +38,12 @@ const Globus = ({ title, src, description, to }) => {
 const Text = ({ title }) => {
   return (
     <div className="w-full relative py-[52px] med-600:py-[30px]">
-      <img
-        className="w-full min-h-[136px] med-1200:object-cover"
-        src={ad_img}
-        alt=""
-      />
+      <img className="w-full min-h-[136px] med-1200:object-cover" src={ad_img} alt="" />
       <p className={styles.ad_p}>
-        {title.split("").map((el, i) => (
+        {title.split('').map((el, i) => (
           <span
             style={{
-              animationDelay: i * title.split("").length + "ms",
+              animationDelay: i * title.split('').length + 'ms',
             }}
             key={i}>
             {el}

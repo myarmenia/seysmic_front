@@ -4,7 +4,7 @@
 .burger > div {
   @apply bg-dark-blue h-1 w-[24px];
 }
-@media (max-width: 900px) {
+@media (max-width: 1065px) {
   .burger {
     @apply flex flex-col gap-[3.84px];
   }
