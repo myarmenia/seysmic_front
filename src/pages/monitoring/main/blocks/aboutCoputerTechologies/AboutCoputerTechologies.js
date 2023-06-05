@@ -47,7 +47,7 @@ export const AboutCoputerTechologies = () => {
         </a>
       </p>
       <Title className="mt-11 mb-8 snap-x snap-mandatory">
-        СЕЙСМИЧЕСКАЯ СИСТЕМА И ЗАКОН ПРОИЗВОДСТВА СЕЙСМИЧЕСКОЙ ЭНТРОПИИ
+        {language.SS_and_LSE.title}
       </Title>
       <div className="flex justify-between gap-5 med-600:flex-col med-600:justify-center med-600:items-center">
         <img
