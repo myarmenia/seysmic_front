@@ -1,27 +1,46 @@
 import React, { useState } from "react";
-import { useLoaderData } from "react-router";
+import { useLoaderData, useNavigate } from "react-router";
 import { useFormAction } from "react-router-dom";
 import instance from "../../api";
 import { SearchInput } from "../../components/forms";
 import { Container } from "../../components/reusable";
-import { toFormData, toObject } from "../../helper";
+import {
+  convertSearchParamsStr,
+  getLang,
+  toFormData,
+  toObject,
+} from "../../helper";
 import { useAppSubmit } from "../../hooks";
 import { Result } from "./Result";
 import styles from "./search.module.css";
 import img from "../../assets/main/logo-light-gray.svg";
 import axios from "axios";
 
+const Id = () => Math.random().toString();
+const linkTo = (type, id) => {
+  if (type === "current_earthquake") {
+    return getLang(`/press-release/release-page/${id}`);
+  }
+  if (type === "current_earthquake") {
+    return getLang(`/press-release/release-page/${id}`);
+  }
+  if (type === "current_earthquake") {
+    return getLang(`/press-release/release-page/${id}`);
+  }
+};
+
 export const Component = () => {
-  const loaderData = useLoaderData();
+  const { data, page } = useLoaderData();
   const search = new URL(window.location.href).searchParams.get("search");
   const [value, setValue] = useState(search || "");
+  const navigate = useNavigate();
   const submit = useAppSubmit();
   const action = useFormAction();
   const onSubmit = () => {
-    if (value) {
-      submit(toFormData({ search: value }), { action, method: "post" });
-    }
+    const search = convertSearchParamsStr({ search: value });
+    navigate({ pathname: "", search: "?" + search });
   };
+  console.log(data);
 
   return (
     <>
@@ -31,8 +50,7 @@ export const Component = () => {
             if (!value) {
               e.preventDefault();
             }
-          }}
-        >
+          }}>
           <SearchInput
             className="w-[60%] mx-auto med-600:w-full"
             inputProps={{
@@ -44,23 +62,26 @@ export const Component = () => {
               name: "search",
             }}
             onButtonClick={onSubmit}
-            clearValue={() => setValue("")}
+            clearValue={() => {
+              setValue("");
+              const search = convertSearchParamsStr({ search: value });
+              navigate({ pathname: "", search: "?" + search });
+            }}
           />
         </form>
       </Container>
       <div
         style={{
-          background: !loaderData.length && `url("${img}") center no-repeat`,
+          background: !data.length && `url("${img}") center no-repeat`,
         }}
-        className={styles.bg}
-      >
+        className={styles.bg}>
         <Container className={styles.results}>
-          {loaderData.length ? (
-            loaderData.map(({ title, body, id }) => (
+          {data.length ? (
+            data.map(({ title, type = "", description, id = "" }) => (
               <Result
-                key={id}
+                key={Id()}
                 title={title}
-                describtion={body}
+                describtion={description}
                 section="Землетрясения"
                 to="/home"
                 {...{ search }}
@@ -77,32 +98,34 @@ export const Component = () => {
   );
 };
 
-const action = async ({ request }) => {
-  try {
-    const formData = await request.formData();
-    const formObj = toObject(formData);
-    console.log(formObj);
-    // console.log(formObj);
-    return { some: "hello" };
-  } catch (err) {
-    console.log(err);
-  }
-};
+// const action = async ({ request }) => {
+//   try {
+//     const formData = await request.formData();
+//     const formObj = toObject(formData);
+//     return { some: "hello" };
+//   } catch (err) {
+//     console.log(err);
+//   }
+// };
 
-const loader = async ({ request }) => {
+const loader = async ({ params: { lang, page = 1 }, request }) => {
   const url = Object.fromEntries(new URL(request.url).searchParams);
-  const search = url.search;
-
+  const search = convertSearchParamsStr(url);
   try {
-    // const data = await instance.get(`posts?userId=1`);
-    const data = await axios.get(
-      `https://jsonplaceholder.typicode.com/posts?userId=1`
-    );
-    const filteredData = data.data.filter((e) => e.body.includes(search));
-    return filteredData;
+    if (!search) {
+      const res = await instance.get(
+        `smart-search?lng=${lang}&search=&page=${page}`
+      );
+      return { data: res.data.data, page: 10 };
+    } else {
+      const res = await instance.get(
+        `smart-search?lng=${lang}&${search}&page=${page}`
+      );
+      return { data: res.data.data, page: 10 };
+    }
   } catch (err) {
     console.log(err);
   }
 };
 
-export const Search = Object.assign(Component, { action, loader });
+export const Search = Object.assign(Component, { loader });

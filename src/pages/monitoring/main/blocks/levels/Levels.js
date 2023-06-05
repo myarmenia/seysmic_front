@@ -14,9 +14,13 @@ import flag2am from "../../../../../assets/main/monitoring/main/flags/flag_am2.s
 import flag3am from "../../../../../assets/main/monitoring/main/flags/flag_am3.svg";
 import flag4am from "../../../../../assets/main/monitoring/main/flags/flag_am4.svg";
 import { useParams } from "react-router";
+import { useTranslation } from "../../../../../hooks";
 
 export const Levels = () => {
   const { lang } = useParams();
+  const {
+    monitoring_and_prediction: { forecast_are_divided: language },
+  } = useTranslation().language;
   const items = useMemo(() => {
     if (lang === "ru") {
       return [
@@ -92,19 +96,14 @@ export const Levels = () => {
   }, [lang]);
   return (
     <div className="py-8 med-600:py-5">
-      <Title className="py-5">
-        СС ПО НАДЕЖНОСТИ ПРОГНОЗОВ ПОДРАЗДЕЛЯЮТСЯ НА ЧЕТЫРЕ УРОВНЯ
-      </Title>
+      <Title className="py-5">{language?.title}</Title>
       <Container bg={styles.bg} className={styles.my_container}>
         <div className="flex flex-col gap-[24px] justify-center relative med-600:gap-[3px]">
           {items.map((el, i) => (
             <Box {...el} key={i} />
           ))}
         </div>
-        <p className={styles.describtion}>
-          После каждого сильного землетрясения качество прогноза улучшается и со
-          временем все СС перейдут на первый уровень надежности.
-        </p>
+        <p className={styles.describtion}>{language?.text}</p>
       </Container>
     </div>
   );

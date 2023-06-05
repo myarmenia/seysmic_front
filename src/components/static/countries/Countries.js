@@ -3,15 +3,17 @@ import img from "../../../assets/main/monitoring/globus.svg";
 import { monitoring_countries as countries } from "../../../store/constats";
 import { ViewPosition } from "../../reusable";
 import styles from "./countries.module.css";
+import { useTranslation } from "../../../hooks";
 
 export const Countries = ({ className = "" }) => {
+  const { monitoring_countries } = useTranslation().language;
   return (
     <ViewPosition className={[styles.cont, className].join(" ")}>
       {(bool) => (
         <div className={styles.img_box}>
           <img src={img} alt="" className={styles.img} />
           <div className={styles.nums}>
-            {countries.map((el, i) => (
+            {monitoring_countries.map((el, i) => (
               <Box
                 style={{ opacity: bool ? 1 : 0, transitionDelay: `${i / 4}s` }}
                 key={el.index}

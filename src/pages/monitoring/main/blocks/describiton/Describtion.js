@@ -22,9 +22,7 @@ const ul_data = [
 
 export const Describtion = () => {
   const {
-    monitoring_and_prediction: {
-      ITU: { language },
-    },
+    monitoring_and_prediction: { ITU: language },
   } = useTranslation().language;
 
   return (
@@ -36,23 +34,14 @@ export const Describtion = () => {
         <div className={styles.content}>
           <p dangerouslySetInnerHTML={{ __html: language?.text }}></p>
           <div className="flex flex-col gap-3">
-            <b>Преимущества метода. Метод и функционирование КТ:</b>
-            <Ul className={styles.list} data={ul_data} />
+            <b>{language?.text2}</b>
+            <Ul className={styles.list} data={language?.data} />
           </div>
-          <p>
-            <b>Накопленный опыт и апробация.</b>В On-Line режиме на сайте
-            www.geoq.ru с 2008 по 2012 гг. было прогнозировано 18 землетрясений.
-            На основе новых разработок к 2023 году выявлено более 350
-            сейсмических систем верхнего энергетического уровня, расположенных
-            на территории более 80 стран мира. КТ разрабатывалась и
-            апробировалась на протяжении 33 лет. С 1988 года были сделаны
-            многочисленные прогнозы землетрясений по всему миру в том числе в
-            Калифорнии, в Италии, в Китае, в Иране, в Турции и Японии.
-          </p>
+          <p dangerouslySetInnerHTML={{ __html: language?.text3 }}></p>
         </div>
       </Container>
       <Container>
-        <TitleBorder title="Метод сейсмической энтропии позволяет строить математический портрет объема геологической среды - Сейсмической Системы, и, впервые в мировой практике, дает возможность визуализировать весь процесс подготовки сильных землетрясений." />
+        <TitleBorder title={language?.seismic_entropy_method} />
       </Container>
     </>
   );

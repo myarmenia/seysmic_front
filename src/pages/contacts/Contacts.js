@@ -99,14 +99,7 @@ const Component = () => {
                 [`Email:`, email],
               ]}
             />
-            {Array.isArray &&
-              links.map(({ link, logo }) => (
-                <div className="flex items-center gap-[10px] [&_a]:duration-300 [&_a]:shrink-0 [&_a:hover]:scale-125">
-                  <Link to={link} target="_blank">
-                    <img alt="link" src={logo} />
-                  </Link>
-                </div>
-              ))}
+            <SocIcons links={links} />
           </div>
           {!map_iframe && map_image && (
             <div className="rounded-2xl h-[265px] overflow-hidden [&>iframe]:w-full  [&>iframe]:h-full">
@@ -129,7 +122,6 @@ const Component = () => {
 const loader = async ({ params: { lang } }) => {
   try {
     const res = await instance.get(`contact-info?lng=${lang}`);
-    console.log(res.data.data);
     return res.data.data;
   } catch (err) {
     console.log(err);

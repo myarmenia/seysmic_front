@@ -2,10 +2,12 @@ import React from "react";
 import styles from "./earthMap.module.css";
 import { earth_map } from "../../../store/constats";
 import map_img from "../../../assets/main/monitoring/main-map.png";
+import { Link, useNavigate } from "react-router-dom";
 
 export const EarthMap = ({ className = "", visible }) => {
+  const navigate = useNavigate();
   const handleClick = ({ id }) => {
-    console.log(id);
+    navigate(`earth-map/${id}`);
   };
   return (
     <div className={[styles.map_bg, className].join(" ")}>
@@ -15,13 +17,11 @@ export const EarthMap = ({ className = "", visible }) => {
           style={el}
           key={i}
           className={styles.blue_box}
-          onClick={() => handleClick(el)}
-        >
+          onClick={() => handleClick(el)}>
           <span
             className={[styles.blue_box_id, styles.blue_box_id_visible].join(
               " "
-            )}
-          >
+            )}>
             {el.id}
           </span>
         </div>

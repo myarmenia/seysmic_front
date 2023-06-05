@@ -10,19 +10,9 @@ export const Result = ({ section, title, describtion, to, search }) => {
       <p className={styles.result_title}>{section}</p>
       <Link to={getLang(to)}>{title}</Link>
       <p className={styles.result_describtion}>
-        {describtion.split(search).map((text, i) => {
-          if (i < describtion.split(search).length - 1) {
-            return (
-              <Fragment key={i}>
-                {text}
-                <span className="text-[#363636] font-bold text-[19px] med-600:text-sm">
-                  {search}
-                </span>
-              </Fragment>
-            );
-          }
-          return text;
-        })}
+        <span
+          className="text-[#363636] font-bold text-[19px] med-600:text-sm"
+          dangerouslySetInnerHTML={{ __html: describtion }}></span>
       </p>
     </div>
   );

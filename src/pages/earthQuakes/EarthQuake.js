@@ -20,7 +20,6 @@ const Component = () => {
   return (
     <SingleBox
       {...single_current_earthquakes}
-      // current_earthquake={lastes_current_earthquake}
       Item={QuakeBox}
       boxes_data={lastes_current_earthquake}
       description={single_current_earthquakes.body}
@@ -28,10 +27,9 @@ const Component = () => {
   );
 };
 
-const loader = async ({ params: { lang, id } }) => {
+const loader = async ({ params: { lang, id = 1 } }) => {
   try {
     const res = await instance.get(`current-earthquake/${id}?lng=${lang}`);
-    console.log(res.data.data, "boz");
     return res.data.data;
   } catch (error) {
     console.log(error);
