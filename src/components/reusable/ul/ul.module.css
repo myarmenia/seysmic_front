@@ -1,6 +1,6 @@
 .ul {
   list-style-image: url("../../../assets/icons/ul_img.svg");
-  @apply flex flex-col gap-5 justify-between overflow-hidden;
+  @apply flex flex-col gap-5 justify-between overflow-hidden ;
 }
 .li {
   @apply duration-300 opacity-0 text-base leading-[112%] text-justify 

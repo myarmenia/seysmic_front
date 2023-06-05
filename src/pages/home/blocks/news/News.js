@@ -39,7 +39,7 @@ const data = generateArray(15, {
 });
 
 export const News = () => {
-  const { news } = useLoaderData();
+  const { data:{news} } = useLoaderData();
   return (
     <div className="py-[40px] max-w-[1440px] mx-auto">
       <div className="med-600:h-[44px] relative w-full mb-[65px] med-600:justify-between med-600:flex">
