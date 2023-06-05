@@ -2,7 +2,7 @@
   @apply cursor-pointer absolute;
 }
 .language_select {
-  @apply w-[27px] h-[27px] bg-transparent;
+  @apply w-[21px] h-[25px] bg-transparent;
 }
 .language_options {
   @apply z-[1001] absolute w-auto right-0;

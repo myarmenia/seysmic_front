@@ -1,5 +1,5 @@
-import React from 'react';
-import instance from '../../api';
+import React from "react";
+import instance from "../../api";
 import {
   EarthquakePlaces,
   Globuses,
@@ -8,8 +8,8 @@ import {
   Partners,
   PressRelease,
   UsersInfo,
-} from './blocks';
-import { NationalScheme } from '../monitoring/main/blocks';
+} from "./blocks";
+import { NationalScheme } from "../monitoring/main/blocks";
 
 const Component = () => {
   return (
@@ -31,7 +31,7 @@ export const loader = async ({ params: { lang } }) => {
     let res2 = await instance.get(`banner?lng=${lang}`);
     console.log(res2);
     console.log(res);
-    return { data: res.data.data, banner: res2.data.data.banner };
+    return { data: res.data.data, banner: res2.data.data };
   } catch (error) {
     return error;
   }

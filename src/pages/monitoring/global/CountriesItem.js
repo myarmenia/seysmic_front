@@ -19,10 +19,10 @@ const Component = () => {
 
             <p
               className="text-xl med-600:text-xs "
-              dangerouslySetInnerHTML={{ __html: data?.description }}></p>
+              dangerouslySetInnerHTML={{ __html: data?.description }}
+            ></p>
           </div>
         </div>
-        <div></div>
         <img
           src={data?.schema_path}
           alt=""
@@ -30,14 +30,12 @@ const Component = () => {
         />
       </div>
       <div className="grid grid-cols-4 gap-[17px] mt-[120px] med-900:grid-cols-[repeat(auto-fill,_minmax(250px,_1fr))] med-600:grid-cols-2">
-        <div className="bg-gray-400  h-[200px] med-1200:h-[150px] med-600:h-[100px]"></div>
-        <div className="bg-gray-400  h-[200px] med-1200:h-[150px] med-600:h-[100px]"></div>
-        <div className="bg-gray-400  h-[200px] med-1200:h-[150px] med-600:h-[100px]"></div>
-        <div className="bg-gray-400  h-[200px] med-1200:h-[150px] med-600:h-[100px]"></div>
-        <div className="bg-gray-400  h-[200px] med-1200:h-[150px] med-600:h-[100px]"></div>
-        <div className="bg-gray-400  h-[200px] med-1200:h-[150px] med-600:h-[100px]"></div>
-        <div className="bg-gray-400  h-[200px] med-1200:h-[150px] med-600:h-[100px]"></div>
-        <div className="bg-gray-400  h-[200px] med-1200:h-[150px] med-600:h-[100px]"></div>
+        {data?.files.map(({ path }) => (
+          <img
+            src={path}
+            className="bg-gray-400  h-[200px] med-1200:h-[150px] med-600:h-[100px]"
+          />
+        ))}
       </div>
     </Container>
   );

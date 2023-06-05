@@ -51,7 +51,7 @@ export const LanguageSelect = ({ show, setShow }) => {
           <div className={styles.language_select}>
             <img src={language_img} alt="" />
           </div>
-          <img src={arrow_down} alt="" />
+          <img className="!w-2 !h-2" src={arrow_down} alt="" />
         </div>
         {show && (
           <div className={styles.language_options}>
