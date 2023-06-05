@@ -216,7 +216,8 @@ const Item = ({ magnitude, title, country, date, delay }) => {
             transform: bool ? "translateY(0)" : "translateY(50px)",
             transitionDelay: delay + "ms",
           }}
-          className={styles.item}>
+          className={styles.item}
+        >
           <div className={styles.magnitude}>{magnitude}</div>
           <div className={styles.wrapper}>
             <div className={styles.title}>{title}</div>

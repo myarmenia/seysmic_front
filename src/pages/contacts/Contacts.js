@@ -2,7 +2,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import React, { useMemo, useRef } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import robot_img from "../../assets/main/contacts/robot.svg";
-import translation from "../../translation.json";
+import { translation } from "../../components/main";
 import {
   CstmInput,
   CstmTextarea,
@@ -49,7 +49,8 @@ const Component = () => {
         <FormProvider {...formMethods}>
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="flex flex-col gap-[36px] items-center">
+            className="flex flex-col gap-[36px] items-center"
+          >
             <Title>{language.title}</Title>
             <div className="flex flex-col gap-[24px] items-center med-400:w-full">
               <CstmInput
@@ -109,7 +110,8 @@ const Component = () => {
           {map_iframe && !map_image && (
             <div
               className="rounded-2xl h-[265px] overflow-hidden [&>iframe]:w-full  [&>iframe]:h-full"
-              dangerouslySetInnerHTML={{ __html: map_iframe }}>
+              dangerouslySetInnerHTML={{ __html: map_iframe }}
+            >
               {!map_iframe && map_image && <img alt=" " src="map_image" />}
             </div>
           )}
