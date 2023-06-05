@@ -7,10 +7,10 @@
 }
 .bg {
   /* background: url("../../assets/main/logo-light-gray.svg") center no-repeat; */
-  @apply h-full py-[32px] min-h-[50vh];
+  @apply h-full py-[32px] min-h-[50vh] justify-between flex flex-col;
 }
 .results {
-  @apply flex flex-col gap-5;
+  @apply flex flex-col justify-between	 gap-5;
 }
 .result {
   @apply flex flex-col gap-[6px] med-600:gap-0.5;

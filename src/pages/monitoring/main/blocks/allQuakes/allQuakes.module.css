@@ -63,7 +63,12 @@
   text-center;
 }
 .magnitude2 {
-  background: linear-gradient(180deg, #f6f0f0 3.46%, #ffffff 54.69%, #f6f0f0 100%);
+  background: linear-gradient(
+    180deg,
+    #f6f0f0 3.46%,
+    #ffffff 54.69%,
+    #f6f0f0 100%
+  );
   /* background: var(--bg-color); */
   @apply py-[14px] pl-[6px] pr-5 relative min-w-[26%] text-[#FF0003] font-extrabold
   text-start pl-[20px] break-words;
@@ -71,10 +76,15 @@
 .magnitude::after,
 .magnitude2::after,
 .date::after {
-  content: '';
+  content: "";
   /* width: 35px;
   height: 35px; */
-  background: linear-gradient(133deg, #f6f0f0 3.46%, #ffffff 54.69%, #f6f0f0 100%);
+  background: linear-gradient(
+    133deg,
+    #f6f0f0 3.46%,
+    #ffffff 54.69%,
+    #f6f0f0 100%
+  );
   /* transform: rotate(46deg); */
   transform: translate(3%, 20%) rotate(45deg);
 
@@ -194,8 +204,8 @@
     content: "";
     @apply absolute right-[-8%] border-dashed border-[1px] border-[#CDC9CE] 
     h-[60%] top-1/2 -translate-y-1/2;
-  } */
-  .magnitude,
+  }
+  * .magnitude,
   .date {
     @apply py-3 pl-3 pr-2;
   }
