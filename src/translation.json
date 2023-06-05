@@ -932,13 +932,13 @@
       }
     },
     "monitoring_and_prediction": {
-      "title": "Monitoring and Prediction",
-      "subTitle": "Produced on the basis of the method of seismic entropy (MSE), on the concept of the Seismic System, which are identified in seismic regions from the positions of plate tectonics.",
+      "title": "MONITORING AND PREDICTION",
+      "subTitle": "is based on: the method of seismic entropy, on the concept of a Seismic System,which are revealed in earthquake-prone regions from the standpoint of plate tectonics",
       "movements_at_the_borders": {
-        "title": "World map of lithospheric plates (USGS)",
-        "subtitle": "Basic types of plate boundaries A, B, C, D, and the characteristic focal mechanisms of earthquake sources."
+        "title": "CHARACTERISTIC MOVEMENTS AT THE BOUNDARIES OF THE PLATES",
+        "subtitle": "The main types A, B, C, D of plate boundaries and characteristic focal mechanisms of an earthquake"
       },
-      "text": "96% of earthquakes on Earth occur under conditions of compression in the zones of interaction of lithospheric plates (90% occur on the Pacific plate and 6% on the Mediterranean-Alpine-Himalayan belt). In rift zones, less than 1% of the Earth's seismic energy is released in an extensional setting.",
+      "text": "96% of earthquakes occur under compression conditions in the zones of interaction of lithospheric plates(90% occur on the Pacific Plate and 6% on the Mediterranean-Alpine-Himalayan belt).In spreading zones, less than 1% of the Earth's seismic energy is released in a stretching environment",
       "forecast_accuracy": {
         "title": "FORECAST ACCURACY",
         "subtitlt": "The forecast by the MSE is made within the framework of predetermined conditions:",
@@ -1359,8 +1359,8 @@
       }
     },
     "map": {
-      "title": "THE GLOBAL SEISMIC HAZARD MAP",
-      "subtitle": "In chronological order seismically hazardous regions are shown in which earthquake monitoring and forecasting is carried out."
+      "title": "GLOBAL SEISMIC HAZARD MAP",
+      "subtitle": "The earthquake-prone regions in which earthquake monitoring and forecasting is carried out"
     },
     "monitoring_countries": [
       {
@@ -1389,6 +1389,11 @@
         "description": "Argentina, Bolivia, Brazil, Peru, Chile, Ecuador."
       }
     ],
+    "SE_and_CT": {
+      "title": "SEISMIC ENTROPY METHOD (SEM) AND COMPUTER TECHNOLOGY (LMTP-SPQ) FOR MONITORING AND PREDICTION",
+      "subTitle": "SEM allows to build a mathematical model of the geological environment (volume SS), due to which, for the first time in world practice, it becomes possible to visualize the entire process of preparing strong earthquakes",
+      "text": "The technology of monitoring and prediction is based on the law of seismic entropy production (Akopian, 2013, PDF). This law is viewed only within the framework of new seismic parameters calculated on the basis of the most reliable and transparent information – earthquake catalogs. It allows to build a mathematical pattern of the geological environment (SS volume), due to which, for the first time in world practice, it becomes possible to visualize the entire process of preparing a strong earthquake. \nThe method of seismic entropy does not contradict everything that has been accumulated and developed by specialists in the field of earthquake forecasting and seismic risk reduction, on the contrary, it allows us to combine these efforts and significantly increase their effectiveness, increasing society's resilience to natural disasters, as well as from the point of view of effective allocation of finances and targeted preparation for strong earthquakes. \nDue to its versatility, the method already makes it possible to create a multi-level (global, regional, national and local) automated information system for seismic monitoring. Moreover, for well-defined seismic systems (for example, Italy, Japan, California), a reliable short-term forecast can be made. \nWe believe that the seismic entropy method, by its universality, transparency, reliability and high efficiency, is just the tool on the basis of which seismologists and governments from around the world can already combine their efforts to develop common international norms and rules for forecasting, warning and taking measures in case of seismic danger."
+    },
     "about": {
       "title": "International Center",
       "sub_title": "of the Seismic Risk Global Monitoring ",
