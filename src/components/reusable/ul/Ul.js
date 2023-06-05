@@ -4,7 +4,6 @@ import { ViewPosition } from "../ViewPosition";
 import { Link } from "react-router-dom";
 
 const Component = ({ children, data, className = "" }) => {
-  console.log(data);
   return (
     <ViewPosition>
       {(bool) => (

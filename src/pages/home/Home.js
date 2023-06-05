@@ -28,7 +28,7 @@ const Component = () => {
 export const loader = async ({ params: { lang } }) => {
   try {
     let res = await instance.get(`home?lng=${lang}`);
-    console.log(res);
+
     return res.data.data;
   } catch (error) {
     return error;

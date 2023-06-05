@@ -6,6 +6,7 @@ import {
   ViewPosition,
 } from "../../../../../components/reusable";
 import styles from "./nationalScheme.module.css";
+import { useTranslation } from "../../../../../hooks";
 
 const data = [
   {
@@ -35,11 +36,14 @@ const data = [
 ];
 
 export const NationalScheme = () => {
+  const {
+    about: {
+      national_shema: { title, data },
+    },
+  } = useTranslation().language;
   return (
     <div className="py-8">
-      <Title className="py-5">
-        ПЛАН ОТКРЫТИЯ ГЛОБАЛЬНЫХ И РЕГИОНАЛЬНЫХ ЦЕНТРОВ
-      </Title>
+      <Title className="py-5">{title}</Title>
       <Container bg={styles.bg} className={styles.my_container}>
         {data.map((el, i) => (
           <Box delay={i * 100} {...el} key={i} />
