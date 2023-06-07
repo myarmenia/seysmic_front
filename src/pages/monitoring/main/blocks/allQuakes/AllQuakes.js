@@ -130,13 +130,13 @@ const data = generateArray(25, {
 export const AllQuakes = () => {
   const {
     monitoring_and_prediction: {
-      forecast_online_mode: { title, subtitle, data, text },
+      forecast_online_mode: { title1,title2, subtitle, data, text },
     },
   } = useTranslation().language;
 
   return (
     <Container className="py-16 flex flex-col gap-6">
-      <Title>Мониторинг и прогноз землетрясений в 1988–2008 гг.</Title>
+      <Title>{title1}</Title>
       {/* <p className="text-[32px] text-[#938E97] text-center leading-[150%] med-1200:text-[28px] med-900:text-[18px]">
         {subtitle}
       </p>
@@ -150,7 +150,7 @@ export const AllQuakes = () => {
       </p> */}
       <MyChart />
       <Title>
-        Мониторинг и прогноз землетрясений в ONLine режиме в 2009–2023 гг.
+      {title2}
       </Title>
       <MyChart2 />
     </Container>

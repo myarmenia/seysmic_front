@@ -42,11 +42,10 @@ export const Map = () => {
 
 const Countries = () => {
   const [showNum, setShowNum] = useState(0);
-  const data = useLoaderData();
-  console.log(data);
+  const {country} = useLoaderData();
   return (
     <Container className="flex flex-col h-[610px] flex-wrap gap-[10px_34px] pb-[60px] pt-3 med-600:h-[990px] med-600:gap-[10px_12px] med-600:px-0 med-600:pb-[32px]">
-      {data.map(({ parent_region_name, children, id }, i) => (
+      {country.map(({ parent_region_name, children, id }, i) => (
         <Fragment key={i}>
           {children && children?.length ? (
             <DropDown
