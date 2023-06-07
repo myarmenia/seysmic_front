@@ -29,7 +29,7 @@
   @apply py-[13px] bg-dark-blue;
 }
 .under_items {
-  @apply flex justify-between gap-5 text-lg text-white !py-0 med-900:flex-col med-900:gap-1 med-900:[&_span]:text-center;
+  @apply flex justify-end gap-5 text-lg text-white !py-0 med-900:flex-col med-900:gap-1 med-900:[&_span]:text-center;
 }
 
 @media (max-width: 400px) {

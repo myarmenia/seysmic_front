@@ -234,7 +234,7 @@ export const SchemaProcessing = () => {
         <p className="mx-auto max-w-[934px] text-center w-full">
           {language?.text7}
         </p>
-        <img className="mt-[37px]" alt=" " src={ex} />
+        <img className="mt-[37px] mx-auto" alt=" " src={ex} />
         <Title className="my-11">{language?.title5}</Title>
         {imgData.length && (
           <div className="flex flex-col gap-3">
