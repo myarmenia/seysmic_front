@@ -30,10 +30,11 @@ export const AboutCoputerTechologies = () => {
       <Title className="mb-4">{language.SE_and_CT.title}</Title>
       <TitleBorder title={`${language.SE_and_CT.subTitle}`} />
       <p className="mt-8 text-[18px] leading-[168.5%] text-justify med-600:text-sm whitespace-pre-line ">
-        {language.SE_and_CT.text}
+        {language.SE_and_CT.text1} 
         <a href="/" className="inline">
           <img alt="" className="inline" loading="lazy" src={file_pdf} />
         </a>
+        {language.SE_and_CT.text2} 
       </p>
       <Title className="mt-11 mb-8 snap-x snap-mandatory">{language.SS_and_LSE.title}</Title>
       <div className="flex justify-between gap-5 med-600:flex-col med-600:justify-center med-600:items-center">

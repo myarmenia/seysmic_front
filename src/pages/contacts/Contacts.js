@@ -79,7 +79,7 @@ const Component = () => {
               sitekey={process.env.REACT_APP_SECRET_KEY}
               onChange={onChange}
             /> */}
-            <CustomBtn type="submit">Отправить</CustomBtn>
+            <CustomBtn type="submit">{language.send}</CustomBtn>
             {actionData && (
               <h3 className={actionData.err ? "text-[red]" : "text-[green]"}>
                 {actionData?.message}

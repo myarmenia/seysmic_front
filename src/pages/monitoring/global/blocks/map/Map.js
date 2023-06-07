@@ -21,19 +21,19 @@ export const Map = () => {
       <Title>{language?.title}</Title>
       <div className="flex items-center justify-end gap-[17px] med-600:justify-center">
         <FilterBtn active={!state} onClick={() => setState(false)}>
-          по карте
+        {language.Map_Btn}
         </FilterBtn>
         <FilterBtn active={state} onClick={() => setState(true)}>
-          по списку стран
+          {language.Country_Btn}
         </FilterBtn>
       </div>
       {state ? <Countries /> : <EarthMap visible />}
       <TitleBorder className="py-5 items-center med-600:p-0">
         <span className="text-dark-blue text-[24px] text-center font-semibold med-600:text-[14px]">
-          Мониторинг на 2023 год включает и затрагивает территории 80 стран
+          {language.title1}
         </span>
-        <span className="text-dark-blue font-semibold text-[18px] med-600:text-[12px]">
-          Мы постоянно работаем над увеличением охвата и детализации мониторинга
+        <span className="text-dark-blue font-semibold text-[18px] text-center med-600:text-[12px]">
+          {language.title2}
         </span>
       </TitleBorder>
     </div>

@@ -104,7 +104,7 @@
     transform: rotate(360deg);
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
   .cont {
     @apply min-h-fit mb-[50px] px-5;
   }
