@@ -10,7 +10,7 @@ export const EarthMap = ({ className = '', visible }) => {
   return (
     <div className={[styles.map_bg, className].join(' ')}>
       <img src={map_img} className={styles.img} alt="map" />
-      {Array.isArray(map) && map.map((el, i) => <MapHover el={el} key={i} />)}
+      {Array.isArray(map) && map?.map((el, i) => <MapHover el={el} key={i} />)}
     </div>
   );
 };
