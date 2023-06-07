@@ -32,6 +32,7 @@ const Component = () => {
       <div className="grid grid-cols-4 gap-[17px] mt-[120px] med-900:grid-cols-[repeat(auto-fill,_minmax(250px,_1fr))] med-600:grid-cols-2">
         {data?.files.map(({ path }) => (
           <img
+            key={path}
             src={path}
             className="bg-gray-400  h-[200px] med-1200:h-[150px] med-600:h-[100px]"
           />

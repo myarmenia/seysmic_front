@@ -9,7 +9,7 @@ import { generateArray } from "../../../../../helper";
 import styles from "./allQuakes.module.css";
 import { useTranslation } from "../../../../../hooks";
 
-const ChartOptions = {
+const ChartOptions_default = {
   chart: {
     animations: {
       enabled: true,
@@ -130,7 +130,7 @@ const data = generateArray(25, {
 export const AllQuakes = () => {
   const {
     monitoring_and_prediction: {
-      forecast_online_mode: { title1,title2, subtitle, data, text },
+      forecast_online_mode: { title1, title2, subtitle, data, text },
     },
   } = useTranslation().language;
 
@@ -149,9 +149,7 @@ export const AllQuakes = () => {
         {text}
       </p> */}
       <MyChart />
-      <Title>
-      {title2}
-      </Title>
+      <Title>{title2}</Title>
       <MyChart2 />
     </Container>
   );
@@ -168,9 +166,9 @@ const MyChart2 = () => {
         <>
           {bool && (
             <ReactApexCharts
-              options={ChartOptions2}
-              series={ChartOptions2.series}
-              type={ChartOptions2.chart.type}
+              options={{ ...ChartOptions_default, ...ChartOptions2 }}
+              series={ChartOptions_default.series}
+              type={ChartOptions_default.chart.type}
               width="100%"
               height={300}
             />
@@ -193,9 +191,9 @@ const MyChart = () => {
         <>
           {bool && (
             <ReactApexCharts
-              options={ChartOptions}
-              series={ChartOptions.series}
-              type={ChartOptions.chart.type}
+              options={{ ...ChartOptions_default, ...ChartOptions }}
+              series={ChartOptions_default.series}
+              type={ChartOptions_default.chart.type}
               width="100%"
               height={300}
             />

@@ -382,222 +382,18 @@
       ],
       "text": "Another 6 were predicted retrospectively because they occurred in the new SS (100%). 2 double earthquakes, 4 target miss alarms are not predicted.",
       "ChartOptions": {
-        "chart": {
-          "animations": {
-            "enabled": true,
-            "easing": "easeinout",
-            "speed": 1000,
-            "animateGradually": {
-              "enabled": true,
-              "delay": 200
-            },
-            "dynamicAnimation": {
-              "enabled": true,
-              "speed": 1000
-            }
-          },
-          "type": "donut",
-          "height": 350,
-          "width": 300
-        },
-        "responsive": [
-          {
-            "breakpoint": 600,
-            "options": {
-              "chart": {
-                "height": "400px",
-                "width": "100%"
-              },
-              "legend": {
-                "position": "bottom",
-                "horizontalAlign": "left"
-              },
-              "plotOptions": {
-                "pie": {
-                  "donut": {
-                    "labels": {
-                      "value": { "fontSize": "36px", "offsetY": 13 }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        ],
-        "dataLabels": {
-          "enabled": false
-        },
-        "plotOptions": {
-          "pie": {
-            "expandOnClick": false,
-            "dataLabels": {
-              "show": false
-            },
-            "donut": {
-              "size": "80%",
-              "background": "transparent",
-              "labels": {
-                "show": true,
-                "value": {
-                  "fontSize": "65px",
-                  "fontWeight": 700,
-                  "color": "#0A1577",
-                  "offsetY": 25
-                },
-                "name": {
-                  "show": false
-                },
-                "total": {
-                  "show": true,
-                  "showAlways": true
-                }
-              }
-            }
-          }
-        },
-        "series": [4, 6, 2],
         "labels": [
           "9 – կանխատեսվել են (75%)",
           "2 – կանխատեսվել է ցունամի (17%)",
           "3 – հերքվել են այլ կանխատեսումները (25%)"
-        ],
-        "fill": {
-          "type": ["gradient", "pattern", "solid"],
-          "opacity": 1,
-          "pattern": {
-            "strokeWidth": 7,
-            "enabled": true,
-            "style": "verticalLines"
-          },
-          "gradient": {
-            "shadeIntensity": 0.5,
-            "opacityFrom": 1,
-            "opacityTo": 1,
-            "shade": "dark",
-            "type": "horizontal",
-            "inverseColors": true,
-            "gradientToColors": ["#0026AA", "#0F6FE4", "#0026AA"],
-            "stops": [0, 100, 100]
-          }
-        },
-        "legend": {
-          "position": "right",
-          "offsetY": 5,
-          "fontSize": "24px",
-          "labels": {
-            "useSeriesColors": true
-          }
-        },
-        "colors": ["#0F6FE4", "#0026AA", "#41CF77"]
+        ]
       },
       "ChartOptions2": {
-        "chart": {
-          "animations": {
-            "enabled": true,
-            "easing": "easeinout",
-            "speed": 1000,
-            "animateGradually": {
-              "enabled": true,
-              "delay": 200
-            },
-            "dynamicAnimation": {
-              "enabled": true,
-              "speed": 1000
-            }
-          },
-          "type": "donut",
-          "height": 350,
-          "width": 300
-        },
-        "responsive": [
-          {
-            "breakpoint": 600,
-            "options": {
-              "chart": {
-                "height": "400px",
-                "width": "100%"
-              },
-              "legend": {
-                "position": "bottom",
-                "horizontalAlign": "left"
-              },
-              "plotOptions": {
-                "pie": {
-                  "donut": {
-                    "labels": {
-                      "value": { "fontSize": "36px", "offsetY": 13 }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        ],
-        "dataLabels": {
-          "enabled": false
-        },
-        "plotOptions": {
-          "pie": {
-            "expandOnClick": false,
-            "dataLabels": {
-              "show": false
-            },
-            "donut": {
-              "size": "80%",
-              "background": "transparent",
-              "labels": {
-                "show": true,
-                "value": {
-                  "fontSize": "65px",
-                  "fontWeight": 700,
-                  "color": "#0A1577",
-                  "offsetY": 25
-                },
-                "name": {
-                  "show": false
-                },
-                "total": {
-                  "show": true,
-                  "showAlways": true
-                }
-              }
-            }
-          }
-        },
-        "series": [20, 10, 4],
         "labels": [
           "26 – կանխատեսվել են (76%)",
           "6 – կանխատեսվել են հետահայաց (18%)",
           "2 – չեն կանխատեսվել (6%)"
-        ],
-        "fill": {
-          "type": ["gradient", "pattern", "solid"],
-          "opacity": 1,
-          "pattern": {
-            "strokeWidth": 7,
-            "enabled": true,
-            "style": "verticalLines"
-          },
-          "gradient": {
-            "shadeIntensity": 0.5,
-            "opacityFrom": 1,
-            "opacityTo": 1,
-            "shade": "dark",
-            "type": "horizontal",
-            "inverseColors": true,
-            "gradientToColors": ["#0026AA", "#0F6FE4", "#0026AA"],
-            "stops": [0, 100, 100]
-          }
-        },
-        "legend": {
-          "position": "right",
-          "offsetY": 5,
-          "fontSize": "24px",
-          "labels": {
-            "useSeriesColors": true
-          }
-        },
-        "colors": ["#0F6FE4", "#0026AA", "#41CF77"]
+        ]
       }
     },
     "SE_and_CT": {
@@ -848,7 +644,7 @@
         "question": "Ո՞րն է կանխատեսման նոր ռազմավարությունը։",
         "answer": "- Նոր ռազմավարությունը թույլ է տալիս մշակել գործողությունների նորմեր և կանոններ, երբ առաջ են գալիս երկրաշարժերի հուսալի երկարաժամկետ ու միջնաժամկետ, և արժանահավատ կարճաժամկետ կանխատեսումներ՝ հաշվի առնելով նաև ցունամիի առաջացման հավանականությունը և վնասները: Այդպիսով հնարավոր է դառնում պարբերաբար տեղեկացնել մարդկանց աշխարհի այս կամ այն տարածաշրջանում սեյսմիկ իրավիճակի մասին, միաժամանակ հաղորդել, թե որտե՞ղ է պոտենցիալ վտանգավոր և որտե՞ղ է անվտանգ:"
       },
-      
+
       {
         "question": "Որքա՞ն է կանխատեսման ճշտությունը։",
         "answer": "- Կանխատեսման ճշտությունը կախված է Սեյսմիկ Համակարգի (ՍՀ) հուսալիության աստիճանից և հայտնաբերված ենթահամակարգերի հիերարխիայից: Ներկա պահին ՍՀ-երում կանխատեսման ճշտությունը տատանվում է 1-6 ամիս, ± 0.1 ըստ մագնիտուդի, իսկ ըստ տեղի սահմանափակվում է ՍՀ-ի չափերով և օջախի մեծության կարգով: Բացասական կանխատեսման (երբ ուժեղ երկրաշարժը բացառվում է կամ այլ կանխատեսումները հերքվում են)  ճշտությունը շատ բարձր է:"
