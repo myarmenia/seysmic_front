@@ -167,7 +167,7 @@ const MyChart2 = () => {
           {bool && (
             <ReactApexCharts
               options={{ ...ChartOptions_default, ...ChartOptions2 }}
-              series={ChartOptions_default.series}
+              series={[26, 6, 2]}
               type={ChartOptions_default.chart.type}
               width="100%"
               height={300}
@@ -178,6 +178,8 @@ const MyChart2 = () => {
     </ViewPosition>
   );
 };
+
+// 79%, 15, 5
 
 const MyChart = () => {
   const {
@@ -192,7 +194,7 @@ const MyChart = () => {
           {bool && (
             <ReactApexCharts
               options={{ ...ChartOptions_default, ...ChartOptions }}
-              series={ChartOptions_default.series}
+              series={[9.5, 1.9, 0.6]}
               type={ChartOptions_default.chart.type}
               width="100%"
               height={300}
