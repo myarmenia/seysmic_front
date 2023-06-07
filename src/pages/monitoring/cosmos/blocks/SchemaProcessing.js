@@ -109,7 +109,8 @@ export const SchemaProcessing = () => {
       </Container>
       <Container
         bg="bg-[#F9F9F9]"
-        className="flex pb-[32px] mt-[20px] gap-[80px] med-1200:flex-col med-1200:gap-0 med-1200:pb-0">
+        className="flex pb-[32px] mt-[20px] gap-[80px] med-1200:flex-col med-1200:gap-0 med-1200:pb-0"
+      >
         <div className="flex gap-[20px] justify-between  max-w-[400px]  ">
           <div className="flex flex-col justify-between w-full gap-8 ">
             <div className="h-[400px] med-600:h-[300px] ">
@@ -242,12 +243,13 @@ export const SchemaProcessing = () => {
                 <h3 className="font-bold text-[16px] text-center uppercase text-dark-blue mx-auto w-fit med-600:text-[12px] med-600:leading-[112%] ">
                   {el.title}
                 </h3>
-                <div className={`flex justify-between gap-5 med-900:flex-wrap`}>
+                <div
+                  className={`grid grid-cols-[repeat(auto-fit,_minmax(150px,_1fr))] gap-3 med-600:grid-cols-3`}
+                >
                   {el.images.map((el, indexs) => (
                     <img
-                      className={`w-[12%] pr-4 med-600:${
-                        indexs > 2 && "hidden"
-                      } med-600:w-1/4`}
+                      key={indexs}
+                      className={`med-600:${indexs > 2 && "hidden"}`}
                       src={el}
                       alt=" "
                     />
