@@ -29,6 +29,7 @@ import {
   RegionalDynamic,
   FAQ,
 } from "../pages";
+import { loader } from "../pages/home/Home";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -84,10 +85,10 @@ export const router = createBrowserRouter(
               loader={MonitoringExamples.loader}
             />
           </Route>
-          <Route path="regional" element={<Regional />}>
-            <Route index element={<RegionalIndex />} />
-            <Route path=":id" element={<RegionalDynamic />} />
-          </Route>
+          <Route
+            path="regional"
+            element={<Regional />}
+            loader={Regional.loader}></Route>
           <Route path="product" element={<OurProduct />} />
         </Route>
         <Route path="technologies" element={<Technologies />} />

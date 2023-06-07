@@ -20,9 +20,10 @@ export const Header = () => {
   } = useTranslation();
 
   const chooseOption = () => {
-    if (window.innerWidth <= 600) {
-      setLangAndMenu("");
-    }
+    // if (window.innerWidth <= 600) {
+    console.log("boz");
+    setLangAndMenu("");
+    // }
   };
 
   return (
