@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { CustomBtn } from "../../../../components/forms";
-import { Container, Title } from "../../../../components/reusable";
+import { Carousel, Container, Title } from "../../../../components/reusable";
+import { useTranslation } from "../../../../hooks";
+import { useLoaderData } from "react-router";
+import { SwiperSlide } from "swiper/react";
 const arr = [
   "Армянское нагорье",
   "Армения",
@@ -12,46 +15,82 @@ const arr = [
   "Армянское нагорье",
 ];
 const Description = ({ children }) => {
+  const data = useLoaderData();
+  const { regional_monitoring: language } = useTranslation().language;
+  const [open, setOpen] = useState(false);
+  const ref = useRef();
+
   return (
     <Container>
       <div className="h-[1px] bg-dark-blue w-[328px] my-0 mx-auto"></div>
-      <Title className="my-[30px]">
-        В КАЖДОЙ СЕЙСМИЧЕСКОЙ СИСТЕМЕ ПРОИЗВОДИТСЯ МОНИТОРИНГ И ПРОГНОЗ
-        РЕЗУЛЬТАТЫ ОБНОВЛЯЮТСЯ КАК МИНИМУМ РАЗ В КВАРТАЛ
-      </Title>
-      <p className="text-xl med-1200:text-base">
-        Ниже приводятся анимационные ролики мониторинга миграции сейсмической
-        неустойчивости и прогноза затухания интенсивности сейсмического
-        воздействия внутри иерархии сейсмических систем по данным на начало
-        квартала. Анимация миграция неустойчивости производится без учета
-        будущей сейсмической активизации, поэтому миграция неустойчивости в
-        рамках системы прекратится в той зоне, где будет подготовлено и
-        произойдет сильное землетрясение. Такие зоны мы контролируем отдельно, с
-        привлечением других параметров.
-      </p>
+      <Title className="my-[30px]">{language?.subtitle}</Title>
+      <p className="text-xl mb-8 med-1200:text-base">{language?.text}</p>
       <div className="my-[70px] flex gap-3 flex-wrap">
-        {arr.map((el, i) => {
+        {language?.data?.map((el, i) => {
           return (
-            <CustomBtn gradient key={i}>
+            <CustomBtn
+              onClick={() => {
+                console.log(ref);
+                window.scroll({
+                  top: ref.current.offsetTop - 150,
+                  // left: 100,
+                  behavior: "smooth",
+                });
+                // ref.current.scrollIntoView();
+              }}
+              gradient
+              key={i}>
               {el}
             </CustomBtn>
           );
         })}
       </div>
-      <Title>Иерархия сейсмических систем в регионе</Title>
-      <p className="text-center my-[30px] text-xl med-1200:text-base">
-        Армения <span className="text-[#EE3221]">({`5.0<M<6.6`}),</span>
-        Армянское Нагорье
-        <span className="text-[#EE3221]">({`M>6.7`}),</span>
-        Центральный Каспий <span className="text-[#EE3221]">({`M>5.8`})</span>
-        ,СЗ Иран
-        <span className="text-[#EE3221]">({`M>5.8`}),</span>
-        <br />
-        Крым-Западный Кавказ <span className="text-[#EE3221]">({`M>4.5`})</span>
-        и Восточный Кавказ
-        <span className="text-[#EE3221]"> ({`M>5.4`})</span>
-      </p>
-      {children}
+      <Title>{language?.hierarchy}</Title>
+      <div
+        ref={ref}
+        className="text-center my-[30px] text-xl med-1200:text-base"
+        dangerouslySetInnerHTML={{ __html: data?.title }}></div>
+      <img alt=" " src={data.image} loading="lazy" />
+      <div className="grid grid-cols-[repeat(auto-fill,_minmax(300px,_1fr))] gap-[17px] mt-[120px] mb-[60px]">
+        {data?.files?.map(({ type, path }, i) => (
+          <div key={i} onClick={() => setOpen(true)} className="h-[184px] ">
+            {type === "image" ? (
+              <img src={path} className="h-full cursor-pointer" />
+            ) : (
+              <video className="h-[184px] cursor-pointer">
+                <source src={path} />
+              </video>
+            )}
+          </div>
+        ))}
+      </div>
+      <Carousel {...{ open }} handleClose={() => setOpen(false)}>
+        {data?.files.map(({ type, path }, i) => {
+          if (type === "image") {
+            return (
+              <SwiperSlide key={i}>
+                <img
+                  src={path}
+                  className="w-full h-full min-h-[500px] object-contain object-center"
+                  alt=""
+                />
+              </SwiperSlide>
+            );
+          }
+          return (
+            <SwiperSlide key={i}>
+              <center>
+                <video
+                  controls
+                  className="w-full h-full min-h-[500px] object-cover"
+                  alt="">
+                  <source src={path} type="video/mp4" />
+                </video>
+              </center>
+            </SwiperSlide>
+          );
+        })}
+      </Carousel>
     </Container>
   );
 };

@@ -19,7 +19,28 @@
       "technologies": "Technology"
     }
   },
-  "home": {},
+  "home": {
+    "animation_text": "Earthquakes cannot be stopped, but they can be predicted!",
+    "pres_relise": "Media",
+    "learn_more": "Learn more",
+    "strategic_partner": "STRATEGIC PARTNER",
+    "links_text": "Official partner site",
+    "description_title": "Natural risks",
+    "description": "We seek and support projects and technologies that aim to try to predict natural disasters (earthquakes, tsunamis, hurricanes, etc.), monitor natural anomalies, to identify patterns in their occurrence. The goal for this area is to find and promote the use of technologies that not only deal with consequences from natural disasters, but also proactively focus on early predictions and warnings, thus reducing the risks and damage to people's lives.",
+    "news": "NEWS",
+    "uldata": {
+      "title": "USER OF THIS SITE SHOULD KNOW.",
+      "data": [
+        "<p>earthquake forecast accuracy in time <b class='text-[#022FAE]'> 1 month</b> or more, depending on the specific situation</p>",
+        "<p>earthquake prediction accuracy in place on the Earth's surface and in the depth of the source is limited by the size of the seismic system <b class='text-[#022FAE]'> (surface contour and depth),</b> and inside the seismic system can reach the size of the source of the predicted earthquake, depending on its magnitude</p>",
+        "<p>if a strong earthquake waiting area is indicated inside the seismic system, then a strong earthquake is automatically excluded in other places inside the seismic system, i.e. <b class='text-[#022FAE]'> the entire volume of the seismic system is controlled</b class='text-[#022FAE]'> b></p>",
+        "<p>elements of a seismic system in a limited time interval <b class='text-[#022FAE]'> (from 1 to 6 months)</b> may be in an unstable state, and if a strong earthquake does not occur during this time, then after this period the system again goes into a stable state</p>",
+        "<p>depending on the development of the seismic situation (from future indicator earthquakes), <b class='text-[#022FAE]'>the forecast results may change and be refined over time.</b> Instability (predicted earthquake location) can migrate within the seismic system from one fault zone to another, the predicted waiting time for an earthquake can move away or approach and, accordingly, the magnitude of the expected earthquake can change (all this is included in the method)</p>",
+        "<p>depending on the knowledge of the region and earthquake data, seismic systems are divided into <b class='text-[#022FAE]'> four levels - reliable, well-defined, mediocre and poorly defined,</b> respectively and the quality of the forecast in them is subdivided.</p>",
+        "<p>Forecast accuracy in magnitude ± 0.1; large deviations in magnitude are negotiated separately</p>"
+      ]
+    }
+  },
   "technology": {
     "title": "HOW DOES THE TECHNOLOGY WORK?",
     "subTitle": "The basis of the technology is the new seismic parameters, the law of seismic entropy production (SEM) and a specialized software LMTP-SPQ",
@@ -168,7 +189,7 @@
     "forecast_accuracy": {
       "title": "PREDICTION ACCURACY",
       "subtitlt": "The forecast by the MSE is made within the framework of predetermined conditions:",
-      "data": [       
+      "data": [
         "<p class='text-[#1A374D]'>accuracy of earthquake prediction <span class='text-[#022FAE] font-bold'>by time </span> from 6 months to 1 week, depending on the specific situation;</p>",
         "<p class='text-[#1A374D]'>accuracy of the forecast <span class='text-[#022FAE] font-bold'>by magnitude</span> ± 0.1; large deviations in magnitude are negotiated separately;</p>",
         "<p class='text-[#1A374D]'>the accuracy of the earthquake forecast <span class='text-[#022FAE] font-bold'>by location</span> on the Earth's surface and <span class='text-[#022FAE] font-bold'>by the depth</span> is limited by the size of the SS and can reach the size of the source of predicted earthquake;</p>",
@@ -590,26 +611,26 @@
       "subTitle": "SEM allows to build a mathematical model of the geological environment (volume SS), due to which, for the first time in world practice, it becomes possible to visualize the entire process of preparing strong earthquakes",
       "text": "The technology of monitoring and prediction is based on the law of seismic entropy production (Akopian, 2013, PDF). This law is viewed only within the framework of new seismic parameters calculated on the basis of the most reliable and transparent information – earthquake catalogs. It allows to build a mathematical pattern of the geological environment (SS volume), due to which, for the first time in world practice, it becomes possible to visualize the entire process of preparing a strong earthquake. \n\nThe method of seismic entropy does not contradict everything that has been accumulated and developed by specialists in the field of earthquake forecasting and seismic risk reduction, on the contrary, it allows us to combine these efforts and significantly increase their effectiveness, increasing society's resilience to natural disasters, as well as from the point of view of effective allocation of finances and targeted preparation for strong earthquakes. \n\nDue to its versatility, the method already makes it possible to create a multi-level (global, regional, national and local) automated information system for seismic monitoring. Moreover, for well-defined seismic systems (for example, Italy, Japan, California), a reliable short-term forecast can be made. \n\nWe believe that the seismic entropy method, by its universality, transparency, reliability and high efficiency, is just the tool on the basis of which seismologists and governments from around the world can already combine their efforts to develop common international norms and rules for forecasting, warning and taking measures in case of seismic danger."
     },
-    "SS_and_LSE" :{
+    "SS_and_LSE": {
       "title": "SEISMIC SYSTEM AND THE LAW OF SEISMIC ENTROPY PRODUCTION"
     },
-    "Pyramid":{
-      "title":"THE PYRAMID OF THE SS HIERARCHY",
-      "subTitle":"With this approach, SS are divided into subsystems, which in turn are divided into sub subsystems and so on. At the same time, the threshold magnitude of predicted strong earthquakes decreases, as a rule, the size of the systems also decreases",
+    "Pyramid": {
+      "title": "THE PYRAMID OF THE SS HIERARCHY",
+      "subTitle": "With this approach, SS are divided into subsystems, which in turn are divided into sub subsystems and so on. At the same time, the threshold magnitude of predicted strong earthquakes decreases, as a rule, the size of the systems also decreases",
       "texts": [
         "Monitoring of the SS hierarchy from top to bottom allows to detail and reduce the threshold magnitude of predicted earthquakes and at the same time increase the accuracy and reliability of forecasts of strong earthquakes in the SS of the upper energy level (Fig. left)",
         "When selecting a specific object (for example, a nuclear power plant site), the SS hierarchy is monitored from the bottom up only in those SS that the selected object falls into (Fig. right)"
       ]
     },
-    "Diagram_Prediction":{
+    "Diagram_Prediction": {
       "title": "TRACK DIAGRAM AND PREDICTION STAGES",
-      "subTitle" :"Monitoring and prediction is carried out on the basis of a track diagram and an attractor",
+      "subTitle": "Monitoring and prediction is carried out on the basis of a track diagram and an attractor",
       "texts": [
         "The track diagram shows the different stages of alarms and expectations of strong earthquakes as the trajectory develops and approaches the attractor (Fig. left):<br/> <span class='text-[#7BB500] font-semibold ml-[30px]'>D, C, С1, С2 – Green stage, not dangerous</span> ((long-term–medium-term, years-months))<br><span class='text-[#FF0000] ml-[30px] font-semibold'>B1-3, В0, A1-3, А0 – Red stage, dangerous</span> (medium-short-term, months–days)",
         "Various manifestations of seismicity are shown (foreshocks, seismic swarms and lulls, triggers, etc.) (Fig. right)"
       ]
     },
-    "Prediction_Probability":{
+    "Prediction_Probability": {
       "title": "PREDICTION PROBABILITY",
       "subTitle": "The prediction is made on the basis of energy and track diagrams, and probabilities are additional parameters",
       "ulTitile": "Three probability values are calculated:",
@@ -619,7 +640,6 @@
         "P =PK*PW – the probability of a strong earthquake (this probability is zero outside the attractor and begins to grow when the trajectory enters the attractor)"
       ]
     }
-    
   },
   "map": {
     "title": "GLOBAL SEISMIC HAZARD MAP",
@@ -652,7 +672,32 @@
       "description": "Argentina, Bolivia, Brazil, Peru, Chile, Ecuador."
     }
   ],
-
+  "schema_processing": {
+    "title": "MONITORING SPACE IMAGES",
+    "text1": "Together with the Long Mid-Term Prediction (LMTP) program, we will conduct satellite monitoring and lineament1 analysis of the preparation zones for predicted strong earthquakes.",
+    "text3": "[1] Lineaments are linear elements of different ranks, expressed in the landscape and structure of the earth's crust: reflecting tectonics, fracturing, boundaries of geological formations, straight sections of coastlines, mountain ranges and other straightened elements of landscapes and geological structures. With the advent of materials from space surveys of the Earth's surface, the term \"lineament\" has received a new meaning and has become widely used in geology and related fields. Satellite images clearly show wide and extended zones of cracks, ruptures, folds, uplifts and subsidence, which cross both platforms and fold belts.",
+    "text4": "The lineament analysis of the monitoring of satellite images of the zones of preparation of strong earthquakes in recent years has made it possible to reveal certain dynamics in the development of lineament systems before and after strong earthquakes.",
+    "title2": "SCHEME FOR PROCESSING SPACE IMAGES",
+    "text5": "The scheme of stage-by-stage processing of space images is shown below. <br /> For a particular region, a satellite is selected and a primary satellite image is selected using specialized programs. Specialized programs are used to process primary images and to isolate lineaments in satellite images.",
+    "satellite_selection": {
+      "text1": "Satellite selection",
+      "text2": "Primary image",
+      "text3": "Image processing by ENVI program",
+      "text4": "Selection of lineaments program Winlessa",
+      "text5": "Image processing by ENVI program",
+      "text6": "Step-by-step processing of a space image for a selected satellite, date, region and local area"
+    },
+    "title3": "SPACE MONITORING FOR ARMENIA AND ADJACENT TERRITORIES",
+    "text6": "Kurdistan Knot, Armenia and its subzones of continuous monitoring from space. For rectangular zones, geographical coordinates are given (starting from the upper left corner).",
+    "title4": "MONITORING EXAMPLE",
+    "text7": "The source zone of the earthquake on the Iran-Iraq border on November 12, 2017, М=7.3 (left) and the forecast of this earthquake in the Zagros SS by ITU (right) during the Presentation at the State Corporation Rosatom",
+    "title5": "EXAMPLE OF MONITORING THE FOOT ZONE OF A STRONG EARTHQUAKE BY LINEMET ANALYSIS OF SPACE IMAGES FROM 03-21.08.17"
+  },
+  "SE_and_CT": {
+    "title": "SEISMIC ENTROPY METHOD (SEM) AND COMPUTER TECHNOLOGY (LMTP-SPQ) FOR MONITORING AND PREDICTION",
+    "subTitle": "SEM allows to build a mathematical model of the geological environment (volume SS), due to which, for the first time in world practice, it becomes possible to visualize the entire process of preparing strong earthquakes",
+    "text": "The technology of monitoring and prediction is based on the law of seismic entropy production (Akopian, 2013, PDF). This law is viewed only within the framework of new seismic parameters calculated on the basis of the most reliable and transparent information – earthquake catalogs. It allows to build a mathematical pattern of the geological environment (SS volume), due to which, for the first time in world practice, it becomes possible to visualize the entire process of preparing a strong earthquake. \nThe method of seismic entropy does not contradict everything that has been accumulated and developed by specialists in the field of earthquake forecasting and seismic risk reduction, on the contrary, it allows us to combine these efforts and significantly increase their effectiveness, increasing society's resilience to natural disasters, as well as from the point of view of effective allocation of finances and targeted preparation for strong earthquakes. \nDue to its versatility, the method already makes it possible to create a multi-level (global, regional, national and local) automated information system for seismic monitoring. Moreover, for well-defined seismic systems (for example, Italy, Japan, California), a reliable short-term forecast can be made. \nWe believe that the seismic entropy method, by its universality, transparency, reliability and high efficiency, is just the tool on the basis of which seismologists and governments from around the world can already combine their efforts to develop common international norms and rules for forecasting, warning and taking measures in case of seismic danger."
+  },
   "about": {
     "title": "International Center",
     "sub_title": "of the Seismic Risk Global Monitoring ",
@@ -724,6 +769,20 @@
       ]
     }
   },
+  "regional_monitoring": {
+    "title": "REGIONAL MONITORING",
+    "subtitle": "EACH SEISMIC SYSTEM IS MONITORED AND FORECASTED RESULTS ARE UPDATED AT LEAST ONCE A QUARTER",
+    "text": "Below are animation clips of monitoring the migration of seismic instability and predicting the attenuation of the intensity of seismic impact within the hierarchy of seismic systems according to the data at the beginning of the quarter. Animation of instability migration is performed without taking into account future seismic activation, so instability migration within the system will stop in the zone where a strong earthquake will be prepared and occur. We control such zones separately, using other parameters.",
+    "hierarchy": "HIERARCHY OF SEISMIC SYSTEMS IN THE REGION",
+    "data": [
+      "Armenia",
+      "Armenian Highlands",
+      "Central Caspian",
+      "NW Iran",
+      "Crimea-Western Caucasus",
+      "Eastern Caucasus"
+    ]
+  },
   "monitoring": {
     "global": {
       "title": "GLOBAL MONITORING"
@@ -756,7 +815,7 @@
     "data": ["Technology", "Products", "Cooperation", "Other"]
   },
   "press_release": {
-    "title": "Press-release",
+    "title": "MEDIA",
     "search": "Search",
     "start_date": "DD.MM.YYYY",
     "end_date": "DD.MM.YYYY"
