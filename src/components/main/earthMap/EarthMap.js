@@ -1,16 +1,17 @@
-import React from 'react';
-import styles from './earthMap.module.css';
-import { earth_map } from '../../../store/constats';
-import map_img from '../../../assets/main/monitoring/main-map.png';
-import { Link, useLoaderData, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import React from "react";
+import styles from "./earthMap.module.css";
+import { earth_map } from "../../../store/constats";
+import map_img from "../../../assets/main/monitoring/main-map.png";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
+import { useState } from "react";
 
-export const EarthMap = ({ className = '', visible }) => {
-  const { map } = useLoaderData();
+export const EarthMap = ({ className = "", visible }) => {
+  const data = useLoaderData();
   return (
-    <div className={[styles.map_bg, className].join(' ')}>
+    <div className={[styles.map_bg, className].join(" ")}>
       <img src={map_img} className={styles.img} alt="map" />
-      {Array.isArray(map) && map.map((el, i) => <MapHover el={el} key={i} />)}
+      {Array.isArray(data?.map) &&
+        data?.map.map((el, i) => <MapHover el={el} key={i} />)}
     </div>
   );
 };
@@ -28,9 +29,14 @@ const MapHover = ({ el }) => {
         className={styles.blue_box}
         onClick={() => handleClick(el)}
         onMouseMove={() => setHover(true)}
-        onMouseLeave={() => setHover(false)}>
+        onMouseLeave={() => setHover(false)}
+      >
         {hover && (
-          <span className={[styles.blue_box_id, styles.blue_box_id_visible, ].join(' ')}>
+          <span
+            className={[styles.blue_box_id, styles.blue_box_id_visible].join(
+              " "
+            )}
+          >
             {el?.title}
           </span>
         )}
