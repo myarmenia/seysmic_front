@@ -8,7 +8,7 @@ export const Cosmos = () => {
     <div className="py-[var(--py)]">
       <CosmosImage />
       <SchemaProcessing />
-      <Outlet />
+      {/* <Outlet /> */}
     </div>
   );
 };

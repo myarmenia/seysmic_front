@@ -49,22 +49,22 @@ export const Levels = () => {
       return [
         {
           flag: flag1en,
-          text: "reliable - number of completed seismic cycles ≥ 15",
+          text: "(reliable) — the number of completed seismic cycles ≥ 15;",
           imgClassName: "med-900:w-[24%]",
         },
         {
           flag: flag2en,
-          text: "good - the number of completed seismic cycles ≥ 10",
+          text: "(good) — the number of completed seismic cycles ≥ 10;",
           imgClassName: "med-900:w-[31%]",
         },
         {
           flag: flag3en,
-          text: "mediocre - the number of completed seismic cycles ≥ 5",
+          text: "(mediocre) — the number of completed seismic cycles ≥ 5;",
           imgClassName: "med-900:w-[38%]",
         },
         {
           flag: flag4en,
-          text: "bad — the number of completed seismic cycles from 2 to 5",
+          text: "(bad) — the number of completed seismic cycles from 2 to 5.",
           imgClassName: "med-900:w-[45%]",
         },
       ];
@@ -72,22 +72,22 @@ export const Levels = () => {
       return [
         {
           flag: flag1am,
-          text: "reliable - number of completed seismic cycles ≥ 15",
+          text: "(հուսալի) - ավարտված սեյսմիկ ցիկլերի քանակը ≥ 15",
           imgClassName: "med-900:w-[24%]",
         },
         {
           flag: flag2am,
-          text: "good - the number of completed seismic cycles ≥ 10",
+          text: "(լավ) - ավարտված սեյսմիկ ցիկլերի քանակը ≥ 10",
           imgClassName: "med-900:w-[31%]",
         },
         {
           flag: flag3am,
-          text: "mediocre - the number of completed seismic cycles ≥ 5",
+          text: "(միջին) - ավարտված սեյսմիկ ցիկլերի քանակը ≥ 5",
           imgClassName: "med-900:w-[38%]",
         },
         {
           flag: flag4am,
-          text: "bad — the number of completed seismic cycles from 2 to 5",
+          text: "(վատ) - ավարտված սեյսմիկ ցիկլերի քանակը 2-ից 5-ը:",
           imgClassName: "med-900:w-[45%]",
         },
       ];

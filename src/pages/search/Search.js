@@ -19,7 +19,7 @@ const linkTo = (type, id) => {
     return `/earth-quakes/earth-quake/${id}`;
   }
   if (type === "map_region_info") {
-    return `/monitoring/global/${id}`;
+    return `/monitoring/global/earth-map/${id}`;
   }
   return "/home";
 };
@@ -29,8 +29,6 @@ export const Component = () => {
   const search = new URL(window.location.href).searchParams.get("search");
   const [value, setValue] = useState(search || "");
   const navigate = useNavigate();
-  const submit = useAppSubmit();
-  const action = useFormAction();
   const onSubmit = () => {
     const search = convertSearchParamsStr({ search: value });
     navigate({ pathname: "", search: "?" + search });
