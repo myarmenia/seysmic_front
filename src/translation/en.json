@@ -166,21 +166,21 @@
     },
     "text": "96% of earthquakes occur under compression conditions in the zones of interaction of lithospheric plates(90% occur on the Pacific Plate and 6% on the Mediterranean-Alpine-Himalayan belt).In spreading zones, less than 1% of the Earth's seismic energy is released in a stretching environment",
     "forecast_accuracy": {
-      "title": "FORECAST ACCURACY",
+      "title": "PREDICTION ACCURACY",
       "subtitlt": "The forecast by the MSE is made within the framework of predetermined conditions:",
-      "data": [
-        "<p class='text-[#1A374D]'>The accuracy of earthquake prediction in time from <span class='text-[#022FAE] font-bold'>6 months to 1 week</span> depending on the specific situation.</p>",
-        "<p class='text-[#1A374D]'>The accuracy of the forecast <span class='text-[#022FAE] font-bold'>in magnitude of ± 0.1</span>; large deviations are specified separately.</p>",
-        "<p class='text-[#1A374D]'>The accuracy of <span class='text-[#022FAE] font-bold'> earthquake prediction</span> at <span class='text-[#022FAE] font-bold'>the place on the surface</span> and at the depth of sources is limited by the size of the SS and can reach the size of the predicted earthquake.</p>",
-        "<p class='text-[#1A374D]'>If a strong earthquake waiting area is indicated within the SS, then a strong earthquake is automatically excluded in other places within the SS, i.e.,  <span class='text-[#022FAE] font-bold'>the entire volume of the SS is controlled</span>.</p>",
-        "<p class='text-[#1A374D]'>Depending on the development of the seismic situation, the <span class='text-[#022FAE] font-bold'>forecast results may change and be refined over time</span>.</p>",
-        "<p class='text-[#1A374D]'>Instability area (predicted earthquake location) can migrate within the SS from one fault zone to another, the predicted earthquake time can move away or approach and, accordingly, the magnitude of the expected earthquake can change <span class='text-[#022FAE] font-bold'>(all this is placed in the method)</span>.</p>",
-        "<p class='text-[#1A374D]'> Elements of the SS in a limited time interval <span class='text-[#022FAE] font-bold'>(from 1 to 6 months)</span> can be in an unstable state, and if during this time a strong earthquake does not occur, the system will again return to a steady state.</p>"
+      "data": [       
+        "<p class='text-[#1A374D]'>accuracy of earthquake prediction <span class='text-[#022FAE] font-bold'>by time </span> from 6 months to 1 week, depending on the specific situation;</p>",
+        "<p class='text-[#1A374D]'>accuracy of the forecast <span class='text-[#022FAE] font-bold'>by magnitude</span> ± 0.1; large deviations in magnitude are negotiated separately;</p>",
+        "<p class='text-[#1A374D]'>the accuracy of the earthquake forecast <span class='text-[#022FAE] font-bold'>by location</span> on the Earth's surface and <span class='text-[#022FAE] font-bold'>by the depth</span> is limited by the size of the SS and can reach the size of the source of predicted earthquake;</p>",
+        "<p class='text-[#1A374D]'>if a waiting area for a strong earthquake is indicated within the SS, then a strong earthquake is automatically excluded in other places of the SS, i.e. the entire volume of the SS is controlled;</p>",
+        "<p class='text-[#1A374D]'>depending on the development of the seismic situation, the prediction results may change and be updated over time.</p>",
+        "<p class='text-[#1A374D]'>Instability (predicted earthquake location) can migrate within the SS from one fault zone to another, the predicted waiting time for an earthquake can move away or approach and, accordingly, the magnitude of the expected earthquake can change (all this is embedded in the method);</p>",
+        "<p class='text-[#1A374D]'>SS elements in a limited time interval (from 1 to 6 months) may be in an unstable state, and if a strong earthquake does not occur during this time, the system will return to a stable state</p>"
       ]
     },
     "forecast_are_divided": {
-      "title": "FORECAST ACCURACY",
-      "text": "The forecast by the MSE is made within the framework of predetermined conditions:"
+      "title": "THE SEISMIC SYSTEM IS DIVIDED INTO FOUR LEVELS ACCORDING TO THE RELIABILITY OF FORECASTS",
+      "text": "After each strong earthquake, the quality of the forecast improves and over time all SS will move to the first level of reliability."
     },
     "ITU": {
       "title": "Computer technology (CT) for global monitoring of seismicity, forecasting the intensity of the expected earthquake and the construction dynamic maps of seismic hazard based on the MSE",
@@ -201,8 +201,10 @@
       "seismic_entropy_method": "In the field of nuclear and renewable energy. CT is universal and can be used to predict the seismic hazard of NPPs and the locations of the main energy facilities and communications for On-Line monitoring, earthquake and tsunami forecasting, for visualization of the seismic situation at the sites of existing and planned NPPs in the world. for On-Line monitoring and forecasting the occurrence of dangerous changes of a natural and man-made nature for fuel and energy facilities and communications. CT makes it possible to create dynamic maps of seismic hazard for the sites of existing and planned NPPs in addition to existing traditional maps; introduce a dynamic passport for calculating seismic loads at NPPs, fuel and energy facilities and communications."
     },
     "forecast_online_mode": {
-      "title": "Monitoring and prediction of earthquakes in ON Line mode in 2009–2023",
-      "subtitle": "26 earthquakes were successfully predicted (of which 4 are short-term, 4* are inaccurate in one parameter, 2 forecasts are negative)",
+      "title1": "MONITORING AND FORECASTING OF EARTHQUAKES IN 1988-2008",
+      "title2": "MONITORING AND FORECASTING OF EARTHQUAKES IN ONLINE MODE 2009-2023",
+      "subtitle1": "26 earthquakes were successfully predicted (of which 4 are short-term, 4* are inaccurate in one parameter, 2 forecasts are negative)",
+      "subtitle2": "26 earthquakes were successfully predicted (of which 4 are short-term, 4* are inaccurate in one parameter, 2 forecasts are negative)",
       "data": [
         {
           "magnitude": "M=6.2",
@@ -440,9 +442,9 @@
         },
         "series": [22, 8, 2],
         "labels": [
-          "(94%) – out of 32 strong earthquakes: 30 were predicted ",
-          "(19%) – ncluding 6  were predicted retrospectively",
-          "(6%) – were not predicted."
+          "9 – predicted (75%)",
+          "2 – tsunami predicted (17%)",
+          "3 – other forecasts have been refuted (25%)"
         ],
         "fill": {
           "type": ["gradient", "pattern", "solid"],
@@ -549,9 +551,9 @@
         },
         "series": [9.12, 2.16, 0.72],
         "labels": [
-          "(94%) – 26 - предсказаны",
-          "(19%) – 6 - предсказаныz ретроспективно",
-          "(6%) – 2 - не предсказано"
+          "26 – predicted (76%)",
+          "6 – predicted retrospectively (18%)",
+          "2 – not predicted (6%)"
         ],
         "fill": {
           "type": ["gradient", "pattern", "solid"],
@@ -582,7 +584,42 @@
         },
         "colors": ["#0F6FE4", "#0026AA", "#41CF77"]
       }
+    },
+    "SE_and_CT": {
+      "title": "SEISMIC ENTROPY METHOD (SEM) AND COMPUTER TECHNOLOGY (LMTP-SPQ) FOR MONITORING AND PREDICTION",
+      "subTitle": "SEM allows to build a mathematical model of the geological environment (volume SS), due to which, for the first time in world practice, it becomes possible to visualize the entire process of preparing strong earthquakes",
+      "text": "The technology of monitoring and prediction is based on the law of seismic entropy production (Akopian, 2013, PDF). This law is viewed only within the framework of new seismic parameters calculated on the basis of the most reliable and transparent information – earthquake catalogs. It allows to build a mathematical pattern of the geological environment (SS volume), due to which, for the first time in world practice, it becomes possible to visualize the entire process of preparing a strong earthquake. \n\nThe method of seismic entropy does not contradict everything that has been accumulated and developed by specialists in the field of earthquake forecasting and seismic risk reduction, on the contrary, it allows us to combine these efforts and significantly increase their effectiveness, increasing society's resilience to natural disasters, as well as from the point of view of effective allocation of finances and targeted preparation for strong earthquakes. \n\nDue to its versatility, the method already makes it possible to create a multi-level (global, regional, national and local) automated information system for seismic monitoring. Moreover, for well-defined seismic systems (for example, Italy, Japan, California), a reliable short-term forecast can be made. \n\nWe believe that the seismic entropy method, by its universality, transparency, reliability and high efficiency, is just the tool on the basis of which seismologists and governments from around the world can already combine their efforts to develop common international norms and rules for forecasting, warning and taking measures in case of seismic danger."
+    },
+    "SS_and_LSE" :{
+      "title": "SEISMIC SYSTEM AND THE LAW OF SEISMIC ENTROPY PRODUCTION"
+    },
+    "Pyramid":{
+      "title":"THE PYRAMID OF THE SS HIERARCHY",
+      "subTitle":"With this approach, SS are divided into subsystems, which in turn are divided into sub subsystems and so on. At the same time, the threshold magnitude of predicted strong earthquakes decreases, as a rule, the size of the systems also decreases",
+      "texts": [
+        "Monitoring of the SS hierarchy from top to bottom allows to detail and reduce the threshold magnitude of predicted earthquakes and at the same time increase the accuracy and reliability of forecasts of strong earthquakes in the SS of the upper energy level (Fig. left)",
+        "When selecting a specific object (for example, a nuclear power plant site), the SS hierarchy is monitored from the bottom up only in those SS that the selected object falls into (Fig. right)"
+      ]
+    },
+    "Diagram_Prediction":{
+      "title": "TRACK DIAGRAM AND PREDICTION STAGES",
+      "subTitle" :"Monitoring and prediction is carried out on the basis of a track diagram and an attractor",
+      "texts": [
+        "The track diagram shows the different stages of alarms and expectations of strong earthquakes as the trajectory develops and approaches the attractor (Fig. left):<br/> <span class='text-[#7BB500] font-semibold ml-[30px]'>D, C, С1, С2 – Green stage, not dangerous</span> ((long-term–medium-term, years-months))<br><span class='text-[#FF0000] ml-[30px] font-semibold'>B1-3, В0, A1-3, А0 – Red stage, dangerous</span> (medium-short-term, months–days)",
+        "Various manifestations of seismicity are shown (foreshocks, seismic swarms and lulls, triggers, etc.) (Fig. right)"
+      ]
+    },
+    "Prediction_Probability":{
+      "title": "PREDICTION PROBABILITY",
+      "subTitle": "The prediction is made on the basis of energy and track diagrams, and probabilities are additional parameters",
+      "ulTitile": "Three probability values are calculated:",
+      "texts": [
+        "PK – cumulative energy probability",
+        "PW – probability by entropy",
+        "P =PK*PW – the probability of a strong earthquake (this probability is zero outside the attractor and begins to grow when the trajectory enters the attractor)"
+      ]
     }
+    
   },
   "map": {
     "title": "GLOBAL SEISMIC HAZARD MAP",
@@ -615,11 +652,7 @@
       "description": "Argentina, Bolivia, Brazil, Peru, Chile, Ecuador."
     }
   ],
-  "SE_and_CT": {
-    "title": "SEISMIC ENTROPY METHOD (SEM) AND COMPUTER TECHNOLOGY (LMTP-SPQ) FOR MONITORING AND PREDICTION",
-    "subTitle": "SEM allows to build a mathematical model of the geological environment (volume SS), due to which, for the first time in world practice, it becomes possible to visualize the entire process of preparing strong earthquakes",
-    "text": "The technology of monitoring and prediction is based on the law of seismic entropy production (Akopian, 2013, PDF). This law is viewed only within the framework of new seismic parameters calculated on the basis of the most reliable and transparent information – earthquake catalogs. It allows to build a mathematical pattern of the geological environment (SS volume), due to which, for the first time in world practice, it becomes possible to visualize the entire process of preparing a strong earthquake. \nThe method of seismic entropy does not contradict everything that has been accumulated and developed by specialists in the field of earthquake forecasting and seismic risk reduction, on the contrary, it allows us to combine these efforts and significantly increase their effectiveness, increasing society's resilience to natural disasters, as well as from the point of view of effective allocation of finances and targeted preparation for strong earthquakes. \nDue to its versatility, the method already makes it possible to create a multi-level (global, regional, national and local) automated information system for seismic monitoring. Moreover, for well-defined seismic systems (for example, Italy, Japan, California), a reliable short-term forecast can be made. \nWe believe that the seismic entropy method, by its universality, transparency, reliability and high efficiency, is just the tool on the basis of which seismologists and governments from around the world can already combine their efforts to develop common international norms and rules for forecasting, warning and taking measures in case of seismic danger."
-  },
+
   "about": {
     "title": "International Center",
     "sub_title": "of the Seismic Risk Global Monitoring ",
@@ -662,31 +695,31 @@
       ]
     },
     "national_shema": {
-      "title": "PLAN TO OPEN GLOBAL AND REGIONAL CENTERS",
+      "title": "GLOBAL AND REGIONAL CENTERS",
       "data": [
         {
-          "title": "Global and Middle Eastern",
-          "describtion": "With the Center in Armenia (Yerevan) operates"
+          "title": "Head Office",
+          "describtion": "Armenia (Yerevan) - operating"
         },
         {
-          "title": "Asian",
-          "describtion": "Negotiations are underway with the center in China (Beijing)"
-        },
-        {
-          "title": "Eurasian (RF)",
-          "describtion": "Monitoring Center in Russia (Moscow) operates"
-        },
-        {
-          "title": "BRICS countries",
-          "describtion": "Monitoring Center in Russia (Moscow) operates"
+          "title": "Eurasian",
+          "describtion": "Russia (Moscow) - operating"
         },
         {
           "title": "Mediterranean",
-          "describtion": "Opened with Center in Malta"
+          "describtion": "Malta (Valeta) - office opened"
+        },
+        {
+          "title": "Asian",
+          "describtion": "China (Beijing) - negotiations are underway"
+        },
+        {
+          "title": "BRICS countries",
+          "describtion": "India (Delhi) - in the pipeline"
         },
         {
           "title": "American",
-          "describtion": "Planned to be centered in Costa Rica"
+          "describtion": "Costa Rica (San Jose) - in the pipeline"
         }
       ]
     }

@@ -93,7 +93,7 @@ export const MainMonitoring = () => {
       <AboutCoputerTechologies />
       <CustomUl
         title={language?.forecast_accuracy?.title}
-        subtitle={language?.forecast_accuracy?.subtitlt}
+        // subtitle={language?.forecast_accuracy?.subtitlt}
         data={language?.forecast_accuracy?.data}
       />
       {/* <NationalScheme /> */}

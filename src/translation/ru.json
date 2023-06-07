@@ -147,7 +147,7 @@
       ]
     }
   },
-  "monitoring_and_prediction": {
+  "monitoring_and_prediction_old": {
     "title": "МОНИТОРИНГ И ПРОГНОЗ",
     "subTitle": "Производится на основе: метода сейсмической энтропии (МСЭ), на концепции Сейсмической Системы, которые выявляются в сейсмоопасных регионах с позиций плитовой тектоники",
     "movements_at_the_borders": {
@@ -598,6 +598,472 @@
         "colors": ["#0F6FE4", "#0026AA", "#41CF77"]
       }
     }
+  },
+  "monitoring_and_prediction": {
+    "title": "Мониторинг и Прогноз",
+    "subTitle": "Производится на основе: метода сейсмической энтропии (МСЭ), на концепции Сейсмической Системы, которые выявляются в сейсмоопасных регионах с позиций плитовой тектоники",
+    "movements_at_the_borders": {
+      "title": "Характерные Движения на границах плит",
+      "subtitle": "Основные типы А, В, С, D границ плит и характерные фокальные механизмы очагов землетрясений"
+    },
+    "text": "96% землетрясений на Земле происходят в условиях сжатия в зонах взаимодействия литосферных плит (90% приходятся на Тихоокеанскую плиту и 6% на Средиземноморско-Альпийско-Гималайский пояс). В рифтовых зонах в обстановке растяжения выделяется менее 1% сейсмической энергии Земли.",
+    "forecast_accuracy": {
+      "title": "ТОЧНОСТЬ ПРОГНОЗОВ",
+      "subtitlt": "The forecast by the MSE is made within the framework of predetermined conditions:",
+      "data": [       
+        "<p class='text-[#1A374D]'>точность прогноза землетрясений <span class='text-[#022FAE] font-bold'>по времени</span>  от <span class='text-[#022FAE] font-bold'> 6 месяцев до 1 недели</span> , в зависимости от конкретной ситуации;</p>",
+        "<p class='text-[#1A374D]'>точность прогноза <span class='text-[#022FAE] font-bold'>по магнитуде ± 0.1M</span>; большие отклонения по магнитуде оговариваются отдельно;</p>",
+        "<p class='text-[#1A374D]'>точность прогноза землетрясения <span class='text-[#022FAE] font-bold'>по месту</span> на поверхности Земли и по глубине очага ограничена размерами сейсмической системы <span class='text-[#022FAE] font-bold'>(контуром на поверхности и глубиной)</span>, а внутри сейсмической системы может достигать размеров очага прогнозируемого землетрясения в зависимости от ее магнитуды;</p>",
+        "<p class='text-[#1A374D]'>если внутри сейсмической системы указывается зона ожидания сильного землетрясения, то автоматически в других местах внутри сейсмической системы сильное землетрясение исключается, т.е. <span class='text-[#022FAE] font-bold'>контролируется весь объем сейсмической системы;</span> </p>",
+        "<p class='text-[#1A374D]'>в зависимости от развития сейсмической ситуации (от будущих землетрясений-индикаторов),<span class='text-[#022FAE] font-bold'>результаты прогноза со временем могут изменяться и уточняться</span> . Неустойчивость (прогнозируемое место землетрясения) может мигрировать внутри сейсмической системы от одной разломной зоны к другой, прогнозируемое время ожидания землетрясения может удаляться или приближаться и соответственно магнитуда ожидаемого землетрясения может изменяться (все это заложено в методе);</p>",
+        "<p class='text-[#1A374D]'>в зависимости от изученности региона и данных о землетрясениях, сейсмические системы подразделяются на<span class='text-[#022FAE] font-bold'>четыре уровня - надежные, хорошо определенные, посредственные и плохо определенные</span> , соответственно и подразделяется качество прогноза в них.</p>",
+        "<p class='text-[#1A374D]'>элементы сейсмической системы в ограниченном временном интервале<span class='text-[#022FAE] font-bold'>(от 1 до 6 месяцев)</span> могут находиться в неустойчивом состоянии и если за это время сильное землетрясение не произойдет, то по истечению этого срока система вновь переходит в устойчивое состояние;</p>"
+      ]
+    
+
+    },
+    "forecast_are_divided": {
+      "title": "СС ПО НАДЕЖНОСТИ ПРОГНОЗОВ ПОДРАЗДЕЛЯЮТСЯ НА ЧЕТЫРЕ УРОВНЯ",
+      "text": "MOC/E KAAO 3EMNETPACEHMA KAYECTBO MIPOTHO3A, YAYYWAETCA M CO BPEMEHEM BCE CC MEPEMAYT HA NEPBI YPOBEMb HADEXHOCTH."
+    },
+    "ITU": {
+      "title": "Computer technology (CT) for global monitoring of seismicity, forecasting the intensity of the expected earthquake and the construction dynamic maps of seismic hazard based on the MSE",
+      "text": "<b>The method underlying CT </b>is based on the introduction of new physical parameters calculated on the basis of seismic statistics; on the concept of a seismic system (SS), within which a new law – the law of seismic entropy production is formulated. A retrospective analysis shows that out of 750 historical strong earthquakes, 96% are subject to the new law. The new regularities make it possible to: steadily monitor the development of seismic instability in time and space; predict place, time, and force; eliminate earthquakes by 97% of the total preparation time; to monitor and evaluate a possible scenario for the development of seismicity; control trigger and technogenic seismicity; calculate dynamic seismic hazard maps; inform about the preparation of strong earthquakes, tsunamis and possible consequences.",
+      "data": [
+        "do not require the creation of new observation networks;",
+        "allow to control both the land and the seabed at all stages of earthquake preparation;",
+        "allow to increase the efficiency of existing methods of earthquake prediction;",
+        "allow to control technogenic seismicity;",
+        "allow to build dynamic maps of seismic hazard and improve the construction standards;",
+        "monitoring parameters are stable, reliable, for their calculation a lot of information has been accumulated around the world;",
+        "monitoring parameters are calculated (On-Line) based on data from global and local seismological networks;",
+        "allow to visualize the process of preparation of strong earthquakes;",
+        "allow over time to improve the accuracy of forecasts, to create computer “intelligence”."
+      ],
+      "text2": "Advantages of the method:",
+      "text3": "<b>Accumulated experience and approbation.</b> In On-Line mode on the site www.geoq.ru from 2008 to 2012, 18 earthquakes were predicted. Based on new developments, by 2023 more than 345 seismic systems of the upper energy level have been identified, located on the territory of more than 80 countries of the world. CT has been developed and tested for 35 years. Since 1988, numerous earthquake predictions have been made around the world including California, Italy, China, Iran, Turkey, and Japan.",
+      "seismic_entropy_method": "In the field of nuclear and renewable energy. CT is universal and can be used to predict the seismic hazard of NPPs and the locations of the main energy facilities and communications for On-Line monitoring, earthquake and tsunami forecasting, for visualization of the seismic situation at the sites of existing and planned NPPs in the world. for On-Line monitoring and forecasting the occurrence of dangerous changes of a natural and man-made nature for fuel and energy facilities and communications. CT makes it possible to create dynamic maps of seismic hazard for the sites of existing and planned NPPs in addition to existing traditional maps; introduce a dynamic passport for calculating seismic loads at NPPs, fuel and energy facilities and communications."
+    },
+    "forecast_online_mode": {
+      "title1": "Мониторинг и прогноз землетрясений  в 1988–2008 гг.",
+      "title2": "Мониторинг и прогноз землетрясений в ONLine режиме в 2009–2023 гг.",
+      "subtitle1": "26 earthquakes were successfully predicted (of which 4 are short-term, 4* are inaccurate in one parameter, 2 forecasts are negative)",
+      "subtitle2": "26 earthquakes were successfully predicted (of which 4 are short-term, 4* are inaccurate in one parameter, 2 forecasts are negative)",
+      "data": [
+        {
+          "magnitude": "M=6.2",
+          "title": "42.40 N 13.32 E H=10 km",
+          "country": "Italy (L'Aquila)",
+          "date": "2009.04.06"
+        },
+        {
+          "magnitude": "М=6.6",
+          "title": "34.74 N 138.22 E H=26 km",
+          "country": "Japan",
+          "date": "2009.08.10"
+        },
+        {
+          "magnitude": "М=6.0",
+          "title": "438.88 N 39.97 E H=10 km",
+          "country": "*Eastern Turkey",
+          "date": "2010.03.08"
+        },
+        {
+          "magnitude": "M=6.6",
+          "title": "13.61 N 92.88 W  H=42 km",
+          "country": "Andaman Islands, India",
+          "date": "2010.03.30"
+        },
+        {
+          "magnitude": "М=7.3",
+          "title": "03.77 N 96.05 W H=60 km",
+          "country": "Sumatra",
+          "date": "2010.05.09"
+        },
+        {
+          "magnitude": "M=5.9",
+          "title": "55.92 N 162.14 E H=10 km",
+          "country": "*Kamchatka (RF)",
+          "date": "2011.02.20"
+        },
+        {
+          "magnitude": "M=7.5",
+          "title": "38.42 N 142.84 E H=32 km",
+          "country": "Japan",
+          "date": "2011.03.09"
+        },
+        {
+          "magnitude": "M=9.0",
+          "title": "38.32 N 142.37 E H=32 km",
+          "country": "Japan! (Tohoku)",
+          "date": "2011.03.11"
+        },
+        {
+          "magnitude": "M=7.2",
+          "title": "20.71 N 99.95 E H=10 km",
+          "country": "Myanmar",
+          "date": "2011.03.24"
+        },
+        {
+          "magnitude": "M=7.3",
+          "title": "38.63 N 43.49 E H=20 km",
+          "country": "Eastern Turkey",
+          "date": "2011.10.23"
+        },
+        {
+          "magnitude": "M=6.9",
+          "title": "14.46 S 75.99 W H=35 km",
+          "country": "Peru",
+          "date": "2011.10.28"
+        },
+        {
+          "magnitude": "M=6.7",
+          "title": "51.84 N 95.85 E H=06 km *",
+          "country": "* Tuva (RF)",
+          "date": "2011.12.27"
+        },
+        {
+          "magnitude": "M=6.6",
+          "title": "49.30 N 155.49 E H=70 km",
+          "country": "Kamchatka",
+          "date": "2012.11.16"
+        },
+        {
+          "magnitude": "M=4.9",
+          "title": "44.97 N 37.58 E H=10 km",
+          "country": "Anapa!",
+          "date": "2012.12.10"
+        },
+        {
+          "magnitude": "M=6.9",
+          "title": "50.93 N 57.34 E H=52 km",
+          "country": "Kuril Islands",
+          "date": "2013.02.28"
+        },
+        {
+          "magnitude": "M=6.2",
+          "title": "28.50 N 51.59 E H=10 km",
+          "country": "Iran",
+          "date": "2013.04.09"
+        },
+        {
+          "magnitude": "M=6.0",
+          "title": "52.28 N 160.09 E H=15 km",
+          "country": "E of Kamchatka",
+          "date": "2013.05.19"
+        },
+        {
+          "magnitude": "M=8.2",
+          "title": "54.92 N 153.30 E H=598 km",
+          "country": "W of Kamchatka!",
+          "date": "2013.05.24"
+        },
+        {
+          "magnitude": "M=7.7",
+          "title": "27.00 N 65.51 E H=20 km",
+          "subtitle": "",
+          "country": "Pakistan, Balochistan",
+          "date": "2013.09.24"
+        },
+        {
+          "magnitude": "M=5.0",
+          "title": "(-) прогноз - Не опасно Район",
+          "country": "Great Sochi area (Olympic Games)",
+          "date": "2014.02.03"
+        },
+        {
+          "magnitude": "M=6.4",
+          "title": "38.22 N 122.31 W H=12 km",
+          "country": "C. California (SW Napa)",
+          "date": "2014.08.24"
+        },
+        {
+          "magnitude": "M=7.0",
+          "title": "32.78 N 130.73 E H=10 km",
+          "country": "Japan, Kyushu!",
+          "date": "2016.04.15"
+        },
+
+        {
+          "magnitude": "M=6.5",
+          "title": "42.85 N 13.09 E H=10 km",
+          "country": "C. Italy!",
+          "date": "2016.10.30"
+        },
+        {
+          "magnitude": "M=7.3",
+          "title": "34.89 N 45.94 E H=23 km",
+          "country": "*  Iran-Iraq border",
+          "date": "2017.11.12"
+        },
+        {
+          "magnitude": "M=7.5",
+          "title": "34.58 N 98.36 E H=10 km",
+          "country": "Tibet (China)",
+          "date": "2021.05.21"
+        },
+        {
+          "magnitude": "M=7.3",
+          "title": "23.16 N 121.32 E H=10 km",
+          "country": "Taiwan",
+          "date": "2022.09.18"
+        }
+      ],
+      "text": "Another 6 were predicted retrospectively because they occurred in the new SS (100%). 2 double earthquakes, 4 target miss alarms are not predicted.",
+      "ChartOptions": {
+        "chart": {
+          "animations": {
+            "enabled": true,
+            "easing": "easeinout",
+            "speed": 1000,
+            "animateGradually": {
+              "enabled": true,
+              "delay": 200
+            },
+            "dynamicAnimation": {
+              "enabled": true,
+              "speed": 1000
+            }
+          },
+          "type": "donut",
+          "height": 350,
+          "width": 300
+        },
+        "responsive": [
+          {
+            "breakpoint": 600,
+            "options": {
+              "chart": {
+                "height": "400px",
+                "width": "100%"
+              },
+              "legend": {
+                "position": "bottom",
+                "horizontalAlign": "left"
+              },
+              "plotOptions": {
+                "pie": {
+                  "donut": {
+                    "labels": {
+                      "value": { "fontSize": "36px", "offsetY": 13 }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "dataLabels": {
+          "enabled": false
+        },
+        "plotOptions": {
+          "pie": {
+            "expandOnClick": false,
+            "dataLabels": {
+              "show": false
+            },
+            "donut": {
+              "size": "80%",
+              "background": "transparent",
+              "labels": {
+                "show": true,
+                "value": {
+                  "fontSize": "65px",
+                  "fontWeight": 700,
+                  "color": "#0A1577",
+                  "offsetY": 25
+                },
+                "name": {
+                  "show": false
+                },
+                "total": {
+                  "show": true,
+                  "showAlways": true
+                }
+              }
+            }
+          }
+        },
+        "series": [22, 8, 2],
+        "labels": [
+          " 9 – предсказаны (75%) ",
+          "2 - цунами предсказаны(17%)",
+          "В 3 - случаях (25% опровергнуты другие прогнозы"
+        ],
+        "fill": {
+          "type": ["gradient", "pattern", "solid"],
+          "opacity": 1,
+          "pattern": {
+            "strokeWidth": 7,
+            "enabled": true,
+            "style": "verticalLines"
+          },
+          "gradient": {
+            "shadeIntensity": 0.5,
+            "opacityFrom": 1,
+            "opacityTo": 1,
+            "shade": "dark",
+            "type": "horizontal",
+            "inverseColors": true,
+            "gradientToColors": ["#0026AA", "#0F6FE4", "#0026AA"],
+            "stops": [0, 100, 100]
+          }
+        },
+        "legend": {
+          "position": "right",
+          "offsetY": 5,
+          "fontSize": "24px",
+          "labels": {
+            "useSeriesColors": true
+          }
+        },
+        "colors": ["#0F6FE4", "#0026AA", "#41CF77"]
+      },
+      "ChartOptions2": {
+        "chart": {
+          "animations": {
+            "enabled": true,
+            "easing": "easeinout",
+            "speed": 1000,
+            "animateGradually": {
+              "enabled": true,
+              "delay": 200
+            },
+            "dynamicAnimation": {
+              "enabled": true,
+              "speed": 1000
+            }
+          },
+          "type": "donut",
+          "height": 350,
+          "width": 300
+        },
+        "responsive": [
+          {
+            "breakpoint": 600,
+            "options": {
+              "chart": {
+                "height": "400px",
+                "width": "100%"
+              },
+              "legend": {
+                "position": "bottom",
+                "horizontalAlign": "left"
+              },
+              "plotOptions": {
+                "pie": {
+                  "donut": {
+                    "labels": {
+                      "value": { "fontSize": "36px", "offsetY": 13 }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "dataLabels": {
+          "enabled": false
+        },
+        "plotOptions": {
+          "pie": {
+            "expandOnClick": false,
+            "dataLabels": {
+              "show": false
+            },
+            "donut": {
+              "size": "80%",
+              "background": "transparent",
+              "labels": {
+                "show": true,
+                "value": {
+                  "fontSize": "65px",
+                  "fontWeight": 700,
+                  "color": "#0A1577",
+                  "offsetY": 25
+                },
+                "name": {
+                  "show": false
+                },
+                "total": {
+                  "show": true,
+                  "showAlways": true
+                }
+              }
+            }
+          }
+        },
+        "series": [9.12, 2.16, 0.72],
+        "labels": [
+          "26 - предсказаны (76%)",
+          "6 - предсказаныz ретроспективно (18%) ",
+          "2 - не предсказано(6%)"
+        ],
+        "fill": {
+          "type": ["gradient", "pattern", "solid"],
+          "opacity": 1,
+          "pattern": {
+            "strokeWidth": 7,
+            "enabled": true,
+            "style": "verticalLines"
+          },
+          "gradient": {
+            "shadeIntensity": 0.5,
+            "opacityFrom": 1,
+            "opacityTo": 1,
+            "shade": "dark",
+            "type": "horizontal",
+            "inverseColors": true,
+            "gradientToColors": ["#0026AA", "#0F6FE4", "#0026AA"],
+            "stops": [0, 100, 100]
+          }
+        },
+        "legend": {
+          "position": "right",
+          "offsetY": 5,
+          "fontSize": "24px",
+          "labels": {
+            "useSeriesColors": true
+          }
+        },
+        "colors": ["#0F6FE4", "#0026AA", "#41CF77"]
+      }
+    },
+    "SE_and_CT": {
+      "title": "МЕТОД СЕЙСМИЧЕСКОЙ ЭНТРОПИИИ (МСЭ) И КОПMПЬЮТЕРНАЯ ТЕХНОЛОГИЯ (LMTP-SPQ) ДЛЯ МОНИТОРИНГА И ПРОГНОЗА",
+      "subTitle": "МСЭ позволяет строить математическую модель геологической среды (объем СС), благодаря чему впервые в мировой практике становится возможным визуализировать весь процесс подготовки сильных землетрясений.",
+      "text": "Разработанная нами технология мониторинга и прогноза основана на законе производства сейсмической энтропии (Акопян, 2013г. PDF). Этот закон просматривается только в рамках новых сейсмических параметров, рассчитываемых на основе самой надежной и прозрачной информации – каталогов землетрясений.\n\n Метод сейсмической энтропии не противоречит всему тому, что накоплено, наработано специалистами в области прогноза землетрясений и снижения сейсмического риска, он, наоборот, позволяет объединить эти усилия и существенно поднять их эффективность, повышая сопротивляемость общества к природным катастрофам, а также способствовать эффективному распределению финансов и целевой подготовке к сильным землетрясениям. \n\n  Метод ввиду своей универсальности и надежности, уже сегодня дает возможность создать многоуровневую (глобальную, региональную, национальную и локальную) автоматизированную информационную систему сейсмического контроля. Более того, для хорошо определенных сейсмических систем (например, Италии, Японии, Калифорнии) можно сделать и надежный краткосрочный прогноз.\n\n  Мы считаем, что метод сейсмической энтропии, по своей универсальности, прозрачности, надежности и высокой эффективности является как раз тем инструментом, на основе которого уже сегодня могут объединять свои усилия сейсмологи и правительства разных стран мира для разработки единых международных норм и правил прогноза, оповещения и принятия мер в случае сейсмической опасности"
+    },
+    "SS_and_LSE" :{
+      "title": "СЕЙСМИЧЕСКАЯ СИСТЕМА И ЗАКОН ПРОИЗВОДСТВА СЕЙСМИЧЕСКОЙ ЭНТРОПИИ"
+    },
+    "Pyramid":{
+      "title":"ПИРАМИДА ИЕРАРХИИ СС",
+      "subTitle":"При таком подходе СС разбиваются на подсистемы, те в свою очередь разбиваются на под подсистемы и так далее. При этом понижается пороговая магнитуда прогнозируемых сильных землетрясений, как правило уменьшаются и размеры систем",
+      "texts": [
+        "Мониторинг иерархии СС сверху вниз позволяет детализировать и снизить порог прогнозируемых землетрясений и одновременно повышать точность и надежность прогнозов сильных землетрясений в СС верхнего энергетического уровня (рис. слева)",
+        "При выборе конкретного объекта (например, площадки АЭС) мониторинг иерархии СС производится с низу вверх только в тех СС, в которые попадает выбранный объект (рис. справа)"
+      ]
+    },
+    "Diagram_Prediction":{
+      "title": "ТРЕКОВАЯ ДИАГРАММА И СТАДИИ ПРОГНОЗА",
+      "subTitle" :"Мониторинг и прогноз осуществляется на основе трековой диаграммы и аттрактора",
+      "texts": [
+        "На трековой диаграмме показаны разные стадии тревог и ожидания сильных землетрясений по мере развития траектории и приближения к аттрактору (рис. слева)<br/> <span class='text-[#7BB500] font-semibold ml-[30px]'>D, C, С1, С2 – Зеленая стадия, не опасная</span> (долгосрочно-среднесрочная, годы–месяцы)<br><span class='text-[#FF0000] ml-[30px] font-semibold'>B1-3, В0, A1-3, А0 – Красная стадия, опасная</span> (среднесрочно-краткосрочная, месяцы–дни)",
+        "Показаны разные проявления сейсмичности (форшоки, сейсмические рои и затишья, триггеры и т.д.) (рис. справа)"
+      ]
+    },
+    "Prediction_Probability":{
+      "title": "ВЕРОЯТНОСТЬ ПРОГНОЗА",
+      "subTitle": "Прогноз делается на основе энергетических и трековых диаграмм, а вероятности являются дополнительными параметрами",
+      "ulTitile": "Рассчитываются три значения вероятности:",
+      "texts": [
+        "PK – вероятность по кумулятивной энергии", 
+        "PW – вероятность по энтропии",
+        "P =PK*PW – вероятность сильного землетрясения (эта вероятность равна нулю вне аттрактора и начинает расти, когда траектория входит в аттрактор)"
+      ]
+    }
+    
   },
   "map": {
     "title": "НА ГЛОБАЛЬНОЙ КАРТЕ СЕЙСМИЧЕСКОЙ ОПАСНОСТИ",
