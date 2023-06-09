@@ -55,15 +55,15 @@ export const SchemaProcessing = () => {
           images: generateArray(8, a3),
         },
         {
-          title: "Տարածաշրջանային գծեր (շեմ 130)",
+          title: "Ռեգիոնալ լինեամենտներ",
           images: generateArray(8, a4),
         },
         {
-          title: "Հարվածային գծեր",
+          title: "Շտրիխների ձգվածության գծերը",
           images: generateArray(8, a5),
         },
         {
-          title: "Կաթվածի խտությունը",
+          title: "Շտրիխների խտությունը",
           images: generateArray(8, a6),
         },
         {
@@ -75,11 +75,11 @@ export const SchemaProcessing = () => {
     if (lang === "en") {
       return [
         {
-          title: "Image fragment",
+          title: "Image targment",
           images: generateArray(8, a3),
         },
         {
-          title: "Regional lineaments (threshold 130)",
+          title: "Regional Lineaments (threshold 130)",
           images: generateArray(8, a4),
         },
         {
@@ -87,11 +87,11 @@ export const SchemaProcessing = () => {
           images: generateArray(8, a5),
         },
         {
-          title: "Stroke Density",
+          title: "Stroke density",
           images: generateArray(8, a6),
         },
         {
-          title: "REGIONAL LINEAMENTS (THRESHOLD 130)",
+          title: "Rose chart",
           images: generateArray(8, a7),
         },
       ];
@@ -100,14 +100,14 @@ export const SchemaProcessing = () => {
   }, [lang]);
   return (
     <>
-      <Container className="mb-[60px] ">
+      <Container className="mb-[60px] relative max-w-[1440px] mx-auto ">
         <Title>{language?.title2}</Title>
         <div className={styles.schema_processing}>
           <p dangerouslySetInnerHTML={{ __html: language?.text5 }}></p>
         </div>
       </Container>
       <Container
-        bg="bg-[#F9F9F9]"
+        bg="bg-[#F9F9F9] relative max-w-[1440px] mx-auto"
         className="flex pb-[32px] mt-[20px] gap-[80px] med-1200:flex-col med-1200:gap-0 med-1200:pb-0">
         <div className="flex gap-[20px] justify-between  max-w-[400px]  ">
           <div className="flex flex-col justify-between w-full gap-8 ">
@@ -164,7 +164,7 @@ export const SchemaProcessing = () => {
                 </div>
               </div>
             </div>
-            <div className="bg-[#bbbbbb]  py-[15px] px-[20px] text-dark-blue med-1200:hidden">
+            <div className="bg-[#bbbbbb] text-center  py-[15px] px-[20px] text-dark-blue">
               {language?.satellite_selection?.text6}
             </div>
           </div>
@@ -238,7 +238,7 @@ export const SchemaProcessing = () => {
           </div>
         </div>
       </Container>
-      <Container>
+      <Container className="relative max-w-[1440px] mx-auto">
         <Title className="my-11">{language?.title3}</Title>
         <img loading="lazy" alt=" " src={armenia} />
         <p className="pt-11">{language?.text6}</p>

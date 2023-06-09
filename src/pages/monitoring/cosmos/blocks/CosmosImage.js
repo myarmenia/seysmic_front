@@ -10,9 +10,11 @@ export const CosmosImage = () => {
       <Title>{language?.title}</Title>
       <div className={styles.cosmos_img_box}>
         <p>{language?.text1}</p>
-        <p>{language?.text4}</p>
+        {/* <p>{language?.text4}</p> */}
         <div className={styles.line}></div>
         <span>{language?.text3}</span>
+        <br />
+        <span>{language?.text4}</span>
       </div>
     </Container>
   );
