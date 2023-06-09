@@ -23,9 +23,7 @@ export const Footer = () => {
         <Container bg={styles.content} className={styles.content_div}>
           <ul>
             <li className={styles.li_head}>
-              <Link to={getLang("/home")}>
-                <Logo className={styles.logo} color="text-white underline" />
-              </Link>
+              <Logo className={styles.logo} color="text-white underline" />
             </li>
             <li>
               <Link to={getLang("/about")}>{language.nav_items.about}</Link>
