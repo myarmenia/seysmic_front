@@ -90,7 +90,8 @@ const CurrentTime = () => {
 
 const HeaderLink = ({ className, ...props }) => {
   return (
-    <NavLink
+    <NavLin
+    k
       end={true}
       className={({ isActive }) =>
         `${isActive ? styles.link_active : ""} ${className}`

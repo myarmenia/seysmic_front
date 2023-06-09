@@ -5,9 +5,9 @@
   "main": {
     "header": {
       "nav_items": {
-        "about": "About",
+        "about": "About Us",
         "technologies": "Technology",
-        "monitoring": "Monitoring and prediction",
+        "monitoring": "Monitoring and Prediction",
         "prease_release": "Media",
         "contacts": "Contacts",
         "search": "Search"
@@ -16,7 +16,7 @@
     "footer": {
       "current_earthquakes": "Current earthquakes",
       "contacts": "Contact details",
-      "about": "About",
+      "about": "About Us",
       "technologies": "Technology"
     }
   },
