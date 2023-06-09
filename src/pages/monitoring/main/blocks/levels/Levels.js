@@ -26,18 +26,18 @@ export const Levels = () => {
       return [
         {
           flag: flag1,
-          text: 'надежный — число завершившихся сейсмических циклов ≥ 15;',
-          imgClassName: 'med-900:w-[24%]',
+          text: "надежный — число завершившихся сейсмических циклов ≥ 15",
+          imgClassName: "med-900:w-[24%]",
         },
         {
           flag: flag2,
-          text: 'хороший — число завершившихся сейсмических циклов ≥ 10;',
-          imgClassName: 'med-900:w-[31%]',
+          text: "хороший — число завершившихся сейсмических циклов ≥ 10",
+          imgClassName: "med-900:w-[31%]",
         },
         {
           flag: flag3,
-          text: 'посредственный— число завершившихся сейсмических циклов ≥ 5;',
-          imgClassName: 'med-900:w-[38%]',
+          text: "посредственный— число завершившихся сейсмических циклов ≥ 5",
+          imgClassName: "med-900:w-[38%]",
         },
         {
           flag: flag4,
@@ -49,23 +49,23 @@ export const Levels = () => {
       return [
         {
           flag: flag1en,
-          text: '(reliable) — the number of completed seismic cycles ≥ 15;',
-          imgClassName: 'med-900:w-[24%]',
+          text: "(reliable) — the number of completed seismic cycles ≥ 15",
+          imgClassName: "med-900:w-[24%]",
         },
         {
           flag: flag2en,
-          text: '(good) — the number of completed seismic cycles ≥ 10;',
-          imgClassName: 'med-900:w-[31%]',
+          text: "(good) — the number of completed seismic cycles ≥ 10",
+          imgClassName: "med-900:w-[31%]",
         },
         {
           flag: flag3en,
-          text: '(mediocre) — the number of completed seismic cycles ≥ 5;',
-          imgClassName: 'med-900:w-[38%]',
+          text: "(mediocre) — the number of completed seismic cycles ≥ 5",
+          imgClassName: "med-900:w-[38%]",
         },
         {
           flag: flag4en,
-          text: '(bad) — the number of completed seismic cycles from 2 to 5.',
-          imgClassName: 'med-900:w-[45%]',
+          text: "(bad) — the number of completed seismic cycles from 2 to 5",
+          imgClassName: "med-900:w-[45%]",
         },
       ];
     } else if (lang === 'am') {
