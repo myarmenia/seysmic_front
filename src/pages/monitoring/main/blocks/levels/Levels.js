@@ -1,20 +1,20 @@
-import React, { useMemo } from "react";
-import styles from "./levels.module.css";
-import { Container, Title } from "../../../../../components/reusable";
-import flag1 from "../../../../../assets/main/monitoring/main/flags/flag1.svg";
-import flag2 from "../../../../../assets/main/monitoring/main/flags/flag2.svg";
-import flag3 from "../../../../../assets/main/monitoring/main/flags/flag3.svg";
-import flag4 from "../../../../../assets/main/monitoring/main/flags/flag4.svg";
-import flag1en from "../../../../../assets/main/monitoring/main/flags/flag_en1.svg";
-import flag2en from "../../../../../assets/main/monitoring/main/flags/flag_en2.svg";
-import flag3en from "../../../../../assets/main/monitoring/main/flags/flag_en3.svg";
-import flag4en from "../../../../../assets/main/monitoring/main/flags/flag_en4.svg";
-import flag1am from "../../../../../assets/main/monitoring/main/flags/flag_am1.svg";
-import flag2am from "../../../../../assets/main/monitoring/main/flags/flag_am2.svg";
-import flag3am from "../../../../../assets/main/monitoring/main/flags/flag_am3.svg";
-import flag4am from "../../../../../assets/main/monitoring/main/flags/flag_am4.svg";
-import { useParams } from "react-router";
-import { useTranslation } from "../../../../../hooks";
+import React, { useMemo } from 'react';
+import styles from './levels.module.css';
+import { Container, Title } from '../../../../../components/reusable';
+import flag1 from '../../../../../assets/main/monitoring/main/flags/flag1.svg';
+import flag2 from '../../../../../assets/main/monitoring/main/flags/flag2.svg';
+import flag3 from '../../../../../assets/main/monitoring/main/flags/flag3.svg';
+import flag4 from '../../../../../assets/main/monitoring/main/flags/flag4.svg';
+import flag1en from '../../../../../assets/main/monitoring/main/flags/flag_en1.svg';
+import flag2en from '../../../../../assets/main/monitoring/main/flags/flag_en2.svg';
+import flag3en from '../../../../../assets/main/monitoring/main/flags/flag_en3.svg';
+import flag4en from '../../../../../assets/main/monitoring/main/flags/flag_en4.svg';
+import flag1am from '../../../../../assets/main/monitoring/main/flags/flag_am1.svg';
+import flag2am from '../../../../../assets/main/monitoring/main/flags/flag_am2.svg';
+import flag3am from '../../../../../assets/main/monitoring/main/flags/flag_am3.svg';
+import flag4am from '../../../../../assets/main/monitoring/main/flags/flag_am4.svg';
+import { useParams } from 'react-router';
+import { useTranslation } from '../../../../../hooks';
 
 export const Levels = () => {
   const { lang } = useParams();
@@ -22,7 +22,7 @@ export const Levels = () => {
     monitoring_and_prediction: { forecast_are_divided: language },
   } = useTranslation().language;
   const items = useMemo(() => {
-    if (lang === "ru") {
+    if (lang === 'ru') {
       return [
         {
           flag: flag1,
@@ -41,11 +41,11 @@ export const Levels = () => {
         },
         {
           flag: flag4,
-          text: "плохой — число завершившихся сейсмических циклов от 2 до 5 ",
-          imgClassName: "med-900:w-[45%]",
+          text: 'плохой — число завершившихся сейсмических циклов от 2 до 5 ',
+          imgClassName: 'med-900:w-[45%]',
         },
       ];
-    } else if (lang === "en") {
+    } else if (lang === 'en') {
       return [
         {
           flag: flag1en,
@@ -68,27 +68,27 @@ export const Levels = () => {
           imgClassName: "med-900:w-[45%]",
         },
       ];
-    } else if (lang === "am") {
+    } else if (lang === 'am') {
       return [
         {
           flag: flag1am,
-          text: "(հուսալի) - ավարտված սեյսմիկ ցիկլերի քանակը ≥ 15",
-          imgClassName: "med-900:w-[24%]",
+          text: '(հուսալի) - ավարտված սեյսմիկ ցիկլերի քանակը ≥ 15',
+          imgClassName: 'med-900:w-[24%]',
         },
         {
           flag: flag2am,
-          text: "(լավ) - ավարտված սեյսմիկ ցիկլերի քանակը ≥ 10",
-          imgClassName: "med-900:w-[31%]",
+          text: '(լավ) - ավարտված սեյսմիկ ցիկլերի քանակը ≥ 10',
+          imgClassName: 'med-900:w-[31%]',
         },
         {
           flag: flag3am,
-          text: "(միջին) - ավարտված սեյսմիկ ցիկլերի քանակը ≥ 5",
-          imgClassName: "med-900:w-[38%]",
+          text: '(միջին) - ավարտված սեյսմիկ ցիկլերի քանակը ≥ 5',
+          imgClassName: 'med-900:w-[38%]',
         },
         {
           flag: flag4am,
-          text: "(վատ) - ավարտված սեյսմիկ ցիկլերի քանակը 2-ից 5-ը:",
-          imgClassName: "med-900:w-[45%]",
+          text: '(վատ) - ավարտված սեյսմիկ ցիկլերի քանակը 2-ից 5-ը:',
+          imgClassName: 'med-900:w-[45%]',
         },
       ];
     }
@@ -114,11 +114,11 @@ const Box = ({ text, flag, imgClassName }) => {
     <div className="flex gap-6 items-center med-600:gap-[14px]">
       <img
         loading="lazy"
-        className={"h-[135px] shrink-[1] med-900:h-fit " + imgClassName}
+        className={'h-[135px] shrink-[1] med-900:h-fit ' + imgClassName}
         src={flag}
         alt="asdfas"
       />
-      <p className="font-extrabold text-[26px] mt-5 shrink-[2] med-900:text-[12px] med-600:text-[9px] med-600:leading-[11px]">
+      <p className="font-semibold text-[26px] mt-5 shrink-[2] med-900:text-[12px] med-600:text-[9px] med-600:leading-[11px]">
         {text}
       </p>
     </div>

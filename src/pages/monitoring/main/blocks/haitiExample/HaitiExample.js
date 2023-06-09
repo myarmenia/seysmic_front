@@ -74,7 +74,7 @@ export const HaitiExample = () => {
           title: "ГАИТИ, 12 января 2010, М = 7.2 *",
           video: animateGif1,
           subtitle:
-            " Покажем это на примере катастрофического землетрясения Порт О’Пренс, ГАИТИ, 12 января 2010, М = 7.2 *. Это землетрясение привело к огромному число жертв и разрушений",
+            " Покажем это на примере катастрофического землетрясения Порт О’Пренс, ГАИТИ, 12 января 2010, М = 7.2 *. \nЭто землетрясение привело к огромному число жертв и разрушений",
           numbers: [
             { numbers: 222570, title: "число погибших" },
             { numbers: 311000, title: "число получивших ранения" },
@@ -250,7 +250,7 @@ const Box = ({
       <Container className="flex flex-col gap-8 med-900:gap-6">
         {/* <Title>{title11}</Title> */}
         <Title>{title}</Title>
-        <p className="text-[21px] text-center med-1200:text-[16px] med-1200:text-center">
+        <p className="text-[21px] text-center med-1200:text-[16px] med-1200:text-center whitespace-pre-line">
           {subtitle}
         </p>
         <Datas {...{ numbers }} />
@@ -260,7 +260,7 @@ const Box = ({
         </Title> */}
           <div className="gap-4 med-900:flex med-900:flex-col med-600:gap-2">
             <video
-              className="h-[277px] w-[390px] float-left pr-[25px] pb-[25px] med-900:pb-[15px] med-900:w-full med-900:p-0"
+              className=" w-[53%] float-left pr-[25px] pb-[25px] med-900:pb-[15px] med-900:w-full med-900:p-0"
               autoPlay
               loop
               src={video}
@@ -271,7 +271,7 @@ const Box = ({
               </p>
             ))}
           </div>
-          <div className="flex items-center justify-between gap-5 med-1200:flex-wrap">
+          <div className="flex items-center justify-between gap-5 med-1200:flex-wrap w-[90%] mx-auto med-900:w-full">
             <div className="flex gap-[34px] med-1200:gap-5 med-900:gap-3 med-600:grid grid-cols-[repeat(auto-fit,_minmax(100px,_1fr))] med-600:w-full">
               {images.map((el, i) => (
                 <ImageBox {...el} key={i} />
@@ -308,7 +308,7 @@ const Datas = ({ numbers }) => {
       {/* <p className="text-[26px] w-fit med-600:text-sm med-600:text-center">
         По официальным данным
       </p> */}
-      <div className="w-[90%] grid justify-items-center grid-cols-[repeat(auto-fit,_minmax(150px,_1fr))] gap-5 med-600:grid-cols-2">
+      <div className="w-[80%] grid justify-items-center grid-cols-[repeat(auto-fit,_minmax(150px,_1fr))] gap-5 med-600:grid-cols-2 med-900:w-full">
         {numbers.map((el, i) => (
           <RoundNum {...el} key={i} />
         ))}
