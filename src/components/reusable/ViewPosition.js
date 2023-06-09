@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from "react";
 
-export const ViewPosition = ({ children, ...props }) => {
+export const ViewPosition = ({ children, width, ...props }) => {
   const [bool, setBool] = useState(false);
   const ref = useRef(null);
 
@@ -24,14 +24,14 @@ export const ViewPosition = ({ children, ...props }) => {
     }
   }
   useEffect(() => {
-    document.addEventListener('scroll', handleScroll);
+    document.addEventListener("scroll", handleScroll);
     return () => {
-      document.removeEventListener('scroll', handleScroll);
+      document.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
-    <div {...props} ref={ref} style={{width:"100%"}}>
+    <div {...props} ref={ref} style={{ width: !width && "100%" }}>
       {children(bool)}
     </div>
   );
