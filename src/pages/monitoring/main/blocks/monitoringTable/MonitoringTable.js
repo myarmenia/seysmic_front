@@ -13,7 +13,7 @@ export const MonitoringTable = ({ data }) => {
           {data?.length &&
             data.map(({ src, describtion }, i) => (
               <div key={i} className={styles["table-item"]}>
-                <img src={src} alt="" />
+                <img loading="lazy" src={src} alt="" />
                 <p>{describtion}</p>
               </div>
             ))}

@@ -18,8 +18,7 @@ export const Preface = () => {
           background: `url('${img}') no-repeat`,
           backgroundSize: "cover",
         }}
-        className="h-[490px] bg-cover med-600:h-[200px]"
-      >
+        className="h-[490px] bg-cover med-600:h-[200px]">
         <p className="text-white h-full text-[36px] leading-[168%] flex flex-col items-center justify-center text-center med-600:text-[16px] max-w-[80%] mx-auto">
           <span className="text-[30px] font-bold med-600:text-[14px]">
             {language.title}
@@ -61,8 +60,7 @@ const Box = ({ name, roles, description, image, className = "" }) => {
         className={
           "flex gap-[65px] items-start justify-between med-900:!flex-col-reverse med-600:gap-[28px] " +
           className
-        }
-      >
+        }>
         <div className="flex flex-col">
           <span className="text-dark-blue font-bold text-[32px] pb-[20px] med-1440:text-[24px] med-600:pb-[10px]">
             {name}
@@ -71,8 +69,7 @@ const Box = ({ name, roles, description, image, className = "" }) => {
             {roles.map((role, i) => (
               <p
                 key={i}
-                className="text-[24px] text-black font-bold leading-[180%] med-1440:text-[20px] med-600:text-[14px]"
-              >
+                className="text-[24px] text-black font-bold leading-[180%] med-1440:text-[20px] med-600:text-[14px]">
                 {role}
               </p>
             ))}
@@ -84,6 +81,7 @@ const Box = ({ name, roles, description, image, className = "" }) => {
           )}
         </div>
         <img
+          loading="lazy"
           className="w-[28%] min-w-[210px] med-1200:w-auto med-600:mx-auto"
           src={image}
           alt=""

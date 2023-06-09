@@ -219,7 +219,6 @@ export const Publications = () => {
               "flex flex-col gap-5 justify-between overflow-hidden list-image-none",
               styles.ul,
             ].join(" ")}>
-            {console.log(data)}
             {data.map((el, i) => {
               if (el?.faile) {
                 return (

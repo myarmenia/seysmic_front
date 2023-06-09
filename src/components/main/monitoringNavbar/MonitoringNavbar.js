@@ -41,7 +41,12 @@ export const MonitoringNavbar = ({ className = "" }) => {
           style={{
             rotate: open ? "0deg" : "180deg",
           }}>
-          <img className="cursor-pointer w-[25px]" src={chev_down} alt="" />
+          <img
+            loading="lazy"
+            className="cursor-pointer w-[25px]"
+            src={chev_down}
+            alt=""
+          />
         </div>
       )}
     </nav>
@@ -56,7 +61,7 @@ const Box = ({ title, src, to }) => {
       className={({ isActive }) =>
         `${isActive ? styles.active : ""} ${styles.nav_item}`
       }>
-      <img src={src} className="med-600:w-[9vw]" alt="" />
+      <img loading="lazy" src={src} className="med-600:w-[9vw]" alt="" />
       <span>{title}</span>
     </NavLink>
   );

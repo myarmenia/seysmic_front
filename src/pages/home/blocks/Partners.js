@@ -16,7 +16,7 @@ export const Partners = () => {
           </Title>
           <div className="grid grid-cols-2 gap-[50px] med-900:flex med-900:flex-col-reverse">
             <div className="flex flex-col gap-[25px] text-[#1A374D] font-bold text-lg text-justify leading-[150%] med-600:gap-4">
-              <img className="w-[100px]" src={logo} alt="" />
+              <img loading="lazy" className="w-[100px]" src={logo} alt="" />
               <p className="font-semibold text-start">
                 {language?.links_text}{" "}
                 <a className="font-bold" href="https://lgg.foundation/">
@@ -29,6 +29,7 @@ export const Partners = () => {
               </div>
             </div>
             <img
+              loading="lazy"
               style={{
                 transform: bool ? "translateX(0)" : "translateX(500px)",
               }}

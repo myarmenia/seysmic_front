@@ -1,5 +1,5 @@
 .header {
-  @apply w-full flex flex-col duration-300 sticky top-0 bg-white z-[10001] 
+  @apply w-full flex flex-col duration-300 fixed top-0 bg-white z-[10001] 
   shadow-light;
 }
 .top_box {
@@ -21,7 +21,7 @@
 }
 .nav_items > a:hover::after,
 .link_active::after {
-  content: '';
+  content: "";
   @apply w-full h-full absolute opacity-20 z-[-1] duration-300;
   background: linear-gradient(180deg, #0026aa 0%, #30cfff 100%);
 }

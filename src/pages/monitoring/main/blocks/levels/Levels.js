@@ -113,6 +113,7 @@ const Box = ({ text, flag, imgClassName }) => {
   return (
     <div className="flex gap-6 items-center med-600:gap-[14px]">
       <img
+        loading="lazy"
         className={"h-[135px] shrink-[1] med-900:h-fit " + imgClassName}
         src={flag}
         alt="asdfas"

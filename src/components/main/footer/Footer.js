@@ -66,7 +66,8 @@ export const Footer = () => {
             </li>
             <li className={[styles.social_icons_li, "flex gap-2"].join(" ")}>
               <img
-                className="cursor-pointer"
+                loading="lazy"
+                className="cursor-pointer w-[40px]"
                 onClick={() => {
                   changeLanguage("en");
                 }}
@@ -74,18 +75,20 @@ export const Footer = () => {
                 src={en}
               />
               <img
+                loading="lazy"
                 onClick={() => {
                   changeLanguage("ru");
                 }}
-                className="cursor-pointer"
+                className="cursor-pointer w-[40px]"
                 alt=" "
                 src={ru}
               />
               <img
+                loading="lazy"
                 onClick={() => {
                   changeLanguage("am");
                 }}
-                className="cursor-pointer"
+                className="cursor-pointer w-[40px]"
                 alt=" "
                 src={am}
               />
@@ -96,7 +99,7 @@ export const Footer = () => {
         <Container bg={styles.under_box} className={styles.under_items}>
           <div className="flex justify-center items-center gap-3">
             <span className="text-[12px]">Created by WebEx</span>
-            <img src={WebEx_Logo} className="w-[35px] " />
+            <img loading="lazy" src={WebEx_Logo} className="w-[35px] " />
           </div>
         </Container>
       </footer>

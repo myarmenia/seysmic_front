@@ -19,7 +19,7 @@ export const MarketingResearch = () => {
         </div>
         <div className={styles.marketing_research_child}>
           <div>
-            <img src={search} alt="search" />
+            <img loading="lazy" src={search} alt="search" />
             <p>
               По результатам данного исследования коммерческая значимость
               технологии была определена не только в правительственной и
@@ -31,7 +31,7 @@ export const MarketingResearch = () => {
         </div>
         <div className={styles.marketing_research_child}>
           <div>
-            <img src={search} alt="search" />
+            <img loading="lazy" src={search} alt="search" />
             <p>
               Основным экономическим эффектом продукции является ее
               относительная дешевизна и высокая эффективность. Анализ возможных
@@ -45,7 +45,7 @@ export const MarketingResearch = () => {
         </div>
         <div className={styles.marketing_research_child}>
           <div>
-            <img src={search} alt="search" />
+            <img loading="lazy" src={search} alt="search" />
 
             <p>
               Тестирование технологии показало, что точность полученных

@@ -7,8 +7,9 @@ export const UsersInfo = () => {
     home: { uldata: language },
   } = useTranslation().language;
 
-  return <div className="[&_b]:text-[#022FAE]">
-
-    <CustomUl  title={language?.title} data={language?.data} />;
-  </div> 
+  return (
+    <div className="[&_b]:text-[#022FAE]">
+      <CustomUl title={language?.title} data={language?.data} />
+    </div>
+  );
 };

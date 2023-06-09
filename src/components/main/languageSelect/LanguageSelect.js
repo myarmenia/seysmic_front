@@ -49,9 +49,9 @@ export const LanguageSelect = ({ show, setShow }) => {
             allowFunc1(() => setShow((p) => (p !== "lang" ? "lang" : "")))
           }>
           <div className={styles.language_select}>
-            <img src={language_img} alt="" />
+            <img loading="lazy" src={language_img} alt="" />
           </div>
-          <img className="!w-2 !h-2" src={arrow_down} alt="" />
+          <img loading="lazy" className="!w-2 !h-2" src={arrow_down} alt="" />
         </div>
         {show && (
           <div className={styles.language_options}>

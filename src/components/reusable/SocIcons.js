@@ -14,7 +14,12 @@ export const SocIcons = ({ className = "", links }) => {
     <div className="flex items-center gap-[10px] [&_a]:duration-300 [&_a]:shrink-0 [&_a:hover]:scale-125">
       {links.map(({ link, logo }) => (
         <Link to={link} target="_blank" key={link}>
-          <img src={logo} className="w-[49px] h-[49px] object-contain" alt="" />
+          <img
+            loading="lazy"
+            src={logo}
+            className="w-[49px] h-[49px] object-contain"
+            alt=""
+          />
         </Link>
       ))}
     </div>

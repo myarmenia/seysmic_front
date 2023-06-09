@@ -9,7 +9,7 @@ import {
 import { ScrollRestoration } from "react-router-dom";
 import { getLang } from "../../helper";
 import { Footer, Header, MonitoringNavbar, Spinner } from "../main";
-import { useLengPoint } from "../../hooks/useLengPoint";
+// import { useLengPoint } from "../../hooks/useLengPoint";
 import instance from "../../api";
 
 const Component = () => {
@@ -26,12 +26,12 @@ const Component = () => {
         navigate(getLang("/home"));
       }
     }
-  }, []);
+  }, [pathname, navigate]);
   useEffect(() => {
     if (pathname.split("/").length < 3) {
       navigate(getLang("/home"));
     }
-  }, [lang]);
+  }, [lang, pathname, navigate]);
   return (
     <>
       <div className="root">

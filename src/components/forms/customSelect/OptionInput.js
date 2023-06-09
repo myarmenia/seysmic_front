@@ -24,6 +24,7 @@ export const OptionInput = () => {
         // onKeyDown={(e) => enterPress(e, appendOption)}
       />
       <img
+        loading="lazy"
         className={styles.addImg}
         // src={acceptImg}
         alt=""

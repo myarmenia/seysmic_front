@@ -30,14 +30,14 @@ export const ImageSlider = () => {
           disableOnInteraction: false,
         }}
         modules={[Pagination, Autoplay]}
-        className="w-full h-[60vh] max-h-[622px] min-h-[229px] med-600:h-[229px] med-600:min-w-full"
-      >
+        className="w-full h-[60vh] max-h-[622px] min-h-[229px] med-600:h-[229px] med-600:min-w-full">
         {banner?.banner.map(({ path, content }, i) => (
           <SwiperSlide key={i}>
             <div className={styles.slide}>
               <img
+                loading="lazy"
                 src={path}
-                className="absolute top-0 left-0 object-contain w-full h-full"
+                className="absolute top-0 left-0 object-cover w-full h-full"
                 alt=""
               />
               <div className="relative w-fll h-full max-w-[1440px] mx-auto">
@@ -49,8 +49,7 @@ export const ImageSlider = () => {
       </Swiper>
       <Container
         bg="bg-dark-blue relative"
-        className={"w-full h-[44px] text-white"}
-      >
+        className={"w-full h-[44px] text-white"}>
         <a href={banner?.running_text?.path} className={styles.marquee}>
           {banner?.running_text?.content}
         </a>

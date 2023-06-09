@@ -21,8 +21,7 @@ export const SearchInput = ({
             <i
               style={{ fontStyle: "normal" }}
               className="cursor-pointer text-[24px] leading-[18px] h-[18px] text-dark-blue hover:scale-125 duration-300"
-              onClick={clearValue}
-            >
+              onClick={clearValue}>
               &#10005;
             </i>
             <div className="h-[23px] w-[1px] bg-[#D9D9D9]" />
@@ -30,6 +29,7 @@ export const SearchInput = ({
         )}
         <button type={buttonType}>
           <img
+            loading="lazy"
             className="cursor-pointer w-[18px] h-[18px] hover:scale-125 duration-300"
             onClick={onButtonClick}
             src={search_icon}

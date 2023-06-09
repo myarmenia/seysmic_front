@@ -16,7 +16,7 @@ export const EarthQuakeBox = ({
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowFullScreen></iframe> */}
-      <img src={image} className="" alt=""></img>
+      <img src={image} className="" alt="" loading="lazy"></img>
       <div className="flex gap-[6px]">
         {/* <img className="w-[32px] h-[32px] rounded-full" src={icon} alt="" /> */}
         <div className="flex flex-col gap-1">

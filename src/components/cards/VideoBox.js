@@ -10,7 +10,12 @@ export const VideoBox = ({ src, title, description, date, icon, to }) => {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowFullScreen></iframe>
       <div className="flex gap-[6px]">
-        <img className="w-[32px] h-[32px] rounded-full" src={icon} alt="" />
+        <img
+          loading="lazy"
+          className="w-[32px] h-[32px] rounded-full"
+          src={icon}
+          alt=""
+        />
         <div className="flex flex-col gap-1">
           <Link to={to} className="text-dark-blue font-bold text-xs">
             {title}

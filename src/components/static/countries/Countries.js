@@ -11,7 +11,7 @@ export const Countries = ({ className = "" }) => {
     <ViewPosition className={[styles.cont, className].join(" ")}>
       {(bool) => (
         <div className={styles.img_box}>
-          <img src={img} alt="" className={styles.img} />
+          <img loading="lazy" src={img} alt="" className={styles.img} />
           <div className={styles.nums}>
             {monitoring_countries.map((el, i) => (
               <Box

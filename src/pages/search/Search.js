@@ -33,7 +33,6 @@ export const Component = () => {
     const search = convertSearchParamsStr({ search: value });
     navigate({ pathname: "", search: "?" + search });
   };
-  console.log(data);
 
   return (
     <>
