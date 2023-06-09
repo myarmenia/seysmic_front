@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
-import search_icon from "../../../assets/icons/searchIcon.svg";
-import search_icon_active from "../../../assets/icons/search-active.svg";
-import logo from "../../../assets/main/logo.svg";
-import { getHeaderTime, getLang } from "../../../helper";
-import { Container, Logo } from "../../reusable";
-import { Burger } from "../burger/Burger";
-import { LanguageSelect } from "../languageSelect/LanguageSelect";
-import styles from "./header.module.css";
-import { useTranslation } from "../../../hooks";
+import React, { useState } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
+import search_icon from '../../../assets/icons/searchIcon.svg';
+import search_icon_active from '../../../assets/icons/search-active.svg';
+import logo from '../../../assets/main/logo.svg';
+import { getHeaderTime, getLang } from '../../../helper';
+import { Container, Logo } from '../../reusable';
+import { Burger } from '../burger/Burger';
+import { LanguageSelect } from '../languageSelect/LanguageSelect';
+import styles from './header.module.css';
+import { useTranslation } from '../../../hooks';
 
 export const Header = () => {
-  const [langAndMenu, setLangAndMenu] = useState("");
+  const [langAndMenu, setLangAndMenu] = useState('');
   const { pathname } = useLocation();
   const {
     language: {
@@ -20,7 +20,7 @@ export const Header = () => {
   } = useTranslation();
 
   const chooseOption = () => {
-    setLangAndMenu("");
+    setLangAndMenu('');
   };
 
   return (
@@ -28,15 +28,11 @@ export const Header = () => {
       <header className={styles.header}>
         <Container bg="h-[32px] bg-dark-blue" className={styles.top_box}>
           <CurrentTime />
-          <img loading="lazy" alt="" src={logo} />
+          <img alt="" src={logo} />
         </Container>
         <Container className={styles.navbar}>
           <Logo />
-          <div
-            className={[
-              styles.nav_items,
-              langAndMenu === "menu" ? styles.open : "",
-            ].join(" ")}>
+          <div className={[styles.nav_items, langAndMenu === 'menu' ? styles.open : ''].join(' ')}>
             <HeaderLink onClick={chooseOption} to={getLang(`/about`)}>
               {language.nav_items.about}
             </HeaderLink>
@@ -58,26 +54,14 @@ export const Header = () => {
             </HeaderLink>
           </div>
           <div className={styles.tools}>
-            <NavLink to={getLang("/search/1")}>
+            <NavLink to={getLang('/search/1')}>
               <img
-                loading="lazy"
-                src={
-                  pathname === getLang("/search")
-                    ? search_icon_active
-                    : search_icon
-                }
+                src={pathname === getLang('/search') ? search_icon_active : search_icon}
                 alt=""
               />
             </NavLink>
-            <LanguageSelect
-              setShow={setLangAndMenu}
-              show={langAndMenu === "lang"}
-            />
-            <Burger
-              onClick={() =>
-                setLangAndMenu((p) => (p !== "menu" ? "menu" : ""))
-              }
-            />
+            <LanguageSelect setShow={setLangAndMenu} show={langAndMenu === 'lang'} />
+            <Burger onClick={() => setLangAndMenu((p) => (p !== 'menu' ? 'menu' : ''))} />
           </div>
         </Container>
       </header>
@@ -88,23 +72,17 @@ export const Header = () => {
 
 const CurrentTime = () => {
   const [time, setTime] = useState(getHeaderTime(new Date()));
-  useEffect(() => {
-    setInterval(() => {
-      setTime(getHeaderTime(new Date()));
-    }, 1000 * 60);
-  }, [time]);
-
+  setInterval(() => {
+    setTime(getHeaderTime(new Date()));
+  }, 1000 * 60);
   return <span>{time}</span>;
 };
 
 const HeaderLink = ({ className, ...props }) => {
   return (
-    <NavLin
-    k
+    <NavLink
       end={true}
-      className={({ isActive }) =>
-        `${isActive ? styles.link_active : ""} ${className}`
-      }
+      className={({ isActive }) => `${isActive ? styles.link_active : ''} ${className}`}
       {...props}
     />
   );
