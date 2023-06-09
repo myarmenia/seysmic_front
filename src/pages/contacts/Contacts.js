@@ -31,7 +31,6 @@ const Component = () => {
   const { handleSubmit } = formMethods;
   const onSubmit = async (data) => {
     const token = captchaRef.current.getValue();
-    console.log(token, "ReCAPTCHA Token");
     const formData = new FormData();
     delete data.isRobot;
     Object.entries(data).forEach(([key, value]) => {
@@ -46,8 +45,7 @@ const Component = () => {
         <FormProvider {...formMethods}>
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="flex flex-col gap-[36px] items-center"
-          >
+            className="flex flex-col gap-[36px] items-center">
             <Title>{language.title}</Title>
             <div className="flex flex-col gap-[24px] items-center med-400:w-full">
               <CstmInput
@@ -73,7 +71,7 @@ const Component = () => {
             </div>
             <ReCAPTCHA
               ref={captchaRef}
-              sitekey={"6Lelb4ImAAAAAPQdUPmQRRrji8httbStYMxw6L3t"}
+              sitekey={"6Lcim4ImAAAAAGXdJlCYsO7CosuR5X8z6QXKVfQs"}
             />
             {/* <RobotCheckbox regName="isRobot" /> */}
             {/* <ReCAPTCHA
@@ -116,8 +114,7 @@ const Component = () => {
           {map_iframe && !map_image && (
             <div
               className="rounded-2xl h-[265px] overflow-hidden [&>iframe]:w-full  [&>iframe]:h-full"
-              dangerouslySetInnerHTML={{ __html: map_iframe }}
-            >
+              dangerouslySetInnerHTML={{ __html: map_iframe }}>
               {!map_iframe && map_image && <img alt=" " src="map_image" />}
             </div>
           )}

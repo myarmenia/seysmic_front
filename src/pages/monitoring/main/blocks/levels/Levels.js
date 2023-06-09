@@ -26,17 +26,17 @@ export const Levels = () => {
       return [
         {
           flag: flag1,
-          text: "надежный — число завершившихся сейсмических циклов ≥ 15;",
+          text: "надежный — число завершившихся сейсмических циклов ≥ 15",
           imgClassName: "med-900:w-[24%]",
         },
         {
           flag: flag2,
-          text: "хороший — число завершившихся сейсмических циклов ≥ 10;",
+          text: "хороший — число завершившихся сейсмических циклов ≥ 10",
           imgClassName: "med-900:w-[31%]",
         },
         {
           flag: flag3,
-          text: "посредственный— число завершившихся сейсмических циклов ≥ 5;",
+          text: "посредственный— число завершившихся сейсмических циклов ≥ 5",
           imgClassName: "med-900:w-[38%]",
         },
         {
@@ -49,22 +49,22 @@ export const Levels = () => {
       return [
         {
           flag: flag1en,
-          text: "(reliable) — the number of completed seismic cycles ≥ 15;",
+          text: "(reliable) — the number of completed seismic cycles ≥ 15",
           imgClassName: "med-900:w-[24%]",
         },
         {
           flag: flag2en,
-          text: "(good) — the number of completed seismic cycles ≥ 10;",
+          text: "(good) — the number of completed seismic cycles ≥ 10",
           imgClassName: "med-900:w-[31%]",
         },
         {
           flag: flag3en,
-          text: "(mediocre) — the number of completed seismic cycles ≥ 5;",
+          text: "(mediocre) — the number of completed seismic cycles ≥ 5",
           imgClassName: "med-900:w-[38%]",
         },
         {
           flag: flag4en,
-          text: "(bad) — the number of completed seismic cycles from 2 to 5.",
+          text: "(bad) — the number of completed seismic cycles from 2 to 5",
           imgClassName: "med-900:w-[45%]",
         },
       ];
