@@ -98,7 +98,6 @@ export const SchemaProcessing = () => {
     }
     return [];
   }, [lang]);
-  console.log(imgData);
   return (
     <>
       <Container className="mb-[60px] ">
@@ -109,18 +108,19 @@ export const SchemaProcessing = () => {
       </Container>
       <Container
         bg="bg-[#F9F9F9]"
-        className="flex pb-[32px] mt-[20px] gap-[80px] med-1200:flex-col med-1200:gap-0 med-1200:pb-0"
-      >
+        className="flex pb-[32px] mt-[20px] gap-[80px] med-1200:flex-col med-1200:gap-0 med-1200:pb-0">
         <div className="flex gap-[20px] justify-between  max-w-[400px]  ">
           <div className="flex flex-col justify-between w-full gap-8 ">
             <div className="h-[400px] med-600:h-[300px] ">
               <div className="flex gap-[20px]  relative  justify-center">
                 <img
+                  loading="lazy"
                   src={stputnik}
                   alt="sputnik"
                   className="med-600:w-[120px]"
                 />
                 <img
+                  loading="lazy"
                   src={dotLine}
                   alt="dotLine"
                   className="absolute top-[80%] left-[26%]"
@@ -128,26 +128,35 @@ export const SchemaProcessing = () => {
               </div>
               <div className="flex gap-[20px] justify-between med-600:gap-2">
                 <img
+                  loading="lazy"
                   src={sputniktwo}
                   alt="sputniktwo"
                   className="med-600:w-[70px]"
                 />
-                <img src={dotLine} alt="dotLine" className="rotate-[223deg]" />
+                <img
+                  loading="lazy"
+                  src={dotLine}
+                  alt="dotLine"
+                  className="rotate-[223deg]"
+                />
                 <div className="relative">
                   <p className="text-black">
                     {language?.satellite_selection?.text1}
                   </p>
                   <img
+                    loading="lazy"
                     src={notebook}
                     alt="notebook"
                     className="med-600:w-[150px]"
                   />
                   <img
+                    loading="lazy"
                     src={curelyLine}
                     alt="curelyLine"
                     className="absolute top-[-40%] right-[-40%] med-1200:hidden "
                   />
                   <img
+                    loading="lazy"
                     src={curelyLine2}
                     alt="curelyLine2"
                     className="absolute top-[50%] right-[-40%] hidden med-1200:block "
@@ -165,6 +174,7 @@ export const SchemaProcessing = () => {
             <div className={styles.sputnik_box_title}>
               {language?.satellite_selection?.text2}
               <img
+                loading="lazy"
                 src={dotLine}
                 alt="dotLine"
                 className={styles.sputnik_box_line_down}
@@ -174,42 +184,44 @@ export const SchemaProcessing = () => {
               <img src={dotLine} alt="dotLine" />
             </div>
             <div className={styles.sputnik_box_child}>
-              <img src={a1} alt="removeImg" />
-              <img src={a2} alt="removeImg" />
+              <img loading="lazy" src={a1} alt="removeImg" />
+              <img loading="lazy" src={a2} alt="removeImg" />
             </div>
           </div>
           <div className={styles.sputnik_box}>
             <div className={styles.sputnik_box_title}>
               {language?.satellite_selection?.text3}
               <img
+                loading="lazy"
                 src={dotLine}
                 alt="dotLine"
                 className={styles.sputnik_box_line_down}
               />
             </div>
             <div className={styles.dot_line_box}>
-              <img src={dotLine} alt="dotLine" />
+              <img loading="lazy" src={dotLine} alt="dotLine" />
             </div>
             <div className={styles.sputnik_box_child}>
-              <img src={a3} alt="removeImg" />
+              <img loading="lazy" src={a3} alt="removeImg" />
             </div>
           </div>
           <div className={styles.sputnik_box}>
             <div className={styles.sputnik_box_title}>
               {language?.satellite_selection?.text4}
               <img
+                loading="lazy"
                 src={dotLine}
                 alt="dotLine"
                 className={styles.sputnik_box_line_down}
               />
             </div>
             <div className={styles.dot_line_box}>
-              <img src={dotLine} alt="dotLine" />
+              <img loading="lazy" src={dotLine} alt="dotLine" />
             </div>
             <div className={styles.sputnik_box_child}>
-              <img src={a4} alt="removeImg" />
-              <img src={a5} alt="removeImg" />
-              <img src={a6} alt="removeImg" />
+              <img loading="lazy" src={a4} alt="removeImg" />
+              <img loading="lazy" src={a5} alt="removeImg" />
+              <img loading="lazy" src={a6} alt="removeImg" />
             </div>
           </div>
           <div className={styles.sputnik_box}>
@@ -217,24 +229,24 @@ export const SchemaProcessing = () => {
               {language?.satellite_selection?.text5}
             </div>
             <div className={styles.dot_line_box}>
-              <img src={dotLine} alt="dotLine" />
+              <img loading="lazy" src={dotLine} alt="dotLine" />
             </div>
 
             <div className={styles.sputnik_box_child}>
-              <img src={a7} alt="removeImg" />
+              <img loading="lazy" src={a7} alt="removeImg" />
             </div>
           </div>
         </div>
       </Container>
       <Container>
         <Title className="my-11">{language?.title3}</Title>
-        <img alt=" " src={armenia} />
+        <img loading="lazy" alt=" " src={armenia} />
         <p className="pt-11">{language?.text6}</p>
         <Title className="my-11">{language?.title4}</Title>
         <p className="mx-auto max-w-[934px] text-center w-full">
           {language?.text7}
         </p>
-        <img className="mt-[37px] mx-auto" alt=" " src={ex} />
+        <img loading="lazy" className="mt-[37px] mx-auto" alt=" " src={ex} />
         <Title className="my-11">{language?.title5}</Title>
         {imgData.length && (
           <div className="flex flex-col gap-3">
@@ -244,10 +256,10 @@ export const SchemaProcessing = () => {
                   {el.title}
                 </h3>
                 <div
-                  className={`grid grid-cols-[repeat(auto-fit,_minmax(150px,_1fr))] gap-3 med-600:grid-cols-3`}
-                >
+                  className={`grid grid-cols-[repeat(auto-fit,_minmax(150px,_1fr))] gap-3 med-600:grid-cols-3`}>
                   {el.images.map((el, indexs) => (
                     <img
+                      loading="lazy"
                       key={indexs}
                       className={`med-600:${indexs > 2 && "hidden"}`}
                       src={el}

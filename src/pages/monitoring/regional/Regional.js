@@ -15,7 +15,6 @@ const Component = () => {
 const loader = async ({ params: { lang } }) => {
   try {
     const res = await instance.get(`regional-monitoring?lng=${lang}`);
-    console.log(res.data);
     return res.data.data;
   } catch (error) {
     console.log(error);

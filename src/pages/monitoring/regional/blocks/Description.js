@@ -30,7 +30,6 @@ const Description = ({ children }) => {
           return (
             <CustomBtn
               onClick={() => {
-                console.log(ref);
                 window.scroll({
                   top: ref.current.offsetTop - 150,
                   // left: 100,
@@ -55,7 +54,11 @@ const Description = ({ children }) => {
         {data?.files?.map(({ type, path }, i) => (
           <div key={i} onClick={() => setOpen(true)} className="h-[184px] ">
             {type === "image" ? (
-              <img src={path} className="h-full cursor-pointer" />
+              <img
+                loading="lazy"
+                src={path}
+                className="h-full cursor-pointer"
+              />
             ) : (
               <video className="h-[184px] cursor-pointer">
                 <source src={path} />
@@ -70,6 +73,7 @@ const Description = ({ children }) => {
             return (
               <SwiperSlide key={i}>
                 <img
+                  loading="lazy"
                   src={path}
                   className="w-full h-full min-h-[500px] object-contain object-center"
                   alt=""

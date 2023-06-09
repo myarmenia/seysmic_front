@@ -124,8 +124,8 @@ const Box = ({ title, number, img1, img2 }) => {
       <Gradient className="text-[26px]">{number}</Gradient>
       <div className="flex flex-col gap-1 items-center">
         <div className="flex flex-col gap-2">
-          <img src={img1} alt="" />
-          <img src={img2} alt="" />
+          <img loading="lazy" src={img1} alt="" />
+          <img src={img2} loading="lazy" alt="" />
         </div>
         <Gradient className="text-[18px] text-center w-full med-600:text-sm">
           {title}

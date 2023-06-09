@@ -60,6 +60,7 @@ const Box = ({ id, title, description, image, button_text, button_link }) => {
     <div className="flex flex-col gap-[35px] items-center mb-[50px]">
       <div className="grid grid-cols-2 gap-[50px] med-1200:inline med-600:grid med-600:grid-cols-1 med-600:gap-6">
         <img
+          loading="lazy"
           className="med-1200:float-left mr-[10px] med-1200:w-[40%] med-600:w-full"
           src={image}
           alt=""

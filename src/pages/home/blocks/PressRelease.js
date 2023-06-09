@@ -20,13 +20,14 @@ export const PressRelease = () => {
     data: { press_releases },
   } = useLoaderData();
   const { home: language } = useTranslation().language;
-
   return (
     <Container
       bg="bg-[#F0F2F5]"
       className="flex flex-col gap-[44px] py-[42px] med-600:gap-[10px]">
       <Title>{language?.pres_relise}</Title>
-      <SwiperNavigation className="!py-5 med-600:!px-0">
+      <SwiperNavigation
+        count={press_releases.length}
+        className="!py-5 med-600:!px-0">
         {press_releases.map((el, i) => (
           <SwiperSlide key={i}>
             <PressReleaseBox {...el} />

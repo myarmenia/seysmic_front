@@ -8,7 +8,12 @@ export const PreFace = () => {
   return (
     <div>
       <Title>{language?.title}</Title>
-      <img src={regionalMap} alt="regionalMap" className="mx-auto my-[57px]" />
+      <img
+        loading="lazy"
+        src={regionalMap}
+        alt="regionalMap"
+        className="mx-auto my-[57px]"
+      />
     </div>
   );
 };

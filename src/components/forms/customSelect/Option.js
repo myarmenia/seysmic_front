@@ -14,14 +14,16 @@ export const Option = ({ option, optionId }) => {
         onClick={() => {
           setValue?.(option.value);
           regName &&
-            formMethods?.setValue(regName, option.value, { shouldValidate: true });
+            formMethods?.setValue(regName, option.value, {
+              shouldValidate: true,
+            });
           toggleOptions();
-        }}
-      >
+        }}>
         {option.title}
       </div>
       {Boolean(setOptions) && (
         <img
+          loading="lazy"
           className="py-3 px-4"
           // src={trashbinImg}
           onClick={() => removeOption?.(optionId)}

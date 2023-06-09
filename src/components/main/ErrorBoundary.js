@@ -1,11 +1,10 @@
-import React, { useState } from "react";
-import { isRouteErrorResponse, useNavigate, useRouteError } from "react-router";
-import { getLang } from "../../helper";
+import React from "react";
+import { useNavigate } from "react-router";
 import img404 from "../../assets/main/404.png";
 
 export function ErrorBoundary() {
   // const error = useRouteError();
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   // const [text, setText] = useState("Something went wrong");
 
   // if (isRouteErrorResponse(error)) {
@@ -19,9 +18,9 @@ export function ErrorBoundary() {
   //   }
   // }
 
-  // setTimeout(() => {
-  //   navigate(getLang("/home"));
-  // }, 5000);
+  setTimeout(() => {
+    navigate(-1);
+  }, 5000);
 
   return (
     <div className="absolute w-full h-full top-0 left-0 bg-white">

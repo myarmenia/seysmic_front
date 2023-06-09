@@ -9,13 +9,14 @@ import {
   PressRelease,
   UsersInfo,
 } from "./blocks";
-import { NationalScheme } from "../monitoring/main/blocks";
+import { useLinkClickHandler } from "react-router-dom";
 
 const Component = () => {
   return (
     <>
       <ImageSlider />
       <Globuses />
+
       <EarthquakePlaces />
       <PressRelease />
       <Partners />
@@ -29,8 +30,6 @@ export const loader = async ({ params: { lang } }) => {
   try {
     let res = await instance.get(`home?lng=${lang}`);
     let res2 = await instance.get(`banner?lng=${lang}`);
-    console.log(res2);
-    console.log(res);
     return { data: res.data.data, banner: res2.data.data };
   } catch (error) {
     return error;

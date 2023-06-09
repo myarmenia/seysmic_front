@@ -21,7 +21,7 @@ export const Map = () => {
       <Title>{language?.title}</Title>
       <div className="flex items-center justify-end gap-[17px] med-600:justify-center">
         <FilterBtn active={!state} onClick={() => setState(false)}>
-        {language.Map_Btn}
+          {language.Map_Btn}
         </FilterBtn>
         <FilterBtn active={state} onClick={() => setState(true)}>
           {language.Country_Btn}
@@ -42,7 +42,7 @@ export const Map = () => {
 
 const Countries = () => {
   const [showNum, setShowNum] = useState(0);
-  const {country} = useLoaderData();
+  const { country } = useLoaderData();
   return (
     <Container className="flex flex-col h-[610px] flex-wrap gap-[10px_34px] pb-[60px] pt-3 med-600:h-[990px] med-600:gap-[10px_12px] med-600:px-0 med-600:pb-[32px]">
       {country.map(({ parent_region_name, children, id }, i) => (
@@ -72,6 +72,7 @@ const DropDown = ({ show, items, parent_region_name, ...props }) => {
       <div {...props} className={"flex items-center " + styles.country}>
         <p>{parent_region_name}</p>
         <img
+          loading="lazy"
           style={{ rotate: show ? "180deg" : "none" }}
           className="brightness-50 scale-50 shrink-0 duration-300"
           src={chevDown}
