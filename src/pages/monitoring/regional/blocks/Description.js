@@ -24,7 +24,8 @@ const Description = ({ children }) => {
     <Container>
       <div className="h-[1px] bg-dark-blue w-[328px] my-0 mx-auto"></div>
       <Title className="my-[30px]">{language?.subtitle}</Title>
-      <p className="text-xl mb-8 med-1200:text-base">{language?.text}</p>
+      <h6 className="text-center pb-5">{language?.subTitle2}</h6>
+      <p className="text-xl mb-8 med-1200:text-base whitespace-pre-line">{language?.text}</p>
       <div className="my-[70px] flex gap-3 flex-wrap">
         {language?.data?.map((el, i) => {
           return (
