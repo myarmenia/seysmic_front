@@ -6,14 +6,22 @@ import { useNavigate } from "react-router-dom";
 import { getLang } from "../../../helper";
 import { useTranslation } from "../../../hooks";
 
-export const QuakeBox = ({ image, title, description, date, to, id }) => {
+export const QuakeBox = ({
+  image,
+  title,
+  description,
+  date,
+  to,
+  id,
+  length,
+}) => {
   const {
     earth_quakes: { button },
   } = useTranslation().language;
   const navigate = useNavigate();
   return (
     <div className={`${styles.box}`}>
-      <img className={styles.img} src={image} alt="" />
+      <img loading="lazy" className={styles.img} src={image} alt="" />
       <div className={styles.content}>
         <Gradient className="text-[22px] leading-6 text-center font-bold">
           {title}

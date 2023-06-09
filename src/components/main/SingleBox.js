@@ -24,11 +24,13 @@ export const SingleBox = ({
 }) => {
   const { lang } = useParams();
   const [open, setOpen] = useState(false);
+  console.log(window.location.href);
 
   return (
     <>
       <div>
         <img
+          loading="lazy"
           src={files?.filter((el) => el.type === "image")[0]?.path}
           className="w-full min-h-[185px] object-cover max-h-[512px]"
           alt=""
@@ -37,7 +39,12 @@ export const SingleBox = ({
           <div className="flex flex-col gap-[34px] py-[41px] px-[68px] med-900:px-[32px] med-600:px-5 med-600:py-6">
             <div className="flex justify-between gap-5">
               <div className="flex gap-5 med-600:gap-2">
-                <img className="h-[95px] med-600:h-[50px]" src={logo} alt="" />
+                <img
+                  loading="lazy"
+                  className="h-[95px] med-600:h-[50px]"
+                  src={logo}
+                  alt=""
+                />
                 <div className="flex flex-col gap-[14px]">
                   <h4 className="text-dark-blue text-[32px] font-bold med-600:text-[20px]">
                     {title}
@@ -49,7 +56,11 @@ export const SingleBox = ({
                 </div>
               </div>
 
-              <Share url={window.location.href} />
+              <Share
+                title={title}
+                description={description}
+                url={window.location.href}
+              />
             </div>
             <p dangerouslySetInnerHTML={{ __html: description }}></p>
             {links?.length && (
@@ -76,7 +87,11 @@ export const SingleBox = ({
                   onClick={() => setOpen(true)}
                   className="h-[184px] ">
                   {type === "image" ? (
-                    <img src={path} className="h-full cursor-pointer" />
+                    <img
+                      loading="lazy"
+                      src={path}
+                      className="h-full cursor-pointer"
+                    />
                   ) : (
                     <video className="h-[184px] cursor-pointer">
                       <source src={path} />
@@ -99,6 +114,7 @@ export const SingleBox = ({
             return (
               <SwiperSlide key={i}>
                 <img
+                  loading="lazy"
                   src={path}
                   className="w-full h-full min-h-[500px] object-contain object-center"
                   alt=""

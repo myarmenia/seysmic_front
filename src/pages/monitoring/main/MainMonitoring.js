@@ -65,7 +65,7 @@ export const MainMonitoring = () => {
       <Container className="pb-[50px] py-[var(--py)]">
         <Title className="mb-4">{language?.title}</Title>
         <TitleBorder title={language?.subTitle} />
-        <img className="py-5" src={img1} alt="" />
+        <img loading="lazy" className="py-5" src={img1} alt="" />
         {/* <MonitoringTable {...{ data }} /> */}
         <QuakeSources />
       </Container>

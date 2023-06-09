@@ -21,7 +21,6 @@ const data = {
 export const EarthquakePlaces = () => {
   const earth_quakes = useLoaderData().data.current_earthquake;
   const { home: language } = useTranslation().language;
-
   return (
     <div className="relative">
       <div
@@ -29,7 +28,9 @@ export const EarthquakePlaces = () => {
         className="absolute top-0 left-0 w-full h-[55%] bg-cover bg-center bg-fixed bg-no-repeat med-600:h-[48%]"
       />
       <Container className="flex flex-col pb-10 pt-[17%] gap-[44px] med-1200:pt-[23%] med-900:pt-[40%] med-600:gap-[10px]">
-        <SwiperNavigation className="py-[50px] mt-[-50px] med-1200:mt-[-100px] med-900:mt-[-150px] med-600:py-[18px]">
+        <SwiperNavigation
+          count={earth_quakes.length}
+          className="py-[50px] mt-[-50px] med-1200:mt-[-100px] med-900:mt-[-150px] med-600:py-[18px]">
           {earth_quakes.map((elem, i) => (
             <SwiperSlide key={i}>
               <Box {...elem} />

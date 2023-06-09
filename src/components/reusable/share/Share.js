@@ -14,9 +14,9 @@ export const Share = ({
     <div
       className="relative h-fit shrink-0"
       onMouseEnter={() => setState(true)}
-      onMouseLeave={() => setState(false)}
-    >
+      onMouseLeave={() => setState(false)}>
       <img
+        loading="lazy"
         onClick={() => {
           if (window.innerWidth < 600) {
             setState((p) => !p);
@@ -43,7 +43,7 @@ export const Share = ({
 const SocialLink = ({ href, img }) => {
   return (
     <a href={href} target="_blank" className={styles.option}>
-      <img src={img} alt="" />
+      <img loading="lazy" src={img} alt="" />
     </a>
   );
 };

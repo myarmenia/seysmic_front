@@ -31,7 +31,12 @@ const Globus = ({ title, src, description, to }) => {
       </div>
 
       <div className={styles.globus_box}>
-        <img className="bg-cover shadow-normal rounded-full" src={src} alt="" />
+        <img
+          loading="lazy"
+          className="bg-cover shadow-normal rounded-full"
+          src={src}
+          alt=""
+        />
         <p className={styles.globus_title}>{title}</p>
       </div>
     </Link>
@@ -42,6 +47,7 @@ const Text = ({ title }) => {
   return (
     <div className="w-full relative py-[52px] med-600:py-[30px]">
       <img
+        loading="lazy"
         className="w-full min-h-[136px] med-1200:object-cover"
         src={ad_img}
         alt=""

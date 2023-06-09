@@ -17,6 +17,7 @@ export const CstmInput = ({
     <div className={"flex w-fit relative med-600:w-full " + boxClassName}>
       {img && (
         <img
+          loading="lazy"
           src={img}
           alt=""
           className="absolute -translate-y-1/2 top-1/2 left-4"

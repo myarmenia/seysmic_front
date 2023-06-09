@@ -58,7 +58,6 @@ const Prev = ({ linkto }) => {
   const { page } = useParams();
   const { search } = useLocation();
   const navigate = useNavigate();
-  console.log(linkto, page);
   const prev = () => {
     if (linkto && page !== "1") {
       navigate(getLang(`/search/${+page - 1}${search}`));

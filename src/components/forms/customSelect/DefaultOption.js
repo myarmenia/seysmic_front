@@ -11,16 +11,17 @@ export const DefaultOption = () => {
     <div className={styles.defaultOption} onClick={() => toggleOptions()}>
       {img && (
         <img
+          loading="lazy"
           src={img}
           alt=""
           className="absolute -translate-y-1/2 top-1/2 left-4"
         />
       )}
       <div
+        loading="lazy"
         className={`flex text-gray w-full text-xs cursor-pointer ${
           img ? "!pl-[23px]" : ""
-        }`}
-      >
+        }`}>
         <input
           type="text"
           {...{ placeholder }}
@@ -30,7 +31,7 @@ export const DefaultOption = () => {
           {...register}
         />
       </div>
-      <img src={chevDown} alt="" className="w-3" />
+      <img loading="lazy" src={chevDown} alt="" className="w-3" />
     </div>
   );
 };

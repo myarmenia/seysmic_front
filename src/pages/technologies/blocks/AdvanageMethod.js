@@ -1,7 +1,7 @@
-import React from 'react';
-import styles from './technologiesBlock.module.css';
-import { Container, Title, Ul } from '../../../components/reusable';
-import { useTranslation } from '../../../hooks';
+import React from "react";
+import styles from "./technologiesBlock.module.css";
+import { Container, Title, Ul } from "../../../components/reusable";
+import { useTranslation } from "../../../hooks";
 // const data = [
 //   'не требуют создания новых сетей наблюдений;',
 //   'позволяют контролировать техногенную сейсмичность;',
@@ -16,7 +16,6 @@ import { useTranslation } from '../../../hooks';
 
 export const AdvanageMethod = () => {
   const { technology: language } = useTranslation().language;
-  console.log(language.title_advantage.texts);
   return (
     <Container className="mt-[60px]">
       <Title>{language.title_advantage.title}</Title>
@@ -24,7 +23,9 @@ export const AdvanageMethod = () => {
       {/* <div className="my-[10px]  text-2xl text-light-grey text-center med-1200:text-lg">
         Метод и функционирование КТ
       </div> */}
-      <Ul className={styles.advantage_list} data={language.title_advantage.texts}></Ul>
+      <Ul
+        className={styles.advantage_list}
+        data={language.title_advantage.texts}></Ul>
     </Container>
   );
 };

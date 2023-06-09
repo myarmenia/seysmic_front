@@ -1,8 +1,8 @@
-import React from 'react';
-import { Title, ViewPosition } from '../../../components/reusable';
-import { generateArray } from '../../../helper';
-import styles from '../../monitoring/main/blocks/allQuakes/allQuakes.module.css';
-import { useTranslation } from '../../../hooks';
+import React from "react";
+import { Title, ViewPosition } from "../../../components/reusable";
+import { generateArray } from "../../../helper";
+import styles from "../../monitoring/main/blocks/allQuakes/allQuakes.module.css";
+import { useTranslation } from "../../../hooks";
 
 // const data1 = generateArray(11, {
 //   name: 'Плотность состояния сейсмической системы (S) ',
@@ -10,7 +10,6 @@ import { useTranslation } from '../../../hooks';
 // });
 export default function Definitions_technology() {
   const { technology: language } = useTranslation().language;
-  console.log(language.DefinationsTechnology.data);
 
   return (
     <div className="pt-10">
@@ -34,15 +33,15 @@ const Item = ({ name, about, delay }) => {
         <div
           style={{
             opacity: bool ? 1 : 0,
-            transform: bool ? 'translateY(0)' : 'translateY(50px)',
-            transitionDelay: delay + 'ms',
+            transform: bool ? "translateY(0)" : "translateY(50px)",
+            transitionDelay: delay + "ms",
             height: "68px",
           }}
           className={styles.item2}>
           <div className={styles.magnitude2}>{name}</div>
           <div className={styles.wrapper}>
             <div className={styles.title2}>
-              <p className='text-left w-full'>{about}</p>
+              <p className="text-left w-full">{about}</p>
             </div>
             {/* {subtitle && <div className={styles.title}>{subtitle}</div>} */}
             {/* <div className={styles.country}>{country}</div> */}

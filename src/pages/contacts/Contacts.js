@@ -49,8 +49,7 @@ const Component = () => {
         <FormProvider {...formMethods}>
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="flex flex-col gap-[36px] items-center"
-          >
+            className="flex flex-col gap-[36px] items-center">
             <Title>{language.title}</Title>
             <div className="flex flex-col gap-[24px] items-center med-400:w-full">
               <CstmInput
@@ -104,14 +103,18 @@ const Component = () => {
           </div>
           {!map_iframe && map_image && (
             <div className="rounded-2xl h-[265px] overflow-hidden [&>iframe]:w-full  [&>iframe]:h-full">
-              <img alt=" " className="object-fill" src={map_image} />
+              <img
+                loading="lazy"
+                alt=" "
+                className="object-fill"
+                src={map_image}
+              />
             </div>
           )}
           {map_iframe && !map_image && (
             <div
               className="rounded-2xl h-[265px] overflow-hidden [&>iframe]:w-full  [&>iframe]:h-full"
-              dangerouslySetInnerHTML={{ __html: map_iframe }}
-            >
+              dangerouslySetInnerHTML={{ __html: map_iframe }}>
               {!map_iframe && map_image && <img alt=" " src="map_image" />}
             </div>
           )}
@@ -153,7 +156,7 @@ const RobotCheckbox = ({ regName }) => {
 
   return (
     <div className="relative">
-      <img className="w-[177px]" src={robot_img} alt="" />
+      <img loading="lazy" className="w-[177px]" src={robot_img} alt="" />
       <label className={styles.container}>
         <input {...register} type="checkbox" />
         <span className={styles.checkmark}></span>

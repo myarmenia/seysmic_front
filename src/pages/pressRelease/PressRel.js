@@ -18,7 +18,6 @@ const expl = {
 };
 const Component = () => {
   const item = useLoaderData();
-  console.log(item);
   return (
     <SingleBox
       {...expl}

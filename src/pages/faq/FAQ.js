@@ -12,12 +12,14 @@ export function FAQ({}) {
   return (
     <div>
       <img
+        loading="lazy"
         src={globus}
         className="w-full min-h-[185px] object-cover max-h-[512px]"
         alt=""
       />
       <div className="w-full">
         <img
+          loading="lazy"
           src={faq}
           className="object-cover max-h-[208px] max-w-[297px] m-auto mt-4 med-900:hidden"
           alt=""
@@ -45,6 +47,7 @@ const Box = ({ question, answer }) => {
         }}>
         <h3 className={styles.question}>{question} </h3>
         <img
+          loading="lazy"
           src={arrow}
           className={
             !open
