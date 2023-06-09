@@ -407,7 +407,7 @@
       "title": "SEISMIC ENTROPY METHOD (SEM) AND COMPUTER TECHNOLOGY (LMTP-SPQ) FOR MONITORING AND PREDICTION",
       "subTitle": "SEM allows to build a mathematical model of the geological environment (volume SS), due to which, for the first time in world practice, it becomes possible to visualize the entire process of preparing strong earthquakes",
       "text1": "The technology of monitoring and prediction is based on the law of seismic entropy production (Akopian, 2013, ",
-      "text2":" ). This law is viewed only within the framework of new seismic parameters calculated on the basis of the most reliable and transparent information – earthquake catalogs. It allows to build a mathematical pattern of the geological environment (SS volume), due to which, for the first time in world practice, it becomes possible to visualize the entire process of preparing a strong earthquake. \n\nThe method of seismic entropy does not contradict everything that has been accumulated and developed by specialists in the field of earthquake forecasting and seismic risk reduction, on the contrary, it allows us to combine these efforts and significantly increase their effectiveness, increasing society's resilience to natural disasters, as well as from the point of view of effective allocation of finances and targeted preparation for strong earthquakes. \n\nDue to its versatility, the method already makes it possible to create a multi-level (global, regional, national and local) automated information system for seismic monitoring. Moreover, for well-defined seismic systems (for example, Italy, Japan, California), a reliable short-term forecast can be made. \n\nWe believe that the seismic entropy method, by its universality, transparency, reliability and high efficiency, is just the tool on the basis of which seismologists and governments from around the world can already combine their efforts to develop common international norms and rules for forecasting, warning and taking measures in case of seismic danger."
+      "text2": " ). This law is viewed only within the framework of new seismic parameters calculated on the basis of the most reliable and transparent information – earthquake catalogs. It allows to build a mathematical pattern of the geological environment (SS volume), due to which, for the first time in world practice, it becomes possible to visualize the entire process of preparing a strong earthquake. \n\nThe method of seismic entropy does not contradict everything that has been accumulated and developed by specialists in the field of earthquake forecasting and seismic risk reduction, on the contrary, it allows us to combine these efforts and significantly increase their effectiveness, increasing society's resilience to natural disasters, as well as from the point of view of effective allocation of finances and targeted preparation for strong earthquakes. \n\nDue to its versatility, the method already makes it possible to create a multi-level (global, regional, national and local) automated information system for seismic monitoring. Moreover, for well-defined seismic systems (for example, Italy, Japan, California), a reliable short-term forecast can be made. \n\nWe believe that the seismic entropy method, by its universality, transparency, reliability and high efficiency, is just the tool on the basis of which seismologists and governments from around the world can already combine their efforts to develop common international norms and rules for forecasting, warning and taking measures in case of seismic danger."
     },
     "SS_and_LSE": {
       "title": "SEISMIC SYSTEM AND THE LAW OF SEISMIC ENTROPY PRODUCTION"
@@ -471,25 +471,25 @@
     }
   ],
   "schema_processing": {
-    "title": "MONITORING SPACE IMAGES",
-    "text1": "Together with the Long Mid-Term Prediction (LMTP) program, we will conduct satellite monitoring and lineament1 analysis of the preparation zones for predicted strong earthquakes.",
-    "text3": "[1] Lineaments are linear elements of different ranks, expressed in the landscape and structure of the earth's crust: reflecting tectonics, fracturing, boundaries of geological formations, straight sections of coastlines, mountain ranges and other straightened elements of landscapes and geological structures. With the advent of materials from space surveys of the Earth's surface, the term \"lineament\" has received a new meaning and has become widely used in geology and related fields. Satellite images clearly show wide and extended zones of cracks, ruptures, folds, uplifts and subsidence, which cross both platforms and fold belts.",
-    "text4": "The lineament analysis of the monitoring of satellite images of the zones of preparation of strong earthquakes in recent years has made it possible to reveal certain dynamics in the development of lineament systems before and after strong earthquakes.",
-    "title2": "SCHEME FOR PROCESSING SPACE IMAGES",
-    "text5": "The scheme of stage-by-stage processing of space images is shown below. <br /> For a particular region, a satellite is selected and a primary satellite image is selected using specialized programs. Specialized programs are used to process primary images and to isolate lineaments in satellite images.",
+    "title": "SATELLITE IMAGES MONITORING",
+    "text1": "With the Long-Mid-Term Prediction (LMTP) program, developed on the basis of our technology, we conduct space monitoring and lineament analysis of preparation zones for expected strong earthquakes.",
+    "text3": "[1] Lineaments are linear elements of different ranks expressed in the landscape and structure of the Earth's crust: reflecting tectonics, fracturing, boundaries of geological formations, rectilinear sections of coastlines, restrictions of mountain ranges and other straightened elements of landscapes and geological structures. With the advent of materials from satellite surveys of the Earth's surface, the term \"lineament\" has gained a new meaning and has become widely used in geology and related fields. The satellite images clearly show wide and extended zones of cracks, ruptures, folds, elevations and descents that intersect both platforms and folded belts.",
+    "text4": "The lineament analysis of satellite images of the preparation zones of strong earthquakes in recent years has revealed a certain dynamics of the development of lineament systems before and after strong earthquakes.",
+    "title2": "SATELLITE IMAGES PROCESSING SCHEME",
+    "text5": "A satellite is selected for a specific region and with the help of specialized programs, primary images are processed to highlight liniments in satellite images",
     "satellite_selection": {
-      "text1": "Satellite selection",
-      "text2": "Primary image",
-      "text3": "Image processing by ENVI program",
-      "text4": "Selection of lineaments program Winlessa",
-      "text5": "Image processing by ENVI program",
+      "text1": "Choosing a satellite",
+      "text2": "The original image",
+      "text3": "Image processing using the ENVI program",
+      "text4": "Line Detection (WinLESSA)",
+      "text5": "Rosa Chart drawing",
       "text6": "Step-by-step processing of a space image for a selected satellite, date, region and local area"
     },
-    "title3": "SPACE MONITORING FOR ARMENIA AND ADJACENT TERRITORIES",
-    "text6": "Kurdistan Knot, Armenia and its subzones of continuous monitoring from space. For rectangular zones, geographical coordinates are given (starting from the upper left corner).",
-    "title4": "MONITORING EXAMPLE",
-    "text7": "The source zone of the earthquake on the Iran-Iraq border on November 12, 2017, М=7.3 (left) and the forecast of this earthquake in the Zagros SS by ITU (right) during the Presentation at the State Corporation Rosatom",
-    "title5": "EXAMPLE OF MONITORING THE FOOT ZONE OF A STRONG EARTHQUAKE BY LINEMET ANALYSIS OF SPACE IMAGES FROM 03-21.08.17"
+    "title3": "SATELLITE IMAGES MONITORING FOR ARMENIA AND ADJACENT TERRITORIES",
+    "text6": "Zones of the territory of Armenia and neighboring countries for which space monitoring is carried out",
+    "title4": "EXAMPLE OF MONITORING",
+    "text7": "the earthquake focal zone on the Iran-Iraq border (12.11.2017, M=7.3 (left) and the forecast of this earthquake in the SS Zagros according to MSE (right)",
+    "title5": "AN EXAMPLE OF MONITORING THE SOURCE ZONE OF A STRONG EARTHQUAKE BY LINEAMENT ANALYSIS OF SPACE IMAGES FROM 03-21.08.2017"
   },
   "SE_and_CT": {
     "title": "SEISMIC ENTROPY METHOD (SEM) AND COMPUTER TECHNOLOGY (LMTP-SPQ) FOR MONITORING AND PREDICTION",
