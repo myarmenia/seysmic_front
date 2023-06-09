@@ -56,7 +56,7 @@ export const NationalScheme = () => {
 
 const Box = ({ title, describtion, delay }) => {
   return (
-    <ViewPosition className={styles.item}>
+    <ViewPosition width={true} className={styles.item}>
       {(bool) => (
         <div
           style={{
