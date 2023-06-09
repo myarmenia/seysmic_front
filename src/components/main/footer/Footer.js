@@ -65,7 +65,7 @@ export const Footer = () => {
             <li className={[styles.social_icons_li, "flex gap-2"].join(" ")}>
               <img
                 loading="lazy"
-                className="cursor-pointer w-[40px]"
+                className="cursor-pointer w-[27px]"
                 onClick={() => {
                   changeLanguage("en");
                 }}
@@ -77,7 +77,7 @@ export const Footer = () => {
                 onClick={() => {
                   changeLanguage("ru");
                 }}
-                className="cursor-pointer w-[40px]"
+                className="cursor-pointer w-[27px]"
                 alt=" "
                 src={ru}
               />
@@ -86,7 +86,7 @@ export const Footer = () => {
                 onClick={() => {
                   changeLanguage("am");
                 }}
-                className="cursor-pointer w-[40px]"
+                className="cursor-pointer w-[27px]"
                 alt=" "
                 src={am}
               />
