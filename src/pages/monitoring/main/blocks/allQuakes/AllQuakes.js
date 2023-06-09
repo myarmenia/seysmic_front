@@ -111,7 +111,7 @@ const ChartOptions_default = {
   legend: {
     position: "right",
     offsetY: 5,
-    fontSize: "24px",
+    fontSize: "20px",
     labels: {
       useSeriesColors: true,
     },

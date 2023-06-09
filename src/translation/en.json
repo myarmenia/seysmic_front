@@ -5,9 +5,9 @@
   "main": {
     "header": {
       "nav_items": {
-        "about": "About",
+        "about": "About Us",
         "technologies": "Technology",
-        "monitoring": "Monitoring and prediction",
+        "monitoring": "Monitoring and Prediction",
         "prease_release": "Media",
         "contacts": "Contacts",
         "search": "Search"
@@ -16,7 +16,7 @@
     "footer": {
       "current_earthquakes": "Current earthquakes",
       "contacts": "Contact details",
-      "about": "About",
+      "about": "About Us",
       "technologies": "Technology"
     }
   },
@@ -30,15 +30,15 @@
     "description": "We seek and support projects and technologies that aim to try to predict natural disasters (earthquakes, tsunamis, hurricanes, etc.), monitor natural anomalies, to identify patterns in their occurrence. The goal for this area is to find and promote the use of technologies that not only deal with consequences from natural disasters, but also proactively focus on early predictions and warnings, thus reducing the risks and damage to people's lives.",
     "news": "NEWS",
     "uldata": {
-      "title": "USER OF THIS SITE SHOULD KNOW.",
+      "title": "USER OF THIS SITE SHOULD KNOW",
       "data": [
-        "<p>earthquake forecast accuracy in time <b class='text-[#022FAE]'> 1 month</b> or more, depending on the specific situation</p>",
-        "<p>earthquake prediction accuracy in place on the Earth's surface and in the depth of the source is limited by the size of the seismic system <b class='text-[#022FAE]'> (surface contour and depth),</b> and inside the seismic system can reach the size of the source of the predicted earthquake, depending on its magnitude</p>",
-        "<p>if a strong earthquake waiting area is indicated inside the seismic system, then a strong earthquake is automatically excluded in other places inside the seismic system, i.e. <b class='text-[#022FAE]'> the entire volume of the seismic system is controlled</b class='text-[#022FAE]'> b></p>",
-        "<p>elements of a seismic system in a limited time interval <b class='text-[#022FAE]'> (from 1 to 6 months)</b> may be in an unstable state, and if a strong earthquake does not occur during this time, then after this period the system again goes into a stable state</p>",
-        "<p>depending on the development of the seismic situation (from future indicator earthquakes), <b class='text-[#022FAE]'>the forecast results may change and be refined over time.</b> Instability (predicted earthquake location) can migrate within the seismic system from one fault zone to another, the predicted waiting time for an earthquake can move away or approach and, accordingly, the magnitude of the expected earthquake can change (all this is included in the method)</p>",
-        "<p>depending on the knowledge of the region and earthquake data, seismic systems are divided into <b class='text-[#022FAE]'> four levels - reliable, well-defined, mediocre and poorly defined,</b> respectively and the quality of the forecast in them is subdivided.</p>",
-        "<p>Forecast accuracy in magnitude ± 0.1; large deviations in magnitude are negotiated separately</p>"
+        "<p class='text-[#1A374D]'>accuracy of earthquake prediction <span class='text-[#022FAE] font-bold'>by time </span> from 6 months to 1 week, depending on the specific situation;</p>",
+        "<p class='text-[#1A374D]'>accuracy of the forecast <span class='text-[#022FAE] font-bold'>by magnitude</span> ± 0.1; large deviations in magnitude are negotiated separately;</p>",
+        "<p class='text-[#1A374D]'>the accuracy of the earthquake forecast <span class='text-[#022FAE] font-bold'>by location</span> on the Earth's surface and <span class='text-[#022FAE] font-bold'>by the depth</span> is limited by the size of the SS and can reach the size of the source of predicted earthquake;</p>",
+        "<p class='text-[#1A374D]'>if a waiting area for a strong earthquake is indicated within the SS, then a strong earthquake is automatically excluded in other places of the SS, i.e. the entire volume of the SS is controlled;</p>",
+        "<p class='text-[#1A374D]'>depending on the development of the seismic situation, the prediction results may change and be updated over time.</p>",
+        "<p class='text-[#1A374D]'>Instability (predicted earthquake location) can migrate within the SS from one fault zone to another, the predicted waiting time for an earthquake can move away or approach and, accordingly, the magnitude of the expected earthquake can change (all this is embedded in the method);</p>",
+        "<p class='text-[#1A374D]'>SS elements in a limited time interval (from 1 to 6 months) may be in an unstable state, and if a strong earthquake does not occur during this time, the system will return to a stable state</p>"
       ]
     }
   },
@@ -390,16 +390,16 @@
       "text": "Another 6 were predicted retrospectively because they occurred in the new SS (100%). 2 double earthquakes, 4 target miss alarms are not predicted.",
       "ChartOptions": {
         "labels": [
-          "9 – predicted (75%)",
-          "2 – tsunami predicted (17%)",
-          "3 – other forecasts have been refuted (25%)"
+          " 9 – predicted (75%)",
+          " 2 – tsunami predicted (17%)",
+          " 3 – other forecasts have been refuted (25%)"
         ]
       },
       "ChartOptions2": {
         "labels": [
-          "26 – predicted (76%)",
-          "6 – predicted retrospectively (18%)",
-          "2 – not predicted (6%)"
+          " 26 – predicted (76%)",
+          " 6 – predicted retrospectively (18%)",
+          " 2 – not predicted (6%)"
         ]
       }
     },
