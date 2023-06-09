@@ -1,29 +1,23 @@
 import { yupResolver } from "@hookform/resolvers/yup";
-import React, { useMemo, useRef } from "react";
+import React, { useRef } from "react";
 import { FormProvider, useForm } from "react-hook-form";
-import robot_img from "../../assets/main/contacts/robot.svg";
-import { translation } from "../../components/main";
+import { useActionData, useFormAction, useLoaderData } from "react-router-dom";
+import instance from "../../api";
 import {
   CstmInput,
   CstmTextarea,
   CustomBtn,
   CustomSelect,
 } from "../../components/forms";
+import { translation } from "../../components/main";
 import { Container, SocIcons, Title, Ul } from "../../components/reusable";
-import { useAppSubmit, useFormRegister, useTranslation } from "../../hooks";
+import { useAppSubmit, useTranslation } from "../../hooks";
 import { contacts_shema } from "../../validation";
-import styles from "./contacts.module.css";
-import instance from "../../api";
-import {
-  Link,
-  useActionData,
-  useFormAction,
-  useLoaderData,
-} from "react-router-dom";
-import { toFormData } from "../../helper";
 // import { ReCAPTCHA } from "react-google-recaptcha";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const Component = () => {
+  const captchaRef = useRef(null);
   const { contacts: language } = useTranslation().language;
   const actionData = useActionData();
   const { address, email, links, map_iframe, map_image, phone } =
@@ -36,12 +30,15 @@ const Component = () => {
 
   const { handleSubmit } = formMethods;
   const onSubmit = async (data) => {
+    const token = captchaRef.current.getValue();
+    console.log(token, "ReCAPTCHA Token");
     const formData = new FormData();
     delete data.isRobot;
     Object.entries(data).forEach(([key, value]) => {
       formData.append(key, value);
     });
     submit(formData, { method: "POST", action });
+    captchaRef.current.reset();
   };
   return (
     <>
@@ -49,7 +46,8 @@ const Component = () => {
         <FormProvider {...formMethods}>
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="flex flex-col gap-[36px] items-center">
+            className="flex flex-col gap-[36px] items-center"
+          >
             <Title>{language.title}</Title>
             <div className="flex flex-col gap-[24px] items-center med-400:w-full">
               <CstmInput
@@ -73,7 +71,11 @@ const Component = () => {
                 placeholder={language.placeholders.description}
               />
             </div>
-            <RobotCheckbox regName="isRobot" />
+            <ReCAPTCHA
+              ref={captchaRef}
+              sitekey={"6Lelb4ImAAAAAPQdUPmQRRrji8httbStYMxw6L3t"}
+            />
+            {/* <RobotCheckbox regName="isRobot" /> */}
             {/* <ReCAPTCHA
               sitekey={process.env.REACT_APP_SECRET_KEY}
               onChange={onChange}
@@ -114,7 +116,8 @@ const Component = () => {
           {map_iframe && !map_image && (
             <div
               className="rounded-2xl h-[265px] overflow-hidden [&>iframe]:w-full  [&>iframe]:h-full"
-              dangerouslySetInnerHTML={{ __html: map_iframe }}>
+              dangerouslySetInnerHTML={{ __html: map_iframe }}
+            >
               {!map_iframe && map_image && <img alt=" " src="map_image" />}
             </div>
           )}
@@ -147,21 +150,4 @@ const action = async ({ request, params: { lang } }) => {
   }
 };
 
-// function onChange(value) {
-//   console.log("Captcha value:", value);
-// }
-
-const RobotCheckbox = ({ regName }) => {
-  const register = useFormRegister(regName);
-
-  return (
-    <div className="relative">
-      <img loading="lazy" className="w-[177px]" src={robot_img} alt="" />
-      <label className={styles.container}>
-        <input {...register} type="checkbox" />
-        <span className={styles.checkmark}></span>
-      </label>
-    </div>
-  );
-};
 export const Contacts = Object.assign(Component, { loader, action });
