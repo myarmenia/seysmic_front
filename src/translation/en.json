@@ -508,18 +508,15 @@
     "persons": [
       {
         "name": "Lalayan German G.",
-        "roles": ["Founder", "President of LGG Foundation"]
+        "roles": ["Founder", "President of LGG Foundation"],
+        "description": ""
       },
       {
         "name": "Akopian Samvel Ts.",
         "roles": [
-          "Founder and CEO",
-          "Doctor of Physical and Mathematical Sciences.",
-          "Member of the Russian Expert Council on earthquake prediction, seismic hazard, and risk (RES).",
-          "Academician of the International Academy of Geoecology (IAG).",
-          "He has over 90 publications, two monographs and 5 computer developments."
+          "Founder and CEO"
         ],
-        "description": ""
+        "description": "Doctor of Physical and Mathematical Sciences.\nMember of the Russian Expert Council on earthquake prediction, seismic hazard, and risk (RES).\nAcademician of the International Academy of Geoecology (IAG).\nHe has over 90 publications, two monographs and 5 computer developments."
       }
     ],
     "publications": {

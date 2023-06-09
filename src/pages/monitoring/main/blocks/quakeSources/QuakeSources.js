@@ -106,7 +106,7 @@ export const QuakeSources = () => {
     return [];
   }, [lang]);
   return (
-    <div className="flex flex-col gap-7 py-20 med-900:py-10">
+    <div className="flex flex-col gap-7 pl-[130px] pr-[130px] py-20 med-900:py-10">
       <Title className="whitespace-pre-line">{title}</Title>
       <div className="flex gap-4 justify-around med-600:grid med-600:grid-cols-2 justify-items-center">
         {data?.length && data.map((el, i) => <Box key={i} {...el} />)}
