@@ -584,7 +584,7 @@
             }
           }
         },
-        "series": [9.12, 2.16, 0.72],
+        "series": [9, 2, 1],
         "labels": [
           "(94%) – 26 - предсказаны",
           "(19%) – 6 - предсказаныz ретроспективно",
@@ -832,9 +832,9 @@
       "text": "Another 6 were predicted retrospectively because they occurred in the new SS (100%). 2 double earthquakes, 4 target miss alarms are not predicted.",
       "ChartOptions": {
         "labels": [
-          " 9 – предсказаны (75%) ",
+          "9 – предсказаны (75%) ",
           "2 - цунами предсказаны(17%)",
-          "В 3 - случаях (25% опровергнуты другие прогнозы"
+          "3 - случая (25% опровергнуты другие прогнозы)"
         ]
       },
       "ChartOptions2": {

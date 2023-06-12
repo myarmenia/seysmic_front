@@ -3,7 +3,7 @@
   @apply inline;
 }
 .list-item > span {
-  @apply relative pl-2 flex text-[21px] leading-[168.5%] text-justify
+  @apply relative pl-2 flex text-[18px] leading-[168.5%] text-justify
   med-600:text-[11px];
 }
 .list-item > span::before {
