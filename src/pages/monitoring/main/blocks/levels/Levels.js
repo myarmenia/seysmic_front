@@ -21,6 +21,7 @@ export const Levels = () => {
   const {
     monitoring_and_prediction: { forecast_are_divided: language },
   } = useTranslation().language;
+  console.log(language.text);
   const items = useMemo(() => {
     if (lang === 'ru') {
       return [
@@ -100,7 +101,7 @@ export const Levels = () => {
       <Container bg={styles.bg} className={styles.my_container}>
         <div className="flex flex-col gap-[24px] justify-center relative med-600:gap-[3px]">
           {items.map((el, i) => (
-            <Box {...el} key={i} />
+            <Box {...el} key={i}/>
           ))}
         </div>
         <p className={styles.describtion}>{language?.text}</p>
