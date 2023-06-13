@@ -644,7 +644,7 @@
     },
     "forecast_are_divided": {
       "title": "СС ПО НАДЕЖНОСТИ ПРОГНОЗОВ ПОДРАЗДЕЛЯЮТСЯ НА ЧЕТЫРЕ УРОВНЯ",
-      "text": "MOC/E KAAO 3EMNETPACEHMA KAYECTBO MIPOTHO3A, YAYYWAETCA M CO BPEMEHEM BCE CC MEPEMAYT HA NEPBI YPOBEMb HADEXHOCTH."
+      "text": "ПОСЛЕ КАЖДОГО СИЛЬНОГО ЗЕМЛЕТРЯСЕНИЯ КАЧЕСТВО ПРОГНОЗА УЛУЧШАЕТСЯ И СО ВРЕМЕНЕМ ВСЕ СС ПРЕЙДУТ НА ПЕРВЫЙ УРОВЕНЬ НАДЕЖНОСТИ."
     },
     "ITU": {
       "title": "Computer technology (CT) for global monitoring of seismicity, forecasting the intensity of the expected earthquake and the construction dynamic maps of seismic hazard based on the MSE",
@@ -832,16 +832,16 @@
       "text": "Another 6 were predicted retrospectively because they occurred in the new SS (100%). 2 double earthquakes, 4 target miss alarms are not predicted.",
       "ChartOptions": {
         "labels": [
-          "9 – предсказаны (75%) ",
-          "2 - цунами предсказаны(17%)",
-          "3 - случая (25% опровергнуты другие прогнозы)"
+          " 7 – предсказаны (58%) ",
+          " 2 - цунами предсказаны(17%)",
+          " 3 - случая (25% опровергнуты другие прогнозы)"
         ]
       },
       "ChartOptions2": {
         "labels": [
-          "26 - предсказаны (76%)",
-          "6 - предсказаныz ретроспективно (18%) ",
-          "2 - не предсказано(6%)"
+          " 26 - предсказаны (76%)",
+          " 6 - предсказаныz ретроспективно (18%) ",
+          " 2 - не предсказано(6%)"
         ]
       }
     },
@@ -999,15 +999,15 @@
         },
         {
           "title": "Страны BRICS",
-          "describtion": "Центр мониторинга в России (Москва) функционирует"
+          "describtion": "Центр мониторинга в Индии (Дели) функционирует"
         },
         {
           "title": "Средиземноморский",
-          "describtion": "С Центром на Мальте открыт"
+          "describtion": "С Центром на Мальте (Валлетта) открыт"
         },
         {
           "title": "Американский",
-          "describtion": "С центром в Коста-Рика планируется"
+          "describtion": "С центром в Коста-Рика (Сан-Хосе) планируется"
         }
       ]
     }

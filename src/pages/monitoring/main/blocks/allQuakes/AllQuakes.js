@@ -194,7 +194,7 @@ const MyChart = () => {
           {bool && (
             <ReactApexCharts
               options={{ ...ChartOptions_default, ...ChartOptions }}
-              series={[9, 2, 1]}
+              series={[7, 2, 3]}
               type={ChartOptions_default.chart.type}
               width="100%"
               height={300}
