@@ -82,7 +82,7 @@ export const MainMonitoring = () => {
         /> */}
         <Container
           bg="absolute top-0 left-0 w-full h-full"
-          className="h-full flex justify-center items-center">
+          className="h-full flex justify-center items-center max-w-[1200px]">
           <p className="font-semibold text-[26px] text-white leading-[168.5%] py-3 text-center med-1200:text-[14px]">
             {language?.text}
           </p>

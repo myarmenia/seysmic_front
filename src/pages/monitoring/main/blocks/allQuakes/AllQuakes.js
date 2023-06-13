@@ -194,7 +194,7 @@ const MyChart = () => {
           {bool && (
             <ReactApexCharts
               options={{ ...ChartOptions_default, ...ChartOptions }}
-              series={[9.5, 1.9, 0.6]}
+              series={[9, 2, 1]}
               type={ChartOptions_default.chart.type}
               width="100%"
               height={300}
@@ -216,8 +216,7 @@ const Item = ({ magnitude, title, country, date, delay }) => {
             transform: bool ? "translateY(0)" : "translateY(50px)",
             transitionDelay: delay + "ms",
           }}
-          className={styles.item}
-        >
+          className={styles.item}>
           <div className={styles.magnitude}>{magnitude}</div>
           <div className={styles.wrapper}>
             <div className={styles.title}>{title}</div>
