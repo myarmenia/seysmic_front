@@ -6,20 +6,39 @@
   bg-[#1a374d91] w-[40%] absolute top-0 left-0 med-600:hidden;
 }
 .marquee {
-  @apply absolute -translate-y-1/2 top-1/2;
-  animation: marquee 10s cubic-bezier(0, 0, 0, 0) 0s infinite;
+  /* @apply absolute -translate-y-1/2 top-1/2 w-max; */
+  /* animation: marquee 10s cubic-bezier(0.2, 0, 0, 0) 0s infinite;
+  animation-play-state: running ; */
+  padding-top: 10px;
+  display: block;
+
+  /* width: max-content; */
+  width: 100%;
+  transform: translateX(100%); /* Animation start out of the screen */
   animation-play-state: running;
+  /* Add the animation */
+  animation: marquee 10s linear infinite /* infinite make reapeat the animation indefinitely */;
 }
 @keyframes marquee {
+  to {
+    transform: translateX(-100%);
+  }
+}
+/* @keyframes marquee {
   from {
     right: -100px;
   }
   to {
     right: 100%;
   }
-}
+} */
 @media (max-width: 1000px) {
   .slide p {
     @apply w-full;
+  }
+}
+@media (max-width: 625px) {
+  .marquee {
+    width: max-content;
   }
 }

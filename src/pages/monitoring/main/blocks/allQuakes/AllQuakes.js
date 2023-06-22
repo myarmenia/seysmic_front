@@ -1,19 +1,15 @@
-import React from "react";
-import ReactApexCharts from "react-apexcharts";
-import {
-  Container,
-  Title,
-  ViewPosition,
-} from "../../../../../components/reusable";
-import { generateArray } from "../../../../../helper";
-import styles from "./allQuakes.module.css";
-import { useTranslation } from "../../../../../hooks";
+import React from 'react';
+import ReactApexCharts from 'react-apexcharts';
+import { Container, Title, ViewPosition } from '../../../../../components/reusable';
+import { generateArray } from '../../../../../helper';
+import styles from './allQuakes.module.css';
+import { useTranslation } from '../../../../../hooks';
 
 const ChartOptions_default = {
   chart: {
     animations: {
       enabled: true,
-      easing: "easeinout",
+      easing: 'easeinout',
       speed: 1000,
       animateGradually: {
         enabled: true,
@@ -24,27 +20,27 @@ const ChartOptions_default = {
         speed: 1000,
       },
     },
-    type: "donut",
+    type: 'donut',
     height: 350,
     width: 300,
   },
   responsive: [
     {
-      breakpoint: 600,
+      breakpoint: 1000,
       options: {
         chart: {
-          height: "400px",
-          width: "100%",
+          height: '400px',
+          width: '100%',
         },
         legend: {
-          position: "bottom",
-          horizontalAlign: "left",
+          position: 'bottom',
+          horizontalAlign: 'left',
         },
         plotOptions: {
           pie: {
             donut: {
               labels: {
-                value: { fontSize: "36px", offsetY: 13 },
+                value: { fontSize: '36px', offsetY: 13 },
               },
             },
           },
@@ -62,14 +58,14 @@ const ChartOptions_default = {
         show: false,
       },
       donut: {
-        size: "80%",
-        background: "transparent",
+        size: '80%',
+        background: 'transparent',
         labels: {
           show: true,
           value: {
-            fontSize: "65px",
+            fontSize: '65px',
             fontWeight: 700,
-            color: "#0A1577",
+            color: '#0A1577',
             offsetY: 25,
           },
           name: {
@@ -84,47 +80,43 @@ const ChartOptions_default = {
     },
   },
   series: [30, 6, 2],
-  labels: [
-    "(94%) – предсказаны",
-    "(19%) – предсказаны ретроспективно",
-    "(6%) – не прогнозировано",
-  ],
+  labels: ['(94%) – предсказаны', '(19%) – предсказаны ретроспективно', '(6%) – не прогнозировано'],
   fill: {
-    type: ["gradient", "pattern", "solid"],
+    type: ['gradient', 'pattern', 'solid'],
     opacity: 1,
     pattern: {
       strokeWidth: 7,
       enabled: true,
-      style: "verticalLines",
+      style: 'verticalLines',
     },
     gradient: {
       shadeIntensity: 0.5,
       opacityFrom: 1,
       opacityTo: 1,
-      shade: "dark",
-      type: "horizontal",
+      shade: 'dark',
+      type: 'horizontal',
       inverseColors: true,
-      gradientToColors: ["#0026AA", "#0F6FE4", "#0026AA"],
+      gradientToColors: ['#0026AA', '#0F6FE4', '#0026AA'],
       stops: [0, 100, 100],
     },
   },
   legend: {
-    position: "right",
+    position: 'right',
     offsetY: 5,
-    fontSize: "20px",
+    fontSize: '20px',
     labels: {
       useSeriesColors: true,
     },
   },
-  colors: ["#0F6FE4", "#0026AA", "#41CF77"],
+  colors: ['#0F6FE4', '#0026AA', '#41CF77'],
 };
 
 const data = generateArray(25, {
-  magnitude: "M=6.2",
-  title: "42.40 N 13.32",
-  subtitle: "E H=10 км",
+  magnitude: 'M=6.2',
+  title: '42.40 N 13.32',
+  subtitle: 'E H=10 км',
   country: "Италия (L'Aquila)",
-  date: "2009.04.06",
+  date: '2009.04.06',
 });
 
 export const AllQuakes = () => {
@@ -135,7 +127,7 @@ export const AllQuakes = () => {
   } = useTranslation().language;
 
   return (
-    <Container className="py-16 flex flex-col gap-6">
+    <Container className="pb-16 pt-5 flex flex-col gap-6">
       <Title>{title1}</Title>
       {/* <p className="text-[32px] text-[#938E97] text-center leading-[150%] med-1200:text-[28px] med-900:text-[18px]">
         {subtitle}
@@ -213,8 +205,8 @@ const Item = ({ magnitude, title, country, date, delay }) => {
         <div
           style={{
             opacity: bool ? 1 : 0,
-            transform: bool ? "translateY(0)" : "translateY(50px)",
-            transitionDelay: delay + "ms",
+            transform: bool ? 'translateY(0)' : 'translateY(50px)',
+            transitionDelay: delay + 'ms',
           }}
           className={styles.item}>
           <div className={styles.magnitude}>{magnitude}</div>

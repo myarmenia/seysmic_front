@@ -1,16 +1,10 @@
-import { useEffect } from "react";
-import {
-  Outlet,
-  useLocation,
-  useNavigate,
-  useNavigation,
-  useParams,
-} from "react-router";
-import { ScrollRestoration } from "react-router-dom";
-import { getLang } from "../../helper";
-import { Footer, Header, MonitoringNavbar, Spinner } from "../main";
+import { useEffect } from 'react';
+import { Outlet, useLocation, useNavigate, useNavigation, useParams } from 'react-router';
+import { ScrollRestoration } from 'react-router-dom';
+import { getLang } from '../../helper';
+import { Footer, Header, MonitoringNavbar, Spinner } from '../main';
 // import { useLengPoint } from "../../hooks/useLengPoint";
-import instance from "../../api";
+import instance from '../../api';
 
 const Component = () => {
   const navigate = useNavigate();
@@ -18,34 +12,34 @@ const Component = () => {
   const { pathname } = useLocation();
   const { lang } = useParams();
   useEffect(() => {
-    if (pathname === "/") {
-      if (!localStorage.getItem("lang")) {
-        localStorage.setItem("lang", process.env.REACT_APP_DEFAULT_LANG);
+    if (pathname === '/') {
+      if (!localStorage.getItem('lang')) {
+        localStorage.setItem('lang', process.env.REACT_APP_DEFAULT_LANG);
         navigate(`/${process.env.REACT_APP_DEFAULT_LANG}/home`);
       } else {
-        navigate(getLang("/home"));
+        navigate(getLang('/home'));
       }
     }
   }, [pathname, navigate]);
   useEffect(() => {
-    if (pathname.split("/").length < 3) {
-      navigate(getLang("/home"));
+    if (pathname.split('/').length < 3) {
+      navigate(getLang('/home'));
     }
   }, [lang, pathname, navigate]);
   return (
     <>
       <div className="root">
         <Header />
-        <main className="h-full max-w-[100vw] overflow-hidden">
+        <main className="h-full !max-w-[1820px] mx-auto w-[80%] overflow-hidden">
           <Outlet />
-          {navigation.state !== "idle" && <Spinner />}
+          {navigation.state !== 'idle' && <Spinner />}
         </main>
         <Footer />
         {/* ------------- For scrolling to top -------------- */}
         <ScrollRestoration />
         {/* ================================================= */}
+        <MonitoringNavbar />
       </div>
-      <MonitoringNavbar />
     </>
   );
 };

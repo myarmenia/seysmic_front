@@ -10,7 +10,7 @@ export const Logo = ({ color, className = "" }) => {
     if (lang === "ru") {
       return "Международный Центр глобального мониторинга сейсмического риска";
     } else if (lang === "am") {
-      return "Սեյսմիկ ռիսկի գլոբալ մոնիտորինգի կենտրոն";
+      return "Սեյսմիկ ռիսկի գլոբալ մոնիտորինգի միջազգային կենտրոն";
     } else if (lang === "en") {
       return "International Center of the Seismic Risk Global Monitoring";
     }

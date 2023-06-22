@@ -3,6 +3,17 @@
   hover:opacity-75 hover:translate-x-[8px] w-fit;
 }
 
+.blink {
+  text-align: center;
+  animation: blinker .75s linear infinite;
+  color: #007aff;
+  font-family: sans-serif;
+}
+@keyframes blinker {
+  50% {
+      opacity: 0;
+  }
+}
 @media (max-width: 1440px) {
   .country {
     @apply text-[18px] leading-[20px];

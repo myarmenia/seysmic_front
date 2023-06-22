@@ -215,3 +215,8 @@
   @apply justify-end med-900:justify-start;
 }
 /* MarketingResearch */
+@media (max-width: 900px) {
+  .main {
+    @apply hidden;
+  }
+}

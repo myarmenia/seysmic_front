@@ -1,4 +1,4 @@
 .list {
   list-style-image: url("../../../../../assets/icons/list-style-round.svg");
-  @apply gap-2;
+  @apply gap-2 pt-4;
 }

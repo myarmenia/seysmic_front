@@ -1,19 +1,19 @@
-import React from "react";
-import src from "../../../../assets/trash/slider-img1.svg";
-import { Container } from "../../../../components/reusable";
-import styles from "./imageSlider.module.css";
+import React from 'react';
+import src from '../../../../assets/trash/slider-img1.svg';
+import { Container } from '../../../../components/reusable';
+import styles from './imageSlider.module.css';
 // Import Swiper
-import { Pagination, Autoplay } from "swiper";
-import "swiper/css";
-import "swiper/css/pagination";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { generateArray } from "../../../../helper";
-import { useLoaderData } from "react-router";
+import { Pagination, Autoplay } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { generateArray } from '../../../../helper';
+import { useLoaderData } from 'react-router';
 
 const images = generateArray(3, {
   src,
   description:
-    "Каждый человек имеет право получать информацию о готовящихся землетрясениях в том или ином регионе мира, знать об опасных временных интервалах для самостоятельного выбора места жительства, пребывания и отдыха. Такая возможность сегодня имеется!",
+    'Каждый человек имеет право получать информацию о готовящихся землетрясениях в том или ином регионе мира, знать об опасных временных интервалах для самостоятельного выбора места жительства, пребывания и отдыха. Такая возможность сегодня имеется!',
 });
 
 export const ImageSlider = () => {
@@ -37,7 +37,7 @@ export const ImageSlider = () => {
               <img
                 loading="lazy"
                 src={path}
-                className="absolute top-0 left-0 object-cover w-full h-full"
+                className="absolute top-0 left-0 w-full h-full"
                 alt=""
               />
               <div className="relative w-fll h-full max-w-[1440px] mx-auto">
@@ -47,13 +47,14 @@ export const ImageSlider = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <Container
-        bg="bg-dark-blue relative"
-        className={"w-full h-[44px] text-white"}>
-        <a href={banner?.running_text?.path} className={styles.marquee}>
-          {banner?.running_text?.content}
-        </a>
-      </Container>
+      {console.log(banner.run)}
+      <a href={banner?.running_text?.path}>
+        <Container
+          bg="bg-dark-blue relative"
+          className={'w-full h-[44px] text-white relative top-0 left-0'}>
+          <span className={styles.marquee}>{banner?.running_text?.content}</span>
+        </Container>
+      </a>
     </div>
   );
 };

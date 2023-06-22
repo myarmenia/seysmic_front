@@ -4,6 +4,6 @@
 }
 /* list-image-none */
 .li {
-  @apply duration-300 opacity-0 text-base leading-[112%] text-justify 
+  @apply duration-300 opacity-0 text-base leading-[142%] text-justify 
   text-black ml-[29px] pl-[10px] med-600:pl-[5px] med-600:text-start;
 }

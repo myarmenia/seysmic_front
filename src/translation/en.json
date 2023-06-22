@@ -34,16 +34,16 @@
       "data": [
         "<p class='text-[#1A374D]'>accuracy of earthquake prediction <span class='text-[#022FAE] font-bold'>by time </span> from 6 months to 1 week, depending on the specific situation;</p>",
         "<p class='text-[#1A374D]'>accuracy of the forecast <span class='text-[#022FAE] font-bold'>by magnitude</span> ± 0.1; large deviations in magnitude are negotiated separately;</p>",
-        "<p class='text-[#1A374D]'>the accuracy of the earthquake forecast <span class='text-[#022FAE] font-bold'>by location</span> on the Earth's surface and <span class='text-[#022FAE] font-bold'>by the depth</span> is limited by the size of the SS and can reach the size of the source of predicted earthquake;</p>",
+        "<p class='text-[#1A374D]'>the accuracy of the earthquake forecast <span class='text-[#022FAE] font-bold'>by location</span> and <span class='text-[#022FAE] font-bold'>depth</span> is limited by the size of the SS and can reach the size of the source of expected earthquake;</p>",
         "<p class='text-[#1A374D]'>if a waiting area for a strong earthquake is indicated within the SS, then a strong earthquake is automatically excluded in other places of the SS, i.e. the entire volume of the SS is controlled;</p>",
-        "<p class='text-[#1A374D]'>depending on the development of the seismic situation, the prediction results may change and be updated over time.</p>",
-        "<p class='text-[#1A374D]'>Instability (predicted earthquake location) can migrate within the SS from one fault zone to another, the predicted waiting time for an earthquake can move away or approach and, accordingly, the magnitude of the expected earthquake can change (all this is embedded in the method);</p>",
+        "<p class='text-[#1A374D]'>depending on the development of the seismic situation, the prediction results may change and be updated over time. Instability (predicted earthquake location) can migrate within the SS from one fault zone to another, the predicted waiting time for an earthquake can move away or approach and, accordingly, the magnitude of the expected earthquake can change (all this is embedded in the method);</p>",
+        "<p class='text-[#1A374D]'>Depending on the study of the region and earthquake data, seismic systems are divided into four levels -<span class='text-[#022FAE] font-bold'>RELIABLE, GOOD, MEDIUM</span> and <span class='text-[#022FAE] font-bold'>BAD․</span> Accordingly, the quality of the forecast is determined in them.</p>",
         "<p class='text-[#1A374D]'>SS elements in a limited time interval (from 1 to 6 months) may be in an unstable state, and if a strong earthquake does not occur during this time, the system will return to a stable state</p>"
       ]
     }
   },
   "technology": {
-    "title": "HOW DOES THE TECHNOLOGY WORK?",
+    "title": "HOW DOES THE TECHNOLOGY WORKS?",
     "subTitle": "The basis of the technology is the new seismic parameters, the law of seismic entropy production (SEM) and a specialized software LMTP-SPQ",
     "data": [
       "The innovative technology is based on the method of seismic entropy (ITU), based on the new physical parameters and the concept of a seismic system (SS) introduced by S. Akopian into seismostatistics, within the framework of which a new law was revealed in seismology - the law of seismic entropy production (pdf).",
@@ -202,7 +202,7 @@
     },
     "forecast_are_divided": {
       "title": "THE SEISMIC SYSTEM IS DIVIDED INTO FOUR LEVELS ACCORDING TO THE RELIABILITY OF FORECASTS",
-      "text": "After each strong earthquake, the quality of the forecast improves and over time all SS will move to the first level of reliability."
+      "text": "After each strong earthquake, the quality of the forecast improves and over time all ss will move to the first level of reliability"
     },
     "ITU": {
       "title": "Computer technology (CT) for global monitoring of seismicity, forecasting the intensity of the expected earthquake and the construction dynamic maps of seismic hazard based on the MSE",
@@ -500,27 +500,25 @@
     "title": "International Center",
     "sub_title": "of the Seismic Risk Global Monitoring ",
     "preface": {
-      "part1": "The company “SeiEn” was established in October 2022 in Yerevan, Armenia (founders Akopian S.Ts. and Lalayan G.G.). It is the legal successor of the companies Earthquake Prediction Center (“GeoQuake’’ LLC, Moscow, 2007-2012), and International Center for the Global Monitoring and Forecast of Seismic Weather (“SeiEn” LLC, Moscow, 2018-2022), of which Akopian S.Ts. was the founder and CEO.",
-      "part2": "The main activity of the center is aimed at monitoring and forecasting earthquakes, assessing the seismic risk from expected earthquakes, and global reduction of damage from expected earthquakes and tsunamis through the introduction of innovative technology that contributes to increasing the resilience of society to disasters in the field of earthquakes and tsunamis. It complies with the strategy and charter of the UN Office for Disaster Risk Reduction (www.undrr.org) and fits into the frame of the Sendai Framework for Disaster Risk Reduction for 2015-2030. (adopted at the Third UN World Conference in Sendai, Japan, March 18, 2015).",
+      "part1": "The company “SeiEn” was established in October 2022 in Yerevan, Armenia (founders Akopian S.Ts. and Lalayan G.G.). The main activity of the center is aimed at monitoring and forecasting earthquakes, assessing the seismic risk from expected earthquakes, and global reduction of damage from expected earthquakes and tsunamis through the introduction of innovative technology that contributes to increasing the resilience of society to disasters in the field of earthquakes and tsunamis. It complies with the strategy and charter of the UN Office for Disaster Risk Reduction (www.undrr.org) and fits into the frame of the Sendai Framework for Disaster Risk Reduction for 2015-2030. (adopted at the Third UN World Conference in Sendai, Japan, March 18, 2015).",
+      "part2": "",
       "part3": "Our goal is to achieve a significant reduction in the death rate, reduce the number of victims and economic losses both in the region of Armenia and around the world.",
       "part4": "We are ready to implement all our accumulated experience in the International Center for Global Monitoring of Seismic Risk to raise the resilience of the population of Armenia and other countries to natural and man-made disasters․"
     },
     "persons": [
       {
-        "name": "Lalayan German G.",
+        "name": "Lalayan German",
         "roles": ["Founder", "President of LGG Foundation"],
-        "description": ""
+        "description": "The LGG Foundation is a new non-profit organization that will help to legally formalize the activities that support technological social impact projects, which have been going on for several years already. Though we do not possess long history or great achievements, all the projects that we support now and will support in the future are aimed at saving lives.\nOur vector is the search and distribution of scalable innovative technologies that can change the world for the better and, if possible, prevent the occurrence of diseases and death of people."
       },
       {
-        "name": "Akopian Samvel Ts.",
-        "roles": [
-          "Founder and CEO"
-        ],
-        "description": "Doctor of Physical and Mathematical Sciences.\nMember of the Russian Expert Council on earthquake prediction, seismic hazard, and risk (RES).\nAcademician of the International Academy of Geoecology (IAG).\nHe has over 90 publications, two monographs and 5 computer developments."
+        "name": "Akopian Samvel",
+        "roles": ["Founder and CEO"],
+        "description": "Doctor of Physical and Mathematical Sciences\nMember of the Russian Expert Council on earthquake prediction, seismic hazard, and risk\nAcademician of the International Academy of Geoecology (IAG)\nHe has over 90 publications, two monographs and 5 computer developments"
       }
     ],
     "publications": {
-      "title": "Scientific publications",
+      "title": "SCIENTIFIC PUBLICATIONS OVER THE LAST 15 YEARS",
       "sub_title": "over the past 15 years"
     },
     "results": {
@@ -529,9 +527,9 @@
         "In the field of the study Free oscillations of the Earth (1971–1994)",
         "In the field of seismotectonic, remote sensing and teaching (1980–1987)",
         "In the field of seismic impact assessment for buildings and construction (1988–1994)",
-        "In the area of earthquake prediction (1983–2023)",
+        "In the area of earthquake prediction (1983– present)",
         "In the field of oil and gas production, induced seismicity (2013-2018) ",
-        "In the field of entropy seismology and cosmology (2013–2023)"
+        "In the field of entropy seismology and cosmology (2013– present)"
       ]
     },
     "national_shema": {
@@ -547,7 +545,7 @@
         },
         {
           "title": "Mediterranean",
-          "describtion": "Malta (Valeta) - office opened"
+          "describtion": "Malta (Valeta) -the office is open"
         },
         {
           "title": "Asian",
@@ -581,8 +579,9 @@
   "monitoring": {
     "global": {
       "title": "GLOBAL MONITORING",
-      "Map_Btn": "on the map",
-      "Country_Btn": "by country list",
+      "flickering_text": "Click on the rectangle and see the dynamics of the seismic instability development in this region!",
+      "Map_Btn": "Select on the Map",
+      "Country_Btn": "Select by Country List",
       "title1": "Monitoring for 2023 includes and affects the territories of 80 countries",
       "title2": "We are constantly working to increase the coverage and detail of monitoring"
     }

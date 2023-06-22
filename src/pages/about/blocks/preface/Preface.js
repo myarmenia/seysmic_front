@@ -30,7 +30,7 @@ export const Preface = () => {
         </p>
       </div>
       <Container className="py-[38px]">
-        <p className="leading-[168.5%] text-xl med-600:text-[14px] med-600:leading-[165%]">
+        <p className="leading-[168.5%] text-justify text-xl med-600:text-[14px] med-600:leading-[165%]">
           {language.preface.part1}
           <br />
           {language.preface.part2}

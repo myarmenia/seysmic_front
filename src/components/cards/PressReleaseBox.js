@@ -22,7 +22,7 @@ export const PressReleaseBox = ({
           className="flex items-center gap-3">
           <img className="max-w-[64px]" loading="lazy" src={logo} alt="" />
           <div className="flex flex-col gap-[6px]">
-            <span className="font-bold text-dark-blue text-[11px]">
+            <span className="font-bold text-dark-blue text-[11px] line-clamp-2">
               {title}
             </span>
             <span className="text-[#415455] text-[10px]">

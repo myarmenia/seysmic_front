@@ -25,14 +25,14 @@ export const SingleBox = ({
   const { lang } = useParams();
   const [open, setOpen] = useState(false);
   console.log(window.location.href);
-
+  console.log(description.description);
   return (
     <>
       <div>
         <img
           loading="lazy"
           src={files?.filter((el) => el.type === "image")[0]?.path}
-          className="w-full min-h-[185px] object-cover max-h-[512px]"
+          className="w-full min-h-[185px] object-contain max-h-[512px]"
           alt=""
         />
         <div className="grid grid-cols-[5fr_2fr] med-1200:grid-cols-1">
@@ -62,7 +62,8 @@ export const SingleBox = ({
                 url={window.location.href}
               />
             </div>
-            <p dangerouslySetInnerHTML={{ __html: description }}></p>
+            <p dangerouslySetInnerHTML={{ __html: description.description }}></p>
+            {console.log(description)}
             {links?.length && (
               <ol type="1" style={{ listStyle: "auto inside" }}>
                 {links.map((el, i) => (
