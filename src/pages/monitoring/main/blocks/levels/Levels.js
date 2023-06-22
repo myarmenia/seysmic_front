@@ -104,7 +104,7 @@ export const Levels = () => {
             <Box {...el} key={i}/>
           ))}
         </div>
-        <p className={styles.describtion}>{language?.text}</p>
+        <p className={styles.describtion}>{language.text}</p>
       </Container>
     </div>
   );

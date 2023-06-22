@@ -48,7 +48,7 @@ const Text = ({ title }) => {
     <div className="w-full relative py-[52px] med-600:py-[30px]">
       <img
         loading="lazy"
-        className="w-full min-h-[136px] med-1200:object-cover"
+        className="w-full min-h-[136px] med-1200:object-cover h-[80px]"
         src={ad_img}
         alt=""
       />

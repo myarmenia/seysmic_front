@@ -26,7 +26,7 @@ export const AboutCoputerTechologies = () => {
     'P =PK*PW – вероятность сильного землетрясения (эта вероятность равна нулю вне аттрактора и начинает расти, когда траектория входит в аттрактор)',
   ];
   return (
-    <Container className="mb-[115px]">
+    <Container className="mb-[60px]">
       <Title className="mb-4">{language.SE_and_CT.title}</Title>
       <TitleBorder title={`${language.SE_and_CT.subTitle}`} />
       <p className="mt-8 text-[18px] leading-[168.5%] text-justify med-600:text-sm whitespace-pre-line ">
@@ -74,7 +74,7 @@ export const AboutCoputerTechologies = () => {
       <Ul className={[styles.list, 'mt-8'].join(' ')} data={language.Diagram_Prediction.texts} />
       <Title className="mb-4 mt-11">{language.Prediction_Probability.title}</Title>
       <TitleBorder title={language.Prediction_Probability.subTitle} />
-      <div className="mt-11 flex justify-between gap-5  med-600:flex-col-reverse w-[80%] mx-auto med-900:w-full">
+      <div className="mt-11 flex justify-between gap-5 pb-[-100px] med-600:flex-col-reverse w-[80%] mx-auto med-900:w-full">
         <div className="w-1/2 med-600:w-full">
           <p className="text-[18px] leading-[168.5%] text-justify med-600:text-sm">
             {language.Prediction_Probability.ulTitile}

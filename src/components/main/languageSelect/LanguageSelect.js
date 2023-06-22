@@ -4,11 +4,13 @@ import arrow_down from "../../../assets/icons/arrow-down-blue.svg";
 import language_img from "../../../assets/icons/language.svg";
 import { useTranslation } from "../../../hooks";
 import styles from "./languageSelect.module.css";
-
+// Русский
+// English
+// Հայերեն
 const options = [
-  { title: "Русский", value: "ru" },
-  { title: "English", value: "en" },
-  { title: "Հայերեն", value: "am" },
+  { title: "ru", value: "ru" },
+  { title: "en", value: "en" },
+  { title: "am", value: "am" },
 ];
 
 const allowFunc = (callback) => {

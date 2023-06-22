@@ -9,7 +9,7 @@
 }
 .describtion {
   @apply text-[24px] med-600:text-[18px] text-center leading-[142.69%] 
-  mx-auto w-[70%] uppercase med-1200:w-full med-600:text-xs;
+  mx-auto w-[70%] med-1200:w-full med-600:text-xs;
 }
 .text {
   @apply z-[4] text-white text-[42px] font-semibold whitespace-nowrap;

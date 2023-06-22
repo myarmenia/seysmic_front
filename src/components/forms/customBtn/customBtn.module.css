@@ -2,6 +2,11 @@
   @apply px-6 py-2 rounded-[30px] text-white text-lg w-fit min-w-[207px];
   background: linear-gradient(180deg, #0026aa 0%, #30cfff 100%) !important;
 }
+.button:hover {
+  color: white !important;
+  background: linear-gradient(180deg, #0026aa 0%, #30cfff 100%) !important;
+}
+
 .transparent {
   @apply !bg-transparent !text-dark-blue !border-dark-blue border-[1px];
   background-image: none !important;
@@ -24,10 +29,10 @@
   min-width: fit-content;
 }
 .gradient::before {
-  content: "";
+  content: '';
   position: absolute;
 
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   border-radius: 30px;

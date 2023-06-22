@@ -46,7 +46,7 @@ export const MonitoringNavbar = ({ className = "" }) => {
         >
           <img
             loading="lazy"
-            className="cursor-pointer w-[25px]"
+            className={styles.chev_down}
             src={chev_down}
             alt=""
           />

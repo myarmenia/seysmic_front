@@ -9,6 +9,7 @@ import { CustomBtn } from "../../../components/forms";
 import { Container, SwiperNavigation } from "../../../components/reusable";
 import { getLang } from "../../../helper";
 import { useTranslation } from "../../../hooks";
+import styles from "./EarthquakePlaces.module.css"
 
 const data = {
   image: quake_img,
@@ -24,8 +25,9 @@ export const EarthquakePlaces = () => {
   return (
     <div className="relative">
       <div
-        style={{ backgroundImage: `url('${img}')` }}
-        className="absolute top-0 left-0 w-full h-[55%] bg-cover bg-center bg-fixed bg-no-repeat med-600:h-[48%]"
+        // style={{ backgroundImage: `url('${img}')` }}
+        className={styles.beg}
+        // className="absolute top-0 left-0 w-full h-[55%] bg-cover bg-center bg-fixed bg-no-repeat med-600:h-[48%]"
       />
       <Container className="flex flex-col pb-10 pt-[17%] gap-[44px] med-1200:pt-[23%] med-900:pt-[40%] med-600:gap-[10px]">
         <SwiperNavigation

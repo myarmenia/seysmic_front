@@ -1,5 +1,5 @@
-import React from "react";
-import instance from "../../api";
+import React from 'react';
+import instance from '../../api';
 import {
   EarthquakePlaces,
   Globuses,
@@ -8,8 +8,8 @@ import {
   Partners,
   PressRelease,
   UsersInfo,
-} from "./blocks";
-import { useLinkClickHandler } from "react-router-dom";
+} from './blocks';
+import { useLinkClickHandler } from 'react-router-dom';
 
 const Component = () => {
   return (

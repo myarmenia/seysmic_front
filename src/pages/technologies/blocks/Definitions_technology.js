@@ -17,7 +17,7 @@ export default function Definitions_technology() {
       <p className="text-[32px] text-[#938E97] text-center leading-[150%] med-1200:text-[28px] med-900:text-[18px] pb-8">
         {language.DefinationsTechnology.subtitle}
       </p>
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-5 pr-[4px]">
         {language.DefinationsTechnology.data.map((el, i) => (
           <Item delay={i / 3} key={i} {...el} />
         ))}

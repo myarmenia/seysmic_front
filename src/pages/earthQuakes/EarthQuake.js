@@ -16,13 +16,13 @@ const expl = {
 const Component = () => {
   const { single_current_earthquakes, lastes_current_earthquake } =
     useLoaderData();
-
+// console.log(single_current_earthquakes);
   return (
     <SingleBox
       {...single_current_earthquakes}
       Item={QuakeBox}
       boxes_data={lastes_current_earthquake}
-      description={single_current_earthquakes.body}
+      description={single_current_earthquakes}
     />
   );
 };
@@ -30,7 +30,9 @@ const Component = () => {
 const loader = async ({ params: { lang, id = 1 } }) => {
   try {
     const res = await instance.get(`current-earthquake/${id}?lng=${lang}`);
+    console.log(res.data.data);
     return res.data.data;
+    
   } catch (error) {
     console.log(error);
   }
