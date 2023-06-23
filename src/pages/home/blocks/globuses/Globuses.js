@@ -24,7 +24,7 @@ export const Globuses = () => {
 // #060615
 const Globus = ({ title, src, description, to }) => {
   return (
-    <Link to={to} className={styles.globus}>
+    <Link to={to()} className={styles.globus}>
       <div className={styles.globus_desc}>
         <span>{title}</span>
         <p>{description}</p>

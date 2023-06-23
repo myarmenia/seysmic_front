@@ -1,26 +1,22 @@
-import React from "react";
-import globalMap from "../../../assets/main/monitoring/globalMap.svg";
-import { Container, Title } from "../../../components/reusable";
-import instance from "../../../api";
-import { useLoaderData } from "react-router";
+import React from 'react';
+import globalMap from '../../../assets/main/monitoring/globalMap.svg';
+import { Container, Title } from '../../../components/reusable';
+import instance from '../../../api';
+import { useLoaderData, useLocation, useParams } from 'react-router';
+import { useTranslation } from '../../../hooks';
 
 const Component = () => {
   const data = useLoaderData();
+  const { global: language } = useTranslation().language.monitoring;
+  console.log(language.CountriesItem.title);
   return (
     <Container className="py-[var(--py)]">
-      <Title>Глобальный мониторинг</Title>
-      <img
-        loading="lazy"
-        src={data.image_path}
-        alt=""
-        className="mx-auto mb-0 mt-[50px]"
-      />
+      <Title>{language.CountriesItem.title}</Title>
+      <img loading="lazy" src={data.image_path} alt="" className="mx-auto mb-0 mt-[20px]" />
       <div className="flex gap-3 med-900:flex-col">
-        <div className="grid grid-cols-2 gap-3 mt-[110px] med-1200:mt-5 med-1200:grid-cols-1">
+        <div className="grid gap-3 mt-[110px] med-1200:mt-5 med-1200:grid-cols-1">
           <div className="flex flex-col gap-3">
-            <span className="text-[26px] font-semibold med-600:text-base">
-              {data?.title}
-            </span>
+            <span className="text-[26px] font-semibold med-600:text-base">{data?.title}</span>
 
             <p
               className="text-xl med-600:text-xs "

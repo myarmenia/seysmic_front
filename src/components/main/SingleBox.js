@@ -50,8 +50,8 @@ export const SingleBox = ({
                     {title}
                   </h4>
                   <span className="text-[#415455] text-base med-600:text-sm">
-                    {date} {time}
-                    {magnitude && `${magnitude} ${leng[lang]}`}
+                    {date} {time} 
+                    {magnitude && ` ${magnitude} ${leng[lang]}`}
                   </span>
                 </div>
               </div>

@@ -25,7 +25,7 @@ const MapHover = ({ el }) => {
   const [hover, setHover] = useState(false);
   const navigate = useNavigate();
   const handleClick = ({ id }) => {
-    navigate(`earth-map/${id}`);
+    navigate(`earth-map/${id}`,{el});
   };
   return (
     <>

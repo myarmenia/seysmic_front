@@ -254,12 +254,12 @@ const Box = ({ title, title11, subtitle, numbers, list_data, images, quake_desc,
             ))}
           </div>
           <div className="flex items-center justify-between gap-5 med-1200:flex-wrap w-[90%] mx-auto med-900:w-full">
-            <div className="flex gap-[34px] med-1200:gap-5 med-900:gap-3 med-600:grid grid-cols-[repeat(auto-fit,_minmax(100px,_1fr))] med-600:w-full">
+            <div className="flex gap-[11px] med-1200:gap-5 med-900:gap-3 med-600:grid grid-cols-[repeat(auto-fit,_minmax(100px,_1fr))] med-600:w-full">
               {images.map((el, i) => (
                 <ImageBox {...el} key={i} />
               ))}
             </div>
-            <div className="flex flex-col gap-2 text-[26px] leading-[168.5%] text-justify med-600:text-sm">
+            <div className="flex flex-col gap-2 text-[16px] leading-[168.5%] text-justify med-600:text-sm">
               <p>{quake_desc.text}</p>
               <p className="text-[#F05328]">{quake_desc.red_text}</p>
             </div>

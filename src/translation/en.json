@@ -390,7 +390,7 @@
       "text": "Another 6 were predicted retrospectively because they occurred in the new SS (100%). 2 double earthquakes, 4 target miss alarms are not predicted.",
       "ChartOptions": {
         "labels": [
-          " 9 – predicted (75%)",
+          " 7 – predicted (58%)",
           " 2 – tsunami predicted (17%)",
           " 3 – other forecasts have been refuted (25%)"
         ]
@@ -583,7 +583,10 @@
       "Map_Btn": "Select on the Map",
       "Country_Btn": "Select by Country List",
       "title1": "Monitoring for 2023 includes and affects the territories of 80 countries",
-      "title2": "We are constantly working to increase the coverage and detail of monitoring"
+      "title2": "We are constantly working to increase the coverage and detail of monitoring",
+      "CountriesItem": {
+        "title": "GLOBAL MONITORING"
+      }
     }
   },
   "contacts": {

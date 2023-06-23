@@ -48,25 +48,25 @@ export const PlannedProducts = () => {
       <Title>{language.title_planned_products.title}</Title>
       <div className={styles.bigBox}>
         <div className={styles.boxes}>
-          <h1 className="text-[#EA3933] pb-[21px] text-[28px] font-semibold">
+          <h1 className="text-[#EA3933] pb-[21px] text-[22px] font-semibold">
             {language.title_planned_products.category_1.name}
           </h1>
           <p>{language.title_planned_products.category_1.text}</p>
         </div>
         <div className={styles.boxes}>
-          <h1 className="text-[#FEC60A] pb-[21px] text-[28px] font-semibold">
+          <h1 className="text-[#FEC60A] pb-[21px] text-[22px] font-semibold">
             {language.title_planned_products.category_2.name}
           </h1>
           <p>{language.title_planned_products.category_2.text}</p>
         </div>
         <div className={styles.boxes}>
-          <h1 className="text-[#89C53D] pb-[21px] text-[28px] font-semibold">
+          <h1 className="text-[#89C53D] pb-[21px] text-[22px] font-semibold">
             {language.title_planned_products.category_3.name}
           </h1>
           <p>{language.title_planned_products.category_3.text}</p>
         </div>
         <div className={styles.boxes}>
-          <h1 className="text-[#01A1A1] pb-[21px] text-[28px] font-semibold">
+          <h1 className="text-[#01A1A1] pb-[21px] text-[22px] font-semibold">
             {language.title_planned_products.category_4.name}
           </h1>
           <p>{language.title_planned_products.category_4.text}</p>
