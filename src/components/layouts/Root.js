@@ -45,8 +45,9 @@ const Component = () => {
 };
 const loader = async () => {
   try {
-    const res = await instance.get(`footer/social-links`);
-    return res.data.data;
+    // const res = await instance.get(`footer/social-links`);
+    // return res.data.data;
+    return null;
   } catch (error) {
     console.log(error);
   }

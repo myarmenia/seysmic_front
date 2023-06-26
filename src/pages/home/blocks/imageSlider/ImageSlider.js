@@ -19,42 +19,45 @@ const images = generateArray(3, {
 export const ImageSlider = () => {
   const { banner } = useLoaderData();
   return (
-    <div className="overflow-x-hidden">
-      <Swiper
-        pagination={{
-          clickable: true,
-        }}
-        centeredSlides={true}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
-        modules={[Pagination, Autoplay]}
-        className="w-full h-[60vh] max-h-[622px] min-h-[229px] med-600:h-[229px] med-600:min-w-full">
-        {banner?.banner.map(({ path, content }, i) => (
-          <SwiperSlide key={i}>
-            <div className={styles.slide}>
-              <img
-                loading="lazy"
-                src={path}
-                className="absolute top-0 left-0 w-full h-full"
-                alt=""
-              />
-              <div className="relative w-fll h-full max-w-[1440px] mx-auto">
-                <p>{content}</p>
+    <>
+      <div className=""></div>
+      <div className="overflow-x-hidden">
+        <Swiper
+          pagination={{
+            clickable: true,
+          }}
+          centeredSlides={true}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          modules={[Pagination, Autoplay]}
+          className="w-full h-[60vh] max-h-[622px] min-h-[229px] med-600:h-[229px] med-600:min-w-full">
+          {banner?.banner.map(({ path, content }, i) => (
+            <SwiperSlide key={i}>
+              <div className={styles.slide}>
+                <img
+                  loading="lazy"
+                  src={path}
+                  className="absolute top-0 left-0 w-full h-full"
+                  alt=""
+                />
+                <div className="relative w-fll h-full max-w-[1440px] mx-auto">
+                  <p>{content}</p>
+                </div>
               </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-      {console.log(banner.run)}
-      <a href={banner?.running_text?.path}>
-        <Container
-          bg="bg-dark-blue relative"
-          className={'w-full h-[44px] text-white relative top-0 left-0'}>
-          <span className={styles.marquee}>{banner?.running_text?.content}</span>
-        </Container>
-      </a>
-    </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        {console.log(banner.run)}
+        <a href={banner?.running_text?.path}>
+          <Container
+            bg="bg-dark-blue relative"
+            className={'w-full h-[44px] text-white relative top-0 left-0'}>
+            <span className={styles.marquee}>{banner?.running_text?.content}</span>
+          </Container>
+        </a>
+      </div>
+    </>
   );
 };
