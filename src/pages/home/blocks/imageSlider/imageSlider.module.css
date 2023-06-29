@@ -17,7 +17,7 @@
   transform: translateX(100%); /* Animation start out of the screen */
   animation-play-state: running;
   /* Add the animation */
-  animation: marquee 10s linear infinite /* infinite make reapeat the animation indefinitely */;
+  animation: marquee 15s linear infinite /* infinite make reapeat the animation indefinitely */;
 }
 @keyframes marquee {
   to {

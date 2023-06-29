@@ -29,7 +29,7 @@ div.hidden_nav {
  @apply cursor-pointer w-[25px]
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1065px) {
   .nav {
     @apply sticky w-full rounded-none m-0  
     bottom-0 left-0 right-0 top-[unset];

@@ -1,28 +1,31 @@
-import React from "react";
-import { Container, Title } from "../../../../components/reusable";
-import styles from "./news.module.css";
-import logo from "../../../../assets/main/logo.svg";
-import img from "../../../../assets/main/book-img.svg";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper";
-import { generateArray } from "../../../../helper";
-import { CustomBtn } from "../../../../components/forms";
-import { useLoaderData } from "react-router";
-import { useTranslation } from "../../../../hooks";
+import React from 'react';
+import { Container, Title } from '../../../../components/reusable';
+import styles from './news.module.css';
+import logo from '../../../../assets/main/logo.svg';
+import img from '../../../../assets/main/book-img.svg';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination } from 'swiper';
+import { generateArray, getLang } from '../../../../helper';
+import { CustomBtn } from '../../../../components/forms';
+import { useLoaderData } from 'react-router';
+import { useTranslation } from '../../../../hooks';
+import NewsIconSVG from './newsIconSVG';
+import { Link } from 'react-router-dom';
 
 export const News = () => {
   const {
     data: { news },
   } = useLoaderData();
   const { home: language } = useTranslation().language;
-
+  // console.log(news[0].button_link);
+  // let aaa = news[0].button_link;
   return (
     <div className="py-[40px] max-w-[1440px] mx-auto">
-      <div className="med-600:h-[44px] relative w-full mb-[65px] med-600:justify-between med-600:flex">
-        <div className={styles.logo}>
-          <img className="mx-auto" src={logo} alt="" />
+      <div className="med-600:h-[44px] relative w-full mb-[55px] med-600:justify-between med-600:flex">
+        <div className={styles.newsIconBox}>
+          <NewsIconSVG />
+          <Title className={styles.title}>{language?.news}</Title>
         </div>
-        <Title className={styles.title}>{language?.news}</Title>
       </div>
       <Container>
         <Swiper
@@ -41,6 +44,11 @@ export const News = () => {
             </SwiperSlide>
           ))}
         </Swiper>
+        <a className="mx-auto text-center" style={{ margin: '0 auto' }} href={news[0].button_link}>
+          <div className="text-center mb-5">
+            <CustomBtn transparent>{news[0].button_text}</CustomBtn>
+          </div>
+        </a>
       </Container>
     </div>
   );

@@ -39,6 +39,7 @@ export const Map = () => {
 const Countries = () => {
   const [showNum, setShowNum] = useState(0);
   const { country } = useLoaderData();
+  console.log(country);
   return (
     <Container className="flex flex-col h-[610px] flex-wrap gap-[10px_34px] pb-[60px] pt-3 med-600:h-[990px] med-600:gap-[10px_12px] med-600:px-0 med-600:pb-[32px]">
       {country.map(({ parent_region_name, children, id }, i) => (
@@ -87,7 +88,7 @@ const DropDown = ({ show, items, parent_region_name, ...props }) => {
               <li
                 className={[styles.country, 'ml-[15px] med-600:ml-4 whitespace-nowrap'].join(' ')}
                 key={i}>
-                <Link to={'2'}>{el.name}</Link>
+                <Link to={`${el.id}`}>{el.name}</Link>
               </li>
             );
           })}

@@ -27,7 +27,7 @@ export const EarthquakePlaces = () => {
       <div
         // style={{ backgroundImage: `url('${img}')` }}
         className={styles.beg}
-        // className="absolute top-0 left-0 w-full h-[55%] bg-cover bg-center bg-fixed bg-no-repeat med-600:h-[48%]"
+        // className="absolute top-0 left-0 w-full h-[55%] bg-cover bg-center bg-fixed bg-no-repeat med-600:h-[48%]" containerin-er tvac med-900:pt-[40%]
       />
       <Container className="flex flex-col pb-10 pt-[17%] gap-[44px] med-1200:pt-[23%] med-900:pt-[40%] med-600:gap-[10px]">
         <SwiperNavigation

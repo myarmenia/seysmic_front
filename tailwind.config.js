@@ -23,6 +23,7 @@ module.exports = {
         'med-1200': { max: '1200px' },
         'med-900': { max: '1065px' },
         'med-600': { max: '600px' },
+        'med-560': { max: '560px' },
         'med-400': { max: '400px' },
       },
     },

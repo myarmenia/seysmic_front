@@ -1,10 +1,10 @@
-import React, { useMemo } from "react";
-import { Link, useParams } from "react-router-dom";
-import ad_img from "../../../../assets/gif.gif";
-import { Container } from "../../../../components/reusable";
-import { globuses } from "../../../../store/constats";
-import styles from "./globuses.module.css";
-import { useTranslation } from "../../../../hooks";
+import React, { useMemo } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import ad_img from '../../../../assets/gif.gif';
+import { Container } from '../../../../components/reusable';
+import { globuses } from '../../../../store/constats';
+import styles from './globuses.module.css';
+import { useTranslation } from '../../../../hooks';
 
 export const Globuses = () => {
   const { lang } = useParams();
@@ -12,7 +12,7 @@ export const Globuses = () => {
 
   return (
     <>
-      <Container className={styles.globuses} bg_style={{ overflow: "unset" }}>
+      <Container className={styles.globuses} bg_style={{ overflow: 'unset' }}>
         {globuses[lang]?.map((el, i) => (
           <Globus key={i} {...el} />
         ))}
@@ -31,12 +31,7 @@ const Globus = ({ title, src, description, to }) => {
       </div>
 
       <div className={styles.globus_box}>
-        <img
-          loading="lazy"
-          className="bg-cover shadow-normal rounded-full"
-          src={src}
-          alt=""
-        />
+        <img loading="lazy" className="bg-cover shadow-normal rounded-full" src={src} alt="" />
         <p className={styles.globus_title}>{title}</p>
       </div>
     </Link>
@@ -45,7 +40,7 @@ const Globus = ({ title, src, description, to }) => {
 
 const Text = ({ title }) => {
   return (
-    <div className="w-full relative py-[52px] med-600:py-[30px]">
+    <div className="w-full relative py-[32px] med-600:pb-[30px] med-600:pt-[60px]">
       <img
         loading="lazy"
         className="w-full min-h-[136px] med-1200:object-cover h-[80px]"
@@ -53,10 +48,10 @@ const Text = ({ title }) => {
         alt=""
       />
       <p className={styles.ad_p}>
-        {title.split("").map((el, i) => (
+        {title.split('').map((el, i) => (
           <span
             style={{
-              animationDelay: i * title.split("").length + "ms",
+              animationDelay: i * title.split('').length + 'ms',
             }}
             key={i}>
             {el}

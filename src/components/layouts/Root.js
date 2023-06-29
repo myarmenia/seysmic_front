@@ -30,10 +30,13 @@ const Component = () => {
     <>
       <div className="root">
         <Header />
-        <main className="h-full !max-w-[1820px] mx-auto w-[80%] overflow-hidden">
-          <Outlet />
-          {navigation.state !== 'idle' && <Spinner />}
-        </main>
+        <div className="relative overflow-x-hidden">
+          <main className="h-full !max-w-[1820px] mx-auto w-[80%] overflow-hidden">
+            <Outlet />
+
+            {navigation.state !== 'idle' && <Spinner />}
+          </main>
+        </div>
         <Footer />
         {/* ------------- For scrolling to top -------------- */}
         <ScrollRestoration />
@@ -45,9 +48,8 @@ const Component = () => {
 };
 const loader = async () => {
   try {
-    // const res = await instance.get(`footer/social-links`);
-    // return res.data.data;
-    return null;
+    const res = await instance.get(`footer/social-links`);
+    return res.data.data;
   } catch (error) {
     console.log(error);
   }
