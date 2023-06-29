@@ -99,7 +99,7 @@ export const Levels = () => {
     <div className="py-8 med-600:py-5">
       <Title className="py-5">{language?.title}</Title>
       <Container bg={styles.bg} className={styles.my_container}>
-        <div className="flex flex-col gap-[24px] justify-center relative med-600:gap-[3px]">
+        <div className="flex flex-col gap-[24px] px-[35px] justify-center relative med-600:gap-[3px]">
           {items.map((el, i) => (
             <Box {...el} key={i}/>
           ))}
@@ -119,7 +119,7 @@ const Box = ({ text, flag, imgClassName }) => {
         src={flag}
         alt="asdfas"
       />
-      <p className="font-semibold text-[26px] mt-5 shrink-[2] med-900:text-[12px] med-600:text-[9px] med-600:leading-[11px]">
+      <p className="font-semibold text-[22px] mt-5 shrink-[2] med-900:text-[12px] med-600:text-[9px] med-600:leading-[11px]">
         {text}
       </p>
     </div>

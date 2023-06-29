@@ -105,10 +105,14 @@ export const QuakeSources = () => {
     }
     return [];
   }, [lang]);
+  let a = Math.floor(window.innerWidth / 3);
+  console.log(window.innerWidth);
   return (
     <div className="flex flex-col gap-7 py-20 med-900:py-10">
       <Title className="whitespace-pre-line">{title}</Title>
-      <div className="flex gap-4 justify-around med-600:grid med-600:grid-cols-2 justify-items-center">
+      <div
+        style={{ width: a, margin: '0 auto' }}
+        className="flex gap-4 justify-around med-600:grid med-600:grid-cols-2 justify-items-center w-[100%]">
         {data?.length && data.map((el, i) => <Box key={i} {...el} />)}
       </div>
       <p className="text-[24px] text-center leading-[165%] med-900:text-sm">{subtitle}</p>
@@ -118,12 +122,12 @@ export const QuakeSources = () => {
 
 const Box = ({ title, number, img1, img2 }) => {
   return (
-    <div className="flex gap-1 med-600:w-[75%]">
-      <Gradient className="text-[26px]">{number}</Gradient>
+    <div className="flex gap-1 med-600:w-[95%]">
+      <Gradient className="text-[26px] ">{number}</Gradient>
       <div className="flex flex-col gap-1 items-center">
         <div className="flex flex-col gap-2">
-          <img loading="lazy" src={img1} alt="" />
-          <img src={img2} loading="lazy" alt="" />
+          <img loading="lazy" src={img1} alt="" className="min-h-[75px]" />
+          <img src={img2} loading="lazy" alt="" className="min-h-[75px]" />
         </div>
         <Gradient className="text-[18px] text-center w-full med-600:text-sm">{title}</Gradient>
       </div>

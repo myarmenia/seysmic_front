@@ -20,8 +20,8 @@ export const ImageSlider = () => {
   const { banner } = useLoaderData();
   return (
     <>
-      <div className=""></div>
-      <div className="overflow-x-hidden">
+      <div className="w-full h-[calc(60vh_+_44px)] max-h-[622px] min-h-[229px] med-600:h-[229px] med-600:min-w-full"></div>
+      <div className="overflow-x-hidden absolute top-0 left-0 right-0">
         <Swiper
           pagination={{
             clickable: true,
@@ -49,7 +49,6 @@ export const ImageSlider = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-        {console.log(banner.run)}
         <a href={banner?.running_text?.path}>
           <Container
             bg="bg-dark-blue relative"

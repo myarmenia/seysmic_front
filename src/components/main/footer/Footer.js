@@ -16,7 +16,7 @@ export const Footer = () => {
     },
   } = useTranslation();
   const { changeLanguage } = useTranslation();
-  // const links = useLoaderData();
+  const links = useLoaderData();
   return (
     <>
       <footer className={styles.footer}>
@@ -54,7 +54,7 @@ export const Footer = () => {
           <ul>
             <li className={styles.li_head}>{language.contacts}</li>
             <li className={styles.social_icons_li}>
-              {/* <SocIcons links={links} /> */}
+              <SocIcons links={links} />
             </li>
             <li className={[styles.social_icons_li, 'flex gap-2'].join(' ')}>
               <img

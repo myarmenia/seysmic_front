@@ -13,7 +13,7 @@ export const QuakeBox = ({ image, title, description, date, to, id, length }) =>
   const navigate = useNavigate();
   return (
     <div className={`${styles.box}`}>
-      <img loading="lazy" className={styles.img} src={image} alt="" />
+      <img loading="lazy" className={styles.img} src={image} alt="" />  
       <div className={styles.content}>
         <Gradient className="text-[16px] leading-6 text-center font-bold line-clamp-2">
           {title}

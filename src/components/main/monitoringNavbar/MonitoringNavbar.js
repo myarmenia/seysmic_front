@@ -6,7 +6,7 @@ import { globuses } from "../../../store/constats";
 import chev_down from "../../../assets/icons/chev-down-gray-big.svg";
 
 export const MonitoringNavbar = ({ className = "" }) => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const media = useMedia(900);
   const ref = useRef(null);
   const { pathname } = useLocation();

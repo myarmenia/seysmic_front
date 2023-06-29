@@ -1,16 +1,16 @@
 .globuses {
   @apply grid gap-y-10 grid-cols-4 justify-items-center py-[80px] 
-  med-1200:py-[30px] med-900:hidden;
+  med-1200:py-[30px] med-600:hidden;
   overflow: inherit;
 }
 .globus {
-  @apply h-auto relative cursor-pointer w-[132px] min-h-[132px];
+  @apply h-auto relative cursor-pointer w-[132px] min-h-[132px] med-900:w-[85%];
 }
 .globus_box {
   @apply flex flex-col gap-[25px] items-center;
 }
 .globus_title {
-  @apply text-lg leading-5 text-center text-dark-blue !bg-transparent;
+  @apply text-lg leading-5 text-center text-dark-blue !bg-transparent med-900:text-sm;
 }
 .globus:hover .globus_desc {
   @apply opacity-100;
@@ -23,7 +23,7 @@
   pointer-events: none;
 }
 .globus_desc::after {
-  content: "";
+  content: '';
   @apply absolute top-[99%] left-1/2 -translate-x-1/2 w-[5%] h-[15px] bg-white bg-transparent;
   border-left: 30px solid transparent;
   border-right: 30px solid transparent;
@@ -53,8 +53,7 @@
 
 @keyframes animate {
   0% {
-    transform: translateY(1.1em) translateX(0.55em) translateZ(0px)
-      rotateZ(180deg);
+    transform: translateY(1.1em) translateX(0.55em) translateZ(0px) rotateZ(180deg);
     opacity: 0;
   }
   10% {

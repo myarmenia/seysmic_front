@@ -16,13 +16,13 @@ const expl = {
 const Component = () => {
   const { single_current_earthquakes, lastes_current_earthquake } =
     useLoaderData();
-// console.log(single_current_earthquakes);
+console.log(single_current_earthquakes);
   return (
     <SingleBox
       {...single_current_earthquakes}
       Item={QuakeBox}
       boxes_data={lastes_current_earthquake}
-      description={single_current_earthquakes}
+      description={single_current_earthquakes.description}
     />
   );
 };

@@ -1,29 +1,55 @@
 .logo {
   @apply w-[20%] bg-dark-blue py-3 absolute h-[44px] min-w-[165.75px];
 }
+.newsIconBox {
+  gap: 7px;
+  width: calc(100% - 22%);
+  display: flex;
+  align-items: center;
+}
 .logo::before {
-  content: "";
+  content: '';
   @apply absolute left-full top-0 bottom-0;
   border-top: 22px transparent solid;
   border-bottom: 22px transparent solid;
   border-left: 35px solid var(--dark-blue);
 }
 .logo::after {
-  content: "";
+  content: '';
   @apply absolute left-full -translate-y-1/2 top-1/2 w-[100%] med-600:w-[40%];
   border: 1px dashed var(--dark-blue);
 }
 .title {
-  @apply mx-auto w-fit;
+  @apply mx-auto w-fit !text-[24px];
+}
+@media (max-width: 860px) {
+  .title {
+    @apply mx-auto w-fit !text-[16px];
+  }
+}
+@media (max-width: 650px) {
+  .title {
+    @apply mx-auto w-fit !text-[13px];
+  }
+  .newsIconBox {
+    width: calc(100% - 13%);
+  }
 }
 @media (max-width: 600px) {
   .title {
-    @apply absolute top-1/2 -translate-y-1/2 right-[20px];
+    @apply mx-auto w-fit !text-[11px];
   }
+  .newsIconBox {
+    width: 100% ;
+  }
+  /* .title {
+    @apply absolute top-1/2 -translate-y-1/2 right-[20px];
+  } */
 }
+
 @media (max-width: 400px) {
   .logo {
-    @apply min-w-[100px];
+    @apply min-w-[75px];
   }
   .logo::after {
     @apply w-[90%];
