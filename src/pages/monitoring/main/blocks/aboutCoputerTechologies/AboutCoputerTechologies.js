@@ -8,6 +8,7 @@ import shema from '../../../../../assets/aboutCoputerTechologiesphoto/shema.png'
 import file_pdf from '../../../../../assets/icons/file-pdf.svg';
 import styles from './aboutCoputerTechologies.module.css';
 import { useTranslation } from '../../../../../hooks';
+import pdf15 from '../../../../../assets/main/about/pdf/15.pdf';
 
 export const AboutCoputerTechologies = () => {
   const { monitoring_and_prediction: language } = useTranslation().language;
@@ -31,8 +32,8 @@ export const AboutCoputerTechologies = () => {
       <TitleBorder title={`${language.SE_and_CT.subTitle}`} />
       <p className="mt-8 text-[18px] leading-[168.5%] text-justify med-600:text-sm whitespace-pre-line ">
         {language.SE_and_CT.text1}
-        <a href="/" className="inline">
-          <img alt="" className="inline" loading="lazy" src={file_pdf} />
+        <a href={pdf15} target="_blank" className="inline">
+          <img alt="pdf" className="inline" loading="lazy" src={file_pdf} />
         </a>
         {language.SE_and_CT.text2}
       </p>
@@ -71,7 +72,10 @@ export const AboutCoputerTechologies = () => {
           className="w-1/2 object-contain med-600:w-full"
         />
       </div>
-      <Ul className={[styles.list, 'mt-8'].join(' ')} data={language.Diagram_Prediction.texts} />
+      <Ul
+        className={[styles.list, 'mt-8 [&_li]:text-[13px]'].join(' ')}
+        data={language.Diagram_Prediction.texts}
+      />
       <Title className="mb-4 mt-11">{language.Prediction_Probability.title}</Title>
       <TitleBorder title={language.Prediction_Probability.subTitle} />
       <div className="mt-11 flex justify-between gap-5 pb-[-100px] med-600:flex-col-reverse w-[80%] mx-auto med-900:w-full">

@@ -7,7 +7,8 @@ import 'swiper/css/a11y';
 import 'swiper/css/navigation';
 import swiper_arrow from '../../assets/icons/arrow-right-swiper.svg';
 
-export const Carousel = ({ children, handleClose, open }) => {
+export const Carousel = ({ children, handleClose, open, initialSlide = 0 }) => {
+  console.log('initialSlide', initialSlide);
   const [ref, setRef] = useState(null);
 
   if (!open) {
@@ -26,7 +27,7 @@ export const Carousel = ({ children, handleClose, open }) => {
   );
 
   return (
-    <div role="carousel" className="z-[99999] fixed top-0 left-0 w-full h-full">
+    <div role="carousel" className="z-[99999] fixed top-0 left-0 w-full h-full ">
       <div className="absolute w-full h-full top-0 left-0 bg-black/30" onClick={handleClose} />
       <div className="max-w-[700px] w-full absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 flex items-center justify-between gap-[30px] med-900:w-[80%] med-900:mx-auto med-600:w-[90%] med-600:gap-3 med-600:m-[0_auto] bg-white">
         <img
@@ -38,6 +39,7 @@ export const Carousel = ({ children, handleClose, open }) => {
         />
         <Swiper
           slidesPerView={1}
+          initialSlide={initialSlide}
           onSwiper={(swiper) => setRef(swiper)}
           allowTouchMove
           className="w-auto"

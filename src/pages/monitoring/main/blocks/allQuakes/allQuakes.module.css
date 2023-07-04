@@ -23,6 +23,9 @@
 /* .wrapper {
   @apply flex w-[95%] items-center justify-start;
 } */
+.wrapper {
+  @apply flex items-center;
+}
 
 .title,
 .date,
@@ -62,7 +65,7 @@
 .magnitude2 {
   background: linear-gradient(180deg, #f6f0f0 3.46%, #ffffff 54.69%, #f6f0f0 100%);
   /* background: var(--bg-color); */
-  @apply py-[14px] pl-[6px] pr-5 relative min-w-[26%] text-[#FF0003] font-extrabold text-start pl-[20px] break-words;
+  @apply py-[14px] pl-[6px] flex items-center pr-5 relative min-w-[26%] text-[#FF0003] font-extrabold text-start pl-[20px] break-words;
 }
 .magnitude::after,
 .magnitude2::after,
@@ -131,7 +134,7 @@
     @apply text-[13px] min-w-[45%];
   }
   .title2 {
-    @apply text-[13px];
+    @apply text-[12px];
   }
 }
 @media (max-width: 795px) {
@@ -233,6 +236,9 @@
   .magnitude2::after,
   .date::after {
     @apply absolute left-[81%];
+  }
+  .title2 {
+    @apply text-[7.5px];
   }
 }
 @media (max-width: 382px) {

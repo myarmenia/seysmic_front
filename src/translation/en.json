@@ -132,7 +132,7 @@
     },
 
     "title_planned_products": {
-      "title": "CATEGORIES OF PLANNED PRODUCTS",
+      "title": "CATEGORIES OF PRODUCTS",
       "category_1": {
         "name": "Category 1",
         "text": "Computer systems of global and regional monitoring"
@@ -564,7 +564,7 @@
   },
   "regional_monitoring": {
     "title": "REGIONAL MONITORING",
-    "subtitle": "EACH SEISMIC SYSTEM IS MONITORED AND FORECASTED RESULTS ARE UPDATED AT LEAST ONCE A QUARTER",
+    "subtitle": "EACH SEISMIC SYSTEM IS MONITORED AND FORECASTED.THE RESULTS ARE UPDATED AT LEAST ONCE A QUARTER",
     "text": "Below are animation clips of monitoring the migration of seismic instability and predicting the attenuation of the intensity of seismic impact within the hierarchy of seismic systems according to the data at the beginning of the quarter. Animation of instability migration is performed without taking into account future seismic activation, so instability migration within the system will stop in the zone where a strong earthquake will be prepared and occur. We control such zones separately, using other parameters.",
     "hierarchy": "HIERARCHY OF SEISMIC SYSTEMS IN THE REGION",
     "data": [
@@ -599,10 +599,10 @@
       }
     },
     "placeholders": {
-      "name": "Full name",
-      "email": "Email",
-      "feedback_letter": "Select type of return letter",
-      "description": "Free field to fill"
+      "name": "Full Name",
+      "email": "E-mail",
+      "feedback_letter": "Select the Type of Letter",
+      "description": "Type your message here..."
     },
     "errors": {
       "Required": "Required field",
@@ -629,6 +629,9 @@
     "start_date": "DD.MM.YYYY",
     "end_date": "DD.MM.YYYY",
     "button": "Learn more"
+  },
+  "search": {
+    "text":"No Results Found"
   },
   "FAQ": {
     "title": "FREQUENTLY ASKED QUESTIONS",

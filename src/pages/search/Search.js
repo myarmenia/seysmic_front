@@ -1,38 +1,39 @@
-import React, { useState } from "react";
-import { useLoaderData, useNavigate } from "react-router";
-import { useFormAction } from "react-router-dom";
-import instance from "../../api";
-import { SearchInput } from "../../components/forms";
-import { Container, Pagination } from "../../components/reusable";
-import { convertSearchParamsStr, getLang } from "../../helper";
-import { useAppSubmit } from "../../hooks";
-import { Result } from "./Result";
-import styles from "./search.module.css";
-import img from "../../assets/main/logo-light-gray.svg";
+import React, { useState } from 'react';
+import { useLoaderData, useNavigate } from 'react-router';
+import { useFormAction } from 'react-router-dom';
+import instance from '../../api';
+import { SearchInput } from '../../components/forms';
+import { Container, Pagination } from '../../components/reusable';
+import { convertSearchParamsStr, getLang } from '../../helper';
+import { useAppSubmit, useTranslation } from '../../hooks';
+import { Result } from './Result';
+import styles from './search.module.css';
+import img from '../../assets/main/logo-light-gray.svg';
 
 const Id = () => Math.random().toString();
 const linkTo = (type, id) => {
-  if (type === "press_release") {
+  if (type === 'press_release') {
     return `/press-release/release-page/${id}`;
   }
-  if (type === "current_earthquake") {
+  if (type === 'current_earthquake') {
     return `/earth-quakes/earth-quake/${id}`;
   }
-  if (type === "map_region_info") {
+  if (type === 'map_region_info') {
     return `/monitoring/global/earth-map/${id}`;
   }
-  return "/home";
+  return '/home';
 };
 
 export const Component = () => {
   const { data, page } = useLoaderData();
-  const search = new URL(window.location.href).searchParams.get("search");
-  const [value, setValue] = useState(search || "");
+  const search = new URL(window.location.href).searchParams.get('search');
+  const [value, setValue] = useState(search || '');
   const navigate = useNavigate();
   const onSubmit = () => {
     const search = convertSearchParamsStr({ search: value });
-    navigate({ pathname: "", search: "?" + search });
+    navigate({ pathname: '', search: '?' + search });
   };
+  const { search: language } = useTranslation().language;
 
   return (
     <>
@@ -48,15 +49,15 @@ export const Component = () => {
             inputProps={{
               value: value,
               onChange: (e) => setValue(e.target.value),
-              placeholder: "Поиск",
-              className: "w-full",
-              boxClassName: "w-full [&_input]:w-full",
-              name: "search",
+              placeholder: 'Поиск',
+              className: 'w-full',
+              boxClassName: 'w-full [&_input]:w-full',
+              name: 'search',
             }}
             onButtonClick={onSubmit}
             clearValue={() => {
-              setValue("");
-              const search = convertSearchParamsStr({ search: "" });
+              setValue('');
+              const search = convertSearchParamsStr({ search: '' });
               navigate(`../search/1`);
             }}
           />
@@ -69,7 +70,7 @@ export const Component = () => {
         className={styles.bg}>
         <Container className={styles.results}>
           {data.length ? (
-            data.map(({ title, type = "", description, id = "" }) => (
+            data.map(({ title, type = '', description, id = '' }) => (
               <Result
                 key={Id()}
                 title={title}
@@ -80,9 +81,7 @@ export const Component = () => {
               />
             ))
           ) : (
-            <span className="mx-auto text-[24px] text-center">
-              Ничего не найдено
-            </span>
+            <span className="mx-auto text-[24px] text-center">{language.text}</span>
           )}
         </Container>
         {!!data.length && (
@@ -110,14 +109,10 @@ const loader = async ({ params: { lang, page = 1 }, request }) => {
   const search = convertSearchParamsStr(url);
   try {
     if (!search) {
-      const res = await instance.get(
-        `smart-search?lng=${lang}&search=&page=${page}`
-      );
-      return { data: res.data.data, page: res.data.cont_page };
+      const res = await instance.get(`smart-search?lng=${lang}&search=&page=${page}`);
+      return { data: [], page: res.data.cont_page };
     } else {
-      const res = await instance.get(
-        `smart-search?lng=${lang}&${search}&page=${page}`
-      );
+      const res = await instance.get(`smart-search?lng=${lang}&${search}&page=${page}`);
       return { data: res.data.data, page: res.data.cont_page };
     }
   } catch (err) {

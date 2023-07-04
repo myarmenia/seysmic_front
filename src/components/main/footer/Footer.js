@@ -89,6 +89,9 @@ export const Footer = () => {
         </Container>
 
         <Container bg={styles.under_box} className={styles.under_items}>
+          <div>
+            <span className="text-[12px]">Copyright @ 2023 SeiEn All rights reserved</span>
+          </div>
           <div className="flex justify-center items-center gap-3">
             <span className="text-[12px]">Created by WebEX Technologies LLC</span>
             <img loading="lazy" src={WebEx_Logo} className="w-[35px] " />

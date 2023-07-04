@@ -27,22 +27,22 @@ export const Levels = () => {
       return [
         {
           flag: flag1,
-          text: "надежный — число завершившихся сейсмических циклов ≥ 15",
-          imgClassName: "med-900:w-[24%]",
+          text: 'Надежный — число завершившихся сейсмических циклов ≥ 15',
+          imgClassName: 'med-900:w-[24%]',
         },
         {
           flag: flag2,
-          text: "хороший — число завершившихся сейсмических циклов ≥ 10",
-          imgClassName: "med-900:w-[31%]",
+          text: 'Хороший — число завершившихся сейсмических циклов ≥ 10',
+          imgClassName: 'med-900:w-[31%]',
         },
         {
           flag: flag3,
-          text: "посредственный— число завершившихся сейсмических циклов ≥ 5",
-          imgClassName: "med-900:w-[38%]",
+          text: 'Посредственный— число завершившихся сейсмических циклов ≥ 5',
+          imgClassName: 'med-900:w-[38%]',
         },
         {
           flag: flag4,
-          text: 'плохой — число завершившихся сейсмических циклов от 2 до 5 ',
+          text: 'Плохой — число завершившихся сейсмических циклов от 2 до 5 ',
           imgClassName: 'med-900:w-[45%]',
         },
       ];
@@ -50,45 +50,45 @@ export const Levels = () => {
       return [
         {
           flag: flag1en,
-          text: "(reliable) — the number of completed seismic cycles ≥ 15",
-          imgClassName: "med-900:w-[24%]",
+          text: 'Reliable — the number of completed seismic cycles ≥ 15',
+          imgClassName: 'med-900:w-[24%]',
         },
         {
           flag: flag2en,
-          text: "(good) — the number of completed seismic cycles ≥ 10",
-          imgClassName: "med-900:w-[31%]",
+          text: 'Good — the number of completed seismic cycles ≥ 10',
+          imgClassName: 'med-900:w-[31%]',
         },
         {
           flag: flag3en,
-          text: "(mediocre) — the number of completed seismic cycles ≥ 5",
-          imgClassName: "med-900:w-[38%]",
+          text: 'Mediocre — the number of completed seismic cycles ≥ 5',
+          imgClassName: 'med-900:w-[38%]',
         },
         {
           flag: flag4en,
-          text: "(bad) — the number of completed seismic cycles from 2 to 5",
-          imgClassName: "med-900:w-[45%]",
+          text: 'Bad — the number of completed seismic cycles from 2 to 5',
+          imgClassName: 'med-900:w-[45%]',
         },
       ];
     } else if (lang === 'am') {
       return [
         {
           flag: flag1am,
-          text: '(հուսալի) - ավարտված սեյսմիկ ցիկլերի քանակը ≥ 15',
+          text: 'Հուսալի - ավարտված սեյսմիկ ցիկլերի քանակը ≥ 15',
           imgClassName: 'med-900:w-[24%]',
         },
         {
           flag: flag2am,
-          text: '(լավ) - ավարտված սեյսմիկ ցիկլերի քանակը ≥ 10',
+          text: 'Լավ - ավարտված սեյսմիկ ցիկլերի քանակը ≥ 10',
           imgClassName: 'med-900:w-[31%]',
         },
         {
           flag: flag3am,
-          text: '(միջին) - ավարտված սեյսմիկ ցիկլերի քանակը ≥ 5',
+          text: 'Միջին - ավարտված սեյսմիկ ցիկլերի քանակը ≥ 5',
           imgClassName: 'med-900:w-[38%]',
         },
         {
           flag: flag4am,
-          text: '(վատ) - ավարտված սեյսմիկ ցիկլերի քանակը 2-ից 5-ը:',
+          text: 'Վատ - ավարտված սեյսմիկ ցիկլերի քանակը 2-ից 5-ը:',
           imgClassName: 'med-900:w-[45%]',
         },
       ];
@@ -101,7 +101,7 @@ export const Levels = () => {
       <Container bg={styles.bg} className={styles.my_container}>
         <div className="flex flex-col gap-[24px] px-[35px] justify-center relative med-600:gap-[3px]">
           {items.map((el, i) => (
-            <Box {...el} key={i}/>
+            <Box {...el} key={i} />
           ))}
         </div>
         <p className={styles.describtion}>{language.text}</p>

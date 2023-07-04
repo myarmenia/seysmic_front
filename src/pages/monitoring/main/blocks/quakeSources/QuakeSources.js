@@ -112,7 +112,7 @@ export const QuakeSources = () => {
       <Title className="whitespace-pre-line">{title}</Title>
       <div
         style={{ width: a, margin: '0 auto' }}
-        className="flex gap-4 justify-around med-600:grid med-600:grid-cols-2 justify-items-center w-[100%]">
+        className="flex gap-4 justify-around med-600:grid med-600:grid-cols-2 med-600:gap-x-[6rem] med-600:gap-y-4 justify-items-center w-[100%]">
         {data?.length && data.map((el, i) => <Box key={i} {...el} />)}
       </div>
       <p className="text-[24px] text-center leading-[165%] med-900:text-sm">{subtitle}</p>
@@ -122,7 +122,7 @@ export const QuakeSources = () => {
 
 const Box = ({ title, number, img1, img2 }) => {
   return (
-    <div className="flex gap-1 med-600:w-[95%]">
+    <div className="flex gap-1">
       <Gradient className="text-[26px] ">{number}</Gradient>
       <div className="flex flex-col gap-1 items-center">
         <div className="flex flex-col gap-2">
