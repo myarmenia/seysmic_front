@@ -1,12 +1,15 @@
 .list {
   @apply list-image-[url("../../../assets/icons/list-style-round.svg")] mt-[40px];
 }
+.list22 {
+  @apply list-image-none ml-[-29px];
+}
 .list li {
   @apply text-xl text-justify text-[#000] med-1200:text-sm;
 }
 
 .advantage_list {
-  @apply list-image-[url("../../../assets/icons/ul_img.svg")] flex flex-wrap justify-between items-center mt-[70px] flex-row med-900:flex-col med-900:items-start;
+  @apply list-image-[url("../../../assets/icons/ul_img.svg")] flex flex-wrap justify-between items-center mt-[70px] pl-3 flex-row med-900:flex-col med-900:items-start;
 }
 .advantage_list li {
   @apply w-[40%] pl-3 text-lg text-black  med-1200:text-sm text-left med-900:w-[90%];
@@ -45,7 +48,7 @@
 }
 
 .bigBox {
-  @apply grid grid-cols-[repeat(auto-fill,_minmax(250px,_1fr))] gap-[25px] justify-items-center w-[100%] mt-[45px]
+  @apply flex flex-wrap items-center justify-center gap-[25px]  w-[100%] mt-[45px]
   /* @apply grid col-auto; */
   /* display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); */
@@ -58,7 +61,7 @@
 }
 
 .boxes {
-  max-width: 259px;
+  max-width: 260px;
   height: 209px;
   background: linear-gradient(180deg, #f6f0f0 3.46%, #ffffff 54.69%, #f6f0f0 100%);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);

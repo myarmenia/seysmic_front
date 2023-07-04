@@ -1,10 +1,10 @@
-import { useRef, useState } from "react";
-import styles from "./faq.module.css";
-import postter from "../../assets/faq/poster_faq.jpg";
-import faq from "../../assets/faq/faq.png";
-import arrow from "../../assets/faq/arrow.svg";
-import { useTranslation } from "../../hooks";
-import globus from "../../assets/gif.gif";
+import { useRef, useState } from 'react';
+import styles from './faq.module.css';
+import postter from '../../assets/faq/poster_faq.jpg';
+import faq from '../../assets/faq/faq.png';
+import arrow from '../../assets/faq/arrow.svg';
+import { useTranslation } from '../../hooks';
+import globus from '../../assets/gif.gif';
 
 export function FAQ({}) {
   const { title, data } = useTranslation().language.FAQ;
@@ -39,9 +39,9 @@ const Box = ({ question, answer }) => {
     <div>
       <div
         className={[
-          "flex justify-between items-center pb-2 cursor-pointer",
+          'flex justify-between items-center pb-2 cursor-pointer',
           styles.question_box,
-        ].join(" ")}
+        ].join(' ')}
         onClick={() => {
           setOpen(!open);
         }}>
@@ -51,19 +51,18 @@ const Box = ({ question, answer }) => {
           src={arrow}
           className={
             !open
-              ? "object-cover max-h-[23px] max-w-[12px] ml-[10px] mr-[20px] transition-all"
-              : "object-cover max-h-[23px] max-w-[12px] ml-[10px] mr-[20px] rotate-180 transition-all"
+              ? 'object-cover max-h-[23px] max-w-[12px] ml-[10px] mr-[20px] transition-all'
+              : 'object-cover max-h-[23px] max-w-[12px] ml-[10px] mr-[20px] rotate-180 transition-all'
           }
           alt=""
         />
       </div>
       <p
-        className={[styles.answer, "mb-[24px] mt-[21px] transition-all"].join(
-          " "
-        )}
+        className={[styles.answer, 'mb-[24px] mt-[21px] transition-all'].join(' ')}
         style={{
-          height: !open ? "0px" : "100%",
-          overflow: "hidden",
+          height: !open ? '0px' : '100%',
+          overflow: 'hidden',
+          fontFamily: 'Inter, sans-serif',
         }}>
         {answer}
       </p>

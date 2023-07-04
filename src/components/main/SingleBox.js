@@ -59,7 +59,7 @@ export const SingleBox = ({
             <p dangerouslySetInnerHTML={{ __html: description }}></p>
             <div className="">
               {links?.length && (
-                <ol type="1" style={{ listStyle: 'auto inside' }}>
+                <ol type="1" style={{ listStyle: 'auto inside', marginBottom: '40px' }}>
                   {links.map((el, i) => (
                     <li key={i} className="text-[#1267CB] text-[20px] text-center">
                       <a className="underline" href={el} target="_blank" rel="noreferrer">

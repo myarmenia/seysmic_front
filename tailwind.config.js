@@ -21,6 +21,7 @@ module.exports = {
       screens: {
         'med-1440': { max: '1440px' },
         'med-1200': { max: '1200px' },
+        'med-965': { max: '965px' },
         'med-900': { max: '1065px' },
         'med-600': { max: '600px' },
         'med-560': { max: '560px' },

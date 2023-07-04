@@ -17,7 +17,7 @@ export const SocIcons = ({ className = "", links }) => {
           <img
             loading="lazy"
             src={logo}
-            className="w-[49px] h-[49px] object-contain rounded-[50%]"
+            className="w-[36px] h-[36px] object-contain rounded-[50%]"
             alt=""
           />
         </Link>

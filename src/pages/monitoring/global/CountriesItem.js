@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import globalMap from '../../../assets/main/monitoring/globalMap.svg';
-import { Container, Title } from '../../../components/reusable';
+import { Carousel, Container, Title } from '../../../components/reusable';
 import instance from '../../../api';
 import { useLoaderData, useLocation, useParams } from 'react-router';
 import { useTranslation } from '../../../hooks';
+import { SwiperSlide } from 'swiper/react';
 
 const Component = () => {
   const data = useLoaderData();
-  console.log(data);
+  const [open, setOpen] = useState(false);
+  const [openSlideId, setOpenSlideId] = useState(0);
   const { global: language } = useTranslation().language.monitoring;
-  // console.log(language.CountriesItem.title);
+
   return (
     <Container className="py-[var(--py)]">
       <Title>{language.CountriesItem.title}</Title>
@@ -32,26 +34,59 @@ const Component = () => {
         />
       </div>
       <div className="grid grid-cols-4 gap-[17px] mt-[120px] med-900:grid-cols-[repeat(auto-fill,_minmax(250px,_1fr))] med-600:grid-cols-2">
-        {data?.files.map(({ path, type }) =>
-          type === 'image' ? (
-            <img
-              loading="lazy"
-              key={path}
-              src={path}
-              className="bg-gray-400  h-[200px] med-1200:h-[150px] med-600:h-[100px]"
-            />
-          ) : type === 'video' ? (
-            <video
-              controls
-              className="w-full object-cover h-[200px] med-1200:h-[150px] med-600:h-[100px]"
-              alt="">
-              <source src={path} type="video/mp4" />
-            </video>
-          ) : (
-            <></>
-          ),
-        )}
+        {data?.files.map(({ path, type }, i) => (
+          <div
+            key={i}
+            onClick={() => {
+              setOpen(true);
+              setOpenSlideId(i);
+            }}
+            className="h-[184px] ">
+            {type === 'image' ? (
+              <img
+                loading="lazy"
+                key={path}
+                src={path}
+                className="bg-gray-400  h-[200px] med-1200:h-[150px] med-600:h-[100px]"
+              />
+            ) : type === 'video' ? (
+              <video
+                controls
+                className="w-full object-cover h-[200px] med-1200:h-[150px] med-600:h-[100px]"
+                alt="">
+                <source src={path} type="video/mp4" />
+              </video>
+            ) : (
+              <></>
+            )}
+          </div>
+        ))}
       </div>
+      <Carousel {...{ open }} initialSlide={openSlideId} handleClose={() => setOpen(false)}>
+        {data?.files.map(({ type, path }, i) => {
+          if (type === 'image') {
+            return (
+              <SwiperSlide key={i}>
+                <img
+                  loading="lazy"
+                  src={path}
+                  className="w-full h-full min-h-[500px] object-contain object-center"
+                  alt=""
+                />
+              </SwiperSlide>
+            );
+          }
+          return (
+            <SwiperSlide key={i}>
+              <center>
+                <video controls className="w-full h-full min-h-[500px] object-cover" alt="">
+                  <source src={path} type="video/mp4" />
+                </video>
+              </center>
+            </SwiperSlide>
+          );
+        })}
+      </Carousel>
     </Container>
   );
 };

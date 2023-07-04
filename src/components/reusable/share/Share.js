@@ -23,7 +23,7 @@ export const Share = ({
           }
         }}
         className={
-          "w-[33px] box-content p-2 cursor-pointer med-600:w-[22px] " +
+          "w-[19px] box-content p-2 cursor-pointer med-600:w-[17px] " +
           className
         }
         src={link_to}

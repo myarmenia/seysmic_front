@@ -22,6 +22,7 @@ const data = {
 export const EarthquakePlaces = () => {
   const earth_quakes = useLoaderData().data.current_earthquake;
   const { home: language } = useTranslation().language;
+  console.log(earth_quakes.length);
   return (
     <div className="relative">
       <div

@@ -1,14 +1,9 @@
 .footer {
-  @apply pt-[10px]
+  @apply pt-[10px];
 }
 
 .content {
-  background: linear-gradient(
-    269.98deg,
-    #0026aa -1.43%,
-    #1267cb 51.39%,
-    #0026aa 99.98%
-  );
+  background: linear-gradient(269.98deg, #0026aa -1.43%, #1267cb 51.39%, #0026aa 99.98%);
 }
 .content_div {
   @apply py-[23px] flex justify-between gap-6 flex-wrap;
@@ -17,7 +12,7 @@
   @apply font-bold text-xl med-900:text-lg;
 }
 .content ul {
-  @apply flex flex-col gap-5 text-lg text-white med-900:gap-4;
+  @apply flex flex-col gap-5 text-[16px] leading-[1.3rem] text-white med-900:gap-4;
 }
 .content ul li:not(:first-child) {
   @apply duration-300 w-fit hover:translate-x-2 hover:opacity-70 med-900:text-base;
@@ -30,10 +25,10 @@
   @apply py-[13px] bg-dark-blue;
 }
 .under_items {
-  @apply flex justify-end gap-5 text-lg text-white !py-0 med-900:flex-col med-900:gap-1 med-900:[&_span]:text-center;
+  @apply flex justify-between gap-5 text-lg text-white !py-0 med-900:flex-col med-900:gap-1 med-900:[&_span]:text-center;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 772px) {
   .content_div {
     @apply flex-col items-center;
   }

@@ -13,15 +13,16 @@ export const QuakeBox = ({ image, title, description, date, to, id, length }) =>
   const navigate = useNavigate();
   return (
     <div className={`${styles.box}`}>
-      <img loading="lazy" className={styles.img} src={image} alt="" />  
+      <img loading="lazy" className={styles.img} src={image} alt="" />
       <div className={styles.content}>
-        <Gradient className="text-[16px] leading-6 text-center font-bold line-clamp-2">
-          {title}
-        </Gradient>
+        {/* <Gradient className="text-[16px] leading-6 text-center font-bold line-clamp-2">
+          
+        </Gradient> */}
+        <div className="text-[16px] leading-6 text-center font-bold line-clamp-2">{title}</div>
         <span className="text-[#909090]">{date}</span>
-        <p
+        {/* <p
           className="text-[#3C3C3C] text-center"
-          dangerouslySetInnerHTML={{ __html: description.slice(0, 30) }}></p>
+          dangerouslySetInnerHTML={{ __html: description.slice(0, 30) }}></p> */}
         <CustomBtn onClick={() => navigate(getLang(`/earth-quakes/earth-quake/${id}`))}>
           {button || 'Узнать больше'}
         </CustomBtn>

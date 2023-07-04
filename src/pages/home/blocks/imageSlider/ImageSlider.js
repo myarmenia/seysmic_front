@@ -39,7 +39,7 @@ export const ImageSlider = () => {
                 <img
                   loading="lazy"
                   src={path}
-                  className="absolute top-0 left-0 w-full h-full"
+                  className="absolute top-0 left-0 w-full h-full object-cover"
                   alt=""
                 />
                 <div className="relative w-fll h-full max-w-[1440px] mx-auto">

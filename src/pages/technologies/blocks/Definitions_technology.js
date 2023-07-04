@@ -12,7 +12,7 @@ export default function Definitions_technology() {
   const { technology: language } = useTranslation().language;
 
   return (
-    <div className="pt-10">
+    <div className="pt-10 mb-8">
       <Title>{language.DefinationsTechnology.title}</Title>
       <p className="text-[32px] text-[#938E97] text-center leading-[150%] med-1200:text-[28px] med-900:text-[18px] pb-8">
         {language.DefinationsTechnology.subtitle}

@@ -30,6 +30,7 @@ export const loader = async ({ params: { lang } }) => {
   try {
     let res = await instance.get(`home?lng=${lang}`);
     let res2 = await instance.get(`banner?lng=${lang}`);
+    console.log(res);
     return { data: res.data.data, banner: res2.data.data };
   } catch (error) {
     return error;

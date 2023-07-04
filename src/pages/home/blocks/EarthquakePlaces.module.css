@@ -1,6 +1,5 @@
-.beg{
-  background: url("../../../assets/main/monitoring/main/earth-map-transparent.png")
+.beg {
+  background: url('../../../assets/main/monitoring/main/map_eq.png') 
   center no-repeat;
- @apply absolute top-0 left-0 w-full h-[55%] bg-cover bg-center bg-fixed bg-no-repeat med-600:h-[48%]
+  @apply absolute top-0 left-0 w-full h-[55%] bg-cover bg-center bg-fixed bg-no-repeat med-600:h-[48%];
 }
-
