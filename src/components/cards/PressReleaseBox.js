@@ -5,7 +5,7 @@ import { Share } from '../reusable';
 export const PressReleaseBox = ({ id, title, description, logo, image, date, time, files, to }) => {
   console.log(window.location.origin);
   return (
-    <div className="bg-white w-full flex flex-col justify-between gap-2 shadow-[0px_2px_11px_rgba(0,_0,_0,_0.15)] px-[23px] py-[22px] rounded-[6px] max-w-[430px] hover:scale-[1.1] duration-300 med-900:max-w-none med-900:w-full med-600:hover:scale-[1.05] h-[400px]">
+    <div className="bg-white w-full h-[400px] flex flex-col justify-between gap-2 shadow-[0px_2px_11px_rgba(0,_0,_0,_0.15)] px-[23px] py-[22px] rounded-[6px] max-w-[430px] hover:scale-[1.1] duration-300 med-900:max-w-none med-900:w-full med-600:hover:scale-[1.05] med-600:h-[350px] med-450:w-[112%]">
       <div className="flex justify-between">
         <Link to={getLang(`/press-release/release-page/${id}`)} className="flex items-center gap-3">
           <img className="max-w-[56px] med-600:max-w-[40px]" loading="lazy" src={logo} alt="" />
@@ -26,7 +26,8 @@ export const PressReleaseBox = ({ id, title, description, logo, image, date, tim
       </div>
       <Link
         to={getLang(`/press-release/release-page/${id}`)}
-        dangerouslySetInnerHTML={{ __html: description.slice(0, 70) }} className="line-clamp-2"></Link>
+        dangerouslySetInnerHTML={{ __html: description.slice(0, 70) }}
+        className="line-clamp-2"></Link>
       <img loading="lazy" className="max-h-[231.18px] w-full" src={image} alt="" />
     </div>
   );

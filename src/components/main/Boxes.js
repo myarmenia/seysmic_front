@@ -19,7 +19,7 @@ export const Boxes = ({
       <div>
         <div
           className={[
-            "grid grid-cols-[repeat(auto-fit,_minmax(300px,_1fr))] justify-items-center w-full gap-[64px_46px] med-1440:gap-x-[30px] med-600:gap-5",
+            "grid grid-cols-[repeat(auto-fit,_minmax(265px,_1fr))] justify-items-center w-full gap-[64px_46px] med-1440:gap-x-[30px] med-600:gap-5",
             boxes_className,
           ].join(" ")}>
           {data?.map((el, i) => (

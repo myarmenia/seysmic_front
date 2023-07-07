@@ -111,8 +111,8 @@ export const QuakeSources = () => {
     <div className="flex flex-col gap-7 py-20 med-900:py-10">
       <Title className="whitespace-pre-line">{title}</Title>
       <div
-        style={{ width: a, margin: '0 auto' }}
-        className="flex gap-4 justify-around med-600:grid med-600:grid-cols-2 med-600:gap-x-[6rem] med-600:gap-y-4 justify-items-center w-[100%]">
+        style={{ width: "90%", margin: '0 auto' }}
+        className="flex gap-4 justify-around med-600:grid med-600:grid-cols-2 med-600:gap-x-[2.5rem] med-600:gap-y-4 justify-items-center w-[100%]">
         {data?.length && data.map((el, i) => <Box key={i} {...el} />)}
       </div>
       <p className="text-[24px] text-center leading-[165%] med-900:text-sm">{subtitle}</p>

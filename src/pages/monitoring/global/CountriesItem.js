@@ -70,7 +70,7 @@ const Component = () => {
                 <img
                   loading="lazy"
                   src={path}
-                  className="w-full h-full min-h-[500px] object-contain object-center"
+                  className="w-full h-[500px] min-h-[500px] object-contain object-center"
                   alt=""
                 />
               </SwiperSlide>
@@ -79,7 +79,7 @@ const Component = () => {
           return (
             <SwiperSlide key={i}>
               <center>
-                <video controls className="w-full h-full min-h-[500px] object-cover" alt="">
+                <video controls className="w-full h-[500px] min-h-[500px] min-h-[500px] object-cover" alt="">
                   <source src={path} type="video/mp4" />
                 </video>
               </center>

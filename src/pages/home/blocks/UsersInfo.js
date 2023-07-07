@@ -1,6 +1,6 @@
-import React from "react";
-import { CustomUl } from "../../../components/reusable";
-import { useTranslation } from "../../../hooks";
+import React from 'react';
+import { CustomUl } from '../../../components/reusable';
+import { useTranslation } from '../../../hooks';
 
 export const UsersInfo = () => {
   const {

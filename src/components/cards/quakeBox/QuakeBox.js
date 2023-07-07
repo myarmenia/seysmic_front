@@ -18,7 +18,9 @@ export const QuakeBox = ({ image, title, description, date, to, id, length }) =>
         {/* <Gradient className="text-[16px] leading-6 text-center font-bold line-clamp-2">
           
         </Gradient> */}
-        <div className="text-[16px] leading-6 text-center font-bold line-clamp-2">{title}</div>
+        <div className="text-[16px] leading-6 text-center font-bold line-clamp-2 med-500:text-[13px]">
+          {title}
+        </div>
         <span className="text-[#909090]">{date}</span>
         {/* <p
           className="text-[#3C3C3C] text-center"

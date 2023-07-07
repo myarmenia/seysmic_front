@@ -24,7 +24,7 @@ export const SwiperNavigation = ({ children, className = '', count = 3 }) => {
         spaceBetween={100}
         onSwiper={(swiper) => setRef(swiper)}
         allowTouchMove
-        // loop={true}
+        loop={true}
         // autoplay={{
         //   delay: 4000,
         //   disableOnInteraction: false,

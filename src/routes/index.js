@@ -1,11 +1,7 @@
-import {
-  Route,
-  createBrowserRouter,
-  createRoutesFromElements,
-} from "react-router-dom";
+import { Route, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
 
-import { ErrorBoundary } from "../components/main";
-import { Root } from "../components/layouts";
+import { ErrorBoundary } from '../components/main';
+import { Root } from '../components/layouts';
 import {
   About,
   Contacts,
@@ -28,28 +24,16 @@ import {
   RegionalIndex,
   RegionalDynamic,
   FAQ,
-} from "../pages";
-import { loader } from "../pages/home/Home";
+} from '../pages';
+import { loader } from '../pages/home/Home';
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route
-      path="/"
-      element={<Root />}
-      loader={Root.loader}
-      errorElement={<ErrorBoundary />}>
+    <Route path="/" element={<Root />} loader={Root.loader} errorElement={<ErrorBoundary />}>
       <Route path=":lang">
-        <Route
-          path="search/:page"
-          element={<Search />}
-          loader={Search.loader}
-        />
+        <Route path="search/:page" element={<Search />} loader={Search.loader} />
         <Route path="login" element={<Login />} action={Login.action} />
-        <Route
-          path="registration"
-          element={<Registration />}
-          action={Registration.action}
-        />
+        <Route path="registration" element={<Registration />} action={Registration.action} />
         <Route path="home" element={<Home />} loader={Home.loader} />
         <Route path="about" element={<About />} />
         {/* loader={loaderContacts} */}
@@ -62,16 +46,8 @@ export const router = createBrowserRouter(
         <Route path="monitoring">
           <Route index element={<MainMonitoring />} />
           <Route path="global">
-            <Route
-              index
-              element={<GlobalMonitoring />}
-              loader={GlobalMonitoring.loader}
-            />
-            <Route
-              path=":id"
-              element={<CountriesItem />}
-              loader={CountriesItem.loader1}
-            />
+            <Route index element={<GlobalMonitoring />} loader={GlobalMonitoring.loader} />
+            <Route path=":id" element={<CountriesItem />} loader={CountriesItem.loader1} />
             <Route
               path="earth-map/:id"
               element={<CountriesItem />}
@@ -79,16 +55,9 @@ export const router = createBrowserRouter(
             />
           </Route>
           <Route path="cosmos" element={<Cosmos />}>
-            <Route
-              index
-              element={<MonitoringExamples />}
-              loader={MonitoringExamples.loader}
-            />
+            <Route index element={<MonitoringExamples />} loader={MonitoringExamples.loader} />
           </Route>
-          <Route
-            path="regional"
-            element={<Regional />}
-            loader={Regional.loader}></Route>
+          <Route path="regional" element={<Regional />} loader={Regional.loader}></Route>
           <Route path="product" element={<OurProduct />} />
         </Route>
         <Route path="technologies" element={<Technologies />} />
@@ -99,11 +68,7 @@ export const router = createBrowserRouter(
             loader={PressReleases.loader}
             // action={PressReleases.action}
           />
-          <Route
-            path="release-page/:id"
-            element={<PressRel />}
-            loader={PressRel.loader}
-          />
+          <Route path="release-page/:id" element={<PressRel />} loader={PressRel.loader} />
         </Route>
         <Route path="earth-quakes">
           <Route
@@ -112,14 +77,11 @@ export const router = createBrowserRouter(
             loader={EarthQuakes.loader}
             action={EarthQuakes.action}
           />
-          <Route
-            path="earth-quake/:id"
-            element={<EarthQuake />}
-            loader={EarthQuake.loader}
-          />
+          <Route path="earth-quake/:id" element={<EarthQuake />} loader={EarthQuake.loader} />
         </Route>
         <Route path="faq" element={<FAQ />} />
       </Route>
-    </Route>
-  )
+    </Route>,
+  ),
 );
+
