@@ -241,7 +241,7 @@ export const SchemaProcessing = () => {
       <Container className="relative max-w-[1440px] mx-auto">
         <Title className="my-11">{language?.title3}</Title>
         <img loading="lazy" alt=" " src={armenia} />
-        <p className="pt-11">{language?.text6}</p>
+        {/* <p className="pt-11">{language?.text6}</p> */}
         <Title className="my-11">{language?.title4}</Title>
         <p className="mx-auto max-w-[934px] text-center w-full">
           {language?.text7}

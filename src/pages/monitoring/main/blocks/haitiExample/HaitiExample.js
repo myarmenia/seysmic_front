@@ -241,10 +241,15 @@ const Box = ({ title, title11, subtitle, numbers, list_data, images, quake_desc,
         </Title> */}
           <div className="gap-4 med-900:flex med-900:flex-col med-600:gap-2">
             <video
-              className=" w-[42%] h-[260px] object-fill float-left pr-[18px] pb-[25px] med-900:pb-[15px] med-900:w-full med-900:p-0"
+              className=" w-[42%] h-[260px] object-fill float-left pr-[18px] pb-[25px] !block med-900:pb-[15px] med-900:w-full med-900:p-0"
               autoPlay
               loop
               src={video}
+              // controlsList="nofullscreen"
+              // controls
+              playsInline
+              // controls='false'
+              // preload
             />
             {list_data.map((text, i) => (
               <p className={styles['list-item']} key={i}>

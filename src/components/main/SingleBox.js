@@ -33,7 +33,7 @@ export const SingleBox = ({
           className="w-full min-h-[185px] object-contain max-h-[512px]"
           alt=""
         /> */}
-        <div className="grid grid-cols-[5fr_2fr] med-1200:grid-cols-1">
+        <div className="grid grid-cols-[5fr_2fr] med-1255:grid-cols-1">
           <div className="flex flex-col gap-[34px] py-[41px] px-[68px] med-900:px-[32px] med-600:px-5 med-600:py-6">
             <div className="flex justify-between gap-5">
               <div className="flex gap-5 med-600:gap-2">
@@ -101,7 +101,7 @@ export const SingleBox = ({
                 <img
                   loading="lazy"
                   src={path}
-                  className="w-full h-full min-h-[500px] object-contain object-center"
+                  className="w-full h-[500px] min-h-[500px] object-contain object-center"
                   alt=""
                 />
               </SwiperSlide>
@@ -110,7 +110,7 @@ export const SingleBox = ({
           return (
             <SwiperSlide key={i}>
               <center>
-                <video controls className="w-full h-full min-h-[500px] object-cover" alt="">
+                <video controls className="w-full h-[500px] min-h-[500px] object-cover" alt="">
                   <source src={path} type="video/mp4" />
                 </video>
               </center>

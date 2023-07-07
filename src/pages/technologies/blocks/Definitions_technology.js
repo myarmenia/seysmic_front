@@ -1,8 +1,8 @@
-import React from "react";
-import { Title, ViewPosition } from "../../../components/reusable";
-import { generateArray } from "../../../helper";
-import styles from "../../monitoring/main/blocks/allQuakes/allQuakes.module.css";
-import { useTranslation } from "../../../hooks";
+import React from 'react';
+import { Title, ViewPosition } from '../../../components/reusable';
+import { generateArray } from '../../../helper';
+import styles from '../../monitoring/main/blocks/allQuakes/allQuakes.module.css';
+import { useTranslation } from '../../../hooks';
 
 // const data1 = generateArray(11, {
 //   name: 'Плотность состояния сейсмической системы (S) ',
@@ -33,13 +33,19 @@ const Item = ({ name, about, delay }) => {
         <div
           style={{
             opacity: bool ? 1 : 0,
-            transform: bool ? "translateY(0)" : "translateY(50px)",
-            transitionDelay: delay + "ms",
-            height: "68px",
+            transform: bool ? 'translateY(0)' : 'translateY(50px)',
+            transitionDelay: delay + 'ms',
+            height: '68px',
           }}
           className={styles.item2}>
-          <div className={styles.magnitude2}>{name}</div>
-          <div className={styles.wrapper}>
+          <div className={styles.magnitude2}>
+            <p className="text-[#FF0003] font-extrabold text-start w-full z-10 break-words pl-[10px]">
+              {name}
+            </p>
+          </div>
+          <div
+            className={styles.wrapper}
+            style={{ flexDirection: 'row', alignItems: 'center', marginRight: '15px' }}>
             <div className={styles.title2}>
               <p className="text-left w-full">{about}</p>
             </div>
