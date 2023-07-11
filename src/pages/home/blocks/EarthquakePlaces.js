@@ -1,22 +1,21 @@
-import React from "react";
-import { useLoaderData } from "react-router";
-import { Link } from "react-router-dom";
-import { SwiperSlide } from "swiper/react";
-import quake_img from "../../../assets/main/home/quake.svg";
-import img from "../../../assets/main/home/world_map_blue.svg";
-import { QuakeBox as Box } from "../../../components/cards";
-import { CustomBtn } from "../../../components/forms";
-import { Container, SwiperNavigation } from "../../../components/reusable";
-import { getLang } from "../../../helper";
-import { useTranslation } from "../../../hooks";
-import styles from "./EarthquakePlaces.module.css"
+import React from 'react';
+import { useLoaderData } from 'react-router';
+import { Link } from 'react-router-dom';
+import { SwiperSlide } from 'swiper/react';
+import quake_img from '../../../assets/main/home/quake.svg';
+import img from '../../../assets/main/home/world_map_blue.svg';
+import { QuakeBox as Box } from '../../../components/cards';
+import { CustomBtn } from '../../../components/forms';
+import { Container, SwiperNavigation } from '../../../components/reusable';
+import { getLang } from '../../../helper';
+import { useTranslation } from '../../../hooks';
+import styles from './EarthquakePlaces.module.css';
 
 const data = {
   image: quake_img,
-  title: "Землетрясение в Турции",
-  description:
-    "Our private company LLC SeiEn was established in October 2022 in Yerevan, Armenia",
-  date: "06.02.2023",
+  title: 'Землетрясение в Турции',
+  description: 'Our private company LLC SeiEn was established in October 2022 in Yerevan, Armenia',
+  date: '06.02.2023',
 };
 
 export const EarthquakePlaces = () => {
@@ -40,7 +39,7 @@ export const EarthquakePlaces = () => {
             </SwiperSlide>
           ))}
         </SwiperNavigation>
-        <Link className="mx-auto" to={getLang(`/earth-quakes/1`)}>
+        <Link className="mx-auto mt-[-40px]" to={getLang(`/earth-quakes/1`)}>
           <CustomBtn transparent>{language?.learn_more}</CustomBtn>
         </Link>
       </Container>

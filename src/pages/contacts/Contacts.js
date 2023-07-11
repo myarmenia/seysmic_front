@@ -1,27 +1,22 @@
-import { yupResolver } from "@hookform/resolvers/yup";
-import React, { useRef } from "react";
-import { FormProvider, useForm } from "react-hook-form";
-import { useActionData, useFormAction, useLoaderData } from "react-router-dom";
-import instance from "../../api";
-import {
-  CstmInput,
-  CstmTextarea,
-  CustomBtn,
-  CustomSelect,
-} from "../../components/forms";
-import { translation } from "../../components/main";
-import { Container, SocIcons, Title, Ul } from "../../components/reusable";
-import { useAppSubmit, useTranslation } from "../../hooks";
-import { contacts_shema } from "../../validation";
+import { yupResolver } from '@hookform/resolvers/yup';
+import React, { useRef } from 'react';
+import { FormProvider, useForm } from 'react-hook-form';
+import { useActionData, useFormAction, useLoaderData } from 'react-router-dom';
+import instance from '../../api';
+import { CstmInput, CstmTextarea, CustomBtn, CustomSelect } from '../../components/forms';
+import { translation } from '../../components/main';
+import { Container, SocIcons, Title, Ul } from '../../components/reusable';
+import { useAppSubmit, useTranslation } from '../../hooks';
+import { contacts_shema } from '../../validation';
 // import { ReCAPTCHA } from "react-google-recaptcha";
-import ReCAPTCHA from "react-google-recaptcha";
+import ReCAPTCHA from 'react-google-recaptcha';
+import useMedia from '../../hooks/useMedia';
 
 const Component = () => {
   const captchaRef = useRef(null);
   const { contacts: language } = useTranslation().language;
   const actionData = useActionData();
-  const { address, email, links, map_iframe, map_image, phone } =
-    useLoaderData();
+  const { address, email, links, map_iframe, map_image, phone } = useLoaderData();
   const submit = useAppSubmit(),
     action = useFormAction();
   const formMethods = useForm({
@@ -36,26 +31,22 @@ const Component = () => {
     Object.entries(data).forEach(([key, value]) => {
       formData.append(key, value);
     });
-    submit(formData, { method: "POST", action });
+    submit(formData, { method: 'POST', action });
     captchaRef.current.reset();
   };
+
+  const sizeReCupcha = useMedia(400);
+
+  console.log(sizeReCupcha, 'asda');
   return (
     <>
       <Container className="py-[var(--py)]" bg="bg-[#F0F2F5]">
         <FormProvider {...formMethods}>
-          <form
-            onSubmit={handleSubmit(onSubmit)}
-            className="flex flex-col gap-[36px] items-center">
+          <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-[36px] items-center">
             <Title>{language.title}</Title>
             <div className="flex flex-col gap-[24px] items-center med-400:w-full">
-              <CstmInput
-                regName="full_name"
-                placeholder={language.placeholders.name}
-              />
-              <CstmInput
-                regName="email"
-                placeholder={language.placeholders.email}
-              />
+              <CstmInput regName="full_name" placeholder={language.placeholders.name} />
+              <CstmInput regName="email" placeholder={language.placeholders.email} />
               <CustomSelect
                 regName="type"
                 placeholder={language.placeholders.feedback_letter}
@@ -64,15 +55,17 @@ const Component = () => {
                   value: el,
                 }))}
               />
-              <CstmTextarea
-                regName="content"
-                placeholder={language.placeholders.description}
-              />
+              <CstmTextarea regName="content" placeholder={language.placeholders.description} />
             </div>
-            <ReCAPTCHA
-              ref={captchaRef}
-              sitekey={"6Lcim4ImAAAAAGXdJlCYsO7CosuR5X8z6QXKVfQs"}
-            />
+            {sizeReCupcha ? (
+              <ReCAPTCHA
+                size="compact"
+                ref={captchaRef}
+                sitekey={process.env.REACT_APP_ReCAPTCHA_KEY}
+              />
+            ) : (
+              <ReCAPTCHA ref={captchaRef} sitekey={process.env.REACT_APP_ReCAPTCHA_KEY} />
+            )}
             {/* <RobotCheckbox regName="isRobot" /> */}
             {/* <ReCAPTCHA
               sitekey={process.env.REACT_APP_SECRET_KEY}
@@ -80,7 +73,7 @@ const Component = () => {
             /> */}
             <CustomBtn type="submit">{language.send}</CustomBtn>
             {actionData && (
-              <h3 className={actionData.err ? "text-[red]" : "text-[green]"}>
+              <h3 className={actionData.err ? 'text-[red]' : 'text-[green]'}>
                 {actionData?.message}
               </h3>
             )}
@@ -103,12 +96,7 @@ const Component = () => {
           </div>
           {!map_iframe && map_image && (
             <div className="rounded-2xl h-[265px] overflow-hidden [&>iframe]:w-full  [&>iframe]:h-full">
-              <img
-                loading="lazy"
-                alt=" "
-                className="object-fill"
-                src={map_image}
-              />
+              <img loading="lazy" alt=" " className="object-fill" src={map_image} />
             </div>
           )}
           {map_iframe && !map_image && (

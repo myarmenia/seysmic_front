@@ -1,9 +1,9 @@
 .bg {
-  background: url("../../../../../assets/main/monitoring/main/national-bg-img.svg");
+  background: url('../../../../../assets/main/monitoring/main/national-bg-img.svg');
 }
 .my_container {
-  background: url("../../../../../assets/main/monitoring/main/earth-map-transparent.png")
-    center no-repeat;
+  background: url('../../../../../assets/main/monitoring/main/earth-map-transparent.png') center
+    no-repeat;
   @apply py-[60px] flex flex-col gap-[70px] med-900:gap-[50px] 
   med-600:gap-[30px] med-600:py-5;
 }
@@ -13,4 +13,9 @@
 }
 .text {
   @apply z-[4] text-white text-[42px] font-semibold whitespace-nowrap;
+}
+@media (max-width: 600px) {
+  .pictures {
+    height: 70px !important;
+  }
 }
