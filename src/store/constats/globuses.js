@@ -10,28 +10,28 @@ export const globuses = {
       title: "Գլոբալ մոնիտորինգ",
       src: img1,
       description:
-        "Our private company LLC SeiEn was established in October 2022 in Yerevan, Armenia",
+        "Մոնիտորինգն իրականացվում է աշխարհի 37 տարածաշրջանների համար",
       to: () => getLang("/monitoring/global"),
     },
     {
       title: "Ռեգիոնալ մոնիտորինգ Հայաստանում",
       src: img2,
       description:
-        "Our private company LLC SeiEn was established in October 2022 in Yerevan, Armenia",
+        "Իրականացվում է Հայաստանի եվ հարակից երկրների 6 տարածաշրջանների համար",
       to: () => getLang("/monitoring/regional"),
     },
     {
       title: "Տիեզերական մոնիտորինգ",
       src: img3,
       description:
-        "Our private company LLC SeiEn was established in October 2022 in Yerevan, Armenia",
+        "Արբանյակային պատկերների մոնիտորինգ եվ լինեաﬔնտային վերլուծություն իրականացվում է ուժեղ երկրաշարժերի սպասման գոտիների համար",
       to: () => getLang("/monitoring/cosmos"),
     },
     {
       title: "Տեխնոլոգիա",
       src: img4,
       description:
-        "Our private company LLC SeiEn was established in October 2022 in Yerevan, Armenia",
+        "Նորարարական տեխնոլոգիան հիﬓված է սեյսﬕկ էնտրոպիայի արտադրման օրենքի եվ մասնագիտացված ծրագրային ապահովման վրա",
       to: () => getLang("/technologies"),
     },
   ],
@@ -40,28 +40,28 @@ export const globuses = {
       title: "Глобальный мониторинг",
       src: img1,
       description:
-        "Our private company LLC SeiEn was established in October 2022 in Yerevan, Armenia",
+        "Мониторинг производится для 37 регионов мира",
       to: () => getLang("/monitoring/global"),
     },
     {
       title: "Региональный мониторинг в Армении",
       src: img2,
       description:
-        "Our private company LLC SeiEn was established in October 2022 in Yerevan, Armenia",
+        "Мониторинг производится для 6 регионов Армении и прилегающих стран",
       to: () => getLang("/monitoring/regional"),
     },
     {
       title: "Космический мониторинг",
       src: img3,
       description:
-        "Our private company LLC SeiEn was established in October 2022 in Yerevan, Armenia",
+        "Мониторинг спутниковых снимков и линеаментный анализ проводится для зон ожидания сильных землетрясений",
       to: () => getLang("/monitoring/cosmos"),
     },
     {
       title: "Технология",
       src: img4,
       description:
-        "Our private company LLC SeiEn was established in October 2022 in Yerevan, Armenia",
+        "Инновационная технология основана на законе производства сейсмической энтропии и специализированном программном обеспечении",
       to: () => getLang("/technologies"),
     },
   ],
@@ -70,28 +70,28 @@ export const globuses = {
       title: "Global Monitoring",
       src: img1,
       description:
-        "Our private company LLC SeiEn was established in October 2022 in Yerevan, Armenia",
+        "Monitoring is carried out for 37 regions of the world",
       to: () => getLang("/monitoring/global"),
     },
     {
       title: "Regional Monitoring in Armenia",
       src: img2,
       description:
-        "Our private company LLC SeiEn was established in October 2022 in Yerevan, Armenia",
+        "Monitoring is carried out for 6 regions of Armenia and adjacent countries",
       to: () => getLang("/monitoring/regional"),
     },
     {
       title: "Space Monitoring",
       src: img3,
       description:
-        "Our private company LLC SeiEn was established in October 2022 in Yerevan, Armenia",
+        "Satellite images monitoring and lineament analysis is carried out for zones of expected strong earthquakes",
       to: () => getLang("/monitoring/cosmos"),
     },
     {
       title: "Technology",
       src: img4,
       description:
-        "Our private company LLC SeiEn was established in October 2022 in Yerevan, Armenia",
+        "The innovative technology is based on the law of seismic entropy production and a specialized software",
       to: () => getLang("/technologies"),
     },
   ],

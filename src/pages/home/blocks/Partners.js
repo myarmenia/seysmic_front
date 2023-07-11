@@ -22,7 +22,7 @@ export const Partners = () => {
                 </a>
               </p>
               <div>
-                <span className="font-bold">{language?.description_title}</span>
+                {/* <span className="font-bold">{language?.description_title}</span> */}
                 <p className="med-600:text-sm">{language?.description}</p>
               </div>
             </div>

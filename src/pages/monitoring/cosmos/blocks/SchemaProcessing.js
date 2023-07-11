@@ -1,97 +1,97 @@
-import React, { useMemo } from "react";
-import { Container, Title } from "../../../../components/reusable";
-import styles from "../blocks/cosmos.module.css";
-import stputnik from "../../../../assets/main/monitoring/cosmos/sputnik.svg";
-import notebook from "../../../../assets/main/monitoring/cosmos/notebook.svg";
-import sputniktwo from "../../../../assets/main/monitoring/cosmos/sputniktwo.svg";
-import dotLine from "../../../../assets/main/monitoring/cosmos/dotLine.svg";
-import curelyLine from "../../../../assets/main/monitoring/cosmos/curelyLine.svg";
-import curelyLine2 from "../../../../assets/main/monitoring/cosmos/curelyLine2.svg";
-import a1 from "../../../../assets/shema/1.png";
-import a2 from "../../../../assets/shema/2.png";
-import a3 from "../../../../assets/shema/3.png";
-import a4 from "../../../../assets/shema/4.png";
-import a5 from "../../../../assets/shema/5.png";
-import a6 from "../../../../assets/shema/6.png";
-import a7 from "../../../../assets/shema/7.png";
-import armenia from "../../../../assets/shema/armenia.png";
-import ex from "../../../../assets/shema/ex.png";
-import { generateArray } from "../../../../helper";
-import { useParams } from "react-router";
-import { useTranslation } from "../../../../hooks";
+import React, { useMemo } from 'react';
+import { Container, Title } from '../../../../components/reusable';
+import styles from '../blocks/cosmos.module.css';
+import stputnik from '../../../../assets/main/monitoring/cosmos/sputnik.svg';
+import notebook from '../../../../assets/main/monitoring/cosmos/notebook.svg';
+import sputniktwo from '../../../../assets/main/monitoring/cosmos/sputniktwo.svg';
+import dotLine from '../../../../assets/main/monitoring/cosmos/dotLine.svg';
+import curelyLine from '../../../../assets/main/monitoring/cosmos/curelyLine.svg';
+import curelyLine2 from '../../../../assets/main/monitoring/cosmos/curelyLine2.svg';
+import a1 from '../../../../assets/shema/1.png';
+import a2 from '../../../../assets/shema/2.png';
+import a3 from '../../../../assets/shema/3.png';
+import a4 from '../../../../assets/shema/4.png';
+import a5 from '../../../../assets/shema/5.png';
+import a6 from '../../../../assets/shema/6.png';
+import a7 from '../../../../assets/shema/7.png';
+import armenia from '../../../../assets/shema/armenia.png';
+import ex from '../../../../assets/shema/ex.png';
+import { generateArray } from '../../../../helper';
+import { useParams } from 'react-router';
+import { useTranslation } from '../../../../hooks';
 
 export const SchemaProcessing = () => {
   const { lang } = useParams();
   const { schema_processing: language } = useTranslation().language;
   const imgData = useMemo(() => {
-    if (lang === "ru") {
+    if (lang === 'ru') {
       return [
         {
-          title: "Фрагмент изображения",
+          title: 'Фрагмент изображения',
           images: generateArray(8, a3),
         },
         {
-          title: "Региональные линеаментны (порог 130)",
+          title: 'Региональные линеаментны (порог 130)',
           images: generateArray(8, a4),
         },
         {
-          title: "Линии вытянутости штрихов",
+          title: 'Линии вытянутости штрихов',
           images: generateArray(8, a5),
         },
         {
-          title: "Плотности штрихов",
+          title: 'Плотности штрихов',
           images: generateArray(8, a6),
         },
         {
-          title: "Региональные линеаментны (порог 130)",
+          title: 'РОЗА-ДИАГРАММА',
           images: generateArray(8, a7),
         },
       ];
     }
-    if (lang === "am") {
+    if (lang === 'am') {
       return [
         {
-          title: "Պատկերի հատված",
+          title: 'ՊԱՏԿԵՐԻ ՖՐԱԳՄԵՆՏ',
           images: generateArray(8, a3),
         },
         {
-          title: "Ռեգիոնալ լինեամենտներ",
+          title: 'ՌԵԳԻՈՆԱԼ ԼԻՆԵԱՄԵՆՏՆԵՐ (ՇԵՄԸ՝ 130)',
           images: generateArray(8, a4),
         },
         {
-          title: "Շտրիխների ձգվածության գծերը",
+          title: 'Շտրիխների ձգվածության գծերը',
           images: generateArray(8, a5),
         },
         {
-          title: "Շտրիխների խտությունը",
+          title: 'Շտրիխների խտությունը',
           images: generateArray(8, a6),
         },
         {
-          title: "ՏԱՐԱԾԱՇՐՋԱՆԱՅԻՆ ԳԾԵՐ (ՇԵՄ 130)",
+          title: 'ՎԱՐԴ-ԴԻԱԳՐԱՄ',
           images: generateArray(8, a7),
         },
       ];
     }
-    if (lang === "en") {
+    if (lang === 'en') {
       return [
         {
-          title: "Image targment",
+          title: 'Image targment',
           images: generateArray(8, a3),
         },
         {
-          title: "Regional Lineaments (threshold 130)",
+          title: 'Regional Lineaments (threshold 130)',
           images: generateArray(8, a4),
         },
         {
-          title: "Stroke lines",
+          title: 'Stroke lines',
           images: generateArray(8, a5),
         },
         {
-          title: "Stroke density",
+          title: 'Stroke density',
           images: generateArray(8, a6),
         },
         {
-          title: "Rose chart",
+          title: 'Rose chart',
           images: generateArray(8, a7),
         },
       ];
@@ -113,12 +113,7 @@ export const SchemaProcessing = () => {
           <div className="flex flex-col justify-between w-full gap-8 ">
             <div className="h-[400px] med-600:h-[300px] ">
               <div className="flex gap-[20px]  relative  justify-center">
-                <img
-                  loading="lazy"
-                  src={stputnik}
-                  alt="sputnik"
-                  className="med-600:w-[120px]"
-                />
+                <img loading="lazy" src={stputnik} alt="sputnik" className="med-600:w-[120px]" />
                 <img
                   loading="lazy"
                   src={dotLine}
@@ -133,22 +128,10 @@ export const SchemaProcessing = () => {
                   alt="sputniktwo"
                   className="med-600:w-[70px]"
                 />
-                <img
-                  loading="lazy"
-                  src={dotLine}
-                  alt="dotLine"
-                  className="rotate-[223deg]"
-                />
+                <img loading="lazy" src={dotLine} alt="dotLine" className="rotate-[223deg]" />
                 <div className="relative">
-                  <p className="text-black">
-                    {language?.satellite_selection?.text1}
-                  </p>
-                  <img
-                    loading="lazy"
-                    src={notebook}
-                    alt="notebook"
-                    className="med-600:w-[150px]"
-                  />
+                  <p className="text-black">{language?.satellite_selection?.text1}</p>
+                  <img loading="lazy" src={notebook} alt="notebook" className="med-600:w-[150px]" />
                   <img
                     loading="lazy"
                     src={curelyLine}
@@ -225,9 +208,7 @@ export const SchemaProcessing = () => {
             </div>
           </div>
           <div className={styles.sputnik_box}>
-            <div className={styles.sputnik_box_title}>
-              {language?.satellite_selection?.text5}
-            </div>
+            <div className={styles.sputnik_box_title}>{language?.satellite_selection?.text5}</div>
             <div className={styles.dot_line_box}>
               <img loading="lazy" src={dotLine} alt="dotLine" />
             </div>
@@ -243,9 +224,7 @@ export const SchemaProcessing = () => {
         <img loading="lazy" alt=" " src={armenia} />
         {/* <p className="pt-11">{language?.text6}</p> */}
         <Title className="my-11">{language?.title4}</Title>
-        <p className="mx-auto max-w-[934px] text-center w-full">
-          {language?.text7}
-        </p>
+        <p className="mx-auto max-w-[934px] text-center w-full">{language?.text7}</p>
         <img loading="lazy" className="mt-[37px] mx-auto" alt=" " src={ex} />
         <Title className="my-11">{language?.title5}</Title>
         {imgData.length && (
@@ -261,7 +240,7 @@ export const SchemaProcessing = () => {
                     <img
                       loading="lazy"
                       key={indexs}
-                      className={`med-600:${indexs > 2 && "hidden"}`}
+                      className={`med-600:${indexs > 2 && 'hidden'}`}
                       src={el}
                       alt=" "
                     />

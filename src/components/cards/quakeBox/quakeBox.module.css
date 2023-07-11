@@ -5,7 +5,7 @@
 .content {
   @apply pt-[25%] mt-[25%] px-[25px] pb-[38px]  max-w-[310px] min-w-[213px] flex flex-col 
   justify-between items-center h-fit gap-3 bg-white shadow-normal 
-  rounded-[20px] min-h-[340px] med-600:min-h-[120px] med-600:gap-1 med-500:px-[0px];
+  rounded-[20px] med-600:min-h-[120px] med-600:gap-1 med-500:px-[0px];
 }
 .img {
   @apply mb-[-50%] w-full max-w-[160px] h-[160px] object-cover 

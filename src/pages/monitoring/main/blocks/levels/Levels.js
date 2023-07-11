@@ -99,7 +99,9 @@ export const Levels = () => {
     <div className="py-8 med-600:py-5">
       <Title className="py-5">{language?.title}</Title>
       <Container bg={styles.bg} className={styles.my_container}>
-        <div className="flex flex-col gap-[24px] px-[35px] justify-center relative med-600:gap-[3px]">
+        <div
+          className="flex flex-col gap-[24px] px-[35px] justify-center 
+        relative med-600:grid med-600:grid-cols-1 med-600:gap-0">
           {items.map((el, i) => (
             <Box {...el} key={i} />
           ))}
@@ -112,10 +114,10 @@ export const Levels = () => {
 
 const Box = ({ text, flag, imgClassName }) => {
   return (
-    <div className="flex gap-6 items-center med-600:gap-[14px]">
+    <div className="flex gap-6 items-center med-600:gap-[14px] med-400:h-fit">
       <img
         loading="lazy"
-        className={'h-[135px] shrink-[1] med-900:h-fit ' + imgClassName}
+        className={'h-[135px] shrink-[1] ' + imgClassName + ' ' + styles.pictures}
         src={flag}
         alt="asdfas"
       />

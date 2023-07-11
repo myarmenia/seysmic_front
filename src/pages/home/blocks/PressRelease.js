@@ -26,7 +26,7 @@ export const PressRelease = () => {
           </SwiperSlide>
         ))}
       </SwiperNavigation>
-      <Link className="mx-auto" to={getLang('/press-release/1')}>
+      <Link className="mx-auto mt-[20px]" to={getLang('/press-release/1')}>
         <CustomBtn transparent>{language?.learn_more}</CustomBtn>
       </Link>
     </Container>

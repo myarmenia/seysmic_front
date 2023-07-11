@@ -1,11 +1,7 @@
-import React from "react";
-import {
-  Container,
-  Title,
-  ViewPosition,
-} from "../../../../components/reusable";
-import styles from "./results.module.css";
-import { useTranslation } from "../../../../hooks";
+import React from 'react';
+import { Container, Title, ViewPosition } from '../../../../components/reusable';
+import styles from './results.module.css';
+import { useTranslation } from '../../../../hooks';
 
 export const Results = () => {
   const { about: language } = useTranslation().language;
@@ -25,7 +21,7 @@ export const Results = () => {
                 title={el}
                 style={{
                   opacity: bool ? 1 : 0,
-                  transform: bool ? "translateY(0)" : "translateY(50px)",
+                  transform: bool ? 'translateY(0)' : 'translateY(50px)',
                   transitionDelay: `${i / 10}s`,
                 }}
               />
@@ -43,7 +39,7 @@ const Box = ({ title, index, style }) => {
       <div className={styles.box_index}>
         <p>{index}</p>
       </div>
-      <p>{title}</p>
+      <p className="med-470:!text-[10.5px]">{title}</p>
     </div>
   );
 };
