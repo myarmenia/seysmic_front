@@ -11,7 +11,7 @@ const Component = () => {
   const [open, setOpen] = useState(false);
   const [openSlideId, setOpenSlideId] = useState(0);
   const { global: language } = useTranslation().language.monitoring;
-
+  console.log(data.files.length);
   return (
     <Container className="py-[var(--py)]">
       <Title>{language.CountriesItem.title}</Title>
@@ -62,7 +62,7 @@ const Component = () => {
           </div>
         ))}
       </div>
-      <Carousel {...{ open }} initialSlide={openSlideId} handleClose={() => setOpen(false)}>
+      <Carousel {...{ open }} initialSlide={openSlideId} fileCount={data.files.length} handleClose={() => setOpen(false)}>
         {data?.files.map(({ type, path }, i) => {
           if (type === 'image') {
             return (
@@ -79,7 +79,10 @@ const Component = () => {
           return (
             <SwiperSlide key={i}>
               <center>
-                <video controls className="w-full h-[500px] min-h-[500px] min-h-[500px] object-cover" alt="">
+                <video
+                  controls
+                  className="w-full h-[500px] min-h-[500px] min-h-[500px] object-cover"
+                  alt="">
                   <source src={path} type="video/mp4" />
                 </video>
               </center>

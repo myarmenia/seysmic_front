@@ -25,11 +25,11 @@ export const SwiperNavigation = ({ children, className = '', count = 3 }) => {
         onSwiper={(swiper) => setRef(swiper)}
         allowTouchMove
         loop={true}
-        // autoplay={{
-        //   delay: 4000,
-        //   disableOnInteraction: false,
-        //   pauseOnMouseEnter: true,
-        // }}
+        autoplay={{
+          delay: 4000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        }}
         className={'w-full !px-[20px] ' + className}
         modules={[Navigation, Autoplay, A11y]}
         breakpoints={{

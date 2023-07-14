@@ -44,7 +44,12 @@ export const News = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-        <a className="mx-auto text-center" style={{ margin: '0 auto' }} href={news[0].button_link}>
+        <a
+          className="mx-auto text-center"
+          style={{ margin: '0 auto' }}
+          href={news[0].button_link}
+          target="_blank"
+          rel="noreferrer">
           <div className="text-center mb-5">
             <CustomBtn transparent>{news[0].button_text}</CustomBtn>
           </div>

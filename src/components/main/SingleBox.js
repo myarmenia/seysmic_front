@@ -24,6 +24,7 @@ export const SingleBox = ({
 }) => {
   const { lang } = useParams();
   const [open, setOpen] = useState(false);
+  console.log(files.length);
   return (
     <>
       <div>
@@ -93,7 +94,7 @@ export const SingleBox = ({
           </div>
         </div>
       </div>
-      <Carousel {...{ open }} handleClose={() => setOpen(false)}>
+      <Carousel {...{ open }} handleClose={() => setOpen(false)} fileCount={files.length}>
         {files.map(({ type, path }, i) => {
           if (type === 'image') {
             return (
