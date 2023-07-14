@@ -20,6 +20,7 @@ const Description = ({ children }) => {
   const [open, setOpen] = useState(false);
 
   const ref = useRef();
+ console.log(data.files.length);
 
   return (
     <Container>
@@ -70,7 +71,7 @@ const Description = ({ children }) => {
           </div>
         ))}
       </div>
-      <Carousel {...{ open }} handleClose={() => setOpen(false)}>
+      <Carousel {...{ open }} handleClose={() => setOpen(false)} fileCount={data.files.length}>
         {data?.files.map(({ type, path }, i) => {
           if (type === 'image') {
             return (

@@ -57,7 +57,7 @@ export const Header = () => {
             <NavLink to={getLang('/search/1')}>
               <img
                 src={pathname === getLang('/search') ? search_icon_active : search_icon}
-                alt=""
+                alt="search"
               />
             </NavLink>
             <LanguageSelect setShow={setLangAndMenu} show={langAndMenu === 'lang'} />

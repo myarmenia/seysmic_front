@@ -49,11 +49,11 @@ export const ImageSlider = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-        <a href={banner?.running_text?.path}>
+        <a href={banner?.running_text?.path} target="_blank" rel="noreferrer">
           <Container
             bg="bg-dark-blue relative"
             className={'w-full h-[44px] text-white relative top-0 left-0'}>
-            <span className={styles.marquee}>{banner?.running_text?.content}</span>
+            <a className={styles.marquee}>{banner?.running_text?.content}</a>
           </Container>
         </a>
       </div>

@@ -1,31 +1,29 @@
-import React, { useState } from "react";
-import { useLoaderData, useNavigate } from "react-router";
-import instance from "../../api";
-import { PressReleaseBox } from "../../components/cards";
-import { CstmDateInput, SearchInput } from "../../components/forms";
-import { Boxes } from "../../components/main";
-import { convertSearchParamsStr, getLang } from "../../helper";
-import { useTranslation } from "../../hooks";
+import React, { useState } from 'react';
+import { useLoaderData, useNavigate } from 'react-router';
+import instance from '../../api';
+import { PressReleaseBox } from '../../components/cards';
+import { CstmDateInput, SearchInput } from '../../components/forms';
+import { Boxes } from '../../components/main';
+import { convertSearchParamsStr, getLang } from '../../helper';
+import { useTranslation } from '../../hooks';
 
 const Component = () => {
-  const searchValues = Object.fromEntries(
-    new URL(window.location.href).searchParams
-  );
+  const searchValues = Object.fromEntries(new URL(window.location.href).searchParams);
   const { press_release: language } = useTranslation().language;
 
   const { data, count } = useLoaderData(),
     navigate = useNavigate();
 
   const [values, setValues] = useState({
-    search: searchValues?.search || "",
-    date_from: searchValues?.date_from || "",
-    date_to: searchValues?.date_to || "",
+    search: searchValues?.search || '',
+    date_from: searchValues?.date_from || '',
+    date_to: searchValues?.date_to || '',
   });
 
   const onSubmit = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     const search = convertSearchParamsStr({ ...values });
-    navigate({ pathname: "", search: "?" + search });
+    navigate({ pathname: '', search: '?' + search });
   };
 
   return (
@@ -42,25 +40,27 @@ const Component = () => {
                 ...p,
                 search: e.target.value,
               })),
-            name: "search",
+            name: 'search',
           }}
           clearValue={() => {
-            setValues((p) => ({ search: "", date_from: "", date_to: "" }));
-            navigate(getLang("/press-release/1"));
+            setValues((p) => ({ search: '', date_from: '', date_to: '' }));
+            navigate(getLang('/press-release/1'));
           }}
         />
         <div className="flex items-center gap-2 med-600:w-full">
           <CstmDateInput
-            onChange={(e) =>
+            onChange={(e) => {
               setValues((p) => ({
                 ...p,
                 date_from: e.target.value,
-              }))
-            }
+              }));
+              
+            }}
             className="max-w-[130px] text-sm med-600:max-w-none"
             placeholder={language?.start_date}
             name="start-date"
             value={values.date_from}
+            onSubmit={onSubmit}
           />
           <div className="bg-dark-blue w-[6px] h-[1px] shrink-0" />
           <CstmDateInput
@@ -74,6 +74,7 @@ const Component = () => {
             placeholder={language?.end_date}
             name="end-date"
             value={values.date_to}
+            onSubmit={onSubmit}
           />
         </div>
       </form>
@@ -86,9 +87,7 @@ const loader = async ({ params: { lang, page = 1 }, request }) => {
   const search = convertSearchParamsStr(obj);
   try {
     if (Object.keys(obj).length) {
-      const filter = await instance.get(
-        `press-releases-filter?lng=${lang}&page=${page}&${search}`
-      );
+      const filter = await instance.get(`press-releases-filter?lng=${lang}&page=${page}&${search}`);
       return {
         data: filter.data.data,
         count: filter.data.cont_page,
