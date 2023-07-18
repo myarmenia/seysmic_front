@@ -28,16 +28,24 @@ const Component = () => {
   } = useTranslation().language;
   const { data, count } = useLoaderData(),
     navigate = useNavigate();
-
+  console.log(data);
   const [values, setValues] = useState({
     search: searchValues?.search || '',
-    date_from: searchValues?.date_from || '',
-    date_to: searchValues?.date_to || '',
+    date_from: searchValues?.start_date || '',
+    date_to: searchValues?.end_date || '',
     magnitude: searchValues?.magnitude || '',
   });
 
   const onSubmit = (e) => {
     // e.preventDefault();
+    console.log(values);
+    // const searchValues = {
+    //   ...values,
+    //   date_from: values.start_date,
+    //   date_to: values.end_date,
+    // };
+    // delete searchValues.start_date;
+    // delete searchValues.end_date;
     const search = convertSearchParamsStr({ ...values });
     navigate({ pathname: '', search: '?' + search });
   };
@@ -72,20 +80,20 @@ const Component = () => {
         />
         <div className="flex items-center gap-2 med-600:w-full">
           <CstmDateInput
-            onChange={(e) => setValues((p) => ({ ...p, start_date: e.target.value }))}
+            onChange={(e) => setValues((p) => ({ ...p, date_from: e.target.value }))}
             className="max-w-[130px] text-sm med-600:max-w-none"
             placeholder={start_date}
-            name="start-date"
-            value={values.start_date}
+            name="date_from"
+            value={values.date_from}
             onSubmit={onSubmit}
           />
           <div className="bg-dark-blue w-[6px] h-[1px] shrink-0" />
           <CstmDateInput
-            onChange={(e) => setValues((p) => ({ ...p, end_date: e.target.value }))}
+            onChange={(e) => setValues((p) => ({ ...p, date_to: e.target.value }))}
             className="max-w-[130px] text-sm med-600:max-w-none"
             placeholder={end_date}
-            name="end-date"
-            value={values.end_date}
+            name="date_to"
+            value={values.date_to}
             onSubmit={onSubmit}
           />
         </div>
@@ -96,6 +104,7 @@ const Component = () => {
 
 const loader = async ({ params: { lang, page = 1 }, request }) => {
   const obj = Object.fromEntries(new URL(request.url).searchParams);
+  console.log(obj);
   const search = convertSearchParamsStr(obj);
   try {
     if (Object.keys(obj).length) {

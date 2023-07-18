@@ -17,8 +17,7 @@ export const News = () => {
     data: { news },
   } = useLoaderData();
   const { home: language } = useTranslation().language;
-  // console.log(news[0].button_link);
-  // let aaa = news[0].button_link;
+
   return (
     <div className="py-[40px] max-w-[1440px] mx-auto">
       <div className="med-600:h-[44px] relative w-full mb-[55px] med-600:justify-between med-600:flex">

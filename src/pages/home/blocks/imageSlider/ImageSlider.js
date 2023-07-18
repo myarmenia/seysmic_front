@@ -53,7 +53,7 @@ export const ImageSlider = () => {
           <Container
             bg="bg-dark-blue relative"
             className={'w-full h-[44px] text-white relative top-0 left-0'}>
-            <a className={styles.marquee}>{banner?.running_text?.content}</a>
+            <span className={styles.marquee}>{banner?.running_text?.content}</span>
           </Container>
         </a>
       </div>
